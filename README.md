@@ -25,7 +25,7 @@ open http://localhost:8000/
 
 ```bash
 mkdocs build --clean
-git push origin master
+mkdocs gh-deploy
 ```
 
 ### useful
