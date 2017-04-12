@@ -1,0 +1,53 @@
+# Project information
+site_name: 'Branch Documentation'
+site_description: 'Branch Deep Link Documentation'
+site_author: 'Branch'
+site_url: 'https://branch.io'
+
+# Repository
+repo_name: 'BranchMetrics/Documentation'
+repo_url: 'https://github.com/BranchMetrics/Documentation'
+
+# Copyright
+copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
+
+# Documentation and theme
+theme: 'material'
+theme_dir: theme
+
+# Options
+extra:
+  #logo: 'img/logo.png'
+  palette:
+    primary: 'light blue'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  social:
+    - type: 'github'
+      link: 'https://github.com/BranchMetrics/Documentation'
+    - type: 'twitter'
+      link: 'https://twitter.com/branchmetrics'
+extra_css:
+  - 'css/extra.css'
+extra_javascript:
+  - 'js/extra.js'
+
+# Google Analytics
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - codehilite #(linenums=true)
+  - footnotes
+  - toc(permalink=true)
+  - meta
+  - pymdownx.github
+
+# Pages
+pages:
+  - Home: index.md
+  - About: about.md
