@@ -8,15 +8,19 @@ pip --version #pip 1.5.2
 ### install
 
 ```bash
+git clone git@github.com:ethanneff/branch-docs.git
+cd branch-docs
+```
+
+```bash
 pip install --upgrade pip
 pip install mkdocs
+pip install markdown-fenced-code-tabs
 ```
 
 ### development
 
 ```bash
-git clone git@github.com:ethanneff/branch-docs.git
-cd branch-docs
 mkdocs serve
 open http://localhost:8000/
 ```
@@ -24,11 +28,11 @@ open http://localhost:8000/
 ### production
 
 ```bash
-mkdocs build --clean
 mkdocs gh-deploy
+open https://ethanneff.github.io/branch-docs/
 ```
 
-### useful
+### resources
 - http://www.mkdocs.org/
 - https://github.com/squidfunk/mkdocs-material
-- https://github.com/facelessuser/PyMdown
+- https://github.com/facelessuser/pymdown-extensions

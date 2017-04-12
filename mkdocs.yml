@@ -5,34 +5,40 @@ site_author: 'Branch'
 site_url: 'https://branch.io'
 
 # Repository
-repo_name: 'BranchMetrics/Documentation'
+repo_name: 'Branch Documentation'
 repo_url: 'https://github.com/BranchMetrics/Documentation'
 
 # Copyright
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
 
-# Documentation and theme
+# Theme
 theme: 'material'
-theme_dir: theme
-
-# Options
-extra:
-  #logo: 'img/logo.png'
-  palette:
-    primary: 'light blue'
-    accent: 'indigo'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-  social:
-    - type: 'github'
-      link: 'https://github.com/BranchMetrics/Documentation'
-    - type: 'twitter'
-      link: 'https://twitter.com/branchmetrics'
+theme_dir: 'theme'
 extra_css:
   - 'css/extra.css'
 extra_javascript:
   - 'js/extra.js'
+
+# Options
+extra:
+  # logo: 'img/logo.svg'
+  palette:
+    primary: 'light blue'
+    accent: 'light blue'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  social:
+    - type: 'globe'
+      link: 'https://branch.io'
+    - type: 'github'
+      link: 'https://github.com/BranchMetrics/Documentation'
+    - type: 'twitter'
+      link: 'https://twitter.com/branchmetrics'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/branchmetrics'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company-beta/3813083'
 
 # Google Analytics
 google_analytics:
@@ -41,7 +47,7 @@ google_analytics:
 
 # Extensions
 markdown_extensions:
-  - codehilite #(linenums=true)
+  - codehilite
   - footnotes
   - toc(permalink=true)
   - meta
@@ -49,5 +55,68 @@ markdown_extensions:
 
 # Pages
 pages:
-  - Home: index.md
-  - About: about.md
+  - Features: index.md
+  - App:
+    - Deep Linking: about.md
+    - Creating Links: about.md
+    - Sharing Links: about.md
+    - Deep Link Routing: about.md
+    - Track Custom Events: about.md
+    - Track and Refer Users: about.md
+    - Track and Search Content: about.md
+    - Increase Match Success: about.md
+  - Dashboard:
+    - Attribution:
+      - Growth: about.md
+      - User Value: about.md
+    - Analytics:
+      - Revenue Analytics: about.md
+      - Ads Analytics (Soon): about.md
+      - Email Analytics (Soon): about.md
+      - … Analytics (Soon): about.md
+    - Exports:
+      - CSV Export: about.md
+      - Export API: about.md
+      - Webhooks: about.md
+    - Integrations:
+      - Abobe Analytics: about.md
+      - Adjust: about.md
+      - Amplitude: about.md
+      - AppBoy: about.md
+      - Google Analytics: about.md
+      - Kochava: about.md
+      - Localytics: about.md
+      - Mixpanel: about.md
+      - Tune: about.md
+      - AppMetrica: about.md
+  - Web To App:
+    - Deep Views: about.md
+    - Text Me The App: about.md
+    - Journeys: about.md
+  - Ads To App:
+    - Google:
+      - App Installs: about.md
+      - Universal App Campaigns: about.md
+      - Search: about.md
+    - Facebook:
+      - App Installs: about.md
+      - App Engagement: about.md
+      - Instagram: about.md
+    - Pinterst:
+      - App Installs (Soon): about.md
+    - Snapchat:
+      - App Installs (Soon): about.md
+    - Deep Link Feeds: about.md
+    - APp Install Ads: about.md
+    - Journeys: about.md
+  - Emails To App:
+    - Responsys: about.md
+    - SFMC: about.md
+    - SendGrid: about.md
+    - Sailthru: about.md
+    - AppBoy/Sendgrid: about.md
+    - Self Serve: about.md
+  - Apps To App:
+    - iOS Roots App: about.md
+    - iOS iMessage Apps: about.md
+    - Android Instant Apps: about.md
