@@ -2,11 +2,11 @@
 site_name: 'Branch Documentation'
 site_description: 'Branch Deep Link Documentation'
 site_author: 'Branch'
-site_url: 'https://branch.io'
+site_url: 'https://ethanneff.github.io/branch-docs'
 
 # Repository
 repo_name: 'Branch Documentation'
-repo_url: 'https://github.com/BranchMetrics/Documentation'
+repo_url: 'https://github.com/ethanneff/branch-docs'
 
 # Copyright
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
@@ -52,71 +52,163 @@ markdown_extensions:
   - toc(permalink=true)
   - meta
   - pymdownx.github
+  - markdown_include.include
 
 # Pages
 pages:
   - Features: index.md
-  - App:
-    - Deep Linking: about.md
-    - Creating Links: about.md
-    - Sharing Links: about.md
-    - Deep Link Routing: about.md
-    - Track Custom Events: about.md
-    - Track and Refer Users: about.md
-    - Track and Search Content: about.md
-    - Increase Match Success: about.md
-  - Dashboard:
+  - Getting started:
+    - iOS:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - Android:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - Adobe AIR:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - Cordova PhoneGap Ionic:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - iMessage:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - mParticle Android:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - mParticle iOS:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - React Native:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - Titanium:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - Unity:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+    - Xamerian:
+      - Deep link into your app: app/ios/deeplink.md
+      - Create links: app/ios/createlink.md
+      - Share links: app/ios/sharelink.md
+      - Navigate to content: app/ios/navigatelink.md
+      - Track custom events: app/ios/trackevent.md
+      - Track and refer users: app/ios/trackuser.md
+      - Track and publicize content: app/ios/trackcontent.md
+      - Increase matching success: app/ios/matchsuccess.md
+  - Tracking analytics:
     - Attribution:
-      - Growth: about.md
-      - User Value: about.md
+      - Growth: other.md
+      - User Value: other.md
     - Analytics:
-      - Revenue Analytics: about.md
-      - Ads Analytics (Soon): about.md
-      - Email Analytics (Soon): about.md
-      - … Analytics (Soon): about.md
-    - Exports:
-      - CSV Export: about.md
-      - Export API: about.md
-      - Webhooks: about.md
-    - Integrations:
-      - Abobe Analytics: about.md
-      - Adjust: about.md
-      - Amplitude: about.md
-      - AppBoy: about.md
-      - Google Analytics: about.md
-      - Kochava: about.md
-      - Localytics: about.md
-      - Mixpanel: about.md
-      - Tune: about.md
-      - AppMetrica: about.md
+      - Revenue Analytics: other.md
+      - Ads Analytics (Soon): other.md
+      - Email Analytics (Soon): other.md
+      - … Analytics (Soon): other.md
+    - Export your data:
+      - CSV Export: other.md
+      - Export API: other.md
+      - Webhooks: other.md
+    - Integrate with third parties:
+      - Abobe Analytics: other.md
+      - Adjust: other.md
+      - Amplitude: other.md
+      - AppBoy: other.md
+      - Google Analytics: other.md
+      - Kochava: other.md
+      - Localytics: other.md
+      - Mixpanel: other.md
+      - Tune: other.md
+      - AppMetrica: other.md
   - Web To App:
-    - Deep Views: about.md
-    - Text Me The App: about.md
-    - Journeys: about.md
+    - Deep Views: other.md
+    - Text Me The App: other.md
+    - Journeys: other.md
   - Ads To App:
     - Google:
-      - App Installs: about.md
-      - Universal App Campaigns: about.md
-      - Search: about.md
+      - App Installs: other.md
+      - Universal App Campaigns: other.md
+      - Search: other.md
     - Facebook:
-      - App Installs: about.md
-      - App Engagement: about.md
-      - Instagram: about.md
-    - Pinterst:
-      - App Installs (Soon): about.md
+      - App Installs: other.md
+      - App Engagement: other.md
+      - Instagram: other.md
+    - Pinterest:
+      - App Installs (Soon): other.md
     - Snapchat:
-      - App Installs (Soon): about.md
-    - Deep Link Feeds: about.md
-    - APp Install Ads: about.md
-    - Journeys: about.md
+      - App Installs (Soon): other.md
+    - Deep Link Feeds: other.md
+    - APp Install Ads: other.md
+    - Journeys: other.md
   - Emails To App:
-    - Responsys: about.md
-    - SFMC: about.md
-    - SendGrid: about.md
-    - Sailthru: about.md
-    - AppBoy/Sendgrid: about.md
-    - Self Serve: about.md
+    - Responsys: other.md
+    - SFMC: other.md
+    - SendGrid: other.md
+    - Sailthru: other.md
+    - AppBoy: other.md
+    - Self Serve: other.md
   - Apps To App:
-    - iOS Roots App: about.md
-    - iOS iMessage Apps: about.md
-    - Android Instant Apps: about.md
+    - iOS Roots App: other.md
+    - iOS iMessage Apps: other.md
+    - Android Instant Apps: other.md

@@ -1,12 +1,6 @@
 <h1 align="center">
   <a href="https://branch.io"><img src="http://i.imgur.com/Y5EPQTo.png" alt="Branch for Cordova/PhoneGap/Ionic" width="550"></a>
 </h1>
-<p align="center">
-  <a href="https://travis-ci.org/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking"><img src="https://img.shields.io/travis/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking/master.svg" alt="Travis"></a>
-  <a href="https://www.npmjs.com/package/branch-cordova-sdk"><img src="https://img.shields.io/npm/dt/branch-cordova-sdk.svg" alt="npm downloads"></a>
-  <a href="https://www.npmjs.com/package/branch-cordova-sdk"><img src="https://img.shields.io/npm/v/branch-cordova-sdk.svg" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/branch-cordova-sdk"><img src="https://img.shields.io/npm/l/branch-cordova-sdk.svg" alt="npm version"></a>
-</p>
 
 > Hyperlinks can navigate to your website, but not to your app. Branch fixes this with deep links.
 
@@ -40,31 +34,32 @@
     - [Track Event](#track-event)
     - [Handle Referrals](#handle-referrals)
 - [Troubleshooting](#troubleshooting)
-  - [Testing: Key Points](#testing-key-points)
-  - [Testing: Optional App Config](#testing-optional-app-config)
-  - [Testing: Branch Analytics](#testing-branch-analytics)
-  - [Testing: Simulating an Install](#testing-simulating-an-install)
-  - [Testing: Supported Platforms](#testing-supported-platforms)  
-  - [Testing: Sample Test App](#testing-sample-test-app)
-  - [Link Data: Universal Object Properties](#link-data-universal-object-properties)
-  - [Link Data: Deep Link Properties](#link-data-deep-link-properties)
-  - [Compiling: Cordova Dependencies](#compiling-cordova-dependencies)
-  - [Compiling: Show Console Logs](#compiling-show-console-logs)
-  - [Compiling: Updating Branch SDK](#compiling-updating-branch-sdk)
-  - [Compiling: Incompatible Plugins](#compiling-incompatible-plugins)  
-  - [Compiling: Errors](#compiling-errors)
+    - [Testing: Key Points](#testing-key-points)
+    - [Testing: Optional App Config](#testing-optional-app-config)
+    - [Testing: Branch Analytics](#testing-branch-analytics)
+    - [Testing: Simulating an Install](#testing-simulating-an-install)
+    - [Testing: Supported Platforms](#testing-supported-platforms)  
+    - [Testing: Sample Test App](#testing-sample-test-app)
+    - [Link Data: Universal Object Properties](#link-data-universal-object-properties)
+    - [Link Data: Deep Link Properties](#link-data-deep-link-properties)
+    - [Compiling: Cordova Dependencies](#compiling-cordova-dependencies)
+    - [Compiling: Show Console Logs](#compiling-show-console-logs)
+    - [Compiling: Updating Branch SDK](#compiling-updating-branch-sdk)
+    - [Compiling: Incompatible Plugins](#compiling-incompatible-plugins)  
+    - [Compiling: Errors](#compiling-errors)
 
 ## Getting Started
 
-- #### Configure Branch
+#### Configure Branch
 
-  - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+- Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
     ![image](http://i.imgur.com/wazVu3U.png)
     ![image](http://i.imgur.com/9PEylbS.png)
 
-- #### Configure App
-  - Cordova and Ionic
+#### Configure App
+
+- Cordova and Ionic
 
     ```xml
     <!-- sample config.xml -->
@@ -79,7 +74,7 @@
       </branch-config>
     ```
 
-  - PhoneGap
+- PhoneGap
 
     ```xml
     <!-- sample config.xml -->
