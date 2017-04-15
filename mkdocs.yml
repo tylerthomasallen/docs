@@ -88,7 +88,7 @@ pages:
       - Increase matching success: app/ios/matchsuccess.md
     - Cordova PhoneGap Ionic:
       - Deep link into your app: app/ios/deeplink.md
-      - Create links: app/ios/createlink.md
+      - Create links: app/cordova-phonegap-ionic/createlink.md
       - Share links: app/ios/sharelink.md
       - Navigate to content: app/ios/navigatelink.md
       - Track custom events: app/ios/trackevent.md

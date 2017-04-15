@@ -34,6 +34,21 @@ open https://ethanneff.github.io/branch-docs/
 ```
 
 ### resources
+
 - http://www.mkdocs.org/
+
 - https://github.com/squidfunk/mkdocs-material
+
 - https://github.com/facelessuser/pymdown-extensions
+
+### best practices
+
+- folders 
+
+    - must be lowercase and hyphened
+
+- content 
+
+    - bullets and sections must have new line spacing in between
+
+    - indention is 4 spaces
