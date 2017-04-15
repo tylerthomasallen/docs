@@ -7,6 +7,7 @@ site_url: 'https://ethanneff.github.io/branch-docs'
 # Repository
 repo_name: 'Branch Documentation'
 repo_url: 'https://github.com/ethanneff/branch-docs'
+edit_uri: 'edit/master/docs/'
 
 # Copyright
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
@@ -69,7 +70,7 @@ pages:
       - Increase matching success: app/ios/matchsuccess.md
     - Android:
       - Deep link into your app: app/ios/deeplink.md
-      - Create links: app/ios/createlink.md
+      - Create links: app/android/createlink.md
       - Share links: app/ios/sharelink.md
       - Navigate to content: app/ios/navigatelink.md
       - Track custom events: app/ios/trackevent.md
