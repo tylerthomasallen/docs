@@ -1,6 +1,6 @@
 # Project information
 site_name: 'Branch Documentation'
-site_description: 'Branch Deep Link Documentation'
+site_description: 'Branch Documentation for Deep Linking'
 site_author: 'Branch'
 site_url: 'https://ethanneff.github.io/branch-docs'
 
@@ -12,13 +12,17 @@ edit_uri: 'edit/master/docs/'
 # Copyright
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
 
-# Theme
+# Files
 theme: 'material'
-theme_dir: 'theme'
+theme_dir: 'src'
+docs_dir: 'src/docs'
 extra_css:
-  - 'css/extra.css'
+  - 'css/analytics.css'
+  - 'css/main.css'
+
 extra_javascript:
-  - 'js/extra.js'
+  - 'js/analytics.js'
+  - 'js/main.js'
 
 # Options
 extra:
@@ -41,16 +45,11 @@ extra:
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company-beta/3813083'
 
-# Google Analytics
-google_analytics:
-  - 'UA-XXXXXXXX-X'
-  - 'auto'
-
 # Extensions
 markdown_extensions:
   - codehilite
   - footnotes
-  - toc(permalink=true)
+  - toc
   - meta
   - pymdownx.github
   - markdown_include.include
@@ -200,7 +199,7 @@ pages:
     - Snapchat:
       - App Installs (Soon): other.md
     - Deep Link Feeds: other.md
-    - APp Install Ads: other.md
+    - App Install Ads: other.md
     - Journeys: other.md
   - Emails To App:
     - Responsys: other.md
