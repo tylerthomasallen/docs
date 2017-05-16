@@ -21,6 +21,7 @@ pip install --upgrade pip
 pip install mkdocs
 pip install markdown-fenced-code-tabs
 pip install markdown-include
+pip install pygments
 ```
 
 ### development
