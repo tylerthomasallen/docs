@@ -33,7 +33,7 @@ SIDEBAR BORDERS
 /*
 STICKY FOOTER
 
-/* MARKDOWN */.md-footer {
+.md-footer {
   position:fixed;
   bottom:0px;
   width:100%;
@@ -48,3 +48,18 @@ STICKY FOOTER
   padding-bottom: 20em !important;
 }
 */
+
+
+/* MARKDOWN */
+.md-typeset h2 {
+  font-weight: 700;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+.md-typeset h4 {
+  font-weight: 600;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: inherit;
+}
