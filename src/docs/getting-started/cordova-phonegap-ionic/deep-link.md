@@ -1,6 +1,12 @@
 <h1 align="center">
   <a href="https://branch.io"><img src="http://i.imgur.com/Y5EPQTo.png" alt="Branch for Cordova/PhoneGap/Ionic" width="550"></a>
 </h1>
+<p align="center">
+  <a href="https://travis-ci.org/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking"><img src="https://img.shields.io/travis/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking/master.svg" alt="Travis"></a>
+  <a href="https://www.npmjs.com/package/branch-cordova-sdk"><img src="https://img.shields.io/npm/dt/branch-cordova-sdk.svg" alt="npm downloads"></a>
+  <a href="https://www.npmjs.com/package/branch-cordova-sdk"><img src="https://img.shields.io/npm/v/branch-cordova-sdk.svg" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/branch-cordova-sdk"><img src="https://img.shields.io/npm/l/branch-cordova-sdk.svg" alt="npm version"></a>
+</p>
 
 > Hyperlinks can navigate to your website, but not to your app. Branch fixes this with deep links.
 
@@ -13,54 +19,52 @@
 </p>
 
 # Branch for Cordova, PhoneGap, and Ionic
-
 *Questions? [Contact us](https://support.branch.io/support/tickets/new)*
 
 - [Getting Started](#getting-started)
-    - [Configure Branch](#configure-branch)
-    - [Configure App](#configure-app)
-    - [Initialize Branch](#initialize-branch)
-    - [Test Deep Link iOS](#test-deep-link-ios)
-    - [Test Deep Link Android](#test-deep-link-android)
+  - [Configure Branch](#configure-branch)
+  - [Configure App](#configure-app)
+  - [Initialize Branch](#initialize-branch)
+  - [Test Deep Link iOS](#test-deep-link-ios)
+  - [Test Deep Link Android](#test-deep-link-android)
 - [Features](#features)
-    - [Initialize Branch Features](#initialize-branch-features)
-    - [Create Content Reference](#create-content-reference)
-    - [Create Deep Link](#create-deep-link)
-    - [Share Deep Link](#share-deep-link)
-    - [Read Deep Link](#read-deep-link)
-    - [Display Content](#display-content)
-    - [Track Content](#track-content)
-    - [Track User](#track-user)
-    - [Track Event](#track-event)
-    - [Handle Referrals](#handle-referrals)
+  - [Initialize Branch Features](#initialize-branch-features)
+  - [Create Content Reference](#create-content-reference)
+  - [Create Deep Link](#create-deep-link)
+  - [Share Deep Link](#share-deep-link)
+  - [Read Deep Link](#read-deep-link)
+  - [Display Content](#display-content)
+  - [Track Content](#track-content)
+  - [Track User](#track-user)
+  - [Track Event](#track-event)
+  - [Handle Referrals](#handle-referrals)
 - [Troubleshooting](#troubleshooting)
-    - [Testing: Key Points](#testing-key-points)
-    - [Testing: Optional App Config](#testing-optional-app-config)
-    - [Testing: Branch Analytics](#testing-branch-analytics)
-    - [Testing: Simulating an Install](#testing-simulating-an-install)
-    - [Testing: Supported Platforms](#testing-supported-platforms)  
-    - [Testing: Sample Test App](#testing-sample-test-app)
-    - [Link Data: Universal Object Properties](#link-data-universal-object-properties)
-    - [Link Data: Deep Link Properties](#link-data-deep-link-properties)
-    - [Compiling: Cordova Dependencies](#compiling-cordova-dependencies)
-    - [Compiling: Show Console Logs](#compiling-show-console-logs)
-    - [Compiling: Updating Branch SDK](#compiling-updating-branch-sdk)
-    - [Compiling: Incompatible Plugins](#compiling-incompatible-plugins)  
-    - [Compiling: Errors](#compiling-errors)
+  - [Testing: Key Points](#testing-key-points)
+  - [Testing: Optional App Config](#testing-optional-app-config)
+  - [Testing: Branch Analytics](#testing-branch-analytics)
+  - [Testing: Simulating an Install](#testing-simulating-an-install)
+  - [Testing: Supported Platforms](#testing-supported-platforms)  
+  - [Testing: Sample Test App](#testing-sample-test-app)
+  - [Link Data: Universal Object Properties](#link-data-universal-object-properties)
+  - [Link Data: Deep Link Properties](#link-data-deep-link-properties)
+  - [Compiling: Cordova Dependencies](#compiling-cordova-dependencies)
+  - [Compiling: Show Console Logs](#compiling-show-console-logs)
+  - [Compiling: Updating the Branch SDK](#compiling-updating-the-branch-sdk)
+  - [Compiling: Incompatible Plugins](#compiling-incompatible-plugins)  
+  - [Compiling: Errors](#compiling-errors)
 
 ## Getting Started
 
-#### Configure Branch
+- #### Configure Branch
 
-- Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+  - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
     ![image](http://i.imgur.com/wazVu3U.png)
     ![image](http://i.imgur.com/9PEylbS.png)
 
-#### Configure App
+- #### Configure App
 
-- Cordova and Ionic
-
+  - Cordova and Ionic
     ```xml
     <!-- sample config.xml -->
     <widget id="com.eneff.branch.cordovatestbed" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
@@ -74,8 +78,7 @@
       </branch-config>
     ```
 
-- PhoneGap
-
+  - PhoneGap
     ```xml
     <!-- sample config.xml -->
     <widget id="com.eneff.branch.cordovatestbed" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
@@ -163,7 +166,7 @@
     // ...
     ```
 
-  - Ionic 2
+  - Ionic 2/3
     ```typescript
     // sample app.component.js
     import { Component } from '@angular/core';
@@ -298,6 +301,8 @@
   - Needs a [Branch Universal Object](#create-content-reference)
 
   - Link Data: [Deep Link Properties](#link-data-deep-link-properties)
+  
+  - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
     ```js
     // optional fields
@@ -433,6 +438,8 @@
   - Track how many times a user views a particular piece of content
 
   - Needs a [Branch Universal Object](#create-content-reference)
+  
+  - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
     ```js
     branchUniversalObj.registerView().then(function (res) {
@@ -445,6 +452,8 @@
 - #### Track User
 
   - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
+  
+  - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
 
     ```js
     var userId = '123456'
@@ -472,6 +481,8 @@
   - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
 
   - Recommened to [Track User](#track-user) before [Track Event](#track-event) to associate custom events with a user
+  
+  - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
 
     ```js
     var eventName = 'clicked_on_this'
@@ -495,6 +506,8 @@
 - #### Handle Referrals
 
   - Referral points are obtained from events triggered by users from rules created on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
+  
+  - Verify on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
   - Get credits
 
@@ -887,7 +900,7 @@
 
     - Chrome -> [chrome://inspect/#devices](chrome://inspect/#devices) -> Console
 
-- #### Compiling: Updating Branch SDK
+- #### Compiling: Updating the Branch SDK
 
   ```bash
   # terminal
@@ -927,13 +940,13 @@
     - Branch opens and installs your app. You cannot simulate Branch in the desktop browser
 
       ```js
-      // Ionic 2 - running on browser instead of device
+      // Ionic 2/3 - running on browser instead of device
       if (!platform.is('cordova')) { return }
       Branch.userCompletedAction('did_this')
       ```
 
       ```js
-      // Ionic 2 - missing Branch import
+      // Ionic 2/3 - missing Branch import
       declare var Branch
       ```
 
@@ -945,7 +958,7 @@
     The following build commands failed:
       Check dependencies
     (1 failure)
-    Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/eneff/Desktop/active/branch/lib/cordova-ionic-phonegap-branch-deep-linking/testbed/platforms/ios/cordova/build-debug.xcconfig,-workspace,Branch Testing.xcworkspace,-scheme,Branch Testing,-configuration,Debug,-destination,generic/platform=iOS,-archivePath,Branch Testing.xcarchive,archive,CONFIGURATION_BUILD_DIR=/Users/eneff/Desktop/active/branch/lib/cordova-ionic-phonegap-branch-deep-linking/testbed/platforms/ios/build/device,SHARED_PRECOMPS_DIR=/Users/eneff/Desktop/active/branch/lib/cordova-ionic-phonegap-branch-deep-linking/testbed/platforms/ios/build/sharedpch
+    Error: Error code 65 for command: xcodebuild with args: -xcconfig,cordova/build-debug.xcconfig,-workspace,Branch Testing.xcworkspace,-scheme,Branch Testing,-configuration,Debug,-destination,generic/platform=iOS,-archivePath,Branch Testing.xcarchive,archive,CONFIGURATION_BUILD_DIR=build/device,SHARED_PRECOMPS_DIR=build/sharedpch
     ```
 
       - Open app in `Xcode` and launch from there (to select a `Provisioning Profile`)
@@ -960,4 +973,12 @@
     No profiles for 'com.eneff.branch.cordova_testbed' were found
     ```
 
-      - Don't use `cordova`, `hyphens`, or `underscores` in your bundle id (widget id)
+      - Don't use `cordova`, `hyphens` (Android), or `underscores` (iOS) in your bundle id (widget id)
+
+    ```sh
+    Error: Error code 1 for command: /gradlew with args: cdvBuildDebug,-b,/build.gradle,-Dorg.gradle.daemon=true,-Pandroid.useDeprecatedNdk=true
+    ```
+
+      - Add `<preference name="android-minSdkVersion" value="15" />` to your `config.xml`
+
+
