@@ -160,9 +160,9 @@ pages:
       - Increase matching success: getting-started/xamarin/match-success.md
   - Convert Web to App:
     - Deep Views: web-to-app/deep-views.md
-    - Text Me The App: web-to-app/text-me-the-app.md
+    - Text me the app: web-to-app/text-me-the-app.md
     - Journeys: web-to-app/journeys.md
-  - Convert Ads to App:
+  - Converting ads to app:
     - Branch - Deep Link Feeds: ads-to-app/deep-link-feeds.md
     - Branch - App Install Ads: ads-to-app/app-install-ads.md
     - Google - App Installs: ads-to-app/google-app-installs.md
@@ -173,7 +173,7 @@ pages:
     - Facebook - Instagram: ads-to-app/facebook-instagram.md
     - Pinterets - App Installs: ads-to-app/pinterest-app-installs.md
     - Snapchat - App Installs: ads-to-app/snapchat-app-installs.md
-  - Convert Emails to App:
+  - Converting emails to app:
     - Responsys: emails-to-app/responsys.md
     - SFMC: emails-to-app/sfmc.md
     - SendGrid: emails-to-app/sendgrid.md
@@ -184,15 +184,15 @@ pages:
   #   - iOS Roots App: apps-to-app/ios-roots-app.md
   #   - iOS iMessage Apps: apps-to-app/ios-imessage-apps.md
   #   - Android Instant Apps: apps-to-app/android-instant-apps.md
-  - Track Analytics:
-    - Growth Attribution: track-analytics/growth-attribution.md
-    - User Value Attribution: track-analytics/user-value attribution.md
-    - Revenue Attribution: track-analytics/revenue-attribution.md
-  - Export Analytics:
+  - Tracking analytics:
+    - Growth: track-analytics/growth-attribution.md
+    - User Value: track-analytics/user-value attribution.md
+    - Revenue: track-analytics/revenue-attribution.md
+  - Exporting analytics:
     - CSV Export: export-analytics/export-csv.md
     - Export API: export-analytics/export-api.md
     - Webhooks: export-analytics/export-webhooks.md
-  - Integrate Analytics:
+  - Integrating analytics:
     - Abobe Analytics: integrate-analytics/abobe-analytics.md
     - Adjust: integrate-analytics/adjust.md
     - Amplitude: integrate-analytics/amplitude.md
