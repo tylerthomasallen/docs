@@ -179,10 +179,10 @@ pages:
     - Sailthru: emails-to-app/sailthru.md
     - AppBoy: emails-to-app/appboy.md
     - Self Serve: emails-to-app/self-serve.md
-  - Convert Apps to App:
-    - iOS Roots App: apps-to-app/ios-roots-app.md
-    - iOS iMessage Apps: apps-to-app/ios-imessage-apps.md
-    - Android Instant Apps: apps-to-app/android-instant-apps.md
+  # - Convert Apps to App:
+  #   - iOS Roots App: apps-to-app/ios-roots-app.md
+  #   - iOS iMessage Apps: apps-to-app/ios-imessage-apps.md
+  #   - Android Instant Apps: apps-to-app/android-instant-apps.md
   - Track Analytics:
     - Growth Attribution: track-analytics/growth-attribution.md
     - User Value Attribution: track-analytics/user-value attribution.md
