@@ -33,4 +33,18 @@ SIDEBAR BORDERS
 /*
 STICKY FOOTER
 
-/* MARKDOWN */
+/* MARKDOWN */.md-footer {
+  position:fixed;
+  bottom:0px;
+  width:100%;
+  height: 10em;
+}
+
+.md-footer-social {
+  display: none;
+}
+
+.md-container {
+  padding-bottom: 20em !important;
+}
+*/
