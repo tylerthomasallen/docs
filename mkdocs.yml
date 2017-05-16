@@ -48,9 +48,9 @@ extra:
 
 # Extensions
 markdown_extensions:
-  - codehilite
+  - codehilite(linenums=true)
   - footnotes
-  - toc
+  - toc(permalink=true)
   - meta
   - pymdownx.github
   - markdown_include.include
