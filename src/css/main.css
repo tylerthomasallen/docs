@@ -1,4 +1,5 @@
-.md-nav__source, .md-source__facts {
+/* HEADER GIT STATS */
+.md-nav__source, .md-source__facts, .md-source__icon {
   display: none;
 }
 
@@ -16,11 +17,20 @@ div.md-sidebar--primary ul.md-nav__list li:first-child {
   /*display: none;*/
 }
 
-/*.md-sidebar--secondary .md-sidebar__inner {
+/*
+SIDEBAR BORDERS
+
+.md-sidebar--secondary .md-sidebar__inner {
   border-left: .1rem solid rgba(0,0,0,.07);
   border-right: none;
 }
 
 .md-sidebar--secondary .md-nav--secondary {
   border: none;
-}*/
+}
+*/
+
+/*
+STICKY FOOTER
+
+/* MARKDOWN */
