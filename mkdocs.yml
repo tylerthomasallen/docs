@@ -44,6 +44,7 @@ extra:
       link: 'https://www.facebook.com/branchmetrics'
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company-beta/3813083'
+  disqus: 'branch-2'
 
 # Extensions
 markdown_extensions:
