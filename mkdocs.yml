@@ -58,107 +58,109 @@ markdown_extensions:
 # Pages
 pages:
   - Features: index.md
-  - Getting Started:
-    - iOS:
-      - Deep link into your app: getting-started/ios/deep-link.md
-      - Create links: getting-started/ios/create-link.md
-      - Share links: getting-started/ios/share-link.md
-      - Navigate to content: getting-started/ios/navigate-link.md
-      - Track custom events: getting-started/ios/track-event.md
-      - Track and refer users: getting-started/ios/track-user.md
-      - Track and publicize content: getting-started/ios/track-content.md
-      - Increase matching success: getting-started/ios/match-success.md
-    - Android:
-      - Deep link into your app: getting-started/android/deep-link.md
-      - Create links: getting-started/android/create-link.md
-      - Share links: getting-started/android/share-link.md
-      - Navigate to content: getting-started/android/navigate-link.md
-      - Track custom events: getting-started/android/track-event.md
-      - Track and refer users: getting-started/android/track-user.md
-      - Track and publicize content: getting-started/android/track-content.md
-      - Increase matching success: getting-started/android/match-success.md
-    - Adobe AIR:
-      - Deep link into your app: getting-started/air-ane/deep-link.md
-      - Create links: getting-started/air-ane/create-link.md
-      - Share links: getting-started/air-ane/share-link.md
-      - Navigate to content: getting-started/air-ane/navigate-link.md
-      - Track custom events: getting-started/air-ane/track-event.md
-      - Track and refer users: getting-started/air-ane/track-user.md
-      - Track and publicize content: getting-started/air-ane/track-content.md
-      - Increase matching success: getting-started/air-ane/match-success.md
-    - Cordova PhoneGap Ionic:
-      - Deep link into your app: getting-started/cordova-phonegap-ionic/deep-link.md
-      - Create links: getting-started/cordova-phonegap-ionic/create-link.md
-      - Share links: getting-started/cordova-phonegap-ionic/share-link.md
-      - Navigate to content: getting-started/cordova-phonegap-ionic/navigate-link.md
-      - Track custom events: getting-started/cordova-phonegap-ionic/track-event.md
-      - Track and refer users: getting-started/cordova-phonegap-ionic/track-user.md
-      - Track and publicize content: getting-started/cordova-phonegap-ionic/track-content.md
-      - Increase matching success: getting-started/cordova-phonegap-ionic/match-success.md
-    - iMessage:
-      - Deep link into your app: getting-started/ios-imessage/deep-link.md
-      - Create links: getting-started/ios-imessage/create-link.md
-      - Share links: getting-started/ios-imessage/share-link.md
-      - Navigate to content: getting-started/ios-imessage/navigate-link.md
-      - Track custom events: getting-started/ios-imessage/track-event.md
-      - Track and refer users: getting-started/ios-imessage/track-user.md
-      - Track and publicize content: getting-started/ios-imessage/track-content.md
-      - Increase matching success: getting-started/ios-imessage/match-success.md
-    - mParticle Android:
-      - Deep link into your app: getting-started/mparticle-android/deep-link.md
-      - Create links: getting-started/mparticle-android/create-link.md
-      - Share links: getting-started/mparticle-android/share-link.md
-      - Navigate to content: getting-started/mparticle-android/navigate-link.md
-      - Track custom events: getting-started/mparticle-android/track-event.md
-      - Track and refer users: getting-started/mparticle-android/track-user.md
-      - Track and publicize content: getting-started/mparticle-android/track-content.md
-      - Increase matching success: getting-started/mparticle-android/match-success.md
-      - Deep link into your app: getting-started/titanium/deep-link.md
-    - mParticle iOS:
-      - Deep link into your app: getting-started/mparticle-ios/deep-link.md
-      - Create links: getting-started/mparticle-ios/create-link.md
-      - Share links: getting-started/mparticle-ios/share-link.md
-      - Navigate to content: getting-started/mparticle-ios/navigate-link.md
-      - Track custom events: getting-started/mparticle-ios/track-event.md
-      - Track and refer users: getting-started/mparticle-ios/track-user.md
-      - Track and publicize content: getting-started/mparticle-ios/track-content.md
-      - Increase matching success: getting-started/mparticle-ios/match-success.md
-    - Titanium:
-      - Create links: getting-started/titanium/create-link.md
-      - Share links: getting-started/titanium/share-link.md
-      - Navigate to content: getting-started/titanium/navigate-link.md
-      - Track custom events: getting-started/titanium/track-event.md
-      - Track and refer users: getting-started/titanium/track-user.md
-      - Track and publicize content: getting-started/titanium/track-content.md
-      - Increase matching success: getting-started/titanium/match-success.md
-    - React Native:
-      - Deep link into your app: getting-started/react-native/deep-link.md
-      - Create links: getting-started/react-native/create-link.md
-      - Share links: getting-started/react-native/share-link.md
-      - Navigate to content: getting-started/react-native/navigate-link.md
-      - Track custom events: getting-started/react-native/track-event.md
-      - Track and refer users: getting-started/react-native/track-user.md
-      - Track and publicize content: getting-started/react-native/track-content.md
-      - Increase matching success: getting-started/react-native/match-success.md
-    - Unity:
-      - Deep link into your app: getting-started/unity/deep-link.md
-      - Create links: getting-started/unity/create-link.md
-      - Share links: getting-started/unity/share-link.md
-      - Navigate to content: getting-started/unity/navigate-link.md
-      - Track custom events: getting-started/unity/track-event.md
-      - Track and refer users: getting-started/unity/track-user.md
-      - Track and publicize content: getting-started/unity/track-content.md
-      - Increase matching success: getting-started/unity/match-success.md
-    - Xamarin:
-      - Deep link into your app: getting-started/xamarin/deep-link.md
-      - Create links: getting-started/xamarin/create-link.md
-      - Share links: getting-started/xamarin/share-link.md
-      - Navigate to content: getting-started/xamarin/navigate-link.md
-      - Track custom events: getting-started/xamarin/track-event.md
-      - Track and refer users: getting-started/xamarin/track-user.md
-      - Track and publicize content: getting-started/xamarin/track-content.md
-      - Increase matching success: getting-started/xamarin/match-success.md
-  - Convert Web to App:
+  - Getting started:
+    - iOS: getting-started/ios.md
+      # - Deep link into your app: getting-started/ios/deep-link.md
+      # - Create links: getting-started/ios/create-link.md
+      # - Share links: getting-started/ios/share-link.md
+      # - Navigate to content: getting-started/ios/navigate-link.md
+      # - Track custom events: getting-started/ios/track-event.md
+      # - Track and refer users: getting-started/ios/track-user.md
+      # - Track and publicize content: getting-started/ios/track-content.md
+      # - Increase matching success: getting-started/ios/match-success.md
+    - Android: getting-started/android.md
+      # - Deep link into your app: getting-started/android/deep-link.md
+      # - Create links: getting-started/android/create-link.md
+      # - Share links: getting-started/android/share-link.md
+      # - Navigate to content: getting-started/android/navigate-link.md
+      # - Track custom events: getting-started/android/track-event.md
+      # - Track and refer users: getting-started/android/track-user.md
+      # - Track and publicize content: getting-started/android/track-content.md
+      # - Increase matching success: getting-started/android/match-success.md
+    - Adobe AIR: getting-started/adobe-air.md
+      # - Deep link into your app: getting-started/air-ane/deep-link.md
+      # - Create links: getting-started/air-ane/create-link.md
+      # - Share links: getting-started/air-ane/share-link.md
+      # - Navigate to content: getting-started/air-ane/navigate-link.md
+      # - Track custom events: getting-started/air-ane/track-event.md
+      # - Track and refer users: getting-started/air-ane/track-user.md
+      # - Track and publicize content: getting-started/air-ane/track-content.md
+      # - Increase matching success: getting-started/air-ane/match-success.md
+    - Cordova PhoneGap Ionic: getting-started/cordova-phonegap-ionic.md
+      # - Deep link into your app: getting-started/cordova-phonegap-ionic/deep-link.md
+      # - Create links: getting-started/cordova-phonegap-ionic/create-link.md
+      # - Share links: getting-started/cordova-phonegap-ionic/share-link.md
+      # - Navigate to content: getting-started/cordova-phonegap-ionic/navigate-link.md
+      # - Track custom events: getting-started/cordova-phonegap-ionic/track-event.md
+      # - Track and refer users: getting-started/cordova-phonegap-ionic/track-user.md
+      # - Track and publicize content: getting-started/cordova-phonegap-ionic/track-content.md
+      # - Increase matching success: getting-started/cordova-phonegap-ionic/match-success.md
+    - iMessage: getting-started/imessage.md
+      # - Deep link into your app: getting-started/ios-imessage/deep-link.md
+      # - Create links: getting-started/ios-imessage/create-link.md
+      # - Share links: getting-started/ios-imessage/share-link.md
+      # - Navigate to content: getting-started/ios-imessage/navigate-link.md
+      # - Track custom events: getting-started/ios-imessage/track-event.md
+      # - Track and refer users: getting-started/ios-imessage/track-user.md
+      # - Track and publicize content: getting-started/ios-imessage/track-content.md
+      # - Increase matching success: getting-started/ios-imessage/match-success.md
+    - mParticle Android: getting-started/mparticle-android.md
+      # - Deep link into your app: getting-started/mparticle-android/deep-link.md
+      # - Create links: getting-started/mparticle-android/create-link.md
+      # - Share links: getting-started/mparticle-android/share-link.md
+      # - Navigate to content: getting-started/mparticle-android/navigate-link.md
+      # - Track custom events: getting-started/mparticle-android/track-event.md
+      # - Track and refer users: getting-started/mparticle-android/track-user.md
+      # - Track and publicize content: getting-started/mparticle-android/track-content.md
+      # - Increase matching success: getting-started/mparticle-android/match-success.md
+      # - Deep link into your app: getting-started/titanium/deep-link.md
+    - mParticle iOS: getting-started/mparticle-ios.md
+      # - Deep link into your app: getting-started/mparticle-ios/deep-link.md
+      # - Create links: getting-started/mparticle-ios/create-link.md
+      # - Share links: getting-started/mparticle-ios/share-link.md
+      # - Navigate to content: getting-started/mparticle-ios/navigate-link.md
+      # - Track custom events: getting-started/mparticle-ios/track-event.md
+      # - Track and refer users: getting-started/mparticle-ios/track-user.md
+      # - Track and publicize content: getting-started/mparticle-ios/track-content.md
+      # - Increase matching success: getting-started/mparticle-ios/match-success.md
+    - Titanium: getting-started/titanium.md
+      # - Create links: getting-started/titanium/create-link.md
+      # - Share links: getting-started/titanium/share-link.md
+      # - Navigate to content: getting-started/titanium/navigate-link.md
+      # - Track custom events: getting-started/titanium/track-event.md
+      # - Track and refer users: getting-started/titanium/track-user.md
+      # - Track and publicize content: getting-started/titanium/track-content.md
+      # - Increase matching success: getting-started/titanium/match-success.md
+    - React Native: getting-started/react-native.md
+      # - Deep link into your app: getting-started/react-native/deep-link.md
+      # - Create links: getting-started/react-native/create-link.md
+      # - Share links: getting-started/react-native/share-link.md
+      # - Navigate to content: getting-started/react-native/navigate-link.md
+      # - Track custom events: getting-started/react-native/track-event.md
+      # - Track and refer users: getting-started/react-native/track-user.md
+      # - Track and publicize content: getting-started/react-native/track-content.md
+      # - Increase matching success: getting-started/react-native/match-success.md
+    - Unity: getting-started/unity.md
+      # - Deep link into your app: getting-started/unity/deep-link.md
+      # - Create links: getting-started/unity/create-link.md
+      # - Share links: getting-started/unity/share-link.md
+      # - Navigate to content: getting-started/unity/navigate-link.md
+      # - Track custom events: getting-started/unity/track-event.md
+      # - Track and refer users: getting-started/unity/track-user.md
+      # - Track and publicize content: getting-started/unity/track-content.md
+      # - Increase matching success: getting-started/unity/match-success.md
+    - Xamarin: getting-started/xamarin.md
+      # - Deep link into your app: getting-started/xamarin/deep-link.md
+      # - Create links: getting-started/xamarin/create-link.md
+      # - Share links: getting-started/xamarin/share-link.md
+      # - Navigate to content: getting-started/xamarin/navigate-link.md
+      # - Track custom events: getting-started/xamarin/track-event.md
+      # - Track and refer users: getting-started/xamarin/track-user.md
+      # - Track and publicize content: getting-started/xamarin/track-content.md
+      # - Increase matching success: getting-started/xamarin/match-success.md
+  - Managing links:
+    - Create links: managing-links/create-links.md
+  - Converting web to app:
     - Deep Views: web-to-app/deep-views.md
     - Text me the app: web-to-app/text-me-the-app.md
     - Journeys: web-to-app/journeys.md
