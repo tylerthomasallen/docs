@@ -159,6 +159,7 @@ pages:
       # - Track and publicize content: getting-started/xamarin/track-content.md
       # - Increase matching success: getting-started/xamarin/match-success.md
   - Managing links:
+    - Understand links: managing-links/understand-links.md
     - Create links: managing-links/create-links.md
   - Converting web to app:
     - Deep Views: web-to-app/deep-views.md
