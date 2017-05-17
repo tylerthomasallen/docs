@@ -54,7 +54,7 @@
 
 - [Carthage](https://github.com/Carthage/Carthage) 
     
-    ```sh hl_lines="1"
+    ```sh
     github "BranchMetrics/ios-branch-deep-linking"
     ```
 
@@ -158,7 +158,59 @@
 
 ## iOS - Features
 
+#### Create Deep Link
+
+- Swift 3.0 
+
+    ```swift
+   
+    ```
+        
+- Objective-C
+
+    ```objc
+    
+    ```
+
+#### Share Deep Link
+
+- Swift 3.0 
+
+    ```swift
+   
+    ```
+        
+- Objective-C
+
+    ```objc
+    
+    ```
+
+
+#### Navigate to ViewController
+
+- Create deep link
+- Add any custom key-value pair
+- Read custom key-value pair
+
+    + Swift 3.0
+
+        ```swift
+       
+        ```
+            
+    + Objective-C
+
+        ```objc
+        
+        ```
+
+
+
 ## iOS - Troubleshooting
 
-#### App does open
-#### Data does not pass through
+#### Why does my app not open?
+#### Why does my deep link data not pass through?
+#### Why are my deep links long?
+#### How do I create offline deep links?
+
