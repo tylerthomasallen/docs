@@ -1,13 +1,13 @@
-## Getting Started
+## Cordova - Integrate Branch
 
-- #### Configure Branch
+#### Configure Branch
 
   - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
     ![image](http://i.imgur.com/wazVu3U.png)
     ![image](http://i.imgur.com/9PEylbS.png)
 
-- #### Configure App
+#### Configure app
 
   - Cordova and Ionic
     ```xml
@@ -44,7 +44,7 @@
     - `cordova.app.link`
     - `PW4Q8885U7`
 
-- #### Initialize Branch
+#### Initialize Branch
 
   - Cordova and PhoneGap
     ```js
@@ -112,6 +112,7 @@
     ```
 
   - Ionic 2/3
+
     ```typescript
     // sample app.component.js
     import { Component } from '@angular/core';
@@ -153,7 +154,7 @@
     }
     ```
 
-- #### Test Deep Link iOS
+#### Test deep link iOS
 
   - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
 
@@ -167,7 +168,7 @@
 
   - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
 
-- #### Test Deep Link Android
+#### Test deep link Android
 
   - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
 
@@ -179,9 +180,9 @@
 
   - Click on the deep link to open your app
 
-## Features
+## Cordova - Features
 
-- #### Initialize Branch Features
+#### Initialize Branch features
 
   - Loads Branch into your app
 
@@ -190,9 +191,6 @@
     ```js
     // for development and debugging only
     Branch.setDebug(true)
-
-    // sync with Mixpanel if installed
-    Branch.setMixpanelToken('your_mixpanel_token')
 
     // Branch initialization
     Branch.initSession(function(data) {
@@ -205,7 +203,7 @@
     })
     ```
 
-- #### Create Content Reference
+#### Create content reference
 
   - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
@@ -239,7 +237,7 @@
     })
     ```
 
-- #### Create Deep Link
+#### Create deep link
 
   - Creates a deep link URL with encapsulated data
 
@@ -281,7 +279,7 @@
     })
     ```
 
-- #### Share Deep Link
+#### Share deep link
 
   -  Will generate a Branch deep link and tag it with the channel the user selects
 
@@ -331,7 +329,7 @@
     branchUniversalObj.showShareSheet(analytics, properties, message)
     ```
 
-- #### Read Deep Link
+#### Read deep link
 
   - Retrieve Branch data from a deep link
 
@@ -364,7 +362,7 @@
     })
     ```
 
-- #### Display Content
+#### Display Content
 
   - List content on iOS Spotlight
 
@@ -378,7 +376,7 @@
     })
     ```
 
-- #### Track Content
+#### Track content
 
   - Track how many times a user views a particular piece of content
 
@@ -394,7 +392,7 @@
     })
     ```
 
-- #### Track User
+#### Track users
 
   - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
   
@@ -419,7 +417,7 @@
     })
     ```
 
-- #### Track Event
+#### Track events
 
   - Registers custom events
   
@@ -448,7 +446,7 @@
     })
     ```
 
-- #### Handle Referrals
+#### Handle referrals
 
   - Referral points are obtained from events triggered by users from rules created on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
   
@@ -520,15 +518,15 @@
     })
     ```
 
-## Troubleshooting
+## Cordova - Advance
 
-- #### Testing: Key Points
+#### Recommendations
 
-  - Need to checkmark "app uses IDFA and GAID" when publishing your app
+  - Need to select `"app uses IDFA or GAID"` when publishing your app
 
-  - Best to enable [Deepviews](https://dashboard.branch.io/settings/deepviews) ([Testing: Supported Platforms](#testing-supported-platforms))
+  - Best to enable [deep views](https://dashboard.branch.io/settings/deepviews) ([Testing: Supported Platforms](#testing-supported-platforms))
 
-- #### Testing: Optional App Config
+#### Optional app config
 
   ```xml
   <!-- sample config.xml -->
@@ -552,25 +550,11 @@
   <widget ios-CFBundleIdentifier="com.eneff.branch.cordovatestbedios" android-packageName="com.eneff.branch.cordovatestbedandroid" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   ```
 
-- #### Testing: Branch Analytics
-  
-  - Whenever a user `clicks` on a deep link and opens the app, and will trigger either an `install` or an `open`
+## Cordova - Troubleshooting
 
-  - `installs` represent Branch recognizing the app_id and device_id for the first time
-
-  - `installs` represent new app users and the success rate of your Branch deep links    
-
-  - `installs` do **not** represent App Store downloads
-
-  - `non-Branch installs` are installs outside of Branch deep link clicks
-
-  - `opens` are non-installs
-
-  - If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
-
-  - If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
-
-- #### Testing: Simulating an Install
+#### Branch analytics overview
+ 
+#### Simulating an install
   
   - Delete your app
 
@@ -588,35 +572,13 @@
 
   - Read from `Branch.initSession(data)` for `+is_first_session = true` 
 
-- #### Testing: Supported Platforms
+#### Supported Platforms
 
-  - Apps which support Branch deep links
-
-    | | iOS | Details | Android | Details
-    | --- | :-: | --- | :-: | ---
-    | Facebook NewsFeed | ✅ | Works when [DeepViews](https://dashboard.branch.io/settings/deepviews) are enabled | ✅ |
-    | Facebook Messanger | ✅ | Works when [DeepViews](https://dashboard.branch.io/settings/deepviews) are enabled | ✅ | Works except the `app.link` domain is not click-able |
-    | Twitter | ✅ | | ✅ |
-    | Pinterest | ✅ | Works when [DeepViews](https://dashboard.branch.io/settings/deepviews) are enabled | ✅ |
-    | Slack | ✅ | | ✅ | |
-    | Chrome address bar | ✅ | | ✅ |
-    | Chrome web page | ✅ | | ✅ |
-    | FireFox address bar | 🅾️ | | ✅ |
-    | FireFox web page | ✅ | | ✅ |
-    | Safari address bar | 🅾️ | | |
-    | Safari web page | ✅ | | |
-    | WeChat | ✅ | Works when [DeepViews](https://dashboard.branch.io/settings/deepviews) are enabled | ✅ |
-    | WhatsApp | ✅ | | ✅ |
-    | Hangouts | ✅ | | ✅ |
-    | iMessage | ✅ | | |
-    | Apple Mail | ✅ | | |
-    | Gmail | ✅ | | ✅ |
-
-- #### Testing: Sample Testing App
+#### Sample testing app
 
   - [Branch Testing App](https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking/tree/master/testbed)
 
-- #### Link Data: Universal Object Properties
+#### Link Data: Universal Object Properties
 
   - For [Create Content Reference](#create-content-reference)
 
@@ -634,7 +596,7 @@
     | contentIndexingMode | `"public"` | Can be set to either `"public"` or `"private"`. Public indicates that you’d like this content to be discovered by other apps. | `$publicly_indexable`
     | contentMetadata | | Any custom key-value data e.g. `{ "custom": "data" }`
 
-- #### Link Data: Deep Link Properties
+#### Link Data: Deep Link Properties
 
   - For [Create Deep Link](#create-deep-link) and [Share Deep Link](#share-deep-link)
 
@@ -739,7 +701,7 @@
       | $twitter_player_width | | Set the player’s width in pixels
       | $twitter_player_height | | Set the player’s height in pixels
 
-- #### Compiling: Cordova Dependencies
+#### Compiling: Cordova Dependencies
 
   - Node
 
@@ -801,7 +763,7 @@
 
     - Genymotion -> Add virtual device -> Google Nexus 6P - 6.0.0 - API 23 -> Next
 
-- #### Compiling: Show Console Logs
+#### Compiling: Show Console Logs
 
   - iOS Simulator
 
@@ -845,7 +807,7 @@
 
     - Chrome -> [chrome://inspect/#devices](chrome://inspect/#devices) -> Console
 
-- #### Compiling: Updating the Branch SDK
+#### Compiling: Updating the Branch SDK
 
   ```bash
   # terminal
@@ -858,7 +820,7 @@
   <plugin name="branch-cordova-sdk" spec="^2.5.0" />
   ```
 
-- #### Compiling: Incompatible Plugins
+#### Compiling: Incompatible Plugins
 
   - The following plugins will not work with the Branch SDK
 
@@ -870,7 +832,7 @@
 
   - [Ionic Deeplinks Plugin](https://github.com/driftyco/ionic-plugin-deeplinks)
 
-- #### Compiling: Errors
+#### Compiling: Errors
 
   - error
 
