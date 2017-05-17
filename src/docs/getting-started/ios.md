@@ -39,7 +39,7 @@
 
 #### Install Branch
 
-- [CocoaPods](https://cocoapods.org/) 
+- Option 1: [CocoaPods](https://cocoapods.org/) 
 
     ```sh hl_lines="7"
     platform :ios, '8.0'
@@ -52,13 +52,13 @@
     end
     ```
 
-- [Carthage](https://github.com/Carthage/Carthage) 
+- Option 2: [Carthage](https://github.com/Carthage/Carthage) 
     
     ```sh
     github "BranchMetrics/ios-branch-deep-linking"
     ```
 
-- Manually install [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) 
+- Option 3: Manually install [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) 
 
     ![image](http://i.imgur.com/0NcOrkE.png)
 
@@ -157,6 +157,9 @@
   - ![image](http://i.imgur.com/VJVICXd.png)
 
 ## iOS - Features
+
+#### Create Content Reference
+
 
 #### Create Deep Link
 
