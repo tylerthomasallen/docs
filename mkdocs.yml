@@ -70,9 +70,9 @@ pages:
     - React Native: getting-started/react-native.md
     - Unity: getting-started/unity.md
     - Xamarin: getting-started/xamarin.md
-  - Managing links:
-    - Understand links: managing-links/understand-links.md
-    - Create links: managing-links/create-links.md
+  - Configuring links:
+    - Understanding links: managing-links/understand-links.md
+    - Creating links: managing-links/create-links.md
   - Converting web to app:
     - Deep Views: web-to-app/deep-views.md
     - Text me the app: web-to-app/text-me-the-app.md
