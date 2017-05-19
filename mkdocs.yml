@@ -20,7 +20,6 @@ extra_css:
   - 'css/analytics.css'
   - 'css/main.css'
 extra_javascript:
-  # - 'js/analytics.js' #### need to fix white screen flash by moving js to head
   - 'js/main.js'
 site_favicon: img/favicon-96x96.png
 
