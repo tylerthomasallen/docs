@@ -14,8 +14,8 @@ copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
 
 # Files
 theme: 'material'
-docs_dir: 'src/docs'
 theme_dir: 'lib/mkdocs-material/material'
+docs_dir: 'src'
 extra_css:
   - 'css/analytics.css'
   - 'css/main.css'
@@ -59,58 +59,58 @@ markdown_extensions:
 pages:
   - Features: index.md
   - Getting started:
-    - iOS: getting-started/ios.md
-    - Android: getting-started/android.md
-    - Adobe AIR: getting-started/adobe-air.md
-    - Cordova PhoneGap Ionic: getting-started/cordova-phonegap-ionic.md
-    - iMessage: getting-started/imessage.md
-    - mParticle Android: getting-started/mparticle-android.md
-    - mParticle iOS: getting-started/mparticle-ios.md
-    - Titanium: getting-started/titanium.md
-    - React Native: getting-started/react-native.md
-    - Unity: getting-started/unity.md
-    - Xamarin: getting-started/xamarin.md
+    - iOS: docs/getting-started/ios.md
+    - Android: docs/getting-started/android.md
+    - Adobe AIR: docs/getting-started/adobe-air.md
+    - Cordova PhoneGap Ionic: docs/getting-started/cordova-phonegap-ionic.md
+    - iMessage: docs/getting-started/imessage.md
+    - mParticle Android: docs/getting-started/mparticle-android.md
+    - mParticle iOS: docs/getting-started/mparticle-ios.md
+    - Titanium: docs/getting-started/titanium.md
+    - React Native: docs/getting-started/react-native.md
+    - Unity: docs/getting-started/unity.md
+    - Xamarin: docs/getting-started/xamarin.md
   - Configuring links:
-    - Understanding links: managing-links/understand-links.md
-    - Creating links: managing-links/create-links.md
+    - Understanding links: docs/managing-links/understand-links.md
+    - Creating links: docs/managing-links/create-links.md
   - Converting web to app:
-    - Deep Views: web-to-app/deep-views.md
-    - Text me the app: web-to-app/text-me-the-app.md
-    - Journeys: web-to-app/journeys.md
+    - Deep Views: docs/web-to-app/deep-views.md
+    - Text me the app: docs/web-to-app/text-me-the-app.md
+    - Journeys: docs/web-to-app/journeys.md
   - Converting ads to app:
-    - Deep Link Feeds: ads-to-app/deep-link-feeds.md
-    - App Install Ads: ads-to-app/app-install-ads.md
-    - Google App Installs: ads-to-app/google-app-installs.md
-    - Google Universal App Campaigns: ads-to-app/google-universal-app-campaigns.md
-    - Google Search Ads: ads-to-app/google-search.md
-    - Facebook App Installs: ads-to-app/facebook-app-installs.md
-    - Facebook App Engagement: ads-to-app/facebook-app-engagement.md
-    - Facebook Instagram: ads-to-app/facebook-instagram.md
-    - Pinterets App Installs: ads-to-app/pinterest-app-installs.md
-    - Snapchat App Installs: ads-to-app/snapchat-app-installs.md
+    - Deep Link Feeds: docs/ads-to-app/deep-link-feeds.md
+    - App Install Ads: docs/ads-to-app/app-install-ads.md
+    - Google App Installs: docs/ads-to-app/google-app-installs.md
+    - Google Universal App Campaigns: docs/ads-to-app/google-universal-app-campaigns.md
+    - Google Search Ads: docs/ads-to-app/google-search.md
+    - Facebook App Installs: docs/ads-to-app/facebook-app-installs.md
+    - Facebook App Engagement: docs/ads-to-app/facebook-app-engagement.md
+    - Facebook Instagram: docs/ads-to-app/facebook-instagram.md
+    - Pinterets App Installs: docs/ads-to-app/pinterest-app-installs.md
+    - Snapchat App Installs: docs/ads-to-app/snapchat-app-installs.md
   - Converting emails to app:
-    - Responsys: emails-to-app/responsys.md
-    - SFMC: emails-to-app/sfmc.md
-    - SendGrid: emails-to-app/sendgrid.md
-    - Sailthru: emails-to-app/sailthru.md
-    - AppBoy: emails-to-app/appboy.md
-    - Self Serve: emails-to-app/self-serve.md
+    - Responsys: docs/emails-to-app/responsys.md
+    - SFMC: docs/emails-to-app/sfmc.md
+    - SendGrid: docs/emails-to-app/sendgrid.md
+    - Sailthru: docs/emails-to-app/sailthru.md
+    - AppBoy: docs/emails-to-app/appboy.md
+    - Self Serve: docs/emails-to-app/self-serve.md
   - Tracking analytics:
-    - Growth: track-analytics/growth-attribution.md
-    - User Value: track-analytics/user-value attribution.md
-    - Revenue: track-analytics/revenue-attribution.md
+    - Growth: docs/track-analytics/growth-attribution.md
+    - User Value: docs/track-analytics/user-value attribution.md
+    - Revenue: docs/track-analytics/revenue-attribution.md
   - Exporting analytics:
-    - CSV Export: export-analytics/export-csv.md
-    - Export API: export-analytics/export-api.md
-    - Webhooks: export-analytics/export-webhooks.md
+    - CSV Export: docs/export-analytics/export-csv.md
+    - Export API: docs/export-analytics/export-api.md
+    - Webhooks: docs/export-analytics/export-webhooks.md
   - Integrating analytics:
-    - Abobe Analytics: integrate-analytics/abobe-analytics.md
-    - Adjust: integrate-analytics/adjust.md
-    - Amplitude: integrate-analytics/amplitude.md
-    - AppBoy: integrate-analytics/appboy.md
-    - Google Analytics: integrate-analytics/google-analytics.md
-    - Kochava: integrate-analytics/kochava.md
-    - Localytics: integrate-analytics/localytics.md
-    - Mixpanel: integrate-analytics/mixpanel.md
-    - Tune: integrate-analytics/tune.md
-    - AppMetrica: integrate-analytics/appmetrica.md
+    - Abobe Analytics: docs/integrate-analytics/abobe-analytics.md
+    - Adjust: docs/integrate-analytics/adjust.md
+    - Amplitude: docs/integrate-analytics/amplitude.md
+    - AppBoy: docs/integrate-analytics/appboy.md
+    - Google Analytics: docs/integrate-analytics/google-analytics.md
+    - Kochava: docs/integrate-analytics/kochava.md
+    - Localytics: docs/integrate-analytics/localytics.md
+    - Mixpanel: docs/integrate-analytics/mixpanel.md
+    - Tune: docs/integrate-analytics/tune.md
+    - AppMetrica: docs/integrate-analytics/appmetrica.md
