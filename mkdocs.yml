@@ -14,8 +14,8 @@ copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
 
 # Files
 theme: 'material'
-theme_dir: 'src'
 docs_dir: 'src/docs'
+theme_dir: 'lib/mkdocs-material/material'
 extra_css:
   - 'css/analytics.css'
   - 'css/main.css'
