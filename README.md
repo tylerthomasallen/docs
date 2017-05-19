@@ -48,7 +48,9 @@ open https://ethanneff.github.io/branch-docs/
 
 ### additional
 
-- modify mkdocs material http://squidfunk.github.io/mkdocs-material/customization/#theme-development
+- modify mkdocs material 
+    - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
+    - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
 
 ### best practices
 
