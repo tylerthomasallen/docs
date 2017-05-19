@@ -45,6 +45,12 @@ open https://ethanneff.github.io/branch-docs/ && mkdocs gh-deploy
 
 ### additional
 
+- modify mkdocs 
+    - readme http://www.mkdocs.org/about/contributing/
+    - update to repo `git subtree add --prefix lib/mkdocs https://github.com/mkdocs/mkdocs master --squash`
+    - add locally `pip install --editable /lib/mkdocs`
+    - remove locally `rm /Library/Python/2.7/site-packages/mkdocs.egg-link`
+
 - modify mkdocs material 
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
     - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
