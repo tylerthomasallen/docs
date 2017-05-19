@@ -18,7 +18,7 @@ cd branch-docs
 
 ```bash
 pip install --upgrade pip
-pip install --editable /lib/mkdocs
+pip install --editable lib/mkdocs
 pip install pygments
 ```
 
@@ -48,8 +48,8 @@ open https://ethanneff.github.io/branch-docs/ && mkdocs gh-deploy
 - modify mkdocs 
     - readme http://www.mkdocs.org/about/contributing/
     - update to repo `git subtree add --prefix lib/mkdocs https://github.com/mkdocs/mkdocs master --squash`
-    - add locally `pip install --editable /lib/mkdocs`
-    - remove locally `rm /Library/Python/2.7/site-packages/mkdocs.egg-link`
+    - add locally `pip install --editable lib/mkdocs`
+    - remove locally `sudo rm /usr/local/bin/mkdocs && rm /Library/Python/2.7/site-packages/mkdocs.egg-link`
 
 - modify mkdocs material 
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
