@@ -18,23 +18,20 @@ cd branch-docs
 
 ```bash
 pip install --upgrade pip
-pip install mkdocs
-pip install mkdocs-material
+pip install --editable /lib/mkdocs
 pip install pygments
 ```
 
 ### development
 
 ```bash
-mkdocs serve
-open http://localhost:8000/
+open http://localhost:8000/ && mkdocs serve
 ```
 
 ### production
 
 ```bash
-mkdocs gh-deploy
-open https://ethanneff.github.io/branch-docs/
+open https://ethanneff.github.io/branch-docs/ && mkdocs gh-deploy
 ```
 
 ### resources
