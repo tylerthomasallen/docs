@@ -17,7 +17,6 @@ theme: 'material'
 theme_dir: 'lib/mkdocs-material/material'
 docs_dir: 'src'
 extra_css:
-  - 'css/analytics.css'
   - 'css/main.css'
 extra_javascript:
   - 'js/main.js'
