@@ -66,7 +66,7 @@
 
 - Swift 3.0 
 
-    ```swift hl_lines="2 10 11 12 13 14 20 26 32"
+    ```swift hl_lines="2 10 11 12 13 14 19 20 25 26 31 32"
     import UIKit
     import Branch
 
@@ -105,7 +105,7 @@
         
 - Objective-C
 
-    ```objc hl_lines="2 11 12 13 14 15 22 28 34"
+    ```objc hl_lines="2 11 12 13 14 15 21 22 27 28 33 34"
     #import "AppDelegate.h"
     #import "Branch/Branch.h"
 
