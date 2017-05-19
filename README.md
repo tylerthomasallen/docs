@@ -19,8 +19,7 @@ cd branch-docs
 ```bash
 pip install --upgrade pip
 pip install mkdocs
-pip install markdown-fenced-code-tabs
-pip install markdown-include
+pip install mkdocs-material
 pip install pygments
 ```
 
@@ -45,6 +44,11 @@ open https://ethanneff.github.io/branch-docs/
 - https://github.com/squidfunk/mkdocs-material
 
 - https://github.com/facelessuser/pymdown-extensions
+
+
+### additional
+
+- modify mkdocs material http://squidfunk.github.io/mkdocs-material/customization/#theme-development
 
 ### best practices
 
