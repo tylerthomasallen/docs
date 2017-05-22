@@ -7,7 +7,7 @@ site_url: 'https://ethanneff.github.io/branch-docs'
 # Repository
 repo_name: 'Branch Documentation'
 repo_url: 'https://github.com/ethanneff/branch-docs'
-edit_uri: 'edit/master/src/docs/'
+edit_uri: 'edit/master/src/'
 
 # Copyright
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
