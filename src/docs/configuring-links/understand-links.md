@@ -29,10 +29,12 @@
 
   - Apps which support Branch deep links
 
-    | | iOS | Details | Android | Details
-    | --- | :-: | --- | :-: | ---
+    | | iOS | Usage | Android | Usage |
+    | --- | :-: | --- | :-: | --- |
     | Facebook NewsFeed | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
     | Facebook Messanger | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |  |
+    | Instagram | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |  |
+    | SnapChat | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | 🅾️  | `app.link` deep links are not clickable  |
     | Twitter | ✅ | | ✅ |
     | Pinterest | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
     | Slack | ✅ | | ✅ | |
@@ -55,26 +57,34 @@
 
   - Deep link data structure
 
-    ```json
+    ```js
     {
-        tags: [ 'tag1', 'tag2' ],
-        channel: 'facebook',
-        feature: 'dashboard',
-        stage: 'new user',
-        alias: 'myalias',
-        data: {
-            mydata: 'something',
-            foo: 'bar',
-            '$desktop_url': 'http://myappwebsite.com',
-            '$ios_url': 'http://myappwebsite.com/ios',
-            '$android_url': 'http://myappwebsite.com/android',
-            '$og_app_id': '12345',
-            '$og_title': 'My App',
-            '$og_description': 'My app\'s description.',
-            '$og_image_url': 'http://myappwebsite.com/image.png'
-        }
+      tags: [ 'tag1', 'tag2' ],
+      channel: 'facebook',
+      feature: 'dashboard',
+      stage: 'new user',
+      alias: 'myalias',
+      data: {
+        mydata: 'something',
+        foo: 'bar',
+        $desktop_url: 'http://myappwebsite.com',
+        $ios_url: 'http://myappwebsite.com/ios',
+        $android_url: 'http://myappwebsite.com/android',
+        $og_app_id: '12345',
+        $og_title: 'My App',
+        $og_description: 'My app\'s description.',
+        $og_image_url: 'http://myappwebsite.com/image.png'
+      }
     }
     ```
+
+  - Branch reserved keys
+
+    | Prefix | Usage |
+    | :-: | --- |
+    | $ | Branch reserved keyword
+    | ~ | Branch analytical data
+    | + | Branch added values
 
 #### Analytical labels
 

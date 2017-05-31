@@ -46,7 +46,7 @@ extra:
 
 # Extensions
 markdown_extensions:
-  - codehilite(linenums=true)
+  - codehilite #(linenums=true)
   - footnotes
   - toc(permalink=true)
   - meta
@@ -69,8 +69,8 @@ pages:
     - Unity: docs/getting-started/unity.md
     - Xamarin: docs/getting-started/xamarin.md
   - Configuring links:
-    - Understanding links: docs/managing-links/understand-links.md
-    - Creating links: docs/managing-links/create-links.md
+    - Understanding links: docs/configuring-links/understand-links.md
+    - Creating links: docs/configuring-links/create-links.md
   - Converting web to app:
     - Deep Views: docs/web-to-app/deep-views.md
     - Text me the app: docs/web-to-app/text-me-the-app.md
