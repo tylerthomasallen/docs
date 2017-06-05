@@ -1,6 +1,6 @@
 ### live
 
-- [click here](https://ethanneff.github.io/branch-docs/)
+- [click here](https://branchmetrics.github.io/docs/)
 
 ### dependencies 
 
