@@ -41,7 +41,7 @@
   - Apps which support Branch deep links
 
     | | iOS | Usage | Android | Usage |
-    | --- | :-: | --- | :-: | --- |
+    | --- | --- | --- | --- | --- |
     | Facebook NewsFeed | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
     | Facebook Messanger | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |  |
     | Instagram | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |  |
@@ -108,7 +108,7 @@
   - Branch reserved keys
 
     | Prefix | Usage |
-    | :-: | --- |
+    | --- | --- |
     | $ | Branch reserved keyword
     | ~ | Branch analytical data
     | + | Branch added values
@@ -118,7 +118,7 @@
   - For [Create Deep Link](#create-deep-link) and [Share Deep Link](#share-deep-link)
 
     | Key | Default | Usage
-    | --- | :-: | ---
+    | --- | --- | ---
     | channel | | Use channel to tag the route that your link reaches users. For example, tag links with `"Facebook"` or `"LinkedIn"` to help track clicks and installs through those paths separately
     | feature | | This is the feature of your app that the link might be associated with. For example, if you had built a referral program, you would label links with the feature ‘referral’
     | campaign | | Use this field to organize the links by actual campaign. For example, if you launched a new feature or product and want to run a campaign around that
@@ -132,7 +132,7 @@
 - Pass any custom data to be read inside your app
 
       | Key | Value | Usage
-      | --- | :-: | ---
+      | --- | --- | ---
       | random | `123` | Any key-value pair
       | hello | `"world"` | Any key-value pair
       | custom_data | `true` | Any key-value pair
@@ -145,7 +145,7 @@
 - Navigate to different locations based on device information
 
       | Key | Default | Usage
-      | --- | :-: | ---
+      | --- | --- | ---
       | $fallback_url | | Change the redirect endpoint for all platforms - so you don’t have to enable it by platform. Note that Branch will forward all robots to this URL, which **overrides any OG tags** entered in the link.  System-wide Default URL (set in Link Settings)
       | $desktop_url | | Change the redirect endpoint on desktops Text-Me-The-App page (set in Link Settings)
       | $ios_url | | Change the redirect endpoint for iOS  App Store page for your app (set in Link Settings)
@@ -164,7 +164,7 @@
 - Navigate to different locations based on device information
 
       | Key | Default | Usage
-      | --- | :-: | ---
+      | --- | --- | ---
       | $deeplink_path | `open?link_click_id=1234` | Set the deep link path for all platforms - so you don’t have to enable it by platform. When the Branch SDK receives a link with this parameter set, it will automatically load the custom URI path contained within
       | $android_deeplink_path | | Set the deep link path for Android apps When the Branch SDK receives a link with this parameter set, it will automatically load the custom URI path contained within
       | $ios_deeplink_path | | Set the deep link path for iOS apps. When the Branch SDK receives a link with this parameter set, it will automatically load the custom URI path contained within
@@ -181,7 +181,7 @@
 - set
 
       | Key | Default | Usage
-      | --- | :-: | ---
+      | --- | --- | ---
       | $publicly_indexable | `1` | Cannot modify here. Needs to be set by the Branch Universal Object
       | $keywords | | Keywords for which this content should be discovered by. Just assign an array of strings with the keywords you’d like to use
       | $canonical_identifier | | This is the unique identifier for content that will help Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities
@@ -193,7 +193,7 @@
 - set 
 
       | Key | Default | Usage
-      | --- | :-: | ---
+      | --- | --- | ---
       | $ios_deepview | `default_template` | The name of the deepview template to use for iOS
       | $android_deepview | `default_template` | The name of the deepview template to use for Android
       | $desktop_deepview | `default_template` | The name of the deepview template to use for the Desktop
@@ -203,7 +203,7 @@
 - set
  
       | Key | Default | Usage
-      | --- | :-: | ---
+      | --- | --- | ---
       | $og_title | | Set the title of the link as it will be seen in social media displays
       | $og_description | | Set the description of the link as it will be seen in social media displays
       | $og_image_url | | Set the image of the link as it will be seen in social media displays
@@ -220,7 +220,7 @@
 - set
 
       | Key | Default | Usage
-      | --- | :-: | ---
+      | --- | --- | ---
       | $twitter_card | | Set the Twitter card type of the link
       | $twitter_title | | Set the title of the Twitter card
       | $twitter_description | | Set the description of the Twitter card
