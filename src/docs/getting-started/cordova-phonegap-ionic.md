@@ -362,7 +362,7 @@
     })
     ```
 
-#### Display Content
+#### Display content
 
   - List content on iOS Spotlight
 
@@ -445,6 +445,59 @@
       alert('Error: ' + JSON.stringify(err.message))
     })
     ```
+
+#### Track commerce
+
+  - Registers a custom commerce event
+
+  - Link Data: [Track commerce properties](#link-data-commerce-properties) for `Currency` and `Category` 
+  
+  - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+
+    ```js
+    // only revenue is required
+    var event = {
+      'revenue': 50.29,
+      'currency': 148, // USD
+      'transactionID': 'transaction id',
+      'coupon': 'coupon',
+      'shipping': 2.22,
+      'tax': 5.11,
+      'affiliation': 'affiliation',
+      'products': [
+        {
+          'sku': 'u123',
+          'name': 'cactus',
+          'price': 4.99,
+          'quantity': 2,
+          'brand': 'brand',
+          'category': 17, // Software
+          'variant': 'variant'
+        },
+        {
+          'sku': 'u456',
+          'name': 'grass',
+          'price': 0.00,
+          'quantity': 1
+        }
+      ]
+    }
+
+    // optional fields
+    var metadata = {
+      'custom_dictionary': 123,
+      'anything': 'everything'
+    }
+
+    Branch.sendCommerceEvent(event, metadata).then(function (res) {
+      console.log(res)
+      alert('Response: ' + JSON.stringify(res))
+    }).catch(function (err) {
+      console.error(err)
+      alert('Error: ' + JSON.stringify(err.message))
+    })
+    ```
+
 
 #### Handle referrals
 
@@ -601,6 +654,92 @@
 #### Deep link properties
 
 - TODO redirection
+
+#### Link Data: Commerce Properties
+
+- For [Track Commerce](#track-commerce)
+
+- Categories
+
+    | Value | Category | Value | Category |
+    | --- | --- | --- | --- |
+    | 0 | Animals & Pet Supplies | 11 | Home & Garden |
+    | 1 | Apparel & Accessories | 12 | Luggage & Bags |
+    | 2 | Arts & Entertainment | 13 | Mature |
+    | 3 | Baby & Toddler | 14 | Media |
+    | 4 | Business & Industrial | 15 | Office Supplies |
+    | 5 | Camera & Optics | 16 | Religious & Ceremonial |
+    | 6 | Electronics | 17 | Software |
+    | 7 | Food, Beverage & Tobacco | 18 | Sporting Goods |
+    | 8 | Furniture | 19 | Toys & Games |
+    | 9 | Hardware | 20 | Vehicles & Parts |
+    | 10 | Health & Beauty | | | 
+
+
+- Currencies
+
+    | Value | Currency | Value | Currency | Value | Currency |
+    | --- | --- | --- | --- | --- | --- |
+    | 0  | AED | 60 | HKD | 120 | RSD |
+    | 1  | AFN | 61 | HNL | 121 | RUB | 
+    | 2  | ALL | 62 | HRK | 122 | RWF | 
+    | 3  | AMD | 63 | HTG | 123 | SAR | 
+    | 4  | ANG | 64 | HUF | 124 | SBD | 
+    | 5  | AOA | 65 | IDR | 125 | SCR | 
+    | 6  | ARS | 66 | ILS | 126 | SDG | 
+    | 7  | AUD | 67 | INR | 127 | SEK | 
+    | 8  | AWG | 68 | IQD | 128 | SGD | 
+    | 9  | AZN | 69 | IRR | 129 | SHP | 
+    | 10 | BAM | 70 | ISK | 130 | SLL | 
+    | 11 | BBD | 71 | JMD | 131 | SOS | 
+    | 12 | BDT | 72 | JOD | 132 | SRD | 
+    | 13 | BGN | 73 | JPY | 133 | SSP | 
+    | 14 | BHD | 74 | KES | 134 | STD | 
+    | 15 | BIF | 75 | KGS | 135 | SYP | 
+    | 16 | BMD | 76 | KHR | 136 | SZL | 
+    | 17 | BND | 77 | KMF | 137 | THB | 
+    | 18 | BOB | 78 | KPW | 138 | TJS | 
+    | 19 | BOV | 79 | KRW | 139 | TMT | 
+    | 20 | BRL | 80 | KWD | 140 | TND | 
+    | 21 | BSD | 81 | KYD | 141 | TOP | 
+    | 22 | BTN | 82 | KZT | 142 | TRY | 
+    | 23 | BWP | 83 | LAK | 143 | TTD | 
+    | 24 | BYN | 84 | LBP | 144 | TWD | 
+    | 25 | BYR | 85 | LKR | 145 | TZS | 
+    | 26 | BZD | 86 | LRD | 146 | UAH | 
+    | 27 | CAD | 87 | LSL | 147 | UGX | 
+    | 28 | CDF | 88 | LYD | 148 | USD | 
+    | 29 | CHE | 89 | MAD | 149 | USN | 
+    | 30 | CHF | 90 | MDL | 150 | UYI | 
+    | 31 | CHW | 91 | MGA | 151 | UYU | 
+    | 32 | CLF | 92 | MKD | 152 | UZS | 
+    | 33 | CLP | 93 | MMK | 153 | VEF | 
+    | 34 | CNY | 94 | MNT | 154 | VND | 
+    | 35 | COP | 95 | MOP | 155 | VUV | 
+    | 36 | COU | 96 | MRO | 156 | WST | 
+    | 37 | CRC | 97 | MUR | 157 | XAF | 
+    | 38 | CUC | 98 | MVR | 158 | XAG | 
+    | 39 | CUP | 99 | MWK | 159 | XAU | 
+    | 40 | CVE | 100 | MXN | 160 | XBA | 
+    | 41 | CZK | 101 | MXV | 161 | XBB | 
+    | 42 | DJF | 102 | MYR | 162 | XBC | 
+    | 43 | DKK | 103 | MZN | 163 | XBD | 
+    | 44 | DOP | 104 | NAD | 164 | XCD | 
+    | 45 | DZD | 105 | NGN | 165 | XDR | 
+    | 46 | EGP | 106 | NIO | 166 | XFU | 
+    | 47 | ERN | 107 | NOK | 167 | XOF | 
+    | 48 | ETB | 108 | NPR | 168 | XPD | 
+    | 49 | EUR | 109 | NZD | 169 | XPF | 
+    | 50 | FJD | 110 | OMR | 170 | XPT | 
+    | 51 | FKP | 111 | PAB | 171 | XSU | 
+    | 52 | GBP | 112 | PEN | 172 | XTS | 
+    | 53 | GEL | 113 | PGK | 173 | XUA | 
+    | 54 | GHS | 114 | PHP | 174 | XXX | 
+    | 55 | GIP | 115 | PKR | 175 | YER | 
+    | 56 | GMD | 116 | PLN | 176 | ZAR | 
+    | 57 | GNF | 117 | PYG | 177 | ZMW | 
+    | 58 | GTQ | 118 | QAR |     |     |
+    | 59 | GYD | 119 | RON |     |     |
 
 #### Cordova dependencies
 
