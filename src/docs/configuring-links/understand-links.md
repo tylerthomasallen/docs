@@ -3,27 +3,38 @@
 
 #### Default behavior
 
-- *App is installed*
+- App is installed
     -  User `clicks` on a Branch deep link
-    -  App `opens`
+    -  Device `opens` app
     -  Branch passes deep link `data` into app
-- *App is not installed*
+- App is not installed
     - User `clicks` on a Branch deep link
-    - App Store/Google Playstore/Fallback URL opens
+    - Device navigates to the App Store, Google Playstore, or Fallback URL
     - User `installs` and `opens` app
     - Branch passes deep link `data` into app
 
-#### Analytical tracking
+#### Custom behavior
 
-  - Whenever a user `clicks` on a deep link and `opens` the app
-  - This triggers either an `install` or an `open`
-      + `installs` represent Branch recognizing the app_id and device_id for the first time
-      + `installs` represent new app users and the success rate of your Branch deep links
-      + `installs` do **not** represent App Store downloads
-      + `non-Branch installs` are installs outside of Branch deep link clicks
-      + `opens` are non-installs
-      + If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
-      + If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
+- Pass custom data from URL to app
+    + TODO
+
+- Redirect to website when app is installed
+    - [iOS] Override `Universal Links` open by using `$web_only = true` 
+    - [Android] Override `App Links` open by TODO
+
+- Redirect to website when app is not installed (ordered by precedence)
+    - Set `https://name.app.link?$ios_url=https://example.com`
+    - Set `$ios_url = 'https://example.com'` within [link data](#redirections)
+    - Set `$fallback_url = 'https://example.com'` within [link data](#redirections)
+    - Set `$ios_deepview = 'deepviewId'` within [link data](#deepview)
+    - Enable a `global Deep view` on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
+    - Add a `iOS Custom URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+    - Add a `Default URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+
+#### Social behavior
+
+- OG Tags TODO
+- Deep view TODO
 
 #### Supported platforms
 
@@ -50,6 +61,22 @@
     | iMessage | ✅ | | |
     | Apple Mail | ✅ | | |
     | Gmail | ✅ | | ✅ |
+
+## Analytical behavior
+
+#### Analytical tracking
+
+  - Whenever a user `clicks` on a deep link and `opens` the app
+  - This triggers either an `install` or an `open`
+      + `installs` represent Branch recognizing the app_id and device_id for the first time
+      + `installs` represent new app users and the success rate of your Branch deep links
+      + `installs` do **not** represent App Store downloads
+      + `non-Branch installs` are installs outside of Branch deep link clicks
+      + `opens` are non-installs
+      + If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
+      + If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
+
+
 
 ## Link data
 
@@ -116,7 +143,6 @@
 #### Redirections
 
 - Navigate to different locations based on device information
-- iOS `Universal Links` will prevent this if the app is installed (TODO web-only)
 
       | Key | Default | Usage
       | --- | :-: | ---
