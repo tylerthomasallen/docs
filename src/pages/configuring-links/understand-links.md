@@ -119,11 +119,11 @@
 
     | Key | Default | Usage
     | --- | --- | ---
-    | channel | | Use channel to tag the route that your link reaches users. For example, tag links with `"Facebook"` or `"LinkedIn"` to help track clicks and installs through those paths separately
+    | channel | | Use channel to tag the route that your link reaches users. For example, tag links with `'Facebook'` or `'LinkedIn'` to help track clicks and installs through those paths separately
     | feature | | This is the feature of your app that the link might be associated with. For example, if you had built a referral program, you would label links with the feature ‘referral’
     | campaign | | Use this field to organize the links by actual campaign. For example, if you launched a new feature or product and want to run a campaign around that
     | stage | | Use this to categorize the progress or category of a user when the link was generated. For example, if you had an invite system accessible on level 1, level 3 and 5, you could differentiate links generated at each level with this parameter
-    | tags | | This is a free form entry with unlimited values `["string"]`. Use it to organize your link data with labels that don’t fit within the bounds of the above
+    | tags | | This is a free form entry with unlimited values `['string']`. Use it to organize your link data with labels that don’t fit within the bounds of the above
     | alias | | Specify a link alias in place of the standard encoded short URL e.g. `yourdomain.com/youralias`. Link aliases are unique, immutable objects that cannot be deleted. You cannot change the alias of existing links. Aliases on the legacy `bnc.lt` domain are incompatible with Universal Links and Spotlight
     | type | `0` | Must be an `int`. Set to `1` to limit deep link to a single use. Set to `2` to make the link show up under [Quick Links](https://dashboard.branch.io/marketing) while adding `$marketing_title` to `data`. Does not work with the Native SDKs.
 
@@ -134,9 +134,9 @@
       | Key | Value | Usage
       | --- | --- | ---
       | random | `123` | Any key-value pair
-      | hello | `"world"` | Any key-value pair
+      | hello | `'world'` | Any key-value pair
       | custom_data | `true` | Any key-value pair
-      | any_value | `{ "random": "dictionary" }` | Any key-value pair
+      | any_value | `{ 'random': 'dictionary' }` | Any key-value pair
       | look_at | `[1,2,3,4,5,6]` | Any key-value pair
       | nav_here | `content/123` | Any key-value pair
 
