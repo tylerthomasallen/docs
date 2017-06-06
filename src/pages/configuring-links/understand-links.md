@@ -31,10 +31,12 @@
 - Redirect to website when app is installed
     - iOS override `Universal Links` app open
         - Add `$web_only = true` [docs](#redirections)
+        - Add `$ios_url = 'https://google.com'`
         - [or] Append `/e/` by `https://s3z3.app.link/fzmLEhobLD` -> `https://s3z3.app.link/e/fzmLEhobLD`
     - Android override `App Links` app open
         - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-        - Use a broken URI Scheme with `$android_deeplink_path = 'random'`
+        - Add `$android_url = 'https://google.com'`
+        - Add a broken URI Scheme with `$android_deeplink_path = 'random'`
 
 #### Social behavior
 
