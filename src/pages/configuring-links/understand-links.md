@@ -15,13 +15,10 @@
 
 #### Custom behavior
 
-- Pass custom data from URL to app
+- Pass custom data from a deep link to app
+    + `https://s3z3.app.link/fzmLEhobLD?$custom_data = 123` 
     + TODO
-
-- Redirect to website when app is installed
-    - [iOS] Override `Universal Links` open by using `$web_only = true` 
-    - [Android] Override `App Links` open by TODO
-
+    
 - Redirect to website when app is not installed (ordered by precedence)
     - Set `https://name.app.link?$ios_url=https://example.com`
     - Set `$ios_url = 'https://example.com'` within [link data](#redirections)
@@ -30,6 +27,14 @@
     - Enable a `global Deep view` on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
     - Add a `iOS Custom URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
     - Add a `Default URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+
+- Redirect to website when app is installed
+    - iOS override `Universal Links` app open
+        - Add `$web_only = true` [docs](#redirections)
+        - [or] Append `/e/` by `https://s3z3.app.link/fzmLEhobLD` -> `https://s3z3.app.link/e/fzmLEhobLD`
+    - Android override `App Links` app open
+        - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+        - Use a broken URI Scheme with `$android_deeplink_path = 'random'`
 
 #### Social behavior
 
