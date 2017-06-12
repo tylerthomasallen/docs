@@ -27,13 +27,15 @@ pip install mkdocs-material
 ### development
 
 ```bash
-open http://localhost:8000/ && mkdocs serve
+open http://localhost:8000/
+mkdocs serve
 ```
 
 ### production
 
 ```bash
-open https://branchmetrics.github.io/docs && mkdocs gh-deploy
+open https://branchmetrics.github.io/docs
+mkdocs gh-deploy
 ```
 
 ### resources
