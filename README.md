@@ -33,7 +33,7 @@ open http://localhost:8000/ && mkdocs serve
 ### production
 
 ```bash
-open https://ethanneff.github.io/branch-docs/ && mkdocs gh-deploy
+open https://branchmetrics.github.io/docs && mkdocs gh-deploy
 ```
 
 ### resources
