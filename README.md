@@ -9,7 +9,7 @@ python --version #Python 2.7.2
 pip --version #pip 1.5.2
 ```
 
-### install
+### environment
 
 ```bash
 git clone git@github.com:branchmetrics/docs.git
