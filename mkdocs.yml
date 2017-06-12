@@ -2,7 +2,7 @@
 site_name: 'Branch documentation'
 site_description: 'Branch Documentation for Deep Linking'
 site_author: 'Branch'
-site_url: 'https://branchmetrics.github.io/ddocs'
+site_url: 'https://branchmetrics.github.io/docs'
 
 # Repository
 repo_name: 'Branch Documentation'
@@ -46,6 +46,7 @@ extra:
 
 # Extensions
 markdown_extensions:
+  - admonition
   - codehilite #(linenums=true)
   - footnotes
   - toc(permalink=true)
@@ -68,8 +69,8 @@ pages:
     - React Native: pages/getting-started/react-native.md
     - Unity: pages/getting-started/unity.md
     - Xamarin: pages/getting-started/xamarin.md
-  - Configure your website:
-    - Deep Views: pages/web-to-app/deep-views.md
+  - Drive Web to App:
+    - Deepviews: pages/web-to-app/deep-views.md
     - Text me the app: pages/web-to-app/text-me-the-app.md
     - Journeys: pages/web-to-app/journeys.md
   - Configure your links:
