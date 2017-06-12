@@ -9,19 +9,19 @@ python --version #Python 2.7.2
 pip --version #pip 1.5.2
 ```
 
+### install
+
+```bash
+git clone git@github.com:branchmetrics/docs.git
+cd branch-docs
+```
+
 ```bash
 pip install --upgrade pip
 pip install --editable lib/mkdocs
 pip install pygments
 pip install markdown-include
 pip install mkdocs-material
-```
-
-### install
-
-```bash
-git clone git@github.com:branchmetrics/docs.git
-cd branch-docs
 ```
 
 ### development
