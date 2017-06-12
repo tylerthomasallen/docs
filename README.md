@@ -1,6 +1,6 @@
 ### live
 
-- [click here](https://branchmetrics.github.io/docs/)
+[click here](https://branchmetrics.github.io/docs/)
 
 ### dependencies 
 
