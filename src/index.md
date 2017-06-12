@@ -1,63 +1,35 @@
-# Branch Features
+## Why use Branch
 
-> Hyperlinks can navigate to your website, but not to your app. Branch fixes this with deep links.
+- URLs can navigate to your website, but not to your app. 
+- Branch deep links allow users to install, open, and navigate to content inside your app.
+- Branch increases discovery of your app by sharing its content, converting web users to app users, enabling user-to-user sharing, personalizing user experiences, tracking users, tracking referrals, tracking campaigns, tracking conversions, and increasing overall engagement.
 
-> Branch will grow your app by allowing users to install, open, and navigate to content inside your app.
+## Getting started
 
-> Increase discovery of your app by sharing its content, converting web users to app users, enabling user-to-user sharing, personalizing user experiences, tracking users, tracking referrals, tracking campaigns, tracking conversions, and increasing overall engagement.
-
-<p align="center">
-  <a href="https://youtu.be/MXgLQ8QDXk8"><img src="https://i.imgur.com/NF2NEDn.gif"/></a>
-</p>
-
-- Opening URL clicks to app users
-    + Install and open your app with a simple link click
-        + Deep linking 
-        + Content navigation on app open
-        + Deep link emails 
-- Convert web users to app users
-    - continue where they left off, seamless experience
-        - journeys
-        - deep views
-* Convert desktop users to app users
-    - Give the user the best experience
-        - text me the app
-- Share content between users
-    + In-app content sharing
-        * invites
-        + deferred deep linking
-        + referrals
-- Better social, email, and SMS campaigns
-    + Increase your reach, acquisition, conversation, and retention
-        * deep link feeds
-
+<table>
+    <tr valign="top">
+        <td>
+            <p class="branch-feature">Integrate Branch in your app</p>
+            <a href="https://bl.ocks.org/mbostock/4061502"><img src="https://d3js.org/ex/box.png"></a>
+        </td>
+        <td>
+            <p class="branch-feature">Create and share deep links</p>
+            <a href="https://bl.ocks.org/mbostock/4063269"><img src="https://d3js.org/ex/bubble.png"></a>
+        </td>
+        <td>
+            <p class="branch-feature">Track analytics</p>
+            <a href="https://bl.ocks.org/mbostock/4061961"><img src="https://d3js.org/ex/bullet.png"></a>
+        </td>
+    </tr>
+</table>
 
 ## Grow your app
 
 <table>
     <tr valign="top">
-        <td width="25%">Box Plots<br><a href="https://bl.ocks.org/mbostock/4061502"><img width="133" src="https://d3js.org/ex/box.png"></a></td>
-        <td width="25%">Bubble Chart<br><a href="https://bl.ocks.org/mbostock/4063269"><img width="133" src="https://d3js.org/ex/bubble.png"></a></td>
-        <td width="25%">Bullet Charts<br><a href="https://bl.ocks.org/mbostock/4061961"><img width="133" src="https://d3js.org/ex/bullet.png"></a></td>
-        <td width="25%">Calendar View<br><a href="https://bl.ocks.org/mbostock/4063318"><img width="133" src="https://d3js.org/ex/calendar.png"></a></td>
-    </tr>
-    <tr valign="top">
-        <td>Non-contiguous Cartogram<br><a href="https://bl.ocks.org/mbostock/4055908"><img width="133" src="https://d3js.org/ex/cartogram.png"></a></td>
-        <td>Chord Diagram<br><a href="https://bl.ocks.org/mbostock/4062006"><img width="133" src="https://d3js.org/ex/chord.png"></a></td>
-        <td>Dendrogram<br><a href="https://bl.ocks.org/mbostock/4063570"><img width="133" src="https://d3js.org/ex/cluster.png"></a></td>
-        <td>Force-Directed Graph<br><a href="https://bl.ocks.org/mbostock/4062045"><img width="133" src="https://d3js.org/ex/force.png"></a></td>
-    </tr>
-    <tr valign="top">
-        <td>Circle Packing<br><a href="https://bl.ocks.org/mbostock/4063530"><img width="133" src="https://d3js.org/ex/pack.png"></a></td>
-        <td>Population Pyramid<br><a href="https://bl.ocks.org/mbostock/4062085"><img width="133" src="https://d3js.org/ex/population.png"></a></td>
-        <td>Stacked Bars<br><a href="https://bl.ocks.org/mbostock/3943967"><img width="133" src="https://d3js.org/ex/stack.png"></a></td>
-        <td>Streamgraph<br><a href="https://bl.ocks.org/mbostock/4060954"><img width="133" src="https://d3js.org/ex/stream.png"></a></td>
-    </tr>
-    <tr valign="top">
-        <td>Sunburst<br><a href="https://bl.ocks.org/mbostock/4063423"><img width="133" src="https://d3js.org/ex/sunburst.png"></a></td>
-        <td>Node-Link Tree<br><a href="https://bl.ocks.org/mbostock/4063550"><img width="133" src="https://d3js.org/ex/tree.png"></a></td>
-        <td>Treemap<br><a href="https://bl.ocks.org/mbostock/4063582"><img width="133" src="https://d3js.org/ex/treemap.png"></a></td>
-        <td>Voronoi Diagram<br><a href="https://bl.ocks.org/mbostock/4060366"><img width="133" src="https://d3js.org/ex/voronoi.png"></a></td>
+        <td width="33%">Integrate in your app<br><a href="https://bl.ocks.org/mbostock/4061502"><img width="133" src="https://d3js.org/ex/box.png"></a></td>
+        <td width="33%">Create and share deep links<br><a href="https://bl.ocks.org/mbostock/4063269"><img width="133" src="https://d3js.org/ex/bubble.png"></a></td>
+        <td width="33%">Track analytic<br><a href="https://bl.ocks.org/mbostock/4061961"><img width="133" src="https://d3js.org/ex/bullet.png"></a></td>
     </tr>
 </table>
 
@@ -105,3 +77,33 @@
     <td>Linear regression<br><a href="https://nxsheet.com/sheets/56d0a87264e47ee60a95f652"><img width="133" src="https://i.imgur.com/3z8xPkq.png"></a></td>
   </tr>
 </table>
+
+
+
+
+- Opening URL clicks to app users
+    + Install and open your app with a simple link click
+        + Deep linking 
+        + Content navigation on app open
+        + Deep link emails 
+- Convert web users to app users
+    - continue where they left off, seamless experience
+        - journeys
+        - deep views
+* Convert desktop users to app users
+    - Give the user the best experience
+        - text me the app
+- Share content between users
+    + In-app content sharing
+        * invites
+        + deferred deep linking
+        + referrals
+- Better social, email, and SMS campaigns
+    + Increase your reach, acquisition, conversation, and retention
+        * deep link feeds
+
+
+
+<p align="center">
+  <a href="https://youtu.be/MXgLQ8QDXk8"><img src="https://i.imgur.com/NF2NEDn.gif"/></a>
+</p>
