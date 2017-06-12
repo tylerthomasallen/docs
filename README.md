@@ -13,7 +13,7 @@ pip --version #pip 1.5.2
 
 ```bash
 git clone git@github.com:branchmetrics/docs.git
-cd branch-docs
+cd docs
 ```
 
 ```bash
