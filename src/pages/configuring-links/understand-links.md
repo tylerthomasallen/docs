@@ -55,6 +55,7 @@
     | SnapChat | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | 🅾️  | `app.link` deep links are not clickable  |
     | Twitter | ✅ | | ✅ |
     | Pinterest | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
+    | Line | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
     | Slack | ✅ | | ✅ | |
     | Chrome address bar | ✅ | | ✅ |
     | Chrome web page | ✅ | | ✅ |
