@@ -20,6 +20,8 @@ cd branch-docs
 pip install --upgrade pip
 pip install --editable lib/mkdocs
 pip install pygments
+pip install markdown-include
+pip install mkdocs-material
 ```
 
 ### development
