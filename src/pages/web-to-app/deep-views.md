@@ -109,7 +109,7 @@ branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mp
 
 Edit the Title, Description and Image URL in the _Social Media_ section.
 
-![image](/img/pages/deepviews/deepviews_social_media_description.png)
+![image](/img/pages/deepviews/deepviews_social_media_descriptions.png)
 
 **Note:** the _Deep Link_ section accepts most link control parameters, but `$og_title`, `$og_description` and `$og_image_url` **cannot** be specified there.
 
