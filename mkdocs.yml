@@ -56,7 +56,7 @@ markdown_extensions:
 # Pages
 pages:
   - Features: index.md
-  - Getting started:
+  - Configure your app:
     - iOS: pages/getting-started/ios.md
     - Android: pages/getting-started/android.md
     - Adobe AIR: pages/getting-started/adobe-air.md
@@ -68,14 +68,14 @@ pages:
     - React Native: pages/getting-started/react-native.md
     - Unity: pages/getting-started/unity.md
     - Xamarin: pages/getting-started/xamarin.md
-  - Configuring links:
-    - Understanding links: pages/configuring-links/understand-links.md
-    - Creating links: pages/configuring-links/create-links.md
-  - Converting web to app:
+  - Configure your website:
     - Deep Views: pages/web-to-app/deep-views.md
     - Text me the app: pages/web-to-app/text-me-the-app.md
     - Journeys: pages/web-to-app/journeys.md
-  - Converting ads to app:
+  - Configure your links:
+    - Understanding links: pages/configuring-links/understand-links.md
+    - Creating links: pages/configuring-links/create-links.md
+  - Configure your ads:
     - Deep Link Feeds: pages/ads-to-app/deep-link-feeds.md
     - App Install Ads: pages/ads-to-app/app-install-ads.md
     - Google App Installs: pages/ads-to-app/google-app-installs.md
@@ -86,22 +86,22 @@ pages:
     - Facebook Instagram: pages/ads-to-app/facebook-instagram.md
     - Pinterets App Installs: pages/ads-to-app/pinterest-app-installs.md
     - Snapchat App Installs: pages/ads-to-app/snapchat-app-installs.md
-  - Converting emails to app:
+  - Configure your emails:
     - Responsys: pages/emails-to-app/responsys.md
     - SFMC: pages/emails-to-app/sfmc.md
     - SendGrid: pages/emails-to-app/sendgrid.md
     - Sailthru: pages/emails-to-app/sailthru.md
     - AppBoy: pages/emails-to-app/appboy.md
     - Self Serve: pages/emails-to-app/self-serve.md
-  - Tracking analytics:
+  - Track your analytics:
     - Growth: pages/track-analytics/growth-attribution.md
     - User Value: pages/track-analytics/user-value attribution.md
     - Revenue: pages/track-analytics/revenue-attribution.md
-  - Exporting analytics:
+  - Export your analytics:
     - CSV Export: pages/export-analytics/export-csv.md
     - Export API: pages/export-analytics/export-api.md
     - Webhooks: pages/export-analytics/export-webhooks.md
-  - Integrating analytics:
+  - Integrate your analytics:
     - Abobe Analytics: pages/integrate-analytics/abobe-analytics.md
     - Adjust: pages/integrate-analytics/adjust.md
     - Amplitude: pages/integrate-analytics/amplitude.md
