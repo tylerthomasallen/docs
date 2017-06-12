@@ -9,13 +9,6 @@ python --version #Python 2.7.2
 pip --version #pip 1.5.2
 ```
 
-### install
-
-```bash
-git clone git@github.com:ethanneff/branch-docs.git
-cd branch-docs
-```
-
 ```bash
 pip install --upgrade pip
 pip install --editable lib/mkdocs
@@ -24,18 +17,25 @@ pip install markdown-include
 pip install mkdocs-material
 ```
 
+### install
+
+```bash
+git clone git@github.com:branchmetrics/docs.git
+cd branch-docs
+```
+
 ### development
 
 ```bash
-open http://localhost:8000/
 mkdocs serve
+open http://localhost:8000/
 ```
 
 ### production
 
 ```bash
-open https://branchmetrics.github.io/docs
 mkdocs gh-deploy
+open https://branchmetrics.github.io/docs
 ```
 
 ### resources
