@@ -116,6 +116,10 @@
         {% include "partials/tabs.html" %}
       {% endif %}
       <main class="md-main">
+
+      <input id="algolia-doc-search" type="text" placeholder="Search docs..." />
+
+
         <div class="md-main__inner md-grid" data-md-component="container">
           {% block site_nav %}
             {% if nav %}
