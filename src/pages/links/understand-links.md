@@ -16,17 +16,17 @@
 #### Custom behavior
 
 - Pass custom data from a deep link to app
-    + `https://s3z3.app.link/fzmLEhobLD?$custom_data = 123` 
+    + `https://s3z3.app.link/fzmLEhobLD?$custom_data=123` 
     + TODO
     
 - Redirect to website when app is not installed (ordered by precedence)
-    - Set `https://name.app.link?$ios_url=https://example.com`
-    - Set `$ios_url = 'https://example.com'` within [link data](#redirections)
-    - Set `$fallback_url = 'https://example.com'` within [link data](#redirections)
-    - Set `$ios_deepview = 'deepviewId'` within [link data](#deepview)
-    - Enable a `global Deep view` on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
-    - Add a `iOS Custom URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-    - Add a `Default URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+    - `https://name.app.link?$ios_url=https://example.com` query string
+    - `$ios_url = 'https://example.com'` added within [link data](#redirections)
+    - `$fallback_url = 'https://example.com'` added within [link data](#redirections)
+    - `$ios_deepview = 'deepviewId'` added within [link data](#deepview)
+    - `Deep view` enabled globally on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
+    - `iOS Custom URL` added on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+    - `Default URL` added on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
 
 - Redirect to website when app is installed
     - iOS override `Universal Links` app open

@@ -58,58 +58,58 @@ markdown_extensions:
 pages:
   - Features: index.md
   - Configure your app:
-    - iOS: pages/getting-started/ios.md
-    - Android: pages/getting-started/android.md
-    - Adobe AIR: pages/getting-started/adobe-air.md
-    - Cordova PhoneGap Ionic: pages/getting-started/cordova-phonegap-ionic.md
-    - iMessage: pages/getting-started/imessage.md
-    - mParticle Android: pages/getting-started/mparticle-android.md
-    - mParticle iOS: pages/getting-started/mparticle-ios.md
-    - Titanium: pages/getting-started/titanium.md
-    - React Native: pages/getting-started/react-native.md
-    - Unity: pages/getting-started/unity.md
-    - Xamarin: pages/getting-started/xamarin.md
-  - Drive Web to App:
-    - Deepviews: pages/web-to-app/deep-views.md
-    - Text me the app: pages/web-to-app/text-me-the-app.md
-    - Journeys: pages/web-to-app/journeys.md
+    - iOS: pages/apps/ios.md
+    - Android: pages/apps/android.md
+    - Adobe AIR: pages/apps/adobe-air.md
+    - Cordova PhoneGap Ionic: pages/apps/cordova-phonegap-ionic.md
+    - iMessage: pages/apps/imessage.md
+    - mParticle Android: pages/apps/mparticle-android.md
+    - mParticle iOS: pages/apps/mparticle-ios.md
+    - Titanium: pages/apps/titanium.md
+    - React Native: pages/apps/react-native.md
+    - Unity: pages/apps/unity.md
+    - Xamarin: pages/apps/xamarin.md
+  - Configure your website:
+    - Deepviews: pages/web/deep-views.md
+    - Text me the app: pages/web/text-me-the-app.md
+    - Journeys: pages/web/journeys.md
   - Configure your links:
-    - Understanding links: pages/configuring-links/understand-links.md
-    - Creating links: pages/configuring-links/create-links.md
+    - Understanding links: pages/links/understand-links.md
+    - Creating links: pages/links/create-links.md
   - Configure your ads:
-    - Deep Link Feeds: pages/ads-to-app/deep-link-feeds.md
-    - App Install Ads: pages/ads-to-app/app-install-ads.md
-    - Google App Installs: pages/ads-to-app/google-app-installs.md
-    - Google Universal App Campaigns: pages/ads-to-app/google-universal-app-campaigns.md
-    - Google Search Ads: pages/ads-to-app/google-search.md
-    - Facebook App Installs: pages/ads-to-app/facebook-app-installs.md
-    - Facebook App Engagement: pages/ads-to-app/facebook-app-engagement.md
-    - Facebook Instagram: pages/ads-to-app/facebook-instagram.md
-    - Pinterets App Installs: pages/ads-to-app/pinterest-app-installs.md
-    - Snapchat App Installs: pages/ads-to-app/snapchat-app-installs.md
+    - Deep Link Feeds: pages/ads/deep-link-feeds.md
+    - App Install Ads: pages/ads/app-install-ads.md
+    - Google App Installs: pages/ads/google-app-installs.md
+    - Google Universal App Campaigns: pages/ads/google-universal-app-campaigns.md
+    - Google Search Ads: pages/ads/google-search.md
+    - Facebook App Installs: pages/ads/facebook-app-installs.md
+    - Facebook App Engagement: pages/ads/facebook-app-engagement.md
+    - Facebook Instagram: pages/ads/facebook-instagram.md
+    - Pinterets App Installs: pages/ads/pinterest-app-installs.md
+    - Snapchat App Installs: pages/ads/snapchat-app-installs.md
   - Configure your emails:
-    - Responsys: pages/emails-to-app/responsys.md
-    - SFMC: pages/emails-to-app/sfmc.md
-    - SendGrid: pages/emails-to-app/sendgrid.md
-    - Sailthru: pages/emails-to-app/sailthru.md
-    - AppBoy: pages/emails-to-app/appboy.md
-    - Self Serve: pages/emails-to-app/self-serve.md
+    - Responsys: pages/emails/responsys.md
+    - SFMC: pages/emails/sfmc.md
+    - SendGrid: pages/emails/sendgrid.md
+    - Sailthru: pages/emails/sailthru.md
+    - AppBoy: pages/emails/appboy.md
+    - Self Serve: pages/emails/self-serve.md
   - Track your analytics:
-    - Growth: pages/track-analytics/growth-attribution.md
-    - User Value: pages/track-analytics/user-value attribution.md
-    - Revenue: pages/track-analytics/revenue-attribution.md
+    - Growth: pages/analytics/growth-attribution.md
+    - User Value: pages/analytics/user-value attribution.md
+    - Revenue: pages/analytics/revenue-attribution.md
   - Export your analytics:
-    - CSV Export: pages/export-analytics/export-csv.md
-    - Export API: pages/export-analytics/export-api.md
-    - Webhooks: pages/export-analytics/export-webhooks.md
+    - CSV Export: pages/exports/export-csv.md
+    - Export API: pages/exports/export-api.md
+    - Webhooks: pages/exports/export-webhooks.md
   - Integrate your analytics:
-    - Abobe Analytics: pages/integrate-analytics/abobe-analytics.md
-    - Adjust: pages/integrate-analytics/adjust.md
-    - Amplitude: pages/integrate-analytics/amplitude.md
-    - AppBoy: pages/integrate-analytics/appboy.md
-    - Google Analytics: pages/integrate-analytics/google-analytics.md
-    - Kochava: pages/integrate-analytics/kochava.md
-    - Localytics: pages/integrate-analytics/localytics.md
-    - Mixpanel: pages/integrate-analytics/mixpanel.md
-    - Tune: pages/integrate-analytics/tune.md
-    - AppMetrica: pages/integrate-analytics/appmetrica.md
+    - Abobe Analytics: pages/integrations/abobe-analytics.md
+    - Adjust: pages/integrations/adjust.md
+    - Amplitude: pages/integrations/amplitude.md
+    - AppBoy: pages/integrations/appboy.md
+    - Google Analytics: pages/integrations/google-analytics.md
+    - Kochava: pages/integrations/kochava.md
+    - Localytics: pages/integrations/localytics.md
+    - Mixpanel: pages/integrations/mixpanel.md
+    - Tune: pages/integrations/tune.md
+    - AppMetrica: pages/integrations/appmetrica.md

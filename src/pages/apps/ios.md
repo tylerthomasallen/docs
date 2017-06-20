@@ -165,25 +165,25 @@
 
     ```swift
     // only canonical identifier is required
-    let branchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-    branchUniversalObject.title = UUID.init().uuidString
-    branchUniversalObject.contentDescription = "My Content Description"
-    branchUniversalObject.imageUrl = "http://lorempixel.com/200/200/"
-    branchUniversalObject.canonicalUrl = "http://s3z3.app.link/rawr_rawr"
-    branchUniversalObject.contentIndexMode = .public
-    branchUniversalObject.addMetadataKey("property1", value: "blue")
+    let buo = BranchUniversalObject(canonicalIdentifier: "item/12345")
+    buo.title = UUID.init().uuidString
+    buo.contentDescription = "My Content Description"
+    buo.imageUrl = "http://lorempixel.com/200/200/"
+    buo.canonicalUrl = "http://s3z3.app.link/rawr_rawr"
+    buo.contentIndexMode = .public
+    buo.addMetadataKey("property1", value: "blue")
     ```
         
   - Objective-C
 
     ```objc
     // only canonical identifier is required
-    BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-    branchUniversalObject.title = @"My Content Title";
-    branchUniversalObject.contentDescription = @"My Content Description";
-    branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
-    [branchUniversalObject addMetadataKey:@"property1" value:@"blue"];
-    [branchUniversalObject addMetadataKey:@"property2" value:@"red"];
+    BranchUniversalObject *buo = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+    buo.title = @"My Content Title";
+    buo.contentDescription = @"My Content Description";
+    buo.imageUrl = @"https://example.com/mycontent-12345.png";
+    [buo addMetadataKey:@"property1" value:@"blue"];
+    [buo addMetadataKey:@"property2" value:@"red"];
     ```
 
 #### Create Deep Link
@@ -193,14 +193,14 @@
   - Swift 3.0 
 
     ```swift
-    let linkProperties: BranchLinkProperties = BranchLinkProperties()
-    linkProperties.feature = "sharing"
-    linkProperties.channel = "facebook"
-    linkProperties.campaign = "meow meow"
-    linkProperties.addControlParam("$desktop_url", withValue: "http://example.com/home")
-    linkProperties.addControlParam("random", withValue: UUID.init().uuidString)
+    let lp: BranchLinkProperties = BranchLinkProperties()
+    lp.feature = "sharing"
+    lp.channel = "facebook"
+    lp.campaign = "meow meow"
+    lp.addControlParam("$desktop_url", withValue: "http://example.com/home")
+    lp.addControlParam("random", withValue: UUID.init().uuidString)
 
-    branchUniversalObject.getShortUrl(with: linkProperties) { url, error in
+    buo.getShortUrl(with: lp) { url, error in
       guard let url = url else { return }
       print(url)
     }
@@ -210,14 +210,14 @@
 
     ```objc
     // optional values
-    BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-    linkProperties.feature = @"sharing";
-    linkProperties.channel = @"facebook";
-    [linkProperties addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
-    [linkProperties addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
+    BranchLinkProperties *lp = [[BranchLinkProperties alloc] init];
+    lp.feature = @"sharing";
+    lp.channel = @"facebook";
+    [lp addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
+    [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
 
     // generate link
-    [branchUniversalObject getShortUrlWithLinkProperties:linkProperties andCallback:^(NSString *url, NSError *error) {
+    [branchUniversalObject getShortUrlWithLinkProperties:lp andCallback:^(NSString *url, NSError *error) {
         if (!error) {
     NSLog(@"success getting url! %@", url);
         }
@@ -232,15 +232,15 @@
 
     ```swift
     // optional values
-    let linkProperties: BranchLinkProperties = BranchLinkProperties()
-    linkProperties.feature = "sharing"
-    linkProperties.channel = "facebook"
-    linkProperties.campaign = "meow meow"
-    linkProperties.addControlParam("$desktop_url", withValue: "http://example.com/home")
-    linkProperties.addControlParam("random", withValue: UUID.init().uuidString)
+    let lp: BranchLinkProperties = BranchLinkProperties()
+    lp.feature = "sharing"
+    lp.channel = "facebook"
+    lp.campaign = "meow meow"
+    lp.addControlParam("$desktop_url", withValue: "http://example.com/home")
+    lp.addControlParam("random", withValue: UUID.init().uuidString)
     
     // share link
-    branchUniversalObject.showShareSheet(with: linkProperties, andShareText: text , from: controller) { (activity, success) in
+    buo.showShareSheet(with: lp, andShareText: text , from: controller) { (activity, success) in
       print(activity ?? "none", success)
     }
     ```
@@ -249,14 +249,14 @@
 
     ```objc
     // optional values
-    BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-    linkProperties.feature = @"sharing";
-    linkProperties.channel = @"facebook";
-    [linkProperties addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
-    [linkProperties addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
+    BranchLinkProperties *lp = [[BranchLinkProperties alloc] init];
+    lp.feature = @"sharing";
+    lp.channel = @"facebook";
+    [lp addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
+    [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
 
     // share link
-    [branchUniversalObject showShareSheetWithLinkProperties:linkProperties andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString *activityType, BOOL completed) {
+    [branchUniversalObject showShareSheetWithLinkProperties:lp andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString *activityType, BOOL completed) {
         NSLog(@"finished presenting");
     }];
     ```
