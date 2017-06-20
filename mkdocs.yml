@@ -74,8 +74,9 @@ pages:
     - Text me the app: pages/web/text-me-the-app.md
     - Journeys: pages/web/journeys.md
   - Configure your links:
-    - Understanding links: pages/links/understand-links.md
-    - Creating links: pages/links/create-links.md
+    - Link behavior: pages/links/behavior.md
+    - Link data: pages/links/data.md
+    - Creating links: pages/links/create.md
   - Configure your ads:
     - Deep Link Feeds: pages/ads/deep-link-feeds.md
     - App Install Ads: pages/ads/app-install-ads.md
