@@ -1,90 +1,4 @@
 
-## Link behavior
-
-#### Default behavior
-
-- App is installed
-    -  User `clicks` on a Branch deep link
-    -  Device `opens` app
-    -  Branch passes deep link `data` into app
-- App is not installed
-    - User `clicks` on a Branch deep link
-    - Device navigates to the App Store, Google Playstore, or Fallback URL
-    - User `installs` and `opens` app
-    - Branch passes deep link `data` into app
-
-#### Custom behavior
-
-- Pass custom data from a deep link to app
-    + `https://s3z3.app.link/fzmLEhobLD?$custom_data=123` 
-    + TODO
-    
-- Redirect to website when app is not installed (ordered by precedence)
-    - `https://name.app.link?$ios_url=https://example.com` query string
-    - `$ios_url = 'https://example.com'` added within [link data](#redirections)
-    - `$fallback_url = 'https://example.com'` added within [link data](#redirections)
-    - `$ios_deepview = 'deepviewId'` added within [link data](#deepview)
-    - `Deep view` enabled globally on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
-    - `iOS Custom URL` added on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-    - `Default URL` added on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-
-- Redirect to website when app is installed
-    - iOS override `Universal Links` app open
-        - Add `$web_only = true` [docs](#redirections)
-        - Add `$ios_url = 'https://google.com'`
-        - [or] Append `/e/` by `https://s3z3.app.link/fzmLEhobLD` -> `https://s3z3.app.link/e/fzmLEhobLD`
-    - Android override `App Links` app open
-        - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-        - Add `$android_url = 'https://google.com'`
-        - Add a broken URI Scheme with `$android_deeplink_path = 'random'`
-
-#### Social behavior
-
-- OG Tags TODO
-- Deep view TODO
-
-#### Supported platforms
-
-  - Apps which support Branch deep links
-
-    | | iOS | Usage | Android | Usage |
-    | --- | --- | --- | --- | --- |
-    | Facebook NewsFeed | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
-    | Facebook Messanger | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |  |
-    | Instagram | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |  |
-    | SnapChat | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | 🅾️  | `app.link` deep links are not clickable  |
-    | Twitter | ✅ | | ✅ |
-    | Pinterest | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
-    | Line | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must be enabled | ✅ |
-    | Slack | ✅ | | ✅ | |
-    | Chrome address bar | ✅ | | ✅ |
-    | Chrome web page | ✅ | | ✅ |
-    | FireFox address bar | 🅾️ | | ✅ |
-    | FireFox web page | ✅ | | ✅ |
-    | Safari address bar | 🅾️ | | |
-    | Safari web page | ✅ | | |
-    | WeChat | ✅ | [Deep Views](https://dashboard.branch.io/settings/deepviews) must enabled | ✅ |
-    | WhatsApp | ✅ | | ✅ |
-    | Hangouts | ✅ | | ✅ |
-    | iMessage | ✅ | | |
-    | Apple Mail | ✅ | | |
-    | Gmail | ✅ | | ✅ |
-
-## Analytical behavior
-
-#### Analytical tracking
-
-  - Whenever a user `clicks` on a deep link and `opens` the app
-  - This triggers either an `install` or an `open`
-      + `installs` represent Branch recognizing the app_id and device_id for the first time
-      + `installs` represent new app users and the success rate of your Branch deep links
-      + `installs` do **not** represent App Store downloads
-      + `non-Branch installs` are installs outside of Branch deep link clicks
-      + `opens` are non-installs
-      + If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
-      + If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
-
-
 
 ## Link data
 
@@ -198,7 +112,7 @@
 
 #### DeepView
 
-- set 
+- set
 
       | Key | Default | Usage
       | --- | --- | ---
@@ -209,7 +123,7 @@
 #### Open Graph
 
 - set
- 
+
       | Key | Default | Usage
       | --- | --- | ---
       | $og_title | | Set the title of the link as it will be seen in social media displays
