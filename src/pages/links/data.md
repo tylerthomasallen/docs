@@ -35,6 +35,13 @@
     | ~ | Branch analytical data
     | + | Branch added values
 
+    | Key | Default | Usage
+    | --- | --- | ---
+    | +match_guaranteed | `false` | TODO
+    | +is_first_session | `false` | TODO
+    | +clicked_branch_link | `false` | TODO
+    | +non_branch_link | `false` | TODO
+
 #### Analytical labels
 
   - For [Create Deep Link](#create-deep-link) and [Share Deep Link](#share-deep-link)
