@@ -72,6 +72,7 @@
 #### Redirections
 
 - Navigate to different locations based on device information
+- Navigation URLs must be websites, not deep links
 
       | Key | Default | Usage
       | --- | --- | ---
