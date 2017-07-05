@@ -43,6 +43,14 @@ extra:
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company-beta/3813083'
   disqus: 'branch-docs'
+  google_optimize:
+    optimize: 'GTM-PDHLH8M'
+    analytics: 'UA-98205710-1'
+  algolia_docsearch:
+    apiKey: '887017d17a2c1e9490ad2c44caa7e817'
+    indexName: 'branchmetrics'
+    inputSelector: '#algolia-doc-search'
+    debug: true
 
 # Extensions
 markdown_extensions:
