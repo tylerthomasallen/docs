@@ -10,12 +10,13 @@ This document will cover how to create a custom Text Me The App page, as well as
 
 ## Setup
 
-If you don't want to use Branch's default Text Me The App Page, follow these instructions.
+If you don't want to use Branch's default Text Me The App Page or show a desktop deepview, follow these instructions. This will let you customize a Text Me The App page using Branch.
 
 ### Set Destination URL
 
-1. Visit the [Link Settings](https://dashboard.branch.io/link-settings) page on the Branch dashboard.
-1. In the **Desktop** section select Custom Landing Page, and enter the URL on your site that will include a Text Me The App option.
+1. Visit the [Desktop SMS](https://dashboard.branch.io/web/sms) page on the Branch dashboard.
+1. Select `Custom Landing Page with SMS`, after you toggle to `On`.
+1. Enter the destination URL.
 
 ![image](/img/pages/text-me-the-app/desktop-routing.png)
 
@@ -70,6 +71,8 @@ When you have set your destination URL from the previous step, go to that page a
 </html>
 ```
 
+And that's it. From here, you can customize the HTML and CSS, and Branch will take care of the rest. If you want to further customize the page or SMS message itself, read further.
+
 ## Advanced
 
 ### Use your own SMS service
@@ -120,19 +123,21 @@ If you want to customize this, Branch allows you to set a default for all messag
 
 #### Customize all messages
 
-You can create your own custom default message that will be sent if the specific link someone clicks doesn't have a customized message itself. To do this, edit the form under the *Text me the app page* tab in the general settings area of the [Branch dashboard](https://dashboard.branch.io/web/sms).
+You can create your own custom default message that will be sent if the specific link someone clicks doesn't have a customized message itself. Navigate back to the Desktop SMS page on the [Branch dashboard](https://dashboard.branch.io/web/sms). You should see the following section below.
 
  ![image](/img/pages/text-me-the-app/default-message.png)
 
+ Editing this field will modify **all** SMS messages sent.
+
 #### Custom link-specific messages
 
-You can define a special SMS message for each individual link. Whether you want to switch the language of a message for a different region or include device specific date, you can specify the message in the *Deep Link Data* section at the bottom of the link editing screen.
+If you don't want to edit the global SMS text, you can define a special SMS message for each individual link. Whether you want to switch the language of a message for a different region or include device specific date, you can specify the message in the *Deep Link Data* section at the bottom of the link editing screen.
 
 ![image](/img/pages/text-me-the-app/deeplink-data.png)
 
-Use the **$custom_sms_text** parameter and then enter your custom message in the value section. (Make sure to include the **{{ link }}** tag in your custom message!). Follow the example below to see this in action.
+Use the **$custom_sms_text** parameter and then enter your custom message in the value section. Make sure to include the **{{ link }}** tag in your custom message! Read the following scenario below to see this in action.
 
-The developer of FlowerPower wants to customize the SMS messages based on the country of the recipient. For each Branch link, they would specify in the *deep link data* a different custom message.
+*The developer of FlowerPower wants to customize the SMS messages based on the country of the recipient. For each Branch link, they would specify in the deep link data a different custom message.*
 
 For ads in France:
 **Cliquez pour télécharger FlowerPower ici {{ link }}**
@@ -151,7 +156,9 @@ You can access almost any value of your link's parameters by using liquid tags. 
    - **{{ link.channel }}** and **{{ link.campaign }}** output the channel and campaign, if these were set when creating the link.
    - **{{ link.data.key }}** will output a parameter of your link's data dictionary, where `key` is the name of the parameter
 
-Here's an example to illustrate this scenario. Dmitri is creating Branch links to deep link to each of the different flowers in his app FlowerPower. He creates each link with a key/value pair of the key `flower` and the flower name, e.g. `Flower : Rose`, `Flower : Tulip`. He wants to customize his SMS messages based on name of the flower, so he sets his custom link messages as:
+Here's an example to illustrate this scenario.
+
+*Dmitri is creating Branch links to deep link to each of the different flowers in his app FlowerPower. He creates each link with a key/value pair of the key `flower` and the flower name, e.g. `Flower : Rose`, `Flower : Tulip`. He wants to customize his SMS messages based on name of the flower, so he sets his custom link messages as:*
 
 **{{ link.data.flower }}**s on the mind? Click here to buy some for your home! **{{ link }}**
 
