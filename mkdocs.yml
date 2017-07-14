@@ -77,10 +77,10 @@ pages:
     - React Native: pages/apps/react-native.md
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
-  - Configure your website:
+  - Configre Web To App Routing:
     - Deepviews: pages/web/deep-views.md
-    - Text me the app: pages/web/text-me-the-app.md
-    - Journeys: pages/web/journeys.md
+    - Journeys App Banners: pages/web/journeys.md
+    - Text Me The App: pages/web/text-me-the-app.md
   - Configure your links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
