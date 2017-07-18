@@ -20,6 +20,7 @@ cd docs
 pip install --upgrade pip
 pip install --editable lib/mkdocs
 pip install pygments
+pip install pymdown-extensions
 pip install markdown-include
 pip install mkdocs-material
 ```
