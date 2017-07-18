@@ -1,4 +1,4 @@
-/* DOCSEARCH */
+/* ALGOLIA DOCSEARCH */
 .algolia-docsearch-suggestion--category-header, .algolia-docsearch-footer {
   display: none !important;
 }
@@ -41,8 +41,27 @@
   }
 }
 
+/* ALGOLIA HEADER */
+.branch-header-button {
+  padding: 0 1.1rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.branch-header-label {
+  display: none;
+  margin: 0;
+}
+
+@media (min-width: 960px) {
+  .branch-header-label {
+    display: block;
+  }
+}
+
 /* HEADER GIT STATS */
-.md-nav__source, .md-source__facts, .md-source__icon {
+/*.md-nav__source, .md-source__facts, .md-source__icon {
   display: none;
 }
 
@@ -53,15 +72,11 @@
 }
 
 .md-nav__link[data-md-state=blur] {
-  /*text-decoration: line-through;*/
-}
+  text-decoration: line-through;
+}*/
 
-div.md-sidebar--primary ul.md-nav__list li:first-child {
-  /*display: none;*/
-}
 
 /* SIDEBAR BORDERS
-
 .md-sidebar--secondary .md-sidebar__inner {
   border-left: .1rem solid rgba(0,0,0,.07);
   border-right: none;

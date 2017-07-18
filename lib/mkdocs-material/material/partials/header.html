@@ -28,7 +28,39 @@
           {% endblock %}
         </span>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
+      {% if config.extra.algolia_docsearch %}
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="" title="Helpful/Unhelpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_up</i>
+            <p class="branch-header-label">Helpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="" title="Helpful/Unhelpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_down</i>
+            <p class="branch-header-label">Unhelpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="{{ config.repo_url }}/{{ config.edit_uri }}{{ page.input_path }}" title="Improve This Doc">
+            <i class="branch-header-icon md-icon material-icons">mode_edit</i>
+            <p class="branch-header-label">Improve</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="mailto:support@branch.io?subject=I need some assistance&body=Hello Branch Support,%0A%0AI am viewing ({{ page.canonical_url }}) and my Branch Key (https%3A%2F%2Fdashboard.branch.io%2Faccount-settings%2Fapp) is:%0A%0A I need assistance with " title="Contact support">
+            <i class="branch-header-icon md-icon material-icons">help_outline</i>
+            <p class="branch-header-label">Support</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="" title="Search">
+            <i class="branch-header-icon md-icon material-icons">search</i>
+            <p class="branch-header-label">Search</p>
+          </a>
+        </div>
+      {% endif %}
+      <div class="md-flex__cell md-flex__cell--shrink" style="{% if config.extra.algolia_docsearch %} display:none; {% endif %}">
         {% block search_box %}
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           {% include "partials/search.html" %}
