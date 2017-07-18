@@ -107,6 +107,10 @@ div.md-sidebar--primary ul.md-nav__list li:first-child {
   color: inherit;
 }
 
+.codehilite .nx {
+  color: #24292e;
+}
+
 /* SEARCH */
 article.md-search-result__article.md-search-result__article--document {
   background-color: #f5f5f5;
