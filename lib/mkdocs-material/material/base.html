@@ -98,10 +98,6 @@
         {% include "partials/tabs.html" %}
       {% endif %}
       <main class="md-main">
-
-      <input id="algolia-doc-search" type="text" placeholder="Search docs..." />
-      {{ config.extra_javascript_head }}
-
         <div class="md-main__inner md-grid" data-md-component="container">
           {% block site_nav %}
             {% if nav %}
@@ -155,6 +151,9 @@
           </div>
         </div>
       </main>
+      {% block dialog %}
+        <input type="text" id="algolia-doc-search">
+      {% endblock %}
       {% block footer %}
         {% include "partials/footer.html" %}
       {% endblock %}
