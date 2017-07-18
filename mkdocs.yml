@@ -77,10 +77,10 @@ pages:
     - React Native: pages/apps/react-native.md
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
-  - Configure your website:
+  - Configre Web To App Routing:
     - Deepviews: pages/web/deep-views.md
-    - Text me the app: pages/web/text-me-the-app.md
-    - Journeys: pages/web/journeys.md
+    - Journeys App Banners: pages/web/journeys.md
+    - Text Me The App: pages/web/text-me-the-app.md
   - Configure your links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
@@ -96,6 +96,9 @@ pages:
     - Facebook Instagram: pages/ads/facebook-instagram.md
     - Pinterets App Installs: pages/ads/pinterest-app-installs.md
     - Snapchat App Installs: pages/ads/snapchat-app-installs.md
+  - Share Your App Content:
+      - Content Sharing: marketing-channels/content-sharing.md
+      - User Onboarding: marketing-channels/custom-onboarding.md
   - Configure your emails:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md
