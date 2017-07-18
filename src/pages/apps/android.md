@@ -1,6 +1,8 @@
 
 ## Android - Integrate Branch
 
+Always try to open the app selected
+
 #### Install Branch
 
 - Import the Branch SDK to your `build.gradle`
@@ -113,7 +115,7 @@
 
 - Add Branch to your `CustomApplicationClass.java`
 
-    ```java hl_lines="4 11 12"
+    ```java hl_lines="4 11 12 14 15"
     package com.eneff.branchandroid;
 
     import android.app.Application;
@@ -124,7 +126,10 @@
         public void onCreate() {
             super.onCreate();
 
-            // initialize the Branch object
+            // Branch logging for debugging
+            Branch.enableLogging();
+
+            // Branch object initialization
             Branch.getAutoInstance(this);
         }
     }
