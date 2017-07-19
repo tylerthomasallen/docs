@@ -79,6 +79,7 @@ pages:
     - React Native: pages/apps/react-native.md
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
+  - Universal and App Links: pages/apps/universal-app-links.md
   - Configre Web To App Routing:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
