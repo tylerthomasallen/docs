@@ -60,7 +60,8 @@ markdown_extensions:
   - toc(permalink=true)
   - meta
   - pymdownx.github
-  - markdown_include.include
+  - markdown_include.include:
+      base_path: src/includes/
 
 # Pages
 pages:
