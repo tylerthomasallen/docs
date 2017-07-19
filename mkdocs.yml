@@ -60,6 +60,7 @@ markdown_extensions:
   - toc(permalink=true)
   - meta
   - pymdownx.github
+  - attr_list
   - markdown_include.include:
       base_path: src/includes/
 
@@ -98,8 +99,8 @@ pages:
     - Pinterets App Installs: pages/ads/pinterest-app-installs.md
     - Snapchat App Installs: pages/ads/snapchat-app-installs.md
   - Share Your App Content:
-      - Content Sharing: marketing-channels/content-sharing.md
-      - User Onboarding: marketing-channels/custom-onboarding.md
+    - Content Sharing: marketing-channels/content-sharing.md
+    - User Onboarding: marketing-channels/custom-onboarding.md
   - Configure your emails:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md
@@ -107,6 +108,9 @@ pages:
     - Sailthru: pages/emails/sailthru.md
     - AppBoy: pages/emails/appboy.md
     - Self Serve: pages/emails/self-serve.md
+  - Link App to App:
+    - Android Instant Apps: pages/app-to-app/android-instant-apps.md
+    - iMessage Apps: pages/app-to-app/imessage-apps.md
   - Track your analytics:
     - Behavior: pages/analytics/behavior.md
     - Growth: pages/analytics/growth-attribution.md
