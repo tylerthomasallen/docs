@@ -57,7 +57,7 @@ This is the documentation for the docs. It describes how the site works, what is
 
 Small snippets of reused and/or frequently updated content/code should be kept within the `includes` directory. Content snippets should be placed in the `ingredients` subdirectory.
 
-To insert a reusable snippet, use the format `{! file_name_here.md !}`.
+To insert a reusable snippet, use the format `{! path/file_name_here.md !}` where the root directory that for snippets is the `includes` folder.
 
 ### Images
 
