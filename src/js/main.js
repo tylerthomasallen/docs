@@ -56,4 +56,18 @@
     };
   })();
 
+  // dialogs
+  var dialog = (function() {
+    // public
+    return {
+    };
+  })();
+
+  // notifications
+  var notification = (function() {
+    // public
+    return {
+    };
+  })();
+
 })();
