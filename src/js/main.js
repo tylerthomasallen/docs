@@ -83,4 +83,11 @@
       track: track
     };
   })();
+
+  // page load
+  function onload() {
+    router.load();
+    analytics.track('viewed page ' + window.law2.href);
+  }
+  onload();
 })();
