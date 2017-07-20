@@ -1,6 +1,27 @@
 // no globals and run on load
 (function() {
   'use strict';
+  // router
+  var router = (function() {
+    // listeners
+    window.addEventListener('hashchange', function(event) {
+      // handle hash change
+      route(event.target.location.hash);
+    }, false);
+    // methods
+    function load() {
+      route(window.location.hash);
+    }
+    function route(hash) {
+      // TODO: pubsub
+    }
+    // public
+    return {
+      load: load,
+      route: route
+    };
+  })();
+
   // pub sub
   var events = (function() {
     // properties
