@@ -4,7 +4,6 @@ TODO: test curls
 TODO: test links
 TODO: remove confidential information
 TODO: referrals
-TODO: bulk links
 
 - #### Link Create 
 
@@ -40,6 +39,60 @@ TODO: bulk links
         {
           "url": "https://eneff.app.link/7nOIRkPsHz"
         }
+        ```
+
+    - Parameters
+
+        | Key | Value | Usage | Required
+        | --- | :-: | --- | :-:
+        | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
+        | ... | ... | Parameters from [Configuring Links](/pages/links/data/) |
+
+- #### Link Create Bulk 
+
+    - Request
+
+        ```json
+        curl -XPOST https://api.branch.io/v1/url/bulk/key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT -d \
+        '[
+          {
+            "channel": "facebook",
+            "feature": "onboarding",
+            "campaign": "new product",
+            "stage": "new user",
+            "tags": ["one", "two", "three"],
+            "data": {
+              "$canonical_identifier": "content/123",
+              "$og_title": "Title from Deep Link",    
+              "$og_description": "Description from Deep Link",
+              "$og_image_url": "http://www.lorempixel.com/400/400/",
+              "$desktop_url": "http://www.example.com",
+              "custom_boolean": true,
+              "custom_integer": 1243,
+              "custom_string": "everything",
+              "custom_array": [1,2,3,4,5,6],
+              "custom_object": { "random": "dictionary" }
+            }
+          },
+          {
+            "channel": "google",
+            "feature": "loon",
+            "campaign": "lift off"
+          }
+        ]'
+        ```
+
+    - Response
+
+        ```json
+        [
+          {
+            "url":"https://eneff.app.link/HE7fprkxWE"
+          },
+          {
+            "url":"https://eneff.app.link/YawoqrkxWE"
+          }
+        ]
         ```
 
     - Parameters
