@@ -54,6 +54,12 @@ The [Content Analytics](https://dashboard.branch.io/content) lets you view conte
 
 ## Advanced
 
+### Enable Custom Onboarding
+
+When you generate links that point to content, you can also add data to provide personalized onboarding for users who click the link. By using Content Sharing, you can add metadata about the user who is doing the actual sharing, and surface their information when someone else clicks their link. Branch does not create the UI, but will pass information along, letting you construct a UI that personalizes a user's onboarding.
+
+![image](/img/marketing-channels/content-sharing/custom-onboarding.png)
+
 ### Create Links Without Share Sheet
 
 If you've built your own share sheet and you want to just create a Branch link for an individual share message or have another use case, you can create deep links directly with the following call:
