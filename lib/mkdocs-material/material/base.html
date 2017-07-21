@@ -155,7 +155,42 @@
         </div>
       </main>
       {% block dialog %}
-        <input type="text" id="algolia-doc-search">
+        <div id="dialog-search" class="dialog">
+          <div class="dialog-background"></div>
+          <div class="dialog-content">
+            <button type="button" class="dialog-close icon right">&#x2718;</button>
+            <h2>Search</h2>
+            <input placeholder="search" type="text" id="algolia-doc-search">
+          </div>
+        </div>
+        <div id="dialog-unhelpful" class="dialog">
+          <div class="dialog-background"></div>
+          <div class="dialog-content">
+            <button type="button" class="dialog-close icon right">&#x2718;</button>
+            <h2>Unhelpful?</h2>
+            <p>How can we improve or help you?</p>
+            <button type="button">Improve this app</button>
+            <button type="button">Contact support</button>
+          </div>
+        </div>
+        <div id="dialog-choose-app" class="dialog">
+          <div class="dialog-background"></div>
+          <div class="dialog-content">
+            <button type="button" class="dialog-close icon right">&#x2718;</button>
+            <h2>Choose your app</h2>
+            <button type="button">iOS</button>
+            <button type="button">Android</button>
+            <button type="button">Cordova Ionic PhoneGap</button>
+            <button type="button">React Native</button>
+          </div>
+        </div>
+        <div id="notification-helpful" class="notification">
+          <div class="notification-background"></div>
+          <div class="notification-content">
+            <button type="button" class="notification-close icon right">&#x2718;</button>
+            <h2>Thank you</h2>
+          </div>
+        </div>
       {% endblock %}
       {% block footer %}
         {% include "partials/footer.html" %}
