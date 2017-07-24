@@ -155,28 +155,26 @@
         </div>
       </main>
       {% block dialog %}
-        <div id="dialog-search" class="dialog">
-          <div class="dialog-background"></div>
-          <div class="dialog-content">
-            <button type="button" class="dialog-close icon right">&#x2718;</button>
+        <div id="modal-search" class="modal dialog">
+          <div class="modal-background"></div>
+          <div class="modal-content" id="algolia-search-container">
+            <i class="material-icons modal-close right">close</i>
             <h2>Search</h2>
             <input placeholder="search" type="text" id="algolia-doc-search">
           </div>
         </div>
-        <div id="dialog-unhelpful" class="dialog">
-          <div class="dialog-background"></div>
-          <div class="dialog-content">
-            <button type="button" class="dialog-close icon right">&#x2718;</button>
+        <div id="modal-unhelpful" class="modal dialog">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <i class="material-icons modal-close right">close</i>
             <h2>Unhelpful?</h2>
-            <p>How can we improve or help you?</p>
-            <button type="button">Improve this app</button>
-            <button type="button">Contact support</button>
+            <p>How can we improve or assist you?</p>
           </div>
         </div>
-        <div id="dialog-choose-app" class="dialog">
-          <div class="dialog-background"></div>
-          <div class="dialog-content">
-            <button type="button" class="dialog-close icon right">&#x2718;</button>
+        <div id="modal-choose-app" class="modal dialog">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <i class="material-icons modal-close right">close</i>
             <h2>Choose your app</h2>
             <button type="button">iOS</button>
             <button type="button">Android</button>
@@ -184,10 +182,10 @@
             <button type="button">React Native</button>
           </div>
         </div>
-        <div id="notification-helpful" class="notification">
-          <div class="notification-background"></div>
-          <div class="notification-content">
-            <button type="button" class="notification-close icon right">&#x2718;</button>
+        <div id="modal-helpful" class="modal notification">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <i class="material-icons modal-close right">close</i>
             <h2>Thank you</h2>
           </div>
         </div>

@@ -64,54 +64,66 @@
     };
   })();
 
-  // dialogs
-  var dialog = (function() {
+  // modals
+  var modal = (function() {
     // properties
     var cache = {};
 
     // main
     addCache()
     function addCache() {
-      var dialogs = document.getElementsByClassName('dialog');
-      for (var i = 0; i < dialogs.length; i++) {
+      var modals = document.getElementsByClassName('modal');
+      for (var i = 0; i < modals.length; i++) {
         var self = this;
-        var dialog = dialogs[i];
-        var id = dialog.id
-        var children = dialog.children;
+        var modal = modals[i];
+        var id = modal.id;
+        var type = modal.classList.contains('notification') ? 'notification' : 'dialog';
+        var children = modal.children;
         var background = null;
         var close = null;
         for (var j = 0; j < children.length; j++) {
           var child = children[j]
           var subchildren = child.children;
-          background = (child.classList.contains('dialog-background')) ? child : background;
+          background = (child.classList.contains('modal-background')) ? child : background;
           for (var k = 0; k < subchildren.length; k++) {
             var subchild = subchildren[k]
-            close = (subchild.classList.contains('dialog-close')) ? subchild : close;
+            close = (subchild.classList.contains('modal-close')) ? subchild : close;
             break;
           }
         }
-        addListener(id, background, close);
-        cache[id] = dialog;
+        addListener(id, type, background, close);
+        cache[id] = modal;
       }
     }
 
-    function addListener(id, background, close) {
+    function addListener(id, type, background, close) {
       // need separate function because of closure binding within .addEventListener
-      background.addEventListener('click', function(event) {
-        toggle(id);
-      }.bind(this), false);
       close.addEventListener('click', function(event) {
-        toggle(id);
+        toggle(id, type);
+      });
+      if (type === 'notification') return;
+      background.addEventListener('click', function(event) {
+        toggle(id, type);
       });
     }
 
-    function toggle(dialogId) {
-      var dialog = cache[dialogId];
-      if (!dialog) return;
-      var isDialogOpen = dialog.classList.contains('active');
-      isDialogOpen ? document.body.classList.remove('dialog') : document.body.className += ' dialog';
-      isDialogOpen ? dialog.classList.remove('active') : dialog.className += ' active';
-      isDialogOpen ? router.remove() : null;
+    function toggle(id, type, duration) {
+      var modal = cache[id];
+      if (!modal) return;
+      var isModalOpen = modal.classList.contains('active');
+      var time = (duration) ? duration : 0;
+      var type = (type === 'notification') ? 'notification' : 'dialog';
+
+      isModalOpen ? modal.classList.remove('active') : modal.className += ' active';
+      if (type === 'dialog') {
+        isModalOpen ? document.body.classList.remove('modal') : document.body.className += ' modal';
+        isModalOpen ? router.remove() : null;
+      } else if (type === 'notification') {
+        setTimeout(function() {
+            modal.classList.remove('active');
+            router.remove();
+        }, time);
+      }
     }
 
     // public
@@ -120,32 +132,8 @@
     };
   })();
 
-  // notifications
-  var notification = (function() {
-    // properties
-    var duration = 1200;
-    var cache = {};
 
     // main
-    addCache()
-    function addCache() {
-      var notifications = document.getElementsByClassName('notification');
-      for (var i = 0; i < notifications.length; i++) {
-        var notification = notifications[i];
-        var id = notification.id;
-        var children = notification.children;
-        var close = null;
-        for (var j = 0; j < children.length; j++) {
-          var child = children[j]
-          var subchildren = child.children;
-          for (var k = 0; k < subchildren.length; k++) {
-            var subchild = subchildren[k]
-            close = (subchild.classList.contains('notification-close')) ? subchild : close;
-            break;
-          }
-        }
-        addListener(id, close);
-        cache[id] = notification;
       }
     }
 
@@ -169,7 +157,6 @@
       }, duration);
     }
 
-    // public
     return {
       toggle: toggle
     };
@@ -193,18 +180,17 @@
   // page load
   function onload() {
     var search = document.getElementById('algolia-doc-search');
-console.log(search)
+
     router.add('route-#header-helpful', function() {
-      notification.toggle('notification-helpful');
+      modal.toggle('modal-helpful', 'notification', 100500);
     });
     router.add('route-#header-unhelpful', function() {
-      dialog.toggle('dialog-unhelpful');
+      modal.toggle('modal-unhelpful', 'dialog');
     });
     router.add('route-#header-search', function() {
-      dialog.toggle('dialog-search');
-      search.focus()
+      modal.toggle('modal-search', 'dialog');
+      search.focus();
     });
-
 
     analytics.track('viewed page ' + window.location.href);
     router.load();
