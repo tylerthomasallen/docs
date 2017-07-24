@@ -25,6 +25,7 @@ Next install the required packages by running:
 pip install --upgrade pip
 pip install --editable lib/mkdocs
 pip install pygments
+pip install pymdown-extensions
 pip install markdown-include
 pip install mkdocs-material
 ```

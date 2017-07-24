@@ -10,3 +10,20 @@
     - If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
     - If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
 
+## Dashboard pages
+
+- #### Quick Links
+- #### Sources
+- #### Content
+
+    - [Dashboard Content](https://dashboard.branch.io/content)
+    - Updates every 1.5 hours 
+    - Based on the deep links which are shared (clicks which lead to open/installs)
+    - Each content must be meaningful unique
+        + `$canonical_identifier`
+        + `$og_title`
+        + `$og_description`
+        + `$og_image_url`
+
+- #### Liveview
+
