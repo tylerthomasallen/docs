@@ -1,51 +1,4 @@
 /* ////////////////////////////// */
-/* ALGOLIA DOCSEARCH */
-/* ////////////////////////////// */
-.algolia-docsearch-suggestion--category-header, .algolia-docsearch-footer {
-  display: none !important;
-}
-
-/* Bottom border of each suggestion */
-.algolia-docsearch-suggestion {
-  border-bottom-color: #3A3DD1;
-}
-/* Main category headers */
-.algolia-docsearch-suggestion--category-header {
-  background-color: #4B54DE;
-}
-/* Highlighted search terms */
-.algolia-docsearch-suggestion--highlight {
-  color: #3A33D1;
-}
-/* Highligted search terms in the main category headers */
-.algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight  {
-  background-color: #4D47D5;
-}
-/* Currently selected suggestion */
-.aa-cursor .algolia-docsearch-suggestion--content {
-  color: #272296;
-}
-.aa-cursor .algolia-docsearch-suggestion {
-  background: #EBEBFB;
-}
-
-/* For bigger screens, when displaying results in two columns */
-@media (min-width: 768px) {
-  /* Bottom border of each suggestion */
-  .algolia-docsearch-suggestion {
-    border-bottom-color: #7671df;
-  }
-  /* Left column, with secondary category header */
-  .algolia-docsearch-suggestion--subcategory-column {
-    border-right-color: #7671df;
-    background-color: #F2F2FF;
-    color: #4E4726;
-  }
-}
-
-
-
-/* ////////////////////////////// */
 /* BRANCH HEADER BUTTONS */
 /* ////////////////////////////// */
 .branch-header-button {
@@ -202,9 +155,27 @@ body.modal {
 }
 
 
+
+/* ////////////////////////////// */
+/* SEARCH */
+/* ////////////////////////////// */
 #algolia-doc-search {
-  wdith
+  margin: 1em 0;
 }
+.algolia-autocomplete, #algolia-doc-search {
+  width: 100%;
+}
+#algolia-search-container {
+  top: 50%;
+  height: 75%;
+}
+.algolia-docsearch-suggestion--category-header, .algolia-docsearch-footer {
+  display: none;
+}
+.algolia-autocomplete .ds-dropdown-menu, .algolia-autocomplete .ds-dropdown-menu:before {
+  box-shadow: none;
+}
+
 
 
 /* ////////////////////////////// */
