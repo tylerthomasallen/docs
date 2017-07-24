@@ -84,7 +84,7 @@ pages:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
-  - Configure your links:
+  - Configure Branch Links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
     - Creating links: pages/links/create.md
@@ -99,8 +99,6 @@ pages:
     - Facebook Instagram: pages/ads/facebook-instagram.md
     - Pinterets App Installs: pages/ads/pinterest-app-installs.md
     - Snapchat App Installs: pages/ads/snapchat-app-installs.md
-  - Share Your App Content:
-      - Content Sharing: marketing-channels/content-sharing.md
   - Configure your emails:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md
@@ -111,6 +109,7 @@ pages:
   - Link App to App:
     - Android Instant Apps: pages/app-to-app/android-instant-apps.md
     - iMessage Apps: pages/app-to-app/imessage-apps.md
+    - Facebook App Invites: pages/app-to-app/facebook-app-invites.md
   - Track your analytics:
     - Behavior: pages/analytics/behavior.md
     - Growth: pages/analytics/growth-attribution.md

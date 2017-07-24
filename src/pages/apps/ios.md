@@ -1,45 +1,45 @@
 ## iOS - Integrate Branch
 
-#### Configure Branch Dashboard
+### Configure Branch Dashboard
 
 - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
     ![image](http://i.imgur.com/aFb69BS.png)
     ![image](http://i.imgur.com/Edpfn04.png)
 
-#### Configure Bundle Identifier
+### Configure Bundle Identifier
 
 - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
     ![image](http://i.imgur.com/BHAQIQf.png)
 
-#### Configure Associated Domains
+### Configure Associated Domains
 
 - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
 
     ![image](http://i.imgur.com/67t6hSY.png)
 
-#### Configure Entitlements
+### Configure Entitlements
 
 - Confirm entitlements are within target
 
     ![image](http://i.imgur.com/vhwis7f.png)
-      
-#### Configure Info.pList
+
+### Configure Info.pList
 
 - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
 
     ![image](http://i.imgur.com/PwXnHWz.png)
 
-#### Confirm App Prefix
+### Confirm App Prefix
 
 - From your [Apple Developer Account](https://developer.apple.com/account/ios/identifier/bundle)
 
     ![image](http://i.imgur.com/2EoN1i0.png)
 
-#### Install Branch
+### Install Branch
 
-- Option 1: [CocoaPods](https://cocoapods.org/) 
+- Option 1: [CocoaPods](https://cocoapods.org/)
 
     ```sh hl_lines="7"
     platform :ios, '8.0'
@@ -52,19 +52,19 @@
     end
     ```
 
-- Option 2: [Carthage](https://github.com/Carthage/Carthage) 
-    
+- Option 2: [Carthage](https://github.com/Carthage/Carthage)
+
     ```sh
     github "BranchMetrics/ios-branch-deep-linking"
     ```
 
-- Option 3: Manually install [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) 
+- Option 3: Manually install [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases)
 
     ![image](http://i.imgur.com/0NcOrkE.png)
 
-#### Initialize Branch
+### Initialize Branch
 
-- Swift 3.0 
+- Swift 3.0
 
     ```swift hl_lines="2 10 11 12 13 14 19 20 25 26 31 32"
     import UIKit
@@ -101,7 +101,7 @@
       Branch.getInstance().handlePushNotification(userInfo)
     }
     ```
-    
+
 - Objective-C
 
     ```objc hl_lines="2 11 12 13 14 15 21 22 27 28 33 34"
@@ -144,24 +144,24 @@
     @end
     ```
 
-#### Test Deep Link
+### Test Deep Link
 
   - Wait 15 minutes after saving changes on the [Branch Dashboard](https://dashboard.branch.io/settings/link).
-  - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing).
+  - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/quick-links).
   - Delete and reinstall the app.
   - Compile and test on a device.
-  - Paste deep link in Apple Notes. 
+  - Paste deep link in Apple Notes.
   - Long press on the deep link (not 3D Touch).
   - Click `Open in "APP_NAME"` to open app.
   - ![image](http://i.imgur.com/VJVICXd.png)
 
 ## iOS - Features
 
-#### Create Content Reference
+### Create Content
 
 - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-  - Swift 3.0 
+  - Swift 3.0
 
     ```swift
     // only canonical identifier is required
@@ -173,7 +173,7 @@
     buo.contentIndexMode = .public
     buo.addMetadataKey("property1", value: "blue")
     ```
-        
+
   - Objective-C
 
     ```objc
@@ -186,11 +186,11 @@
     [buo addMetadataKey:@"property2" value:@"red"];
     ```
 
-#### Create Deep Link
+### Create Deep Link
 
 - Generate a deep link within your app
 
-  - Swift 3.0 
+  - Swift 3.0
 
     ```swift
     let lp: BranchLinkProperties = BranchLinkProperties()
@@ -205,7 +205,7 @@
       print(url)
     }
     ```
-        
+
   - Objective-C
 
     ```objc
@@ -217,18 +217,18 @@
     [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
 
     // generate link
-    [branchUniversalObject getShortUrlWithLinkProperties:lp andCallback:^(NSString *url, NSError *error) {
+    [branchUniversalObject getShortUrlWithLinkProperties:lp andCallback:^(NSString* url, NSError* error) {
         if (!error) {
     NSLog(@"success getting url! %@", url);
         }
     }];
     ```
 
-#### Share Deep Link
+### Share Deep Link
 
 - Share deep links between users and apps
 
-  - Swift 3.0 
+  - Swift 3.0
 
     ```swift
     // optional values
@@ -238,13 +238,13 @@
     lp.campaign = "meow meow"
     lp.addControlParam("$desktop_url", withValue: "http://example.com/home")
     lp.addControlParam("random", withValue: UUID.init().uuidString)
-    
+
     // share link
     buo.showShareSheet(with: lp, andShareText: text , from: controller) { (activity, success) in
       print(activity ?? "none", success)
     }
     ```
-        
+
   - Objective-C
 
     ```objc
@@ -256,12 +256,12 @@
     [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
 
     // share link
-    [branchUniversalObject showShareSheetWithLinkProperties:lp andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString *activityType, BOOL completed) {
+    [branchUniversalObject showShareSheetWithLinkProperties:lp andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString* activityType, BOOL completed) {
         NSLog(@"finished presenting");
     }];
     ```
 
-#### Navigate to Content
+### Navigate to Content
 
 - Navigate to any ViewController based on the deep link data from
 
@@ -272,10 +272,10 @@
     Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
       // catch deep link data
       guard let data = params as? [String: AnyObject] else { return }
-      
+
       // save deep link data into global model to be referenced by any view controller
       BranchData.sharedInstance.data = data
-      
+
       // navigate to view controller based on deep link data["type"] ("type" can be any custom key-value pair)
       guard let nav = data["type"] as? String else { return }
       switch nav {
@@ -286,14 +286,77 @@
       }
     }
     ```
-        
+
   - Objective-C
 
     ```objc
-    
+
     ```
+### Build Referral Programs
+
+- Use Branch deep linking to see who shares the most content and drives the most new users. This allows you track influencers, as well as provide credits to users as an incentive.
+
+#### Award Credits Per Referral
+
+- Navigate to the [Referrals](https://dashboard.branch.io/referrals/rules) page, and click `Add New Rule`. This will let Branch automatically award users based off properties set on this screen.
+
+Definable properties:
+
+1. Who gets a reward
+1. Credit amount
+1. Which `bucket` the credits go to
+1. Whether the reward occurs the first time or every time
+1. Which event triggers the reward
+
+Let's say you want to give 10 credits to each new user who signs up through a friend, and 5 credits to the friend who referred him or her. That can be done through a combination of two rules:
+
+**Rule 1: rewarding the referred user 10 credits**
+
+1. Who gets a reward: **"Referred acting users"**
+1. How many credits the reward is: **10**
+1. Which bucket the credits go to: **default**
+1. Whether the reward occurs the first time or every time: **the first time**
+1. Which event triggers the reward: **install**
+
+![image](/img/features/referral-programs/referred_rule.png)
+
+**Rule 2: rewarding the referring user 5 credits**
+
+1. Who gets a reward: **"Referring users"**
+1. How many credits the reward is: **5**
+1. Which bucket the credits go to: **default**
+1. Whether the reward occurs the first time or every time: **the first time**
+1. Which event triggers the reward: **install**
+
+![image](/img/features/referral-programs/referring_rule.png)
+
+#### View Credits
+
+- Use the following SDK methods to track a user's credit balance after you've set up reward rules.
 
 
+```obj-c
+[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError* err) {
+    if (!err) {
+        NSLog(@"credit: %lu", [[Branch getInstance] getCredits]);
+    }
+}];
+```
+
+#### Redeem Credits
+
+- Once a user reaches a point to redeem credits, use the following calls to detract from their existing balance.
+
+```obj-c
+[[Branch getInstance] redeemRewards:5 callback:^(BOOL success, NSError* error) {
+    if (success) {
+        NSLog(@"Redeemed 5 credits!");
+    }
+    else {
+        NSLog(@"Failed to redeem credits: %@", error);
+    }
+}];
+```
 
 ## iOS - Troubleshooting
 
@@ -301,4 +364,3 @@
 #### Why does my deep link data not pass through?
 #### Why are my deep links long?
 #### How do I create offline deep links?
-
