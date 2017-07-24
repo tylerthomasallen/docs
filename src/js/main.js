@@ -132,35 +132,28 @@
     };
   })();
 
+  var support = (function() {
+    // <a href="#" class="contact-support" title="Contact support">Contact support</a>
+    var statement = 'mailto:support@branch.io?subject=I need some assistance&body=Hello Branch Support,%0A%0AI am viewing (' + window.location.href + ').%0A%0AMy Branch Key (https%3A%2F%2Fdashboard.branch.io%2Faccount-settings%2Fapp) is:%0A%0A I need assistance with ';
 
     // main
+    load()
+    function load() {
+      var supports = document.getElementsByClassName('contact-support');
+      for (var i = 0; i < supports.length; i++) {
+        var support = supports[i];
+        support.setAttribute('href', statement);
       }
     }
 
-    // methods
-    function addListener(id, close) {
-      close.addEventListener('click', function(event) {
-        toggle(id);
-      });
-    }
-
-    function toggle(notificationId) {
-      console.log(notificationId, duration)
-      var notification = cache[notificationId];
-      if (!notification) return;
-      var isNotificationOpen = notification.classList.contains('active');
-      isNotificationOpen ? notification.classList.remove('active') : notification.className += ' active';
-      // isNotificationOpen ? router.remove() : null;
-      setTimeout(function() {
-        notification.classList.remove('active');
-        router.remove()
-      }, duration);
+    function contact() {
+      window.location.href = statement;
     }
 
     return {
-      toggle: toggle
-    };
-
+      load: load,
+      contact: contact
+    }
   })();
 
   // analytics
