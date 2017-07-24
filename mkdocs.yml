@@ -106,6 +106,9 @@ pages:
     - Sailthru: pages/emails/sailthru.md
     - AppBoy: pages/emails/appboy.md
     - Self Serve: pages/emails/self-serve.md
+  - Configure Organic Search:
+      - Firebase: pages/organic-search/firebase.md
+      - Spotlight: pages/organic-search/spotlight.md
   - Link App to App:
     - Android Instant Apps: pages/app-to-app/android-instant-apps.md
     - iMessage Apps: pages/app-to-app/imessage-apps.md
