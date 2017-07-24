@@ -62,7 +62,9 @@ markdown_extensions:
   - toc(permalink=true)
   - meta
   - pymdownx.github
-  - markdown_include.include
+  - attr_list
+  - markdown_include.include:
+      base_path: src/includes/
 
 # Pages
 pages:
@@ -80,15 +82,15 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
-  - Configure your website:
-    - Deepviews: pages/web/deep-views.md
-    - Text me the app: pages/web/text-me-the-app.md
-    - Journeys: pages/web/journeys.md
-  - Configure your links:
+  - Configure deep links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
     - Creating links: pages/links/create.md
-  - Configure your ads:
+  - Convert web to app:
+    - Deepviews: pages/web/deep-views.md
+    - Journeys App Banners: pages/web/journeys.md
+    - Text Me The App: pages/web/text-me-the-app.md
+  - Convert ads to app:
     - Deep Link Feeds: pages/ads/deep-link-feeds.md
     - App Install Ads: pages/ads/app-install-ads.md
     - Google App Installs: pages/ads/google-app-installs.md
@@ -99,23 +101,30 @@ pages:
     - Facebook Instagram: pages/ads/facebook-instagram.md
     - Pinterets App Installs: pages/ads/pinterest-app-installs.md
     - Snapchat App Installs: pages/ads/snapchat-app-installs.md
-  - Configure your emails:
+  - Convert organic search:
+    - Firebase: pages/organic-search/firebase.md
+    - Spotlight: pages/organic-search/spotlight.md
+  - Convert emails to app:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md
     - SendGrid: pages/emails/sendgrid.md
     - Sailthru: pages/emails/sailthru.md
     - AppBoy: pages/emails/appboy.md
     - Self Serve: pages/emails/self-serve.md
-  - Track your analytics:
+  - Convert app to app:
+    - Android Instant Apps: pages/app-to-app/android-instant-apps.md
+    - iMessage Apps: pages/app-to-app/imessage-apps.md
+    - Facebook App Invites: pages/app-to-app/facebook-app-invites.md
+  - Track analytics:
     - Behavior: pages/analytics/behavior.md
     - Growth: pages/analytics/growth-attribution.md
     - User Value: pages/analytics/user-value attribution.md
     - Revenue: pages/analytics/revenue-attribution.md
-  - Export your analytics:
+  - Export analytics:
     - CSV Export: pages/exports/export-csv.md
     - Export API: pages/exports/export-api.md
     - Webhooks: pages/exports/export-webhooks.md
-  - Integrate your analytics:
+  - Integrate analytics:
     - Abobe Analytics: pages/integrations/abobe-analytics.md
     - Adjust: pages/integrations/adjust.md
     - Amplitude: pages/integrations/amplitude.md

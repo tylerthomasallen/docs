@@ -117,6 +117,7 @@ body.modal {
   overflow-y: hidden;
 }
 
+<<<<<<< HEAD
 
 
 /* ////////////////////////////// */
@@ -194,3 +195,23 @@ body.modal {
 .md-nav__link[data-md-state=blur] {
   text-decoration: line-through;
 }*/
+
+
+/* ////////////////////////////// */
+/* IMAGES */
+/* ////////////////////////////// */
+.third {
+  width: 33%;
+}
+
+.half {
+  width: 50%;
+}
+
+.3-quarters {
+  width: 75%;
+}
+
+.full-width {
+  width: 100%;
+}
