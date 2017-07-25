@@ -1,5 +1,4 @@
 # Branch Docs
-This is the repository for the Branch's new documentation portal. You can find the live version at https://branchmetrics.github.io/docs/.
 
 ## Production
 
