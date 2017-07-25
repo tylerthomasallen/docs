@@ -1,5 +1,7 @@
 # Branch Docs
 
+> Public documentation repository for [Branch](http://branch.io/)
+
 ## Table of Contents
 
   - [Production](#production)
