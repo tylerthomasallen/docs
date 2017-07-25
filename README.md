@@ -1,86 +1,94 @@
+# Branch Docs
 This is the repository for the Branch's new documentation portal. You can find the live version at https://branchmetrics.github.io/docs/.
 
-# Installation
+## Production
 
-To build the documentation on your local machine, follow the steps below.
+- https://branchmetrics.github.io/docs/
 
-> ### Prerequisite Dependencies
-> ```bash
-> python --version #Python 2.7.2
-> pip --version #pip 1.5.2
-> ```
+## Contributing 
 
-### 1. Clone the repo
-In your shell, navigate to the location you want to store the documentation site. Next run:
+- #### Best practices
+    - Educate with `working code examples`.
+    - `Bullet point` key points, procedures, and steps.
+    - Use `shorter sentences with simpler words` (3rd grade reading level).
+    - Write in the viewpoint of the `user`, not Branch.
+    - Keep is simple (KISS) (`1 -> 2 -> 3`)
+    - Don't repeat yourself (DRY) (`this can be found here`)
 
-```bash
-git clone git@github.com:branchmetrics/docs.git
-cd docs
-```
+- #### Folders
+    - Must be lowercase and hyphened
 
-### 2. Install Dependencies
-Next install the required packages by running:
+- #### Content
+    - Bullets and sections must have new line spacing in between
+    - Indention is 4 spaces
+    - Search works best when content is not duplicated
+    - Only add periods if more than one sentence
 
-```bash
-pip install --upgrade pip
-pip install --editable lib/mkdocs
-pip install pygments
-pip install pymdown-extensions
-pip install markdown-include
-pip install mkdocs-material
-```
+- #### Style
+    - titles `# Title`
+    - sections `## Section` 
+    - category `- #### Section` 
+    - content `    - content` 
 
-# Running the project
+- #### Search
+    - Hosted by [Algolia Docsearch](https://community.algolia.com/docsearch/)
+    - Localhost scrapes production
+    - Production is scraped once a day
 
-To generate the static site files and serve them, open a shell window and navigate to the docs directory and run:
+- #### Images
+    - Content pages are kept in the `img/pages` 
+    - Example images used in ingredients are kept in the `img/ingredients` 
 
-```bash
-mkdocs serve
-```
+- #### Includes 
+    - For reusable snippet, use the format `{! path/file_name_here.md !}` 
+    - Content snippets should be placed in the `ingredients` subdirectory
+    - Frequently updated content/code should be kept within the `includes`
 
-Now open http://localhost:8000](http://localhost:8000) in your web browser to view your local development site. Any local changes that get saved will automatically be built and served to this site as long as `mkdocs serve` is running.
+## Development
 
-# Deploying to Production
+- #### Dependencies
 
-Run the commands below to deploy the repo. By default it pushes to the `gh-pages` branch to be served over Github Pages.
+    ```bash
+    python --version #Python 2.7.2
+    pip --version #pip 1.5.2
+    ```
 
-```bash
-mkdocs gh-deploy
-```
+- #### Code
 
-Now open https://branchmetrics.github.io/docs to view the live site.
+    ```bash
+    git clone git@github.com:branchmetrics/docs.git
+    cd docs
+    ```
 
-# Guidelines for writing
+- #### Extensions
 
-This is the documentation for the docs. It describes how the site works, what is supported, and best practices to make collaboration easier.
+    ```bash
+    pip install --upgrade pip
+    pip install --editable lib/mkdocs
+    pip install pygments
+    pip install pymdown-extensions
+    pip install markdown-include
+    pip install mkdocs-material
+    ```
 
-### Includes
+- #### Develop
 
-Small snippets of reused and/or frequently updated content/code should be kept within the `includes` directory. Content snippets should be placed in the `ingredients` subdirectory.
+    ```bash
+    mkdocs serve
+    ```
 
-To insert a reusable snippet, use the format `{! path/file_name_here.md !}` where the root directory that for snippets is the `includes` folder.
+    - http://localhost:8000
 
-### Images
+- #### Deploy
 
-Example images used directly in content pages are kept in the `img/pages` directory, filed into folders by section and page name to match the `pages` directory.
+    ```bash
+    mkdocs gh-deploy
+    ```
 
-Example images used in ingredients are kept in the `img/ingredients` directory, filed into folders ingredient name to match the `ingredients` directory.
+    - https://branchmetrics.github.io/docs
 
-***Note:*** *if an image is reused in multiple places, please create multiple copies to avoid cross-linking!*
 
-### Best Practices
-
-- Folders
-
-    - must be lowercase and hyphened
-
-- Content
-
-    - bullets and sections must have new line spacing in between
-
-    - indention is 4 spaces
-
-# Resources
+## Resources
 
 - http://www.mkdocs.org/
 
@@ -89,7 +97,7 @@ Example images used in ingredients are kept in the `img/ingredients` directory, 
 - https://github.com/facelessuser/pymdown-extensions
 
 
-### Additional
+## Additional
 
 - modify mkdocs
     - readme http://www.mkdocs.org/about/contributing/
@@ -97,6 +105,6 @@ Example images used in ingredients are kept in the `img/ingredients` directory, 
     - add locally `pip install --editable lib/mkdocs`
     - remove locally `sudo rm /usr/local/bin/mkdocs && rm /Library/Python/2.7/site-packages/mkdocs.egg-link`
 
-- modify mkdocs material
+- modify mkdocs-material
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
     - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
