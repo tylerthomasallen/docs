@@ -17,7 +17,9 @@
   - [Deploy](#deploy)
 - [Resources](#resources)
 - [Additional](#additional)
-
+  - [Mkdocs Locally](#mkdocs-locally)
+  - [Mkdocs-Material Locally](#mkdocs-material-locally)
+  
 ## Production
 
 - https://branchmetrics.github.io/docs/
@@ -115,13 +117,13 @@
 
 ## Additional
 
-- modify mkdocs
+- ####  Mkdocs Locally
     - readme http://www.mkdocs.org/about/contributing/
     - update to repo `git subtree add --prefix lib/mkdocs https://github.com/mkdocs/mkdocs master --squash`
     - add locally `pip install --editable lib/mkdocs`
     - remove locally `sudo rm /usr/local/bin/mkdocs && rm /Library/Python/2.7/site-packages/mkdocs.egg-link`
 
-- modify mkdocs-material
+- #### Mkdocs-Material Locally
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
     - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
     - updated files
