@@ -26,9 +26,9 @@
 
 - #### Best Practices
     - Educate with `working code examples`
-    - `Bullet point` key points, procedures, and steps
-    - Use `shorter sentences with simpler words` (3rd grade reading level)
-    - Promote action by leading each sentence with a `verb`
+    - `Bullet point` key points, procedures, and steps to promote progression
+    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity 
+    - Trigger action by `beginning each sentence with a verb`
     - Write in the viewpoint of the `user's wants`, not what Branch wants
     - Keep is simple (KISS) (`1 -> 2 -> 3`)
     - Don't repeat yourself (DRY) (`this can be found here`)
