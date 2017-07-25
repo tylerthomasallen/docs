@@ -12,52 +12,10 @@ To determine the currently installed version, use the following command:
 
 ``` sh
 pip show mkdocs-material | grep -E ^Version
-# Version 1.7.5
+# Version 1.6.3
 ```
 
 ## Changelog
-
-### 1.7.5 <small> _ July 25, 2017</small>
-
-* Fixed [#398][398]: Forms broken due to search shortcuts
-* Improved search overall user experience
-* Improved search matching and highlighting
-* Improved search accessibility
-
-  [398]: https://github.com/squidfunk/mkdocs-material/issues/398
-
-### 1.7.4 <small> _ June 21, 2017</small>
-
-* Fixed functional link colors in table of contents for active palette
-* Fixed [#368][368]: Compatibility issues with IE11
-
-  [368]: https://github.com/squidfunk/mkdocs-material/issues/368
-
-### 1.7.3 <small> _ June 7, 2017</small>
-
-* Fixed error when setting language to Japanese for site search
-
-### 1.7.2 <small> _ June 6, 2017</small>
-
-* Fixed offset of search box when `repo_url` is not set
-* Fixed non-disappearing tooltip
-
-### 1.7.1 <small> _ June 1, 2017</small>
-
-* Fixed wrong `z-index` order of header, overlay and drawer
-* Fixed wrong offset of targeted footnote back references
-
-### 1.7.0 <small> _ June 1, 2017</small>
-
-* Added "copy to clipboard" buttons to code blocks
-* Added support for multilingual site search
-* Fixed search term highlighting for non-latin languages
-
-### 1.6.4 <small> _ May 24, 2017</small>
-
-* Fixed [#337][337]: JavaScript error for GitHub organization URLs
-
-  [337]: https://github.com/squidfunk/mkdocs-material/issues/337
 
 ### 1.6.3 <small> _ May 16, 2017</small>
 

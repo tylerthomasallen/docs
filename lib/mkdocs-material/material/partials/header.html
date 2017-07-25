@@ -28,19 +28,51 @@
           {% endblock %}
         </span>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
+      {% if config.extra.algolia_docsearch %}
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#header-helpful" id="header-helpful" title="Helpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_up</i>
+            <p class="branch-header-label">Helpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#header-unhelpful" id="header-unhelpful" title="Unhelpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_down</i>
+            <p class="branch-header-label">Unhelpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="{{ config.repo_url }}/{{ config.edit_uri }}{{ page.input_path }}" title="Improve This Doc">
+            <i class="branch-header-icon md-icon material-icons">mode_edit</i>
+            <p class="branch-header-label">Improve</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#" class="contact-support" title="Contact support">
+            <i class="branch-header-icon md-icon material-icons">help_outline</i>
+            <p class="branch-header-label">Support</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#header-search" id="header-search" title="Search">
+            <i class="branch-header-icon md-icon material-icons">search</i>
+            <p class="branch-header-label">Search</p>
+          </a>
+        </div>
+      {% endif %}
+      <div class="md-flex__cell md-flex__cell--shrink" style="{% if config.extra.algolia_docsearch %} display:none; {% endif %}">
         {% block search_box %}
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           {% include "partials/search.html" %}
         {% endblock %}
       </div>
-      {% if config.repo_url %}
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          {% if config.repo_url %}
             {% include "partials/source.html" %}
-          </div>
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
     </div>
   </nav>
 </header>

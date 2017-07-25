@@ -3,3 +3,6 @@
 
 [libs]
 lib/declarations/
+
+[options]
+strip_root=true
