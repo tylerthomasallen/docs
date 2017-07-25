@@ -1,6 +1,6 @@
 # Branch Docs
 
-> Public documentation repository for [Branch](http://branch.io/)
+> Repository for [Branch](http://branch.io/)'s public documentation
 
 ## Table of Contents
 
