@@ -25,10 +25,11 @@
 ## Contributing
 
 - #### Best Practices
-    - Educate with `working code examples`.
-    - `Bullet point` key points, procedures, and steps.
-    - Use `shorter sentences with simpler words` (3rd grade reading level).
-    - Write in the viewpoint of the `user`, not Branch.
+    - Educate with `working code examples`
+    - `Bullet point` key points, procedures, and steps
+    - Use `shorter sentences with simpler words` (3rd grade reading level)
+    - Promote action by leading each sentence with a `verb`
+    - Write in the viewpoint of the `user`, not Branch
     - Keep is simple (KISS) (`1 -> 2 -> 3`)
     - Don't repeat yourself (DRY) (`this can be found here`)
 
