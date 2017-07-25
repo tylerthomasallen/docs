@@ -1,12 +1,30 @@
 # Branch Docs
 
+- [Production](#production)
+- [Contributing](#contributing)
+  - [Best Practices](#best-practices)
+  - [Folders](#folders)
+  - [Content](#content)
+  - [Style](#style)
+  - [Search](#search)
+  - [Images](#images)
+  - [Includes](#includes)
+- [Development](#development)
+  - [Dependencies](#dependencies)
+  - [Code](#code)
+  - [Extensions](#extensions)
+  - [Develop](#develop)
+  - [Deploy](#deploy)
+- [Resources](#resources)
+- [Additional](#additional)
+
 ## Production
 
 - https://branchmetrics.github.io/docs/
 
-## Contributing 
+## Contributing
 
-- #### Best practices
+- #### Best Practices
     - Educate with `working code examples`.
     - `Bullet point` key points, procedures, and steps.
     - Use `shorter sentences with simpler words` (3rd grade reading level).
@@ -38,7 +56,7 @@
     - Content pages are kept in the `img/pages` 
     - Example images used in ingredients are kept in the `img/ingredients` 
 
-- #### Includes 
+- #### Includes
     - For reusable snippet, use the format `{! path/file_name_here.md !}` 
     - Content snippets should be placed in the `ingredients` subdirectory
     - Frequently updated content/code should be kept within the `includes`
