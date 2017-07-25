@@ -27,7 +27,7 @@
 - #### Best Practices
     - Educate with `working code examples`
     - `Bullet point` key points, procedures, and steps to promote progression
-    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity 
+    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity 
     - Trigger action by `beginning each sentence with a verb`
     - Write in the viewpoint of the `user's wants`, not what Branch wants
     - Keep is simple (KISS) (`1 -> 2 -> 3`)
@@ -94,7 +94,6 @@
     ```bash
     mkdocs serve
     ```
-
     - http://localhost:8000
 
 - #### Deploy
@@ -102,7 +101,6 @@
     ```bash
     mkdocs gh-deploy
     ```
-
     - https://branchmetrics.github.io/docs
 
 
