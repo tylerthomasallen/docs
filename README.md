@@ -29,7 +29,7 @@
     - `Bullet point` key points, procedures, and steps
     - Use `shorter sentences with simpler words` (3rd grade reading level)
     - Promote action by leading each sentence with a `verb`
-    - Write in the viewpoint of the `user`, not Branch
+    - Write in the viewpoint of the `user's wants`, not what Branch wants
     - Keep is simple (KISS) (`1 -> 2 -> 3`)
     - Don't repeat yourself (DRY) (`this can be found here`)
 
