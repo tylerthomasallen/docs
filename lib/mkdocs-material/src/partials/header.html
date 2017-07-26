@@ -66,8 +66,44 @@
         </span>
       </div>
 
+      <!-- Branch -->
+      {% if config.extra.algolia_docsearch %}
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#header-helpful" id="header-helpful" title="Helpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_up</i>
+            <p class="branch-header-label">Helpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#header-unhelpful" id="header-unhelpful" title="Unhelpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_down</i>
+            <p class="branch-header-label">Unhelpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="{{ config.repo_url }}/{{ config.edit_uri }}{{ page.input_path }}" title="Improve This Doc">
+            <i class="branch-header-icon md-icon material-icons">mode_edit</i>
+            <p class="branch-header-label">Improve</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#" class="contact-support" title="Contact support">
+            <i class="branch-header-icon md-icon material-icons">help_outline</i>
+            <p class="branch-header-label">Support</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#header-search" id="header-search" title="Search">
+            <i class="branch-header-icon md-icon material-icons">search</i>
+            <p class="branch-header-label">Search</p>
+          </a>
+        </div>
+        <div class="md-flex__cell md-flex__cell--shrink" style="display:none;">
+      {% else %}
+        <div class="md-flex__cell md-flex__cell--shrink">
+      {% endif %}
+
       <!-- Button to open search dialogue -->
-      <div class="md-flex__cell md-flex__cell--shrink">
         {% block search_box %}
           <label class="md-icon md-icon--search md-header-nav__button"
               for="search"></label>
