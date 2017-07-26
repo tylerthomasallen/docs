@@ -156,40 +156,42 @@
         </div>
       </main>
       {% block dialog %}
-        <div id="modal-search" class="modal dialog">
-          <div class="modal-background"></div>
-          <div class="modal-content" id="algolia-search-container">
-            <i class="material-icons modal-close right">close</i>
-            <h2>Search</h2>
-            <input placeholder="search" type="text" id="algolia-doc-search">
+        <div class="modals">
+          <div id="modal-search" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content" id="algolia-search-container">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Search</h2>
+              <input placeholder="search" type="text" id="algolia-doc-search">
+            </div>
           </div>
-        </div>
-        <div id="modal-unhelpful" class="modal dialog">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-            <i class="material-icons modal-close right">close</i>
-            <h2>Unhelpful?</h2>
-            <p>How can we improve or assist you?</p>
-            <a href="{{ config.repo_url }}/{{ config.edit_uri }}{{ page.input_path }}" title="Improve This Doc">Improve this doc</a>
-            <a href="#" class="contact-support" title="Contact support">Contact support</a>
+          <div id="modal-unhelpful" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Unhelpful?</h2>
+              <p>How can we improve or assist you?</p>
+              <a href="{{ config.repo_url }}/{{ config.edit_uri }}{{ page.input_path }}" title="Improve This Doc">Improve this doc</a>
+              <a href="#" class="contact-support" title="Contact support">Contact support</a>
+            </div>
           </div>
-        </div>
-        <div id="modal-choose-app" class="modal dialog">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-            <i class="material-icons modal-close right">close</i>
-            <h2>Choose your app</h2>
-            <button type="button">iOS</button>
-            <button type="button">Android</button>
-            <button type="button">Cordova Ionic PhoneGap</button>
-            <button type="button">React Native</button>
+          <div id="modal-choose-app" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Choose your app</h2>
+              <button type="button">iOS</button>
+              <button type="button">Android</button>
+              <button type="button">Cordova Ionic PhoneGap</button>
+              <button type="button">React Native</button>
+            </div>
           </div>
-        </div>
-        <div id="modal-helpful" class="modal notification">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-            <i class="material-icons modal-close right">close</i>
-            <h2>Thank you</h2>
+          <div id="modal-helpful" class="modal notification">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Thank you</h2>
+            </div>
           </div>
         </div>
       {% endblock %}
