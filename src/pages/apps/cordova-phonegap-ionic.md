@@ -9,8 +9,8 @@
 
 - #### Configure app
 
-    - Cordova and Ionic
-
+     - *Cordova and Ionic*
+ 
         ```xml
         <!-- sample config.xml -->
         <widget id="com.eneff.branch.cordovatestbed" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
@@ -24,7 +24,7 @@
           </branch-config>
         ```
 
-    - PhoneGap
+    - *PhoneGap*
 
         ```xml
         <!-- sample config.xml -->
@@ -49,7 +49,7 @@
 
 - #### Initialize Branch
 
-    - Cordova and PhoneGap
+    - *Cordova and PhoneGap*
 
         ```js
         // sample index.js
@@ -79,7 +79,7 @@
         app.initialize();
         ```
 
-    - Ionic 1
+    - *Ionic 1*
 
         ```js
         // sample app.js
@@ -116,7 +116,7 @@
         // ...
         ```
 
-    - Ionic 2 and 3
+    - *Ionic 2 and 3*
 
           ```typescript
           // sample app.component.js
@@ -185,7 +185,7 @@
 
     - Click on the deep link to open your app
 
-## Features
+## Implement features
 
 - #### Initialize Branch features
 
@@ -370,6 +370,10 @@
         })
         ```
 
+- #### Navigate to content
+  
+    - TODO
+
 - #### Display content
 
     - List content on iOS Spotlight
@@ -458,7 +462,7 @@
 
     - Registers a custom commerce event
 
-    - Link Data: [Track commerce properties](#link-data-commerce-properties) for `Currency` and `Category` 
+    - Link Data: [Track commerce properties](#commerce-properties) for `Currency` and `Category` 
     
     - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
 
@@ -578,7 +582,7 @@
         })
         ```
 
-## Troubleshooting
+## Troubleshoot issues
 
 - #### Recommendations
 
@@ -612,7 +616,7 @@
         <widget ios-CFBundleIdentifier="com.eneff.branch.cordovatestbedios" android-packageName="com.eneff.branch.cordovatestbedandroid" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
         ```
 
-- #### Simulating an install
+- #### Simulate an install
   
     - Delete your app
 
@@ -629,14 +633,6 @@
     - Open your app
 
     - Read from `Branch.initSession(data)` for `+is_first_session = true` 
-
-- #### Branch analytics overview
-
-    - TODO redirection
-
-- #### Supported platforms
-
-    - TODO redirection
 
 - #### Sample app
 
@@ -658,11 +654,7 @@
         | contentIndexingMode | `"public"` | Can be set to either `"public"` or `"private"`. Public indicates that you’d like this content to be discovered by other apps. | `$publicly_indexable`
         | contentMetadata | | Any custom key-value data e.g. `{ "custom": "data" }`
 
-- #### Deep link properties
-
-    - TODO redirection
-
-- #### Link Data: Commerce Properties
+- #### Commerce properties
 
     - For [Track Commerce](#track-commerce)
 
@@ -853,7 +845,7 @@
 
         - Chrome -> [chrome://inspect/#devices](chrome://inspect/#devices) -> Console
 
-- #### Updating the Branch SDK
+- #### Update the Branch SDK
 
     - To get the latest improvements and capabilities
 

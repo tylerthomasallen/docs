@@ -1,4 +1,4 @@
-## Why Branch
+## Branch Deep Linking
 
 - URLs can navigate to your website, but not to your app. 
 - Branch deep links allow users to install, open, and navigate to content inside your app.
