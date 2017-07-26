@@ -56,15 +56,16 @@ extra:
 
 # Extensions
 markdown_extensions:
-  - admonition
-  - codehilite #(linenums=true)
-  - footnotes
-  - toc(permalink=true)
-  - meta
-  - pymdownx.github
-  - attr_list
+  - admonition:
+  - codehilite: #(linenums=true)
+  - footnotes:
+  - toc(permalink=true):
+  - meta:
+  - pymdownx.github:
+  - attr_list:
   - markdown_include.include:
       base_path: src/includes/
+
 
 # Pages
 pages:
