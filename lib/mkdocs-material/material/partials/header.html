@@ -59,8 +59,10 @@
             <p class="branch-header-label">Search</p>
           </a>
         </div>
+        <div class="md-flex__cell md-flex__cell--shrink" style="display:none">
+      {% else %}
+        <div class="md-flex__cell md-flex__cell--shrink">
       {% endif %}
-      <div class="md-flex__cell md-flex__cell--shrink" style="{% if config.extra.algolia_docsearch %} display:none; {% endif %}">
         {% block search_box %}
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           {% include "partials/search.html" %}

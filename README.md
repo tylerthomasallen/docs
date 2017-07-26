@@ -131,6 +131,11 @@
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
     - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
     - updated files
-        - `lib/mkdocs-material/material/partials/footers.html`
-        - `lib/mkdocs-material/material/partials/header.html`
-        - `lib/mkdocs-material/material/base.html`
+        - `lib/mkdocs-material/src/partials/footers.html`
+        - `lib/mkdocs-material/src/partials/header.html`
+        - `lib/mkdocs-material/src/base.html`
+        - `lib/mkdocs-material/src/assets/javascripts/application.js`
+    - test live update in `/materials` 
+    - prod code in `/src`
+        - `yarn install` 
+        - `yarn build` (will build `/material` but fail on `/site` -> okay)

@@ -56,15 +56,16 @@ extra:
 
 # Extensions
 markdown_extensions:
-  - admonition
-  - codehilite #(linenums=true)
-  - footnotes
-  - toc(permalink=true)
-  - meta
-  - pymdownx.github
-  - attr_list
+  - admonition:
+  - codehilite: #(linenums=true)
+  - footnotes:
+  - toc(permalink=true):
+  - meta:
+  - pymdownx.github:
+  - attr_list:
   - markdown_include.include:
       base_path: src/includes/
+
 
 # Pages
 pages:
@@ -117,6 +118,7 @@ pages:
     - Facebook App Invites: pages/app-to-app/facebook-app-invites.md
   - Track analytics:
     - Behavior: pages/analytics/behavior.md
+    - Referrals: pages/analytics/referrals.md
     - Growth: pages/analytics/growth-attribution.md
     - User Value: pages/analytics/user-value attribution.md
     - Revenue: pages/analytics/revenue-attribution.md
