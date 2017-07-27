@@ -21,6 +21,3 @@
 ## Troubleshoot issues
 - #### Recommendations
 - #### Sample app
-
-- ##### hellp
-- ###### hello
