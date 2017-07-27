@@ -123,9 +123,9 @@ pages:
     - User Value: pages/analytics/user-value attribution.md
     - Revenue: pages/analytics/revenue-attribution.md
   - Export analytics:
-    - CSV Export: pages/exports/export-csv.md
-    - Export API: pages/exports/export-api.md
-    - Webhooks: pages/exports/export-webhooks.md
+    - CSV Export: pages/exports/csv.md
+    - Export API: pages/exports/api.md
+    - Webhooks: pages/exports/webhooks.md
   - Integrate analytics:
     - Abobe Analytics: pages/integrations/abobe-analytics.md
     - Adjust: pages/integrations/adjust.md
