@@ -44,8 +44,8 @@
   font-weight: 600;
   font-size: 1.8rem;
 }
-.md-typeset li > h4:before  {
-  content: close-quote !important; /* added - #### to markdown */
+.md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
+  content: close-quote !important;
 }
 .md-nav--secondary .md-nav__link--active {
   color: inherit;
