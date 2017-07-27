@@ -51,6 +51,7 @@ extra:
     indexName: 'branchmetrics'
     inputSelector: '#algolia-doc-search'
     debug: true
+    hits: 20
   mixpanel:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
 
@@ -75,7 +76,6 @@ pages:
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
     - Cordova PhoneGap Ionic: pages/apps/cordova-phonegap-ionic.md
-    - iMessage: pages/apps/imessage.md
     - mParticle Android: pages/apps/mparticle-android.md
     - mParticle iOS: pages/apps/mparticle-ios.md
     - Titanium: pages/apps/titanium.md

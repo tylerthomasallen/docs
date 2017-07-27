@@ -365,7 +365,10 @@
             apiKey: '{{ config.extra.algolia_docsearch.apiKey }}',
             indexName: '{{ config.extra.algolia_docsearch.indexName }}',
             inputSelector: '{{ config.extra.algolia_docsearch.inputSelector }}',
-            debug: '{{ config.extra.algolia_docsearch.debug }}'
+            debug: '{{ config.extra.algolia_docsearch.debug }}',
+            algoliaOptions: {
+              hitsPerPage: '{{ config.extra.algolia_docsearch.hits }}'
+            }
           });
         </script>
       {% endif %}

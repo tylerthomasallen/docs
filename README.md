@@ -109,7 +109,6 @@
     ```
     - https://branchmetrics.github.io/docs
 
-
 ## Resources
 
 - http://www.mkdocs.org/
@@ -117,7 +116,6 @@
 - https://github.com/squidfunk/mkdocs-material
 
 - https://github.com/facelessuser/pymdown-extensions
-
 
 ## Additional
 

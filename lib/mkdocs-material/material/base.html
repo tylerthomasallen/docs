@@ -220,7 +220,7 @@
       <script>app.initialize({url:{base:"{{ base_url }}"}})</script>
       {% if config.extra.algolia_docsearch %}
         <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-        <script>docsearch({apiKey:"{{ config.extra.algolia_docsearch.apiKey }}",indexName:"{{ config.extra.algolia_docsearch.indexName }}",inputSelector:"{{ config.extra.algolia_docsearch.inputSelector }}",debug:"{{ config.extra.algolia_docsearch.debug }}"})</script>
+        <script>docsearch({apiKey:"{{ config.extra.algolia_docsearch.apiKey }}",indexName:"{{ config.extra.algolia_docsearch.indexName }}",inputSelector:"{{ config.extra.algolia_docsearch.inputSelector }}",debug:"{{ config.extra.algolia_docsearch.debug }}",algoliaOptions:{hitsPerPage:"{{ config.extra.algolia_docsearch.hits }}"}})</script>
       {% endif %}
       {% for path in extra_javascript %}
         <script src="{{ path }}"></script>

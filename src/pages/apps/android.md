@@ -11,7 +11,7 @@
 
     - Import the Branch SDK to your `build.gradle`
 
-        ```java hl_lines="29"
+        ```java hl_lines="29 30 31 32 33 34 35 36"
         apply plugin: 'com.android.application'
 
         android {
@@ -40,7 +40,14 @@
             })
             compile 'com.android.support:appcompat-v7:25.2.0'
             compile 'com.android.support:design:25.2.0'
-            compile 'io.branch.sdk.android:library:2.+'
+            // Branch SDK: library
+            compile 'io.branch.sdk.android:library:2.+' 
+            // Branch SDK: matching with chrome tabs (optional)
+            compile 'com.android.support:customtabs:23.3.0' 
+            // Branch SDK: matching with GAID (optional)
+            compile 'com.google.android.gms:play-services:9.0.0'
+            // Branch SDK: firebase app indexing (optional)
+            compile 'com.google.android.gms:play-services-appindexing:9.+'
             testCompile 'junit:junit:4.12'
         }
         ```
@@ -229,28 +236,122 @@
 
 - #### Test deep link
 
+    - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
+
+    - Delete your app from the device
+
+    - Compile your app to your device
+
+    - Paste deep link in `Google Hangouts`
+
+    - Click on the deep link to open your app
+
 ## Implement features
+
 - #### Create content reference
+
+    ```java
+    BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
+        // The identifier is what Branch will use to de-dupe the content across many different Universal Objects
+       .setCanonicalIdentifier("item/12345")
+
+       // The canonical URL for SEO purposes (optional)
+       .setCanonicalUrl("https://branch.io/deepviews")
+
+       // This is where you define the open graph structure and how the object will appear on Facebook or in a deepview
+       .setTitle("My Content Title")
+       .setContentDescription("My Content Description")
+       .setContentImageUrl("https://example.com/mycontent-12345.png")
+
+       // You use this to specify whether this content can be discovered publicly - default is public
+       .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+
+        // Here is where you can add custom keys/values to the deep link data
+       .addContentMetadata("property1", "blue")
+       .addContentMetadata("property2", "red");
+    ```
+
 - #### Create deep link
+
+    ```java
+    LinkProperties linkProperties = new LinkProperties()
+       .setChannel("facebook")
+       .setFeature("sharing")
+       .addControlParameter("$desktop_url", "http://example.com/home")
+       .addControlParameter("$ios_url", "http://example.com/ios");
+
+    branchUniversalObject.generateShortUrl(this, linkProperties, new     BranchLinkCreateListener() {
+        @Override
+        public void onLinkCreate(String url, BranchError error) {
+           if (error == null) {
+               Log.i("MyApp", "got my Branch link to share: " + url);
+           }
+        }
+    });                   
+    ```
+
 - #### Share deep link
+
+    ```java
+    ShareSheetStyle shareSheetStyle = new ShareSheetStyle(MainActivity.this, "Check this out!", "This stuff is awesome: ")
+        .setCopyUrlStyle(getResources().getDrawable(android.R.drawable.ic_menu_send), "Copy", "Added to clipboard")
+        .setMoreOptionStyle(getResources().getDrawable(android.R.drawable.ic_menu_search), "Show more")
+        .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
+        .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
+        .setAsFullWidthStyle(true)
+        .setSharingTitle("Share With");
+
+    branchUniversalObject.showShareSheet(this, 
+                                          linkProperties,
+                                          shareSheetStyle,
+                                           new Branch.BranchLinkShareListener() {
+        @Override
+        public void onShareLinkDialogLaunched() {
+        }
+        @Override
+        public void onShareLinkDialogDismissed() {
+        }
+        @Override
+        public void onLinkShareResponse(String sharedLink, String sharedChannel, BranchError error) {
+        }
+        @Override
+        public void onChannelSelected(String channelName) {
+        }
+    });
+    ```
+
 - #### Read deep link
 - #### Navigate to content
 - #### Display content
 - #### Track content
 - #### Track users
+    
+    ```java
+    Branch branch = Branch.getInstance(getApplicationContext());
+    branch.setIdentity(your user id); // your user id should not exceed 127 characters
+    ```
+
+    ```java
+    Branch.getInstance(getApplicationContext()).logout();
+    ```
+
 - #### Track events
+    
+    ```java
+    Branch branch = Branch.getInstance(getApplicationContext());
+    branch.userCompletedAction("your_custom_event");
+    ```
+
+    ```java
+    Branch branch = Branch.getInstance(getApplicationContext());
+    branch.userCompletedAction("your_custom_event", (JSONObject)appState); // same 63 characters max limit
+    ```
+
 - #### Track commerce
 - #### Handle referrals
 
 ## Troubleshoot issues
 - #### Recommendations
-- #### Optional app config
 - #### Simulate an install
 - #### Sample app
-- #### Universal Object properties
-- #### Commerce properties
-- #### Cordova dependencies
-- #### Display console logs
-- #### Update the Branch SDK
-- #### Incompatible plugins
-- #### Cordova errors
+- #### Android instant app
