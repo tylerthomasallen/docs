@@ -1,6 +1,3 @@
-test
-
-
 ## Integrate Branch
 - #### Configure Branch
 - #### Configure app
