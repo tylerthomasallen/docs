@@ -101,6 +101,7 @@ pages:
     - Facebook App Installs: pages/ads/facebook-app-installs.md
     - Facebook App Engagement: pages/ads/facebook-app-engagement.md
     - Facebook Instagram: pages/ads/facebook-instagram.md
+    - Twitter Ads: pages/ads/twitter.md
   - Convert organic search:
     - Firebase: pages/organic-search/firebase.md
     - Spotlight: pages/organic-search/spotlight.md
