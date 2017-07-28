@@ -225,6 +225,8 @@ TODO: referrals
 
     - `data` is overridden on [Link Update](#link-update), not appended
 
+    - Bulk link creator is limited to `1000` links at a time
+
 ## Event
 
 - #### Event Create
