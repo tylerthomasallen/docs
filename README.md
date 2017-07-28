@@ -76,9 +76,9 @@
 - #### Develop
 
     ```bash
+    open http://localhost:8000
     mkdocs serve
     ```
-    - http://localhost:8000
 
 - #### Deploy
 
