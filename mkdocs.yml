@@ -92,6 +92,7 @@ pages:
     - Journeys App Banners: pages/web/journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
   - Convert ads to app:
+    - Apple Search Ads: pages/ads/apple.md
     - Deep Link Feeds: pages/ads/deep-link-feeds.md
     - App Install Ads: pages/ads/app-install-ads.md
     - Doubleclick: pages/ads/doubleclick.md
