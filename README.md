@@ -2,28 +2,6 @@
 
 > Repository for [Branch](http://branch.io/)'s public documentation
 
-## Table of Contents
-
-  - [Production](#production)
-  - [Contributing](#contributing)
-    - [Best Practices](#best-practices)
-    - [Folders](#folders)
-    - [Content](#content)
-    - [Style](#style)
-    - [Search](#search)
-    - [Images](#images)
-    - [Includes](#includes)
-  - [Development](#development)
-    - [Dependencies](#dependencies)
-    - [Code](#code)
-    - [Extensions](#extensions)
-    - [Develop](#develop)
-    - [Deploy](#deploy)
-  - [Resources](#resources)
-  - [Additional](#additional)
-    - [Mkdocs Locally](#mkdocs-locally)
-    - [Mkdocs-Material Locally](#mkdocs-material-locally)
-
 ## Production
 
 - https://branchmetrics.github.io/docs/
@@ -104,20 +82,24 @@
 
 - #### Deploy
 
+    - Merge code into `master`
+    - https://branchmetrics.github.io/docs
+
+## Additional
+
+- #### Resources
+
+    - http://www.mkdocs.org/
+    - https://github.com/squidfunk/mkdocs-material
+    - https://github.com/facelessuser/pymdown-extensions
+
+- #### Mkdocs Local Deploy
+
+    - not recommended
+
     ```bash
     mkdocs gh-deploy
     ```
-    - https://branchmetrics.github.io/docs
-
-## Resources
-
-- http://www.mkdocs.org/
-
-- https://github.com/squidfunk/mkdocs-material
-
-- https://github.com/facelessuser/pymdown-extensions
-
-## Additional
 
 - ####  Mkdocs Locally
     - readme http://www.mkdocs.org/about/contributing/
