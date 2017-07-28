@@ -94,14 +94,14 @@ pages:
   - Convert ads to app:
     - Deep Link Feeds: pages/ads/deep-link-feeds.md
     - App Install Ads: pages/ads/app-install-ads.md
+    - Doubleclick: pages/ads/doubleclick.md
     - Google App Installs: pages/ads/google-app-installs.md
     - Google Universal App Campaigns: pages/ads/google-universal-app-campaigns.md
     - Google Search Ads: pages/ads/google-search.md
     - Facebook App Installs: pages/ads/facebook-app-installs.md
     - Facebook App Engagement: pages/ads/facebook-app-engagement.md
     - Facebook Instagram: pages/ads/facebook-instagram.md
-    - Pinterets App Installs: pages/ads/pinterest-app-installs.md
-    - Snapchat App Installs: pages/ads/snapchat-app-installs.md
+    - Twitter Ads: pages/ads/twitter.md
   - Convert organic search:
     - Firebase: pages/organic-search/firebase.md
     - Spotlight: pages/organic-search/spotlight.md
