@@ -13,11 +13,11 @@ test:
   override:
     - mkdocs build --clean --verbose
 deployment:
- production:
+  production:
     branch: master
     commands:
       - mkdocs gh-deploy
-  release:
+  staging:
     branch: gh-pages
     commands:
-      - python -c 'print "done"''
+      - python -c 'print "done"'
