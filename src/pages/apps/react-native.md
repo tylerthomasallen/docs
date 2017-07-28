@@ -144,7 +144,7 @@
 
 	- Swift 3.0 `AppDelegate.swift`
 
-		```swift hl_lines="3 4 5 12 16"
+		```swift hl_lines="3 4 5 10 11 12 13 14 15 16 17"
 		// Initialize the Branch Session at the top of existing application:didFinishLaunchingWithOptions:
 		func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		    // Uncomment this line to use the test key instead of the live one.
@@ -156,7 +156,7 @@
 
 		// Add the openURL and continueUserActivity functions
 		func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-		    return RNBranch.handleDeepLink(url)
+		    return RNBranch.branch.application(app, open: url, options: options)
 		}
 
 		func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -166,7 +166,7 @@
 
 	- Objective C `AppDelegate.m`
 
-		```objc hl_lines="1 6 7 8 16 17 18 19 23"
+		```objc hl_lines="1 6 7 8 14 15 16 17 18 19 20 21 22 23"
 		#import <react-native-branch/RNBranch.h> // at the top
 
 		// Initialize the Branch Session at the top of existing application:didFinishLaunchingWithOptions:
@@ -181,11 +181,9 @@
 		}
 
 		// Add the openURL and continueUserActivity functions
-		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-		    if (![RNBranch handleDeepLink:url]) {
-		        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
-		        return YES;
-		    }
+		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+		{
+		  return [RNBranch.branch application:app openURL:url options:options];
 		}
 
 		- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
@@ -294,10 +292,62 @@
 
     - Click on the deep link to open your app
 
+
 ## Implement features
+
+- #### Import Branch
+
+	- `index.ios.js`/`index.android.js`
+
+		```js
+		import branch, {
+		  AddToCartEvent,
+		  AddToWishlistEvent,
+		  PurchasedEvent,
+		  PurchaseInitiatedEvent,
+		  RegisterViewEvent,
+		  ShareCompletedEvent,
+		  ShareInitiatedEvent
+		} from 'react-native-branch'
+		```
+
 - #### Create content reference
+
+	- The `Branch Universal Object` encapsulates the thing you want to share
+
+    ```js
+    // only canonicalIdentifier is required
+    let branchUniversalObject = await branch.createBranchUniversalObject('canonicalIdentifier', {
+		automaticallyListOnSpotlight: true,
+	    metadata: {prop1: 'test', prop2: 'abc'},
+   	    title: 'Cool Content!',
+		contentDescription: 'Cool Content Description'})
+    ```
+
 - #### Create deep link
+
+	```js
+	let linkProperties = {
+	    feature: 'share',
+	    channel: 'facebook'
+	}
+
+	let controlParams = {
+	     $desktop_url: 'http://desktop-url.com/monster/12345'
+	}
+
+	let {url} = await branchUniversalObject.generateShortUrl(linkProperties, controlParams)
+	```
+
 - #### Share deep link
+
+	```js
+	let shareOptions = { messageHeader: 'Check this out', messageBody: 'No really, check this out!' }
+	let linkProperties = { feature: 'share', channel: 'RNApp' }
+	let controlParams = { $desktop_url: 'http://example.com/home', $ios_url: 'http://example.com/ios' }
+	let {channel, completed, error} = await branchUniversalObject.showShareSheet(shareOptions, linkProperties, controlParams)
+	```
+
 - #### Read deep link
 - #### Navigate to content
 - #### Display content
