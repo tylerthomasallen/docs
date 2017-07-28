@@ -20,4 +20,4 @@ deployment:
   release:
     branch: gh-pages
     commands:
-      - echo "done"
+      - python -c 'print "done"''
