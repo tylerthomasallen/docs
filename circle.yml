@@ -12,9 +12,12 @@ dependencies:
 test:
   override:
     - mkdocs build --clean --verbose
-    - echo "done"
 deployment:
  production:
-   branch: master
-   commands:
-     - mkdocs gh-deploy
+    branch: master
+    commands:
+      - mkdocs gh-deploy
+  release:
+    branch: gh-pages
+    commands:
+      - echo "done"
