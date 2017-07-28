@@ -2,18 +2,22 @@ machine:
   python:
     version: 2.7.11
 dependencies:
-  pre:
+  post:
     - pip install --upgrade pip
     - pip install --editable lib/mkdocs
     - pip install pygments
     - pip install pymdown-extensions
     - pip install markdown-include
     - pip install mkdocs-material
+    - python -c "print 'docs installed'"
 test:
   override:
     - mkdocs build --clean --verbose
+  post:
+    - python -c "print 'docs built'"
 deployment:
  production:
    branch: master
    commands:
      - mkdocs gh-deploy
+     - python -c "print 'docs deployed'"
