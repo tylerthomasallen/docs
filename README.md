@@ -1,6 +1,49 @@
 # Branch Docs
 
-> Repository for [Branch](http://branch.io/)'s public documentation
+> Repository for Branch's public documentation [https://branchmetrics.github.io/docs/](https://branchmetrics.github.io/docs/)
+
+## To-do 
+https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216
+
+## Development
+
+- #### Dependencies
+
+    ```bash
+    python --version #Python 2.7.2
+    pip --version #pip 1.5.2
+    ```
+
+- #### Code
+
+    ```bash
+    git clone git@github.com:branchmetrics/docs.git
+    cd docs
+    ```
+
+- #### Extensions
+
+    ```bash
+    pip install --upgrade pip
+    pip install --editable lib/mkdocs
+    pip install pygments
+    pip install pymdown-extensions
+    pip install markdown-include
+    pip install mkdocs-material
+    ```
+
+- #### Develop
+
+    ```bash
+    open http://localhost:8000
+    mkdocs serve
+    ```
+
+- #### Deploy
+
+    - Merge code into `master`
+    - https://branchmetrics.github.io/docs
+
 
 ## Production
 
@@ -46,55 +89,14 @@
     - Content snippets should be placed in the `ingredients` subdirectory
     - Frequently updated content/code should be kept within the `includes`
 
-## Development
-
-- #### Dependencies
-
-    ```bash
-    python --version #Python 2.7.2
-    pip --version #pip 1.5.2
-    ```
-
-- #### Code
-
-    ```bash
-    git clone git@github.com:branchmetrics/docs.git
-    cd docs
-    ```
-
-- #### Extensions
-
-    ```bash
-    pip install --upgrade pip
-    pip install --editable lib/mkdocs
-    pip install pygments
-    pip install pymdown-extensions
-    pip install markdown-include
-    pip install mkdocs-material
-    ```
-
-- #### Develop
-
-    ```bash
-    mkdocs serve
-    ```
-    - http://localhost:8000
-
-- #### Deploy
-
-    - Merge code into `master`
-    - https://branchmetrics.github.io/docs
-
 ## Additional
 
 - #### Resources
-
     - http://www.mkdocs.org/
     - https://github.com/squidfunk/mkdocs-material
     - https://github.com/facelessuser/pymdown-extensions
 
 - #### Mkdocs Local Deploy
-
     - not recommended
 
     ```bash
