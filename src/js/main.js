@@ -173,7 +173,7 @@
     }
     function _getImproveUrl() {
       var trim = window.location.pathname.replace(/^\/|\/$/g, '').split('/');
-      trim = trim[0] === 'docs' ? : trim.slice(1, trim.length);
+      trim = trim[0] === 'docs' ? trim.slice(1, trim.length) : trim;
       var path = (trim === '') ? '/index' : trim.join('/');
       return 'https://github.com/branchmetrics/docs/edit/master/src/' + path + '.md';
     }
