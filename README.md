@@ -70,15 +70,18 @@ https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVa
     - Only add periods if more than one sentence
 
 - #### Style
-    - titles `# Title`
-    - sections `## Section` 
-    - category `- #### Section` 
-    - content `    - content` 
+    - Titles `# Title`
+    - Sections `## Section` 
+    - Category `- #### Section` 
+    - Content `    - content` 
 
 - #### Search
     - Hosted by [Algolia Docsearch](https://community.algolia.com/docsearch/)
     - Localhost scrapes production
     - Production is scraped once a day
+
+- #### Code
+    - Tapped sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
     - Content pages are kept in the `img/pages` 
