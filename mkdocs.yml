@@ -67,7 +67,6 @@ markdown_extensions:
   - markdown_include.include:
       base_path: src/includes/
 
-
 # Pages
 pages:
   - Getting started: index.md
