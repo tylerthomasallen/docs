@@ -94,7 +94,7 @@ pages:
   - Convert ads to app:
     - Apple Search Ads: pages/ads/apple.md
     - Dynamic Product Feeds: pages/ads/dynamic-product-feeds.md
-    - App Install Ads: pages/ads/app-install-ads.md
+    - Branch Universal Ads: pages/ads/branch-universal-ads.md
     - Doubleclick: pages/ads/doubleclick.md
     - Google App Installs: pages/ads/google-app-installs.md
     - Google Universal App Campaigns: pages/ads/google-universal-app-campaigns.md
