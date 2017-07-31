@@ -1,6 +1,15 @@
-
 ## Integrate Branch
+
 - #### Configure Branch
+
+    - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+  
+        ![image](http://i.imgur.com/eTuQXyZ.png)
+
+        Customize your person app.link domain:
+
+        ![image](http://i.imgur.com/XPF1i6Z.png)
+
 - #### Configure app
 - #### Initialize Branch
 - #### Test deep link
