@@ -15,17 +15,31 @@
 		npm install --save react-native-branch@2.0.0-beta.7
 		react-native link react-native-branch
 		```
+		Add `pod "Branch"` as a dependency in you iOS/Podfile
+		```
+		cd ios; pod install --repo-update
+		```
+
 
 	- Option 2: [CocoaPods](https://cocoapods.org/)
 
 		```
-		pod "React", path: "../node_modules/react-native"
-
-		# The following line is necessary with use_frameworks! or RN >= 0.42.
+		pod "React",
+		  path: "../node_modules/react-native",
+		  subspecs: %w{
+		    Core
+		    RCTAnimation
+		    RCTImage
+		    RCTText
+		    RCTNetwork
+		    RCTWebSocket
+		  }
 		pod "Yoga", path: "../node_modules/react-native/ReactCommon/yoga"
-
 		pod "react-native-branch", path: "../node_modules/react-native-branch"
 		pod "Branch-SDK", path: "../node_modules/react-native-branch/ios"
+		```
+		```
+		cd ios; pod install --repo-update
 		```
 
 	- Option 3: [Carthage](https://github.com/Carthage/Carthage)
@@ -34,7 +48,6 @@
 		github "BranchMetrics/ios-branch-deep-linking"
 		carthage update
 		```
-
 
 - #### Configure app
 
@@ -144,6 +157,7 @@
 
 	- Swift 3.0 `AppDelegate.swift`
 
+		Add `#import <react-native-branch/RNBranch.h>` to your Bridging header.
 		```swift hl_lines="3 4 5 10 11 12 13 14 15 16 17"
 		// Initialize the Branch Session at the top of existing application:didFinishLaunchingWithOptions:
 		func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -156,7 +170,7 @@
 
 		// Add the openURL and continueUserActivity functions
 		func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-		    return RNBranch.branch.application(app, open: url, options: options)
+		    return RNBranch.handleDeepLink(url)
 		}
 
 		func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -180,10 +194,11 @@
 		    //...
 		}
 
-		// Add the openURL and continueUserActivity functions
-		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-		{
-		  return [RNBranch.branch application:app openURL:url options:options];
+		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+		    if (![RNBranch.branch application:application openURL:url sourceApplication:sourceApplication annotation:annotation]) {
+		        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
+		    }
+		    return YES;
 		}
 
 		- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
@@ -318,10 +333,10 @@
     ```js
     // only canonicalIdentifier is required
     let branchUniversalObject = await branch.createBranchUniversalObject('canonicalIdentifier', {
-		automaticallyListOnSpotlight: true,
+	    automaticallyListOnSpotlight: true,
 	    metadata: {prop1: 'test', prop2: 'abc'},
-   	    title: 'Cool Content!',
-		contentDescription: 'Cool Content Description'})
+	    title: 'Cool Content!',
+	    contentDescription: 'Cool Content Description'})
     ```
 
 - #### Create deep link
@@ -349,14 +364,67 @@
 	```
 
 - #### Read deep link
+
+	```js
+	// Subscribe to incoming links (both Branch & non-Branch)
+	branch.subscribe(({ error, params }) => {
+	    if (params && !error) {
+	        // grab deep link data and route appropriately.
+	    }
+	})
+
+	let lastParams = await branch.getLatestReferringParams() // params from last open
+	let installParams = await branch.getFirstReferringParams() // params from original install
+	```
+
 - #### Navigate to content
+
+	TO-DO
+
 - #### Display content
-- #### Track content
+
+	```js
+	let spotlightResult = await branchUniversalObject.listOnSpotlight()
+	```
+
 - #### Track users
-- #### Track events
-- #### Track commerce
+
+	```js
+	branch.setIdentity('theUserId')
+	branch.logout()
+	```
+
 - #### Handle referrals
+
+	```js
+	let rewards = await branch.loadRewards()
+	let redeemResult = await branch.redeemRewards(amount, bucket)
+	let creditHistory = await branch.getCreditHistory()
+	```
+
+- #### Tracking Events
+
+	| Event | Description |
+	| ----- | --- |
+	| RegisterViewEvent | User viewed the object |
+	| AddToWishlistEvent | User added the object to their wishlist |
+	| AddToCartEvent | User added object to cart |
+	| PurchaseInitiatedEvent | User started to check out |
+	| PurchasedEvent | User purchased the item |
+	| ShareInitiatedEvent | User started to share the object |
+	| ShareCompletedEvent | User completed a share |
+
+	```js
+	import branch, { RegisterViewEvent } from 'react-native-branch'
+	let universalObject = await branch.createUniversalObject('abc', {})
+	universalObject.userCompletedAction(RegisterViewEvent)
+	```
 
 ## Troubleshoot issues
 - #### Recommendations
+
+	TO-DO
+
 - #### Sample app
+
+	[Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)
