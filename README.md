@@ -93,7 +93,7 @@
     - Content snippets should be placed in the `ingredients` subdirectory
     - Frequently updated content/code should be kept within the `includes`
 
-- ### Hidden Pages
+- #### Hidden Pages
     - By default all pages in the mkdocs.yml file will be built and included in the navbar
     - To not include a page in the navbar, add the page's title to the `hidden_pages` array in the mkdocs.yml
 
