@@ -393,10 +393,12 @@
                 codes.push(section);
               } else {
                 // append html
-                codeContainer = _generateCodeContainer(key, codes);
-                block.group.appendChild(codeContainer);
+                if (codes.length > 0) {
+                  codeContainer = _generateCodeContainer(key, codes);
+                  block.group.appendChild(codeContainer);
+                  codes = [];
+                }
                 block.group.appendChild(section.code);
-                codes = [];
               }
             }
 
