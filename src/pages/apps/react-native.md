@@ -160,13 +160,15 @@
 		    //...
 		}
 
-		// Add the openURL and continueUserActivity functions
-		func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-		    return RNBranch.branch.application(app, open: url, options: options)
+		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+		    if (![RNBranch.branch application:application openURL:url sourceApplication:sourceApplication annotation:annotation]) {
+		        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
+		    }
+		    return YES;
 		}
 
-		func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-		    return RNBranch.continue(userActivity)
+		- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+		    return [RNBranch continueUserActivity:userActivity];
 		}
 		```
 
