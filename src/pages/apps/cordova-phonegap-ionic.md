@@ -51,7 +51,7 @@
 
     - *Cordova and PhoneGap*
 
-        ```js
+        ```js hl_lines="11 14 16 17 18 19 20 21 22"
         // sample index.js
         var app = {
           initialize: function() {
@@ -81,7 +81,7 @@
 
     - *Ionic 1*
 
-        ```js
+        ```js hl_lines="16 20 23 24 25 26 27 28 29"
         // sample app.js
         angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
@@ -118,7 +118,7 @@
 
     - *Ionic 2 and 3*
 
-          ```typescript
+          ```typescript hl_lines="9 21 25 29 30 31 32 33 34 35 36"
           // sample app.component.js
           import { Component } from '@angular/core';
           import { Platform } from 'ionic-angular';
@@ -161,7 +161,7 @@
 
 - #### Test deep link iOS
 
-    - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
+    - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
     - Delete your app from the device
 
@@ -175,7 +175,7 @@
 
 - #### Test deep link Android
 
-    - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
+    - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
     - Delete your app from the device
 
@@ -212,7 +212,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Link Data: [Universal Object Properties](#link-data-universal-object-properties)
+    - Uses the [Universal Object Properties](#universal-object-properties)
 
         ```js
         // only canonicalIdentifier is required
@@ -248,9 +248,9 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Link Data: [Deep Link Properties](#link-data-deep-link-properties)
-    
-    - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
+    - Uses [Deep Link Properties](/pages/links/data/)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
         ```js
         // optional fields
@@ -290,7 +290,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Link Data: [Deep Link Properties](#link-data-deep-link-properties)
+    - Uses [Deep Link Properties](/pages/links/data/)
 
         ```js
         // optional fields
@@ -372,11 +372,26 @@
 
 - #### Navigate to content
   
-    - TODO
+    - Handled within `Branch.initSession()`
+
+    - Branch allows you to pass any custom key-value from URLs to your app. Use this data to navigate to content, display a personalized welcome screen, login a user, offer a promotion, etc.
+
+        ```js
+        Branch.initSession(function(data) {
+          // option 1: save to model to be used later
+          window.localStorage['branchData'] = data;
+
+          // option 2: navigate to page
+          window.location.href = '#/content/123'
+
+          // option 3: display data
+          alert(JSON.stringify(data));
+        });
+        ```
 
 - #### Display content
 
-    - List content on iOS Spotlight
+    - List content on `iOS Spotlight`
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
@@ -390,11 +405,11 @@
 
 - #### Track content
 
-    - Track how many times a user views a particular piece of content
+    - Track how many times a piece of content is viewed
 
     - Needs a [Branch Universal Object](#create-content-reference)
     
-    - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
         ```js
         branchUniversalObj.registerView().then(function (res) {
@@ -408,7 +423,7 @@
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
     
-    - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
 
         ```js
         var userId = '123456'
@@ -431,13 +446,13 @@
 
 - #### Track events
 
-    - Registers custom events
+    - Registers a custom event
     
     - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
 
-    - Recommened to [Track User](#track-user) before [Track Event](#track-event) to associate custom events with a user
+    - Best to [Track User](#track-user) before [Track Event](#track-event) to associate a custom event to a user
     
-    - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
 
         ```js
         var eventName = 'clicked_on_this'
@@ -462,9 +477,9 @@
 
     - Registers a custom commerce event
 
-    - Link Data: [Track commerce properties](#commerce-properties) for `Currency` and `Category` 
+    - Uses [Track commerce properties](#commerce-properties) for `Currency` and `Category` 
     
-    - Verify on the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
 
         ```js
         // only revenue is required
@@ -514,25 +529,11 @@
 
     - Referral points are obtained from events triggered by users from rules created on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
     
-    - Verify on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
+    - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
-    - Get credits
+    - Reward credits with the [Referral guide](/pages/analytics/referrals/)
 
-        - Referrer is [tracked](#track-user)
-
-        - Referrer [creates a deep link](#create-deep-link)
-
-        - Referrer [shares the deep Link](#share-deep-link)
-
-        - Referee clicks on deep link
-
-        - Referee triggers a [custom event](#track-event)
-
-        - Catch the event in your Branch Dashboard as a [rule](https://dashboard.branch.io/referrals/rules)
-
-        - Referrer gets referral points
-
-    - Spend credits
+    - Redeem credits
 
         ```js
         var amount = 10
@@ -588,7 +589,7 @@
 
     - Need to select `"app uses IDFA or GAID"` when publishing your app
 
-    - Best to enable [Deep views](https://dashboard.branch.io/settings/deepviews) ([Testing: Supported Platforms](#testing-supported-platforms))
+    - Best to enable [Deep views](https://dashboard.branch.io/settings/deepviews) ([Supported platforms](/pages/links/behavior/#supported-platforms))
 
 - #### Optional app config
 
@@ -636,11 +637,11 @@
 
 - #### Sample app
 
-    - [Branch Testbed App](https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking/tree/master/testbed)
+    - [Branch testbed app](https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking/tree/master/testbed)
 
 - #### Universal Object properties
 
-    - For [Create Content Reference](#create-content-reference)
+    - For [Create content reference](#create-content-reference)
 
         | Key | Default | Usage | Link Property
         | --- | :-: | --- | :-:
@@ -656,7 +657,7 @@
 
 - #### Commerce properties
 
-    - For [Track Commerce](#track-commerce)
+    - For [Track commerce](#track-commerce)
 
     - Categories
 
