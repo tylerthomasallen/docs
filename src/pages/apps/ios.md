@@ -58,13 +58,13 @@
         github "BranchMetrics/ios-branch-deep-linking"
         ```
 
-    - Option 3: Manually install [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) and dependencies
+    - Option 3: Manually install the [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) with dependencies
 
         ![image](http://i.imgur.com/0NcOrkE.png)
 
 - #### Initialize Branch
 
-    - Swift 3.0
+    - *Swift 3.0*
 
         ```swift hl_lines="2 10 11 12 13 14 15 16 21 22 27 28 33 34"
         import UIKit
@@ -104,7 +104,7 @@
         }
         ```
 
-    - Objective-C
+    - *Objective-C*
 
         ```objc hl_lines="2 11 12 13 14 15 16 17 22 23 28 29 34 35"
         #import "AppDelegate.h"
@@ -167,7 +167,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share 
 
-    - Swift 3.0
+    - *Swift 3.0*
 
         ```swift
         // only canonical identifier is required
@@ -180,7 +180,7 @@
         buo.addMetadataKey("property1", value: "blue")
         ```
 
-    - Objective-C
+    - *Objective-C*
 
         ```objc
         // only canonical identifier is required
@@ -196,7 +196,7 @@
 
     - Generate a deep link within your app
 
-    - Swift 3.0
+    - *Swift 3.0*
 
         ```swift
         let lp: BranchLinkProperties = BranchLinkProperties()
@@ -212,7 +212,7 @@
         }
         ```
 
-    - Objective-C
+    - *Objective-C*
 
         ```objc
         BranchLinkProperties *lp = [[BranchLinkProperties alloc] init];
@@ -232,7 +232,7 @@
 
     - Share deep links between users and apps
 
-    - Swift 3.0
+    - *Swift 3.0*
 
         ```swift
         // optional values
@@ -249,7 +249,7 @@
         }
         ```
 
-    - Objective-C
+    - *Objective-C*
 
         ```objc
         // optional values
@@ -271,7 +271,7 @@
 
     - Navigate to any ViewController based on the deep link data from
 
-    - Swift 3.0
+    - *Swift 3.0*
 
         ```swift
         // within AppDelegate application.didFinishLaunchingWithOptions
@@ -293,7 +293,7 @@
         }
         ```
 
-    - Objective-C
+    - *Objective-C*
 
         ```objc
 
