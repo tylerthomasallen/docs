@@ -2,7 +2,7 @@
 
 > Repository for Branch's public documentation [https://branchmetrics.github.io/docs/](https://branchmetrics.github.io/docs/)
 
-## Todo 
+## Todo
 
   - https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216
 
@@ -55,7 +55,7 @@
 - #### Best Practices
     - Educate with `working code examples`
     - `Bullet point` key points, procedures, and steps to promote progression
-    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity 
+    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity
     - Trigger action by `beginning each sentence with a verb`
     - Write in the viewpoint of the `user's wants`, not what Branch wants
     - Keep is simple (KISS) (`1 -> 2 -> 3`)
@@ -72,9 +72,9 @@
 
 - #### Style
     - Titles `# Title`
-    - Sections `## Section` 
-    - Category `- #### Section` 
-    - Content `    - content` 
+    - Sections `## Section`
+    - Category `- #### Section`
+    - Content `    - content`
 
 - #### Search
     - Hosted by [Algolia Docsearch](https://community.algolia.com/docsearch/)
@@ -85,13 +85,17 @@
     - Tapped sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
-    - Content pages are kept in the `img/pages` 
-    - Example images used in ingredients are kept in the `img/ingredients` 
+    - Content pages are kept in the `img/pages`
+    - Example images used in ingredients are kept in the `img/ingredients`
 
 - #### Includes
-    - For reusable snippet, use the format `{! path/file_name_here.md !}` 
+    - For reusable snippet, use the format `{! path/file_name_here.md !}`
     - Content snippets should be placed in the `ingredients` subdirectory
     - Frequently updated content/code should be kept within the `includes`
+
+- ### Hidden Pages
+    - By default all pages in the mkdocs.yml file will be built and included in the navbar
+    - To not include a page in the navbar, add the page's title to the `hidden_pages` array in the mkdocs.yml
 
 ## Additional
 
@@ -121,7 +125,7 @@
         - `lib/mkdocs-material/src/partials/header.html`
         - `lib/mkdocs-material/src/base.html`
         - `lib/mkdocs-material/src/assets/javascripts/application.js`
-    - test live update in `/materials` 
+    - test live update in `/materials`
     - prod code in `/src`
-        - `yarn install` 
+        - `yarn install`
         - `yarn build` (will build `/material` but fail on `/site` -> okay)
