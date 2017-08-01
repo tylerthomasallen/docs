@@ -51,7 +51,7 @@ extra:
     indexName: 'branchmetrics'
     inputSelector: '#algolia-doc-search'
     debug: true
-    hits: 20
+    hits: 15
   mixpanel:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
 
