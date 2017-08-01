@@ -24,13 +24,22 @@
 	- Option 2: [CocoaPods](https://cocoapods.org/)
 
 		```
-		pod "React", path: "../node_modules/react-native"
-
-		# The following line is necessary with use_frameworks! or RN >= 0.42.
+		pod "React",
+		  path: "../node_modules/react-native",
+		  subspecs: %w{
+		    Core
+		    RCTAnimation
+		    RCTImage
+		    RCTText
+		    RCTNetwork
+		    RCTWebSocket
+		  }
 		pod "Yoga", path: "../node_modules/react-native/ReactCommon/yoga"
-
 		pod "react-native-branch", path: "../node_modules/react-native-branch"
 		pod "Branch-SDK", path: "../node_modules/react-native-branch/ios"
+		```
+		```
+		cd ios; pod install --repo-update
 		```
 
 	- Option 3: [Carthage](https://github.com/Carthage/Carthage)
@@ -39,7 +48,6 @@
 		github "BranchMetrics/ios-branch-deep-linking"
 		carthage update
 		```
-
 
 - #### Configure app
 
