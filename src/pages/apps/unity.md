@@ -41,9 +41,59 @@
 		| **Live Android Path Prefix** | This field is only applicable if you are on the `bnc.lt` domain [Link Settings page](https://dashboard.branch.io/link-settings) for your Live Branch app. You can find it underneath the field labeled SHA256 Cert Fingerprints on the [Link Settings page](https://dashboard.branch.io/link-settings) once you’ve enabled App Links. It will look something like this: `/WSuf` (the initial / character should be included).|
 		| **Live App Links** | This field is applicable if you want to enable `APPLINKS` and `UNIVERSAL LINKS` for your domain. Please make sure to add the correct domain found on the bottom of the [Link Settings page](https://dashboard.branch.io/link-settings) of your Live Branch app. Add the -alternate domain to have your Branch links deeplink from your [Deepviews](https://branchmetrics.github.io/docs/pages/web/deep-views/) and [Journeys](https://branchmetrics.github.io/docs/pages/web/journeys/). If you are not using a `app.links` domain please write into [integrations@branch.io](mailto:integrations@branch.io)|
 
+		- Note for Android
+		> 	Occasionally, Android will barf after you add our library due to generic issues unrelated to Branch. Please see this [Android troubleshooting section](https://branchmetrics.github.io/docs/pages/apps/android/#troubleshoot-issues)
 
 - #### Initialize Branch
+
+	- Add Branch to your `Monobehavior` script of your **first Scene**
+
+		```csharp hl_lines="8 11 12 13 14 15 16 17 18 19 20 21 22 23"
+		using UnityEngine;
+		using System.Collections;
+
+		public class Spin : MonoBehaviour {
+
+			// Use this for initialization
+			void Start () {
+				Branch.initSession(CallbackWithBranchUniversalObject);
+			}
+
+			void CallbackWithBranchUniversalObject(BranchUniversalObject buo, 
+													BranchLinkProperties linkProps, 
+													string error) {
+				if (error != null) {
+					System.Console.WriteLine("Error : " 
+											+ error);
+				} else if (linkProperties.controlParams.Count > 0) {
+					System.Console.WriteLine("Deeplink params : " 
+											+ buo.ToJsonString() 
+											+ linkProps.ToJsonString());
+				}
+			}
+
+			// Update is called once per frame
+			void Update () {
+				//rotate 90 degress per second
+				transform.Rotate(Vector3.up * Time.deltaTime*90);
+			}
+		}
+		```
+
 - #### Test deep link
+
+	- [Create a Quick link](https://dashboard.branch.io/quick-links/qlc/define) on the Branch Dashboard
+
+	- Delete your app from the device
+
+	- Paste Quick link in `Google Hangouts (Android)` or `Notes (iOS)`
+
+	- Click on the Quick link to open your app
+
+	- Compile and download your app to your device
+
+	- You should see deferred deep link data show in your app
+
 
 ## Implement features
 - #### Create content reference
