@@ -8,7 +8,7 @@
         ![image](http://i.imgur.com/Edpfn04.png)
 
 - #### Configure bundle identifier
-
+local
     - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](http://i.imgur.com/BHAQIQf.png)
@@ -77,7 +77,7 @@
 
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
           // for debug and development only
-          Branch.getInstance().setDebug() 
+          Branch.getInstance().setDebug()
           // listener for Branch Deep Link data
           Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
             // do stuff with deep link data (nav to page, display content, etc)
@@ -194,7 +194,11 @@
 
 - #### Create deep link
 
-    - Generate a deep link within your app
+    - Generates a deep link within your app
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
     - *Swift 3.0*
 
@@ -230,7 +234,9 @@
 
 - #### Share deep link
 
-    - Share deep links between users and apps
+    - Share a deep link between users and apps
+
+    - Needs a [Branch Universal Object](#create-content-reference)
 
     - *Swift 3.0*
 
@@ -260,26 +266,60 @@
         [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
 
         // share link
-        [branchUniversalObject showShareSheetWithLinkProperties:lp andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString* activityType, BOOL completed) {
+        [buo showShareSheetWithLinkProperties:lp andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString* activityType, BOOL completed) {
             NSLog(@"finished presenting");
         }];
         ```
 
 - #### Read deep link
 
+    - Retrieve Branch data from a deep link
+
+    - Best practice to receive data from the `listener` (to prevent a race condition)
+
+    - *Swift 3.0*
+
+        ```swift
+        // listener (within AppDelegate)
+        Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
+          print(params as? [String: AnyObject] ?? {})
+        }
+
+        // latest
+        let sessionParams = Branch.getInstance().getLatestReferringParams()
+
+        // first
+        let installParams = Branch.getInstance().getFirstReferringParams()
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        // listener (within AppDelegate.m)
+        [[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
+            NSLog(@"%@", params);  
+        }];
+
+        // latest
+        NSDictionary *sessionParams = [[Branch getInstance] getLatestReferringParams];
+
+        // first
+        NSDictionary *installParams = [[Branch getInstance] getFirstReferringParams];
+        ```
+
 - #### Navigate to content
 
-    - Navigate to any ViewController based on the deep link data from
+    - Navigate to any ViewController based on data from a deep link
 
     - *Swift 3.0*
 
         ```swift
         // within AppDelegate application.didFinishLaunchingWithOptions
         Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
-          // catch deep link data
+          // read deep link data
           guard let data = params as? [String: AnyObject] else { return }
 
-          // save deep link data into global model to be referenced by any view controller
+          // save deep link data to global model 
           BranchData.sharedInstance.data = data
 
           // navigate to view controller based on deep link data["type"] ("type" can be any custom key-value pair)
@@ -300,10 +340,111 @@
         ```
 
 - #### Display content
+
+    - Lists content on iOS Spotlight for local and cloud indexing
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - *Swift 3.0*
+
+        ```swift
+        buo.automaticallyListOnSpotlight = true
+        buo.userCompletedAction(BNCRegisterViewEvent)
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        buo.automaticallyListOnSpotlight = YES;
+        [buo userCompletedAction:BNCRegisterViewEvent];
+        ```
+
 - #### Track content
+
+    - Track how many times a piece of content is viewed
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+    
+    - Use [Track content properties](#track-content-properties)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
+
+    - *Swift 3.0*
+
+        ```swift
+        buo.userCompletedAction(BNCRegisterViewEvent) 
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        [buo userCompletedAction:BNCRegisterViewEvent];
+        ```
+
 - #### Track users
+
+    - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
+
+    - *Swift 3.0*
+
+        ```swift
+        // login
+        Branch.getInstance().setIdentity("your_user_id") 
+
+        // logout
+        Branch.getInstance().logout()  
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        // login
+        [[Branch getInstance] setIdentity:@"your_user_id"];   
+
+        // logout
+        [[Branch getInstance] logout];
+        ```
+
 - #### Track events
+
+    - Track custom events
+
+    - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
+
+    - `63` max event name length
+
+    - Best to [Track users](#track-users) before [Track events](#track-events) to associate a custom event to a user
+    
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
+
+    - *Swift 3.0*
+
+        ```swift
+        // option 1
+        Branch.getInstance().userCompletedAction("your_custom_event") 
+        
+        // option 2
+        Branch.getInstance().userCompletedAction("your_custom_event", withState: [String: String]())
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        // option 1
+        [[Branch getInstance] userCompletedAction:@"your_custom_event"];
+
+        // option 2
+        [[Branch getInstance] userCompletedAction:@"your_custom_event" withState:(NSDictionary *)appState];
+        ```
+
 - #### Track commerce
+
+    - Registers a custom commerce event
+    
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+
 - #### Handle referrals
 
 ## Troubleshoot issues 
@@ -314,5 +455,19 @@
 - #### App not opening
 - #### Data not pass through
 - #### Deep links are long
+- #### Track content properties
+
+    - Used for [Track content](#track-content)
+
+        | Key | Value
+        | --- | ---
+        | BNCRegisterViewEvent | User viewed the object
+        | BNCAddToWishlistEvent | User added the object to their wishlist
+        | BNCAddToCartEvent | User added object to cart
+        | BNCPurchaseInitiatedEvent | User started to check out
+        | BNCPurchasedEvent | User purchased the item
+        | BNCShareInitiatedEvent | User started to share the object
+        | BNCShareCompletedEvent | User completed a share
+
 
 
