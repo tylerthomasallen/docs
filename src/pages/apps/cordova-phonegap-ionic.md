@@ -450,7 +450,7 @@
     
     - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
 
-    - Best to [Track User](#track-user) before [Track Event](#track-event) to associate a custom event to a user
+    - Best to [Track users](#track-users) before [Track events](#track-events) to associate a custom event to a user
     
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
 
