@@ -350,20 +350,20 @@
         })
         ```
 
-    - First data
+    - Latest data
 
         ```js
-        Branch.getFirstReferringParams().then(function(res) {
+        Branch.getLatestReferringParams().then(function(res) {
           alert('Response: ' + JSON.stringify(res))
         }).catch(function(err) {
           alert('Error: ' + JSON.stringify(err))
         })
         ```
 
-    - Latest data
+    - First data
 
         ```js
-        Branch.getLatestReferringParams().then(function(res) {
+        Branch.getFirstReferringParams().then(function(res) {
           alert('Response: ' + JSON.stringify(res))
         }).catch(function(err) {
           alert('Error: ' + JSON.stringify(err))

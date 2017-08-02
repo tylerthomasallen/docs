@@ -363,7 +363,7 @@ local
 
     - Needs a [Branch Universal Object](#create-content-reference)
     
-    - Use [Track content properties](#track-content-properties)
+    - Uses [Track content properties](#track-content-properties)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
@@ -436,12 +436,6 @@ local
         // option 2
         [[Branch getInstance] userCompletedAction:@"your_custom_event" withState:(NSDictionary *)appState];
         ```
-
-- #### Track commerce
-
-    - Registers a custom commerce event
-    
-    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
 
 - #### Handle referrals
 
