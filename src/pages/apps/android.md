@@ -216,7 +216,6 @@
 
                 // Branch Init
                 Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
-                    // Branch Link Data
                     @Override
                     public void onInitFinished(JSONObject referringParams, BranchError error) {
                         if (error == null) {
@@ -361,7 +360,6 @@
         ```java
         // listener (within Main Activity's onStart)
         Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
-            // Branch Link Data
             @Override
             public void onInitFinished(JSONObject referringParams, BranchError error) {
                 if (error == null) {
@@ -381,12 +379,35 @@
 
 - #### Navigate to content
   
-    - Handled within `Branch.initSession()`
-
-    - Branch allows you to pass any custom key-value from URLs to your app. Use this data to navigate to content, display a personalized welcome screen, login a user, offer a promotion, etc.
+    - Do stuff with the Branch deep link data
 
         ```java
+        //  listener (within Main Activity's onStart)
+        Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
+            @Override
+            public void onInitFinished(JSONObject referringParams, BranchError error) {
+                if (error == null) {
+                    // option 1: log data
+                    Log.i("BRANCH SDK", referringParams.toString());
 
+                    // option 2: save data to be used later
+                    SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("branchData", referringParams.toString(2));
+                    editor.commit();
+
+                    // option 3: navigate to page
+                    Intent intent = new Intent(getApplicationContext(), OtherActivity.class);
+                    intent.putExtra("branchData", referringParams.toString(2));
+                    startActivity(intent);
+
+                    // option 4: display data
+                    Toast.makeText(getApplicationContext(), referringParams.toString(2), Toast.LENGTH_LONG).show();
+                } else {
+                    Log.i("BRANCH SDK", error.getMessage());
+                }
+            }
+        }, this.getIntent().getData(), this);
         ```
 
 - #### Display content
@@ -453,6 +474,30 @@
 
         // option 2 with metadata
         Branch.getInstance(getApplicationContext()).userCompletedAction("your_custom_event", (JSONObject)appState);
+        ```
+
+- #### Track commerce
+
+    - Registers a custom commerce event
+
+    - Uses [Track commerce properties](#commerce-properties) for `Currency` and `Category` 
+    
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+
+    - *Java*
+
+        ```java
+        CommerceEvent commerceEvent = new CommerceEvent();
+        commerceEvent.setRevenue(1101.99);
+        Branch.getInstance().sendCommerceEvent(commerceEvent, null, null);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        val commerceEvent = CommerceEvent()
+        commerceEvent.revenue = 1101.99
+        Branch.getInstance().sendCommerceEvent(commerceEvent, null, null)
         ```
 
 - #### Handle referrals
