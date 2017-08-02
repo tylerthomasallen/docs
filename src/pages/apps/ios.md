@@ -349,14 +349,12 @@ local
 
         ```swift
         buo.automaticallyListOnSpotlight = true
-        buo.userCompletedAction(BNCRegisterViewEvent)
         ```
 
     - *Objective-C*
 
         ```objc
         buo.automaticallyListOnSpotlight = YES;
-        [buo userCompletedAction:BNCRegisterViewEvent];
         ```
 
 - #### Track content
