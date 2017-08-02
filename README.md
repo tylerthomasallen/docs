@@ -119,6 +119,7 @@
     - updated files
         - `lib/mkdocs-material/src/partials/footers.html`
         - `lib/mkdocs-material/src/partials/header.html`
+        - `lib/mkdocs-material/src/partials/nav.html`
         - `lib/mkdocs-material/src/base.html`
         - `lib/mkdocs-material/src/assets/javascripts/application.js`
     - test live update in `/materials` 

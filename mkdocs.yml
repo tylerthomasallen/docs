@@ -54,6 +54,11 @@ extra:
     hits: 15
   mixpanel:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
+  nav_headers:
+    - index: 2
+      title: Basic deep linking
+    - index: 6
+      title: Advance deep linking
 
 # Extensions
 markdown_extensions:
