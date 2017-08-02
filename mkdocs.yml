@@ -85,6 +85,7 @@ pages:
   - Configure deep links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
+    - Link domain: pages/links/link-domain.md
     - Creating links: pages/links/create.md
   - Convert web to app:
     - Deepviews: pages/web/deep-views.md
