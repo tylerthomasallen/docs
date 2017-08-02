@@ -64,7 +64,7 @@ local
 
 - #### Initialize Branch
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift hl_lines="2 10 11 12 13 14 15 16 21 22 27 28 33 34"
         import UIKit
@@ -167,7 +167,7 @@ local
 
     - The `Branch Universal Object` encapsulates the thing you want to share 
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         // only canonical identifier is required
@@ -200,7 +200,7 @@ local
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         let lp: BranchLinkProperties = BranchLinkProperties()
@@ -238,7 +238,7 @@ local
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         // optional values
@@ -277,7 +277,7 @@ local
 
     - Best practice to receive data from the `listener` (to prevent a race condition)
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         // listener (within AppDelegate)
@@ -311,7 +311,7 @@ local
 
     - Navigate to any ViewController based on data from a deep link
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         // within AppDelegate application.didFinishLaunchingWithOptions
@@ -345,7 +345,7 @@ local
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         buo.automaticallyListOnSpotlight = true
@@ -367,7 +367,7 @@ local
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         buo.userCompletedAction(BNCRegisterViewEvent) 
@@ -385,7 +385,7 @@ local
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         // login
@@ -417,7 +417,7 @@ local
     
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
 
-    - *Swift 3.0*
+    - *Swift 3*
 
         ```swift
         // option 1
