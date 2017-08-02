@@ -2,11 +2,11 @@
 
 > Repository for Branch's public documentation [https://branchmetrics.github.io/docs/](https://branchmetrics.github.io/docs/)
 
-## Todo 
+## Environment
+
+- #### Todo
 
   - https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216
-
-## Development
 
 - #### Dependencies
 
@@ -36,19 +36,16 @@
 - #### Develop
 
     ```bash
-    open http://localhost:8000
     mkdocs serve
     ```
 
 - #### Deploy
 
     - Merge code into `master`
-    - https://branchmetrics.github.io/docs
 
+- #### Production
 
-## Production
-
-- https://branchmetrics.github.io/docs/
+    - https://branchmetrics.github.io/docs/
 
 ## Contributing
 
