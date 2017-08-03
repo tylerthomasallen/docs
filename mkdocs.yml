@@ -68,7 +68,8 @@ markdown_extensions:
       base_path: src/includes/
 
 # Pages hidden from nav bar
-hidden_pages: [""]
+extra:
+  hidden_pages: ["iOS"]
 
 # Pages
 pages:
@@ -98,6 +99,7 @@ pages:
     - Dynamic Product Feeds: pages/ads/dynamic-product-feeds.md
     - Branch Universal Ads: pages/ads/branch-universal-ads.md
     - Doubleclick: pages/ads/doubleclick.md
+    - Google App Installs: pages/ads/google-app-installs.md
     - Google Universal App Campaigns: pages/ads/google-universal-app-campaigns.md
     - Google Search Ads: pages/ads/google-search.md
     - Facebook App Installs: pages/ads/facebook-app-installs.md
