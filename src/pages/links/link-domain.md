@@ -14,14 +14,14 @@ Every app on the Branch platform is assigned a subdomain of the form `xxxx.app.l
 ![image](/img/pages/links/subdomain-setting.png)
 
 !!! note "Test environment domain"
-	The assigned subdomain for your [test environment]({{base.url}}/getting-started/integration-testing#the-test-sandbox-environment) is of the form `xxxx.test-app-link` and must be configured separately. Branch automatically handles HTTPS traffic for custom subdomains and root domains. Branch will acquire the necessary SSL certificate if you follow the simple setup instructions below. Branch will also automatically renew the certificates when needed.
+	The assigned subdomain for your test environment is of the form `xxxx.test-app-link` and must be configured separately. Branch automatically handles HTTPS traffic for custom subdomains and root domains. Branch will acquire the necessary SSL certificate if you follow the simple setup instructions below. Branch will also automatically renew the certificates when needed.
 
 ## Changing your app.link subdomain
 
 You can brand your links with a custom subdomain like `you.app.link`. 
 
 !!! note "One change only"
-	You can only change your app.link subdomain once. Keep in mind that if you change this and you have implemented [strong matching]({{base.url}}/getting-started/sdk-integration-guide/guide/#support-strong-matching-only-for-new-applink-domain) or [universal links]({{base.url}}/getting-started/universal-app-links/guide/#add-your-branch-link-domains), you must update your implementation. The links on your old subdomain will no longer work.
+	You can only change your app.link subdomain once. Keep in mind that if you change this and you have implemented [universal links](/pages/apps/ios/#configure-associated-domains) or [app links](/pages/apps/android/#configure-app), you must update your implementation. The links on your old subdomain will no longer work.
 
 1. Go to [Link Settings](https://dashboard.branch.io/settings/link){:target="_blank"} in the dashboard.
 1. Scroll to the **Link Domain** setting at the bottom.
@@ -37,7 +37,7 @@ If you want to use a custom domain or subdomain for your Branch links instead of
 	We recommend that you choose one domain or subdomain to use with Branch and stick with it, as switching can cause significant problems with your existing links.
 
 !!! tip "Updates to Universal & App Links configuration"
-	If you enable (or change) your link domain/subdomain, you will need to make updates to your Universal Links (iOS) and App Links (Android) configuration. Review the [configuration guide]({{base.url}}/getting-started/universal-app-links/overview/) for these features.
+	If you enable (or change) your link domain/subdomain, you will need to make updates to your Universal Links (iOS) and App Links (Android) configuration. Review the [iOS](/pages/apps/ios/) and [Android](/pages/apps/android/) integration guides.
 
 ### Custom SUBDOMAIN (go.branch.com)
 
