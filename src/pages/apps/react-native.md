@@ -15,17 +15,31 @@
 		npm install --save react-native-branch@2.0.0-beta.7
 		react-native link react-native-branch
 		```
+		Add `pod "Branch"` as a dependency in you iOS/Podfile
+		```
+		cd ios; pod install --repo-update
+		```
+
 
 	- Option 2: [CocoaPods](https://cocoapods.org/)
 
 		```
-		pod "React", path: "../node_modules/react-native"
-
-		# The following line is necessary with use_frameworks! or RN >= 0.42.
+		pod "React",
+		  path: "../node_modules/react-native",
+		  subspecs: %w{
+		    Core
+		    RCTAnimation
+		    RCTImage
+		    RCTText
+		    RCTNetwork
+		    RCTWebSocket
+		  }
 		pod "Yoga", path: "../node_modules/react-native/ReactCommon/yoga"
-
 		pod "react-native-branch", path: "../node_modules/react-native-branch"
 		pod "Branch-SDK", path: "../node_modules/react-native-branch/ios"
+		```
+		```
+		cd ios; pod install --repo-update
 		```
 
 	- Option 3: [Carthage](https://github.com/Carthage/Carthage)
@@ -34,7 +48,6 @@
 		github "BranchMetrics/ios-branch-deep-linking"
 		carthage update
 		```
-
 
 - #### Configure app
 
@@ -144,6 +157,7 @@
 
 	- Swift 3.0 `AppDelegate.swift`
 
+		Add `#import <react-native-branch/RNBranch.h>` to your Bridging header.
 		```swift hl_lines="3 4 5 10 11 12 13 14 15 16 17"
 		// Initialize the Branch Session at the top of existing application:didFinishLaunchingWithOptions:
 		func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -156,7 +170,7 @@
 
 		// Add the openURL and continueUserActivity functions
 		func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-		    return RNBranch.branch.application(app, open: url, options: options)
+		    return RNBranch.handleDeepLink(url)
 		}
 
 		func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -180,10 +194,11 @@
 		    //...
 		}
 
-		// Add the openURL and continueUserActivity functions
-		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-		{
-		  return [RNBranch.branch application:app openURL:url options:options];
+		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+		    if (![RNBranch.branch application:application openURL:url sourceApplication:sourceApplication annotation:annotation]) {
+		        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
+		    }
+		    return YES;
 		}
 
 		- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
@@ -272,7 +287,7 @@
 
     - Delete your app from the device
 
-    - Compile your app *(`cordova run ios` `phonegap run ios` `ionic run ios`)*
+    - Compile your app with Xcode
 
     - Paste deep link in `Apple Notes`
 
@@ -286,7 +301,7 @@
 
     - Delete your app from the device
 
-    - Compile your app *(`cordova run android` `phonegap run android` `ionic run android`)*
+    - Compile your app with Android Studio
 
     - Paste deep link in `Google Hangouts`
 
@@ -313,18 +328,28 @@
 
 - #### Create content reference
 
-	- The `Branch Universal Object` encapsulates the thing you want to share
+	- The `Branch Universal Object` encapsulates the thing you want to share (content or user)
+
+    - Uses the [Universal Object Properties](/pages/links/data/#universal-object)
 
     ```js
     // only canonicalIdentifier is required
     let branchUniversalObject = await branch.createBranchUniversalObject('canonicalIdentifier', {
-		automaticallyListOnSpotlight: true,
+	    automaticallyListOnSpotlight: true,
 	    metadata: {prop1: 'test', prop2: 'abc'},
-   	    title: 'Cool Content!',
-		contentDescription: 'Cool Content Description'})
+	    title: 'Cool Content!',
+	    contentDescription: 'Cool Content Description'})
     ```
 
 - #### Create deep link
+
+	- Creates a deep link URL with encapsulated data
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - Uses [Deep Link Properties](/pages/links/data/)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
 	```js
 	let linkProperties = {
@@ -341,6 +366,12 @@
 
 - #### Share deep link
 
+	-  Will generate a Branch deep link and tag it with the channel the user selects
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - Uses [Deep Link Properties](/pages/links/data/)
+
 	```js
 	let shareOptions = { messageHeader: 'Check this out', messageBody: 'No really, check this out!' }
 	let linkProperties = { feature: 'share', channel: 'RNApp' }
@@ -349,14 +380,125 @@
 	```
 
 - #### Read deep link
+
+	- Retrieve Branch data from a deep link
+
+    - Best practice to receive data from the `listener` (to prevent a race condition)
+
+    - Listener
+
+	```js
+	// Subscribe to incoming links (both Branch & non-Branch)
+	branch.subscribe(({ error, params }) => {
+	    if (params && !error) {
+	        // grab deep link data and route appropriately.
+	    }
+	})
+
+	let lastParams = await branch.getLatestReferringParams() // params from last open
+	let installParams = await branch.getFirstReferringParams() // params from original install
+	```
+
 - #### Navigate to content
+
+	TO-DO
+
 - #### Display content
+
+    - List content on iOS Spotlight
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+	```js
+	let spotlightResult = await branchUniversalObject.listOnSpotlight()
+	```
+
 - #### Track content
+
+    - Track how many times a piece of content is viewed
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - Uses [Track content properties](#track-content-properties)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content
+
+    ```js
+    import branch, { RegisterViewEvent } from 'react-native-branch'
+    branchUniversalObject.userCompletedAction(RegisterViewEvent)
+    ```
+
 - #### Track users
+
+    - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)
+
+	```js
+	branch.setIdentity('theUserId')
+	branch.logout()
+	```
+
 - #### Track events
+
+	- Track custom events
+
+    - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
+
+    - `63` max event name length
+
+    - Best to [Track users](#track-users) before [Track events](#track-events) to associate a custom event to a user
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
+
+	```js
+	branchUniversalObject.userCompletedAction('Custom Action', { key: 'value' })
+	```
+
 - #### Track commerce
+
+	TODO
+
 - #### Handle referrals
 
+	- Referral points are obtained from events triggered by users from rules created on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
+
+    - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
+
+    - Reward credits with the [Referral guide](/pages/analytics/referrals/)
+
+    - Redeem rewards
+
+		```js
+		let redeemResult = await branch.redeemRewards(amount, bucket)
+		```
+
+    - Load rewards
+
+		```js
+		let rewards = await branch.loadRewards()
+		```
+
+    - Load history
+
+		```js
+		let creditHistory = await branch.getCreditHistory()
+		```
+
 ## Troubleshoot issues
-- #### Recommendations
+
+- #### Track content properties
+
+	| Event | Description |
+	| ----- | --- |
+	| RegisterViewEvent | User viewed the object |
+	| AddToWishlistEvent | User added the object to their wishlist |
+	| AddToCartEvent | User added object to cart |
+	| PurchaseInitiatedEvent | User started to check out |
+	| PurchasedEvent | User purchased the item |
+	| ShareInitiatedEvent | User started to share the object |
+	| ShareCompletedEvent | User completed a share |
+
 - #### Sample app
+
+	[Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)

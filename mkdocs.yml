@@ -51,9 +51,14 @@ extra:
     indexName: 'branchmetrics'
     inputSelector: '#algolia-doc-search'
     debug: true
-    hits: 20
+    hits: 15
   mixpanel:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
+  nav_headers:
+    - index: 2
+      title: Basic deep linking
+    - index: 6
+      title: Advance deep linking
 
 # Extensions
 markdown_extensions:
@@ -74,7 +79,7 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your app:
+  - Integate your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
@@ -86,15 +91,22 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
-  - Configure deep links:
-    - Link behavior: pages/links/behavior.md
-    - Link data: pages/links/data.md
-    - Creating links: pages/links/create.md
-  - Convert web to app:
+  - Integrate your website:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
-  - Convert ads to app:
+  - Create deep links:
+    - Link behavior: pages/links/behavior.md
+    - Link data: pages/links/data.md
+    - Link domain: pages/links/link-domain.md
+    - Creating links: pages/links/create.md
+  - Track analytics:
+    - Behavior: pages/analytics/behavior.md
+    - Referrals: pages/analytics/referrals.md
+    - Growth: pages/analytics/growth-attribution.md
+    - User Value: pages/analytics/user-value attribution.md
+    - Revenue: pages/analytics/revenue-attribution.md
+  - Deep link ads:
     - Apple Search Ads: pages/ads/apple.md
     - Dynamic Product Feeds: pages/ads/dynamic-product-feeds.md
     - Branch Universal Ads: pages/ads/branch-universal-ads.md
@@ -106,26 +118,20 @@ pages:
     - Facebook App Engagement: pages/ads/facebook-app-engagement.md
     - Facebook Instagram: pages/ads/facebook-instagram.md
     - Twitter Ads: pages/ads/twitter.md
-  - Convert organic search:
-    - Firebase: pages/organic-search/firebase.md
-    - Spotlight: pages/organic-search/spotlight.md
-  - Convert emails to app:
+  - Deep link emails:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md
     - SendGrid: pages/emails/sendgrid.md
     - Sailthru: pages/emails/sailthru.md
     - AppBoy: pages/emails/appboy.md
     - Self Serve: pages/emails/self-serve.md
-  - Convert app to app:
+  - Deep link organic search:
+    - Firebase: pages/organic-search/firebase.md
+    - Spotlight: pages/organic-search/spotlight.md
+  - Deep link apps:
     - Android Instant Apps: pages/app-to-app/android-instant-apps.md
     - iMessage Apps: pages/app-to-app/imessage-apps.md
     - Facebook App Invites: pages/app-to-app/facebook-app-invites.md
-  - Track analytics:
-    - Behavior: pages/analytics/behavior.md
-    - Referrals: pages/analytics/referrals.md
-    - Growth: pages/analytics/growth-attribution.md
-    - User Value: pages/analytics/user-value attribution.md
-    - Revenue: pages/analytics/revenue-attribution.md
   - Export analytics:
     - CSV Export: pages/exports/csv.md
     - Export API: pages/exports/api.md

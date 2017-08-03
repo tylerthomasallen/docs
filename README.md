@@ -2,11 +2,11 @@
 
 > Repository for Branch's public documentation [https://branchmetrics.github.io/docs/](https://branchmetrics.github.io/docs/)
 
-## Todo
+## Environment
+
+- #### Todo
 
   - https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216
-
-## Development
 
 - #### Dependencies
 
@@ -36,19 +36,16 @@
 - #### Develop
 
     ```bash
-    open http://localhost:8000
     mkdocs serve
     ```
 
 - #### Deploy
 
-    - Merge code into `master`
-    - https://branchmetrics.github.io/docs
+    - Merge pull request into `master`
 
+- #### Production
 
-## Production
-
-- https://branchmetrics.github.io/docs/
+    - https://branchmetrics.github.io/docs/
 
 ## Contributing
 
@@ -82,7 +79,7 @@
     - Production is scraped once a day
 
 - #### Code
-    - Tapped sections `*title*`, `code`, `*title*`, `code`
+    - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
     - Content pages are kept in the `img/pages`
@@ -105,11 +102,12 @@
     - https://github.com/facelessuser/pymdown-extensions
 
 - #### Mkdocs Local Deploy
+
     - not recommended
 
-    ```bash
-    mkdocs gh-deploy
-    ```
+      ```bash
+      mkdocs gh-deploy
+      ```
 
 - ####  Mkdocs Locally
     - readme http://www.mkdocs.org/about/contributing/
@@ -123,6 +121,8 @@
     - updated files
         - `lib/mkdocs-material/src/partials/footers.html`
         - `lib/mkdocs-material/src/partials/header.html`
+        - `lib/mkdocs-material/src/partials/nav.html`
+        - `lib/mkdocs-material/src/partials/nav-item.html`
         - `lib/mkdocs-material/src/base.html`
         - `lib/mkdocs-material/src/assets/javascripts/application.js`
     - test live update in `/materials`
