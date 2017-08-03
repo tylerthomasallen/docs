@@ -167,6 +167,8 @@ local
 
     - The `Branch Universal Object` encapsulates the thing you want to share 
 
+    - Uses [Universal Object properties](/pages/links/data/#universal-object)
+
     - *Swift 3*
 
         ```swift
