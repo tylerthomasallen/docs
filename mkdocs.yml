@@ -69,7 +69,7 @@ markdown_extensions:
 
 # Pages hidden from nav bar
 extra:
-  hidden_pages: ["iOS"]
+  hidden_pages: [""]
 
 # Pages
 pages:
