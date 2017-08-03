@@ -338,7 +338,7 @@ local
     - *Objective-C*
 
         ```objc
-
+        TODO
         ```
 
 - #### Display content
@@ -462,6 +462,27 @@ local
         | BNCPurchasedEvent | User purchased the item
         | BNCShareInitiatedEvent | User started to share the object
         | BNCShareCompletedEvent | User completed a share
+
+- #### Deep link push notifications
+
+    - Include the Branch push notification handler in [Initialize Branch](#initialize-branch)
+
+    - Add a Branch deep link in your push notification  `payload` 
+
+        ```json hl_lines="6"
+        {
+          "aps": {
+            "alert": "Push notification with a Branch deep link",
+            "badge": "1"
+          },
+          "branch": "https://s3z3.app.link/u3fzDwyyjF"
+        }
+        ```
+
+        - Replace `https://s3z3.app.link/u3fzDwyyjF` with your deep link
+
+    - Read deep link data from `Branch.getInstance().initSession` [Initialize Branch](#initialize-branch) ([demo](http://i.imgur.com/5QHWDX9.gif))
+
 
 
 
