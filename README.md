@@ -98,11 +98,12 @@
     - https://github.com/facelessuser/pymdown-extensions
 
 - #### Mkdocs Local Deploy
+
     - not recommended
 
-    ```bash
-    mkdocs gh-deploy
-    ```
+      ```bash
+      mkdocs gh-deploy
+      ```
 
 - ####  Mkdocs Locally
     - readme http://www.mkdocs.org/about/contributing/
