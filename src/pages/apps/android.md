@@ -44,10 +44,10 @@
             // required
             compile 'io.branch.sdk.android:library:2.+'
 
-            // optional
-            compile 'com.android.support:customtabs:23.3.0' 
-            compile 'com.google.android.gms:play-services:9.0.0'
-            compile 'com.google.android.gms:play-services-appindexing:9.+'
+            // optional 
+            compile 'com.android.support:customtabs:23.3.0' // Chrome Tab matching
+            compile 'com.google.android.gms:play-services-ads:9+' // GAID matching
+            compile 'com.google.android.gms:play-services-appindexing:9.+' // App indexing
 
             testCompile 'junit:junit:4.12'
         }
@@ -508,7 +508,7 @@
 
 - #### Display content
 
-    - List content on `Google Index Search`
+    - List content on `Google Search` with `App Indexing`
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
