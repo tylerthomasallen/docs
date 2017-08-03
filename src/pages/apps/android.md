@@ -510,10 +510,9 @@
         Branch.getInstance().initSession(object : BranchReferralInitListener {
             override fun onInitFinished(referringParams: JSONObject, error: BranchError?) {
                 if (error == null) {
-                    Log.e("MyApp", referringParams.toString)
-                    TODO
+                    Log.e("BRANCH SDK", referringParams.toString())
                 } else {
-                    Log.e("MyApp", error.message)
+                    Log.e("BRANCH SDK", error.message)
                 }
             }
         }, this.intent.data, this)
@@ -916,9 +915,16 @@
     - *Kotlin*
 
         ```java
-        TODO
-        ```
+        override fun onStart() {
+            super.onStart()
+            Branch.getInstance().initSession()
+        }
 
+        override fun onStop() {
+            super.onStop()
+            Branch.getInstance().closeSession()
+        }
+        ```
 
 - #### Using the default application class
 
