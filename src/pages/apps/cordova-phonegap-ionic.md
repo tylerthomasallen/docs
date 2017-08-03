@@ -212,7 +212,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](#universal-object-properties)
+    - Uses the [Universal Object Properties](#/pages/links/data/#universal-object)
 
         ```js
         // only canonicalIdentifier is required

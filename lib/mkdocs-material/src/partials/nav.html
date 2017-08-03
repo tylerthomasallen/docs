@@ -47,6 +47,15 @@
     {% for nav_item in nav %}
       {% set path = "nav-" + loop.index | string %}
       {% set level = 1 %}
+      <!-- Branch -->
+      {% set index = loop.index %}
+      {% for header in config.extra.nav_headers %}
+        {% if index == header.index %}
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            {{ header.title }}
+          </li>
+        {% endif %}
+      {% endfor %}
       {% include "partials/nav-item.html" %}
     {% endfor %}
   </ul>

@@ -44,10 +44,10 @@
             // required
             compile 'io.branch.sdk.android:library:2.+'
 
-            // optional
-            compile 'com.android.support:customtabs:23.3.0' 
-            compile 'com.google.android.gms:play-services:9.0.0'
-            compile 'com.google.android.gms:play-services-appindexing:9.+'
+            // optional 
+            compile 'com.android.support:customtabs:23.3.0' // Chrome Tab matching
+            compile 'com.google.android.gms:play-services-ads:9+' // GAID matching
+            compile 'com.google.android.gms:play-services-appindexing:9.+' // App indexing
 
             testCompile 'junit:junit:4.12'
         }
@@ -126,31 +126,11 @@
 
 - #### Initialize Branch
 
-    - Add Branch to your `CustomApplicationClass.java`
-
-        ```java hl_lines="4 11 12 14 15"
-        package com.eneff.branchandroid;
-
-        import android.app.Application;
-        import io.branch.referral.Branch;
-
-        public class CustomApplicationClass extends Application {
-            @Override
-            public void onCreate() {
-                super.onCreate();
-
-                // Branch logging for debugging
-                Branch.enableLogging();
-
-                // Branch object initialization
-                Branch.getAutoInstance(this);
-            }
-        }
-        ```
-
     - Add Branch to your `MainActivity.java`
 
-        ```java hl_lines="3 9 14 16 17 64 65 66 67 68 69 70 71 72 73 74 75 78 79 80 81"
+    - *Java*
+
+        ```java hl_lines="3 9 14 16 17 42 43 44 45 46 47 48 49 50 51 52 55 56 57 58"
         package com.eneff.branchandroid;
 
         import android.content.Intent;
@@ -189,34 +169,11 @@
             }
 
             @Override
-            public boolean onCreateOptionsMenu(Menu menu) {
-                // Inflate the menu; this adds items to the action bar if it is present.
-                getMenuInflater().inflate(R.menu.menu_main, menu);
-                return true;
-            }
-
-            @Override
-            public boolean onOptionsItemSelected(MenuItem item) {
-                // Handle action bar item clicks here. The action bar will
-                // automatically handle clicks on the Home/Up button, so long
-                // as you specify a parent activity in AndroidManifest.xml.
-                int id = item.getItemId();
-
-                //noinspection SimplifiableIfStatement
-                if (id == R.id.action_settings) {
-                    return true;
-                }
-
-                return super.onOptionsItemSelected(item);
-            }
-
-            @Override
             public void onStart() {
                 super.onStart();
 
                 // Branch Init
                 Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
-                    // Branch Link Data
                     @Override
                     public void onInitFinished(JSONObject referringParams, BranchError error) {
                         if (error == null) {
@@ -236,6 +193,45 @@
         }
         ```
 
+    - *Kotlin*
+
+        ```java
+        TODO
+        ```
+
+- #### Load Branch
+
+    - Add Branch to your `CustomApplicationClass.java`
+
+    - *Java*
+
+        ```java hl_lines="4 11 12 14 15"
+        package com.eneff.branchandroid;
+
+        import android.app.Application;
+        import io.branch.referral.Branch;
+
+        public class CustomApplicationClass extends Application {
+            @Override
+            public void onCreate() {
+                super.onCreate();
+
+                // Branch logging for debugging
+                Branch.enableLogging();
+
+                // Branch object initialization
+                Branch.getAutoInstance(this);
+            }
+        }
+        ```
+
+    - *Kotlin*
+
+        ```java
+        TODO
+        ```
+
+
 - #### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
@@ -250,21 +246,13 @@
 
 ## Implement features
 
-- #### Initialize Branch features
-
-    - Loads Branch into your app
-
-    - Must be called on `deviceready` and `resume`
-
-        ```java
-
-        ```
-
 - #### Create content reference
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](#universal-object-properties)
+    - Uses the [Universal Object Properties](#/pages/links/data/#universal-object)
+
+    - *Java*
 
         ```java
         BranchUniversalObject buo = new BranchUniversalObject()
@@ -276,6 +264,18 @@
             .addContentMetadata("custom_data", "123");
         ```
 
+    - *Kotlin*
+
+        ```java
+        val buo = new BranchUniversalObject()
+            .setCanonicalIdentifier("content/12345")
+            .setTitle("My Content Title")
+            .setContentDescription("My Content Description")
+            .setContentImageUrl("https://lorempixel.com/400/400")
+            .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+            .addContentMetadata("custom_data", "123")
+        ```      
+
 - #### Create deep link
 
     - Creates a deep link URL with encapsulated data
@@ -285,6 +285,8 @@
     - Uses [Deep Link Properties](/pages/links/data/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
+
+    - *Java*
 
         ```java
         LinkProperties lp = new LinkProperties()
@@ -307,6 +309,26 @@
         });
         ```
 
+    - *Kotlin*
+
+        ```java
+        val lp = new LinkProperties()
+            .setChannel("facebook")
+            .setFeature("sharing")
+            .setCampaign("content 123 launch")
+            .setStage("new user")
+            .addControlParameter("$deeplink_path", "content/123")
+            .addControlParameter("$desktop_url", "http://example.com/home")
+            .addControlParameter("custom", "data")
+            .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()))
+
+        buo.generateShortUrl(this, lp, BranchLinkCreateListener { url, error ->
+            if (error == null) {
+                Log.i("MyApp", "got my Branch link to share: " + url)
+            }
+        })
+        ```
+
 - #### Share deep link
 
     -  Will generate a Branch deep link and tag it with the channel the user selects
@@ -314,6 +336,8 @@
     - Needs a [Branch Universal Object](#create-content-reference)
 
     - Uses [Deep Link Properties](/pages/links/data/)
+
+    - *Java*
 
         ```java
         LinkProperties lp = new LinkProperties()
@@ -352,16 +376,48 @@
         });
         ```
 
+    - *Kotlin*
+
+        ```java
+        var lp = new LinkProperties()
+            .setChannel("facebook")
+            .setFeature("sharing")
+            .setCampaign("content 123 launch")
+            .setStage("new user")
+            .addControlParameter("$deeplink_path", "content/123")
+            .addControlParameter("$desktop_url", "http://example.com/home")
+            .addControlParameter("custom", "data")
+            .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()))
+
+        var ss = new ShareSheetStyle(this@MainActivity, "Check this out!", "This stuff is awesome: ")
+            .setCopyUrlStyle(resources.getDrawable(this, android.R.drawable.ic_menu_send), "Copy", "Added to clipboard")
+            .setMoreOptionStyle(resources.getDrawable(this, android.R.drawable.ic_menu_search), "Show more")
+            .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
+            .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
+            .addPreferredSharingOption(SharingHelper.SHARE_WITH.MESSAGE)
+            .addPreferredSharingOption(SharingHelper.SHARE_WITH.HANGOUT)
+            .setAsFullWidthStyle(true)
+            .setSharingTitle("Share With")
+
+        buo.showShareSheet(this, lp, ss, object : Branch.BranchLinkShareListener {
+            override fun onShareLinkDialogLaunched() {}
+            override fun onShareLinkDialogDismissed() {}
+            override fun onLinkShareResponse(sharedLink: String, sharedChannel: String, error: BranchError) {}
+            override fun onChannelSelected(channelName: String) {}
+        })
+        ```
+
 - #### Read deep link
 
     - Retrieve Branch data from a deep link
 
     - Best practice to receive data from the `listener` (to prevent a race condition)
 
+    - *Java*
+
         ```java
         // listener (within Main Activity's onStart)
         Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
-            // Branch Link Data
             @Override
             public void onInitFinished(JSONObject referringParams, BranchError error) {
                 if (error == null) {
@@ -373,37 +429,107 @@
         }, this.getIntent().getData(), this);
 
         // latest
-        JSONObject sessionParams = Branch.getInstance(getApplicationContext()).getLatestReferringParams();
+        JSONObject sessionParams = Branch.getInstance().getLatestReferringParams();
 
         // first
-        JSONObject installParams = Branch.getInstance(getApplicationContext()).getFirstReferringParams();
+        JSONObject installParams = Branch.getInstance().getFirstReferringParams();
+        ```
+
+    - *Kotlin*
+
+        ```java
+        // listener (within Main Activity's onStart)
+        Branch.getInstance().initSession(object : BranchReferralInitListener {
+            override fun onInitFinished(referringParams: JSONObject, error: BranchError?) {
+                if (error == null) {
+                    Log.e("MyApp", referringParams.toString)
+                } else {
+                    Log.e("MyApp", error.message)
+                }
+            }
+        }, this.intent.data, this)
+
+        // latest
+        val sessionParams = Branch.getInstance().latestReferringParams
+
+        // first
+        val installParams = Branch.getInstance().firstReferringParams
         ```
 
 - #### Navigate to content
   
-    - Handled within `Branch.initSession()`
+    - Do stuff with the Branch deep link data
 
-    - Branch allows you to pass any custom key-value from URLs to your app. Use this data to navigate to content, display a personalized welcome screen, login a user, offer a promotion, etc.
+    - *Java*
 
         ```java
+        //  listener (within Main Activity's onStart)
+        Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
+            @Override
+            public void onInitFinished(JSONObject referringParams, BranchError error) {
+                if (error == null) {
+                    // option 1: log data
+                    Log.i("BRANCH SDK", referringParams.toString());
 
+                    // option 2: save data to be used later
+                    SharedPreferences preferences = .getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("branchData", referringParams.toString(2));
+                    editor.commit();
+
+                    // option 3: navigate to page
+                    Intent intent = new Intent(, OtherActivity.class);
+                    intent.putExtra("branchData", referringParams.toString(2));
+                    startActivity(intent);
+
+                    // option 4: display data
+                    Toast.makeText(, referringParams.toString(2), Toast.LENGTH_LONG).show();
+                } else {
+                    Log.i("BRANCH SDK", error.getMessage());
+                }
+            }
+        }, this.getIntent().getData(), this);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        Branch.getInstance().initSession(object : BranchReferralInitListener {
+            override fun onInitFinished(referringParams: JSONObject, error: BranchError?) {
+                if (error == null) {
+                    Log.e("MyApp", referringParams.toString)
+                    TODO
+                } else {
+                    Log.e("MyApp", error.message)
+                }
+            }
+        }, this.intent.data, this)
         ```
 
 - #### Display content
 
-    - List content on `Google Index Search`
+    - List content on `Google Search` with `App Indexing`
 
     - Needs a [Branch Universal Object](#create-content-reference)
-
-        ```java
-        buo.listOnGoogleSearch(context);
-        ```
 
     - Needs `build.gradle` library
 
         ```java
         compile 'com.google.android.gms:play-services-appindexing:9.+'
         ```
+
+    - *Java*
+
+        ```java
+        buo.listOnGoogleSearch(this);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        buo.listOnGoogleSearch(this)
+        ```
+
 
 - #### Track content
 
@@ -415,8 +541,16 @@
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
+    - *Java*
+
         ```java
         buo.userCompletedAction(BranchEvent.VIEW);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        buo.userCompletedAction(BranchEvent.VIEW)
         ```
 
 - #### Track users
@@ -427,12 +561,24 @@
     
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
 
+    - *Java*
+
         ```java
         // login
-        Branch.getInstance(getApplicationContext()).setIdentity("your_user_id");
+        Branch.getInstance().setIdentity("your_user_id");
 
         // logout
-        Branch.getInstance(getApplicationContext()).logout();
+        Branch.getInstance().logout();
+        ```
+
+    - *Kotlin*
+
+        ```java
+        // login
+        Branch.getInstance().setIdentity("your_user_id")
+
+        // logout
+        Branch.getInstance().logout()
         ```
 
 - #### Track events
@@ -447,12 +593,51 @@
     
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
         
+    - *Java*
+
         ```java
         // option 1
-        Branch.getInstance(getApplicationContext()).userCompletedAction("your_custom_event");
+        Branch.getInstance().userCompletedAction("your_custom_event");
 
         // option 2 with metadata
-        Branch.getInstance(getApplicationContext()).userCompletedAction("your_custom_event", (JSONObject)appState);
+        Branch.getInstance().userCompletedAction("your_custom_event", (JSONObject)appState);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        // option 1
+        Branch.getInstance().userCompletedAction("your_custom_event")
+
+        // option 2 with metadata
+        TODO
+        Branch.getInstance().userCompletedAction("your_custom_event", (JSONObject)appState)
+        ```
+
+- #### Track commerce
+
+    - Registers a custom commerce event
+
+    - Uses [Track commerce properties](#commerce-properties) for `Currency` and `Category` 
+    
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+
+    - *Java*
+
+        ```java
+        TODO: all
+        CommerceEvent commerceEvent = new CommerceEvent();
+        commerceEvent.setRevenue(1101.99);
+        Branch.getInstance().sendCommerceEvent(commerceEvent, null, null);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        TODO: all values
+        val commerceEvent = CommerceEvent()
+        commerceEvent.revenue = 1101.99
+        Branch.getInstance().sendCommerceEvent(commerceEvent, null, null)
         ```
 
 - #### Handle referrals
@@ -465,39 +650,78 @@
 
     - Redeem credits
 
-        ```java
-        Branch.getInstance(getApplicationContext()).redeemRewards(5);
-        ```
+        - *Java*
+
+            ```java
+            Branch.getInstance().redeemRewards(5);
+            ```
+
+        - *Kotlin*
+
+            ```java
+            Branch.getInstance().redeemRewards(5)
+            ```
 
     - Load credits
 
-        ```java
-        Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateChangedListener() {
-            @Override
-            public void onStateChanged(boolean changed, Branch.BranchError error) {
-                // changed boolean will indicate if the balance changed from what is currently in memory
+        - *Java*
 
-                // will return the balance of the current user's credits
-                int credits = branch.getCredits();
-            }
-        });
-        ```
+            ```java
+            Branch.getInstance().loadRewards(new BranchReferralStateChangedListener() {
+                @Override
+                public void onStateChanged(boolean changed, Branch.BranchError error) {
+                    // changed boolean will indicate if the balance changed from what is currently in memory
+
+                    // will return the balance of the current user's credits
+                    int credits = branch.getCredits();
+                }
+            });
+            ```
+
+        - *Kotlin*
+
+            ```java
+            TODO
+            ```
 
     - Load history
 
-        ```java
-        Branch.getInstance(getApplicationContext()).getCreditHistory(new BranchListResponseListener() {
-            public void onReceivingResponse(JSONArray list, Branch.BranchError error) {
-                if (error == null) {
-                    // show the list in your app
-                } else {
-                    Log.i("MyApp", error.getMessage());
+        - *Java* 
+
+            ```java
+            Branch.getInstance().getCreditHistory(new BranchListResponseListener() {
+                public void onReceivingResponse(JSONArray list, Branch.BranchError error) {
+                    if (error == null) {
+                        // show the list in your app
+                    } else {
+                        Log.i("MyApp", error.getMessage());
+                    }
                 }
-            }
-        });
-        ```
+            });
+            ```
+
+        - *Kotlin*
+
+            ```java
+            TODO
+            ```
 
 ## Troubleshoot issues
+
+- #### Universal Object best practices
+    
+    - To make sure your analytics are correct, and your content is ranking on Spotlight effectively.
+        - Do
+            - Set the `canonicalIdentifier` to a unique, de-duped value across instances of the app
+            - Ensure that the `title`, `contentDescription` and `imageUrl` properly represent the object
+            - Initialize the Branch Universal Object and call userCompletedAction with the `BranchEvent.VIEW` on page load
+            - Call showShareSheet and createShortLink later in the life cycle, when the user takes an action that needs a link
+            - Call the additional object events (purchase, share completed, etc) when the corresponding user action is taken
+        - Do not
+            - Do not set the same `title`, `contentDescription` and `imageUrl` across all objects
+            - Do not wait to initialize the object and register views until the user goes to share
+            - Do not wait to initialize the object until you conveniently need a link
+            - Do not create many objects at once and register views in a `for` loop.
 
 - #### Track content properties
 
@@ -512,21 +736,6 @@
         | BNCPurchasedEvent | User purchased the item
         | BNCShareInitiatedEvent | User started to share the object
         | BNCShareCompletedEvent | User completed a share
-
-- #### Universal object best practices
-    
-    - To make sure your analytics are correct, and your content is ranking on Spotlight effectively.
-        - Do
-            - Set the `canonicalIdentifier` to a unique, de-duped value across instances of the app
-            - Ensure that the `title`, `contentDescription` and `imageUrl` properly represent the object
-            - Initialize the Branch Universal Object and call userCompletedAction with the `BranchEvent.VIEW` on page load
-            - Call showShareSheet and createShortLink later in the life cycle, when the user takes an action that needs a link
-            - Call the additional object events (purchase, share completed, etc) when the corresponding user action is taken
-        - Don't
-            - Don't set the same `title`, `contentDescription` and `imageUrl` across all objects
-            - Don't wait to initialize the object and register views until the user goes to share
-            - Don't wait to initialize the object until you conveniently need a link
-            - Don't create many objects at once and register views in a `for` loop.
 
 - #### Using bnc.lt or a custom link domain
     
@@ -565,3 +774,135 @@
         - `/LVeu` (live)
         - `/eVeu` (test)
         - `your.app.com`
+
+ - #### Branch with Fabric Answers
+ 
+    - If you do not want to import `answers-shim`
+
+        ```
+        compile ('io.branch.sdk.android:library:2.+') {
+          exclude module: 'answers-shim'
+        }   
+        ```    
+
+- #### Deep link from push notification
+
+    - Deep link to content from push notifications just by adding a Branch link to your result intent
+
+        ```
+        Intent resultIntent = new Intent(this, TargetClass.class);
+        intent.putExtra("branch","http://xxxx.app.link/testlink");
+        PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        intent.putExtra("branch_force_new_session",true);
+        ```
+
+- #### Pre Android 15 support
+
+    - Use `Branch SDK 1.14.5`
+
+    - Add to `onStart()` and `onStop()`
+
+        ```java
+        @Override
+        protected void onStart() {
+            super.onStart();
+            Branch.getInstance(getApplicationContext()).initSession();
+        }
+
+        @Override
+        protected void onStop() {
+            super.onStop();
+            branch.closeSession();
+        }
+        ```
+
+- #### Using the default application class
+
+    - If your app does not have an application class
+
+        ```xml
+        <application android:name="io.branch.referral.BranchApp">
+        ```
+
+- #### Custom install referrer class
+
+    - Google only allows one `BroadcastReceiver` per application
+
+    - Add to your `AndroidManifest.xml`
+
+        ```xml
+        <receiver android:name="com.myapp.CustomInstallListener" android:exported="true">
+          <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER" />
+          </intent-filter>
+        </receiver>
+        ```
+
+    - Create an instance of `io.branch.referral.InstallListener` in `onReceive()`
+
+        ```java
+        InstallListener listener = new InstallListener();
+        listener.onReceive(context, intent);
+        ```
+
+- #### Guaranteed matching
+
+    - Cookie based matching using `Custom Chrome Tabs`
+
+        ```
+        compile 'com.android.support:customtabs:23.3.0'
+        ```
+
+- #### Matching through install listener
+
+    - Enable to pass `link_click_id` from Google Play to Branch through your Install Listener. As broadcasts can arrive at different times, you can set the amount of time Branch should wait for the install listener broadcast before posting
+
+    - Add to your application class before `getAutoInstance`
+
+    - *Java*
+
+        ```java
+        Branch.enablePlayStoreReferrer(long delay);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        Branch.enablePlayStoreReferrer(long delay)
+        ```
+
+    - Test
+
+        ```sh
+        adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n io.branch.branchandroiddemo/io.branch.referral.InstallListener --es "referrer" "link_click_id=123"
+        ```
+
+- #### Enable multidexing
+
+    - Adding additional dependencies may overrun the dex limit and lead to `NoClassDefFoundError` or `ClassNotFoundException`
+
+    - Add to your `build.gradle`
+
+        ```java
+        defaultConfig {
+            multiDexEnabled true
+        }
+        ```
+
+    - Add to your `Application class` and make sure it extends `MultiDexApplication`
+
+        ```java
+        @Override
+        protected void attachBaseContext(Context base) {
+            super.attachBaseContext(base);
+            MultiDex.install(this);
+        }
+        ```
+
+- #### InvalidClassException, ClassLoadingError or VerificationError
+
+    - Often caused by a `Proguard` bug. Try the latest Proguard version or disable Proguard optimization by setting `-dontoptimize`
+
+- #### Proguard warning or errors with answers-shim module
+
+    - Often caused when you exclude the `answers-shim`. Try adding -dontwarn com.crashlytics.android.answers.shim` to your `Proguard` file
