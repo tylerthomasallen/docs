@@ -13,14 +13,14 @@ Every app on the Branch platform is assigned a subdomain of the form `xxxx.app.l
 
 ![image](/img/pages/links/subdomain-setting.png)
 
-!!! note "Test environment domain"
+!!! warning "Test environment domain"
 	The assigned subdomain for your test environment is of the form `xxxx.test-app-link` and must be configured separately. Branch automatically handles HTTPS traffic for custom subdomains and root domains. Branch will acquire the necessary SSL certificate if you follow the simple setup instructions below. Branch will also automatically renew the certificates when needed.
 
 ## Changing your app.link subdomain
 
 You can brand your links with a custom subdomain like `you.app.link`. 
 
-!!! note "One change only"
+!!! warning "One change only"
 	You can only change your app.link subdomain once. Keep in mind that if you change this and you have implemented [universal links](/pages/apps/ios/#configure-associated-domains) or [app links](/pages/apps/android/#configure-app), you must update your implementation. The links on your old subdomain will no longer work.
 
 1. Go to [Link Settings](https://dashboard.branch.io/settings/link){:target="_blank"} in the dashboard.
@@ -33,7 +33,7 @@ You can brand your links with a custom subdomain like `you.app.link`.
 
 If you want to use a custom domain or subdomain for your Branch links instead of the `XXXX.app.link` domain, setting one up is simple.
 
-!!! note "Avoid switching later"
+!!! warning "Avoid switching later"
 	We recommend that you choose one domain or subdomain to use with Branch and stick with it, as switching can cause significant problems with your existing links.
 
 !!! tip "Updates to Universal & App Links configuration"
@@ -41,7 +41,7 @@ If you want to use a custom domain or subdomain for your Branch links instead of
 
 ### Custom SUBDOMAIN (go.branch.com)
 
-!!! note "Do not use www"
+!!! warning "Do not use www"
 	Some browsers have special rules for processing URLs beginning with `www`. We strongly recommend you do not include a `www` prefix in your custom subdomain.
 
 1. Create a CNAME for your subdomain and point it to `custom.bnc.lt`
@@ -52,7 +52,7 @@ If you want to use a custom domain or subdomain for your Branch links instead of
 
 ### Custom ROOT domain (branch.com)
 
-!!! note "Use this domain for Branch links only"
+!!! warning "Use this domain for Branch links only"
 	Once you enable this root domain for Branch links, you will not be able to use it for hosting anything else. We recommend using a subdomain, or purchasing a new root domain for this purpose. **You cannot use your main website domain for hosting Branch links**.
 
 1. Go to [Link Settings](https://dashboard.branch.io/#/settings/link){:target="_blank"} on the Branch dashboard, and find the **Link Domain** section.
