@@ -18,7 +18,7 @@
     + Add link data (TODO)
     + Add quick link key-values (TODO)
 
-- #### Set redirect when app is not installed 
+- #### Change redirect when app is not installed 
     + Add query string `https://s3z3.app.link?$ios_url=https://example.com`
     + Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/data/#redirections))
     + Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/data/#redirections))
@@ -28,7 +28,7 @@
     + Add `Default URL` (`$fallback_url`) on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
     + *(ordered by precedence)*
 
-- #### Set redirect when app is installed
+- #### Change redirect when app is installed
     * *iOS:* need to override `Universal Links`
         - Add `$web_only = true` ([docs](/pages/links/data/#redirections))
         - Add redirect `$ios_url = 'https://google.com'` ([docs](/pages/links/data/#redirections))
