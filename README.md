@@ -41,7 +41,7 @@
 
 - #### Deploy
 
-    - Merge code into `master`
+    - Merge pull request into `master`
 
 - #### Production
 
