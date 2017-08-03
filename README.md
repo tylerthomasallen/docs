@@ -79,7 +79,7 @@
     - Production is scraped once a day
 
 - #### Code
-    - Tapped sections `*title*`, `code`, `*title*`, `code`
+    - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
     - Content pages are kept in the `img/pages` 
