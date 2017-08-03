@@ -482,7 +482,3 @@ local
         - Replace `https://s3z3.app.link/u3fzDwyyjF` with your deep link
 
     - Read deep link data from `Branch.getInstance().initSession` [Initialize Branch](#initialize-branch) ([demo](http://i.imgur.com/5QHWDX9.gif))
-
-
-
-

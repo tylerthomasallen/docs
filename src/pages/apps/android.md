@@ -57,7 +57,7 @@
 
     - Add Branch to your `AndroidManifest.xml`
 
-        ```xml hl_lines="9 17 26 27 28 29 30 31 32 34 35 36 37 38 39 40 43 44 45 46 48 49 50 51 52 53"
+        ```xml hl_lines="9 17 26 27 28 29 30 31 32 34 35 36 37 38 39 40 44 45 46 47 49 50 51 52 53 54"
         <?xml version="1.0" encoding="utf-8"?>
         <manifest xmlns:android="http://schemas.android.com/apk/res/android"
             package="com.eneff.branchandroid">
@@ -708,6 +708,32 @@
 
 ## Troubleshoot issues
 
+- #### Sample testing apps
+
+    - [Branchsters](https://github.com/BranchMetrics/Branch-Example-Deep-Linking-Branchster-Android)
+
+    - [Testbed](https://github.com/BranchMetrics/android-branch-deep-linking/tree/master/Branch-SDK-TestBed)
+
+- #### Simulate an install
+
+    - Need to bypass the device's hardware_id
+
+        - Set `true` in your `AndroidManifest.xml`
+
+            ```xml
+            <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
+            ```
+
+        - Do not use `TestMode` in production or in the Google Play Store
+        
+    - Uninstall your app from the device
+
+    - Click on any Branch deep link (will navigate to the fallback URL since the app is not installed)
+
+    - Reinstall your app
+
+    - Read deep link data from `Branch.initSession()` for `+is_first_session=true`
+
 - #### Universal Object best practices
     
     - To make sure your analytics are correct, and your content is ranking on Spotlight effectively.
@@ -784,6 +810,47 @@
           exclude module: 'answers-shim'
         }   
         ```    
+
+- #### Deep link routes
+
+    - Loads a specific URI path from `$deeplink_path` or `$android_deeplink_path`
+
+    - Not recommend (better to route within your `Branch.initSession()`)
+
+    ```
+    <meta-data android:name="io.branch.sdk.auto_link_path" android:value="custom/path/*,another/path/" />
+    ```
+
+- #### Deep link activity finishes
+
+    - Be notified when the deep link Activity finishes
+
+    ```
+    <meta-data android:name="io.branch.sdk.auto_link_request_code" android:value="@integer/AutoDeeplinkRequestCode" />
+    ```
+
+    - *Java*
+
+        ```
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+
+            //Checking if the previous activity is launched on branch Auto deep link.
+            if(requestCode == getResources().getInteger(R.integer.AutoDeeplinkRequestCode)){
+                //Decide here where  to navigate  when an auto deep linked activity finishes.
+                //For e.g. Go to HomeActivity or a  SignUp Activity.
+                Intent i = new Intent(getApplicationContext(), CreditHistoryActivity.class);
+                startActivity(i);
+            }
+        }
+        ```
+
+    - *Kotlin*
+
+        ```
+        TODO
+        ```
 
 - #### Deep link from push notification
 
@@ -906,3 +973,9 @@
 - #### Proguard warning or errors with answers-shim module
 
     - Often caused when you exclude the `answers-shim`. Try adding -dontwarn com.crashlytics.android.answers.shim` to your `Proguard` file
+
+- #### Unable to open this link error
+
+    - Happens whenever URI Scheme redirection fails.
+    - Make sure you do not have `$deeplink_path` or you have a `$deeplink_path` which your `AndroidManfiest.xml` can accept
+
