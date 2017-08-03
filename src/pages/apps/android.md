@@ -189,7 +189,6 @@
             public void onNewIntent(Intent intent) {
                 this.setIntent(intent);
             }
-
         }
         ```
 
@@ -227,10 +226,24 @@
 
     - *Kotlin*
 
-        ```java
-        TODO
-        ```
+        ```java hl_lines="4 11 12 14 15"
+        package com.eneff.branchandroid
 
+        import android.app.Application
+        import io.branch.referral.Branch
+
+        class CustomApplicationClass : Application() {
+            override fun onCreate() {
+                super.onCreate()
+
+                // Branch logging for debugging
+                Branch.enableLogging()
+
+                // Branch object initialization
+                Branch.getAutoInstance(this)
+            }
+        }
+        ```
 
 - #### Test deep link
 
@@ -294,8 +307,8 @@
             .setFeature("sharing")
             .setCampaign("content 123 launch")
             .setStage("new user")
-            .addControlParameter("$deeplink_path", "content/123")
-            .addControlParameter("$desktop_url", "http://example.com/home")
+            .addControlParameter("\$deeplink_path", "content/123")
+            .addControlParameter("\$desktop_url", "http://example.com/home")
             .addControlParameter("custom", "data")
             .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()));
 
@@ -345,8 +358,8 @@
             .setFeature("sharing")
             .setCampaign("content 123 launch")
             .setStage("new user")
-            .addControlParameter("$deeplink_path", "content/123")
-            .addControlParameter("$desktop_url", "http://example.com/home")
+            .addControlParameter("\$deeplink_path", "content/123")
+            .addControlParameter("\$desktop_url", "http://example.com/home")
             .addControlParameter("custom", "data")
             .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()));
 
@@ -600,7 +613,12 @@
         Branch.getInstance().userCompletedAction("your_custom_event");
 
         // option 2 with metadata
-        Branch.getInstance().userCompletedAction("your_custom_event", (JSONObject)appState);
+        JSONObject metadata = new JSONObject();
+        try {
+            metadata.put("key", "value");
+        } catch ( JSONException e ) {
+        }
+        Branch.getInstance().userCompletedAction("your_custom_event", metadata);
         ```
 
     - *Kotlin*
@@ -610,8 +628,9 @@
         Branch.getInstance().userCompletedAction("your_custom_event")
 
         // option 2 with metadata
-        TODO
-        Branch.getInstance().userCompletedAction("your_custom_event", (JSONObject)appState)
+        val metadata = JSONObject()
+        metadata.put("key", "value")
+        Branch.getInstance().userCompletedAction("your_custom_event", metadata)
         ```
 
 - #### Track commerce
@@ -817,21 +836,21 @@
 
     - Not recommend (better to route within your `Branch.initSession()`)
 
-    ```
-    <meta-data android:name="io.branch.sdk.auto_link_path" android:value="custom/path/*,another/path/" />
-    ```
+        ```xml
+        <meta-data android:name="io.branch.sdk.auto_link_path" android:value="custom/path/*,another/path/" />
+        ```
 
 - #### Deep link activity finishes
 
     - Be notified when the deep link Activity finishes
 
-    ```
-    <meta-data android:name="io.branch.sdk.auto_link_request_code" android:value="@integer/AutoDeeplinkRequestCode" />
-    ```
+        ```xml
+        <meta-data android:name="io.branch.sdk.auto_link_request_code" android:value="@integer/AutoDeeplinkRequestCode" />
+        ```
 
     - *Java*
 
-        ```
+        ```java
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
@@ -856,6 +875,9 @@
 
     - Deep link to content from push notifications just by adding a Branch link to your result intent
 
+
+    - *Java*
+
         ```
         Intent resultIntent = new Intent(this, TargetClass.class);
         intent.putExtra("branch","http://xxxx.app.link/testlink");
@@ -863,11 +885,19 @@
         intent.putExtra("branch_force_new_session",true);
         ```
 
+    - *Kotlin*
+
+        ```
+        TODO
+        ```
+
 - #### Pre Android 15 support
 
     - Use `Branch SDK 1.14.5`
 
     - Add to `onStart()` and `onStop()`
+
+    - *Java*
 
         ```java
         @Override
@@ -882,6 +912,13 @@
             branch.closeSession();
         }
         ```
+
+    - *Kotlin*
+
+        ```java
+        TODO
+        ```
+
 
 - #### Using the default application class
 
@@ -907,9 +944,18 @@
 
     - Create an instance of `io.branch.referral.InstallListener` in `onReceive()`
 
+
+    - *Java*
+
         ```java
         InstallListener listener = new InstallListener();
         listener.onReceive(context, intent);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        TODO
         ```
 
 - #### Guaranteed matching
@@ -929,13 +975,13 @@
     - *Java*
 
         ```java
-        Branch.enablePlayStoreReferrer(long delay);
+        Branch.setPlayStoreReferrerCheckTimeout(5);
         ```
 
     - *Kotlin*
 
         ```java
-        Branch.enablePlayStoreReferrer(long delay)
+        Branch.setPlayStoreReferrerCheckTimeout(5)
         ```
 
     - Test
@@ -958,12 +1004,20 @@
 
     - Add to your `Application class` and make sure it extends `MultiDexApplication`
 
+    - *Java*
+
         ```java
         @Override
         protected void attachBaseContext(Context base) {
             super.attachBaseContext(base);
             MultiDex.install(this);
         }
+        ```
+
+    - *Kotlin*
+
+        ```java
+        TODO
         ```
 
 - #### InvalidClassException, ClassLoadingError or VerificationError

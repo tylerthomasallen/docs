@@ -8,7 +8,7 @@
         ![image](http://i.imgur.com/Edpfn04.png)
 
 - #### Configure bundle identifier
-local
+
     - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](http://i.imgur.com/BHAQIQf.png)
