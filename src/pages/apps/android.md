@@ -126,41 +126,11 @@
 
 - #### Initialize Branch
 
-    - Add Branch to your `CustomApplicationClass.java`
-
-    - *Java*
-
-        ```java hl_lines="4 11 12 14 15"
-        package com.eneff.branchandroid;
-
-        import android.app.Application;
-        import io.branch.referral.Branch;
-
-        public class CustomApplicationClass extends Application {
-            @Override
-            public void onCreate() {
-                super.onCreate();
-
-                // Branch logging for debugging
-                Branch.enableLogging();
-
-                // Branch object initialization
-                Branch.getAutoInstance(this);
-            }
-        }
-        ```
-
-    - *Kotlin*
-
-        ```java
-        TODO
-        ```
-
     - Add Branch to your `MainActivity.java`
 
     - *Java*
 
-        ```java hl_lines="3 9 14 16 17 64 65 66 67 68 69 70 71 72 73 74 75  77 78 79 80 81"
+        ```java hl_lines="3 9 14 16 17 42 43 44 45 46 47 48 49 50 51 52 55 56 57 58"
         package com.eneff.branchandroid;
 
         import android.content.Intent;
@@ -199,28 +169,6 @@
             }
 
             @Override
-            public boolean onCreateOptionsMenu(Menu menu) {
-                // Inflate the menu; this adds items to the action bar if it is present.
-                getMenuInflater().inflate(R.menu.menu_main, menu);
-                return true;
-            }
-
-            @Override
-            public boolean onOptionsItemSelected(MenuItem item) {
-                // Handle action bar item clicks here. The action bar will
-                // automatically handle clicks on the Home/Up button, so long
-                // as you specify a parent activity in AndroidManifest.xml.
-                int id = item.getItemId();
-
-                //noinspection SimplifiableIfStatement
-                if (id == R.id.action_settings) {
-                    return true;
-                }
-
-                return super.onOptionsItemSelected(item);
-            }
-
-            @Override
             public void onStart() {
                 super.onStart();
 
@@ -250,6 +198,39 @@
         ```java
         TODO
         ```
+
+- #### Load Branch
+
+    - Add Branch to your `CustomApplicationClass.java`
+
+    - *Java*
+
+        ```java hl_lines="4 11 12 14 15"
+        package com.eneff.branchandroid;
+
+        import android.app.Application;
+        import io.branch.referral.Branch;
+
+        public class CustomApplicationClass extends Application {
+            @Override
+            public void onCreate() {
+                super.onCreate();
+
+                // Branch logging for debugging
+                Branch.enableLogging();
+
+                // Branch object initialization
+                Branch.getAutoInstance(this);
+            }
+        }
+        ```
+
+    - *Kotlin*
+
+        ```java
+        TODO
+        ```
+
 
 - #### Test deep link
 
