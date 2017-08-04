@@ -88,6 +88,7 @@ pages:
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
   - Integrate your website:
+    - Setup: pages/web/setup.md
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
