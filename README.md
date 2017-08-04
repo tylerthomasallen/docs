@@ -127,4 +127,4 @@
 
 - #### Slow page render
 
-  - The docs should load within `1400ms`. If it takes `5000ms`, you might want to disable `Ghostly` or `Adblocker` (we are using AB testing)
+  - The docs should load within `1400ms`. If it takes `5000ms`, please disable `Ghostery` and `Adblocker` (the docs have AB testing)
