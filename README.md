@@ -124,3 +124,7 @@
     - prod code in `/src`
         - `yarn install` 
         - `yarn build` (will build `/material` but fail on `/site` -> okay)
+
+- #### Slow page render
+
+  - The docs should load within `1400ms`. If it takes `5000ms`, you might want to disable `Ghostly` or `Adblocker` (we are using AB testing)
