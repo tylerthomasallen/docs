@@ -1,15 +1,11 @@
-# Project information
+# Project
 site_name: 'Branch Documentation'
 site_description: 'Branch Documentation for Deep Linking'
 site_author: 'Branch'
 site_url: 'https://branchmetrics.github.io/docs'
-
-# Repository
 repo_name: 'Branch Documentation'
 repo_url: 'https://github.com/branchmetrics/docs'
 edit_uri: 'edit/master/src/'
-
-# Copyright
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
 
 # Files
