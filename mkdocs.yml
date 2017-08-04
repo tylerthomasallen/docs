@@ -95,6 +95,7 @@ pages:
   - Create deep links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
+    - Link domain: pages/links/link-domain.md
     - Creating links: pages/links/create.md
   - Track analytics:
     - Behavior: pages/analytics/behavior.md

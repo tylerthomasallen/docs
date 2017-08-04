@@ -287,7 +287,7 @@
 
     - Delete your app from the device
 
-    - Compile your app *(`cordova run ios` `phonegap run ios` `ionic run ios`)*
+    - Compile your app with Xcode
 
     - Paste deep link in `Apple Notes`
 
@@ -301,7 +301,7 @@
 
     - Delete your app from the device
 
-    - Compile your app *(`cordova run android` `phonegap run android` `ionic run android`)*
+    - Compile your app with Android Studio
 
     - Paste deep link in `Google Hangouts`
 
@@ -328,7 +328,9 @@
 
 - #### Create content reference
 
-	- The `Branch Universal Object` encapsulates the thing you want to share
+	- The `Branch Universal Object` encapsulates the thing you want to share (content or user)
+
+    - Uses the [Universal Object Properties](/pages/links/data/#universal-object)
 
     ```js
     // only canonicalIdentifier is required
@@ -340,6 +342,14 @@
     ```
 
 - #### Create deep link
+
+	- Creates a deep link URL with encapsulated data
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - Uses [Deep Link Properties](/pages/links/data/)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
 	```js
 	let linkProperties = {
@@ -356,6 +366,12 @@
 
 - #### Share deep link
 
+	-  Will generate a Branch deep link and tag it with the channel the user selects
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - Uses [Deep Link Properties](/pages/links/data/)
+
 	```js
 	let shareOptions = { messageHeader: 'Check this out', messageBody: 'No really, check this out!' }
 	let linkProperties = { feature: 'share', channel: 'RNApp' }
@@ -364,6 +380,12 @@
 	```
 
 - #### Read deep link
+
+	- Retrieve Branch data from a deep link
+
+    - Best practice to receive data from the `listener` (to prevent a race condition)
+
+    - Listener
 
 	```js
 	// Subscribe to incoming links (both Branch & non-Branch)
@@ -383,26 +405,89 @@
 
 - #### Display content
 
+    - List content on iOS Spotlight
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
 	```js
 	let spotlightResult = await branchUniversalObject.listOnSpotlight()
 	```
 
+- #### Track content
+
+    - Track how many times a piece of content is viewed
+
+    - Needs a [Branch Universal Object](#create-content-reference)
+
+    - Uses [Track content properties](#track-content-properties)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content
+
+    ```js
+    import branch, { RegisterViewEvent } from 'react-native-branch'
+    branchUniversalObject.userCompletedAction(RegisterViewEvent)
+    ```
+
 - #### Track users
+
+    - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)
 
 	```js
 	branch.setIdentity('theUserId')
 	branch.logout()
 	```
 
-- #### Handle referrals
+- #### Track events
+
+	- Track custom events
+
+    - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
+
+    - `63` max event name length
+
+    - Best to [Track users](#track-users) before [Track events](#track-events) to associate a custom event to a user
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
 
 	```js
-	let rewards = await branch.loadRewards()
-	let redeemResult = await branch.redeemRewards(amount, bucket)
-	let creditHistory = await branch.getCreditHistory()
+	branchUniversalObject.userCompletedAction('Custom Action', { key: 'value' })
 	```
 
-- #### Tracking Events
+- #### Track commerce
+
+	TODO
+
+- #### Handle referrals
+
+	- Referral points are obtained from events triggered by users from rules created on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
+
+    - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
+
+    - Reward credits with the [Referral guide](/pages/analytics/referrals/)
+
+    - Redeem rewards
+
+		```js
+		let redeemResult = await branch.redeemRewards(amount, bucket)
+		```
+
+    - Load rewards
+
+		```js
+		let rewards = await branch.loadRewards()
+		```
+
+    - Load history
+
+		```js
+		let creditHistory = await branch.getCreditHistory()
+		```
+
+## Troubleshoot issues
+
+- #### Track content properties
 
 	| Event | Description |
 	| ----- | --- |
@@ -413,17 +498,6 @@
 	| PurchasedEvent | User purchased the item |
 	| ShareInitiatedEvent | User started to share the object |
 	| ShareCompletedEvent | User completed a share |
-
-	```js
-	import branch, { RegisterViewEvent } from 'react-native-branch'
-	let universalObject = await branch.createUniversalObject('abc', {})
-	universalObject.userCompletedAction(RegisterViewEvent)
-	```
-
-## Troubleshoot issues
-- #### Recommendations
-
-	TO-DO
 
 - #### Sample app
 
