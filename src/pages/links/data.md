@@ -160,3 +160,20 @@
       | $twitter_player | | Set the video player’s URL. Defaults to the value of `$og_video`.
       | $twitter_player_width | | Set the player’s width in pixels
       | $twitter_player_height | | Set the player’s height in pixels
+
+## Universal Object
+
+  - #### Properties
+
+      | Key | Default | Usage | Link Property
+      | --- | :-: | --- | :-:
+      | canonicalIdentifier | | **(Required)** This is the unique identifier for content that will help Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities | `$canonical_identifier`
+      | canonicalUrl | | The canonical URL, used for SEO purposes | `$canonical_url`
+      | title | | The name for the piece of content | `$og_title`
+      | contentDescription | | A description for the content | `$og_description`
+      | contentImageUrl | | The image URL for the content. Must be an absolute path | `$og_image_url `
+      | price | | The price of the item | `$amount`
+      | currency | | The currency representing the price in ISO 4217 currency code | `$currency`
+      | contentIndexingMode | `"public"` | Can be set to either `"public"` or `"private"`. Public indicates that you’d like this content to be discovered by other apps. | `$publicly_indexable`
+      | contentMetadata | | Any custom key-value data e.g. `{ "custom": "data" }`
+

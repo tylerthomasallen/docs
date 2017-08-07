@@ -1,15 +1,11 @@
-# Project information
+# Project
 site_name: 'Branch Documentation'
 site_description: 'Branch Documentation for Deep Linking'
 site_author: 'Branch'
 site_url: 'https://branchmetrics.github.io/docs'
-
-# Repository
 repo_name: 'Branch Documentation'
 repo_url: 'https://github.com/branchmetrics/docs'
 edit_uri: 'edit/master/src/'
-
-# Copyright
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
 
 # Files
@@ -88,12 +84,14 @@ pages:
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
   - Integrate your website:
+    - Setup: pages/web/setup.md
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
   - Create deep links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
+    - Link domain: pages/links/link-domain.md
     - Creating links: pages/links/create.md
   - Track analytics:
     - Behavior: pages/analytics/behavior.md

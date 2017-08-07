@@ -2,11 +2,11 @@
 
 > Repository for Branch's public documentation [https://branchmetrics.github.io/docs/](https://branchmetrics.github.io/docs/)
 
-## Todo 
+## Environment
 
-  - https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216
+- #### Todo
 
-## Development
+  - [spreadsheet](https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216)
 
 - #### Dependencies
 
@@ -36,19 +36,16 @@
 - #### Develop
 
     ```bash
-    open http://localhost:8000
     mkdocs serve
     ```
 
 - #### Deploy
 
-    - Merge code into `master`
-    - https://branchmetrics.github.io/docs
+    - Merge pull request into `master`
 
+- #### Production
 
-## Production
-
-- https://branchmetrics.github.io/docs/
+    - https://branchmetrics.github.io/docs/
 
 ## Contributing
 
@@ -82,7 +79,7 @@
     - Production is scraped once a day
 
 - #### Code
-    - Tapped sections `*title*`, `code`, `*title*`, `code`
+    - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
     - Content pages are kept in the `img/pages` 
@@ -101,11 +98,12 @@
     - https://github.com/facelessuser/pymdown-extensions
 
 - #### Mkdocs Local Deploy
+
     - not recommended
 
-    ```bash
-    mkdocs gh-deploy
-    ```
+      ```bash
+      mkdocs gh-deploy
+      ```
 
 - ####  Mkdocs Locally
     - readme http://www.mkdocs.org/about/contributing/
@@ -126,3 +124,7 @@
     - prod code in `/src`
         - `yarn install` 
         - `yarn build` (will build `/material` but fail on `/site` -> okay)
+
+- #### Slow page render
+
+  - The docs should load within `1400ms`. If it takes `5000ms`, please disable `Ghostery` and `Adblocker` (the docs have AB testing)

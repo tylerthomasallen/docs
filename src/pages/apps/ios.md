@@ -8,7 +8,7 @@
         ![image](http://i.imgur.com/Edpfn04.png)
 
 - #### Configure bundle identifier
-local
+
     - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](http://i.imgur.com/BHAQIQf.png)
@@ -166,6 +166,8 @@ local
 - #### Create content reference
 
     - The `Branch Universal Object` encapsulates the thing you want to share 
+
+    - Uses [Universal Object properties](/pages/links/data/#universal-object)
 
     - *Swift 3*
 
@@ -336,7 +338,7 @@ local
     - *Objective-C*
 
         ```objc
-
+        TODO
         ```
 
 - #### Display content
@@ -461,5 +463,24 @@ local
         | BNCShareInitiatedEvent | User started to share the object
         | BNCShareCompletedEvent | User completed a share
 
+- #### Deep link push notifications
 
+    - Include the Branch push notification handler in [Initialize Branch](#initialize-branch)
 
+    - Add a Branch deep link in your push notification  `payload` 
+
+        ```json hl_lines="6"
+        {
+          "aps": {
+            "alert": "Push notification with a Branch deep link",
+            "badge": "1"
+          },
+          "branch": "https://s3z3.app.link/u3fzDwyyjF"
+        }
+        ```
+
+        - Replace `https://s3z3.app.link/u3fzDwyyjF` with your deep link
+
+    - Read deep link data from `Branch.getInstance().initSession` [Initialize Branch](#initialize-branch) ([demo](http://i.imgur.com/5QHWDX9.gif))
+
+test

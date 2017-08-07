@@ -7,35 +7,37 @@
 
 - #### App is not installed
     + User `clicks` on a Branch deep link
-    + Device navigates to the App Store, Google Playstore, or Fallback URL
+    + Device `navigates` to the App Store, Google Playstore, or Fallback URL
     + User `installs` and `opens` app
     + Branch passes deep link `data` into app
 
 ## Custom behavior
 
-- #### Pass data from link to app
-    + `https://s3z3.app.link/fzmLEhobLD?$custom_data=123` 
-    + TODO dashboard TODO sdks
+- #### Pass data from deep link to app
+    + Add query string `https://s3z3.app.link/fzmLEhobLD?$custom_data=123` 
+    + Add link data (TODO)
+    + Add quick link key-values (TODO)
 
-- #### Redirect when app is not installed 
-    + `https://name.app.link?$ios_url=https://example.com` query string
-    + `$ios_url = 'https://example.com'` added to [link data](#redirections)
-    + `$fallback_url = 'https://example.com'` added to [link data](#redirections)
-    + `$ios_deepview = 'deepviewId'` added to [link data](#deepview)
-    + `Deep view` enabled globally on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
-    + `iOS Custom URL` added on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-    + `Default URL` added on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+- #### Change redirect when app is not installed 
+    + Add query string `https://s3z3.app.link?$ios_url=https://example.com`
+    + Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/data/#redirections))
+    + Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/data/#redirections))
+    + Add link data for a deep view `$ios_deepview = 'deepviewId'`  ([docs](/pages/links/data/#deepview))
+    + Enable a `Deep View` globally on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
+    + Add `iOS/Android Custom URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+    + Add `Default URL` (`$fallback_url`) on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
     + *(ordered by precedence)*
 
-- #### Redirect when app is installed
+- #### Change redirect when app is installed
     * *iOS:* need to override `Universal Links`
-        - Add `$web_only = true` [docs](#redirections)
-        - Add redirect `$ios_url = 'https://google.com'`
-        - *or* Append `/e/` by `https://s3z3.app.link/fzmLEhobLD` -> `https://s3z3.app.link/e/fzmLEhobLD`
+        - Add `$web_only = true` ([docs](/pages/links/data/#redirections))
+        - Add redirect `$ios_url = 'https://google.com'` ([docs](/pages/links/data/#redirections))
+        - *or:* Append `/e/` to the deep link
+            - e.g. `https://s3z3.app.link/fzmLEhobLD` -> `https://s3z3.app.link/e/fzmLEhobLD`
     * *Android:* need to override `App Links`
         - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-        - Add redirect `$android_url = 'https://google.com'`
-        - Add a broken URI Scheme with `$android_deeplink_path = 'random'`
+        - Add redirect `$android_url = 'https://google.com'` ([docs](/pages/links/data/#redirections))
+        - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/data/#deep-linking))
 
 ## Social behavior
 
