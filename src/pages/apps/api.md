@@ -864,10 +864,10 @@
         | dev_email | `string` | The main contact developer email | √
         | ... | ... | Parameters from [App Create](#app-create) |
 
-- ## API troubleshooting
+## API troubleshooting
     
-    - Must use your `branch_key` and `branch_secret` from your [Branch Settings Dashboard](https://dashboard.branch.io/settings)
+- Use your `branch_key` and `branch_secret` from your [Branch Settings Dashboard](https://dashboard.branch.io/settings)
 
-    - You can get your `user_id` from the [Branch Account Dashboard](https://dashboard.branch.io/settings/account)
+- Use your `user_id` from your [Branch Account Dashboard](https://dashboard.branch.io/settings/account)
 
-    - Values have a `255` character max
+- Values have a `255` character max
