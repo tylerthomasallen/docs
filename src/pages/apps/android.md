@@ -130,7 +130,7 @@
 
     - *Java*
 
-        ```java hl_lines="3 9 14 16 17 42 43 44 45 46 47 48 49 50 51 52 55 56 57 58"
+        ```java hl_lines="3 9 14 16 17 31 32 33 34 35 36 37 38 39 40 41 44 45 46 47"
         package com.eneff.branchandroid;
 
         import android.content.Intent;
@@ -155,24 +155,13 @@
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_main);
-                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-                setSupportActionBar(toolbar);
-
-                FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-                fab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                    }
-                });
             }
 
             @Override
             public void onStart() {
                 super.onStart();
 
-                // Branch Init
+                // Branch init
                 Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
                     @Override
                     public void onInitFinished(JSONObject referringParams, BranchError error) {
@@ -194,8 +183,51 @@
 
     - *Kotlin*
 
-        ```java
-        TODO
+        ```java hl_lines="3 9 14 16 17 29 30 31 32 33 34 35 36 37 38 41 42 43"
+        package com.eneff.branchandroid
+
+        import android.content.Intent
+        import android.os.Bundle
+        import android.support.design.widget.FloatingActionButton
+        import android.support.design.widget.Snackbar
+        import android.support.v7.app.AppCompatActivity
+        import android.support.v7.widget.Toolbar
+        import android.util.Log
+        import android.view.View
+        import android.view.Menu
+        import android.view.MenuItem
+
+        import org.json.JSONObject
+
+        import io.branch.referral.Branch
+        import io.branch.referral.BranchError
+
+        class MainActivity : AppCompatActivity() {
+
+            override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+                setContentView(R.layout.activity_main)
+            }
+
+            override fun onStart() {
+                super.onStart()
+                
+                // Branch init
+                Branch.getInstance().initSession(object : BranchReferralInitListener {
+                    override fun onInitFinished(referringParams: JSONObject, error: BranchError?) {
+                        if (error == null) {
+                            Log.e("BRANCH SDK", referringParams.toString)
+                        } else {
+                            Log.e("BRANCH SDK", error.message)
+                        }
+                    }
+                }, this.intent.data, this)
+            }
+
+            public override fun onNewIntent(intent: Intent) {
+                this.intent = intent
+            }
+        }
         ```
 
 - #### Load Branch
@@ -226,7 +258,7 @@
 
     - *Kotlin*
 
-        ```java hl_lines="4 11 12 14 15"
+        ```java hl_lines="4 10 11 13 14"
         package com.eneff.branchandroid
 
         import android.app.Application
@@ -316,7 +348,7 @@
             @Override
             public void onLinkCreate(String url, BranchError error) {
                 if (error == null) {
-                    Log.i("MyApp", "got my Branch link to share: " + url);
+                    Log.i("BRANCH SDK", "got my Branch link to share: " + url);
                 }
             }
         });
@@ -337,7 +369,7 @@
 
         buo.generateShortUrl(this, lp, BranchLinkCreateListener { url, error ->
             if (error == null) {
-                Log.i("MyApp", "got my Branch link to share: " + url)
+                Log.i("BRANCH SDK", "got my Branch link to share: " + url)
             }
         })
         ```
@@ -455,9 +487,9 @@
         Branch.getInstance().initSession(object : BranchReferralInitListener {
             override fun onInitFinished(referringParams: JSONObject, error: BranchError?) {
                 if (error == null) {
-                    Log.e("MyApp", referringParams.toString)
+                    Log.e("BRANCH SDK", referringParams.toString)
                 } else {
-                    Log.e("MyApp", error.message)
+                    Log.e("BRANCH SDK", error.message)
                 }
             }
         }, this.intent.data, this)
@@ -476,7 +508,7 @@
     - *Java*
 
         ```java
-        //  listener (within Main Activity's onStart)
+        // listener (within Main Activity's onStart)
         Branch.getInstance().initSession(new Branch.BranchReferralInitListener() {
             @Override
             public void onInitFinished(JSONObject referringParams, BranchError error) {
@@ -496,7 +528,7 @@
                     startActivity(intent);
 
                     // option 4: display data
-                    Toast.makeText(, referringParams.toString(2), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, referringParams.toString(2), Toast.LENGTH_LONG).show();
                 } else {
                     Log.i("BRANCH SDK", error.getMessage());
                 }
@@ -507,10 +539,26 @@
     - *Kotlin*
 
         ```java
+        // listener (within Main Activity's onStart)
         Branch.getInstance().initSession(object : BranchReferralInitListener {
             override fun onInitFinished(referringParams: JSONObject, error: BranchError?) {
                 if (error == null) {
-                    Log.e("BRANCH SDK", referringParams.toString())
+                    // option 1: log data
+                    Log.i("BRANCH SDK", referringParams.toString())
+
+                    // option 2: save data to be used later
+                    val preferences =  getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+                    val editor = preferences.edit()
+                    editor.putString("branchData", referringParams.toString(2))
+                    editor.commit()
+
+                    // option 3: navigate to page
+                    val intent = Intent(this, MainActivity2::class.java)
+                    intent.putExtra("branchData", referringParams.toString(2))
+                    startActivity(intent)
+                    
+                    // option 4: display data
+                    Toast.makeText(this, referringParams.toString(2), Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e("BRANCH SDK", error.message)
                 }
@@ -608,10 +656,10 @@
     - *Java*
 
         ```java
-        // option 1
+        // option 1:
         Branch.getInstance().userCompletedAction("your_custom_event");
 
-        // option 2 with metadata
+        // option 2: with metadata
         JSONObject metadata = new JSONObject();
         try {
             metadata.put("key", "value");
@@ -623,10 +671,10 @@
     - *Kotlin*
 
         ```java
-        // option 1
+        // option 1:
         Branch.getInstance().userCompletedAction("your_custom_event")
 
-        // option 2 with metadata
+        // option 2: with metadata
         val metadata = JSONObject()
         metadata.put("key", "value")
         Branch.getInstance().userCompletedAction("your_custom_event", metadata)
@@ -688,9 +736,6 @@
             Branch.getInstance().loadRewards(new BranchReferralStateChangedListener() {
                 @Override
                 public void onStateChanged(boolean changed, Branch.BranchError error) {
-                    // changed boolean will indicate if the balance changed from what is currently in memory
-
-                    // will return the balance of the current user's credits
                     int credits = branch.getCredits();
                 }
             });
@@ -699,7 +744,14 @@
         - *Kotlin*
 
             ```java
-            TODO
+            Branch.getInstance().loadRewards { changed, error ->
+                if (error != null) {
+                    Log.i("BRANCH SDK", "branch load rewards failed. Caused by -" + error.message)
+                } else {
+                    Log.i("BRANCH SDK", "changed = " + changed)
+                    Log.i("BRANCH SDK", "rewards = " + branch.credits)
+                }
+            }
             ```
 
     - Load history
@@ -709,10 +761,10 @@
             ```java
             Branch.getInstance().getCreditHistory(new BranchListResponseListener() {
                 public void onReceivingResponse(JSONArray list, Branch.BranchError error) {
-                    if (error == null) {
-                        // show the list in your app
+                    if (error != null) {
+                        Log.i("BRANCH SDK", "branch load rewards failed. Caused by -" + error.message)
                     } else {
-                        Log.i("MyApp", error.getMessage());
+                        Log.i("BRANCH SDK", list);
                     }
                 }
             });
@@ -721,7 +773,17 @@
         - *Kotlin*
 
             ```java
-            TODO
+            Branch.getInstance().getCreditHistory { history, error ->
+                if (error != null) {
+                    Log.i("BRANCH SDK", "branch load credit history failed. Caused by -" + error.message)
+                } else {
+                    if (history.length() > 0) {
+                        Log.i("BRANCH SDK", history.toString(2))
+                    } else {
+                        Log.i("BRANCH SDK", "no history found")
+                    }
+                }
+            }
             ```
 
 ## Troubleshoot issues
@@ -854,7 +916,7 @@
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
 
-            //Checking if the previous activity is launched on branch Auto deep link.
+            // Checking if the previous activity is launched on branch Auto deep link.
             if(requestCode == getResources().getInteger(R.integer.AutoDeeplinkRequestCode)){
                 //Decide here where  to navigate  when an auto deep linked activity finishes.
                 //For e.g. Go to HomeActivity or a  SignUp Activity.
@@ -866,8 +928,18 @@
 
     - *Kotlin*
 
-        ```
-        TODO
+        ```java
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            
+            // Checking if the previous activity is launched on branch Auto deep link.
+            if (requestCode === resources.getInteger(R.integer.AutoDeeplinkRequestCode)) {
+                //Decide here where  to navigate  when an auto deep linked activity finishes.
+                //For e.g. Go to HomeActivity or a  SignUp Activity.
+                val i = Intent(applicationContext, CreditHistoryActivity::class.java)
+                startActivity(i)
+            }
+        }
         ```
 
 - #### Deep link from push notification
@@ -877,7 +949,7 @@
 
     - *Java*
 
-        ```
+        ```java
         Intent resultIntent = new Intent(this, TargetClass.class);
         intent.putExtra("branch","http://xxxx.app.link/testlink");
         PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -886,8 +958,11 @@
 
     - *Kotlin*
 
-        ```
-        TODO
+        ```java
+        val resultIntent = Intent(this, TargetClass::class.java)
+        intent.putExtra("branch", "http://xxxx.app.link/testlink")
+        val resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        intent.putExtra("branch_force_new_session", true)
         ```
 
 - #### Pre Android 15 support
@@ -941,7 +1016,7 @@
     - Add to your `AndroidManifest.xml`
 
         ```xml
-        <receiver android:name="com.myapp.CustomInstallListener" android:exported="true">
+        <receiver android:name="com.BRANCH SDK.CustomInstallListener" android:exported="true">
           <intent-filter>
             <action android:name="com.android.vending.INSTALL_REFERRER" />
           </intent-filter>
@@ -961,7 +1036,8 @@
     - *Kotlin*
 
         ```java
-        TODO
+        val listener = InstallListener()
+        listener.onReceive(context, intent)
         ```
 
 - #### Guaranteed matching
@@ -1023,7 +1099,10 @@
     - *Kotlin*
 
         ```java
-        TODO
+        override fun attachBaseContext(base: Context?) {
+            super.attachBaseContext(base)
+            MultiDex.install(this)
+        }
         ```
 
 - #### InvalidClassException, ClassLoadingError or VerificationError

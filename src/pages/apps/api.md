@@ -1,43 +1,46 @@
+## Postman
+
+  - Use `Postman` to test Branch API for requests, responses, and code examples
+
+  - Change the `branch_key` to match your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+
+  - [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3dadd3558239b25f385d)
+
 ## Link
 
-TODO: test curls
-TODO: test links
-TODO: remove confidential information
-TODO: referrals
+- #### Link create 
 
-- #### Link Create 
+    - *Request*
 
-    - Request
-
-        ```json
-        curl -XPOST -H 'Content-Type: application/json' -d '{
-          "branch_key": "key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT",
+        ```bash
+        curl -XPOST https://api.branch.io/v1/url \
+          -d '{
+          "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
           "channel": "facebook",
           "feature": "onboarding",
           "campaign": "new product",
           "stage": "new user",
           "tags": ["one", "two", "three"],
-          "type": 2,
           "data": {
             "$canonical_identifier": "content/123",
-            "$og_title": "Title 123",   
-            "$og_description": "Description 123",
+            "$og_title": "Title from Deep Link",    
+            "$og_description": "Description from Deep Link",
             "$og_image_url": "http://www.lorempixel.com/400/400/",
-            "$deeplink_path": "content/123",
-            "custom": true,
-            "random": 123,
-            "anything": "everything",
-            "test": [1,2,3,4,5,6],
-            "$marketing_title": "this link"
+            "$desktop_url": "http://www.example.com",
+            "custom_boolean": true,
+            "custom_integer": 1243,
+            "custom_string": "everything",
+            "custom_array": [1,2,3,4,5,6],
+            "custom_object": { "random": "dictionary" }
           }
-        }' 'https://api.branch.io/v1/url'
+        }'
         ```
 
-    - Response
+    - *Response*
 
-        ```json
+        ```js
         {
-          "url": "https://eneff.app.link/7nOIRkPsHz"
+          "url": "https://example.app.link/WgiqvsepqF"
         }
         ```
 
@@ -48,49 +51,58 @@ TODO: referrals
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | ... | ... | Parameters from [Configuring Links](/pages/links/data/) |
 
-- #### Link Create Bulk 
+- #### Link create bulk 
 
-    - Request
+    - *Request*
 
-        ```json
-        curl -XPOST https://api.branch.io/v1/url/bulk/key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT -d \
-        '[
-          {
-            "channel": "facebook",
-            "feature": "onboarding",
-            "campaign": "new product",
-            "stage": "new user",
-            "tags": ["one", "two", "three"],
-            "data": {
-              "$canonical_identifier": "content/123",
-              "$og_title": "Title from Deep Link",    
-              "$og_description": "Description from Deep Link",
-              "$og_image_url": "http://www.lorempixel.com/400/400/",
-              "$desktop_url": "http://www.example.com",
-              "custom_boolean": true,
-              "custom_integer": 1243,
-              "custom_string": "everything",
-              "custom_array": [1,2,3,4,5,6],
-              "custom_object": { "random": "dictionary" }
+        ```bash
+        curl -XPOST https://api.branch.io/v1/url/bulk/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt \
+          -d '[
+            {
+              "channel": "facebook",
+              "feature": "onboarding",
+              "campaign": "new product",
+              "stage": "new user",
+              "tags": ["one", "two", "three"],
+              "data": {
+                "$canonical_identifier": "content/123",
+                "$og_title": "Title from Deep Link",    
+                "$og_description": "Description from Deep Link",
+                "$og_image_url": "http://www.lorempixel.com/400/400/",
+                "$desktop_url": "http://www.example.com",
+                "custom_boolean": true,
+                "custom_integer": 1243,
+                "custom_string": "everything",
+                "custom_array": [1,2,3,4,5,6],
+                "custom_object": { "random": "dictionary" }
+              }
+            },
+            {
+              "channel": "facebook",
+              "feature": "onboarding",
+              "campaign": "new product",
+              "stage": "new user",
+              "tags": ["one", "two", "three"],
+              "data": {
+                "$canonical_identifier": "content/123",
+                "$og_title": "Title from Deep Link",    
+                "$og_description": "Description from Deep Link",
+                "$og_image_url": "http://www.lorempixel.com/400/400/",
+                "$desktop_url": "http://www.example.com"
+              }
             }
-          },
-          {
-            "channel": "google",
-            "feature": "loon",
-            "campaign": "lift off"
-          }
-        ]'
+          ]'
         ```
 
-    - Response
+    - *Response*
 
-        ```json
+        ```js
         [
           {
-            "url":"https://eneff.app.link/HE7fprkxWE"
+            "url": "https://example.app.link/0AjuiLcpqF"
           },
           {
-            "url":"https://eneff.app.link/YawoqrkxWE"
+            "url": "https://example.app.link/5IULiLcpqF"
           }
         ]
         ```
@@ -102,52 +114,63 @@ TODO: referrals
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | ... | ... | Parameters from [Configuring Links](/pages/links/data/) |
 
-- #### Link Read
+- #### Link read
 
-    - Request
+    - *Request*
 
-        ```json
-        curl -XGET -H 'Content-Type: application/json' 'https://api.branch.io/v1/url?branch_key=key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT&url=https://eneff.app.link/7nOIRkPsHz'
+        ```bash
+        curl -XGET 'https://api.branch.io/v1/url?url=https://example.app.link/WgiqvsepqF&branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt'
         ```
 
-    - Response
+    - *Response*
 
-        ```json
-        {  
-           "campaign": "new product",
-           "channel": "facebook",
-           "feature": "onboarding",
-           "stage": "new user",
-           "tags":[  
+        ```js
+        {
+          "alias": null,
+          "campaign": "new product",
+          "channel": "facebook",
+          "data": {
+            "$canonical_identifier": "content/123",
+            "$desktop_url": "http://www.example.com",
+            "$og_description": "Description from Deep Link",
+            "$og_image_url": "http://www.lorempixel.com/400/400/",
+            "$og_title": "Title from Deep Link",
+            "$one_time_use": false,
+            "custom_array": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "custom_boolean": true,
+            "custom_integer": 1243,
+            "custom_object": {
+              "random": "dictionary"
+            },
+            "custom_string": "everything",
+            "url": "https://eneff.app.link/cCeWJt6mqF",
+            "~campaign": "new product",
+            "~channel": "facebook",
+            "~creation_source": 0,
+            "~feature": "onboarding",
+            "~id": "423188696347619242",
+            "~stage": "new user",
+            "~tags": [
               "one",
               "two",
               "three"
-           ],
-           "data": {  
-              "$canonical_identifier": "content/123",
-              "$deeplink_path": "content/123",
-              "$og_description": "Description 123",
-              "$og_image_url": "http://www.lorempixel.com/400/400/",
-              "$og_title": "Title 123",
-              "$one_time_use":false,
-              "anything": "everything",
-              "custom":true,
-              "random":123,
-              "~campaign": "new product",
-              "~channel": "facebook",
-              "~creation_source":0,
-              "~feature": "onboarding",
-              "~id": "345698114818429601",
-              "~stage": "new user",
-              "~tags":[  
-                 "one",
-                 "two",
-                 "three"
-              ],
-              "url": "https://eneff.app.link/7nOIRkPsHz"
-           },
-           "type":0,
-           "alias":null
+            ]
+          },
+          "feature": "onboarding",
+          "stage": "new user",
+          "tags": [
+            "one",
+            "two",
+            "three"
+          ],
+          "type": 0
         }
         ```
 
@@ -158,26 +181,27 @@ TODO: referrals
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | url | `string` | The deep link url | √
 
-- #### Link Update
+- #### Link update
 
-    - Request
+    - *Request*
 
-          ```json
-          curl -XPUT -H 'Content-Type: application/json' -d '{
-            "branch_key": "key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT",
-            "branch_secret": "secret_live_D3sN7UDL27glpNKZfGPt6BlmKD9txUBp",
-            "channel": "twitter",    
+          ```bash
+          curl -XPUT 'https://api.branch.io/v1/url?url=https%3A%2F%2Fexample.app.link%2F5IULiLcpqF' \
+            -d '{
+            "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
+            "branch_secret": "secret_live_RrrsLqpzVcoVWf5t4ncQVpzlg2pRpGH9",
+            "channel": "twitter",
             "data":{
-              "name": "alex",
-              "user_id": "12346",
-              "$deeplink_path": "article/jan/123"
+              "name":"alex",
+              "user_id":"12346",
+              "$deeplink_path":"article/jan/123"
             }
-          }' 'https://api.branch.io/v1/url?url=https://eneff.app.link/7nOIRkPsHz'
+          }'
           ```
 
-    - Response
+    - *Response*
 
-          ```json
+          ```js
           {
             "campaign": "new product",
             "channel": "twitter",
@@ -194,17 +218,17 @@ TODO: referrals
               "name": "alex",
               "user_id": "12346",
               "~campaign": "new product",
-              "~channel": "facebook",
+              "~channel": "twitter",
               "~creation_source": 0,
               "~feature": "onboarding",
-              "~id": "345698114818429601",
+              "~id": "423196096467215333",
               "~stage": "new user",
               "~tags": [
                 "one",
                 "two",
                 "three"
               ],
-              "url": "https://eneff.app.link/7nOIRkPsHz"
+              "url": "https://example.app.link/5IULiLcpqF"
             },
             "type": 0,
             "alias": null
@@ -219,35 +243,34 @@ TODO: referrals
         | branch_secret | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | url | `string` | The deep link url | √
 
-- #### Link Troubleshooting 
+- #### Link troubleshooting 
 
-    - Must use your `branch_key` and `branch_secret` from your [Branch Settings Dashboard](https://dashboard.branch.io/settings)
-
-    - `data` is overridden on [Link Update](#link-update), not appended
+    - `data` is overridden on [Link update](#link-update), not appended
 
     - Bulk link creator is limited to `1000` links at a time
 
 ## Event
 
-- #### Event Create
+- #### Event create
 
-    - Request
+    - *Request*
 
-        ```json
-        curl -XPOST -H 'Content-Type: application/json' -d '{
-          "branch_key": "key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT",
-          "event": "clicked_on_this",
+        ```bash
+        curl -XPOST https://api.branch.io/v1/event \
+          -d '{
+          "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
           "identity": "bob",
+          "event": "custom_event",
           "metadata": {
-            "hello": "world",
-            "custom_data": 12345
+            "custom_data": "anything",
+            "hello": "world"
           }
-        }' 'https://api.branch.io/v1/event'
+        }'
         ```
 
-    - Response
+    - *Response*
 
-        ```json
+        ```js
         {}
         ```
 
@@ -260,26 +283,74 @@ TODO: referrals
         | identity | `string` | Unique user id, also known as the `Developer Id` on your [Branch Identity Dashboard](https://dashboard.branch.io/liveview/identities)
         | metadata | `{}` | Custom key-value pairs related to the event
 
-## User
+- #### Event create commerce
 
-- #### User Create
+    - *Request*
 
-    - Request
-        
-        ```json
-        curl -XPOST -H 'Content-Type: application/json' -d '{
-          "branch_key": "key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT",
-          "identity": "bob",
-          "identity_id": "222"
-        }' 'https://api.branch.io/v1/profile'
+        ```bash
+        curl -X POST https://api.branch.io/v1/event \
+          -d '{
+          "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
+          "identity": "222",
+          "event": "purchase",
+          "metadata": {
+            "hello": "world",
+            "custom_data": "this"
+          },
+          "commerce_data": {
+            "revenue": 50.0,
+            "currency": "USD",
+            "transaction_id": "foo-transaction-id",
+            "shipping": 0.0,
+            "tax": 5.0,
+            "affiliation": "foo-affiliation",
+            "products": [
+              { 
+                "sku": "foo-sku-1",
+                "name": "foo-item-1",
+                "price": 45.00,
+                "quantity": 1,
+                "brand": "foo-brand",
+                "category": "Electronics",
+                "variant": "foo-variant-1"
+              },
+              { 
+                "sku": "foo-sku-2",
+                "price": 2.50,
+                "quantity": 2
+              }
+            ]
+          }
+        }'
+        ```
+   
+    - *Response*
+
+        ```js
+        {}
         ```
 
-    - Response
+## User
 
-        ```json
+- #### User create
+
+    - *Request*
+        
+        ```bash
+        curl -XPOST https://api.branch.io/v1/profile \
+          -d '{
+            "branch_key":"key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
+            "identity":"steve",
+            "identity_id":"444"
+        }'
+        ```
+
+    - *Response*
+
+        ```js
         {
-          "identity_id": 222,
-          "link": "https:\/\/eneff.app.link\/?%24identity_id=222"
+          "identity_id": 444,
+          "link": "https://example.app.link/?%24identity_id=444"
         }
         ```
 
@@ -291,25 +362,25 @@ TODO: referrals
         | identity | `string` | Unique user id, also known as the `Developer Id` on your [Branch Identity Dashboard](https://dashboard.branch.io/liveview/identities) | √
         | identity_id | `string` | Unique user id for Branch, also known as the `Branch Identity Id` on your [Branch Identity Dashboard](https://dashboard.branch.io/liveview/identities) | √
 
-- #### User Read
+- #### User read
 
-    - Request
+    - *Request*
 
-        ```json
-        curl -XGET -H 'Content-Type: application/json' 'https://api.branch.io/v1/profile?branch_key=key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT&identity=bob'
+        ```bash
+        # identity
+        curl -XGET 'https://api.branch.io/v1/profile?branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&identity=steve' 
+
+        # identity id
+        curl -XGET 'https://api.branch.io/v1/profile?branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&identity_id=444'
         ```
 
-        ```json
-        curl -XGET -H 'Content-Type: application/json' 'https://api.branch.io/v1/profile?branch_key=key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT&identity_id=222'
-        ```
-
-    - Response
+    - *Response*
         
-        ```json
+        ```js
         {
-          "identity_id": 222,
-          "identity": "bob",
-          "link": "https://eneff.app.link/?%24identity_id=222"
+          "identity_id": 444,
+          "identity": "steve",
+          "link": "https://example.app.link/?%24identity_id=444"
         }
         ```
 
@@ -325,24 +396,207 @@ TODO: referrals
 
 ## Referral
 
-- #### Referral Update
+- #### Referral reward
 
-- #### Referral Read
+    - *Request*
 
-- #### Referral Create
+        ```bash
+        curl -XPOST https://api.branch.io/v1/credits \
+          -d '{
+          "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
+          "branch_secret": "secret_live_RrrsLqpzVcoVWf5t4ncQVpzlg2pRpGH9",
+          "identity": "steve",
+          "amount": "10",
+          "bucket": "default"
+        }'
+        ```
+
+    - *Response*
+
+        ```js
+        {
+          "success": true
+        }
+        ```
+
+    - Parameters
+
+        | Key | Value | Usage | Required
+        | --- | :-: | --- | :-:
+        | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
+        | branch_secret | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
+        | identity | `string` | Unique user id, also known as the `Developer Id` on your [Branch Identity Dashboard](https://dashboard.branch.io/liveview/identities) | √
+        | amount | `string` | Number of credits | √
+        | bucket | `string` | The category where the credits are save to (defaults to `default`) |
+
+- #### Referral redeem
+
+    - *Request*
+
+        ```bash
+        curl -XPOST https://api.branch.io/v1/redeem \
+          -d '{
+          "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
+          "branch_secret": "secret_live_RrrsLqpzVcoVWf5t4ncQVpzlg2pRpGH9",
+          "identity": "steve",
+          "amount": "5",
+          "bucket": "default"
+        }'
+        ```
+
+    - *Response*
+
+        ```js
+        // success
+        {}
+
+        // failure
+        {
+          "error": {
+            "code": 402,
+            "message": "Not enough credits to redeem."
+          }
+        }
+        ```
+
+- #### Referral read
+
+    - *Request*
+
+        ```bash
+        curl -XGET 'https://api.branch.io/v1/credits?branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&identity=steve'
+        ```
+
+    - *Response*
+
+        ```js
+        {
+          "default": 40
+        }
+        ```
+
+- #### Referral history
+
+    - *Request*
+
+        ```bash
+        curl -XGET 'https://api.branch.io/v1/credithistory?branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&identity=steve'
+        ```
+
+    - *Response*
+
+        ```js
+        [
+          {
+            "transaction": {
+              "date": "2017-08-07T22:15:10.503Z",
+              "id": "423229952507361694",
+              "bucket": "default",
+              "type": 2,
+              "amount": -5
+            },
+            "event": {
+              "name": null,
+              "metadata": null
+            },
+            "referrer": null,
+            "referree": null
+          },
+          {
+            "transaction": {
+              "date": "2017-08-07T22:15:01.818Z",
+              "id": "423229916080032437",
+              "bucket": "default",
+              "type": 2,
+              "amount": -5
+            },
+            "event": {
+              "name": null,
+              "metadata": null
+            },
+            "referrer": null,
+            "referree": null
+          },
+          {
+            "transaction": {
+              "date": "2017-08-07T22:10:57.224Z",
+              "id": "423228890178439487",
+              "bucket": "default",
+              "type": 1,
+              "amount": 10
+            },
+            "event": {
+              "name": null,
+              "metadata": null
+            },
+            "referrer": null,
+            "referree": null
+          },
+          {
+            "transaction": {
+              "date": "2017-08-07T22:10:56.416Z",
+              "id": "423228886789240847",
+              "bucket": "default",
+              "type": 1,
+              "amount": 10
+            },
+            "event": {
+              "name": null,
+              "metadata": null
+            },
+            "referrer": null,
+            "referree": null
+          }
+        ]
+        ```
+
+- #### Referral reconcile
+
+    - *Request*
+
+        ```bash
+        curl -X POST https://api.branch.io/v1/reconcile \
+          -d '{
+          "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
+          "branch_secret": "secret_live_RrrsLqpzVcoVWf5t4ncQVpzlg2pRpGH9",
+          "identity": "steve",
+          "amount": "20",
+          "bucket": "default"
+        }'
+        ```
+
+    - *Response*
+
+        ```js
+        {
+          "id": "423232788708309278",
+          "app_id": "423194549918126821",
+          "identity_id": 444,
+          "type": 4,
+          "bucket": "default",
+          "amount": -20,
+          "date": "2017-08-07T22:26:26.706Z"
+        }
+        ```
+
+
+- #### Referral troubleshooting
+
+    - Referral `credits` cannot go below zero
 
 ## App 
 
-- #### App Create
+- #### App create
 
-    - Request 
+    - *Request*
 
-        ```json
-        curl -XPOST -H 'Content-Type: application/json' -d '{
-          "user_id": "293816316559643406",
+        ```js
+        curl -XPOST https://api.branch.io/v1/app \
+          -d '{
+          "user_id": "YOUR_USER_ID",
           "app_name": "eneff_test_3",
-          "dev_name": "Ethan Neff",
-          "dev_email": "eneff@branch.io",
+          "dev_name": "YOUR_NAME",
+          "dev_email": "YOUR_EMAIL",
 
           "always_open_app": "1",
 
@@ -351,7 +605,6 @@ TODO: referrals
           "android_uri_scheme": "branchtest://", 
           "android_package_name": "com.branch.test", 
           "android_app_links_enabled": "1",  
-          "sha256_cert_fingerprints": ["14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5"], 
 
           "ios_app": "2", 
           "ios_url": "https://www.example.com/ios", 
@@ -359,15 +612,15 @@ TODO: referrals
           "ios_store_country": "US", 
           "universal_linking_enabled": "1",   
           "ios_bundle_id": "com.branch.test", 
-          "ios_team_id": "PW4Q8885U7", 
+          "ios_team_id": "PW4Q8885U8", 
 
           "fire_url": "https://www.example.com/amazon", 
           "windows_phone_url": "https://www.example.com/windows", 
           "blackberry_url": "https://www.example.com/blackberry", 
           "web_url": "https://www.example.com/web", 
-
           "default_desktop_url": "https://www.example.com/desktop", 
-          "text_message": "Download me! {{ link }}",
+
+          "text_message": "click here to download {{ link }}", 
 
           "og_app_id": "branch 123", 
           "og_title": "branch test", 
@@ -377,54 +630,51 @@ TODO: referrals
           "deepview_desktop": "branch_default", 
           "deepview_ios": "branch_default", 
           "deepview_android": "branch_default"
-        }' 'https://api.branch.io/v1/app'
+        }'
         ```
 
-    - Response
+    - *Response*
 
-        ```json
+        ```js
         {
-          "id": "...",
-          "app_key": "...",
-          "creation_date": "2016-12-21T22:51:49.067Z",
-          "app_name": "eneff_test_3",
-          "origin": "API: creator id = 293816316559643406, creator email = eneff@branch.io",
-          "dev_name": "Ethan Neff",
-          "dev_email": "eneff@branch.io",
+          "alternate_short_url_domain": "a8p0-alternate.app.link",
           "always_open_app": "1",
           "android_app": "2",
-          "android_url": "https:\/\/www.example.com\/ios",
-          "android_uri_scheme": "branchtest:\/\/",
-          "android_package_name": "com.branch.test",
-          "sha256_cert_fingerprints": [
-            "14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5"
-          ],
           "android_app_links_enabled": "1",
-          "ios_app": "2",
-          "ios_url": "https:\/\/www.example.com\/ios",
-          "ios_uri_scheme": "branchtest:\/\/",
-          "ios_store_country": "US",
-          "ios_bundle_id": "com.branch.test",
-          "ios_team_id": "PW4Q8885U7",
-          "universal_linking_enabled": "1",
-          "fire_url": "https:\/\/www.example.com\/amazon",
-          "windows_phone_url": "https:\/\/www.example.com\/windows",
-          "blackberry_url": "https:\/\/www.example.com\/blackberry",
-          "web_url": "https:\/\/www.example.com\/web",
-          "default_desktop_url": "https:\/\/www.example.com\/desktop",
-          "short_url_domain": "",
-          "default_short_url_domain": "jqk5.app.link",
-          "alternate_short_url_domain": "jqk5-alternate.app.link",
-          "text_message": "Download me! {{ link }}",
-          "og_app_id": "branch 123",
-          "og_title": "branch test",
-          "og_image_url": "http:\/\/lorempixel.com\/400\/400\/",
-          "og_description": "branch description",
-          "branch_key": "...",
-          "branch_secret": "...",
+          "android_package_name": "com.branch.test",
+          "android_uri_scheme": "branchtest://",
+          "android_url": "https://www.example.com/ios",
+          "app_key": "423190238827926224",
+          "app_name": "eneff_test_3",
+          "blackberry_url": "https://www.example.com/blackberry",
+          "branch_key": "key_live_hptFZsX5x7Nsvfq4MWdB5ohosCfQ6tjl",
+          "branch_secret": "secret_live_sHyeiy240rxQhDF2H2DJYrypRHoq4z1x",
+          "creation_date": "2017-08-07T19:37:22.024Z",
+          "deepview_android": "branch_default",
           "deepview_desktop": "branch_default",
           "deepview_ios": "branch_default",
-          "deepview_android": "branch_default"
+          "default_desktop_url": "https://www.example.com/desktop",
+          "default_short_url_domain": "a8p0.app.link",
+          "dev_email": "YOUR_EMAIL",
+          "dev_name": "YOUR_NAME",
+          "fire_url": "https://www.example.com/amazon",
+          "id": "423190238827926224",
+          "ios_app": "2",
+          "ios_bundle_id": "com.branch.test",
+          "ios_store_country": "US",
+          "ios_team_id": "PW4Q8885U8",
+          "ios_uri_scheme": "branchtest://",
+          "ios_url": "https://www.example.com/ios",
+          "og_app_id": "branch 123",
+          "og_description": "branch description",
+          "og_image_url": "http://lorempixel.com/400/400/",
+          "og_title": "branch test",
+          "origin": "API: creator id = YOUR_USER_ID, creator email = YOUR_EMAIL",
+          "short_url_domain": "",
+          "text_message": "click here to download {{ link }}",
+          "universal_linking_enabled": "1",
+          "web_url": "https://www.example.com/web",
+          "windows_phone_url": "https://www.example.com/windows"
         }
         ```
 
@@ -463,69 +713,68 @@ TODO: referrals
         | deepview_ios | `string` | The current deepview selected for the iOS platform
         | deepview_android | `string` | The current deepview selected for the Android platform
 
-- #### App Read
+- #### App read
 
-    - Request
+    - *Request*
         
-        ```json
-        curl -XGET -H 'Content-Type: application/json' 'https://api.branch.io/v1/app/key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT?branch_secret=...'
+        ```js
+        curl -XGET 'https://api.branch.io/v1/app/key_live_kkDv1y82q6RdiaazE5wAyipkqCnI9i0a?branch_secret=secret_live_igBCicZbq9H3NvYgBishHWuQu4aMbQ0n'
         ```
 
-    - Response
+    - *Response*
 
-        ```json
+        ```js
         {
-          "id": "...",
-          "app_key": "...",
-          "creation_date": "2016-12-21T22:51:49.067Z",
-          "app_name": "eneff_test_3",
-          "origin": "API: creator id = 293816316559643406, creator email = eneff@branch.io",
-          "dev_name": "Ethan Neff",
-          "dev_email": "eneff@branch.io",
+          "alternate_short_url_domain": "84jv-alternate.app.link",
           "always_open_app": 1,
-          "auto_fetch": null,
           "android_app": 2,
-          "android_url": "https:\/\/www.example.com\/ios",
-          "android_uri_scheme": "branchtest:\/\/",
-          "android_package_name": "com.branch.test",
-          "sha256_cert_fingerprints": [
-            "14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5"
-          ],
           "android_app_links_enabled": true,
-          "ios_app": 2,
-          "ios_url": "https:\/\/www.example.com\/ios",
-          "ios_uri_scheme": "branchtest:\/\/",
-          "ios_store_country": "US",
-          "ios_bundle_id": "com.branch.test",
-          "ios_team_id": "PW4Q8885U7",
-          "universal_linking_enabled": true,
-          "fire_url": "https:\/\/www.example.com\/amazon",
-          "windows_phone_url": "https:\/\/www.example.com\/windows",
-          "blackberry_url": "https:\/\/www.example.com\/blackberry",
-          "web_url": "https:\/\/www.example.com\/web",
-          "default_desktop_url": "https:\/\/www.example.com\/desktop",
-          "short_url_domain": "",
-          "default_short_url_domain": "jqk5.app.link",
-          "alternate_short_url_domain": "jqk5-alternate.app.link",
-          "text_message": "Download me! {{ link }}",
-          "og_app_id": "branch 123",
-          "og_title": "branch test",
-          "og_image_url": "http:\/\/lorempixel.com\/400\/400\/",
-          "og_description": "branch description",
-          "branch_key": "...",
-          "branch_secret": "...",
-          "deepview_desktop": "branch_default",
-          "deepview_ios": "branch_default",
-          "deepview_android": "branch_default",
-          "sitemap_enabled": null,
-          "esp_config": null,
-          "map_utm_params": null,
-          "enterprise": false,
-          "zuora_account_id": null,
           "android_cd_enabled": null,
           "android_cd_hashed": null,
+          "android_package_name": "com.branch.test",
+          "android_uri_scheme": "branchtest://",
+          "android_url": "https://www.example.com/ios",
+          "app_key": "423188837653566156",
+          "app_name": "eneff_test_3",
+          "auto_fetch": null,
+          "blackberry_url": "https://www.example.com/blackberry",
+          "branch_key": "key_live_kkDv1y82q6RdiaazE5wAyipkqCnI9i0a",
+          "branch_secret": "secret_live_igBCicZbq9H3NvYgBishHWuQu4aMbQ0n",
+          "creation_date": "2017-08-07T19:31:47.958Z",
+          "deepview_android": "branch_default",
+          "deepview_desktop": "branch_default",
+          "deepview_ios": "branch_default",
+          "default_desktop_url": "https://www.example.com/desktop",
+          "default_short_url_domain": "84jv.app.link",
+          "desktop_uri_scheme": null,
+          "dev_email": "YOUR_EMAIL",
+          "dev_name": "YOUR_NAME",
+          "esp_config": null,
+          "fire_url": "https://www.example.com/amazon",
+          "id": "423188837653566156",
+          "ios_app": 2,
+          "ios_bundle_id": "com.branch.test",
           "ios_cd_enabled": null,
-          "ios_cd_hashed": null
+          "ios_cd_hashed": null,
+          "ios_store_country": "US",
+          "ios_team_id": "PW4Q8885U8",
+          "ios_uri_scheme": "branchtest://",
+          "ios_url": "https://www.example.com/ios",
+          "map_utm_params": null,
+          "og_app_id": "branch 123",
+          "og_description": "branch description",
+          "og_image_url": "http://lorempixel.com/400/400/",
+          "og_title": "branch test",
+          "origin": "API: creator id = YOUR_USER_ID, creator email = YOUR_EMAIL",
+          "redirect_domains_whitelist": null,
+          "sha256_cert_fingerprints": null,
+          "short_url_domain": "",
+          "sitemap_enabled": null,
+          "text_message": "click here to download {{ link }}",
+          "universal_linking_enabled": true,
+          "web_url": "https://www.example.com/web",
+          "windows_phone_url": "https://www.example.com/windows",
+          "zuora_account_id": null
         }
         ```
 
@@ -536,73 +785,73 @@ TODO: referrals
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | branch_secret | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
 
-- #### App Update
+- #### App update
 
-    - Request
+    - *Request*
         
-        ```json
-        curl -XPUT -H 'Content-Type: application/json' -d '{
-          "branch_secret": "...",  
-          "dev_email": "eneff@branch.io",
-          "og_description": "branch description updated"
-        }' 'https://api.branch.io/v1/app/key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT'
+        ```js
+        curl -XPUT https://api.branch.io/v1/app/key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT \
+          -d '{
+          "branch_secret": "secret_live_D3sN7UDL27glpNKZfGPt6BlmKD9txUBp",  
+          "dev_email": "YOUR_EMAIL",
+          "app_name": "eneff_test_3_updated"
+        }'
         ```
 
-    - Response
+    - *Response*
         
-        ```json
+        ```js
         {
-          "id": "...",
-          "app_key": "...",
-          "creation_date": "2016-12-21T21:36:44.613Z",
-          "app_name": "eneff_test_3_updated",
-          "origin": "API: creator id = 293816316559643406, creator email = eneff@branch.io",
-          "dev_name": "Ethan Neff",
-          "dev_email": "eneff@branch.io",
-          "always_open_app": 1,
-          "auto_fetch": null,
+          "alternate_short_url_domain": "eneff-alternate.app.link",
+          "always_open_app": null,
           "android_app": 2,
-          "android_url": "https:\/\/www.example.com\/ios",
-          "android_uri_scheme": "branchtest:\/\/",
-          "android_package_name": "com.branch.test",
-          "sha256_cert_fingerprints": [
-            "14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5"
-          ],
-          "android_app_links_enabled": true,
-          "ios_app": 2,
-          "ios_url": "https:\/\/www.example.com\/ios",
-          "ios_uri_scheme": "branchtest:\/\/",
-          "ios_store_country": "US",
-          "ios_bundle_id": "com.branch.test",
-          "ios_team_id": "PW4Q8885U7",
-          "universal_linking_enabled": true,
-          "fire_url": "https:\/\/www.example.com\/amazon",
-          "windows_phone_url": "https:\/\/www.example.com\/windows",
-          "blackberry_url": "https:\/\/www.example.com\/blackberry",
-          "web_url": "https:\/\/www.example.com\/web",
-          "default_desktop_url": "https:\/\/www.example.com\/desktop",
-          "short_url_domain": "",
-          "default_short_url_domain": "nz02.app.link",
-          "alternate_short_url_domain": "nz02-alternate.app.link",
-          "text_message": "Download me! {{ link }}",
-          "og_app_id": "branch 123",
-          "og_title": "branch test",
-          "og_image_url": "http:\/\/lorempixel.com\/400\/400\/",
-          "og_description": "branch description updated",
-          "branch_key": "...",
-          "branch_secret": "...",
-          "deepview_desktop": "branch_default",
-          "deepview_ios": "branch_default",
-          "deepview_android": "branch_default",
-          "sitemap_enabled": null,
-          "esp_config": null,
-          "map_utm_params": null,
-          "enterprise": false,
-          "zuora_account_id": null,
+          "android_app_links_enabled": false,
           "android_cd_enabled": null,
           "android_cd_hashed": null,
+          "android_package_name": "com.eneff.branch.example",
+          "android_uri_scheme": "enefftest://",
+          "android_url": "https://www.example.com",
+          "app_key": "299552032371528050",
+          "app_name": "eneff_test_3_updated",
+          "auto_fetch": null,
+          "blackberry_url": null,
+          "branch_key": "key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT",
+          "branch_secret": "secret_live_D3sN7UDL27glpNKZfGPt6BlmKD9txUBp",
+          "creation_date": "2016-08-31T15:23:16.518Z",
+          "deepview_android": null,
+          "deepview_desktop": null,
+          "deepview_ios": "eneff_test_deepview_5blb",
+          "default_desktop_url": "https://www.example.com",
+          "default_short_url_domain": "eneff.app.link",
+          "desktop_uri_scheme": null,
+          "dev_email": "YOUR_EMAIL",
+          "dev_name": "YOUR_NAME",
+          "esp_config": null,
+          "fire_url": null,
+          "id": "299552032371528050",
+          "ios_app": 2,
+          "ios_bundle_id": "com.eneff.branch.example",
           "ios_cd_enabled": null,
-          "ios_cd_hashed": null
+          "ios_cd_hashed": null,
+          "ios_store_country": "US",
+          "ios_team_id": "PW4Q8885U8",
+          "ios_uri_scheme": "enefftest://",
+          "ios_url": "",
+          "map_utm_params": null,
+          "og_app_id": null,
+          "og_description": "branch description updated",
+          "og_image_url": "http://lorempixel.com/400/400/",
+          "og_title": "hello",
+          "origin": null,
+          "redirect_domains_whitelist": null,
+          "sha256_cert_fingerprints": null,
+          "short_url_domain": "",
+          "sitemap_enabled": null,
+          "text_message": null,
+          "universal_linking_enabled": true,
+          "web_url": "https://www.cookies.com",
+          "windows_phone_url": null,
+          "zuora_account_id": null
         }
         ```
 
@@ -615,12 +864,10 @@ TODO: referrals
         | dev_email | `string` | The main contact developer email | √
         | ... | ... | Parameters from [App Create](#app-create) |
 
-- #### App Troubleshooting
+## API troubleshooting
     
-    - Must use your `branch_key` and `branch_secret` from your [Branch Settings Dashboard](https://dashboard.branch.io/settings)
+- Use your `branch_key` and `branch_secret` from your [Branch Settings Dashboard](https://dashboard.branch.io/settings)
 
-    - You can get your `user_id` from the [Branch Account Dashboard](https://dashboard.branch.io/settings/account)
+- Use your `user_id` from your [Branch Account Dashboard](https://dashboard.branch.io/settings/account)
 
-    - The API has a `255` character max
-
-    - Replace the `...` in the examples with values from your [Branch Settings Dashboard](https://dashboard.branch.io/settings)
+- Values have a `255` character max

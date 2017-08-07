@@ -6,7 +6,7 @@
 
 - #### Todo
 
-  - https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216
+  - [spreadsheet](https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216)
 
 - #### Dependencies
 
@@ -129,3 +129,7 @@
     - prod code in `/src`
         - `yarn install`
         - `yarn build` (will build `/material` but fail on `/site` -> okay)
+
+- #### Slow page render
+
+  - The docs should load within `1400ms`. If it takes `5000ms`, please disable `Ghostery` and `Adblocker` (the docs have AB testing)
