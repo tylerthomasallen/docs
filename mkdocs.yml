@@ -85,9 +85,6 @@ pages:
     - API: pages/apps/api.md
   - Integrate your website:
     - Setup: pages/web/setup.md
-    - Deepviews: pages/web/deep-views.md
-    - Journeys App Banners: pages/web/journeys.md
-    - Text Me The App: pages/web/text-me-the-app.md
   - Create deep links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
@@ -99,6 +96,10 @@ pages:
     - Growth: pages/analytics/growth-attribution.md
     - User Value: pages/analytics/user-value attribution.md
     - Revenue: pages/analytics/revenue-attribution.md
+  - Deep Link web:
+    - Deepviews: pages/web/deep-views.md
+    - Journeys App Banners: pages/web/journeys.md
+    - Text Me The App: pages/web/text-me-the-app.md
   - Deep link ads:
     - Apple Search Ads: pages/ads/apple.md
     - Dynamic Product Feeds: pages/ads/dynamic-product-feeds.md
