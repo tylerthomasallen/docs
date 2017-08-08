@@ -150,6 +150,47 @@
         });
         ```
 
+- #### Create Journey banner
+
+    - Converts mobile users to app users
+
+    - Create a `Journey` on the [Branch Dashboard](https://dashboard.branch.io/web/journeys)
+
+    - Validate by testing your website on a mobile device
+
+    - Append additional deep link data to the Journey button (optional)
+
+        ```js
+        var linkData = {
+          campaign: 'content 123',
+          channel: 'facebook',
+          feature: 'dashboard',
+          stage: 'new user',
+          tags: [ 'tag1', 'tag2', 'tag3' ],
+          alias: '',
+          data: {
+            'custom_bool': true,
+            'custom_int': Date.now(),
+            'custom_string': 'hello',
+            '$og_title': 'Title',
+            '$og_description': 'Description',
+            '$og_image_url':'http://lorempixel.com/400/400'
+          }
+        };
+
+        branch.setBranchViewData(linkData);
+        ```
+
+        ```js
+        // close
+        branch.closeJourney(function(err, data) { 
+          console.log(err, data); 
+        });
+
+        // reopen
+        branch.track("pageview");
+        ```
+
 - #### Create text message
 
     - Converts desktop users to app users
@@ -185,41 +226,6 @@
         branch.sendSMS(phoneNumber, linkData, linkOptions, function(err, data) {
           console.log(err);
         });
-        ```
-
-- #### Create Journey banner
-
-    - Converts mobile users to app users
-
-        ```js
-        var linkData = {
-          campaign: 'content 123',
-          channel: 'facebook',
-          feature: 'dashboard',
-          stage: 'new user',
-          tags: [ 'tag1', 'tag2', 'tag3' ],
-          alias: '',
-          data: {
-            'custom_bool': true,
-            'custom_int': Date.now(),
-            'custom_string': 'hello',
-            '$og_title': 'Title',
-            '$og_description': 'Description',
-            '$og_image_url':'http://lorempixel.com/400/400'
-          }
-        };
-
-        branch.setBranchViewData(linkData);
-        ```
-
-        ```js
-        // close
-        branch.closeJourney(function(err, data) { 
-          console.log(err, data); 
-        });
-
-        // reopen
-        branch.track("pageview");
         ```
 
 - #### Track users
