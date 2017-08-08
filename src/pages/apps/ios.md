@@ -441,6 +441,15 @@
 
 - #### Handle referrals
 
+    - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
+    
+    - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
+
+    - Reward credits
+
+        -  [Referral guide](/pages/analytics/referrals/)
+
+
 ## Troubleshoot issues 
 
 - #### Recommendations
