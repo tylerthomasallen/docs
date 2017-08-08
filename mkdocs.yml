@@ -71,7 +71,7 @@ markdown_extensions:
 # Pages
 pages:
   - Getting started: index.md
-  - Integate your app:
+  - Integrate your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
