@@ -51,11 +51,11 @@ Map your Branch events to your chosen eVar. In the example below, it will be map
 
 #### Data Settings
 
-Branch has provided a default classification rule set for the Branch data that will be ingested. This maps Branch analytics data to Adobe classifications as follows. You can change this classification rule set if you would like to, but editing is not required. We also include Branch tags so you can create a new rule that further segments your analytics data for advanced visibility. 
+Branch has provided a default classification rule set for the Branch data that will be ingested. This maps Branch analytics data to Adobe classifications as follows. You can change this classification rule set if you would like to, but editing is not required. We also include Branch tags so you can create a new rule that further segments your analytics data for advanced visibility.
 
 Adobe Classification | Branch Analytics Tag | Example
 --- | ---
-Source | Channel | Our Website 
+Source | Channel | Our Website
 Campaign | Campaign | Journeys Test Campaign
 Medium | Feature | Journeys
 Action | Branch Event Name | Install
@@ -65,7 +65,7 @@ Action Property| Branch Tags | tag=bar&tag2=1234
 
 #### Review Summary
 
-Finally, review the integration, scroll to the bottom of the screen and click *Activate Now* to enable the integration. 
+Finally, review the integration, scroll to the bottom of the screen and click *Activate Now* to enable the integration.
 
 {% image src="/img/pages/third-party-integrations/adobe-analytics/final-activation.png" half center %}
 
@@ -146,7 +146,7 @@ Branch sends the following values from Branch link data:
 
 Adobe Classification | Branch Analytics Tag | Example
 --- | ---
-Source | Channel | Our Website 
+Source | Channel | Our Website
 Campaign | Campaign | Journeys Test Campaign
 Medium | Feature | Journeys
 Action | Branch Event Name | Install
@@ -162,7 +162,6 @@ There are common strategies to take while trouble shooting.
 
 With Adobe Analytics' dashboard, it may take up to ~2 hours for data to appear. We'd recommend you simulate 10-15 events in one testing session, and validate that they show up two hours later, so that feedback is transparent and obvious.
 
-Another thing to do is make sure a valid adobe_visitor_id is being passed up through the Branch SDK. Call *setDebug* and inspect the requests to `v1/open`. The key you want to find in this request payload is `$adobe_visitor_id`. 
+Another thing to do is make sure a valid adobe_visitor_id is being passed up through the Branch SDK. Call *setDebug* and inspect the requests to `v1/open`. The key you want to find in this request payload is `$adobe_visitor_id`.
 
 {% endif %}
-
