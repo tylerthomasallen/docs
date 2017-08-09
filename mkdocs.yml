@@ -96,7 +96,7 @@ pages:
     - Growth: pages/analytics/growth-attribution.md
     - User Value: pages/analytics/user-value attribution.md
     - Revenue: pages/analytics/revenue-attribution.md
-  - Deep Link web:
+  - Deep link web:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
