@@ -116,6 +116,7 @@
     - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
     - test live update in `/materials` 
     - prod code in `/src`
+        - `cd lib/mkdocs-material` 
         - `yarn install` 
         - `yarn build` (will build `/material` but fail on `/site` -> okay)
     -  updated files
