@@ -1,6 +1,6 @@
 ---
 title: Google Search App Install Ads
-description: An guide to using Branch in Adwords Search Network App Install Campaigns.
+description: A guide to using Branch in Adwords Search Network App Install Campaigns.
 path: tree/master/src/pages/deep-linked-ads
 source: google-search-install-ads.md
 ---
@@ -41,7 +41,7 @@ Android | Yes | Uses Final URL with ValueTrack Parameters, no tracking template 
 #### Create an Ad Link
 
 1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `App Install or Engagement`
-<img src="/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png" alt="Ling Creation" class="three-quarters center">
+<img src="/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **App Only**, the Ad Partner set to **Google Adwords**, and the Secondary Ad Format set to **Google Search Install iOS**
 ![Create Ad Link](/img/pages/deep-linked-ads/google-search-install-ads/ios/ad-link-setup.png)
@@ -88,7 +88,7 @@ To set up a Search Network Mobile App Install Campaign on iOS, you will need to 
 #### Create an Ad Link
 
 1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `App Install or Engagement`
-<img src="/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png" alt="Ling Creation" class="three-quarters center">
+<img src="/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **App Only**, the Ad Partner set to **Google Adwords**, and the Secondary Ad Format set to **Google Search Install Android**, while leaving the Campaign field blank
 ![Create Ad Link](/img/pages/deep-linked-ads/google-search-install-ads/android/ad-link-setup.png)
