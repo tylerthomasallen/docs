@@ -30,10 +30,10 @@ A couple of things to note:
 
 If you choose this option, go to your [Link Settings](https://dashboard.branch.io/link-settings) > Advanced Settings and check **Enable Link Scraping**. This option is only available once you've enabled the Deep Linked Feeds product for your account (you can enable the product by creating and downloading a Deep Linked Feed).
 
-![image](/img/pages/ads/dynamic-product-ads/enable-link-scraping.png)
+![image](/img/pages/deep-linked-ads/dynamic-product-ads/enable-link-scraping.png)
 
 - If you can't host your link data, add the necessary link data as a column in the Feed Source.
-- Want to get creative with your Feed Sources? Check out our [Advanced section](/pages/ads/dynamic-product-ads/advanced) for some power user tips.
+- Want to get creative with your Feed Sources? Check out our [Advanced section](/pages/deep-linked-ads/dynamic-product-ads/advanced) for some power user tips.
 - Branch accepts feed sources that are compatible with Facebook’s format. If you’re not sure about the compatibility of your feed, please use [Facebook’s Product Feed Debug Tool](https://business.facebook.com/ads/product_feed/debug) to test and debug it.
 
 !!! tip "Example Feed Source"
@@ -44,24 +44,24 @@ If you choose this option, go to your [Link Settings](https://dashboard.branch.i
 Go directly to [Ads section](https://dashboard.branch.io/ads/analytics?modal=ad-link) in the Branch dashboard to get started.
 
 1. Click on the "Create Product Link" tab.
-1. Click the **Feed Sources** button. ![image](/img/pages/ads/dynamic-product-ads/add-new-feed-source.png)
-1. Name your Feed Source. You can supply a URL (recommended) or upload a file. ![image](/img/pages/ads/dynamic-product-ads/name-and-upload-feed-source.png)
+1. Click the **Feed Sources** button. ![image](/img/pages/deep-linked-ads/dynamic-product-ads/add-new-feed-source.png)
+1. Name your Feed Source. You can supply a URL (recommended) or upload a file. ![image](/img/pages/deep-linked-ads/dynamic-product-ads/name-and-upload-feed-source.png)
 
 You can see all of the **Feed Sources** you've uploaded by going to the [Feed Sources](http://dashboard.branch.io/ads/feedsources) tab.
 
 ### Create a New Deep Linked Feed
 
-1. Click the **Add Deep Linked Feed** button from either tab. ![image](/img/pages/ads/dynamic-product-ads/add-deep-linked-feed.png)
+1. Click the **Add Deep Linked Feed** button from either tab. ![image](/img/pages/deep-linked-ads/dynamic-product-ads/add-deep-linked-feed.png)
 
 ### Deep Linked Feed Creation Flow
 
 1. In "Deep Linked Feed Information" you'll name your Deep Linked Feed for reference, and specify which Feed Source you'd like to turn into a Deep Linked Feed. You'll also input the Ad Platform on which you'd like to run your campaigns. This information will be used to modify the feed and insert well-structured Branch attribution data into the links.
-![image](/img/pages/ads/dynamic-product-ads/dlf-step-1.png)
+![image](/img/pages/deep-linked-ads/dynamic-product-ads/dlf-step-1.png)
 1. In "Create Deep Links" you'll be presented with two optional elements. The first is a list of column names from your feed source. To add deep link data to each link, select the column that contains the relevant data.
 
 Let's say you have a column in your product feed titled `id`. That column contains the product id for each piece of content in your Feed Source file, and your app needs that id to deep link correctly. To create deep links with that id for each product, select the column by checking the box on the left hand side. If you'd like to change the name of the key (for example, from `id` to `product_id`) you can write the new name for the key in the text box on the right hand side. This will add the correct `product_id` to each link for every single product in your feed (e.g. the first item will have `"product_id":1392`, the second item will have `"product_id":5284`).
 
-![image](/img/pages/ads/dynamic-product-ads/customize-columns.png)
+![image](/img/pages/deep-linked-ads/dynamic-product-ads/customize-columns.png)
 
 ### Getting your Deep Linked Feed
 
@@ -69,15 +69,15 @@ Finally, in "Get Deep Linked Feed" you can choose to get a URL that will host yo
 
 Once you get to the final step, you will see "Your links are being created..." Feel free to navigate away if you have a large feed source. Once this process has completed, you will receive a dashboard notification and an email with a link to your finished Deep Linked Feed.
 
-![image](/img/pages/ads/dynamic-product-ads/generating-dlf.png)
+![image](/img/pages/deep-linked-ads/dynamic-product-ads/generating-dlf.png)
 
-![image](/img/pages/ads/dynamic-product-ads/getting-dlf.png)
+![image](/img/pages/deep-linked-ads/dynamic-product-ads/getting-dlf.png)
 
 ### Schedule refresh
 
 If you used a Feed Source hosted on a URL (recommended), you will see two options for accessing your feed. We recommend selecting "Schedule Refresh." If you select this option, Branch will host a URL for your Deep Linked Feed that will update itself from your Feed Source URL at regular intervals. You can then provide the Deep Linked Feed URL to your partners, and Branch will keep the content up to date.
 
-![image](/img/pages/ads/dynamic-product-ads/hosted-dlf.png)
+![image](/img/pages/deep-linked-ads/dynamic-product-ads/hosted-dlf.png)
 
 You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](http://dashboard.branch.io/ads/deeplinkedfeeds) tab.
 
@@ -134,7 +134,7 @@ This field accepts parameters in the web query parameter format `key1=value1&key
 
 Once you've created the right parameters, add them in the `Advanced: Add Measurement Parameters` text field in Step 2. Your parameters will be added to every HTTP Branch link in the `link` column.
 
-![image](/img/pages/ads/dynamic-product-ads/add-measurement-parameters.png)
+![image](/img/pages/deep-linked-ads/dynamic-product-ads/add-measurement-parameters.png)
 
 ## Support
 

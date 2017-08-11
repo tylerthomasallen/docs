@@ -12,7 +12,7 @@ Configuring Twitter install ads to use Branch links is very simple. The only tri
 
 ## Configure ad campaign on Twitter
 
-![image](/img/pages/ads/twitter/twitter_screenshot_0.png)
+![image](/img/pages/deep-linked-ads/twitter/twitter_screenshot_0.png)
 
 ### Select campaign type
 
@@ -26,14 +26,14 @@ Set the device targeting as desired.
 
 On the ad creation card, enter the Branch Quick Link you created in the **Website URL** field.
 
-![image](/img/pages/ads/twitter/twitter_screenshot_1.png)
+![image](/img/pages/deep-linked-ads/twitter/twitter_screenshot_1.png)
 
 ## View your data using the Branch dashboard
 
 The [Marketing page](https://dashboard.branch.io/quick-links) on the Branch dashboard shows the performance of each individual link. You can find your link listed in the table with a quick summary of the _total_ clicks and installs.
 
-![image](/img/pages/ads/twitter/marketing_link_row.png)
+![image](/img/pages/deep-linked-ads/twitter/marketing_link_row.png)
 
 To view more details stats, click the _small button that looks like a bar chart_ on the far right. Note that these stats are **limited to the date range** at the top. You can expand the range if you'd like.
 
-![image](/img/pages/ads/twitter/click_flow_analytics.png)
+![image](/img/pages/deep-linked-ads/twitter/click_flow_analytics.png)

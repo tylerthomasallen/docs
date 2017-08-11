@@ -101,17 +101,24 @@ pages:
     - Journeys App Banners: pages/web/journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
   - Deep link ads:
-    - Apple Search Ads: pages/ads/apple.md
-    - Dynamic Product Feeds: pages/ads/dynamic-product-feeds.md
-    - Branch Universal Ads: pages/ads/branch-universal-ads.md
-    - Doubleclick: pages/ads/doubleclick.md
-    - Google App Installs: pages/ads/google-app-installs.md
-    - Google Universal App Campaigns: pages/ads/google-universal-app-campaigns.md
-    - Google Search Ads: pages/ads/google-search.md
-    - Facebook App Installs: pages/ads/facebook-app-installs.md
-    - Facebook App Engagement: pages/ads/facebook-app-engagement.md
-    - Facebook Instagram: pages/ads/facebook-instagram.md
-    - Twitter Ads: pages/ads/twitter.md
+    - Apple Search Ads: pages/deep-linked-ads/apple.md
+    - Dynamic Product Feeds: pages/deep-linked-ads/dynamic-product-feeds.md
+    - Branch Universal Ads: pages/deep-linked-ads/branch-universal-ads.md
+    - Doubleclick: pages/deep-linked-ads/doubleclick.md
+    - Google Ads Overview: pages/deep-linked-ads/google-ads-overview.md
+    - Google Search App Install Ads: pages/deep-linked-ads/google-search-install-ads.md
+    - Google Search App Engagement Ads: pages/deep-linked-ads/google-search-engagement-ads.md
+    - Google Display App Install Ads: pages/deep-linked-ads/google-display-install-ads.md
+    - Google Display App Engagement Ads: pages/deep-linked-ads/google-display-engagement-ads.md
+    - Google Universal App Campaigns: pages/deep-linked-ads/google-uac.md
+    - Google Search Network Ads: pages/deep-linked-ads/google-xplatform-search-ads.md
+    - Google Display Network Ads: pages/deep-linked-ads/google-xplatform-display-ads.md
+    - Google Adwords Conversion Setup: pages/deep-linked-ads/google-conversions.md
+    - Google Video Ads: pages/deep-linked-ads/google-video-ads.md
+    - Facebook App Installs: pages/deep-linked-ads/facebook-app-installs.md
+    - Facebook App Engagement: pages/deep-linked-ads/facebook-app-engagement.md
+    - Facebook Instagram: pages/deep-linked-ads/facebook-instagram.md
+    - Twitter Ads: pages/deep-linked-ads/twitter.md
   - Deep link emails:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md

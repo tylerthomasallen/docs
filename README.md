@@ -82,12 +82,12 @@
     - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
-    - Content pages are kept in the `img/pages` 
-    - Example images used in ingredients are kept in the `img/ingredients` 
+    - Content pages are kept in the `img/pages`
+    - Example images used in ingredients are kept in the `img/ingredients`
 
 - #### Includes
-    - For reusable snippet, use the format `{! path/file_name_here.md !}` 
-    - Content snippets should be placed in the `ingredients` subdirectory
+    - For reusable snippet, use the format `{! path/file_name_here.md !}` where the base path begins at the includes directory.
+    - Content snippets should be placed in the `ingredients` subdirectory. (E.g. `{! ingredients/content_snippet.md !}`)
     - Frequently updated content/code should be kept within the `includes`
 
 ## Additional

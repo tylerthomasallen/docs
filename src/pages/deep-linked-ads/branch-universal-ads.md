@@ -21,9 +21,9 @@ Branch Universal Ads help you drive results for web and app campaigns.
 1. Visit the [Ads page](https://dashboard.branch.io/ads) on the Branch dashboard.
 1. Select [Partner Management](https://dashboard.branch.io/ads/partner-management) from the sidebar.
 1. Search for the Ad Partner that you'd like to enable.
-![image](/img/pages/ads/branch-universal-ads/find-applovin.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/find-applovin.png)
 1. Enter any credentials that may be required, and click **Save and Enable** in the bottom right hand corner.
-![image](/img/pages/ads/branch-universal-ads/save-and-enable.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/save-and-enable.png)
 
 !!! tip "Enable postbacks"
     Basic postbacks will automatically be activated for events like _Install_ and _Purchase_ when you enable your ad partner. You can then [add additional postbacks](../advanced/#adding-more-postbacks), for example, if you wanted to add postbacks for custom events that are specific to your app like _Account Created_. You can also [edit postbacks](../advanced/#advanced-editing-postbacks) if there's additional data you really need to pass along to your ad partner.
@@ -33,13 +33,13 @@ Branch Universal Ads help you drive results for web and app campaigns.
 Once you've enabled an ad partner, it's time to create a tracking link.
 
 1. First, select an ad format. For App Install or App Engagement campaigns you'll want to select the **App Only** format. For Search or Display campaigns where the user should go to web if they don't have the app, then you should select **Cross-Platform Search** or **Cross-Platform Display**. **Product Links** are for shopping or dynamic remarketing campaigns and will take you to create a Deep Linked Product Feed.
-![image](/img/pages/ads/branch-universal-ads/choose-ad-format.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/choose-ad-format.png)
 1. At this point you need to name your link. Select something that will make it easy to find if you need it later. Your Ad Format and Ad Partner should be selected already, but feel free to choose one if they aren't. It's important that you select the right Ad Partner for analytics later on. Click **Configure Options** to continue.
-![image](/img/pages/ads/branch-universal-ads/name-ad-link.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/name-ad-link.png)
 1. This is your chance to add deep link data and analytics tags. Analytics tags are important for later segmentation, so click the **Analytics** sub tab to add a Channel and Campaign value.
-![image](/img/pages/ads/branch-universal-ads/add-analytics-tags.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/add-analytics-tags.png)
 1. Click **Create Link Now**, and you have your tracking link! Take this link and give it to your Ad Partner's Account Manager or paste it into the tracking section of your campaign yourself.
-![image](/img/pages/ads/branch-universal-ads/finished-ad-link.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/finished-ad-link.png)
 
 
 !!! tip "Set Analytics tags"
@@ -57,7 +57,7 @@ For example, if a customer clicks a Branch email link, and then clicks an ad, in
 
 If the customer then goes on to purchase an item on web within the attribution window, Branch will also attribute the web purchase to the same ad link, connecting the web and app actions taken by a single user for a more accurate view of your marketing channels and customer behavior.
 
-![image](/img/pages/ads/branch-universal-ads/install-by-secondary-pub.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/install-by-secondary-pub.png)
 
 ## Advanced
 
@@ -65,12 +65,12 @@ If the customer then goes on to purchase an item on web within the attribution w
 
 When you enable an ad partner, your ad partner postbacks can be found under the **Postbacks** tab for that ad partner. It's easy to add additional postbacks.
 
-![image](/img/pages/ads/branch-universal-ads/postbacks-tab.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/postbacks-tab.png)
 
 1. Click the **Add New Postback** button at the bottom of the screen.
-![image](/img/pages/ads/branch-universal-ads/add-new-postback-button.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/add-new-postback-button.png)
 1. A modal will appear with Branch default events, as well as any commerce or custom events you've set up. Select an event, enter a postback URL if you're asked to, and click **Save**. This will be the event that triggers your new postback.
-![image](/img/pages/ads/branch-universal-ads/add-new-postback-modal.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/add-new-postback-modal.png)
 
 ### Edit postbacks
 
@@ -91,7 +91,7 @@ For customer experience and data accuracy, please do not set your deep linking w
 
 You can edit your attribution windows under Link Settings > Attribution Windows. View through attribution is not yet available, but will be coming soon.
 
-![image](/img/pages/ads/branch-universal-ads/attribution-windows.png)
+![image](/img/pages/deep-linked-ads/branch-universal-ads/attribution-windows.png)
 
 #### Link Level Attribution Windows
 
