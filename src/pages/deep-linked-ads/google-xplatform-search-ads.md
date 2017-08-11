@@ -46,7 +46,7 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 <img src="/img/pages/deep-linked-ads/reusable-images/create-link-search.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **Search** and the Ad Partner set to **Google Adwords**.
-![Create Ad Link](/img/pages/deep-linked-ads/google-xplatform-search-ads/ad-link-setup.png)
+![Create Ad Link](/img/pages/deep-linked-ads/google-xplatform-search-ads/link-setup.png)
 1. Under the Configure Options tab, navigate to the Redirects sub section and ensure that the Web redirect is set to the desired final website promoted by the ad campaign.
 ![Create Ad Link](/img/pages/deep-linked-ads/reusable-images/example-link-redirect.png)
 1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Google Adwords and set the campaign field to the same ad campaign name used in Adwords.
@@ -91,7 +91,7 @@ To set up a Search Network Campaign, you will need to first create your campaign
 <img src="/img/pages/deep-linked-ads/reusable-images/create-link-search.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **Search** and the Ad Partner set to **Google Adwords**.
-![Create Ad Link](/img/pages/deep-linked-ads/google-xplatform-search-ads/ad-link-setup.png)
+![Create Ad Link](/img/pages/deep-linked-ads/google-xplatform-search-ads/link-setup.png)
 1. Under the Configure Options tab, navigate to the Redirects sub section and ensure that the Web redirect is set to the desired final website promoted by the ad campaign.
 ![Create Ad Link](/img/pages/deep-linked-ads/reusable-images/example-link-redirect.png)
 1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Google Adwords and set the campaign field to the same ad campaign name used in Adwords.
