@@ -99,6 +99,7 @@ pages:
   - Deep link web:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
+    - AMP Journeys: pages/web/amp-journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
   - Deep link ads:
     - Apple Search Ads: pages/ads/apple.md
