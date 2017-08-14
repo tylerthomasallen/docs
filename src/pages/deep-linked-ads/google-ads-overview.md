@@ -18,13 +18,13 @@ Google Campaign | Campaign Type/Objective | Branch Documentation Link | Branch A
 --- | --- | --- | ---
 Search Network | Mobile app installs | **[link](/pages/deep-linked-ads/google-search-install-ads)** | App Only: Install
 Search Network | Mobile app engagement | **[link](/pages/deep-linked-ads/google-search-engagement-ads)** | App Only: Engagement
-Search Network | Standard  | **[link](/pages/deep-linked-ads/google-xplatform-search-ads)** | Cross-platform Search
-Search Network | Dynamic Search Ads  | **[link](/pages/deep-linked-ads/google-xplatform-search-ads)** | Cross-platform Search
+Search Network | Standard  | **[link](/pages/deep-linked-ads/google-xplatform-search-ads/#standard-search-ads)** | Cross-platform Search
+Search Network | Dynamic Search Ads  | **[link](/pages/deep-linked-ads/google-xplatform-search-ads/#dynamic-search-ads)** | Cross-platform Search
 Display Network | Install your mobile app | **[link](/pages/deep-linked-ads/google-display-install-ads)** | App Only: Install
 Display Network | Engage with your mobile app | **[link](/pages/deep-linked-ads/google-display-engagement-ads)** | App Only: Engagement
 Display Network | Others (Visit your website, Influence, etc.)  | **[link](/pages/deep-linked-ads/google-xplatform-display-ads)** | Cross-platform Display
-Video | Mobile App Installs | **[link](/pages/deep-linked-ads/google-video-ads)** | App Only: Install
-Video | Standard | **[link](/pages/deep-linked-ads/google-video-ads)** | Cross-platform Display
+Video | Mobile App Installs | **[link](/pages/deep-linked-ads/google-video-ads/#video-app-install-ads)** | App Only: Install
+Video | Standard | **[link](/pages/deep-linked-ads/google-video-ads/#video-standard-ads)** | Cross-platform Display
 Universal App Campaigns | Universal App Campaigns | **[link](/pages/deep-linked-ads/google-uac)** | App Only: Install
 
 <!-- Shopping | Shopping | link here | Cross-platform Product Links

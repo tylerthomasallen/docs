@@ -20,8 +20,8 @@ Universal App Campaign | Mobile App Install | App Only: Install
 
 Operating System | Supported by Universal App Campaigns? | Key Differences | Documentation
 --- | --- | --- | ---
-iOS | Yes | Conversion and Postback setup, no tracking template | [link]({{base.url}}/marketing-channels/google-uac/guide)
-Android | Yes | Conversion and Postback setup, no tracking template | [link]({{base.url}}/marketing-channels/google-uac/guide)
+iOS | Yes | Conversion and Postback setup, no tracking template | [link](/pages/deep-linked-ads/google-uac/#setup)
+Android | Yes | Conversion and Postback setup, no tracking template | [link](/pages/deep-linked-ads/google-uac/#setup)
 
 {! ingredients/deep-linked-ads/link-to-google-ads-overview.md !}
 
