@@ -6,7 +6,6 @@
   var router = (function() {
     // listener
     window.addEventListener('hashchange', function(event) {
-      // handle hash change
       _route(event.target.location.hash);
     }, false);
 
@@ -32,53 +31,27 @@
     };
   })();
 
-  // routes
-  var routes =  (function() {
-    // properties
-    var search = document.getElementById('algolia-doc-search');
-
-    // public
-    function init() {
-      router.add('route-#header-helpful', function() {
-        analytics.track('viewed modal helpful');
-        modal.toggle('modal-helpful', 'notification', 1500);
-      });
-      router.add('route-#header-unhelpful', function() {
-        analytics.track('viewed modal unhelpful');
-        modal.toggle('modal-unhelpful', 'dialog');
-      });
-      router.add('route-#header-search', function() {
-        analytics.track('viewed modal search');
-        modal.toggle('modal-search', 'dialog');
-        search.focus();
-      });
-    }
-    return {
-      init: init
-    }
-  })();
-
   // pub sub
   var events = (function() {
     // properties
-    var events = {};
+    var items = {};
     // methods
     function publish(name, data) {
-      if (events[name]) {
-        events[name].forEach(function(func) {
+      if (items[name]) {
+        items[name].forEach(function(func) {
           func(data);
         });
       }
     }
     function subscribe(name, func) {
-      events[name] = events[name] || [];
-      events[name].push(func);
+      items[name] = items[name] || [];
+      items[name].push(func);
     }
     function unsubscribe(name, func) {
-      if (events[name]) {
-        for (var i = 0; i < events[name].length; i++) {
-          if( events[name][i] === func ) {
-            events[name].splice(i, 1);
+      if (items[name]) {
+        for (var i = 0; i < items[name].length; i++) {
+          if (items[name][i] === func) {
+            items[name].splice(i, 1);
             break;
           }
         }
@@ -86,6 +59,7 @@
     }
     // public
     return {
+      items: items,
       publish: publish,
       subscribe: subscribe,
       unsubscribe: unsubscribe
@@ -93,13 +67,13 @@
   })();
 
   // modals
-  var modal = (function() {
+  var modals = (function() {
     // properties
     var cache = {};
 
     // main
-    addCache();
-    function addCache() {
+    _addCache();
+    function _addCache() {
       var modals = document.getElementsByClassName('modal');
       for (var i = 0; i < modals.length; i++) {
         var modal = modals[i];
@@ -118,12 +92,12 @@
             break;
           }
         }
-        addListener(id, type, background, close);
+        _addListener(id, type, background, close);
         cache[id] = modal;
       }
     }
 
-    function addListener(id, type, background, close) {
+    function _addListener(id, type, background, close) {
       // need separate function because of closure binding within .addEventListener
       close.addEventListener('click', function(event) {
         toggle(id, type);
@@ -131,6 +105,23 @@
       if (type === 'notification') return;
       background.addEventListener('click', function(event) {
         toggle(id, type);
+      });
+    }
+
+    function route() {
+      var search = document.getElementById('algolia-doc-search');
+      router.add('route-#header-helpful', function() {
+        analytics.track('viewed modal helpful');
+        modals.toggle('modal-helpful', 'notification', 1500);
+      });
+      router.add('route-#header-unhelpful', function() {
+        analytics.track('viewed modal unhelpful');
+        modals.toggle('modal-unhelpful', 'dialog');
+      });
+      router.add('route-#header-search', function() {
+        analytics.track('viewed modal search');
+        modals.toggle('modal-search', 'dialog');
+        search.focus();
       });
     }
 
@@ -155,7 +146,8 @@
 
     // public
     return {
-      toggle: toggle
+      toggle: toggle,
+      route: route
     };
   })();
 
@@ -172,11 +164,11 @@
         buttons: document.getElementsByClassName('improve-doc'),
         example: '<a href="#" class="improve-doc" title="Improve This Doc">Improve this docs</a>',
       }
-    }
+    };
 
     // private
     function _getSupportUrl() {
-      return 'mailto:integration@branch.io?subject=I need some assistance&body=Hello Branch,%0A%0AI am viewing (' + window.location.href + ').%0A%0AMy Branch Key (https%3A%2F%2Fdashboard.branch.io%2Faccount-settings%2Fapp) is:%0A%0A I need assistance with '
+      return 'mailto:integration@branch.io?subject=I need some assistance&body=Hello Branch,%0A%0AI am viewing (' + window.location.href + ').%0A%0AMy Branch Key (https%3A%2F%2Fdashboard.branch.io%2Faccount-settings%2Fapp) is:%0A%0A I need assistance with ';
     }
     function _getImproveUrl() {
       var trim = window.location.pathname.replace(/^\/|\/$/g, '').split('/');
@@ -184,21 +176,22 @@
       var path = (trim === '') ? 'index' : trim;
       return 'https://github.com/branchmetrics/docs/edit/master/src/' + path + '.md';
     }
-    function _listen(type) {
-      analytics.track('pressed button ' + type);
-    }
 
     // public
     function init() {
       for (var key1 in buttons) {
-        var button = buttons[key1];
-        for (var key2 in button) {
-          var value = button[key2];
-          if (key2 === 'buttons') {
-            for (var i = 0; i < value.length; i++) {
-              var element = value[i];
-              element.setAttribute('href', button.url);
-              _listen(key1);
+        if (buttons.hasOwnProperty(key1)) {
+          var button = buttons[key1];
+          for (var key2 in button) {
+            if (button.hasOwnProperty(key2)) {
+              var value = button[key2];
+              if (key2 === 'buttons') {
+                for (var i = 0; i < value.length; i++) {
+                  var element = value[i];
+                  element.setAttribute('href', button.url);
+                  analytics.track('pressed button ' + key1);
+                }
+              }
             }
           }
         }
@@ -504,9 +497,9 @@
   // page load
   function onload() {
     analytics.track('viewed page ' + window.location.href);
-    routes.init();
     buttons.init();
     codeTabs.init();
+    modals.route();
     router.init();
   }
   onload();
