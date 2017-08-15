@@ -77,7 +77,7 @@ We rely on 3 methods to match attributions into TUNE’s dashboard.
 
 By following all the steps listed in this guide, you’ll automatically have all 3 available.
 
-## Advanced network segmentation with Tune
+### Advanced network segmentation with Tune
 
 If you are interested in advanced network attribution segmentation in Tune, you can use the same attribution parameters you'd append to a Tune Measurement URL with your Branch link.
 
