@@ -116,9 +116,11 @@ pages:
     - Google Display Network Ads: pages/deep-linked-ads/google-xplatform-display-ads.md
     - Google Adwords Conversion Setup: pages/deep-linked-ads/google-conversions.md
     - Google Video Ads: pages/deep-linked-ads/google-video-ads.md
-    - Facebook App Installs: pages/deep-linked-ads/facebook-app-installs.md
-    - Facebook App Engagement: pages/deep-linked-ads/facebook-app-engagement.md
-    - Facebook Instagram: pages/deep-linked-ads/facebook-instagram.md
+    - Facebook Ads Overview: pages/deep-linked-ads/facebook-ads-overview.md
+    - Facebook App Install Ads: pages/deep-linked-ads/facebook-app-install.md
+    - Facebook Traffic and Conversion Ads: pages/deep-linked-ads/facebook-conversion-ads.md
+    - Facebook Platform Ads: pages/deep-linked-ads/facebook-platform-ads.md
+    - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter Ads: pages/deep-linked-ads/twitter.md
   - Deep link emails:
     - Responsys: pages/emails/responsys.md
