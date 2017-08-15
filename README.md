@@ -88,8 +88,8 @@
     - without width `![image](http://i.imgur.com/dyfhN0L.png)`
 
 - #### Includes
-    - For reusable snippet, use the format `{! path/file_name_here.md !}` 
-    - Content snippets should be placed in the `ingredients` subdirectory
+    - For reusable snippet, use the format `{! path/file_name_here.md !}` where the base path begins at the includes directory.
+    - Content snippets should be placed in the `ingredients` subdirectory. (E.g. `{! ingredients/content_snippet.md !}`)
     - Frequently updated content/code should be kept within the `includes`
 
 ## Additional
