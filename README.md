@@ -82,8 +82,10 @@
     - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
-    - Content pages are kept in the `img/pages`
-    - Example images used in ingredients are kept in the `img/ingredients`
+    - Content pages are kept in the `img/pages` 
+    - Example images used in ingredients are kept in the `img/ingredients` 
+    - with width `<img src="http://i.imgur.com/dyfhN0L.png" width="100px" />`
+    - without width `![image](http://i.imgur.com/dyfhN0L.png)`
 
 - #### Includes
     - For reusable snippet, use the format `{! path/file_name_here.md !}` where the base path begins at the includes directory.
@@ -116,6 +118,7 @@
     - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
     - test live update in `/materials` 
     - prod code in `/src`
+        - `cd lib/mkdocs-material` 
         - `yarn install` 
         - `yarn build` (will build `/material` but fail on `/site` -> okay)
     -  updated files
