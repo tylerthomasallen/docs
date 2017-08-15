@@ -142,10 +142,12 @@ pages:
     - Abobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
     - Amplitude: pages/integrations/amplitude.md
-    - AppBoy: pages/integrations/appboy.md
+    - AppMetrica: pages/integrations/appmetrica.md
+    - Appboy: pages/integrations/appboy.md
+    - Appsflyer: pages/integrations/appsflyer.md
+    - Fabric Answers: pages/integrations/fabric-answers.md
     - Google Analytics: pages/integrations/google-analytics.md
     - Kochava: pages/integrations/kochava.md
     - Localytics: pages/integrations/localytics.md
     - Mixpanel: pages/integrations/mixpanel.md
     - Tune: pages/integrations/tune.md
-    - AppMetrica: pages/integrations/appmetrica.md
