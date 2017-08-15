@@ -13,7 +13,7 @@ See your Branch organic acquisition campaigns alongside your AppMetrica data.
 
 ![image](/img/pages/integrations/appmetrica/appmetrica-dashboard-example.png)
 
-## Support
+## Setup
 
 ### Prerequisites
 
