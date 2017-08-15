@@ -21,6 +21,7 @@ You'll have the flexibility to analyze data as needed in the Adobe Analytics pla
 Branch events are similar to Adobe Analytics events in that they can be used to build custom reports and are tracked on the various pages and dashboards. However, unlike normal events, Branch events contain valuable information about how users ended up in your app in the first place.
 
 ## Setup
+
 !!! note "Prerequisite"
 		- This guide requires you to have already [integrated the Branch SDK](/pages/exports/data-integrations/webhooks/).
 		- You also need to be a Adobe Analytics customer and have the Adobe Analytics SDK integrated.
