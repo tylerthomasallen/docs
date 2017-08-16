@@ -263,16 +263,16 @@ border: none;
 /* ////////////////////////////// */
 /* HEADER GITHUB STATS */
 /* ////////////////////////////// */
-/*.md-nav__source, .md-source__facts, .md-source__icon {
-display: none;
+.md-nav__source, .md-source__facts, .md-source__icon {
+  display: none;
 }
 
 .md-source__repository {
-font-weight: 400;
-font-size: 1.8rem;
-overflow: visible;
+  font-weight: 400;
+  font-size: 1.8rem;
+  overflow: visible;
 }
 
 .md-nav__link[data-md-state=blur] {
-text-decoration: line-through;
-}*/
+  text-decoration: line-through;
+}
