@@ -50,7 +50,8 @@ extra:
     hits: 15
   mixpanel:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
-  nav_headers:
+  nav_footer: false
+  nav_header:
     - index: 2
       title: Basic deep linking
     - index: 6

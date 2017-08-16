@@ -122,7 +122,7 @@
         - `yarn install` 
         - `yarn build` (will build `/material` but fail on `/site` -> okay)
     -  updated files
-        - `lib/mkdocs-material/src/partials/footers.html`
+        - `lib/mkdocs-material/src/partials/footer.html`
         - `lib/mkdocs-material/src/partials/header.html`
         - `lib/mkdocs-material/src/partials/nav.html`
         - `lib/mkdocs-material/src/base.html`
