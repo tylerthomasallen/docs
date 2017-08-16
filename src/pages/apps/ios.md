@@ -60,7 +60,7 @@
 
     - Option 3: Manually install the [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) with dependencies
 
-        ![image](http://i.imgur.com/0NcOrkE.png)
+        ![image](http://i.imgur.com/YY0enst.png)
 
 - #### Initialize Branch
 
