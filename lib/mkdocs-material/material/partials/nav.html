@@ -19,7 +19,7 @@
       {% set path = "nav-" + loop.index | string %}
       {% set level = 1 %}
       {% set index = loop.index %}
-      {% for header in config.extra.nav_headers %}
+      {% for header in config.extra.nav_header %}
         {% if index == header.index %}
           <li class="md-nav__item md-nav__link branch-nav-header">
             {{ header.title }}
