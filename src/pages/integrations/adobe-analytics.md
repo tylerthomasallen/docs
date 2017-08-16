@@ -1,6 +1,6 @@
-## Adobe Analytics
+## Overview
 
-### With a push of a button you can send your Branch data to your Adobe Analytics dashboard, helping you understand the power of Branch as an acquisition pathway.
+With a push of a button you can send your Branch data to your Adobe Analytics dashboard, helping you understand the power of Branch as an acquisition pathway.
 
 ### How does it work?
 
@@ -16,24 +16,25 @@ Branch events will appear on the Adobe Analytics dashboard through `Reports > Cu
 
 You'll have the flexibility to analyze data as needed in the Adobe Analytics platform, as the data Branch sends maps in Adobe Analytics to a top level eVar. This eVar contains campaign, channel, target, event name, and action property, which are your analytics tags.
 
-{% image src="/img/pages/third-party-integrations/adobe-analytics/adobe-analytics-conversion.png" 3-quarters center %}
+![image](/img/pages/integrations/adobe-analytics/adobe-analytics-conversion.png)
 
 Branch events are similar to Adobe Analytics events in that they can be used to build custom reports and are tracked on the various pages and dashboards. However, unlike normal events, Branch events contain valuable information about how users ended up in your app in the first place.
 
 ## Setup
 
-- This guide requires you to have already [integrated the Branch SDK](/pages/exports/data-integrations/webhooks/).
-- You also need to be a Adobe Analytics customer and have the Adobe Analytics SDK.
+!!! note "Prerequisite"
+		- This guide requires you to have already [integrated the Branch SDK](/pages/exports/data-integrations/webhooks/).
+		- You also need to be a Adobe Analytics customer and have the Adobe Analytics SDK integrated.
 
 ### Activate the Branch Data Connector
 
 In your Adobe Analytics dashboard, under the *Admin* tab, find *Data Connectors*.
 
-{% image src="/img/pages/third-party-integrations/adobe-analytics/select-data-connectors.png" 3-quarters center %}
+![image](/img/pages/integrations/adobe-analytics/select-data-connectors.png)
 
 Click *+Add New*, search for "Branch," and click *Activate*.
 
-{% image src="/img/pages/third-party-integrations/adobe-analytics/activate-connector.png" half center %}
+![image](/img/pages/integrations/adobe-analytics/activate-connector.png)
 
 ### Configure the Branch Data Connector
 
@@ -45,7 +46,7 @@ These are automatically configured when you activate the Data Connector.
 
 Map your Branch events to your chosen eVar. In the example below, it will be mapped to `Custom eVar 1`, renamed to the SiteCatalyst metric `Branch`.
 
-{% image src="/img/pages/third-party-integrations/adobe-analytics/variable-mappings.png" 3-quarters center %}
+![image](/img/pages/integrations/adobe-analytics/variable-mappings.png)
 
 #### Data Settings
 
@@ -59,17 +60,19 @@ Medium | Feature | Journeys
 Action | Branch Event Name | Install
 Action Property| Branch Tags | tag=bar&tag2=1234
 
-{% image src="/img/pages/third-party-integrations/adobe-analytics/data-settings.png" 3-quarters center %}
+![image](/img/pages/integrations/adobe-analytics/data-settings.png)
 
 #### Review Summary
 
 Finally, review the integration, scroll to the bottom of the screen and click *Activate Now* to enable the integration.
 
-{% image src="/img/pages/third-party-integrations/adobe-analytics/final-activation.png" half center %}
+![image](/img/pages/integrations/adobe-analytics/final-activation.png)
 
-## Retrieve your Adobe Analytics Information
+## Configure the Branch Dashboard
 
-In your Adobe Analytics dashboard, navigate to the Mobile Marketing UI and find your app.
+#### Retrieve your Adobe Analytics Information
+
+Before navigating to Branch, in your Adobe Analytics dashboard, navigate to the Mobile Marketing UI and find your app.
 
 Under Manage App Setting -> SDK Analytics Options, find the following data
 
@@ -138,7 +141,7 @@ Branch.initSession(...);
 
 ## Advanced
 
-## What Branch Sends to Adobe Analytics
+#### What Branch Sends to Adobe Analytics
 
 Branch sends the following values from Branch link data:
 
@@ -161,5 +164,3 @@ There are common strategies to take while trouble shooting.
 With Adobe Analytics' dashboard, it may take up to ~2 hours for data to appear. We'd recommend you simulate 10-15 events in one testing session, and validate that they show up two hours later, so that feedback is transparent and obvious.
 
 Another thing to do is make sure a valid adobe_visitor_id is being passed up through the Branch SDK. Call *setDebug* and inspect the requests to `v1/open`. The key you want to find in this request payload is `$adobe_visitor_id`.
-
-{% endif %}
