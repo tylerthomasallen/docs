@@ -14,9 +14,9 @@
 
         ![image](http://i.imgur.com/zaKY7Mh.png)
 
-- #### Integrate App
+- #### Integrate app
 
-    - TODO
+    - Complete [Integrate your app](#dialog-code)
 
 - #### Initialize Branch
 
