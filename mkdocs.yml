@@ -1,9 +1,9 @@
 # Project
-site_name: 'Branch Documentation'
-site_description: 'Branch Documentation for Deep Linking'
+site_name: 'Branch documentation'
+site_description: 'Branch documentation for mobile deep linking'
 site_author: 'Branch'
 site_url: 'https://branchmetrics.github.io/docs'
-repo_name: 'Branch Documentation'
+repo_name: 'Branch documentation'
 repo_url: 'https://github.com/branchmetrics/docs'
 edit_uri: 'edit/master/src/'
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
@@ -20,7 +20,7 @@ site_favicon: img/favicon-96x96.png
 
 # Options
 extra:
-  # logo: 'img/logo.svg'
+  logo: 'img/logo.svg'
   palette:
     primary: 'light blue'
     accent: 'light blue'
@@ -50,12 +50,15 @@ extra:
     hits: 15
   mixpanel:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
-  nav_footer: false
   nav_header:
     - index: 2
       title: Basic deep linking
     - index: 6
       title: Advance deep linking
+  visible:
+    footer_nav: false
+    header_git: false
+    header_breadcrumb: true
 
 # Extensions
 markdown_extensions:
@@ -84,8 +87,7 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
-  - Integrate your website:
-    - Setup: pages/web/setup.md
+  - Integrate your website: pages/web/setup.md
   - Create deep links:
     - Link behavior: pages/links/behavior.md
     - Link data: pages/links/data.md
