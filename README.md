@@ -8,13 +8,6 @@
 
   - [spreadsheet](https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216)
 
-- #### Dependencies
-
-    ```bash
-    python --version #Python 2.7.2
-    pip --version #pip 1.5.2
-    ```
-
 - #### Code
 
     ```bash
