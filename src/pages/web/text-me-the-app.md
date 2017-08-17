@@ -217,7 +217,8 @@ We enforce the following rate limits when sending SMS through Branch:
 
 ### Can I use this service for international phone numbers?
 
-Yes. Branch uses Twilio to send SMS messages, which means SMS will be delivered all around the world.
+Yes. Branch uses Twilio to send SMS messages, which means SMS will be delivered all around the world. However, please note that the number the SMS has to be delivered must be in the same country the SMS is being sent from.
+
 
 ### I've sent myself multiple texts just now and only received the first few, what's going on?
 
