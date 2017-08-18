@@ -171,7 +171,7 @@ Content-Type: application/json
 }
 ```
 
-### Filtering which webhooks are sent
+### Filter Webhooks
 
 Filters allow you to specify when a webhook gets sent to your URL based off criteria matches. You can configure your filters to use any webhook keyword value by using liquid tags following this convention: `{{ param.name }}`.
 
@@ -245,7 +245,7 @@ If you plan on sending click or install data to a third party, you’ll likely n
 When a Branch link is opened, triggering a **click** event, you may access:
 
 - Properties of the visitor who opened the link.
-- Properties of the link that was opened. 
+- Properties of the link that was opened.
 
 | Key | Description
 | --- | ---
@@ -288,7 +288,7 @@ When a user triggers an event inside your app, either one [created by you](https
 
 !!! Note "Identity vs. Session"
     **Identity properties** are _set once_, the very first time Branch sees a user. Once set for each user, these are never changed. **Session properties** are the data of the _most recent_ record Branch has for a user.
-    
+
     For an initial **install** event, identity and session properties will be the same. For **open** events, session properties will be different if the user has subsequently opened another Branch link.
 
 Event Data
@@ -371,7 +371,7 @@ Reserved for future use:
 - 52.9.188.221/32
 - 52.9.188.236/32
 
-You can also [create events through the Branch SDK](https://dev.branch.io/cross-channel-analytics/user-value-attribution/), and specify a secret key inside the event metadata to pass into the URL of the webhook itself.
+You can also create events through the Branch SDK, and specify a secret key inside the event metadata to pass into the URL of the webhook itself.
 
 ## Support
 
@@ -384,22 +384,3 @@ Check to see if you are in [Test Mode](https://dev.branch.io/getting-started/int
 ##### What is the difference between first referring data and session referring data?
 
 Because webhooks are event based, and tie back to a unique user, we send you data from the link that first drove this unique user into your app. Then, if they click another Branch link later, we also send you session referring data from this second link. For an initial install event, these should be the same. For any subsequent events, session referring data may be different.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
