@@ -54,13 +54,14 @@ extra:
     - index: 2
       title: Basic deep linking
     - index: 7
-      title: Advance deep linking
+      title: Advanced deep linking
+    - index: 14
+      title: Resources
   visible:
     footer_nav: false
     header_git: false
     header_breadcrumb: true
-  hidden_pages: [""]
- 
+
 # Extensions
 markdown_extensions:
   - admonition:
@@ -136,7 +137,7 @@ pages:
     - CSV Export: pages/exports/csv.md
     - Export API: pages/exports/api.md
     - Webhooks: pages/exports/webhooks.md
-  - Integrate analytics:
+  - Integrate third party platforms:
     - Abobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
     - Amplitude: pages/integrations/amplitude.md
@@ -149,3 +150,5 @@ pages:
     - Localytics: pages/integrations/localytics.md
     - Mixpanel: pages/integrations/mixpanel.md
     - Tune: pages/integrations/tune.md
+  - Validation Tools: pages/resources/validation-tools.md
+  - Case Studies and Infographics: pages/resources/case-studies.md
