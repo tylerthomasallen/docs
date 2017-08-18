@@ -1,9 +1,9 @@
 # Project
-site_name: 'Branch Documentation'
-site_description: 'Branch Documentation for Deep Linking'
+site_name: 'Branch documentation'
+site_description: 'Branch documentation for mobile deep linking'
 site_author: 'Branch'
 site_url: 'https://branchmetrics.github.io/docs'
-repo_name: 'Branch Documentation'
+repo_name: 'Branch documentation'
 repo_url: 'https://github.com/branchmetrics/docs'
 edit_uri: 'edit/master/src/'
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
@@ -20,7 +20,7 @@ site_favicon: img/favicon-96x96.png
 
 # Options
 extra:
-  # logo: 'img/logo.svg'
+  logo: 'img/logo.svg'
   palette:
     primary: 'light blue'
     accent: 'light blue'
@@ -40,7 +40,7 @@ extra:
       link: 'https://www.linkedin.com/company-beta/3813083'
   disqus: 'branch-docs'
   google_optimize:
-    optimize: 'GTM-PDHLH8M'
+    optimize: 'GTM-PCPBXCN'
     analytics: 'UA-98205710-1'
   algolia_docsearch:
     apiKey: '887017d17a2c1e9490ad2c44caa7e817'
@@ -50,11 +50,15 @@ extra:
     hits: 15
   mixpanel:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
-  nav_headers:
+  nav_header:
     - index: 2
       title: Basic deep linking
-    - index: 6
+    - index: 7
       title: Advance deep linking
+  visible:
+    footer_nav: false
+    header_git: false
+    header_breadcrumb: true
 
 # Extensions
 markdown_extensions:
@@ -75,7 +79,8 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Integate your app:
+  - Setup your dashboard: pages/dashboard/setup.md
+  - Setup your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
@@ -87,34 +92,35 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
-  - Integrate your website:
-    - Setup: pages/web/setup.md
+  - Setup your website: pages/web/setup.md
+  - Create deep links: pages/links/setup.md
+  - Track analytics: pages/dashboard/analytics.md
+  - Deep link web:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
+    - AMP Journeys: pages/web/amp-journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
-  - Create deep links:
-    - Link behavior: pages/links/behavior.md
-    - Link data: pages/links/data.md
-    - Link domain: pages/links/link-domain.md
-    - Creating links: pages/links/create.md
-  - Track analytics:
-    - Behavior: pages/analytics/behavior.md
-    - Referrals: pages/analytics/referrals.md
-    - Growth: pages/analytics/growth-attribution.md
-    - User Value: pages/analytics/user-value attribution.md
-    - Revenue: pages/analytics/revenue-attribution.md
   - Deep link ads:
-    - Apple Search Ads: pages/ads/apple.md
-    - Dynamic Product Feeds: pages/ads/dynamic-product-feeds.md
-    - Branch Universal Ads: pages/ads/branch-universal-ads.md
-    - Doubleclick: pages/ads/doubleclick.md
-    - Google App Installs: pages/ads/google-app-installs.md
-    - Google Universal App Campaigns: pages/ads/google-universal-app-campaigns.md
-    - Google Search Ads: pages/ads/google-search.md
-    - Facebook App Installs: pages/ads/facebook-app-installs.md
-    - Facebook App Engagement: pages/ads/facebook-app-engagement.md
-    - Facebook Instagram: pages/ads/facebook-instagram.md
-    - Twitter Ads: pages/ads/twitter.md
+    - Apple Search Ads: pages/deep-linked-ads/apple.md
+    - Dynamic Product Feeds: pages/deep-linked-ads/dynamic-product-feeds.md
+    - Branch Universal Ads: pages/deep-linked-ads/branch-universal-ads.md
+    - Doubleclick: pages/deep-linked-ads/doubleclick.md
+    - Google Ads Overview: pages/deep-linked-ads/google-ads-overview.md
+    - Google Search App Install Ads: pages/deep-linked-ads/google-search-install-ads.md
+    - Google Search App Engagement Ads: pages/deep-linked-ads/google-search-engagement-ads.md
+    - Google Display App Install Ads: pages/deep-linked-ads/google-display-install-ads.md
+    - Google Display App Engagement Ads: pages/deep-linked-ads/google-display-engagement-ads.md
+    - Google Universal App Campaigns: pages/deep-linked-ads/google-uac.md
+    - Google Search Network Ads: pages/deep-linked-ads/google-xplatform-search-ads.md
+    - Google Display Network Ads: pages/deep-linked-ads/google-xplatform-display-ads.md
+    - Google Adwords Conversion Setup: pages/deep-linked-ads/google-conversions.md
+    - Google Video Ads: pages/deep-linked-ads/google-video-ads.md
+    - Facebook Ads Overview: pages/deep-linked-ads/facebook-ads-overview.md
+    - Facebook App Install Ads: pages/deep-linked-ads/facebook-app-install-ads.md
+    - Facebook Traffic and Conversion Ads: pages/deep-linked-ads/facebook-traffic-conversion-ads.md
+    - Facebook Platform Ads: pages/deep-linked-ads/facebook-platform-ads.md
+    - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
+    - Twitter Ads: pages/deep-linked-ads/twitter.md
   - Deep link emails:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md
@@ -134,13 +140,15 @@ pages:
     - Export API: pages/exports/api.md
     - Webhooks: pages/exports/webhooks.md
   - Integrate analytics:
-    - Abobe Analytics: pages/integrations/abobe-analytics.md
+    - Abobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
     - Amplitude: pages/integrations/amplitude.md
-    - AppBoy: pages/integrations/appboy.md
+    - AppMetrica: pages/integrations/appmetrica.md
+    - Appboy: pages/integrations/appboy.md
+    - Appsflyer: pages/integrations/appsflyer.md
+    - Fabric Answers: pages/integrations/fabric-answers.md
     - Google Analytics: pages/integrations/google-analytics.md
     - Kochava: pages/integrations/kochava.md
     - Localytics: pages/integrations/localytics.md
     - Mixpanel: pages/integrations/mixpanel.md
     - Tune: pages/integrations/tune.md
-    - AppMetrica: pages/integrations/appmetrica.md

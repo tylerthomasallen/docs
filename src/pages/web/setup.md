@@ -1,3 +1,12 @@
+## Overview
+
+  - TODO
+
+  -  The Branch Web SDK provides an easy way to interact with the Branch API on your website or web app. It requires no frameworks, and is only ~13K gzipped.
+
+  - To use the Web SDK, you'll need to first initialize it with your Branch Key found in your Branch dashboard. You'll also need to register when your users login with setIdentity, and when they logout with logout.
+
+  - Once initialized, the Branch Web SDK allows you to create and share links with a banner, over SMS, or your own methods. It also offers event tracking, access to referrals, and management of credits.
 
 ## Integrate Branch
 
@@ -7,9 +16,9 @@
 
         ![image](http://i.imgur.com/zaKY7Mh.png)
 
-- #### Integrate App
+- #### Integrate app
 
-    - TODO
+    - Complete [Integrate your app](#dialog-code)
 
 - #### Initialize Branch
 
@@ -25,13 +34,13 @@
         // load Branch
         (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent".split(" "), 0);
         // init Branch
-        branch.init('key_live_ndqptlgXNE4LHqIahH1WIpbiyFlb62J3');
+        branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt');
       </script>
     </body>
     </html>
     ```
 
-    - Change `key_live_nmEmfIlcPqjEsuDHIQZ8GdcpsFbXW3gG` to match your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Change `key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt` to match your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
 ## Implement features
 
@@ -39,19 +48,24 @@
 
     - Loads Branch into your app
 
-    - `branch.init()` is queued so all other Branch functions will always happen afterwards
+    - Uses [Branch init options](#branch-init-options)
 
         ```js
-        branch.init('key_live_nmEmfIlcPqjEsuDHIQZ8GdcpsFbXW3gG', function(err,data) {
-          console.log(data);
+        branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+        ```js
+        var options = { no_journeys: true };
+        branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', options, function(err, data) {
+          console.log(err, data); 
         });
         ```
 
 - #### Create deep link
 
     - Creates a deep link URL with encapsulated data
-
-    - Needs [Initialize Branch](#initialize-branch)
 
     - Uses [Deep Link Properties](/pages/links/data/)
 
@@ -88,17 +102,30 @@
 
         ```html
         <!-- shareable elements -->
-        <button id='button'>deep link</button>
-        <a id='anchor'>deep link</a>
+        <button id="button">deep link</button>
+        <a id="anchor" href="#">deep link</a>
         ```
 
         ```js
-        // create link
         var linkData = {
-          campaign: String(Date.now())
+          campaign: 'content 123',
+          channel: 'facebook',
+          feature: 'dashboard',
+          stage: 'new user',
+          tags: [ 'tag1', 'tag2', 'tag3' ],
+          alias: '',
+          data: {
+            'custom_bool': true,
+            'custom_int': Date.now(),
+            'custom_string': 'hello',
+            '$og_title': 'Title',
+            '$og_description': 'Description',
+            '$og_image_url':'http://lorempixel.com/400/400'
+          }
         };
+
         branch.link(linkData, function(err, link) {
-          // share link
+          // bind elements
           document.getElementById('button').onclick = function() {
             window.open(link || err);
           };
@@ -108,29 +135,116 @@
 
 - #### Read deep link
 
-    - Make a deep link redirect to your website 
+    - Retrieve Branch data from a deep link
 
-        ```
-        https://a60f.app.link/mwSWBbPRjF?$fallback_url=https://example.com
-        ```
+    - Best practice to receive data from the `listener` (to prevent a race condition)
 
-    - Website will open with `_branch_match_id`
+    - Validate with [Testing read deep link](#testing-read-deep-link)
 
-        ```
-        https://example.com/?$fallback_url=https://example.com&_branch_match_id=418480444086051524
-        ```
-
-    - Read `_branch_match_id`
+    - Listener
 
         ```js
-        branch.init('key_live_nmEmfIlcPqjEsuDHIQZ8GdcpsFbXW3gG', function(err,data) {
-          console.log(data);
+        branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
+          console.log(err, data); 
         });
         ```
 
-- #### Navigate to content
-- #### Display content
-- #### Track content
+    - Latest data
+
+        ```js
+        branch.data(function(err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+    - First data
+
+        ```js
+        branch.first(function(err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+- #### Create Journey banner
+
+    - Converts mobile users to app users
+
+    - Create a `Journey` on the [Branch Dashboard](https://dashboard.branch.io/web/journeys)
+
+    - Validate by testing your website on a mobile device
+
+    - Append additional deep link data to the Journey button (optional)
+
+        ```js
+        var linkData = {
+          campaign: 'content 123',
+          channel: 'facebook',
+          feature: 'dashboard',
+          stage: 'new user',
+          tags: [ 'tag1', 'tag2', 'tag3' ],
+          alias: '',
+          data: {
+            'custom_bool': true,
+            'custom_int': Date.now(),
+            'custom_string': 'hello',
+            '$og_title': 'Title',
+            '$og_description': 'Description',
+            '$og_image_url':'http://lorempixel.com/400/400'
+          }
+        };
+
+        branch.setBranchViewData(linkData);
+        ```
+
+        ```js
+        // close
+        branch.closeJourney(function(err, data) { 
+          console.log(err, data); 
+        });
+
+        // reopen
+        branch.track("pageview");
+        ```
+
+- #### Create text message
+
+    - Converts desktop users to app users
+
+    - Sends a SMS text message with a deep link to a phone number
+
+    - Feature has certain [SMS limits](/pages/web/text-me-the-app/#what-are-the-sms-rate-limits)
+
+    - Validate with [Branch Dashboard](https://dashboard.branch.io/liveview/clicks) for `+phone_number`
+
+        ```js
+        var phoneNumber = '9999999999' // +919812345678, +442071234567
+        
+        var linkData = {
+          campaign: 'content 123',
+          channel: 'facebook',
+          feature: 'dashboard',
+          stage: 'new user',
+          tags: [ 'tag1', 'tag2', 'tag3' ],
+          alias: '',
+          data: {
+            'custom_bool': true,
+            'custom_int': Date.now(),
+            'custom_string': 'hello',
+            '$og_title': 'Title',
+            '$og_description': 'Description',
+            '$og_image_url':'http://lorempixel.com/400/400'
+          }
+        };
+
+        var linkOptions = {
+          make_new_link: false // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
+        };
+
+        branch.sendSMS(phoneNumber, linkData, linkOptions, function(err, data) {
+          console.log(err);
+        });
+        ```
+
 - #### Track users
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
@@ -142,8 +256,8 @@
         ```
 
         ```js
-        branch.setIdentity('123456', function (err,data) {
-
+        branch.setIdentity('123456', function (err, data) {
+          console.log(err, data);
         });
         ```
 
@@ -154,8 +268,8 @@
         ```
 
         ```js
-        branch.logout(function(err){
-
+        branch.logout(function(err, data) {
+          console.log(err, data);
         });
         ```
 
@@ -178,13 +292,190 @@
         ```
 
         ```js
-        branch.track('signup', { custom: '123' }, function (err){
-
+        branch.track('signup', { custom: '123' }, function (err, data) {
+          console.log(err, data); 
         });
         ```
 
 - #### Track commerce
+
+    - Registers a custom commerce event
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+
+        ```js
+        // only revenue is required
+        var commerceData = {
+          "revenue": 50.0,
+          "currency": "USD",
+          "transaction_id": "foo-transaction-id",
+          "shipping": 0.0,
+          "tax": 5.0,
+          "affiliation": "foo-affiliation",
+          "products": [
+            {
+              "sku": "foo-sku-1",
+              "name": "foo-item-1",
+              "price": 45.00,
+              "quantity": 1,
+              "brand": "foo-brand",
+              "category": "Electronics",
+              "variant": "foo-variant-1"
+            },
+            {
+              "sku": "foo-sku-2",
+              "price": 2.50,
+              "quantity": 2
+            }
+          ]
+        };
+
+        // optional
+        var metadata =  { 
+          "foo": "bar" 
+        };
+
+        branch.trackCommerceEvent('purchase', commerceData, metadata, function(err, data) {
+          console.log(err, data); 
+        });
+        ```
+
 - #### Handle referrals
+
+    - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
+    
+    - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
+
+    - Reward credits
+
+        -  [Referral guide](/pages/analytics/referrals/)
+
+    - Redeem credits
+
+        ```js
+        var amount = 10;
+        var bucket = 'this_bucket';
+        branch.redeem(amount, bucket, function (err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+        ```js
+        var amount = 10;
+        branch.redeem(amount, function (err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+    - Load credits
+
+        ```js
+        branch.credits(amount, function (err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+    - Load history
+
+        ```js
+        branch.creditHistory(function (err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+        ```js
+        var options = {
+          "length":50,
+          "begin_after_id":"123456789012345",
+          "bucket":"default"
+        };
+        branch.creditHistory(options, function (err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+        | Key | Default | Usage 
+        | --- | --- | ---
+        | bucket |  | The bucket from which to retrieve credit transactions (63 max characters)
+        | begin_after_id | | The credit transaction id of the last item in the previous retrieval
+        | length | `100` | The number of credit transactions to retrieve
+        | direction | `0` | The order of credit transactions to retrieve (**deprecated**)
+
+- #### Handle listeners
+
+    - Subscribe and unsubscribe to Branch events
+
+        ```js
+        // all Branch events
+        branch.addListener(listener);
+        ```
+
+        ```js
+        branch.addListener('willShowBanner', listener);
+        ```
+
+        ```js
+        branch.removeListener(listener);
+        ```
+
+        | Key | Usage
+        | --- | ---
+        | willShowBanner | `banner()` called, and the smart banner is about to be shown
+        | willNotShowBanner | `banner()` called, and the smart banner will not be shown. No more events will be emitted
+        | didShowBanner | Smart banner animation started and is being shown to the user
+        | willCloseBanner | `closeBanner()` called, and the smart banner will close
+        | didCloseBanner | Smart banner close animation started, and is closing
+        | willSendBannerSMS | Phone number in correct format, and will attempt to send SMS
+        | sendBannerSMSError | `sendSMS()` error returned
+        | didSendBannerSMS | SMS successfully sent
+        | didDownloadApp | User installed app, and banner text updated
+        | willShowJourney | Journey is about to be shown.
+        | didShowJourney | Journey's entrance animation has completed and it is being shown to the user.
+        | willNotShowJourney | Journey will not be shown and no other events will be emitted.
+        | didClickJourneyCTA | User clicked on Journey's CTA button.
+        | didClickJourneyClose | User clicked on Journey's close button.
+        | willCloseJourney | Journey close animation has started.
+        | didCloseJourney | Journey's close animation has completed and it is no longer visible to the user.
+        | didCallJourneyClose | Emitted when developer calls branch.closeJourney() to dismiss Journey.
+
+- #### Handle Firebase App Indexing
+
+    - Inserts Firebase App Indexing tags on your website which will help Google index and surface content from your App to Google Search
+
+        - For example:
+            
+            ```html
+            <link rel="alternate" href="android-app://{androidPackageName}/{androidURL}?{branch_tracking_params_and_additional_deep_link_data}"/>
+            <link rel="alternate" href="ios-app://{iosAppId}/{iosURL}?{branch_tracking_params_and_additional_deep_link_data}"/>
+            ```
+
+    - If optional parameters above are not specified, Branch will try to build Firebase App Indexing tags using your page's App Links tags. Alternatively, if optional parameters are specified but Firebase App Indexing tags already exist on your webpage then Branch tracking params will be appended to the end of these tags and ignore what is passed into `Branch.autoAppIndex()`.
+
+    - Analytics related to Google's attempts to index your App's content via this method can be found on your [Branch Dashboard](https://dashboard.branch.io/sources) where channel is `Firebase App Indexing` and feature is `Auto App Indexing`
+
+        ```js
+        branch.autoAppIndex({
+            iosAppId:'123456789',
+            iosURL:'example/home/cupertino/12345',
+            androidPackageName:'com.somecompany.app',
+            androidURL:'example/home/cupertino/12345',
+            data: {
+              "walkScore": 65, 
+              "transitScore": 50
+            }
+        }, function(err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+
+        | Key | Usage
+        | --- | ---
+        | "androidPackageName" | Android App's package name
+        | "androidURL" | A custom scheme for your Android App such as: `example/home/cupertino/12345` where `example` is the App's URI scheme and `home/cupertino/12345` routes to unique content in the App
+        | "iosAppId" | iTunes App Store ID for your iOS App
+        | "iosURL" | A custom scheme for your iOS App such as: `example/home/cupertino/12345`
+        | "data" | Any additional deep link data that you would like to pass to your App
 
 
 ## Troubleshoot issues
@@ -194,6 +485,14 @@
     - https://cdn.branch.io/example.html
     - http://cdn.branch.io/branchster-angular
 
+- #### Browser support
+
+    - The Branch Web SDK requires native browser Javascript and has been tested in all modern browsers with sessionStorage capability. No 3rd party libraries are needed to make use of the SDK as is it 100% native Javascript.
+
+          | Chrome | Firefox | Safari | IE 
+          | --- | --- | --- | --- 
+          | &#10004; | &#10004; |  &#10004; | 9, 10, 11
+
 - #### Bower or Npm compatibility
 
     - Use `bower install branch-sdk` or `npm install branch-sdk`
@@ -202,6 +501,109 @@
 
     - Add `require('branch')` or `define(['branch'], function(branch) { ... });`
 
+- #### Branch init options
+  
+    - Properties which you can pass within `branch.initSession()`
+
+    - Used for [Initialize Branch features](#initialize-branch-features)
+
+        | Key | Value
+        | --- | ---
+        | branch_match_id | *optional* - `string`. The current user's browser-fingerprint-id. The value of this parameter should be the same as the value of ?_branch_match_id (automatically appended by Branch after a link click). _Only necessary if ?_branch_match_id is lost due to multiple redirects in your flow_.
+        | branch_view_id | *optional* - `string`. If you would like to test how Journeys render on your page before activating them, you can set the value of this parameter to the id of the view you are testing. _Only necessary when testing a view related to a Journey_.
+        | no_journeys | *optional* - `boolean`. When true, prevents Journeys from appearing on current page.
+        | disable_entry_animation | *optional* - `boolean`. When true, prevents a Journeys entry animation.
+        | disable_exit_animation | *optional* - `boolean`. When true, prevents a Journeys exit animation.
+        | open_app | *optional* - `boolean`. Whether to try to open the app passively through Journeys (as opposed to opening it upon user clicking); defaults to false.
+
+- #### Testing read deep link
+
+    - Used for [Read deep link](#read-deep-link)
+
+    - Make a deep link redirect to your website 
+
+        ```json
+        https://example.app.link/kJNbhZ1PrF?$fallback_url=https://example.com
+        ```
+
+    - Website will open to [$fallback_url](/pages/links/data/#redirections) with `_branch_match_id`
+
+        ```
+        https://example.app.link/kJNbhZ1PrF?$fallback_url=https://www.website.com/&_branch_match_id=418480444086051524
+        ```
+
+    - Read `_branch_match_id` from that `$fallback_url` website
+
+        ```js
+        branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
+          console.log(err, data); 
+        });
+        ```
+
+- #### Create smart banner
+
+    - (**Deprecated**) Recommend to use [Create Journey banner](#create-journey-banner) instead
+
+        ```js
+        var linkData = {
+          campaign: String(Date.now())
+        };
+        var bannerData = {
+          icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
+          title: 'Branch Demo App',
+          description: 'The Branch demo app!',
+          rating: 5,                          // Displays a star rating out of 5. Supports half stars through increments of .5
+          reviewCount: 1500,                  // Amount of reviews your app has received next to the star rating
+          openAppButtonText: 'Open',          // Text to show on button if the user has the app installed
+          downloadAppButtonText: 'Download',  // Text to show on button if the user does not have the app installed
+          sendLinkText: 'Send Link',          // Text to show on desktop button to allow users to text themselves the app
+          phonePreviewText: '+44 9999-9999',  // The default phone placeholder is a US format number, localize the placeholder number with a custom placeholder with this option
+          showiOS: true,                      // Should the banner be shown on iOS devices (both iPhones and iPads)?
+          showiPad: true,                     // Should the banner be shown on iPads (this overrides showiOS)?
+          showAndroid: true,                  // Should the banner be shown on Android devices?
+          showBlackberry: true,               // Should the banner be shown on Blackberry devices?
+          showWindowsPhone: true,             // Should the banner be shown on Windows Phone devices?
+          showKindle: true,                   // Should the banner be shown on Kindle devices?
+          showDesktop: true,                  // Should the banner be shown on desktop devices?
+          iframe: true,                       // Show banner in an iframe, recomended to isolate Branch banner CSS
+          disableHide: false,                 // Should the user have the ability to hide the banner? (show's X on left side)
+          forgetHide: false,                  // Should we show the banner after the user closes it? Can be set to true, or an integer to show again after X days
+          respectDNT: false,                  // Should we skip showing the banner when a user's settings show 'Do Not Track'?
+          mobileSticky: false,                // Determines whether the mobile banner will be set `position: fixed;` (sticky) or `position: absolute;`, defaults to false *this property only applies when the banner position is 'top'
+          desktopSticky: true,                // Determines whether the desktop banner will be set `position: fixed;` (sticky) or `position: absolute;`, defaults to true *this property only applies when the banner position is 'top'
+          make_new_link: false,               // Should the banner create a new link, even if a link already exists?
+          open_app: false                     // Should the banner try to open the app passively (without the user actively clicking) on load?
+        };
+        branch.banner(bannerData, linkData);
+        ```
+
+        ```js
+        branch.closeBanner();
+        ```
+
+- #### Create call to action
+  
+    - (**Deprecated**) Recommend to use [Share deep link](#share-deep-link) instead
+
+        ```html
+        <a href="#" onclick="branch.deepviewCta()">deep link</a>
+        <button onclick="branch.deepviewCta()">deep link</button>
+        ```
+
+        ```js
+        var linkData = {
+          campaign: String(Date.now())
+        };
+        var linkOptions = {
+          make_new_link: false, // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
+          o
+          e // will attempt to open the app if install (URI Scheme deep linking only - will not work with Safari)
+        };
+        branch.deepview(linkData, linkOptions, function(err, data) {
+          console.log(err, data);
+        });
+        ```
+
 - #### No Access-Control Error
 
     - Make sure the Branch key is the same within the deep link and website
@@ -209,4 +611,3 @@
         ```
         XMLHttpRequest cannot load https://api.branch.io/v1/open. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access. The response had HTTP status code 400.
         ```
-

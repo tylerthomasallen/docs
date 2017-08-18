@@ -4,7 +4,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         {% if config.extra.logo %}
           <a href="{{ config.site_url | default(nav.homepage.url, true) }}" title="{{ config.site_name }}" class="md-logo md-header-nav__button">
-            <img src="{{ base_url }}/{{ config.extra.logo }}" width="24" height="24">
+            <img src="{{ base_url }}/{{ config.extra.logo }}">
           </a>
         {% else %}
           <a href="{{ config.site_url | default(nav.homepage.url, true) }}" title="{{ config.site_name }}" class="md-icon md-icon--home md-header-nav__button">
@@ -14,29 +14,44 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
       </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
-          {% block site_name %}
-            {% if page %}
-              {% for parent in page.ancestors %}
-                <span class="md-header-nav__parent">
-                  {{ parent.title }}
-                </span>
-              {% endfor %}
-            {% endif %}
-            {{ page.title | default(config.site_name, true) }}
-          {% endblock %}
-        </span>
-      </div>
+      {% if config.extra.logo %}
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
+        </div>
+      {% endif %}
+      {% if config.extra.visible.header_breadcrumb == true %}
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <span class="md-flex__ellipsis md-header-nav__title">
+            {% block site_name %}
+              {% if page %}
+                {% for parent in page.ancestors %}
+                  <span class="md-header-nav__parent">
+                    {{ parent.title }}
+                  </span>
+                {% endfor %}
+              {% endif %}
+              {{ page.title | default(config.site_name, true) }}
+            {% endblock %}
+          </span>
+        </div>
+      {% else %}
+        <div class="md-flex__cell md-flex__cell--stretch"></div>
+      {% endif %}
       {% if config.extra.algolia_docsearch %}
         <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
-          <a href="#header-helpful" id="header-helpful" title="Helpful">
+          <a href="http://dev.branch.io/" id="header-old-docs" title="old docs">
+            <i class="branch-header-icon md-icon material-icons">restore_page</i>
+            <p class="branch-header-label">Old&nbsp;Docs</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-helpful" id="header-helpful" title="Helpful">
             <i class="branch-header-icon md-icon material-icons">thumb_up</i>
             <p class="branch-header-label">Helpful</p>
           </a>
         </div>
         <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
-          <a href="#header-unhelpful" id="header-unhelpful" title="Unhelpful">
+          <a href="#dialog-unhelpful" id="header-unhelpful" title="Unhelpful">
             <i class="branch-header-icon md-icon material-icons">thumb_down</i>
             <p class="branch-header-label">Unhelpful</p>
           </a>
@@ -54,7 +69,7 @@
           </a>
         </div>
         <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
-          <a href="#header-search" id="header-search" title="Search">
+          <a href="#dialog-search" id="header-search" title="Search">
             <i class="branch-header-icon md-icon material-icons">search</i>
             <p class="branch-header-label">Search</p>
           </a>
@@ -68,12 +83,14 @@
           {% include "partials/search.html" %}
         {% endblock %}
       </div>
-      {% if config.repo_url %}
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            {% include "partials/source.html" %}
+      {% if config.extra.visible.header_git == true %}
+        {% if config.repo_url %}
+          <div class="md-flex__cell md-flex__cell--shrink">
+            <div class="md-header-nav__source">
+              {% include "partials/source.html" %}
+            </div>
           </div>
-        </div>
+        {% endif %}
       {% endif %}
     </div>
   </nav>

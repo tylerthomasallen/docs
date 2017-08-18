@@ -527,11 +527,13 @@
 
 - #### Handle referrals
 
-    - Referral points are obtained from events triggered by users from rules created on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
+    - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
     
     - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
-    - Reward credits with the [Referral guide](/pages/analytics/referrals/)
+    - Reward credits
+
+        -  [Referral guide](/pages/analytics/referrals/)
 
     - Redeem credits
 

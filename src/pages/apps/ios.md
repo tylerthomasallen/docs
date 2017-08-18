@@ -60,7 +60,7 @@
 
     - Option 3: Manually install the [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) with dependencies
 
-        ![image](http://i.imgur.com/0NcOrkE.png)
+        ![image](http://i.imgur.com/YY0enst.png)
 
 - #### Initialize Branch
 
@@ -440,6 +440,15 @@
         ```
 
 - #### Handle referrals
+
+    - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
+    
+    - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
+
+    - Reward credits
+
+        -  [Referral guide](/pages/analytics/referrals/)
+
 
 ## Troubleshoot issues 
 

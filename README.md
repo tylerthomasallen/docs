@@ -8,13 +8,6 @@
 
   - [spreadsheet](https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216)
 
-- #### Dependencies
-
-    ```bash
-    python --version #Python 2.7.2
-    pip --version #pip 1.5.2
-    ```
-
 - #### Code
 
     ```bash
@@ -82,12 +75,14 @@
     - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
 - #### Images
-    - Content pages are kept in the `img/pages`
-    - Example images used in ingredients are kept in the `img/ingredients`
+    - Content pages are kept in the `img/pages` 
+    - Example images used in ingredients are kept in the `img/ingredients` 
+    - with width `<img src="http://i.imgur.com/dyfhN0L.png" width="100px" />`
+    - without width `![image](http://i.imgur.com/dyfhN0L.png)`
 
 - #### Includes
-    - For reusable snippet, use the format `{! path/file_name_here.md !}`
-    - Content snippets should be placed in the `ingredients` subdirectory
+    - For reusable snippet, use the format `{! path/file_name_here.md !}` where the base path begins at the includes directory.
+    - Content snippets should be placed in the `ingredients` subdirectory. (E.g. `{! ingredients/content_snippet.md !}`)
     - Frequently updated content/code should be kept within the `includes`
 
 - #### Hidden Pages
@@ -118,17 +113,17 @@
 - #### Mkdocs-Material Locally
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
     - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
-    - updated files
-        - `lib/mkdocs-material/src/partials/footers.html`
+    - test live update in `/materials` 
+    - prod code in `/src`
+        - `cd lib/mkdocs-material` 
+        - `yarn install` 
+        - `yarn build` (will build `/material` but fail on `/site` -> okay)
+    -  updated files
+        - `lib/mkdocs-material/src/partials/footer.html`
         - `lib/mkdocs-material/src/partials/header.html`
         - `lib/mkdocs-material/src/partials/nav.html`
-        - `lib/mkdocs-material/src/partials/nav-item.html`
         - `lib/mkdocs-material/src/base.html`
         - `lib/mkdocs-material/src/assets/javascripts/application.js`
-    - test live update in `/materials`
-    - prod code in `/src`
-        - `yarn install`
-        - `yarn build` (will build `/material` but fail on `/site` -> okay)
 
 - #### Slow page render
 
