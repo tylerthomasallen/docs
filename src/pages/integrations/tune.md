@@ -155,7 +155,7 @@ Ensure Branch is an enabled provider under your **Partners** in your TUNE dashbo
 
 #### Capture the GAID and IDFA device identifiers
 
-Ensure that you are capturing both the [Google Advertising Identifier (GAID) on Android]({{base.url}}/getting-started/sdk-integration-guide/advanced/android/#use-google-advertising-id), and the [IDFA on iOS]({{base.url}}/getting-started/sdk-integration-guide/advanced/ios/#install-the-sdk-manually) (by importing the `AdSupport.framework`).
+Ensure that you are capturing both the Google Advertising Identifier (GAID) on Android, and the IDFA on iOS.
 
 #### Add Google Play Install Referrer (Android)
 
