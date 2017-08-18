@@ -22,9 +22,10 @@ Branch events are similar to Adobe Analytics events in that they can be used to 
 
 ## Setup
 
-!!! note "Prerequisite"
-		- This guide requires you to have already [integrated the Branch SDK](/pages/exports/data-integrations/webhooks/).
-		- You also need to be a Adobe Analytics customer and have the Adobe Analytics SDK integrated.
+### Prerequisites
+
+- This guide requires you to have integrated the Branch SDK in your mobile apps.
+- You also need to be a Adobe Analytics customer and have the Adobe Analytics SDK integrated.
 
 ### Activate the Branch Data Connector
 
@@ -68,7 +69,7 @@ Finally, review the integration, scroll to the bottom of the screen and click *A
 
 ![image](/img/pages/integrations/adobe-analytics/final-activation.png)
 
-## Configure the Branch Dashboard
+### Configure the Branch Dashboard
 
 #### Retrieve your Adobe Analytics Information
 
@@ -85,7 +86,7 @@ Timestamp | Offline Tracking
 
 For `Analytics Server Domain`, please do not include `http` or `https`. If your value for this is `http://test.com`, simply put in `test.com`. This means no extra slashes, and no protocol.
 
-### Configure the Branch Dashboard
+#### Enter Adobe Analytics Information
 
 1. On the Branch Dashboard (dashboard.branch.io), navigate to the [Integrations page](https://dashboard.branch.io/integrations).
 1. Locate Adobe Analytics and choose **Enable**.

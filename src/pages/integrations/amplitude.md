@@ -26,7 +26,7 @@ Branch events are similar to Amplitude events in that they can be used in your e
 
 ### Prerequisites
 
-- This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide).
+- This guide requires you to have integrated the Branch SDK in your mobile apps.
 - You also need to be an Amplitude customer and have the [Amplitude SDK installed](https://amplitude.zendesk.com/hc/en-us/articles/205406607-SDKs) in your app.
 
 ### Retrieve your Amplitude API Key
@@ -53,10 +53,10 @@ Find your Amplitude Project Key and enter it into the Branch Dashboard.
 
 ### Capture IDFA/GAID
 
-Ensure that you are capturing both the [Google Advertising Identifier (GAID) on Android]({{base.url}}/getting-started/sdk-integration-guide/advanced/android/#use-google-advertising-id), and the [IDFA on iOS]({{base.url}}/getting-started/sdk-integration-guide/advanced/ios/#install-the-sdk-manually) (by importing the `AdSupport.framework`).
+Ensure that you are capturing both the Google Advertising Identifier (GAID) on Android, and the IDFA on iOS.
 
 !!! warning "Google Advertising ID is required"
-Amplitude now requires the Google Advertising ID to be sent. Android ID (the hardware ID) alone is not enough.
+    Amplitude requires the Google Advertising ID to be sent. Android ID (the hardware ID) alone is not enough.
 
 ### Upgrade to the latest SDKs [if necessary]
 

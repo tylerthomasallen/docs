@@ -19,10 +19,9 @@ You can click into `branch_int` in the above screenshot and then see the breakdo
 
 ## Setup
 
-!!! note "Prerequisite"
-    - This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide).
-    - You also need to be a AppsFlyer customer and have the AppsFlyer SDK.
-
+### Prerequisites
+- This guide requires you to have already integrated the Branch mobile SDK.
+- You also need to be a AppsFlyer customer and have the AppsFlyer SDK.
 
 ### Retrieve your AppsFlyer Information
 

@@ -20,8 +20,8 @@ We'll pass along all of the Branch link's analytics data, which will map to labe
 ## Setup
 
 ### Prerequisites
-- This guide requires you to have [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide).
-- You also need an account with Adjust and have the Adjust SDK ([iOS](https://github.com/adjust/ios_sdk), [Android](https://github.com/adjust/android_sdk)) installed in your app.
+- This guide requires you to have integrated the Branch SDK in your mobile apps.
+- This guide requires an account with Adjust and the Adjust SDK ([iOS](https://github.com/adjust/ios_sdk), [Android](https://github.com/adjust/android_sdk)) installed in your app.
 
 
 ### Get credentials from your Adjust account
