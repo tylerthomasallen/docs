@@ -15,8 +15,8 @@ See your Branch organic acquisition campaigns alongside your Tune data. You can 
 
 ## Setup
 
-!!! note "Pre reqs"
-    This guide requires you to have already integrated the Branch SDK. You also need to be a Tune customer and have the Tune SDK ([iOS](http://developers.mobileapptracking.com/ios-sdk/), [Android](http://developers.mobileapptracking.com/android-sdk/)) installed in your app.
+### Prerequisites
+- This guide requires you to have already integrated the Branch SDK. You also need to be a Tune customer and have the Tune SDK ([iOS](http://developers.mobileapptracking.com/ios-sdk/), [Android](http://developers.mobileapptracking.com/android-sdk/)) installed in your app.
 
 ### Get credentials from your Tune dashboard
 
