@@ -53,7 +53,7 @@ extra:
   nav_header:
     - index: 2
       title: Basic deep linking
-    - index: 6
+    - index: 7
       title: Advance deep linking
   visible:
     footer_nav: false
@@ -69,11 +69,14 @@ markdown_extensions:
   - meta:
   - pymdownx.github:
   - attr_list:
+  - markdown_include.include:
+      base_path: src/includes/
 
 # Pages
 pages:
   - Getting started: index.md
-  - Integrate your app:
+  - Setup your dashboard: pages/dashboard/setup.md
+  - Setup your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
@@ -85,18 +88,9 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
-  - Integrate your website: pages/web/setup.md
-  - Create deep links:
-    - Link behavior: pages/links/behavior.md
-    - Link data: pages/links/data.md
-    - Link domain: pages/links/link-domain.md
-    - Creating links: pages/links/create.md
-  - Track analytics:
-    - Behavior: pages/analytics/behavior.md
-    - Referrals: pages/analytics/referrals.md
-    - Growth: pages/analytics/growth-attribution.md
-    - User Value: pages/analytics/user-value attribution.md
-    - Revenue: pages/analytics/revenue-attribution.md
+  - Setup your website: pages/web/setup.md
+  - Create deep links: pages/links/setup.md
+  - Track analytics: pages/dashboard/analytics.md
   - Deep link web:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md

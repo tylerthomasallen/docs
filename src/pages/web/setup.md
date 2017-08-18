@@ -1,5 +1,7 @@
 ## Overview
 
+  - TODO
+
   -  The Branch Web SDK provides an easy way to interact with the Branch API on your website or web app. It requires no frameworks, and is only ~13K gzipped.
 
   - To use the Web SDK, you'll need to first initialize it with your Branch Key found in your Branch dashboard. You'll also need to register when your users login with setIdentity, and when they logout with logout.
@@ -209,6 +211,8 @@
     - Converts desktop users to app users
 
     - Sends a SMS text message with a deep link to a phone number
+
+    - Feature has certain [SMS limits](/pages/web/text-me-the-app/#what-are-the-sms-rate-limits)
 
     - Validate with [Branch Dashboard](https://dashboard.branch.io/liveview/clicks) for `+phone_number`
 
