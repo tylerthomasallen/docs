@@ -148,9 +148,8 @@ pages:
     - iMessage Apps: pages/app-to-app/imessage-apps.md
     - Facebook App Invites: pages/app-to-app/facebook-app-invites.md
   - Export analytics:
-    - CSV Export: pages/exports/csv.md
     - Export API: pages/exports/api.md
-    - Webhooks: pages/exports/webhooks.md
+    - Real time Webhooks: pages/exports/webhooks.md
   - Integrate third party platforms:
     - Abobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
