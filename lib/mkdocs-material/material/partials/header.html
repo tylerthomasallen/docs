@@ -19,7 +19,7 @@
           <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
         </div>
       {% endif %}
-      {% if config.extra.visible.header_breadcrumb == true %}
+      {% if config.extra.is_visible.header_breadcrumb == true %}
         <div class="md-flex__cell md-flex__cell--stretch">
           <span class="md-flex__ellipsis md-header-nav__title">
             {% block site_name %}
@@ -83,7 +83,7 @@
           {% include "partials/search.html" %}
         {% endblock %}
       </div>
-      {% if config.extra.visible.header_git == true %}
+      {% if config.extra.is_visible.header_git == true %}
         {% if config.repo_url %}
           <div class="md-flex__cell md-flex__cell--shrink">
             <div class="md-header-nav__source">

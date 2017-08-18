@@ -57,7 +57,21 @@ extra:
       title: Advanced deep linking
     - index: 14
       title: Resources
-  visible:
+  nav_hidden:
+    - 'Google Search App Install Ads'
+    - 'Google Search App Engagement Ads'
+    - 'Google Display App Install Ads'
+    - 'Google Display App Engagement Ads'
+    - 'Google Universal App Campaigns'
+    - 'Google Search Network Ads'
+    - 'Google Display Network Ads'
+    - 'Google Adwords Conversion Setup'
+    - 'Google Video Ads'
+    - 'Facebook App Install Ads'
+    - 'Facebook Traffic and Conversion Ads'
+    - 'Facebook Platform Ads'
+    - 'Facebook Dynamic Ads'
+  is_visible:
     footer_nav: false
     header_git: false
     header_breadcrumb: true
@@ -99,11 +113,11 @@ pages:
     - AMP Journeys: pages/web/amp-journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
   - Deep link ads:
-    - Apple Search Ads: pages/deep-linked-ads/apple.md
     - Dynamic Product Feeds: pages/deep-linked-ads/dynamic-product-feeds.md
     - Branch Universal Ads: pages/deep-linked-ads/branch-universal-ads.md
+    - Apple Search: pages/deep-linked-ads/apple.md
     - Doubleclick: pages/deep-linked-ads/doubleclick.md
-    - Google Ads Overview: pages/deep-linked-ads/google-ads-overview.md
+    - Google: pages/deep-linked-ads/google-ads-overview.md
     - Google Search App Install Ads: pages/deep-linked-ads/google-search-install-ads.md
     - Google Search App Engagement Ads: pages/deep-linked-ads/google-search-engagement-ads.md
     - Google Display App Install Ads: pages/deep-linked-ads/google-display-install-ads.md
@@ -113,12 +127,12 @@ pages:
     - Google Display Network Ads: pages/deep-linked-ads/google-xplatform-display-ads.md
     - Google Adwords Conversion Setup: pages/deep-linked-ads/google-conversions.md
     - Google Video Ads: pages/deep-linked-ads/google-video-ads.md
-    - Facebook Ads Overview: pages/deep-linked-ads/facebook-ads-overview.md
+    - Facebook: pages/deep-linked-ads/facebook-ads-overview.md
     - Facebook App Install Ads: pages/deep-linked-ads/facebook-app-install-ads.md
     - Facebook Traffic and Conversion Ads: pages/deep-linked-ads/facebook-traffic-conversion-ads.md
     - Facebook Platform Ads: pages/deep-linked-ads/facebook-platform-ads.md
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
-    - Twitter Ads: pages/deep-linked-ads/twitter.md
+    - Twitter: pages/deep-linked-ads/twitter.md
   - Deep link emails:
     - Responsys: pages/emails/responsys.md
     - SFMC: pages/emails/sfmc.md
