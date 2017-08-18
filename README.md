@@ -45,7 +45,7 @@
 - #### Best Practices
     - Educate with `working code examples`
     - `Bullet point` key points, procedures, and steps to promote progression
-    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity 
+    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity
     - Trigger action by `beginning each sentence with a verb`
     - Write in the viewpoint of the `user's wants`, not what Branch wants
     - Keep is simple (KISS) (`1 -> 2 -> 3`)
@@ -62,9 +62,9 @@
 
 - #### Style
     - Titles `# Title`
-    - Sections `## Section` 
-    - Category `- #### Section` 
-    - Content `    - content` 
+    - Sections `## Section`
+    - Category `- #### Section`
+    - Content `    - content`
 
 - #### Search
     - Hosted by [Algolia Docsearch](https://community.algolia.com/docsearch/)
@@ -84,6 +84,10 @@
     - For reusable snippet, use the format `{! path/file_name_here.md !}` where the base path begins at the includes directory.
     - Content snippets should be placed in the `ingredients` subdirectory. (E.g. `{! ingredients/content_snippet.md !}`)
     - Frequently updated content/code should be kept within the `includes`
+
+- #### Hidden Pages
+    - By default all pages in the mkdocs.yml file will be built and included in the navbar
+    - To not include a page in the navbar, add the page's title to the `hidden_pages` array in the mkdocs.yml
 
 ## Additional
 

@@ -59,7 +59,8 @@ extra:
     footer_nav: false
     header_git: false
     header_breadcrumb: true
-
+  hidden_pages: [""]
+ 
 # Extensions
 markdown_extensions:
   - admonition:
