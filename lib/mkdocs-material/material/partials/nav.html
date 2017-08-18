@@ -16,7 +16,7 @@
   {% endif %}
   <ul class="md-nav__list" data-md-scrollfix>
     {% for nav_item in nav %}
-      {% if nav_item.title not in config.extra.hidden_pages %}
+      {% if nav_item.title not in config.extra.nav_hidden %}
         {% set path = "nav-" + loop.index | string %}
         {% set level = 1 %}
         {% set index = loop.index %}
