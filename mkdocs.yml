@@ -59,7 +59,8 @@ extra:
     footer_nav: false
     header_git: false
     header_breadcrumb: true
-
+  hidden_pages: [""]
+ 
 # Extensions
 markdown_extensions:
   - admonition:
@@ -71,10 +72,6 @@ markdown_extensions:
   - attr_list:
   - markdown_include.include:
       base_path: src/includes/
-
-# Pages hidden from nav bar
-extra:
-  hidden_pages: [""]
 
 # Pages
 pages:
