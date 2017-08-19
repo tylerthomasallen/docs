@@ -283,6 +283,12 @@
       </main>
 
       <!-- Branch -->
+      {% block warning %}
+        {% if config.extra.is_visible.footer_warning == true %}
+          <div class="branch-warning">Beta Release</div>
+        {% endif %}
+      {% endblock %}
+
       {% block modals %}
         <div class="modals">
           <div id="modal-search" class="modal dialog">

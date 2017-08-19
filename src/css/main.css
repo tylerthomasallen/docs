@@ -366,3 +366,16 @@ a.algolia-docsearch-footer--logo {
   margin: 0;
   padding: 0;
 }
+/* warning */
+.branch-warning {
+  background-color: #f42534;
+  color: white;
+  font-size: 1.25em;
+  padding: 0.75em;
+  font-weight: 600;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 1em;
+  box-shadow: 0 0 0.25em rgba(0,0,0,0.5);
+}

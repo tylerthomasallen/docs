@@ -72,6 +72,7 @@ extra:
     - 'Facebook Platform Ads'
     - 'Facebook Dynamic Ads'
   is_visible:
+    footer_warning: true
     footer_nav: false
     header_git: false
     header_breadcrumb: true
