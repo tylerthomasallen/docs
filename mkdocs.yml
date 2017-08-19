@@ -149,7 +149,7 @@ pages:
     - Facebook App Invites: pages/app-to-app/facebook-app-invites.md
   - Export analytics:
     - Export API: pages/exports/api.md
-    - Real time Webhooks: pages/exports/webhooks.md
+    - Webhooks: pages/exports/webhooks.md
   - Integrate third party platforms:
     - Abobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
