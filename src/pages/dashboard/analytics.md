@@ -10,6 +10,63 @@
     - If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
     - If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
 
+## Dashboard
+
+- #### Summary
+- #### Journey Banners
+- #### DeepView Previews
+- #### Desktop SMS
+- #### Ads
+    - ##### Analytics
+    - ##### Partner Management
+    - ##### Links
+- #### Emails
+- #### Organic Search
+- #### Referrals
+- #### Quick links
+- #### Data Integrations
+- #### Webhooks
+- #### Liveview
+    - Used to validate the Branch links, clicks and events
+    - Check [Analytical behavior](#analytics_1) for understanding of the Liveview data
+
+- #### Cross-channel analytics
+    - ##### Sources
+    - ##### Content
+    - [Dashboard Content](https://dashboard.branch.io/content) tracks the attribution per content
+    - Updates every 1.5 hours
+    - Content is tracked whenever deep links are shared (clicks which lead to open/installs)
+    - Each content must be meaningful unique attributes
+        - `$deeplink_path`
+        - `$desktop_url`
+        - `$canonical_identifier`
+        - `$og_title` + `$og_description` + `$og_image_url`
+        - (not all required. ordered by precedence)    
+- #### Account settings
+
+## Analytics
+
+- #### Behavior
+- #### Revenue
+   
+     - Track purchases and revenue generated in your app using [Commerce Event](#dialog-code)
+     - Use Branch's [Liveview](#liveview) page to track each commerce event triggered in your app
+     - [Liveview](#liveview) page is the best way to test the integration
+     - Review the revenue data associated with each link using [Quick Links](#quick-links) tab
+     - Segregate the revenue data based on analytics parameters such as campaign, feature, channel etc. in the [Sources](#sources) tab
+       
+
+## Setup and testing
+
+- #### Link Settings
+- #### Account settings
+
+## Troubleshooting
+
+- ####
+
+
+
 ## Channels and links
 
 - #### Summary
@@ -55,19 +112,10 @@
 - #### Quick Links
 - #### Link Settings
 
-## Cross-channel analytics
 
-- #### Sources
-- #### Content
-    - [Dashboard Content](https://dashboard.branch.io/content) tracks the attribution per content
-    - Updates every 1.5 hours
-    - Content is tracked whenever deep links are shared (clicks which lead to open/installs)
-    - Each content must be meaningful unique attributes
-        - `$deeplink_path`
-        - `$desktop_url`
-        - `$canonical_identifier`
-        - `$og_title` + `$og_description` + `$og_image_url`
-        - (not all required. ordered by precedence)
+
+- #### Revenue Analytics
+    
 
 ## Setup and testing
 
@@ -76,4 +124,3 @@
 - #### Liveview
 - #### Account settings
 
-## Troubleshoot issues

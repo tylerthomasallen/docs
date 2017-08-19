@@ -687,23 +687,116 @@
     - Uses [Track commerce properties](#commerce-properties) for `Currency` and `Category` 
     
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+    
+    - Ensure to add `revenue` field to track purchase. All other fields are optional 
 
     - *Java*
 
         ```java
-        TODO: all
+        //Add details about each product associated with the purchase (optional)
+        Product product1 = new Product();
+        product1.setSku("u123");
+        product1.setName("cactus");
+        product1.setPrice(45.00);
+        product1.setQuantity(2);
+        product1.setBrand("brand1");
+        product1.setCategory(ProductCategory.ELECTRONICS);
+        product1.setVariant("variant1");
+
+        Product product2 = new Product();
+        product2.setSku("u456");
+        product2.setName("grass");
+        product2.setPrice(9.00);
+        product2.setQuantity(1);
+        product2.setBrand("brand2");
+        product2.setCategory(ProductCategory.CAMERA_AND_OPTICS);
+        product2.setVariant("variant2");
+
+
+        //Create a list of products associated with the particular purchase (optional)
+        List<Product> productList = new ArrayList<Product>();
+        productList.add(product1);
+        productList.add(product2);
+
+        //Create the commerce event (only revenue is required)
         CommerceEvent commerceEvent = new CommerceEvent();
-        commerceEvent.setRevenue(1101.99);
-        Branch.getInstance().sendCommerceEvent(commerceEvent, null, null);
+        commerceEvent.setRevenue(50.29);
+        commerceEvent.setCurrencyType(CurrencyType.USD);
+        commerceEvent.setTransactionID("TRANS-1111");
+        commerceEvent.setShipping(4.50);
+        commerceEvent.setTax(110.90);
+        commerceEvent.setAffiliation("AFF-ID-101");
+        commerceEvent.setProducts(productList);
+
+
+        //Add metadata (optional)
+        JSONObject metadata = new JSONObject();
+
+        try {
+            metadata.put("custom_dictionary", 123);
+            metadata.put("testVar", "abc");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        //Fire the commerce event
+        Branch.getInstance().sendCommerceEvent(commerceEvent, metadata, null);
         ```
 
     - *Kotlin*
 
         ```java
-        TODO: all values
+        //Add details about each product associated with the purchase (optional)
+        val product1 = Product()
+        product1.sku = "u123"
+        product1.name = "cactus"
+        product1.price = 45.00
+        product1.quantity = 2
+        product1.brand = "brand1"
+        product1.category = ProductCategory.ELECTRONICS
+        product1.variant = "variant1"
+
+        val product2 = Product()
+        product2.sku = "u456"
+        product2.name = "grass"
+        product2.price = 9.00
+        product2.quantity = 1
+        product2.brand = "brand2"
+        product2.category = ProductCategory.CAMERA_AND_OPTICS
+        product2.variant = "variant2"
+
+
+        //Create a list of products associated with the particular purchase (optional)
+        val productList = ArrayList<Product>()
+        productList.add(product1)
+        productList.add(product2)
+
+
+        //Create the commerce event (only revenue is required)
         val commerceEvent = CommerceEvent()
-        commerceEvent.revenue = 1101.99
-        Branch.getInstance().sendCommerceEvent(commerceEvent, null, null)
+        commerceEvent.revenue = 50.29
+        commerceEvent.currencyType = CurrencyType.USD
+        commerceEvent.transactionID = "TRANS-1111"
+        commerceEvent.shipping = 4.50
+        commerceEvent.tax = 110.90
+        commerceEvent.affiliation = "AFF-ID-101"
+        commerceEvent.setProducts(productList)
+
+
+        //Add metadata (optional)
+        val metadata = JSONObject()
+
+        try {
+            metadata.put("custom_dictionary", 123)
+            metadata.put("testVar", "abc")
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+
+        //Fire the commerce event
+        Branch.getInstance().sendCommerceEvent(commerceEvent, metadata, null)
         ```
 
 - #### Handle referrals
