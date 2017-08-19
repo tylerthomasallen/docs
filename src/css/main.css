@@ -2,21 +2,18 @@
 /* BRANCH HEADER TITLE */
 /* ////////////////////////////// */
 .branch-header-subtitle {
-  display: none;
   font-size: 2em;
   margin-top: 1em;
   padding-right: 1.5em;
   color: hsla(0,0%,100%,.7);
 }
-@media (min-width: 960px) {
-  .branch-header-subtitle  {
-    display: block;
-  }
-}
 @media only screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title--site .md-nav__button {
     width: 6em !important;
     font-size: 1.5em !important;
+  }
+  .branch-header-subtitle {
+    display: none;
   }
 }
 
