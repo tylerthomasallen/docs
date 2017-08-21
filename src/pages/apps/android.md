@@ -2,10 +2,9 @@
 
 - #### Configure Branch
 
-    - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
 
-        ![image](http://i.imgur.com/r057ie0.png)
-        ![image](http://i.imgur.com/SdcICpL.png)
+    - Make sure `Always try to open app` and `I have an Android App` are both enabled
 
 - #### Install Branch
 
@@ -18,7 +17,7 @@
             compileSdkVersion 25
             buildToolsVersion "25.0.2"
             defaultConfig {
-                applicationId "com.eneff.branchandroid"
+                applicationId "com.eneff.branch.example.android"
                 minSdkVersion 15
                 targetSdkVersion 25
                 versionCode 1
@@ -60,13 +59,13 @@
         ```xml hl_lines="9 17 26 27 28 29 30 31 32 34 35 36 37 38 39 40 44 45 46 47 49 50 51 52 53 54"
         <?xml version="1.0" encoding="utf-8"?>
         <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-            package="com.eneff.branchandroid">
+            package="com.eneff.branch.example.android">
 
             <uses-permission android:name="android.permission.INTERNET" />
 
             <application
                 android:allowBackup="true"
-                android:name="com.eneff.branchandroid.CustomApplicationClass"
+                android:name="com.eneff.branch.example.android.CustomApplicationClass"
                 android:icon="@mipmap/ic_launcher"
                 android:label="@string/app_name"
                 android:supportsRtl="true"
@@ -85,7 +84,7 @@
 
                     <!-- Branch URI Scheme -->
                     <intent-filter>
-                        <data android:scheme="branchandroid" />
+                        <data android:scheme="androidexample" />
                         <action android:name="android.intent.action.VIEW" />
                         <category android:name="android.intent.category.DEFAULT" />
                         <category android:name="android.intent.category.BROWSABLE" />
@@ -96,14 +95,14 @@
                         <action android:name="android.intent.action.VIEW" />
                         <category android:name="android.intent.category.DEFAULT" />
                         <category android:name="android.intent.category.BROWSABLE" />
-                        <data android:scheme="https" android:host="uobg.app.link" />
-                        <data android:scheme="https" android:host="uobg-alternate.app.link" />
+                        <data android:scheme="https" android:host="example.app.link" />
+                        <data android:scheme="https" android:host="example-alternate.app.link" />
                     </intent-filter>
                 </activity>
 
                 <!-- Branch init -->
-                <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa" />
-                <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_edwDakKcMeWzJ3hC3aZs9kniyuaWGCTa" />
+                <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw" />
+                <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr" />
                 <meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
 
                 <!-- Branch install referrer tracking (optional) -->
@@ -119,10 +118,10 @@
         ```
 
     - Replace the following with values from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
-        - `branchandroid`
-        - `uobg.app.link`
-        - `key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa`
-        - `key_test_edwDakKcMeWzJ3hC3aZs9kniyuaWGCTa`
+        - `androidexample`
+        - `example.app.link`
+        - `key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw`
+        - `key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr`
 
 - #### Initialize Branch
 
@@ -131,7 +130,7 @@
     - *Java*
 
         ```java hl_lines="3 9 14 16 17 31 32 33 34 35 36 37 38 39 40 41 44 45 46 47"
-        package com.eneff.branchandroid;
+        package com.eneff.branch.example.android;
 
         import android.content.Intent;
         import android.os.Bundle;
@@ -184,7 +183,7 @@
     - *Kotlin*
 
         ```java hl_lines="3 9 14 16 17 29 30 31 32 33 34 35 36 37 38 41 42 43"
-        package com.eneff.branchandroid
+        package com.eneff.branch.example.android
 
         import android.content.Intent
         import android.os.Bundle
@@ -237,7 +236,7 @@
     - *Java*
 
         ```java hl_lines="4 11 12 14 15"
-        package com.eneff.branchandroid;
+        package com.eneff.branch.example.android;
 
         import android.app.Application;
         import io.branch.referral.Branch;
@@ -259,7 +258,7 @@
     - *Kotlin*
 
         ```java hl_lines="4 10 11 13 14"
-        package com.eneff.branchandroid
+        package com.eneff.branch.example.android
 
         import android.app.Application
         import io.branch.referral.Branch
@@ -1086,7 +1085,7 @@
     - Test
 
         ```sh
-        adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n io.branch.branchandroiddemo/io.branch.referral.InstallListener --es "referrer" "link_click_id=123"
+        adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n io.branch.androidexampledemo/io.branch.referral.InstallListener --es "referrer" "link_click_id=123"
         ```
 
 - #### Enable multidexing

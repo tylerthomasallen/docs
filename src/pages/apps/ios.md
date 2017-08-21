@@ -2,7 +2,9 @@
 
 - #### Configure Branch
 
-    - Complete your [Setup your dashboard](/pages/dashboard/setup/)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
+
+    - Make sure `I have an iOS app` is enabled
 
 - #### Configure bundle identifier
 
@@ -13,6 +15,7 @@
 - #### Configure associated domains
 
     - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+    - Additional [Associated domain details](#associated-domain-details)
 
         ![image](http://i.imgur.com/67t6hSY.png)
 
@@ -200,7 +203,7 @@
 
     - Used for [Create deep link](#create-deep-link) and [Share deep link](#share-deep-link)
 
-    - Uses [Configuring link data](/pages/links/setup/#configuring-deep-links) and custom data
+    - Uses [Configure link data](/pages/links/setup/#configure-deep-links) and custom data
 
     - *Swift 3*
 
@@ -730,6 +733,13 @@
 
         ```objc
         ```
+
+- #### Associated domain details
+
+    - Used for [Configure associated domains](#configure-associated-domains)
+    - `-alternate` is needed for Universal Linking with the [Setup your website](/pages/web/setup/)
+    - `test-` is needed if you need [Use test key](#use-test-key)
+    - If you [Change link domain](/pages/dashboard/setup/#change-link-domain), you will need to include your `old link domain as well as your new link domain
 
 - #### Use test key
 
