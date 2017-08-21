@@ -7,6 +7,7 @@ repo_name: 'Branch documentation'
 repo_url: 'https://github.com/branchmetrics/docs'
 edit_uri: 'edit/master/src/'
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
+site_favicon: img/favicon-96x96.png
 
 # Files
 theme: 'material'
@@ -16,7 +17,18 @@ extra_css:
   - 'css/main.css'
 extra_javascript:
   - 'js/main.js'
-site_favicon: img/favicon-96x96.png
+
+# Extensions
+markdown_extensions:
+  - admonition:
+  - codehilite: #(linenums=true)
+  - footnotes:
+  - toc(permalink=true):
+  - meta:
+  - pymdownx.github:
+  - attr_list:
+  - markdown_include.include:
+      base_path: src/includes/
 
 # Options
 extra:
@@ -76,18 +88,6 @@ extra:
     footer_nav: false
     header_git: false
     header_breadcrumb: true
-
-# Extensions
-markdown_extensions:
-  - admonition:
-  - codehilite: #(linenums=true)
-  - footnotes:
-  - toc(permalink=true):
-  - meta:
-  - pymdownx.github:
-  - attr_list:
-  - markdown_include.include:
-      base_path: src/includes/
 
 # Pages
 pages:
