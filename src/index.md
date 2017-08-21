@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://youtu.be/MXgLQ8QDXk8"><img src="https://i.imgur.com/NF2NEDn.gif"/></a>
 </p>
-
+<!-- 
 ## Getting started
 
 - #### Basic setup
@@ -42,7 +42,7 @@
     | Campaigns | Attribution | Revenue
     |![image](https://d3js.org/ex/box.png)|![image](https://d3js.org/ex/bubble.png)|![image](https://d3js.org/ex/bullet.png)
 
-<!-- - Opening URL clicks to app users
+- Opening URL clicks to app users
     + Install and open your app with a simple link click
         + Deep linking 
         + Content navigation on app open
@@ -61,5 +61,5 @@
         + referrals
 - Better social, email, and SMS campaigns
     + Increase your reach, acquisition, conversation, and retention
-        * deep link feeds -->
-
+        * deep link feeds 
+-->

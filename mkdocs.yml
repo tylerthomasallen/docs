@@ -16,6 +16,13 @@ docs_dir: 'src'
 extra_css:
   - 'css/main.css'
 extra_javascript:
+  - 'js/router.js'
+  - 'js/events.js'
+  - 'js/modals.js'
+  - 'js/images.js'
+  - 'js/buttons.js'
+  - 'js/analytics.js'
+  - 'js/tabs.js'
   - 'js/main.js'
 
 # Extensions
