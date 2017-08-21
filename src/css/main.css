@@ -85,6 +85,9 @@
 /* ////////////////////////////// */
 /* MARKDOWN */
 /* ////////////////////////////// */
+.md-typeset img {
+  box-shadow: 0px 0px 1px #ccc;
+}
 .md-typeset h2 {
   font-weight: 700;
   border-bottom: 1px solid #eaecef;
