@@ -295,7 +295,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](#/pages/links/data/#universal-object)
+    - Uses the [Universal Object Properties](#/pages/links/setup/#universal-object)
 
     - *Java*
 
@@ -327,7 +327,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -380,7 +380,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
     - *Java*
 
@@ -788,6 +788,48 @@
             }
             ```
 
+- #### Handle push notification
+
+    - Deep link to content from GCM push notifications just by adding a Branch link to your result intent
+
+    - *Java*
+
+        ```java
+        Intent resultIntent = new Intent(this, TargetClass.class);
+        intent.putExtra("branch","http://xxxx.app.link/testlink");
+        PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        intent.putExtra("branch_force_new_session",true);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        val resultIntent = Intent(this, TargetClass::class.java)
+        intent.putExtra("branch", "http://xxxx.app.link/testlink")
+        val resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        intent.putExtra("branch_force_new_session", true)
+        ```
+
+- #### Enable 100% matching
+
+    - Uses `Chrome Tabs` to increase attribute matching success
+
+    - Add `compile 'com.android.support:customtabs:23.3.0'` to your `build.gradle`
+
+    - Add to your application class before `getAutoInstance` ([Load Branch](#load-branch))
+
+    - *Java*
+
+        ```java
+        Branch.enableCookieBasedMatching("your.linkdomain.com");
+        ```
+
+    - *Kotlin*
+
+        ```java
+        Branch.enableCookieBasedMatching("your.linkdomain.com")
+        ```
+
 ## Troubleshoot issues
 
 - #### Sample testing apps
@@ -815,21 +857,6 @@
     - Reinstall your app
 
     - Read deep link data from `Branch.initSession()` for `+is_first_session=true`
-
-- #### Universal Object best practices
-    
-    - To make sure your analytics are correct, and your content is ranking on Spotlight effectively.
-        - Do
-            - Set the `canonicalIdentifier` to a unique, de-duped value across instances of the app
-            - Ensure that the `title`, `contentDescription` and `imageUrl` properly represent the object
-            - Initialize the Branch Universal Object and call userCompletedAction with the `BranchEvent.VIEW` on page load
-            - Call showShareSheet and createShortLink later in the life cycle, when the user takes an action that needs a link
-            - Call the additional object events (purchase, share completed, etc) when the corresponding user action is taken
-        - Do not
-            - Do not set the same `title`, `contentDescription` and `imageUrl` across all objects
-            - Do not wait to initialize the object and register views until the user goes to share
-            - Do not wait to initialize the object until you conveniently need a link
-            - Do not create many objects at once and register views in a `for` loop.
 
 - #### Track content properties
 
@@ -893,14 +920,16 @@
         }   
         ```    
 
-- #### Deep link routes
+- #### Deep link routing
 
-    - Loads a specific URI path from `$deeplink_path` or `$android_deeplink_path`
+    - Loads a specific URI Scheme path, for example
+        - `$deeplink_path="content/123"`
+        - `$android_deeplink_path="content/123"`
 
-    - Not recommend (better to route within your `Branch.initSession()`)
+    - Recommend to use [Navigate to content](#navigate-to-content) instead
 
         ```xml
-        <meta-data android:name="io.branch.sdk.auto_link_path" android:value="custom/path/*,another/path/" />
+        <meta-data android:name="io.branch.sdk.auto_link_path" android:value="content/123/, another/path/, another/path/*" />
         ```
 
 - #### Deep link activity finishes
@@ -942,29 +971,6 @@
                 startActivity(i)
             }
         }
-        ```
-
-- #### Deep link from push notification
-
-    - Deep link to content from push notifications just by adding a Branch link to your result intent
-
-
-    - *Java*
-
-        ```java
-        Intent resultIntent = new Intent(this, TargetClass.class);
-        intent.putExtra("branch","http://xxxx.app.link/testlink");
-        PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        intent.putExtra("branch_force_new_session",true);
-        ```
-
-    - *Kotlin*
-
-        ```java
-        val resultIntent = Intent(this, TargetClass::class.java)
-        intent.putExtra("branch", "http://xxxx.app.link/testlink")
-        val resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-        intent.putExtra("branch_force_new_session", true)
         ```
 
 - #### Pre Android 15 support
@@ -1027,7 +1033,6 @@
 
     - Create an instance of `io.branch.referral.InstallListener` in `onReceive()`
 
-
     - *Java*
 
         ```java
@@ -1042,19 +1047,29 @@
         listener.onReceive(context, intent)
         ```
 
-- #### Guaranteed matching
+- #### Generate signing certificate 
 
-    - Cookie based matching using `Custom Chrome Tabs`
+    - Used for Android `App Link` deep linking
 
-        ```
-        compile 'com.android.support:customtabs:23.3.0'
-        ```
+    - Navigate to your keystore file
 
-- #### Matching through install listener
+    - Run `keytool -list -v -keystore my-release-key.keystore`
 
-    - Enable to pass `link_click_id` from Google Play to Branch through your Install Listener. As broadcasts can arrive at different times, you can set the amount of time Branch should wait for the install listener broadcast before posting
+    - Will generate a value like `AA:C9:D9:A5:E9:76:3E:51:1B:FB:35:00:06:9B:56:AC:FB:A6:28:CE:F3:D6:65:38:18:E3:9C:63:94:FB:D2:C1`
 
-    - Add to your application class before `getAutoInstance`
+    - Copy this value to your [Branch Dashboard](https://dashboard.branch.io/link-settings)
+
+- #### Matching through the install listener
+
+    - Enable the ability to pass `link_click_id` from Google Play to Branch 
+
+    - This will increase attribution and deferred deep linking accuracy
+
+    - Branch default is `1.5` seconds to wait for Google Play analytics
+
+    - You can optimize the performance based on needs (e.g. `0`, `5`, `10`)
+
+    - Add to your application class before `getAutoInstance` ([Load Branch](#load-branch))
 
     - *Java*
 

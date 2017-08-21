@@ -49,7 +49,7 @@
         | Key | Value | Usage | Required
         | --- | :-: | --- | :-:
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
-        | ... | ... | Parameters from [Configuring Links](/pages/links/data/) |
+        | ... | ... | Parameters from [Configuring Links](/pages/links/setup/) |
 
 - #### Link create bulk 
 
@@ -112,7 +112,7 @@
         | Key | Value | Usage | Required
         | --- | :-: | --- | :-:
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
-        | ... | ... | Parameters from [Configuring Links](/pages/links/data/) |
+        | ... | ... | Parameters from [Configuring Links](/pages/links/setup/) |
 
 - #### Link read
 
