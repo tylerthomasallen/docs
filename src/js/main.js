@@ -10,7 +10,7 @@
   modals.route();
   router.init();
 
-  router.add('route-#dialog-code', function() {
+  router.add('#dialog-code', function() {
     modals.toggle('modal-code', 'dialog');
   });
 

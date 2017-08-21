@@ -8,7 +8,7 @@ var router = (function() {
 
   // private
   function _route(hash) {
-    events.publish('route-' + hash);
+    events.publish(hash);
   }
 
   // public

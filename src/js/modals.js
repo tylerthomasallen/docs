@@ -43,15 +43,15 @@ var modals = (function() {
 
   function route() {
     var search = document.getElementById('algolia-doc-search');
-    router.add('route-#dialog-helpful', function() {
+    router.add('#dialog-helpful', function() {
       analytics.track('viewed modal helpful');
       modals.toggle('modal-helpful', 'notification', 1500);
     });
-    router.add('route-#dialog-unhelpful', function() {
+    router.add('#dialog-unhelpful', function() {
       analytics.track('viewed modal unhelpful');
       modals.toggle('modal-unhelpful', 'dialog');
     });
-    router.add('route-#dialog-search', function() {
+    router.add('#dialog-search', function() {
       analytics.track('viewed modal search');
       modals.toggle('modal-search', 'dialog');
       search.focus();
