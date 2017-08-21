@@ -8,7 +8,6 @@ var images = (function() {
 
   // wrap all <img /> with <a href="image-[src]"><img /></a> to trigger expand modal
   function init() {
-    console.log('init')
     var images = _scrapeImages();
     _wrapImages(images);
     _addRoute();
@@ -40,7 +39,6 @@ var images = (function() {
   }
 
   function _addRoute() {
-    console.log('addroute')
     router.add(hash, function() {
       _displayRoute();
     });

@@ -71,8 +71,13 @@
     - Localhost scrapes production
     - Production is scraped once a day
 
-- #### Code
+- #### Code Tabs
     - Tabbed sections `*title*`, `code`, `*title*`, `code`
+
+- #### Code Modals
+    
+    - `Complete [Integrate your app](#dialog-code?ios=create-deep-link&android=install-branch)`
+    - `Complete [Integrate your app](#dialog-code)`
 
 - #### Images
     - Content pages are kept in the `img/pages` 

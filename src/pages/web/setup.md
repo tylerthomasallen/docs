@@ -18,7 +18,10 @@
 
 - #### Integrate app
 
+    - Complete [Integrate your app](#dialog-code?ios=create-deep-link&android=install-branch)
+
     - Complete [Integrate your app](#dialog-code)
+
 
 - #### Initialize Branch
 
