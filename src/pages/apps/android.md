@@ -305,6 +305,7 @@
             .setContentDescription("My Content Description")
             .setContentImageUrl("https://lorempixel.com/400/400")
             .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+            .setLocalIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .addContentMetadata("custom_data", "123");
         ```
 
@@ -317,6 +318,7 @@
             .setContentDescription("My Content Description")
             .setContentImageUrl("https://lorempixel.com/400/400")
             .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+            .setLocalIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .addContentMetadata("custom_data", "123")
         ```      
 
@@ -569,6 +571,8 @@
 
     - List content on `Google Search` with `App Indexing`
 
+    - Enable App Indexing on the [Branch Dashboard](#https://dashboard.branch.io/search)
+    
     - Needs a [Branch Universal Object](#create-content-reference)
 
     - Needs `build.gradle` library
