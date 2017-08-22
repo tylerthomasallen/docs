@@ -145,10 +145,10 @@ pages:
     - Twitter: pages/deep-linked-ads/twitter.md
   - Deep link emails:
     - Responsys: pages/emails/responsys.md
-    - SFMC: pages/emails/sfmc.md
+    - Salesforce: pages/emails/salesforce.md
     - SendGrid: pages/emails/sendgrid.md
     - Sailthru: pages/emails/sailthru.md
-    - AppBoy: pages/emails/appboy.md
+    - Appboy: pages/emails/appboy.md
     - Self Serve: pages/emails/self-serve.md
   - Deep link organic search:
     - Firebase: pages/organic-search/firebase.md
