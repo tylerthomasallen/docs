@@ -54,13 +54,13 @@
 ## Advance integration
 
 - #### Configure user
-    - Go to [Account settings]https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
+    - Go to [Account settings](https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
     - TODO
 - #### Configure billing
-    - Go to [Account settings]https://dashboard.branch.io/account-settings/billing) on the Branch Dashboard
+    - Go to [Account settings](https://dashboard.branch.io/account-settings/billing) on the Branch Dashboard
     - TODO
 - #### Configure team
-    - Go to [Account settings]https://dashboard.branch.io/account-settings/team) on the Branch Dashboard
+    - Go to [Account settings](https://dashboard.branch.io/account-settings/team) on the Branch Dashboard
     - TODO
 - #### Set advanced settings
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
