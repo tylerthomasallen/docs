@@ -1,4 +1,3 @@
-
 ## Overview
 
 Branch’s webhook system allows you to receive install and down funnel event data from us as it occurs, for install attribution or conversion funnels in your own database. You simply need to specify a URL for us to send all this data to.

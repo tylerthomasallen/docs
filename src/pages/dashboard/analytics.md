@@ -3,8 +3,12 @@
 
 - #### Summary
 - #### Journey Banners
+    - View more information in [Journey app banners](/pages/web/journeys/)
+    - View more information in [Journey Amp banners](/pages/web/amp-journeys/)
 - #### DeepView Preview
+    - View more information in [Deepviews](/pages/web/deep-views/)
 - #### Desktop SMS
+    - View more information in [Text me the app](/pages/web/text-me-the-app/)
 - #### Ads
 - #### Emails
 - #### Organic Search
@@ -16,14 +20,14 @@
         - Referrer `creates` a deep link
         - Referrer `shares` the deep link
         - Referee `clicks` on the deep link
-        - Referee has their [identity set](#dialog-code
+        - Referee has their [identity set](#dialog-code)
         - Referee triggers a [custom event](#dialog-code)
-        - Catch the event as a [Reward rule](https://dashboard.branch.io/referrals/rules) to assign referral points
+        - The custom event triggers a [Reward rule](https://dashboard.branch.io/referrals/rules) to assign referral points
 
     - ##### Troubleshooting
 
-        - The Referrer and Referee are connected by the deep link
-        - Referring points happen whenever the custom event occurs in the app which triggers the referral rule
+        - The Referrer and Referee are connected by the `deep link`
+        - Referring points happen whenever the `custom event` occurs in the app which triggers the `referral rule`
         - It is best to assign referring points on a `custom event` rather than Branch events (install and open) to prevent referral abuse
         - Make sure you set the identity of both the referrer and referee to prevent anonymous users from showing up in your [Referral analytics](https://dashboard.branch.io/referrals/analytics)
         - Referrals are based on a `session`, not a device. If a user closes and opens the app before triggering the referral rule, then the referral points will not be delivered
@@ -32,14 +36,14 @@
 
     - ##### Tracking
         - Use the [Referral analytics](https://dashboard.branch.io/referrals/analytics)
-        - Use the [LiveView export](https://dashboard.branch.io/liveview/link_clicks) to get data as a .csv
-        - Create a [Webhook] to send data to your server
-        - Request a whitelisting to our [Data Export API]()
+        - Use the [LiveView export](https://dashboard.branch.io/liveview/link_clicks) to get data as a `.csv`
+        - Create a [Webhook](/pages/exports/webhooks) to send data to your server
+        - Request a whitelisting to our [Data Export API](/pages/exports/api)
 
     - ##### Querying
         - Query the events export the custom referral event that triggered the referral rule
-        - The developer identity of this event is your referee
-        - The session referring developer identity is your referrer
+        - The `developer identity` of this event is your referee
+        - The `session referring developer identity` is your referrer
 
 - #### Quick Links
 - #### Link Settings
@@ -58,6 +62,7 @@
 
 - #### Data Integrations
 - #### Webhooks
+    - View more information in [Export webhooks](/pages/exports/webhooks/)
 - #### Liveview
 - #### Account settings
     - View more information in [Setup your dashboard](/pages/dashboard/setup/)

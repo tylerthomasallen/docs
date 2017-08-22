@@ -6,6 +6,8 @@
 
     - Make sure `Always try to open app` and `I have an Android App` are both enabled
 
+        ![image](/img/pages/dashboard/android.png)
+
 - #### Install Branch
 
     - Import the Branch SDK to your `build.gradle`

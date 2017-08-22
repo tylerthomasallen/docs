@@ -6,6 +6,8 @@
 
     - Make sure `I have an iOS app` is enabled
 
+        ![image](/img/pages/dashboard/ios.png)
+
 - #### Configure bundle identifier
 
     - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
