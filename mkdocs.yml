@@ -144,11 +144,16 @@ pages:
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter: pages/deep-linked-ads/twitter.md
   - Deep link emails:
+    - Appboy: pages/emails/appboy.md
+    - Blueshift: pages/emails/blueshift.md
+    - Epsilon: pages/emails/epsilon.md
+    - MailGun: pages/emails/mailgun.md
+    - PostUp: pages/emails/postup.md
     - Responsys: pages/emails/responsys.md
-    - SFMC: pages/emails/sfmc.md
-    - SendGrid: pages/emails/sendgrid.md
     - Sailthru: pages/emails/sailthru.md
-    - AppBoy: pages/emails/appboy.md
+    - Salesforce: pages/emails/salesforce.md
+    - SendGrid: pages/emails/sendgrid.md
+    - Zeta: pages/emails/zeta.md
     - Self Serve: pages/emails/self-serve.md
   - Deep link organic search:
     - Firebase: pages/organic-search/firebase.md

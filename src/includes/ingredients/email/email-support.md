@@ -1,9 +1,11 @@
+## Support
+
 ### How does link creation work?
 
 #### Three stages of a link
 
 | Link name| Link example | Link description
-| --- | --- | --- | ---
+| --- | --- | ---
 | Original link | https://www.shop.com/product | This is the original link that you would put in an email. If emails are dynamically personalized, this will be the link that is filled in by the personalization engine.
 | Branch link | https://branch.shop.com/?original_url=https%3A%2F%2Fwww.shop.com%2Fproduct | A Branch deep link, that handles all redirection for users on any platform, with or without the app.
 | Click Tracking URL | https://email.shop.com/click/abcde12345 | A SendGrid generated click tracking URL. The URL doesn’t signify anything, but when clicked, records the click and redirects to a given destination.
@@ -72,7 +74,7 @@ Here, you will want to enter a Branch link that opens to a page within your app 
 
 When you click **Submit**, the link's values for `$canonical_url`, `$desktop_url`, and `$fallback_url` will be compared against other values in the link. If there is a mapping between values for the full URL or the path of the URL, your deep linking setup for email will use those methods.
 
-### Test your link
+#### Test your link
 
 When you submit a web URL or Branch link, you will be prompted with a test link. Click this link on iOS and Android devices, and verify that it will open your app to the right place.
 

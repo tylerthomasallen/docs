@@ -1,4 +1,3 @@
-
 Contact your Branch Account Manager or [accounts@branch.io](mailto:accounts@branch.io) at any time for assistance with the setup steps.
 
 ### Choose your email service provider
@@ -41,11 +40,11 @@ In this step, you will want to enter a web URL that corresponds to a specific sc
 - An article
 - A content page, like a video or image
 
-Once you choose one and click **Submit**, [meta tags that can be used for deep linking](/getting-started/hosted-deep-link-data/guide/) will be retrieved from your webpage. You will see a result indicating the mapping between your web content and your app content. For a full explanation of the tests run on this page and the possible results, check out our [support page](/marketing-channels/{{ page.title | downcase }}/support/#deep-linking-setup-messages).
+Once you choose one and click **Submit**, [meta tags that can be used for deep linking](/getting-started/hosted-deep-link-data/guide/) will be retrieved from your webpage. You will see a result indicating the mapping between your web content and your app content. For a full explanation of the tests run on this page and the possible results, check out the [support section](#deep-linking-setup-messages).
 
-### We couldn't determine your deep linking setup
+#### We couldn't determine your deep linking setup
 
-If an app deep linking scheme that maps to your web content cannot be successfully detected, you can [configure your settings manually](#deep-linking-settings-for-email), or you can reach out to your Branch account manager or support for assitance.
+If an app deep linking scheme that maps to your web content cannot be successfully detected, you can [configure your settings manually](#deep-linking-settings-for-email), or you can reach out to your Branch account manager or support for assistance.
 
 ![image](/img/pages/email/failure-result.png)
 
@@ -67,24 +66,24 @@ If you use your web URL as a deep link value:
 
 In the meantime, you can proceed to the next step: **[Configure ESP](#configure-your-esp)**.
 
-### Deep linking settings for email
+#### Deep linking settings for email
 
 The following are all the possible settings you can configure for deep linking with email.
 
-#### Link Behavior
+##### Link Behavior
 
-| | Setting | Example | Link Data Result
-| --- | ---
-| | **Open the app homepage** | No settings configured to generate deep link data for email; email links will route to the app homepage.
-| | **Open to specific app content** | Deep link to specific app content based on one or more of the following settings. |
-| | Translate query parameters on URLs into Branch link data | **URL:** `https://shop.com/shoes/brown-loafers&product_id=123456` | `product_id: 123456`
-| | Translate web URL into Branch link data: <br> Full URL for key ______ | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Key:** `$canonical_url` | `$canonical_url: https://shop.com/shoes/brown-loafers`
-| | Translate web URL into Branch link data: <br> URL path for key ______ | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Key:** `$deeplink_path` | `$deeplink_path: shoes/brown-loafers`
-| | Retrieve hosted deep link data from website and translate into Branch link data | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Meta Tags:** `<meta name="branch:deeplink:product_id" content="123456" />` | `product_id: 123456`
-| | Strip protocol (http:// or https://): <br> from $deeplink_path <br> from $ios_deeplink_path <br> from $android_deeplink_path <br> *Note: Typically used with one of the other settings.* | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Other Settings:** Translate web URL into Branch link data: Full URL for key `$deeplink_path` | `$deeplink_path: shop.com/shoes/brown-loafers`
-| | Translate query parameters on URLs into Branch link data from parameter ______ to key ______ <br> *Note: Not configurable in the UI. [Contact support](https://support.branch.io/support/tickets/new){:target="_blank"} to use this setting.* | **URL:** `https://shop.com/shoes/brown-loafers&product_id=123456&utm_content=shoes` <br> **Parameter:** `utm_content` <br> **Key:** `category` | `category: shoes`
+| Setting | Example | Link Data Result
+| --- | --- | ---
+| **Open the app homepage** | No settings configured to generate deep link data for email; email links will route to the app homepage. | 
+| **Open to specific app content** | Deep link to specific app content based on one or more of the following settings. | 
+| Translate query parameters on URLs into Branch link data | **URL:** `https://shop.com/shoes/brown-loafers&product_id=123456` | `product_id: 123456`
+| Translate web URL into Branch link data: <br> Full URL for key ______ | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Key:** `$canonical_url` | `$canonical_url: https://shop.com/shoes/brown-loafers`
+| Translate web URL into Branch link data: <br> URL path for key ______ | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Key:** `$deeplink_path` | `$deeplink_path: shoes/brown-loafers`
+| Retrieve hosted deep link data from website and translate into Branch link data | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Meta Tags:** `<meta name="branch:deeplink:product_id" content="123456" />` | `product_id: 123456`
+| Strip protocol (http:// or https://): <br> from $deeplink_path <br> from $ios_deeplink_path <br> from $android_deeplink_path <br> *Note: Typically used with one of the other settings.* | **URL:** `https://shop.com/shoes/brown-loafers` <br> **Other Settings:** Translate web URL into Branch link data: Full URL for key `$deeplink_path` | `$deeplink_path: shop.com/shoes/brown-loafers`
+| Translate query parameters on URLs into Branch link data from parameter ______ to key ______ <br> *Note: Not configurable in the UI. [Contact support](https://support.branch.io/support/tickets/new){:target="_blank"} to use this setting.* | **URL:** `https://shop.com/shoes/brown-loafers&product_id=123456&utm_content=shoes` <br> **Parameter:** `utm_content` <br> **Key:** `category` | `category: shoes`
 
-#### Link behavior for users without your app
+##### Link behavior for users without your app
 
 | Setting | Description
 | --- | ---

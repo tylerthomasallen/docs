@@ -1,4 +1,4 @@
-### Send your AASA file to {{ page.title }}
+#### Send your AASA file to {{ page.title }}
 
 ![image](/img/pages/email/responsys/configure-responsys-2.png)
 
