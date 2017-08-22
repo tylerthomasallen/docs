@@ -4,8 +4,8 @@
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](http://i.imgur.com/wazVu3U.png)
-        ![image](http://i.imgur.com/9PEylbS.png)
+        ![image](https://i.imgur.com/wazVu3U.png)
+        ![image](https://i.imgur.com/9PEylbS.png)
 
 - #### Configure app
 
@@ -72,7 +72,7 @@
 
 - #### Compiling ANE
 
-    - To compile this ANE, you need to have [ANT](http://ant.apache.org/) installed on your (OS X) machine, and [Java 1.6](https://support.apple.com/kb/DL1572).
+    - To compile this ANE, you need to have [ANT](https://ant.apache.org/) installed on your (OS X) machine, and [Java 1.6](https://support.apple.com/kb/DL1572).
 
     - Clone the repository, and change the [build.config](https://github.com/BranchMetrics/Branch-AIR-ANE-SDK/blob/master/build/build.config) to match your computer settings with the path to your AIR SDK (you should have the latest one), to the Android SDK, and to a keystore (a certificate for Air, which may be a self-signed certificate created with adt).
 
@@ -90,7 +90,7 @@
 
     - Long press on the deep link *(not 3D Touch)*
 
-    - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
+    - Click `Open in "APP_NAME"` to open your app *([example](https://i.imgur.com/VJVICXd.png))*
 
 - #### Test deep link Android
 
