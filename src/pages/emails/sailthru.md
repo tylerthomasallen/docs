@@ -41,7 +41,7 @@ To set up your AASA file, download the AASA file from the [email you received fr
 
 There are a few different ways you can create Branch links that are compatible with Deep Linked Email + {{ page.title }}. You will need to replace the web URLs in your templates with these. To create Branch links, you can either:
 
-1. [Automatically populate emails with content via Zephyr](#automatically-populate-emails-with content-via-zephyr)
+1. [Automatically populate emails with content via Zephyr](#automatically-populate-emails-with-content-via-zephyr)
 1. [Making regular Branch links compatible with email](#making-regular-branch-links-compatible-with-email)
 1. [Create email links via API without changing your email templates](#create-email-links-via-api-without-changing-your-email-templates)
 1. [Convert all web links in your email to deep links](#convert-all-web-links-in-your-email-to-deep-links)
@@ -100,7 +100,7 @@ After:
     <a href="{deeplink}">Click me</a>
     ```
 
-![image](/img/pages/third-party-integrations/sailthru/deep-linked-email-sailthru.png)
+![image](/img/pages/email/sailthru/deep-linked-email-sailthru.png)
 
 !!! protip "Using Branch Links with Zephyr"
     The Branch deep link script also works with Sailthru's Zephyr personalization language. Here's an example with the correct syntax.
