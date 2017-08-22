@@ -16,7 +16,9 @@
       </div>
       {% if config.extra.logo %}
         <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
+          <a href="{{ config.site_url | default(nav.homepage.url, true) }}" title="{{ config.site_name }}">
+            <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
+          </a>
         </div>
       {% endif %}
       {% if config.extra.is_visible.header_breadcrumb == true %}
