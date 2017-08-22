@@ -1,7 +1,7 @@
 
 ## Basic integration
 
-- #### Get Branch Key
+- #### Find the Branch Key
 
     - Go to [Account settings](https://dashboard.branch.io/account-settings/app) on the Branch Dashboard
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
