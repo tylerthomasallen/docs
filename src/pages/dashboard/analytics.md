@@ -12,6 +12,7 @@
 - #### Ads
 - #### Emails
 - #### Organic Search
+    - Validate with the [App indexing validator](https://branch.io/resources/app-indexing/)
 - #### Referrals
 
     - ##### Implementing

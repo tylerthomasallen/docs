@@ -574,6 +574,8 @@
     - List content on `Google Search` with `App Indexing`
 
     - Enable App Indexing on the [Branch Dashboard](#https://dashboard.branch.io/search)
+
+    - Validate with the [App indexing validator](https://branch.io/resources/app-indexing/)
     
     - Needs a [Branch Universal Object](#create-content-reference)
 
