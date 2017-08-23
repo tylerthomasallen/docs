@@ -3,7 +3,7 @@
 
 - #### Find the Branch Key
 
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/app) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/account-settings/app" target="_blank">Account settings</a>  on the Branch Dashboard
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
     - These keys are unique to your Branch app
     - Never expose your `Branch Secret` as it can be maliciously used
@@ -11,7 +11,7 @@
 
 - #### Configure default behavior
 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
 
     - ##### Set iOS
 
@@ -45,48 +45,47 @@
 
 - #### Enable Deepview
 
-    - Go to [Deepview Previews](https://dashboard.branch.io/web/deepviews) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/web/deepviews" target="_blank"> Deepview Previews </a> on the Branch Dashboard
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
-    - This will make your deep links before optimally on all [Supported platforms](/pages/links/setup/#supported-platforms)
-    - Additional details about [Deepviews](/pages/web/deep-views/)
+    - This will make your deep links before optimally on all <a href="/pages/links/setup/#supported-platforms" target="_blank"> Supported platforms</a>
+    - Additional details about <a href="/pages/web/deep-views/" target ="_blank" Deepviews</a>
     <img src="/img/pages/dashboard/deepview.png" width="200px" />
    
 - #### Set advanced link settings
 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
     - TODO
 
 - #### Authenticate for Facebook App Invites
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard    
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard    
     - TODO
 - #### Social Media Display Customization 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
     - TODO
 - #### Change link domain
     - ##### Use app.link domain
         - Understand [Domain change warning](#domain-change-warning) 
-        - Make changes to [Link settings](https://dashboard.branch.io/link-settings) or contact support
+        - Make changes to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> or contact support
     - ##### Use custom sub domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
         - Understand [Custom domain issues](#custom-domain-issues)
-        - Change your link domain to your custom sub domain on [Link settings](https://dashboard.branch.io/link-settings)
+        - Change your link domain to your custom sub domain on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
         - Update your `CNAME` record on your custom sub domain
             - `CNAME` = `custom.bnc.lt`
-        - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings) 
+        - Click `Confirm` on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> 
     - ##### Use custom root domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
         - Understand [Custom domain issues](#custom-domain-issues)
-        - Change your link domain to your custom root domain on [Link settings](https://dashboard.branch.io/link-settings)
+        - Change your link domain to your custom root domain on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
         - Update your `NS` records on your custom root domain
             - These values are unique per app, below is an example
                 - `ns-1371.awsdns-43.org`
                 - `ns-1695.awsdns-19.co.uk`
                 - `ns-991.awsdns-59.net`
                 - `ns-428.awsdns-53.com`
-        - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings)
-
+        - Click `Confirm` on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
 ## Troubleshoot issues
 
 - #### Domain change warning
@@ -126,18 +125,20 @@
 ## Dashboard and User Administration
 
 - #### Update your user account settings 
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
     - Update your contact information, password
     - Link your Github account to your Branch dashboard for easier sign in
 
 !!! protip "The following sections require Admin access to the Branch Dashboard"
 
 - #### Configure billing
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/billing) on the Branch Dashboard
+    - Go to [<a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
     - Add your billing information and start using Branch's premium solutions
 
 - #### Configure team 
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/team) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
     - Add new team members to your Branch dashboard 
      - Update existing team members' access to Branch dashboard
     <img src="/img/pages/dashboard/add_team.png" width="200px" />
+
+    
