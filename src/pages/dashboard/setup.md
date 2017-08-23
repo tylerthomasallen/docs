@@ -1,34 +1,34 @@
 
-## Basic integration
+## Basic Setup
 
 - #### Find the Branch Key
 
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/app) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/account-settings/app" target="_blank">Account settings</a>  on the Branch Dashboard
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
     - These keys are unique to your Branch app
     - Never expose your `Branch Secret` as it can be maliciously used
-    - <img src="/img/pages/dashboard/branch-keys.png" width="500px" />
+     <img src="/img/pages/dashboard/branch-keys.png" width="500px" />
 
 - #### Configure default behavior
 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
 
     - ##### Set iOS
 
         - Use these settings to control the default behavior of your deep links on iOS
-        - <img src="/img/pages/dashboard/ios.png" width="500px" />
+        <img src="/img/pages/dashboard/ios.png" width="500px" />
 
     - ##### Set Android
         - Use these settings to control the default behavior of your deep links on Android
-        - <img src="/img/pages/dashboard/android.png" width="500px" />
+        <img src="/img/pages/dashboard/android.png" width="500px" />
     
     - ##### Set desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
-        - <img src="/img/pages/dashboard/desktop.png" width="500px" />
+        <img src="/img/pages/dashboard/desktop.png" width="500px" />
     
     - ##### Set fallback
         - Use these settings to control the default behavior of your deep links on any other platform
-        - <img src="/img/pages/dashboard/fallback.png" width="500px" />
+        <img src="/img/pages/dashboard/fallback.png" width="500px" />
     
     - ##### Set link domain
         - Choose a `link domain` which will be used for all your links
@@ -37,65 +37,55 @@
             - The deep links will have an `alias` behind them to uniquely identify content
                 - https://example.app.link/VZsTctoINF
                 - https://example.app.link/custom-alias
-        - <img src="/img/pages/dashboard/link-domain.png" width="500px" />
+        <img src="/img/pages/dashboard/link-domain.png" width="500px" />
     
     - ##### Save
         - Make sure you commit any changes
-        - <img src="/img/pages/dashboard/save.png" width="500px" />
+        <img src="/img/pages/dashboard/save.png" width="500px" />
 
 - #### Enable Deepview
 
-    - Go to [Deepview Previews](https://dashboard.branch.io/web/deepviews) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/web/deepviews" target="_blank"> Deepview Previews </a> on the Branch Dashboard
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
-    - This will make your deep links before optimally on all [Supported platforms](/pages/links/setup/#supported-platforms)
-    - Additional details about [Deepviews](/pages/web/deep-views/)
-    - <img src="/img/pages/dashboard/deepview.png" width="200px" />
+    - This will make your deep links before optimally on all <a href="/pages/links/setup/#supported-platforms" target="_blank"> Supported platforms</a>
+    - Additional details about <a href="/pages/web/deep-views/" target ="_blank" Deepviews</a>
+    <img src="/img/pages/dashboard/deepview.png" width="200px" />
+   
+- #### Set advanced link settings
 
-## Advance integration
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
+    - TODO
 
-- #### Configure user
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
-    - TODO
-- #### Configure billing
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/billing) on the Branch Dashboard
-    - TODO
-- #### Configure team
-    - Go to [Account settings](https://dashboard.branch.io/account-settings/team) on the Branch Dashboard
-    - TODO
-- #### Set advanced settings
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
-    - TODO
 - #### Authenticate for Facebook App Invites
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard    
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard    
     - TODO
 - #### Social Media Display Customization 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
     - TODO
 - #### Change link domain
     - ##### Use app.link domain
         - Understand [Domain change warning](#domain-change-warning) 
-        - Make changes to [Link settings](https://dashboard.branch.io/link-settings) or contact support
+        - Make changes to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> or contact support
     - ##### Use custom sub domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
         - Understand [Custom domain issues](#custom-domain-issues)
-        - Change your link domain to your custom sub domain on [Link settings](https://dashboard.branch.io/link-settings)
+        - Change your link domain to your custom sub domain on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
         - Update your `CNAME` record on your custom sub domain
             - `CNAME` = `custom.bnc.lt`
-        - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings) 
+        - Click `Confirm` on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> 
     - ##### Use custom root domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
         - Understand [Custom domain issues](#custom-domain-issues)
-        - Change your link domain to your custom root domain on [Link settings](https://dashboard.branch.io/link-settings)
+        - Change your link domain to your custom root domain on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
         - Update your `NS` records on your custom root domain
             - These values are unique per app, below is an example
                 - `ns-1371.awsdns-43.org`
                 - `ns-1695.awsdns-19.co.uk`
                 - `ns-991.awsdns-59.net`
                 - `ns-428.awsdns-53.com`
-        - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings)
-
+        - Click `Confirm` on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
 ## Troubleshoot issues
 
 - #### Domain change warning
@@ -131,3 +121,24 @@
     - If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `Registered Domains` tab, and not the `Hosted zones` section
     - You cannot use your main website domain for hosting Branch links
     - Do not include `www` when adding your custom link domain
+
+## Dashboard and User Administration
+
+- #### Update your user account settings 
+    - Go to <a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
+    - Update your contact information, password
+    - Link your Github account to your Branch dashboard for easier sign in
+
+!!! protip "The following sections require Admin access to the Branch Dashboard"
+
+- #### Configure billing
+    - Go to [<a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
+    - Add your billing information and start using Branch's premium solutions
+
+- #### Configure team 
+    - Go to <a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
+    - Add new team members to your Branch dashboard 
+     - Update existing team members' access to Branch dashboard
+    <img src="/img/pages/dashboard/add_team.png" width="200px" />
+
+    
