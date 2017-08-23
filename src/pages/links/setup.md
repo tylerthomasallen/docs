@@ -264,7 +264,6 @@
         | contentMetadata | | Any custom key-value data e.g. `{ "custom": "data" }`
 
     - Best practices for the Branch Universal Object
-        
         - Do
             - Set the `canonicalIdentifier` to a unique, de-duped value across instances of the app
             - Ensure that the `title`, `contentDescription` and `imageUrl` properly represent the object
@@ -272,10 +271,10 @@
             - Call showShareSheet and createShortLink later in the life cycle, when the user takes an action that needs a link
             - Call the additional object events (purchase, share completed, etc) when the corresponding user action is taken
         - Do not
-            - Do not set the same `title`, `contentDescription` and `imageUrl` across all objects
-            - Do not wait to initialize the object and register views until the user goes to share
-            - Do not wait to initialize the object until you conveniently need a link
-            - Do not create many objects at once and register views in a `for` loop.
+            - Set the same `title`, `contentDescription` and `imageUrl` across all objects
+            - Wait to initialize the object and register views until the user goes to share
+            - Wait to initialize the object until you conveniently need a link
+            - Create many objects at once and register views in a `for` loop.
 
 ## Troubleshoot issues
 
