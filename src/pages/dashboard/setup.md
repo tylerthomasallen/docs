@@ -7,14 +7,15 @@
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
     - These keys are unique to your Branch app
     - Never expose your `Branch Secret` as it can be maliciously used
-    - <img src="/img/pages/dashboard/branch-keys.png" width="500px" />
+        - <img src="/img/pages/dashboard/branch-keys.png" width="500px" />
 
 - #### Configure default behavior
 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    - Set the default behavior for your deep links on [Link Settings](https://dashboard.branch.io/link-settings)
+
+    - These values are typically overridden by [Custom link behavior](pages/links/setup/#custom-link-behavior) for each deep link
 
     - ##### iOS
-
         - Use these settings to control the default behavior of your deep links on iOS
         - <img src="/img/pages/dashboard/ios.png" width="500px" />
 
@@ -34,7 +35,7 @@
         - Choose a `link domain` which will be used for all your links
         - The `link domain` is the website which hosts your deep links
         - The `link domain` is not a deep link
-            - The deep links will have an `alias` behind them to uniquely identify content
+            - Deep links will have an `alias` behind them to uniquely identify them
                 - https://example.app.link/VZsTctoINF
                 - https://example.app.link/custom-alias
         - <img src="/img/pages/dashboard/link-domain.png" width="500px" />
@@ -80,7 +81,7 @@
 - #### Configure social media display 
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Set the default image preview for your deep links when shared on social media
-    - These values are typically overridden by [Open Graph](pages/links/setup/#open-graph) which differentiate your deep links between one another
+    - These values are typically overridden by [Custom link behavior](pages/links/setup/#custom-link-behavior) which differentiate your deep links between one another
 - #### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - ##### Use app.link domain
