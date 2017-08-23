@@ -1,20 +1,14 @@
 ## Overview
 
-  - TODO
-
-  -  The Branch Web SDK provides an easy way to interact with the Branch API on your website or web app. It requires no frameworks, and is only ~13K gzipped.
-
-  - To use the Web SDK, you'll need to first initialize it with your Branch Key found in your Branch dashboard. You'll also need to register when your users login with setIdentity, and when they logout with logout.
-
-  - Once initialized, the Branch Web SDK allows you to create and share links with a banner, over SMS, or your own methods. It also offers event tracking, access to referrals, and management of credits.
+  - The `Branch Web SDK` allows you to create and share deep links with a banner, over SMS, or your own methods. It also offers event tracking, access to referrals, and management of credits. The SDK is only ~13K gzipped.
 
 ## Integrate Branch
 
 - #### Configure Branch
 
-    - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
 
-        ![image](http://i.imgur.com/zaKY7Mh.png)
+        ![image](/img/pages/dashboard/fallback.png)
 
 - #### Integrate app
 
@@ -67,7 +61,7 @@
 
     - Creates a deep link URL with encapsulated data
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -98,7 +92,7 @@
 
     -  Will generate a Branch deep link and tag it with the channel the user selects
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
         ```html
         <!-- shareable elements -->
@@ -526,7 +520,7 @@
         https://example.app.link/kJNbhZ1PrF?$fallback_url=https://example.com
         ```
 
-    - Website will open to [$fallback_url](/pages/links/data/#redirections) with `_branch_match_id`
+    - Website will open to [$fallback_url](/pages/links/setup/#redirections) with `_branch_match_id`
 
         ```
         https://example.app.link/kJNbhZ1PrF?$fallback_url=https://www.website.com/&_branch_match_id=418480444086051524

@@ -11,9 +11,10 @@ We have built a custom integration to automatically send all Branch install data
 
 ## Setup
 
-!!! note "Pre-requisite"
-    - This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app.
-    - You also need to [sign up for a Localytics account](https://www.localytics.com/free-trial-signup/) and [install the Localytics SDK](http://docs.localytics.com/).
+### Prerequisites
+
+- This guide requires you to have already integrated the Branch mobile SDK into your app.
+- You also need to [sign up for a Localytics account](https://www.localytics.com/free-trial-signup/) and [install the Localytics SDK](http://docs.localytics.com/).
 
 ### Set up Localytics
 

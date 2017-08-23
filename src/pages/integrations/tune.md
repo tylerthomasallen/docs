@@ -15,8 +15,8 @@ See your Branch organic acquisition campaigns alongside your Tune data. You can 
 
 ## Setup
 
-!!! note "Pre reqs"
-    This guide requires you to have already integrated the Branch SDK. You also need to be a Tune customer and have the Tune SDK ([iOS](http://developers.mobileapptracking.com/ios-sdk/), [Android](http://developers.mobileapptracking.com/android-sdk/)) installed in your app.
+### Prerequisites
+- This guide requires you to have already integrated the Branch SDK. You also need to be a Tune customer and have the Tune SDK ([iOS](http://developers.mobileapptracking.com/ios-sdk/), [Android](http://developers.mobileapptracking.com/android-sdk/)) installed in your app.
 
 ### Get credentials from your Tune dashboard
 
@@ -155,7 +155,7 @@ Ensure Branch is an enabled provider under your **Partners** in your TUNE dashbo
 
 #### Capture the GAID and IDFA device identifiers
 
-Ensure that you are capturing both the [Google Advertising Identifier (GAID) on Android]({{base.url}}/getting-started/sdk-integration-guide/advanced/android/#use-google-advertising-id), and the [IDFA on iOS]({{base.url}}/getting-started/sdk-integration-guide/advanced/ios/#install-the-sdk-manually) (by importing the `AdSupport.framework`).
+Ensure that you are capturing both the Google Advertising Identifier (GAID) on Android, and the IDFA on iOS.
 
 #### Add Google Play Install Referrer (Android)
 

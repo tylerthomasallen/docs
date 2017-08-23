@@ -7,6 +7,7 @@ repo_name: 'Branch documentation'
 repo_url: 'https://github.com/branchmetrics/docs'
 edit_uri: 'edit/master/src/'
 copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
+site_favicon: img/favicon-96x96.png
 
 # Files
 theme: 'material'
@@ -15,8 +16,28 @@ docs_dir: 'src'
 extra_css:
   - 'css/main.css'
 extra_javascript:
+  - 'js/router.js'
+  - 'js/events.js'
+  - 'js/modals.js'
+  - 'js/images.js'
+  - 'js/buttons.js'
+  - 'js/analytics.js'
+  - 'js/tabs.js'
+  - 'js/languages.js'
+  - 'js/utils.js'
   - 'js/main.js'
-site_favicon: img/favicon-96x96.png
+
+# Extensions
+markdown_extensions:
+  - admonition:
+  - codehilite: #(linenums=true)
+  - footnotes:
+  - toc(permalink=true):
+  - meta:
+  - pymdownx.github:
+  - attr_list:
+  - markdown_include.include:
+      base_path: src/includes/
 
 # Options
 extra:
@@ -72,21 +93,10 @@ extra:
     - 'Facebook Platform Ads'
     - 'Facebook Dynamic Ads'
   is_visible:
+    footer_warning: true
     footer_nav: false
     header_git: false
     header_breadcrumb: true
-
-# Extensions
-markdown_extensions:
-  - admonition:
-  - codehilite: #(linenums=true)
-  - footnotes:
-  - toc(permalink=true):
-  - meta:
-  - pymdownx.github:
-  - attr_list:
-  - markdown_include.include:
-      base_path: src/includes/
 
 # Pages
 pages:
@@ -134,11 +144,16 @@ pages:
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter: pages/deep-linked-ads/twitter.md
   - Deep link emails:
+    - Appboy: pages/emails/appboy.md
+    - Blueshift: pages/emails/blueshift.md
+    - Epsilon: pages/emails/epsilon.md
+    - MailGun: pages/emails/mailgun.md
+    - PostUp: pages/emails/postup.md
     - Responsys: pages/emails/responsys.md
-    - SFMC: pages/emails/sfmc.md
-    - SendGrid: pages/emails/sendgrid.md
     - Sailthru: pages/emails/sailthru.md
-    - AppBoy: pages/emails/appboy.md
+    - Salesforce: pages/emails/salesforce.md
+    - SendGrid: pages/emails/sendgrid.md
+    - Zeta: pages/emails/zeta.md
     - Self Serve: pages/emails/self-serve.md
   - Deep link organic search:
     - Firebase: pages/organic-search/firebase.md
@@ -148,7 +163,6 @@ pages:
     - iMessage Apps: pages/app-to-app/imessage-apps.md
     - Facebook App Invites: pages/app-to-app/facebook-app-invites.md
   - Export analytics:
-    - CSV Export: pages/exports/csv.md
     - Export API: pages/exports/api.md
     - Webhooks: pages/exports/webhooks.md
   - Integrate third party platforms:

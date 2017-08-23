@@ -25,9 +25,9 @@ Branch events are similar to Mixpanel events in that they can be used in your ex
 
 ## Setup
 
-!!! note "Pre-requisite"
-    - This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide).
-    - You also need to be a Mixpanel customer and have the Mixpanel SDK ([iOS](https://mixpanel.com/help/reference/ios), [Android](https://mixpanel.com/help/reference/android)) installed in your app.
+### Prerequisites
+- This guide requires you to have already integrated the Branch mobile SDKs. 
+- You also need to be a Mixpanel customer and have the Mixpanel SDK ([iOS](https://mixpanel.com/help/reference/ios), [Android](https://mixpanel.com/help/reference/android)) installed in your app.
 
 ### Retrieve Mixpanel Token
 

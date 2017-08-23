@@ -1,176 +1,144 @@
 
-## Integrate Branch
+## Basic Setup
 
-- #### Account settings
-- #### Link settings
-- #### DeepView previews
-- #### Link Domain
+- #### Find the Branch Key
 
+    - Go to <a href="https://dashboard.branch.io/account-settings/app" target="_blank">Account settings</a>  on the Branch Dashboard
+    - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
+    - These keys are unique to your Branch app
+    - Never expose your `Branch Secret` as it can be maliciously used
+     <img src="/img/pages/dashboard/branch-keys.png" width="500px" />
+
+- #### Configure default behavior
+
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
+
+    - ##### Set iOS
+
+        - Use these settings to control the default behavior of your deep links on iOS
+        <img src="/img/pages/dashboard/ios.png" width="500px" />
+
+    - ##### Set Android
+        - Use these settings to control the default behavior of your deep links on Android
+        <img src="/img/pages/dashboard/android.png" width="500px" />
+    
+    - ##### Set desktop
+        - Use these settings to control the default behavior of your deep links on Desktop browsers
+        <img src="/img/pages/dashboard/desktop.png" width="500px" />
+    
+    - ##### Set fallback
+        - Use these settings to control the default behavior of your deep links on any other platform
+        <img src="/img/pages/dashboard/fallback.png" width="500px" />
+    
+    - ##### Set link domain
+        - Choose a `link domain` which will be used for all your links
+        - The `link domain` is the website which hosts your deep links
+        - The `link domain` is not a deep link
+            - The deep links will have an `alias` behind them to uniquely identify content
+                - https://example.app.link/VZsTctoINF
+                - https://example.app.link/custom-alias
+        <img src="/img/pages/dashboard/link-domain.png" width="500px" />
+    
+    - ##### Save
+        - Make sure you commit any changes
+        <img src="/img/pages/dashboard/save.png" width="500px" />
+
+- #### Enable Deepview
+
+    - Go to <a href="https://dashboard.branch.io/web/deepviews" target="_blank"> Deepview Previews </a> on the Branch Dashboard
+    - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
+    - This will make your deep links before optimally on all <a href="/pages/links/setup/#supported-platforms" target="_blank"> Supported platforms</a>
+    - Additional details about <a href="/pages/web/deep-views/" target ="_blank" Deepviews</a>
+    <img src="/img/pages/dashboard/deepview.png" width="200px" />
+   
+- #### Set advanced link settings
+
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
+    - TODO
+
+- #### Authenticate for Facebook App Invites
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard    
+    - TODO
+- #### Social Media Display Customization 
+    - Go to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> on the Branch Dashboard
+    - TODO
+- #### Change link domain
+    - ##### Use app.link domain
+        - Understand [Domain change warning](#domain-change-warning) 
+        - Make changes to <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> or contact support
+    - ##### Use custom sub domain
+        - Understand [Domain change warning](#domain-change-warning)
+        - Understand [Custom domain warning](#custom-domain-warning)
+        - Understand [Custom domain issues](#custom-domain-issues)
+        - Change your link domain to your custom sub domain on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
+        - Update your `CNAME` record on your custom sub domain
+            - `CNAME` = `custom.bnc.lt`
+        - Click `Confirm` on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a> 
+    - ##### Use custom root domain
+        - Understand [Domain change warning](#domain-change-warning)
+        - Understand [Custom domain warning](#custom-domain-warning)
+        - Understand [Custom domain issues](#custom-domain-issues)
+        - Change your link domain to your custom root domain on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
+        - Update your `NS` records on your custom root domain
+            - These values are unique per app, below is an example
+                - `ns-1371.awsdns-43.org`
+                - `ns-1695.awsdns-19.co.uk`
+                - `ns-991.awsdns-59.net`
+                - `ns-428.awsdns-53.com`
+        - Click `Confirm` on <a href="https://dashboard.branch.io/link-settings" target="_blank"> Link Settings </a>
 ## Troubleshoot issues
 
-...
+- #### Domain change warning
+    - Used for [Change link domain](#change-link-domain)
+    - From `app.link` to `app.link`
+        - Your old `app.link` deep links will fail
+        - Your old `app.link` deep links will navigate to a File Not Found website and not open your app.
+        - Your new `app.link` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
+        - If your old `app.link` are active, it is recommend to switch to a `custom link domain instead`
+    - From `app.link` to `custom link domain`
+        - Your old `app.link` deep links will navigate to your `$fallback_url` instead of opening the app
+        - Your old `app.link` deep links will still pass data once the user opens the app
+        - Your old `app.link` deep links will need to be remade to your new `custom link domain`
+        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
+    - From `custom link domain` to `custom link domain`
+        - Your old `custom link domain` deep links will fail
+        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
+    - From legacy `bnc.lt` to `custom link domain`
+        - Both your `bnc.lt` and `custom link domain` deep links will work
+        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
 
+- #### Custom domain warning
+    - Used for [Change link domain](#change-link-domain)
+    - The `NS` or `CNAME` records of your `custom link domain` will need to point to Branch if you want to use your own domain for your deep links.
+    - Whenever you change your `NS` or `CNAME` records of a domain, you are making Branch the authoritative registrar for your domain. This will grant Branch control of your domain and you will lose all access to that `custom root domain` or `custom sub domain`. The web page will become blank, and the control of the domain will change to Branch.
+    - Branch will use your domain to route all deep linked traffic. Branch will also host your AASA file and SSL certificates.
+    - If you have content on your `custom root domain` (e.g. https://example.com/), Branch recommends using an unused `custom sub domain` instead (e.g. https://link.example.com/).
 
-### Default app.link subdomain
+- #### Custom domain issues 
+    - Used for [Change link domain](#change-link-domain)
+    - You can test your domain record changes with `dig ns <domain>` or `dig cname <domain>`
+    - We recommend that you choose one domain or subdomain to use with Branch and stick with it, as switching can cause significant problems with your existing links
+    - If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `Registered Domains` tab, and not the `Hosted zones` section
+    - You cannot use your main website domain for hosting Branch links
+    - Do not include `www` when adding your custom link domain
 
-Every app on the Branch platform is assigned a subdomain of the form `xxxx.app.link`. This is unique to your app and must be used in several places when integrating the SDK.
+## Dashboard and User Administration
 
-!!! tip
-    Because of the way that Apple implements Universal Links, every app also has a shadow subdomain of the form `xxxx-alternate.app.link`. This is used in select places but will not be shown to your users.
+- #### Update your user account settings 
+    - Go to <a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
+    - Update your contact information, password
+    - Link your Github account to your Branch dashboard for easier sign in
 
-#### Retrieving the subdomain assigned to your app
+!!! protip "The following sections require Admin access to the Branch Dashboard"
 
-1. Go to the [Link Settings](https://dashboard.branch.io/#/settings/link) page on the dashboard.
-1. Scroll down to the **Link Domain** area.
-1. Copy the value listed there.
+- #### Configure billing
+    - Go to [<a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
+    - Add your billing information and start using Branch's premium solutions
 
-![image](/img/pages/links/subdomain-setting.png)
+- #### Configure team 
+    - Go to <a href="https://dashboard.branch.io/account-settings/user" target="_blank">Account settings</a> on the Branch Dashboard
+    - Add new team members to your Branch dashboard 
+     - Update existing team members' access to Branch dashboard
+    <img src="/img/pages/dashboard/add_team.png" width="200px" />
 
-!!! warning "Test environment domain"
-    The assigned subdomain for your test environment is of the form `xxxx.test-app-link` and must be configured separately. Branch automatically handles HTTPS traffic for custom subdomains and root domains. Branch will acquire the necessary SSL certificate if you follow the simple setup instructions below. Branch will also automatically renew the certificates when needed.
-
-## Changing your app.link subdomain
-
-You can brand your links with a custom subdomain like `you.app.link`. 
-
-!!! warning "One change only"
-    You can only change your app.link subdomain once. Keep in mind that if you change this and you have implemented [universal links](/pages/apps/ios/#configure-associated-domains) or [app links](/pages/apps/android/#configure-app), you must update your implementation. The links on your old subdomain will no longer work.
-
-1. Go to [Link Settings](https://dashboard.branch.io/settings/link){:target="_blank"} in the dashboard.
-1. Scroll to the **Link Domain** setting at the bottom.
-1. Click `Change my app.link subdomain`.
-1. Choose a subdomain that matches your brand. You cannot choose one that is in use by someone else, and it cannot have special characters. ![image](/img/pages/links/get-subdomain.png)
-1. Press `Get`.
-
-## Setting a custom link domain
-
-If you want to use a custom domain or subdomain for your Branch links instead of the `XXXX.app.link` domain, setting one up is simple.
-
-!!! warning "Avoid switching later"
-    We recommend that you choose one domain or subdomain to use with Branch and stick with it, as switching can cause significant problems with your existing links.
-
-!!! tip "Updates to Universal & App Links configuration"
-    If you enable (or change) your link domain/subdomain, you will need to make updates to your Universal Links (iOS) and App Links (Android) configuration. Review the [iOS](/pages/apps/ios/) and [Android](/pages/apps/android/) integration guides.
-
-### Custom SUBDOMAIN (go.branch.com)
-
-!!! warning "Do not use www"
-    Some browsers have special rules for processing URLs beginning with `www`. We strongly recommend you do not include a `www` prefix in your custom subdomain.
-
-1. Create a CNAME for your subdomain and point it to `custom.bnc.lt`
-1. Go to [Link Settings](https://dashboard.branch.io/#/settings/link){:target="_blank"} on the Branch dashboard, and find the **Link Domain** section.
-1. Click `Use my own domain`.
-1. You should see a message telling you the status of your domain under the domain field. If you don't, please type your domain in again. ![image](/img/pages/links/sub-custom-domain.png)
-1. Click `Confirm`.
-
-### Custom ROOT domain (branch.com)
-
-!!! warning "Use this domain for Branch links only"
-    Once you enable this root domain for Branch links, you will not be able to use it for hosting anything else. We recommend using a subdomain, or purchasing a new root domain for this purpose. **You cannot use your main website domain for hosting Branch links**.
-
-1. Go to [Link Settings](https://dashboard.branch.io/#/settings/link){:target="_blank"} on the Branch dashboard, and find the **Link Domain** section.
-1. Click `Use my own domain`. ![image](/img/pages/links/subdomain-setting.png)
-1. Enter your custom domain into the text box. Resolve any errors. ![image](/img/pages/links/domain-error.png)
-1. Work with your domain registrar to make the Branch-provided nameservers listed under the domain field authoritative for your domain. **Note that this means you cannot host anything else on this domain — only Branch links.** ![image](/img/pages/links/custom-domain-nameservers.png)
-1. Click `Confirm`.
-
-!!! tip "Heads Up!"
-    1. The nameservers in the above image are for example purposes only. The nameservers you use will be unique to your application.
-    2. If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `"Registered Domains"` tab, and not the `"Hosted zones"` section.
-
-## About the legacy bnc.lt domain
-
-The bnc.lt domain is no longer available for new apps. If you have existing links with this domain as the base, they will continue to function.
-
-
-## Overview
-
-If your users are creating content in your app, they will probably want to share that content with their friends. You can encourage this by making it easy to generate sharing links that open your app *and* route back exactly to the piece of content that was originally shared. This will even work when the user who opens the link doesn't have your app installed yet. Since content is vital to your growth strategy, Branch's product--Content Sharing--facilitates sending and tracking your in-app content out of the box.
-
-The Branch Content Sharing product features a baked-in share sheet native to the operating system that allows for some customizations, as well. Follow our guide to set your content growth channel.
-
-## Setup
-
-### Generate Links
-
-To enable content sharing, you will need to use the proper SDK methods for link generation. These links will contain data about the content being shared. These links will generate analytics data and allow your app to route straight back to the content when clicked.
-
-Links are created through Branch Universal Objects. These objects combine links with data (your content data, as well as anaytics information), and let you show a share sheet on each link.
-
-```objective-c
-// Adding content data to a link.
-BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"monster/12345"];
-branchUniversalObject.title = @"Meet Mr. Squiggles";
-branchUniversalObject.contentDescription = @"Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!";
-branchUniversalObject.imageUrl = @"https://example.com/monster-pic-12345.png";
-[branchUniversalObject addMetadataKey:@"userId" value:@"12345"];
-[branchUniversalObject addMetadataKey:@"userName" value:@"Josh"];
-[branchUniversalObject addMetadataKey:@"monsterName" value:@"Mr. Squiggles"];
-```
-
-```objective-c
-// Adding analytics data to a link.
-BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-linkProperties.feature = @"share";
-linkProperties.channel = @"facebook";
-```
-
-```objective-c
-// Finally showing it.
-[branchUniversalObject showShareSheetWithLinkProperties:linkProperties
-                                           andShareText:@"Super amazing thing I want to share!"
-                                     fromViewController:self
-                                            completion:^(NSString* activityType, BOOL completed) {
-    NSLog(@"finished presenting");
-}];
-```
-
-!!! note "Properly identify your content"
-    The `canonicalIdentifier` parameter greatly improves the content analytics data Branch captures. It should be unique to that piece of content and helps Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities.
-
-
-### Track Analytics
-
-The [Content Analytics](https://dashboard.branch.io/content) lets you view content-level data. This view will help answer questions like the most popular or shareable content. You can also use the [Live View page](https://dashboard.branch.io/liveview/content) to see content-links in real time.
-
-!!! success "Track your influencers, too!"
-    The [Influencers page](https://dashboard.branch.io/referrals/analytics) on the dashboard will automatically track which of your users drive the most conversions.
-
-## Advanced
-
-### Enable Custom Onboarding
-
-When you generate links that point to content, you can also add data to provide personalized onboarding for users who click the link. By using Content Sharing, you can add metadata about the user who is doing the actual sharing, and surface their information when someone else clicks their link. Branch does not create the UI, but will pass information along, letting you construct a UI that personalizes a user's onboarding.
-
-![image](/img/marketing-channels/content-sharing/custom-onboarding.png)
-
-### Create Links Without Share Sheet
-
-If you've built your own share sheet and you want to just create a Branch link for an individual share message or have another use case, you can create deep links directly with the following call:
-
-```objective-c
-[branchUniversalObject getShortUrlWithLinkProperties:linkProperties andCallback:^(NSString* url, NSError* error) {
-    if (!error) {
-        NSLog(@"got my Branch invite link to share: %@", url);
-    }
-}];
-```
-
-### Specifying an Email Subject with Share Sheet
-
-The majority of share options only include one string of text, except email, which has a subject and a body. The share text will fill in the body and you can specify the email subject in the link properties as shown below.
-
-```objective-c
-BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-linkProperties.feature = @"share";
-linkProperties.channel = @"facebook";
-[linkProperties addControlParam:@"$email_subject" withValue:@"Therapists hate him"];
-```
-
-## FAQ
-
-### How can I see a preview or debug this link?
-
-If you want to preview the link to see what it'll look like on social media websites, use the [OG Tag tester](https://developers.facebook.com/tools/debug/og/object).
-
-If you want to see the data associated with your link, simply add a `?debug=1` to the end of the Branch link. For example, if your link was branch.app.link/abcde, you would enter `branch.app.link/abcde?debug=1` in your browser to see data.
+    

@@ -13,7 +13,9 @@ We have built a custom integration to automatically send all Branch install data
 
 ## Setup
 
-- This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app.
+### Prerequisites
+
+- This guide requires you to have already integrated the Branch mobile SDKs into your app.
 - You also need to [sign up for an Appboy account](https://dashboard.appboy.com/developers/sign_up) and [install the Appboy SDK](https://documentation.appboy.com/).
 - Ensure Appboy's SDK is [collecting the IDFA](https://documentation.appboy.com/iOS/#optional-idfa-collection).
 

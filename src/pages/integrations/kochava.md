@@ -6,9 +6,9 @@ Kochava offers unique, holistic and unbiased app measurement. From attribution a
 
 ## Setup
 
-!!! note "Pre-requisite"
-    This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app.
-    You also need to be a Kochava customer and have the [Kochava SDK installed](http://support.kochava.com/sdk-integration) in your app.
+### Prerequisites
+- This guide requires you to have already integrated the Branch mobile SDKs into your app.
+- You also need to be a Kochava customer and have the [Kochava SDK installed](http://support.kochava.com/sdk-integration) in your app.
 
 ### Create Campaign IDs in Kochava
 
@@ -71,7 +71,7 @@ https://mylinks.app.link/8AHjQx0fyv?
 	network=Bing
 ```
 
-## support
+## Support
 
 ### General debugging tips
 

@@ -212,7 +212,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](#/pages/links/data/#universal-object)
+    - Uses the [Universal Object Properties](#/pages/links/setup/#universal-object)
 
         ```js
         // only canonicalIdentifier is required
@@ -248,7 +248,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -290,7 +290,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
         ```js
         // optional fields

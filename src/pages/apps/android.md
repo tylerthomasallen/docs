@@ -2,10 +2,11 @@
 
 - #### Configure Branch
 
-    - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
 
-        ![image](http://i.imgur.com/r057ie0.png)
-        ![image](http://i.imgur.com/SdcICpL.png)
+    - Make sure `Always try to open app` and `I have an Android App` are both enabled
+
+        ![image](/img/pages/dashboard/android.png)
 
 - #### Install Branch
 
@@ -18,7 +19,7 @@
             compileSdkVersion 25
             buildToolsVersion "25.0.2"
             defaultConfig {
-                applicationId "com.eneff.branchandroid"
+                applicationId "com.eneff.branch.example.android"
                 minSdkVersion 15
                 targetSdkVersion 25
                 versionCode 1
@@ -60,13 +61,13 @@
         ```xml hl_lines="9 17 26 27 28 29 30 31 32 34 35 36 37 38 39 40 44 45 46 47 49 50 51 52 53 54"
         <?xml version="1.0" encoding="utf-8"?>
         <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-            package="com.eneff.branchandroid">
+            package="com.eneff.branch.example.android">
 
             <uses-permission android:name="android.permission.INTERNET" />
 
             <application
                 android:allowBackup="true"
-                android:name="com.eneff.branchandroid.CustomApplicationClass"
+                android:name="com.eneff.branch.example.android.CustomApplicationClass"
                 android:icon="@mipmap/ic_launcher"
                 android:label="@string/app_name"
                 android:supportsRtl="true"
@@ -85,7 +86,7 @@
 
                     <!-- Branch URI Scheme -->
                     <intent-filter>
-                        <data android:scheme="branchandroid" />
+                        <data android:scheme="androidexample" />
                         <action android:name="android.intent.action.VIEW" />
                         <category android:name="android.intent.category.DEFAULT" />
                         <category android:name="android.intent.category.BROWSABLE" />
@@ -96,14 +97,14 @@
                         <action android:name="android.intent.action.VIEW" />
                         <category android:name="android.intent.category.DEFAULT" />
                         <category android:name="android.intent.category.BROWSABLE" />
-                        <data android:scheme="https" android:host="uobg.app.link" />
-                        <data android:scheme="https" android:host="uobg-alternate.app.link" />
+                        <data android:scheme="https" android:host="example.app.link" />
+                        <data android:scheme="https" android:host="example-alternate.app.link" />
                     </intent-filter>
                 </activity>
 
                 <!-- Branch init -->
-                <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa" />
-                <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_edwDakKcMeWzJ3hC3aZs9kniyuaWGCTa" />
+                <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw" />
+                <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr" />
                 <meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
 
                 <!-- Branch install referrer tracking (optional) -->
@@ -119,10 +120,10 @@
         ```
 
     - Replace the following with values from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
-        - `branchandroid`
-        - `uobg.app.link`
-        - `key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa`
-        - `key_test_edwDakKcMeWzJ3hC3aZs9kniyuaWGCTa`
+        - `androidexample`
+        - `example.app.link`
+        - `key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw`
+        - `key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr`
 
 - #### Initialize Branch
 
@@ -131,7 +132,7 @@
     - *Java*
 
         ```java hl_lines="3 9 14 16 17 31 32 33 34 35 36 37 38 39 40 41 44 45 46 47"
-        package com.eneff.branchandroid;
+        package com.eneff.branch.example.android;
 
         import android.content.Intent;
         import android.os.Bundle;
@@ -184,7 +185,7 @@
     - *Kotlin*
 
         ```java hl_lines="3 9 14 16 17 29 30 31 32 33 34 35 36 37 38 41 42 43"
-        package com.eneff.branchandroid
+        package com.eneff.branch.example.android
 
         import android.content.Intent
         import android.os.Bundle
@@ -237,7 +238,7 @@
     - *Java*
 
         ```java hl_lines="4 11 12 14 15"
-        package com.eneff.branchandroid;
+        package com.eneff.branch.example.android;
 
         import android.app.Application;
         import io.branch.referral.Branch;
@@ -259,7 +260,7 @@
     - *Kotlin*
 
         ```java hl_lines="4 10 11 13 14"
-        package com.eneff.branchandroid
+        package com.eneff.branch.example.android
 
         import android.app.Application
         import io.branch.referral.Branch
@@ -295,7 +296,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](#/pages/links/data/#universal-object)
+    - Uses the [Universal Object Properties](#/pages/links/setup/#universal-object)
 
     - *Java*
 
@@ -306,6 +307,7 @@
             .setContentDescription("My Content Description")
             .setContentImageUrl("https://lorempixel.com/400/400")
             .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+            .setLocalIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .addContentMetadata("custom_data", "123");
         ```
 
@@ -318,6 +320,7 @@
             .setContentDescription("My Content Description")
             .setContentImageUrl("https://lorempixel.com/400/400")
             .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+            .setLocalIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .addContentMetadata("custom_data", "123")
         ```      
 
@@ -327,7 +330,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -380,7 +383,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/data/)
+    - Uses [Deep Link Properties](/pages/links/setup/)
 
     - *Java*
 
@@ -570,6 +573,8 @@
 
     - List content on `Google Search` with `App Indexing`
 
+    - Enable App Indexing on the [Branch Dashboard](#https://dashboard.branch.io/search)
+    
     - Needs a [Branch Universal Object](#create-content-reference)
 
     - Needs `build.gradle` library
@@ -881,6 +886,48 @@
             }
             ```
 
+- #### Handle push notification
+
+    - Deep link to content from GCM push notifications just by adding a Branch link to your result intent
+
+    - *Java*
+
+        ```java
+        Intent resultIntent = new Intent(this, TargetClass.class);
+        intent.putExtra("branch","http://xxxx.app.link/testlink");
+        PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        intent.putExtra("branch_force_new_session",true);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        val resultIntent = Intent(this, TargetClass::class.java)
+        intent.putExtra("branch", "http://xxxx.app.link/testlink")
+        val resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        intent.putExtra("branch_force_new_session", true)
+        ```
+
+- #### Enable 100% matching
+
+    - Uses `Chrome Tabs` to increase attribute matching success
+
+    - Add `compile 'com.android.support:customtabs:23.3.0'` to your `build.gradle`
+
+    - Add to your application class before `getAutoInstance` ([Load Branch](#load-branch))
+
+    - *Java*
+
+        ```java
+        Branch.enableCookieBasedMatching("your.linkdomain.com");
+        ```
+
+    - *Kotlin*
+
+        ```java
+        Branch.enableCookieBasedMatching("your.linkdomain.com")
+        ```
+
 ## Troubleshoot issues
 
 - #### Sample testing apps
@@ -908,21 +955,6 @@
     - Reinstall your app
 
     - Read deep link data from `Branch.initSession()` for `+is_first_session=true`
-
-- #### Universal Object best practices
-    
-    - To make sure your analytics are correct, and your content is ranking on Spotlight effectively.
-        - Do
-            - Set the `canonicalIdentifier` to a unique, de-duped value across instances of the app
-            - Ensure that the `title`, `contentDescription` and `imageUrl` properly represent the object
-            - Initialize the Branch Universal Object and call userCompletedAction with the `BranchEvent.VIEW` on page load
-            - Call showShareSheet and createShortLink later in the life cycle, when the user takes an action that needs a link
-            - Call the additional object events (purchase, share completed, etc) when the corresponding user action is taken
-        - Do not
-            - Do not set the same `title`, `contentDescription` and `imageUrl` across all objects
-            - Do not wait to initialize the object and register views until the user goes to share
-            - Do not wait to initialize the object until you conveniently need a link
-            - Do not create many objects at once and register views in a `for` loop.
 
 - #### Track content properties
 
@@ -986,14 +1018,16 @@
         }   
         ```    
 
-- #### Deep link routes
+- #### Deep link routing
 
-    - Loads a specific URI path from `$deeplink_path` or `$android_deeplink_path`
+    - Loads a specific URI Scheme path, for example
+        - `$deeplink_path="content/123"`
+        - `$android_deeplink_path="content/123"`
 
-    - Not recommend (better to route within your `Branch.initSession()`)
+    - Recommend to use [Navigate to content](#navigate-to-content) instead
 
         ```xml
-        <meta-data android:name="io.branch.sdk.auto_link_path" android:value="custom/path/*,another/path/" />
+        <meta-data android:name="io.branch.sdk.auto_link_path" android:value="content/123/, another/path/, another/path/*" />
         ```
 
 - #### Deep link activity finishes
@@ -1035,29 +1069,6 @@
                 startActivity(i)
             }
         }
-        ```
-
-- #### Deep link from push notification
-
-    - Deep link to content from push notifications just by adding a Branch link to your result intent
-
-
-    - *Java*
-
-        ```java
-        Intent resultIntent = new Intent(this, TargetClass.class);
-        intent.putExtra("branch","http://xxxx.app.link/testlink");
-        PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        intent.putExtra("branch_force_new_session",true);
-        ```
-
-    - *Kotlin*
-
-        ```java
-        val resultIntent = Intent(this, TargetClass::class.java)
-        intent.putExtra("branch", "http://xxxx.app.link/testlink")
-        val resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-        intent.putExtra("branch_force_new_session", true)
         ```
 
 - #### Pre Android 15 support
@@ -1120,7 +1131,6 @@
 
     - Create an instance of `io.branch.referral.InstallListener` in `onReceive()`
 
-
     - *Java*
 
         ```java
@@ -1135,19 +1145,29 @@
         listener.onReceive(context, intent)
         ```
 
-- #### Guaranteed matching
+- #### Generate signing certificate 
 
-    - Cookie based matching using `Custom Chrome Tabs`
+    - Used for Android `App Link` deep linking
 
-        ```
-        compile 'com.android.support:customtabs:23.3.0'
-        ```
+    - Navigate to your keystore file
 
-- #### Matching through install listener
+    - Run `keytool -list -v -keystore my-release-key.keystore`
 
-    - Enable to pass `link_click_id` from Google Play to Branch through your Install Listener. As broadcasts can arrive at different times, you can set the amount of time Branch should wait for the install listener broadcast before posting
+    - Will generate a value like `AA:C9:D9:A5:E9:76:3E:51:1B:FB:35:00:06:9B:56:AC:FB:A6:28:CE:F3:D6:65:38:18:E3:9C:63:94:FB:D2:C1`
 
-    - Add to your application class before `getAutoInstance`
+    - Copy this value to your [Branch Dashboard](https://dashboard.branch.io/link-settings)
+
+- #### Matching through the install listener
+
+    - Enable the ability to pass `link_click_id` from Google Play to Branch 
+
+    - This will increase attribution and deferred deep linking accuracy
+
+    - Branch default is `1.5` seconds to wait for Google Play analytics
+
+    - You can optimize the performance based on needs (e.g. `0`, `5`, `10`)
+
+    - Add to your application class before `getAutoInstance` ([Load Branch](#load-branch))
 
     - *Java*
 
@@ -1164,7 +1184,7 @@
     - Test
 
         ```sh
-        adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n io.branch.branchandroiddemo/io.branch.referral.InstallListener --es "referrer" "link_click_id=123"
+        adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n io.branch.androidexampledemo/io.branch.referral.InstallListener --es "referrer" "link_click_id=123"
         ```
 
 - #### Enable multidexing

@@ -22,8 +22,8 @@ To view referred **installs** and **opens**, as well as any custom events you tr
 
 ## Setup
 
-!!! note "Prerequisite"
-    This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) and the Google Analytics SDK into your app.
+### Prerequisites
+- This guide requires you to have already integrated the Branch mobile SDKsand the Google Analytics SDK into your app.
 
 ### Enter your Google Analytics Tracking ID
 

@@ -2,21 +2,18 @@
 /* BRANCH HEADER TITLE */
 /* ////////////////////////////// */
 .branch-header-subtitle {
-  display: none;
   font-size: 2em;
   margin-top: 1em;
   padding-right: 1.5em;
   color: hsla(0,0%,100%,.7);
 }
-@media (min-width: 960px) {
-  .branch-header-subtitle  {
-    display: block;
-  }
-}
 @media only screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title--site .md-nav__button {
     width: 6em !important;
     font-size: 1.5em !important;
+  }
+  .branch-header-subtitle {
+    display: none;
   }
 }
 
@@ -88,6 +85,9 @@
 /* ////////////////////////////// */
 /* MARKDOWN */
 /* ////////////////////////////// */
+.md-typeset img {
+  box-shadow: 0px 0px 1px #ccc;
+}
 .md-typeset h2 {
   font-weight: 700;
   border-bottom: 1px solid #eaecef;
@@ -104,14 +104,14 @@
   font-size: 1.6rem;
   line-height: 1.6;
 }
-.md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
+.md-typeset li > h3:before, .md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
   content: close-quote !important;
 }
 .codehilite .nx, .codehilite .n, .codehilite .na, .codehilite .nn {
   color: #24292e;
 }
 .codehilite .hll {
-  background-color: rgba(0,0,0,.07);
+  background-color: rgba(0,0,0,.05);
   display: inline;
   padding: 0 0 0 1.2rem;
 }
@@ -229,9 +229,18 @@ body.modal {
   width: 100%;
   margin-top: 1em;
 }
-.modal.active.dialog.code .flex a {
+.modal.active.dialog.code .flex button {
   flex: 1;
+  font-size: 1.5em;
+  color: white;
+  padding: 1em;
   margin: 0.25em 0.5em;
+}
+.modal.active.dialog.code button:hover {
+  opacity: 0.7;
+}
+.modal.active.dialog.code button.disabled:hover {
+  opacity: 1.0;
 }
 
 
@@ -279,19 +288,15 @@ a.algolia-docsearch-footer--logo {
 .third {
   width: 33%;
 }
-
 .half {
   width: 50%;
 }
-
 .three-quarters {
   width: 75%;
 }
-
 .full-width {
   width: 100%;
 }
-
 .center {
   display:block;
   margin: auto;
@@ -305,13 +310,11 @@ a.algolia-docsearch-footer--logo {
 .md-nav__source, .md-source__facts, .md-source__icon {
   display: none;
 }
-
 .md-source__repository {
   font-weight: 400;
   font-size: 1.8rem;
   overflow: visible;
 }
-
 .md-nav__link[data-md-state=blur] {
   color: rgba(0,0,0,.25);
 }
@@ -322,7 +325,7 @@ a.algolia-docsearch-footer--logo {
 /* BRANCH STYLING */
 /* ////////////////////////////// */
 /* primary */
-.md-header, .modal-content > a {
+.md-header, .modal-content > a, .modal.active.dialog.code button {
   background-color: #004875 !important;
 }
 @media only screen and (max-width: 76.1875em) {
@@ -368,4 +371,27 @@ a.algolia-docsearch-footer--logo {
 .md-footer-social {
   margin: 0;
   padding: 0;
+}
+/* disabled */
+.modal.active.dialog.code button.disabled {
+  background-color: rgba(0,0,0,0.25) !important;
+}
+/* warning */
+.branch-warning {
+  background-color: #f42534;
+  color: white;
+  font-size: 1.25em;
+  padding: 0.75em;
+  font-weight: 600;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 1em;
+  box-shadow: 0 0 0.25em rgba(0,0,0,0.5);
+}
+.md-nav__item {
+  padding-left: 1.6rem;
+}
+.md-nav--secondary > .md-nav__list > .md-nav__item, .md-nav--primary > .md-nav__list > .md-nav__item {
+  padding-left: 1.2rem;
 }

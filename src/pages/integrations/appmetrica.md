@@ -17,7 +17,7 @@ See your Branch organic acquisition campaigns alongside your AppMetrica data.
 
 ### Prerequisites
 
-- This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide).
+- This guide requires you to have already integrated the Branch mobile SDKs.
 - You also need to be an AppMetrica customer and have the [AppMetrica SDK](https://tech.yandex.com/metrica-mobile-sdk/doc/mobile-sdk-dg/concepts/mobilesdk-about-docpage/) installed in your app.
 
 ### Get credentials from your AppMetrica dashboard

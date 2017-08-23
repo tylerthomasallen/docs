@@ -2,10 +2,11 @@
 
 - #### Configure Branch
 
-    - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
 
-        ![image](http://i.imgur.com/aFb69BS.png)
-        ![image](http://i.imgur.com/Edpfn04.png)
+    - Make sure `I have an iOS app` is enabled
+
+        ![image](/img/pages/dashboard/ios.png)
 
 - #### Configure bundle identifier
 
@@ -16,6 +17,7 @@
 - #### Configure associated domains
 
     - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+    - Additional [Associated domain details](#associated-domain-details)
 
         ![image](http://i.imgur.com/67t6hSY.png)
 
@@ -50,6 +52,10 @@
 
           pod 'Branch'
         end
+        ```
+
+        ```sh
+        pod install && pod update
         ```
 
     - Option 2: [Carthage](https://github.com/Carthage/Carthage)
@@ -118,7 +124,7 @@
 
         - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
           // for debug and development only
-          [[Branch getInstance] setDebug]; 
+          [[Branch getInstance] setDebug];
           // listener for Branch Deep Link data
           [[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
             // do stuff with deep link data (nav to page, display content, etc)
@@ -149,37 +155,36 @@
 
 - #### Test deep link
 
-    - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
-
+    - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
     - Delete your app from the device
-
-    - Compile your app *(`cordova run ios` `phonegap run ios` `ionic run ios`)*
-
+    - Compile and test on a device
     - Paste deep link in `Apple Notes`
-
     - Long press on the deep link *(not 3D Touch)*
-
     - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
 
 ## Implement features
 
 - #### Create content reference
 
-    - The `Branch Universal Object` encapsulates the thing you want to share 
+    - The `Branch Universal Object` encapsulates the thing you want to share
 
-    - Uses [Universal Object properties](/pages/links/data/#universal-object)
+    - Uses [Universal Object properties](/pages/links/setup/#universal-object)
 
     - *Swift 3*
 
         ```swift
-        // only canonical identifier is required
-        let buo = BranchUniversalObject(canonicalIdentifier: "item/12345")
-        buo.title = UUID.init().uuidString
-        buo.contentDescription = "My Content Description"
-        buo.imageUrl = "http://lorempixel.com/200/200/"
-        buo.canonicalUrl = "http://s3z3.app.link/rawr_rawr"
+        // only canonicalIdentifier is required
+        let buo = BranchUniversalObject(canonicalIdentifier: "content/123")
+        buo.canonicalUrl = "https://example.com/content/123"
+        buo.title = "Content 123 Title"
+        buo.contentDescription = "Content 123 Description \(Date())"
+        buo.imageUrl = "http://lorempixel.com/400/400/"
+        buo.price = 12.12
+        buo.currency = "USD"
         buo.contentIndexMode = .public
-        buo.addMetadataKey("property1", value: "blue")
+        buo.automaticallyListOnSpotlight = true
+        buo.addMetadataKey("custom", value: "123")
+        buo.addMetadataKey("anything", value: "everything")
         ```
 
     - *Objective-C*
@@ -194,28 +199,34 @@
         [buo addMetadataKey:@"property2" value:@"red"];
         ```
 
-- #### Create deep link
+- #### Create link reference
 
-    - Generates a deep link within your app
+    - Generates the analytical properties for the deep link
 
-    - Needs a [Branch Universal Object](#create-content-reference)
+    - Used for [Create deep link](#create-deep-link) and [Share deep link](#share-deep-link)
 
-    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
+    - Uses [Configure link data](/pages/links/setup/#configure-deep-links) and custom data
 
     - *Swift 3*
 
         ```swift
         let lp: BranchLinkProperties = BranchLinkProperties()
-        lp.feature = "sharing"
         lp.channel = "facebook"
-        lp.campaign = "meow meow"
-        lp.addControlParam("$desktop_url", withValue: "http://example.com/home")
-        lp.addControlParam("random", withValue: UUID.init().uuidString)
+        lp.feature = "sharing"
+        lp.campaign = "content 123 launch"
+        lp.stage = "new user"
+        lp.tags = ["one", "two", "three"]
 
-        buo.getShortUrl(with: lp) { url, error in
-          guard let url = url else { return }
-          print(url)
-        }
+        lp.addControlParam("$desktop_url", withValue: "http://example.com/desktop")
+        lp.addControlParam("$ios_url", withValue: "http://example.com/ios")
+        lp.addControlParam("$ipad_url", withValue: "http://example.com/ios")
+        lp.addControlParam("$android_url", withValue: "http://example.com/android")
+        lp.addControlParam("$match_duration", withValue: "2000")
+
+        lp.addControlParam("custom_data", withValue: "yes")
+        lp.addControlParam("look_at", withValue: "this")
+        lp.addControlParam("nav_to", withValue: "over here")
+        lp.addControlParam("random", withValue: UUID.init().uuidString)
         ```
 
     - *Objective-C*
@@ -226,7 +237,29 @@
         lp.channel = @"facebook";
         [lp addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
         [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
+        ```
 
+- #### Create deep link
+
+    - Generates a deep link within your app
+
+    - Needs a [Create content reference](#create-content-reference)
+
+    - Needs a [Create link reference](#create-link-reference)
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
+
+    - *Swift 3*
+
+        ```swift
+        buo.getShortUrl(with: lp) { (url, error) in
+          print(url ?? "")
+        }
+        ```
+
+    - *Objective-C*
+
+        ```objc
         [buo getShortUrlWithLinkProperties:lp andCallback:^(NSString* url, NSError* error) {
             if (!error) {
                 NSLog(@"@", url);
@@ -234,40 +267,29 @@
         }];
         ```
 
+
 - #### Share deep link
 
-    - Share a deep link between users and apps
+    -  Will generate a Branch deep link and tag it with the channel the user selects
 
-    - Needs a [Branch Universal Object](#create-content-reference)
+    - Needs a [Create content reference](#create-content-reference)
 
-    - *Swift 3*
+    - Needs a [Create link reference](#create-link-reference)
+
+    - Uses [Deep Link Properties](/pages/links/setup/)
+
+     - *Swift 3*
 
         ```swift
-        // optional values
-        let lp: BranchLinkProperties = BranchLinkProperties()
-        lp.feature = "sharing"
-        lp.channel = "facebook"
-        lp.campaign = "meow meow"
-        lp.addControlParam("$desktop_url", withValue: "http://example.com/home")
-        lp.addControlParam("random", withValue: UUID.init().uuidString)
-
-        // share link
-        buo.showShareSheet(with: lp, andShareText: text , from: controller) { (activity, success) in
-          print(activity ?? "none", success)
+        let message = "Check out this link"
+        buo.showShareSheet(with: lp, andShareText: message, from: self) { (activityType, completed) in
+          print(activityType ?? "")
         }
         ```
 
-    - *Objective-C*
+    - *Objective C*
 
         ```objc
-        // optional values
-        BranchLinkProperties *lp = [[BranchLinkProperties alloc] init];
-        lp.feature = @"sharing";
-        lp.channel = @"facebook";
-        [lp addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
-        [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
-
-        // share link
         [buo showShareSheetWithLinkProperties:lp andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString* activityType, BOOL completed) {
             NSLog(@"finished presenting");
         }];
@@ -282,7 +304,7 @@
     - *Swift 3*
 
         ```swift
-        // listener (within AppDelegate)
+        // listener (within AppDelegate didFinishLaunchingWithOptions)
         Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
           print(params as? [String: AnyObject] ?? {})
         }
@@ -294,39 +316,34 @@
         let installParams = Branch.getInstance().getFirstReferringParams()
         ```
 
-    - *Objective-C*
+    - *Objective C*
 
         ```objc
-        // listener (within AppDelegate.m)
-        [[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
-            NSLog(@"%@", params);  
-        }];
-
-        // latest
-        NSDictionary *sessionParams = [[Branch getInstance] getLatestReferringParams];
-
-        // first
-        NSDictionary *installParams = [[Branch getInstance] getFirstReferringParams];
         ```
 
 - #### Navigate to content
 
-    - Navigate to any ViewController based on data from a deep link
+    - Handled within `Branch.initSession()`
 
     - *Swift 3*
 
         ```swift
         // within AppDelegate application.didFinishLaunchingWithOptions
         Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
-          // read deep link data
+          // Option 1: read deep link data
           guard let data = params as? [String: AnyObject] else { return }
 
-          // save deep link data to global model 
+          // Option 2: save deep link data to global model
           BranchData.sharedInstance.data = data
 
-          // navigate to view controller based on deep link data["type"] ("type" can be any custom key-value pair)
-          guard let nav = data["type"] as? String else { return }
-          switch nav {
+          // Option 3: display data
+          let alert = UIAlertController(title: "Deep link data", message: "\(data)", preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+          self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+
+          // Option 3: navigate to view controller
+          guard let options = data["nav_to"] as? String else { return }
+          switch options {
               case "landing_page": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
               case "tutorial": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
               case "content": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
@@ -335,17 +352,16 @@
         }
         ```
 
-    - *Objective-C*
+    - *Objective C*
 
         ```objc
-        TODO
         ```
 
 - #### Display content
 
-    - Lists content on iOS Spotlight for local and cloud indexing
+    - List content on `iOS Spotlight`
 
-    - Needs a [Branch Universal Object](#create-content-reference)
+    - Needs a [Create content reference](#create-content-reference)
 
     - *Swift 3*
 
@@ -363,16 +379,14 @@
 
     - Track how many times a piece of content is viewed
 
-    - Needs a [Branch Universal Object](#create-content-reference)
-    
-    - Uses [Track content properties](#track-content-properties)
+    - Needs a [Create content reference](#create-content-reference)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
     - *Swift 3*
 
         ```swift
-        buo.userCompletedAction(BNCRegisterViewEvent) 
+        buo.userCompletedAction(BNCRegisterViewEvent)
         ```
 
     - *Objective-C*
@@ -385,79 +399,310 @@
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
 
-    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)
 
     - *Swift 3*
 
         ```swift
         // login
-        Branch.getInstance().setIdentity("your_user_id") 
+        Branch.getInstance().setIdentity("your_user_id")
 
         // logout
-        Branch.getInstance().logout()  
+        Branch.getInstance().logout()
         ```
 
     - *Objective-C*
 
         ```objc
         // login
-        [[Branch getInstance] setIdentity:@"your_user_id"];   
+        [[Branch getInstance] setIdentity:@"your_user_id"];
 
         // logout
         [[Branch getInstance] logout];
         ```
 
+
 - #### Track events
 
-    - Track custom events
+    - Registers a custom event
 
     - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
 
-    - `63` max event name length
-
     - Best to [Track users](#track-users) before [Track events](#track-events) to associate a custom event to a user
-    
+
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
 
     - *Swift 3*
 
         ```swift
         // option 1
-        Branch.getInstance().userCompletedAction("your_custom_event") 
-        
+        let action = "signup"
+        Branch.getInstance().userCompletedAction(action)
+
         // option 2
-        Branch.getInstance().userCompletedAction("your_custom_event", withState: [String: String]())
+        let metadata: [String: Any] = [
+          "custom_dictionary": 123,
+          "anything": "everything"
+        ]
+        Branch.getInstance().userCompletedAction(action, withState: metadata)
         ```
 
     - *Objective-C*
 
         ```objc
         // option 1
-        [[Branch getInstance] userCompletedAction:@"your_custom_event"];
 
-        // option 2
-        [[Branch getInstance] userCompletedAction:@"your_custom_event" withState:(NSDictionary *)appState];
+        ```
+
+- #### Track commerce
+
+    - Registers a custom commerce event
+
+    - Uses [Track commerce properties](#commerce-properties) for `Currency` and `Category`
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
+
+    - *Swift 3*
+
+        ```swift
+        // only revenue is required
+        let commerceEvent = BNCCommerceEvent.init()
+        commerceEvent.affiliation = "affiliation"
+        commerceEvent.coupon = "coupon"
+        commerceEvent.currency = "USD"
+        commerceEvent.transactionID = "transactionID"
+        commerceEvent.shipping = 11.22
+        commerceEvent.revenue = 99.99
+        commerceEvent.tax = 4.42
+
+        // optional
+        let product1 = BNCProduct.init()
+        product1.sku = "sku1"
+        product1.name = "name1"
+        product1.price = 11.11
+        product1.quantity = 1
+        product1.brand = "brand1"
+        product1.category = "category1"
+        product1.variant = "variant1"
+
+        // optional
+        let product2 = BNCProduct.init()
+        product2.sku = "sku2"
+        product2.name = "name2"
+        product2.price = 22.22
+        product2.quantity = 2
+        product2.brand = "brand2"
+        product2.category = "category2"
+        product2.variant = "variant2"
+
+        commerceEvent.products = [product1, product2]
+
+        // optional
+        let metadata: [String: Any] = [
+          "custom_dictionary": 123,
+          "anything": "everything"
+        ]
+
+        Branch.getInstance().send(commerceEvent, metadata: metadata, withCompletion: { (response, error) in
+          print(response ?? {})
+        })
+        ```
+
+    - *Objective C*
+
+        ```objc
         ```
 
 - #### Handle referrals
 
     - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
-    
+
     - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
     - Reward credits
 
-        -  [Referral guide](/pages/analytics/referrals/)
+        -  [Referral guide](/pages/dashboard/analytics/#referrals)
+
+    - Redeem credits
+
+        - *Swift 3*
+
+            ```swift
+            // option 1 (default bucket)
+            let amount = 5
+            Branch.getInstance().redeemRewards(amount)
+
+            // option 2
+            let bucket = "signup"
+            Branch.getInstance().redeemRewards(amount, forBucket: bucket)
+            ```
+
+        - *Objective C*
+
+            ```objc
+            ```
+
+    - Load credits
+
+        - *Swift 3*
+
+            ```swift
+            Branch.getInstance().loadRewards { (changed, error) in
+              // option 1 (defualt bucket)
+              let credits = Branch.getInstance().getCredits()
+
+              // option 2
+              let bucket = "signup"
+              let credits = Branch.getInstance().getCreditsForBucket(bucket)
+            }
+            ```
+
+        - *Objective C*
+
+            ```objc
+            ```
+
+    - Load history
+
+        - *Swift 3*
+
+            ```swift
+            Branch.getInstance().getCreditHistory { (creditHistory, error) in
+               print(creditHistory ?? {})
+             }
+            ```
+
+        - *Objective C*
+
+            ```objc
+            ```
+
+- #### Handle push notifications
+
+    - Allows you to track Branch deep links in your push notifications
+
+    - Include the Branch push notification handler in [Initialize Branch](#initialize-branch)
+    - Add a Branch deep link in your push notification  `payload`
+
+        ```json hl_lines="6"
+        {
+          "aps": {
+            "alert": "Push notification with a Branch deep link",
+            "badge": "1"
+          },
+          "branch": "https://s3z3.app.link/u3fzDwyyjF"
+        }
+        ```
+
+        - Replace `https://s3z3.app.link/u3fzDwyyjF` with your deep link
+
+    - Read deep link data from `initSession` [Initialize Branch](#initialize-branch) ([example](http://i.imgur.com/5QHWDX9.gif))
+
+- #### Track Apple Search Ads
+
+    - Allows Branch to track Apple Search Ads deep linking analytics
+
+    - Add before `initSession` [Initialize Branch](#initialize-branch)
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().delayInitToCheckForSearchAds()
+        ```
+
+    - *Objective C*
+
+        ```objc
+        ```
+
+    - Test with fake campaign params (do not test in production)
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().setAppleSearchAdsDebugMode()
+        ```
+
+    - *Objective C*
+
+        ```objc
+        ```
+
+- #### Enable 100% matching
+
+    - Use the `SFViewController` to increase the attribution matching success
+    
+    - The 100% match is a bit of a misnomer, as it is only 100% match from when a user clicks from the Safari browser. According to our analysis, clicking through Safari happens about 50-75% of the time depending on the use case. For example, clicking from Facebook, Gmail or Chrome won’t trigger a 100% match here. However, it’s still beneficial to the matching accuracy, so we recommend employing it.
+
+    - Add before `initSession` [Initialize Branch](#initialize-branch)
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().disableCookieBasedMatching()
+        ```
+
+    - *Objective C*
+
+        ```objc
+        [[Branch getInstance] disableCookieBasedMatching];
+        ```
 
 
-## Troubleshoot issues 
+## Troubleshoot issues
 
-- #### Recommendations
-- #### Sample app
-- #### Simulate an install
+- #### Submitting to the App Store
+
+    - Need to select `app uses IDFA or GAID` when publishing your app (for better deep link matching)
+
 - #### App not opening
-- #### Data not pass through
+
+    - Double check [Integrate Branch](#integrate-branch)
+
+    - Investigate if the device disabled universal links ([Re-enable universal linking](##re-enable-universal-linking))
+
+    - Investigate if it is a link related issue ([Deep links do not open app](pages/links/setup/#deep-links-do-not-open-app))
+
+    - Use [Universal links validator](https://branch.io/resources/universal-links/)
+
+    - Use [AASA validator](https://branch.io/resources/aasa-validator/)
+
+    - Use [Test deep link](#test-deep-link)
+
+- #### App not passing data
+
+    - See if issue is related to [App not opening](#app-not-opening)
+
+    - Investigate Branch console logs ([Enable logging](#enable-logging))
+
+- #### Simulate an install
+
+    - Delete your app
+
+    - iPhone Device -> Settings -> Privacy -> Advertising -> Reset Advertising Identifier -> Reset Identifier
+
+    - Add `Branch.setDebug(true)` before `initSession` ([Initialize Branch Features](#initialize-branch-features))
+
+    - Click on a deep link to navigate to your `$fallback_url` because your app is not installed
+
+    - Install your app
+
+    - Open your app
+
+    - Read from `params` within `initSession` for `+is_first_session = true`
+
 - #### Deep links are long
+
+    - Happens whenever the app cannot make a connection to the Branch servers
+
+    - The long deep links will still open the app and pass data
+
+- #### Sample apps
+
+    - [Swift testbed](https://github.com/BranchMetrics/ios-branch-deep-linking/tree/master/Branch-TestBed-Swift)
+
+    - [Objective C testbed](https://github.com/BranchMetrics/ios-branch-deep-linking/tree/master/Branch-TestBed)
+
 - #### Track content properties
 
     - Used for [Track content](#track-content)
@@ -472,24 +717,130 @@
         | BNCShareInitiatedEvent | User started to share the object
         | BNCShareCompletedEvent | User completed a share
 
-- #### Deep link push notifications
+- #### Enable logging
 
-    - Include the Branch push notification handler in [Initialize Branch](#initialize-branch)
+    - Use the Branch test key instead of the live key
 
-    - Add a Branch deep link in your push notification  `payload` 
+    - Add before `initSession` [Initialize Branch](#initialize-branch)
 
-        ```json hl_lines="6"
-        {
-          "aps": {
-            "alert": "Push notification with a Branch deep link",
-            "badge": "1"
-          },
-          "branch": "https://s3z3.app.link/u3fzDwyyjF"
+    - Remove before releasing to production
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().setDebug()
+        ```
+
+    - *Objective C*
+
+        ```objc
+        ```
+
+- #### Associated domain details
+
+    - Used for [Configure associated domains](#configure-associated-domains)
+    - `-alternate` is needed for Universal Linking with the [Setup your website](/pages/web/setup/)
+    - `test-` is needed if you need [Use test key](#use-test-key)
+    - If you [Change link domain](/pages/dashboard/setup/#change-link-domain), you will need to include your `old link domain as well as your new link domain
+
+- #### Use test key
+
+    - Use the Branch `test key` instead of the `live key`
+
+    - Add before `initSession` [Initialize Branch](#initialize-branch)
+
+    - Update `branch_key` in your `Info.plist` to a dictionary ([example](https://github.com/BranchMetrics/ios-branch-deep-linking/blob/master/Branch-TestBed/Branch-TestBed/Branch-TestBed-Info.plist#L58-L63))
+
+    - The `test key` of your app must match the `test key` of your deep link
+
+    - Remove before releasing to production
+
+    - *Swift 3*
+
+        ```swift
+        Branch.setUseTestBranchKey(true)
+        ```
+
+    - *Objective C*
+
+        ```objc
+        [Branch setUseTestBranchKey:YES];
+        ```
+
+- #### Re-enable universal linking
+
+    - Apple allows users to disable universal linking on a per app per device level on iOS 9 and iOS 10 (fixed in iOS 11)
+
+    - Use [Test deep link](#test-deep-link) to re-enable universal linking on the device
+
+- #### Deep link routing with a Branch ViewController
+
+    - Add before `initSession` [Initialize Branch](#initialize-branch)
+
+    - Recommend to [Navigate to content](#navigate-to-content) instead
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().registerDeepLinkController(ViewController(), forKey: "my-key", withPresentation: .optionShow)
+        ```
+
+    - *Objective C*
+
+        ```objc
+        ```
+
+- #### Share to email options
+
+    - Change the way your deep links behave when shared to email
+
+    - Needs a [Share deep link](#share-deep-link)
+
+    - *Swift 3*
+
+        ```swift
+        lp.addControlParam("$email_subject", withValue: "Therapists hate him.")
+        lp.addControlParam("$email_html_header", withValue: "<style>your awesome CSS</style>\nOr Dear Friend,")
+        lp.addControlParam("$email_html_footer", withValue: "Thanks!")
+        lp.addControlParam("$email_html_link_text", withValue: "Tap here")
+        ```
+
+    - *Objective C*
+
+        ```objc
+        [lp addControlParam:@"$email_subject" withValue:@"This one weird trick."];
+        [lp addControlParam:@"$email_html_header" withValue:@"<style>your awesome CSS</style>\nOr Dear Friend,"];
+        [lp addControlParam:@"$email_html_footer" withValue:@"Thanks!"];
+        [lp addControlParam:@"$email_html_link_text" withValue:@"Tap here"];
+        ```
+
+- #### Share message dynamically
+
+    - Change the message you share based on the source the users chooses
+
+    - Needs a [Share deep link](#share-deep-link)
+
+    - *Swift 3*
+
+        ```swift
+        // import delegate
+        class ViewController: UITableViewController, BranchShareLinkDelegate
+
+        func branchShareLinkWillShare(_ shareLink: BranchShareLink) {
+          // choose shareSheet.activityType
+          shareLink.shareText = "\(shareLink.linkProperties.channel)"
         }
         ```
 
-        - Replace `https://s3z3.app.link/u3fzDwyyjF` with your deep link
+    - *Objective C*
 
-    - Read deep link data from `Branch.getInstance().initSession` [Initialize Branch](#initialize-branch) ([demo](http://i.imgur.com/5QHWDX9.gif))
+        ```objc
+        // import delegate
+        @interface ViewController () <BranchShareLinkDelegate>
 
-test
+        - (void) branchShareLinkWillShare:(BranchShareLink*)shareLink {
+          // choose shareSheet.activityType
+          shareLink.shareText = [NSString stringWithFormat:@"@%", shareLink.linkProperties.channel];
+        }
+        ```
+
