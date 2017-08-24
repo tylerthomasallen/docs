@@ -74,6 +74,15 @@
         - Duration is how long a `click` will live in our system before it is consumed by either an app `open` or system delete. Modifying this value will change how long we wait to fingerprint a user. If a user is fingerprinted within the set duration, then deep link data will flow into the app. The default the expiration is 2 hours (7200 seconds).
     - Set `UTM tags`
         - Recommend `disabled`. If you enable this, Branch will automatically set channel, feature, campaign, tags and $keywords based on UTM params. This only applies to dynamically created links, not links generated through the Dashboard, API or SDKs.
+
+            | UTM parameter | Branch parameter 
+            | --- | --- |
+            | utm_source | Channel
+            | utm_medium | Feature
+            | utm_campaign | Campaign
+            | utm_content | Tags
+            | utm_term | Keywords (not visible on Dashboard)
+
 - #### Enable Facebook App Invites
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard    
     - Add your Facebook credentials to allow us to link your Facebook dashboard to the Branch dashboard
