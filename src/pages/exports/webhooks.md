@@ -21,7 +21,7 @@ Here are explanations of what each field on this screen controls:
 
 - **Webhook URL:** Enter the URL where you would like the events to be sent.
 - **Postback Method:** Events can be sent either via POST or GET.
-- **Event Frequency:** You can choose to receive a webhook for ever single event occurence, or only for the first time that even is triggered for each unique user.
+- **Event Frequency:** You can choose to receive a webhook for ever single event occurrence, or only for the first time that even is triggered for each unique user.
 - **Event Trigger:** You may select between the following default events:
 
 | Event | Description

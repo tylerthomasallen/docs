@@ -7,8 +7,6 @@
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
     - These keys are unique to your Branch app
     - Never expose your `Branch Secret` as it can be maliciously used
-        - <img src="/../../../img/pages/dashboard/branch-keys.png" width="500px" />
-        - ![image](/img/pages/exports/requestbin_create.png)
         - ![image](/img/pages/dashboard/branch-keys.png)
 
 - #### Configure default behavior
@@ -19,19 +17,19 @@
 
     - ##### iOS
         - Use these settings to control the default behavior of your deep links on iOS
-        - <img src="/img/pages/dashboard/ios.png" width="500px" />
+        - ![image](/img/pages/dashboard/ios.png)
 
     - ##### Android
         - Use these settings to control the default behavior of your deep links on Android
-        - <img src="/img/pages/dashboard/android.png" width="500px" />
+        - ![image](/img/pages/dashboard/android.png)
     
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
-        - <img src="/img/pages/dashboard/desktop.png" width="500px" />
+        - ![image](/img/pages/dashboard/desktop.png)
     
     - ##### Fallback
         - Use these settings to control the default behavior of your deep links on any other platform
-        - <img src="/img/pages/dashboard/fallback.png" width="500px" />
+        - ![image](/img/pages/dashboard/fallback.png)
     
     - ##### Link domain
         - Choose a `link domain` which will be used for all your links
@@ -40,11 +38,11 @@
             - Deep links will have an `alias` behind them to uniquely identify them
                 - https://example.app.link/VZsTctoINF
                 - https://example.app.link/custom-alias
-        - <img src="/img/pages/dashboard/link-domain.png" width="500px" />
+        - ![image](/img/pages/dashboard/link-domain.png)
     
     - ##### Save
         - Make sure you commit any changes
-        - <img src="/img/pages/dashboard/save.png" width="500px" />
+        - ![image](/img/pages/dashboard/save.png)
 
 - #### Enable Deepview
 
@@ -52,7 +50,7 @@
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
     - This will make your deep links before optimally on all [Supported platforms](/pages/links/setup/#supported-platforms)
     - Additional details about [Deepviews](/pages/web/deep-views/)
-    - <img src="/img/pages/dashboard/deepview.png" width="200px" />
+    - ![image](/img/pages/dashboard/deepview.png" width="200px" />
 
 ## Advance integration
 
