@@ -9,6 +9,7 @@
     - Never expose your `Branch Secret` as it can be maliciously used
         - <img src="/../../../img/pages/dashboard/branch-keys.png" width="500px" />
         - ![image](/img/pages/exports/requestbin_create.png)
+        - ![image](/img/pages/dashboard/branch-keys.png)
 
 - #### Configure default behavior
 
