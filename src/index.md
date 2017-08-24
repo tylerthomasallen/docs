@@ -10,7 +10,7 @@
 <!-- 
 ## Getting started
 
-- #### Basic setup
+- #### Basic integration
 
     ||| 
     |:-:|:-:|:-:

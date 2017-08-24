@@ -2,7 +2,7 @@
 
 - #### Configure Branch
 
-    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/integrate/)
 
     - Make sure `I have an iOS app` is enabled
 
@@ -168,7 +168,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share
 
-    - Uses [Universal Object properties](/pages/links/setup/#universal-object)
+    - Uses [Universal Object properties](/pages/links/integrate/#universal-object)
 
     - *Swift 3*
 
@@ -205,7 +205,7 @@
 
     - Used for [Create deep link](#create-deep-link) and [Share deep link](#share-deep-link)
 
-    - Uses [Configure link data](/pages/links/setup/#configure-deep-links) and custom data
+    - Uses [Configure link data](/pages/links/integrate/#configure-deep-links) and custom data
 
     - *Swift 3*
 
@@ -276,7 +276,7 @@
 
     - Needs a [Create link reference](#create-link-reference)
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
      - *Swift 3*
 
@@ -663,7 +663,7 @@
 
     - Investigate if the device disabled universal links ([Re-enable universal linking](##re-enable-universal-linking))
 
-    - Investigate if it is a link related issue ([Deep links do not open app](pages/links/setup/#deep-links-do-not-open-app))
+    - Investigate if it is a link related issue ([Deep links do not open app](pages/links/integrate/#deep-links-do-not-open-app))
 
     - Use [Universal links validator](https://branch.io/resources/universal-links/)
 
@@ -741,9 +741,9 @@
 - #### Associated domain details
 
     - Used for [Configure associated domains](#configure-associated-domains)
-    - `-alternate` is needed for Universal Linking with the [Setup your website](/pages/web/setup/)
+    - `-alternate` is needed for Universal Linking with the [Setup your website](/pages/web/integrate/)
     - `test-` is needed if you need [Use test key](#use-test-key)
-    - If you [Change link domain](/pages/dashboard/setup/#change-link-domain), you will need to include your `old link domain as well as your new link domain
+    - If you [Change link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your `old link domain as well as your new link domain
 
 - #### Use test key
 

@@ -6,7 +6,7 @@
 
 - #### Configure Branch
 
-    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/integrate/)
 
         ![image](/img/pages/dashboard/fallback.png)
 
@@ -61,7 +61,7 @@
 
     - Creates a deep link URL with encapsulated data
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -92,7 +92,7 @@
 
     -  Will generate a Branch deep link and tag it with the channel the user selects
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
         ```html
         <!-- shareable elements -->
@@ -520,7 +520,7 @@
         https://example.app.link/kJNbhZ1PrF?$fallback_url=https://example.com
         ```
 
-    - Website will open to [$fallback_url](/pages/links/setup/#redirections) with `_branch_match_id`
+    - Website will open to [$fallback_url](/pages/links/integrate/#redirections) with `_branch_match_id`
 
         ```
         https://example.app.link/kJNbhZ1PrF?$fallback_url=https://www.website.com/&_branch_match_id=418480444086051524

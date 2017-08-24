@@ -2,7 +2,7 @@
 
 - #### Configure Branch
 
-    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/setup/)
+    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/integrate/)
 
     - Make sure `Always try to open app` and `I have an Android App` are both enabled
 
@@ -296,7 +296,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](#/pages/links/setup/#universal-object)
+    - Uses the [Universal Object Properties](#/pages/links/integrate/#universal-object)
 
     - *Java*
 
@@ -330,7 +330,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -383,7 +383,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
     - *Java*
 

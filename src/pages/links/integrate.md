@@ -19,24 +19,24 @@
     - #####  Open website instead of app
         - When app is not installed 
             - Add query string `https://example.app.link?$ios_url=https://example.com`
-            - Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/setup/#redirections))
-            - Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/setup/#redirections))
-            - Add link data for a deep view `$ios_deepview = 'deepviewId'`  ([docs](/pages/links/setup/#deepview))
+            - Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
+            - Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
+            - Add link data for a deep view `$ios_deepview = 'deepviewId'`  ([docs](/pages/links/integrate/#deepview))
             - Enable a `Deep View` globally on the [Branch Dashboard](https://dashboard.branch.io/web/deepviews)
             - Add `iOS/Android Custom URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
             - Add `Default URL` (`$fallback_url`) on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
             - *(ordered by precedence)*
         - When app is installed
             - *iOS:* need to override `Universal Links`
-                - Add `$web_only = true` ([docs](/pages/links/setup/#redirections))
-                - Add redirect `$ios_url = 'https://google.com'` ([docs](/pages/links/setup/#redirections))
+                - Add `$web_only = true` ([docs](/pages/links/integrate/#redirections))
+                - Add redirect `$ios_url = 'https://google.com'` ([docs](/pages/links/integrate/#redirections))
                 - *or:* Append `/e/` to the deep link
                 - e.g. `https://example.app.link/fzmLEhobLD` -> `https://example.app.link/e/fzmLEhobLD`
             - *Android:* need to override `App Links`
                 - TODO: validate. may need `Always open app` unchecked
                 - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
-                - Add redirect `$android_url = 'https://google.com'` ([docs](/pages/links/setup/#redirections))
-                - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/setup/#deep-linking))
+                - Add redirect `$android_url = 'https://google.com'` ([docs](/pages/links/integrate/#redirections))
+                - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/integrate/#deep-linking))
 
 - #### Social link behavior
     - Use [OG Tags](#open-graph) to display content as a preview
@@ -79,7 +79,7 @@
 - #### App
     - Use our [App SDK](#dialog-code) to create and share links within your app
 - #### Web
-    - Use our [Web SDK](/pages/web/setup/#create-deep-link) to create to links convert web to app users
+    - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
 - #### API
     - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
 
@@ -280,7 +280,7 @@
 ## Troubleshoot issues
 
 - #### Deep links do not open app
-    - Make sure you have completed [Setup your dashboard](/pages/dashboard/setup/) and [Setup your app](#dialog-code)
+    - Make sure you have completed [Setup your dashboard](/pages/dashboard/integrate/) and [Setup your app](#dialog-code)
     - Make sure the `Branch key` in your app ([Setup your app](#dialog-code)) matches the `Branch key` in your deep link ([View deep link data](#view-deep-link-data))
     - Make sure you have not disabled deep linking ([Re-enable universal linking](/pages/apps/ios/#re-enable-universal-linking))
     - Make sure you meet the requirements for [Supported platforms](#supported-platforms)

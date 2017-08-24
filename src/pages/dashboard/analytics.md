@@ -48,7 +48,7 @@
 
 - #### Quick Links
 - #### Link Settings
-    - View more information in [Setup your dashboard](/pages/dashboard/setup/)
+    - View more information in [Setup your dashboard](/pages/dashboard/integrate/)
 - #### Sources
 - #### Content
     - [Dashboard Content](https://dashboard.branch.io/content) tracks the attribution per content
@@ -66,7 +66,7 @@
     - View more information in [Export webhooks](/pages/exports/webhooks/)
 - #### Liveview
 - #### Account settings
-    - View more information in [Setup your dashboard](/pages/dashboard/setup/)
+    - View more information in [Setup your dashboard](/pages/dashboard/integrate/)
 
 ## Troubleshoot issues
 
