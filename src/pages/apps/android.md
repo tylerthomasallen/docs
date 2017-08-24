@@ -2,7 +2,7 @@
 
 - #### Configure Branch
 
-    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/integrate/)
+    - Complete the `Basic integration` within [Configure your dashboard](/pages/dashboard/integrate/)
 
     - Make sure `Always try to open app` and `I have an Android App` are both enabled
 

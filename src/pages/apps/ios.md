@@ -2,7 +2,7 @@
 
 - #### Configure Branch
 
-    - Complete the `Basic integration` within [Setup your dashboard](/pages/dashboard/integrate/)
+    - Complete the `Basic integration` within [Configure your dashboard](/pages/dashboard/integrate/)
 
     - Make sure `I have an iOS app` is enabled
 
@@ -741,7 +741,7 @@
 - #### Associated domain details
 
     - Used for [Configure associated domains](#configure-associated-domains)
-    - `-alternate` is needed for Universal Linking with the [Setup your website](/pages/web/integrate/)
+    - `-alternate` is needed for Universal Linking with the [Configure your website](/pages/web/integrate/)
     - `test-` is needed if you need [Use test key](#use-test-key)
     - If you [Change link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your `old link domain as well as your new link domain
 

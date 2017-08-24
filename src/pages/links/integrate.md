@@ -280,8 +280,8 @@
 ## Troubleshoot issues
 
 - #### Deep links do not open app
-    - Make sure you have completed [Setup your dashboard](/pages/dashboard/integrate/) and [Setup your app](#dialog-code)
-    - Make sure the `Branch key` in your app ([Setup your app](#dialog-code)) matches the `Branch key` in your deep link ([View deep link data](#view-deep-link-data))
+    - Make sure you have completed [Configure your dashboard](/pages/dashboard/integrate/) and [Configure your app](#dialog-code)
+    - Make sure the `Branch key` in your app ([Configure your app](#dialog-code)) matches the `Branch key` in your deep link ([View deep link data](#view-deep-link-data))
     - Make sure you have not disabled deep linking ([Re-enable universal linking](/pages/apps/ios/#re-enable-universal-linking))
     - Make sure you meet the requirements for [Supported platforms](#supported-platforms)
     - Make sure the link the user is click on matches your `link domain` from the [Branch Dashboard](https://dashboard.branch.io/link-settings)

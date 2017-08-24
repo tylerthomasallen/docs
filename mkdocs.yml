@@ -102,8 +102,8 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Setup your dashboard: pages/dashboard/integrate.md
-  - Setup your app:
+  - Configure your dashboard: pages/dashboard/integrate.md
+  - Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
@@ -115,7 +115,7 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
-  - Setup your website: pages/web/integrate.md
+  - Configure your website: pages/web/integrate.md
   - Create deep links: pages/links/integrate.md
   - Track analytics: pages/dashboard/analytics.md
   - Deep link web:
