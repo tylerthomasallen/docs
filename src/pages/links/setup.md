@@ -12,13 +12,13 @@
         - Branch passes deep link `data` into app
 
 - #### Custom link behavior
-    - Pass data from link to app
-        - Add query string `https://s3z3.app.link/fzmLEhobLD?$custom_data=123` 
-        - Add link data (TODO)
-        - Add Quick Link key-values (TODO)
-    - Redirect to website instead of app
+    - ##### Pass data from link to app
+        - Add link data from [Configuring deep links](#configure-deep-links)
+        - Add key-values pairs from [Quick Links](/pages/dashboard/analytics/#quick-links)
+        - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123` 
+    - #####  Open website instead of app
         - When app is not installed 
-            - Add query string `https://s3z3.app.link?$ios_url=https://example.com`
+            - Add query string `https://example.app.link?$ios_url=https://example.com`
             - Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/setup/#redirections))
             - Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/setup/#redirections))
             - Add link data for a deep view `$ios_deepview = 'deepviewId'`  ([docs](/pages/links/setup/#deepview))
@@ -31,8 +31,9 @@
                 - Add `$web_only = true` ([docs](/pages/links/setup/#redirections))
                 - Add redirect `$ios_url = 'https://google.com'` ([docs](/pages/links/setup/#redirections))
                 - *or:* Append `/e/` to the deep link
-                - e.g. `https://s3z3.app.link/fzmLEhobLD` -> `https://s3z3.app.link/e/fzmLEhobLD`
+                - e.g. `https://example.app.link/fzmLEhobLD` -> `https://example.app.link/e/fzmLEhobLD`
             - *Android:* need to override `App Links`
+                - TODO: validate. may need `Always open app` unchecked
                 - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
                 - Add redirect `$android_url = 'https://google.com'` ([docs](/pages/links/setup/#redirections))
                 - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/setup/#deep-linking))
