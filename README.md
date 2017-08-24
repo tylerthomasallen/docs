@@ -1,6 +1,6 @@
 # Branch Docs
 
-> Repository for Branch's public documentation [https://branchmetrics.github.io/docs/](https://branchmetrics.github.io/docs/)
+> Repository for Branch's public documentation [https://docs.branch.io](https://docs.branch.io)
 
 ## Environment
 
@@ -38,7 +38,7 @@
 
 - #### Production
 
-    - https://branchmetrics.github.io/docs/
+    - https://docs.branch.io
 
 ## Contributing
 
