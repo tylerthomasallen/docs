@@ -156,8 +156,11 @@
         </div>
       </main>
       {% block warning %}
-        {% if config.extra.is_visible.footer_warning == true %}
-          <div class="branch-warning">Beta Release</div>
+        {% if config.extra.is_visible.footer_floater_beta == true %}
+          <div class="branch-floater branch-beta">Beta Release</div>
+        {% endif %}
+        {% if config.extra.is_visible.footer_floater_old_docs == true %}
+          <a class="branch-floater branch-old-docs" href="http://dev.branch.io/" title="old docs">&#8678; Old docs</a>
         {% endif %}
       {% endblock %}
       {% block modals %}
