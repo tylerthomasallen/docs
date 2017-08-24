@@ -12,7 +12,6 @@
 - #### Ads
 - #### Emails
 - #### Organic Search
-    - Validate with the [App indexing validator](https://branch.io/resources/app-indexing/)
 - #### Referrals
 
     - ##### Implementing
@@ -84,7 +83,19 @@
 - #### Revenue analytics
 
 - #### User value attribution
+    + what
+    + why
+    + how
 
 - #### Growth attribution
+    + You can measure your app growth in the [Dashboard](https://dashboard.branch.io) through automatic event tracking and user identity tracking.
+    + You can also define as many custom events (signups, purchases, shares, etc.) as you wish - see the [User Value Attribution](/pages/dashboard/analytics/#user-value-attribution) guide for more on tracking custom events. You can see these events as they occur on the Live View > Events page.
 
-- #### Matching success
+    + [Setting Identities](#dialog-code?ios=track-users&android=track-users&adobe-air=track-users&cordova-phonegap-ionic=track-users&mparticle-android=track-users&mparticle-ios=track-users&titanium=track-users&react-native=track-users&unity=track-users&xamarin=track-users)
+
+    + Measuring influencers
+    The [Analytics](https://dashboard.branch.io/referrals/analytics) page on the dashboard will show you who is driving the most new signups.
+
+    ![image](http://i.imgur.com/SYppuDL.png)
+
+!!! note "You must [identify your users](/pages/dashboard/analytics/#growth-attribution) in order for the `User ID` column to be populated. The `Branch ID` refers to the internal Branch ID associated with that user. It is set automatically in the SDK."
