@@ -126,9 +126,15 @@
 
         ```js
         {
-          "alias": null,
           "campaign": "new product",
           "channel": "facebook",
+          "feature": "onboarding",
+          "stage": "new user",
+          "tags": [
+            "one",
+            "two",
+            "three"
+          ],
           "data": {
             "$canonical_identifier": "content/123",
             "$desktop_url": "http://www.example.com",
@@ -150,27 +156,21 @@
               "random": "dictionary"
             },
             "custom_string": "everything",
-            "url": "https://eneff.app.link/cCeWJt6mqF",
             "~campaign": "new product",
             "~channel": "facebook",
             "~creation_source": 0,
             "~feature": "onboarding",
-            "~id": "423188696347619242",
+            "~id": "423196192848102356",
             "~stage": "new user",
             "~tags": [
               "one",
               "two",
               "three"
-            ]
+            ],
+            "url": "https://example.app.link/WgiqvsepqF"
           },
-          "feature": "onboarding",
-          "stage": "new user",
-          "tags": [
-            "one",
-            "two",
-            "three"
-          ],
-          "type": 0
+          "type": 0,
+          "alias": null
         }
         ```
 

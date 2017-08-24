@@ -241,7 +241,7 @@
         buo.title = UUID.init().uuidString
         buo.contentDescription = "My Content Description"
         buo.imageUrl = "http://lorempixel.com/200/200/"
-        buo.canonicalUrl = "http://s3z3.app.link/rawr_rawr"
+        buo.canonicalUrl = "http://example.com/rawr_rawr"
         buo.contentIndexMode = .public
         buo.addMetadataKey("property1", value: "blue")
         ```

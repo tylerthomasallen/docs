@@ -590,11 +590,11 @@
             "alert": "Push notification with a Branch deep link",
             "badge": "1"
           },
-          "branch": "https://s3z3.app.link/u3fzDwyyjF"
+          "branch": "https://example.app.link/u3fzDwyyjF"
         }
         ```
 
-        - Replace `https://s3z3.app.link/u3fzDwyyjF` with your deep link
+        - Replace `https://example.app.link/u3fzDwyyjF` with your deep link
 
     - Read deep link data from `initSession` [Initialize Branch](#initialize-branch) ([example](http://i.imgur.com/5QHWDX9.gif))
 
