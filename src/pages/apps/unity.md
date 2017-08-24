@@ -42,7 +42,7 @@
 		| **Live App Links** | This field is applicable if you want to enable `APPLINKS` and `UNIVERSAL LINKS` for your domain. Please make sure to add the correct domain found on the bottom of the [Link Settings page](https://dashboard.branch.io/link-settings) of your Live Branch app. Add the -alternate domain to have your Branch links deeplink from your [Deepviews](https://branchmetrics.github.io/docs/pages/web/deep-views/) and [Journeys](https://branchmetrics.github.io/docs/pages/web/journeys/). If you are not using a `app.links` domain please write into [integrations@branch.io](mailto:integrations@branch.io)|
 
 		- Note for Android
-		> 	Occasionally, Android will barf after you add our library due to generic issues unrelated to Branch. Please see this [Android troubleshooting section](https://branchmetrics.github.io/docs/pages/apps/android/#troubleshoot-issues)
+		> 	Occasionally, Android will barf after you add our library due to generic issues unrelated to Branch. Please see this [Android troubleshooting section](/pages/apps/android/#troubleshoot-issues)
 
 - #### Initialize Branch
 
@@ -259,13 +259,13 @@
 	- ##### Typical Referral Flow
 
 		1. Setup a Reward rule on your [Branch Dashboard](https://dashboard.branch.io/referrals/rules).
-		2. Referrer has his/her identity set at [login/signup](http://localhost:8000/pages/apps/unity/#set-user-ids-on-loginregister)
-		3. Referrer [creates](http://localhost:8000/pages/apps/unity/#create-deep-link) a Branch link.
-		4. Referrer [shares](http://localhost:8000/pages/apps/unity/#create-deep-link) the Branch link.
+		2. Referrer has his/her identity set at [login/signup](/pages/apps/unity/#set-user-ids-on-loginregister)
+		3. Referrer [creates](/pages/apps/unity/#create-deep-link) a Branch link.
+		4. Referrer [shares](/pages/apps/unity/#create-deep-link) the Branch link.
 		5. Referee clicks on the Branch link, installs the app.
-		6. The referee has his/her identity set at [login/signup](http://localhost:8000/pages/apps/unity/#set-user-ids-on-loginregister)
-		7. Referee [triggers a custom event](http://localhost:8000/pages/apps/unity/#track-events) after login/Signup.
-		8. Use the following SDK methods to see a user's [current credits](http://localhost:8000/pages/apps/unity/#get-reward-balance), [redeem credits](http://localhost:8000/pages/apps/unity/#redeem-rewards) and check a user's entire [credit history](http://localhost:8000/pages/apps/unity/#get-credit-history).
+		6. The referee has his/her identity set at [login/signup](/pages/apps/unity/#set-user-ids-on-loginregister)
+		7. Referee [triggers a custom event](/pages/apps/unity/#track-events) after login/Signup.
+		8. Use the following SDK methods to see a user's [current credits](/pages/apps/unity/#get-reward-balance), [redeem credits](/pages/apps/unity/#redeem-rewards) and check a user's entire [credit history](/pages/apps/unity/#get-credit-history).
 
 	- ##### Get Reward balance
 
