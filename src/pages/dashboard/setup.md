@@ -50,7 +50,7 @@
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
     - This will make your deep links before optimally on all [Supported platforms](/pages/links/setup/#supported-platforms)
     - Additional details about [Deepviews](/pages/web/deep-views/)
-    - ![image](/img/pages/dashboard/deepview.png" width="200px" />
+    - ![image](/img/pages/dashboard/deepview.png)
 
 ## Advance integration
 
@@ -58,14 +58,17 @@
     - Go to [Account settings](https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
     - Handle your Branch user account with email, password, and user id
     - Connect your Github account to your Branch dashboard for easier sign in
+
 - #### Configure billing
     - Go to [Account settings](https://dashboard.branch.io/account-settings/billing) on the Branch Dashboard
     - Set your billing information for Branch premium features
+
 - #### Configure team
     - Go to [Account settings](https://dashboard.branch.io/account-settings/team) on the Branch Dashboard
     - Add and update team members to your Branch dashboard
         - `Admin` = full access
         - `Reports` = read reports only
+
 - #### Change advanced settings
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Set `Match type` to either `unique` or `normal` (default)
@@ -87,15 +90,18 @@
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard    
     - Add your Facebook credentials to allow us to link your Facebook dashboard to the Branch dashboard
     - This configuration allows us to send and receive attribution data from Facebook
-- #### Configure social media display 
+
+- #### Configure social media 
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Set the default image preview for your deep links when shared on social media
     - These values are typically overridden by [Custom link behavior](pages/links/setup/#custom-link-behavior) which differentiate your deep links between one another
 - #### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    
     - ##### Use app.link domain
         - Understand [Domain change warning](#domain-change-warning) 
         - Make changes to [Link settings](https://dashboard.branch.io/link-settings) or contact support
+   
     - ##### Use custom sub domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
@@ -104,6 +110,7 @@
         - Update your `CNAME` record on your custom sub domain
             - `CNAME` = `custom.bnc.lt`
         - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings) 
+    
     - ##### Use custom root domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
