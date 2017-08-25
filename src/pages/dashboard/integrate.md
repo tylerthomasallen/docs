@@ -7,7 +7,8 @@
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
     - These keys are unique to your Branch app
     - Never expose your `Branch Secret` as it can be maliciously used
-        - ![image](/img/pages/dashboard/branch-keys.png)
+        
+        ![image](/img/pages/dashboard/branch-keys.png)
 
 - #### Configure default behavior
 
@@ -17,19 +18,23 @@
 
     - ##### iOS
         - Use these settings to control the default behavior of your deep links on iOS
-        - ![image](/img/pages/dashboard/ios.png)
+            
+            ![image](/img/pages/dashboard/ios.png)
 
     - ##### Android
         - Use these settings to control the default behavior of your deep links on Android
-        - ![image](/img/pages/dashboard/android.png)
+            
+            ![image](/img/pages/dashboard/android.png)
     
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
-        - ![image](/img/pages/dashboard/desktop.png)
+            
+            ![image](/img/pages/dashboard/desktop.png)
     
     - ##### Fallback
         - Use these settings to control the default behavior of your deep links on any other platform
-        - ![image](/img/pages/dashboard/fallback.png)
+            
+            ![image](/img/pages/dashboard/fallback.png)
     
     - ##### Link domain
         - Choose a `link domain` which will be used for all your links
@@ -38,11 +43,12 @@
             - Deep links will have an `alias` behind them to uniquely identify them
                 - https://example.app.link/VZsTctoINF
                 - https://example.app.link/custom-alias
-        - ![image](/img/pages/dashboard/link-domain.png)
+            ![image](/img/pages/dashboard/link-domain.png)
     
     - ##### Save
         - Make sure you commit any changes
-        - ![image](/img/pages/dashboard/save.png)
+            
+            ![image](/img/pages/dashboard/save.png)
 
 - #### Enable Deepview
 
@@ -50,7 +56,8 @@
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
     - This will make your deep links before optimally on all [Supported platforms](/pages/links/integrate/#supported-platforms)
     - Additional details about [Deepviews](/pages/web/deep-views/)
-    - ![image](/img/pages/dashboard/deepview.png)
+        
+        ![image](/img/pages/dashboard/deepview.png)
 
 ## Advance integration
 
@@ -95,6 +102,7 @@
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Set the default image preview for your deep links when shared on social media
     - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
+
 - #### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     
