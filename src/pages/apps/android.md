@@ -461,6 +461,8 @@
 
     - Best practice to receive data from the `listener` (to prevent a race condition)
 
+    - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
+
     - *Java*
 
         ```java

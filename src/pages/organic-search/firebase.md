@@ -68,8 +68,8 @@ If you don’t want to implement Universal or App Links then you can allow the W
 This requires:
 
 1. Branch to be integrated for URI based deep linking. Please ensure that steps 1, 2, 3 and 4 (*iOS* only) of the following guides are completed:
-    - [Android SDK Integration Guide]({{base.url}}/getting-started/sdk-integration-guide/guide/android/)
-    - [iOS SDK Integration Guide]({{base.url}}/getting-started/sdk-integration-guide/guide/ios/)
+    - [Android SDK Integration Guide](/pages/apps/android/)
+    - [iOS SDK Integration Guide](/pages/apps/ios/)
 
 2. A call to `autoAppIndex()` (a WebSDK function) to be made with the appropriate parameters (see below).
 

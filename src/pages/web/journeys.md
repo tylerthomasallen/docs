@@ -6,7 +6,7 @@ On a daily basis, Google Search drives **more app installs** than all of Faceboo
 
 - **Customizable presentation.** WYSIWYG designer for smart banner or full-page interstitial, with more coming soon.
 - **Powerful targeting rules.** Want to show your Journey only visitors without your app installed already? All iOS users from Japan? Just users viewing your checkout page? Android users who have visited your website twice AND purchased something using your app? The possibilities are infinite.
-- **AMP-compatible.** You can convert mobile search traffic to your app by [showing Journeys on AMP pages](/marketing-channels/journeys/amp).
+- **AMP-compatible.** You can convert mobile search traffic to your app by [showing Journeys on AMP pages](/pages/web/amp-journeys/).
 - **Run A/B tests.** Design multiple campaign versions to see which converts most effectively.
 - **Optimized user experience.** If installed, your app will open and users can be routed directly to the content they expect. If not, the App/Play store will open and users can still be routed directly to the content they expect after installing.
 - **Comprehensive analytics.** Measure the downstream performance and retention of every Journeys campaign.
@@ -15,10 +15,13 @@ On a daily basis, Google Search drives **more app installs** than all of Faceboo
 !!! note "Journeys is a paid product"
     Journeys introduces many more advanced features on top of the basic smart app banner functionality, but **you can still create an Android and iOS smart app banner for free if your MAU are under 20k**. After 20k MAU, we'd ask that you pay a small fee for use. Premium-only advanced features (including the option to run multiple Journeys simultaneously) are available through a 14 day trial.
 
+!!! note
+You should integrate the Branch SDK into your app and configure deep link routing for deferred deep linking and attribution before implementing Journeys..
+
 ## Setup
 
 !!! note "Include your alternate domain for Universal Links"
-    Journeys uses your alternate domain for Universal Links. Make sure you include your `xxxx-alternate.app.link` domain in your [Associated Domains]({{base.url}}/getting-started/universal-app-links/guide/ios/#add-the-associated-domains-entitlement-to-your-project). If you use a custom domain or subdomain for your Branch links, you should instead add entries for `applinks:[mycustomdomainorsubdomain]` and `XXXX-alternate.app.link`. If you’re unsure of your Branch-assigned app.link subdomain, [contact support](https://support.branch.io), and we can provide it.
+    Journeys uses your alternate domain for Universal Links. Make sure you include your `xxxx-alternate.app.link` domain in your [Associated Domains](/pages/apps/ios/#configure-associated-domains). If you use a custom domain or subdomain for your Branch links, you should instead add entries for `applinks:[mycustomdomainorsubdomain]` and `XXXX-alternate.app.link`. If you’re unsure of your Branch-assigned app.link subdomain, [contact support](https://support.branch.io), and we can provide it.
 
 ### Add the Branch Web SDK to your site
 
@@ -35,7 +38,7 @@ Add the following code somewhere inside the `<head></head>` tags on your website
 
 ### Deep linking from the banner or interstitial
 
-Like all Branch deep links, you can pass custom parameters by specifying keys in the link's [data dictionary]({{base.url}}/getting-started/configuring-links). This is useful if you are showing the Smart Banner on a website page with equivalent in-app content, because you can route directly to that content in your app.
+Like all Branch deep links, you can pass custom parameters by specifying keys in the link's [data dictionary](/pages/links/integrate/#configure-deep-links). This is useful if you are showing the Smart Banner on a website page with equivalent in-app content, because you can route directly to that content in your app.
 
 This example will take the visitor straight to a picture with id “12345” after installing and opening the app.
 
@@ -69,15 +72,18 @@ branch.setBranchViewData({
 });
 ```
 
-If a user is referred to a page running Journeys via a Branch link, then referring link data will be passed into the Journeys call-to-action by default. If you’re using setBranchViewData() to specify link data for Journeys on that page, the only data from setBranchViewData() that will be used are [dynamic Journeys layout parameters]({{base.url}}/marketing-channels/journeys/advanced/#dynamic-journeys-layout-customization); all other data in that call will be ignored, unless `make_new_link` is set to `true` in `branch.init()`. You can find more information [here]({{base.url}}/marketing-channels/journeys/advanced/#preserve-or-discard-referring-link-data).
-
-**Note:** You should [integrate the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app and [configure deep link routing]({{base.url}}/getting-started/deep-link-routing) for deferred deep linking and attribution.
+If a user is referred to a page running Journeys via a Branch link, then referring link data will be passed into the Journeys call-to-action by default. If you’re using setBranchViewData() to specify link data for Journeys on that page, the only data from setBranchViewData() that will be used are [dynamic Journeys layout parameters](/pages/web/journeys/#dynamic-journeys-layout-customization); all other data in that call will be ignored, unless `make_new_link` is set to `true` in `branch.init()`. You can find more information [here](/pages/web/journeys/#preserve-or-discard-referring-link-data).
 
 ### Create Journey banner or interstitial
 
 1. Head to the [Journeys page](http://dashboard.branch.io/journeys) on the Branch dashboard.
-1. Click the **Create New Journey** button to get started. ![image](/img/pages/journeys/create-journey-button.png)
-1. In the **Journey Name:** field, enter a name to use for internal reference (this will never be shown to your users). ![image](/img/pages/journeys/journeys-name.png)
+2. Click the **Create New Journey** button to get started.
+
+![image](/img/pages/journeys/create-journey-button.png)
+
+3. In the **Journey Name:** field, enter a name to use for internal reference (this will never be shown to your users).
+
+![image](/img/pages/journeys/journeys-name.png)
 
 ### Select audience
 
@@ -92,7 +98,7 @@ For example, if you have users in many countries, you can create a separate Jour
 | Platform | Branch currently offers Journeys on one platform: **Mobile web**. This will display for mobile users on your website. _More options coming soon._
 | Devices | Which devices would you like to target? For example, if you only have an iOS app, then you might want to show a Journey only to users viewing your mobile website on iOS.
 | Regions | Select one or more countries in which to display your Journey. Defaults to **Show to All Regions**
-| Additional Filters | Read about advanced filtering criteria [here]({{base.url}}/marketing-channels/journeys/advanced/#advanced-audience-rules).
+| Additional Filters | Read about advanced filtering criteria [here](/pages/web/journeys/#advanced-audience-rules).
 
 ### Select and style the banner or interstitial
 
@@ -104,10 +110,10 @@ For example, if you have users in many countries, you can create a separate Jour
     - _The fourth option shown is an alternate preconfiguration of the full screen interstitial_![image](/img/pages/journeys/select-template-type.png)
 1. Click **Customize** to make changes to the template.
 1. In the **Customize Template** heading, you may edit the the name to use for internal reference.
-1. Click any object in the preview to edit it. To see documentation on all customization options, [click here](../advanced/#template-customization-options).
+1. Click any object in the preview to edit it. To see documentation on all customization options, [click here](/pages/web/journeys/#template-customization-options).
 1. When finished, click **Save & Close** button to continue.
 
-**Note about generic deep linking params** If you are running a generic download campaign or a site-wide discount offer, your users would go to the same place inside your app regardless of where they originated on your website. You can configure this destination by setting **Deep Link Data** for the **Button** element when you [customize your template options]({{base.url}}/features/journeys/advanced/#template-customization-options).
+**Note about generic deep linking params** If you are running a generic download campaign or a site-wide discount offer, your users would go to the same place inside your app regardless of where they originated on your website. You can configure this destination by setting **Deep Link Data** for the **Button** element when you [customize your template options](/pages/web/journeys/#template-customization-options).
 
 ### Validate & Test
 
@@ -135,26 +141,19 @@ To preview your Journey in your live, production website, enter your website URL
 There are a number of errors and warnings you may encounter.
 
 #### Web SDK errors
-You must have the web SDK installed on your website to run a Journey
 
-**Fix:** [Install the Web SDK]({{base.url}}/features/journeys/guide/#add-the-branch-web-sdk-to-your-site).
+You must have the web SDK installed on your website to run a Journey.
 
 #### App SDK warnings
 
-If you choose to target iOS or Android users but haven’t integrated those SDKs, your Journeys will still show on the correct devices and direct users to your app. However, you won’t be able to get any install or event attribution for your Journeys, and you will not be able to deep link users to content inside your app.
-
-**Fix:** [Set up the mobile SDK in your app]({{base.url}}/getting-started/sdk-integration-guide).
+If you choose to target iOS or Android users but haven’t integrated those SDKs, your Journeys will still show on the correct devices and direct users to your app. However, you won’t be able to get any install or event attribution for your Journeys, and you will not be able to deep link users to content inside your app. Be sure to integrate the Branch SDK into your app.
 
 #### Audience rule warnings
 
-You will see a warning if your audience rules do not add up to 100%. If less than 100%, the remainder will see whatever is normal behavior for your website.
-
-**Fix:** Not required. To change audience allocations, simply press the **Back** button.
+You will see a warning if your audience rules do not add up to 100%. If less than 100%, the remainder will see whatever is normal behavior for your website. Your Journey will still run.
 
 #### Premium account warnings
-If you have built a Journey that includes premium-only functionality, you will see a warning.
-
-**Fix:**  Go back and remove the premium features such as advanced audience targeting, non-banner templates, CSS editing or A/B testing or [upgrade your app to Journeys Premium](http://dashboard.branch.io/journeys?modal=journeys-signup).
+If you have built a Journey that includes premium-only functionality, you will see a warning, as certain features are only available by purchasing.
 
 ### Managing your Journeys App Banners
 
@@ -184,8 +183,6 @@ You can activate a journey directly from the creation flow, or from **Start** in
 
 The Journeys Priority View allows you to set the priority of multiple Journeys when they **overlap**. They **overlap** when a single person is eligible to see multiple Journeys. You can prioritize the Journey that should show ahead of any others.
 
-{% example title="Prioritizing Journeys" %}
-
 Let's say you have two Journeys that may reach the same audience.
 
 1. A half page interstitial that promotes an offer on your "Shoes" category page.
@@ -193,24 +190,30 @@ Let's say you have two Journeys that may reach the same audience.
 
 In general, you'd like the interstitial to show ahead of the smart banner on the "Shoes" category page (where both audience segments overlap).
 
-{% endexample %}
-
 To prioritize Journeys, switch to the Priority View by clicking on the toggle.
 
 ![image](/img/pages/journeys/priority-view-toggle.png)
 
 You're now in Priority View.
 
-1. Drag and drop Journeys in the order you'd like them to show. The lower numbers mean higher priority (i.e. a Journey with priority 1 is going to show ahead of a Journey with priority 2).![image](/img/pages/journeys/first-priority-view.png))' 3-quarter center alt='first priority view' %}
-1. Click the **Save** button. ![image](/img/pages/journeys/save-priority.png))' 3-quarter center alt='changed priority view' %}
-1. Your Journeys have now been prioritized. ![image](/img/pages/journeys/final-priority-view.png))' 3-quarter center alt='final priority view' %}
+1. Drag and drop Journeys in the order you'd like them to show. The lower numbers mean higher priority (i.e. a Journey with priority 1 is going to show ahead of a Journey with priority 2).
+
+![image](/img/pages/journeys/first-priority-view.png)
+
+2. Click the **Save** button.
+
+![image](/img/pages/journeys/save-priority.png)
+
+3. Your Journeys have now been prioritized.
+
+![image](/img/pages/journeys/final-priority-view.png)
 
 !!! warning "Caution"
 
     When you save Journeys priorities, **ALL** Journeys will be prioritized in the order they appear in the table.
 
 
-For more detailed Journeys prioritization questions, visit our [Advanced section](/features/journeys/advanced/#prioritization).
+For more detailed Journeys prioritization questions, visit our [Advanced section](/pages/web/journeys/#prioritization).
 
 
 ### Visualizing Journeys performance
@@ -244,20 +247,20 @@ You can also access Journeys analytics by selecting the above filters from the [
 
 !!! protip "Attribute Journeys events to referring links"
 
-    By default, when users arrive on a page running Journeys via a Branch link, then any interaction with the Journey (click/install/re-open) will be attributed to the referring Branch link, rather than to the Journey. [Learn how]({{base.url}}/marketing-channels/journeys/advanced/#preserve-or-discard-referring-link-data) to attribute this data to the Journey instead.
+    By default, when users arrive on a page running Journeys via a Branch link, then any interaction with the Journey (click/install/re-open) will be attributed to the referring Branch link, rather than to the Journey. [Learn how](/pages/web/journeys/#preserve-or-discard-referring-link-data) to attribute this data to the Journey instead.
 
 
 ## Advanced
 
 ### Advanced audience rules
 
-You can target users on a more granular level - based on behavior like where they came from, whether they already have your app installed, and what they’ve done on your website or in your app. We've created a bunch of great examples on the [next tab]({{base.url}}/features/journeys/examples).
+You can target users on a more granular level - based on behavior like where they came from, whether they already have your app installed, and what they’ve done on your website or in your app. We've created a bunch of great examples on the [next tab](/pages/web/journeys/#examples).
 
-![image](/img/pages/journeys/advanced-audience-rules.png))' full center alt='Advanced audience' %}
+![image](/img/pages/journeys/advanced-audience-rules.png)
 
 #### Has completed event
 
-If you have [custom event tracking]({{base-url}}/getting-started/user-value-attribution/) set up, you can target users based on events that you define. For instance, you might want to show a Journey to users who have completed a purchase within the last week, or who add an item to their shopping cart more than three times.
+If you have [custom event tracking](/pages/apps/ios/#track-events) set up, you can target users based on events that you define. For instance, you might want to show a Journey to users who have completed a purchase within the last week, or who add an item to their shopping cart more than three times.
 
 <!-- #### Referred from site
 
@@ -281,7 +284,7 @@ You might choose to only show a Journey that asks a user to open the app to thos
 
 #### Has clicked on ad
 
-A user is grouped into "Has clicked on Ad" when they've clicked a link from [Deep Linked Feeds](/features/deep-linked-feeds).
+A user is grouped into "Has clicked on Ad" when they've clicked a link from [Deep Linked Feeds](/pages/deep-linked-ads/dynamic-product-feeds/).
 
 Use this to target users who have been part of an ad campaign to improve your ROI; maybe with a specific call to action to open the app and buy something if they've also never made a purchase in the app.
 
@@ -394,7 +397,7 @@ branch.track('pageview');
 
 You can disable Journeys animations on a page by setting two flags - `disable_entry_animation` and `disable_exit_animation` - when you’re calling either init() or track() with Branch’s Web SDK.
 
-Journeys animations can be disabled in order to reduce the amount of time it takes to load a Journey on a page. They can also be disabled in order to improve Journeys UX on single-page web apps, where Journeys animations can be jarring. When switching between multiple Journeys on a single-page web app, remember to use [setBranchViewData()](https://dev.branch.io/marketing-channels/journeys/guide/#deep-linking-from-the-banner-or-interstitial) to change the link behind the CTA.
+Journeys animations can be disabled in order to reduce the amount of time it takes to load a Journey on a page. They can also be disabled in order to improve Journeys UX on single-page web apps, where Journeys animations can be jarring. When switching between multiple Journeys on a single-page web app, remember to use [setBranchViewData()](/pages/web/journeys/#deep-linking-from-the-banner-or-interstitial) to change the link behind the CTA.
 
 To disable animations during initialization, insert `disable_entry_animation` and/or `disable_exit_animation`, with values of `true`, into the options:
 
@@ -459,16 +462,16 @@ If you have an upgraded premium account, you may also modify your CSS code direc
 
 The customization options available depend on the template chosen:
 
-- [Smart Banner](#smart-banner)
-- [Full Screen Interstitial](#full-screen-interstitial)
-- [Half Page Interstitial](#full-screen-interstitial)
+- [Smart Banner](/pages/web/journeys/#smart-banner)
+- [Full Screen Interstitial](/pages/web/journeys/#full-screen-interstitial)
+- [Half Page Interstitial](/pages/web/journeys/#full-screen-interstitial)
 - Floating Button
 
-### Smart Banner
+#### Smart Banner
 
 The available configuration options are identical for banners at both the top and the bottom of the screen.
 
-#### Background
+##### Background
 
 ![image](/img/pages/journeys/customize-banner-background.png)
 
@@ -477,7 +480,7 @@ The available configuration options are identical for banners at both the top an
 | Text Color | Specify the text color for elements without a specific setting. _Not currently used_ |
 | Background Color | Set the background color of the banner |
 
-#### Title
+##### Title
 
 ![image](/img/pages/journeys/customize-banner-title.png)
 
@@ -486,7 +489,7 @@ The available configuration options are identical for banners at both the top an
 | Formatting Bar | WYSIWYG styling for title text |
 | Title | The text of the title. Maximum 35 characters |
 
-#### Description
+##### Description
 
 ![image](/img/pages/journeys/customize-banner-description.png)
 
@@ -495,7 +498,7 @@ The available configuration options are identical for banners at both the top an
 | Formatting Bar | WYSIWYG styling for description text |
 | Description | The text of the description. Maximum 60 characters, will wrap to two lines |
 
-#### Rating
+##### Rating
 
 ![image](/img/pages/journeys/customize-banner-rating.png)
 
@@ -504,7 +507,7 @@ The available configuration options are identical for banners at both the top an
 | Formatting Bar | WYSIWYG styling for rating stars. Primarily useful for changing color |
 | Rating Star Count | The number of stars of your App/Play Store rating average. We encourage you to be honest! |
 
-#### Reviews
+##### Reviews
 
 ![image](/img/pages/journeys/customize-banner-reviews.png)
 
@@ -513,7 +516,7 @@ The available configuration options are identical for banners at both the top an
 | Formatting Bar | WYSIWYG styling for reviews count |
 | Reviews | The number of reviews of your app on the App/Play Store. We encourage you to be honest! |
 
-#### Button
+##### Button
 
 ![image](/img/pages/journeys/customize-banner-button.png)
 
@@ -522,11 +525,11 @@ The available configuration options are identical for banners at both the top an
 | Text Color | Change the color of the button text and button outline |
 | Background Color | Change the color of the button background
 | Button Text | Change the text shown when the app is installed and not installed. |
-| Channel | Set the **[Channel]({{base.url}}/getting-started/configuring-links/guide/#analytics-labels)** for the Branch link attached to the button. For example, `website`
-| Tags | Set the **[Tags]({{base.url}}/getting-started/configuring-links/guide/#analytics-labels)** for the Branch link attached to the button. For example, `purchase` and `fall-sale`
-| Deep Link Data | Insert deep link data and advanced link control parameters. Can contain any [Branch link parameter](https://dev.branch.io/getting-started/configuring-links/)
+| Channel | Set the **[Channel](/pages/links/integrate/#analytical-labels)** for the Branch link attached to the button. For example, `website`
+| Tags | Set the **[Tags](/pages/links/integrate/#analytical-labels)** for the Branch link attached to the button. For example, `purchase` and `fall-sale`
+| Deep Link Data | Insert deep link data and advanced link control parameters. Can contain any [Branch link parameter](/pages/links/integrate/#configure-deep-links)
 
-#### Dismiss
+##### Dismiss
 
 ![image](/img/pages/journeys/customize-banner-dismiss.png)
 
@@ -534,7 +537,7 @@ The available configuration options are identical for banners at both the top an
 | --- | --- |
 | Dismiss Period | Control how long the banner should be hidden once dismissed by the user. Options are `1 day`, `1 week`, `1 month`, `Never Again`, and `Custom` |
 
-#### App Icon
+##### App Icon
 
 ![image](/img/pages/journeys/customize-banner-icon.png)
 
@@ -542,9 +545,9 @@ The available configuration options are identical for banners at both the top an
 | --- | --- |
 | App Icon | Enter the URL for your app icon, or upload an image |
 
-### Full screen interstitial
+#### Full screen interstitial
 
-#### Background
+##### Background
 
 ![image](/img/pages/journeys/customize-fullpage-background.png)
 
@@ -572,7 +575,7 @@ The content block contains everything except for the background image. Dimension
 | Bottom | Pin to bottom of 'safe' screen height (accounting for browser controls and device dimensions) |
 | Custom | Position by relative percentage. Be sure to test for appropriate real-world alignment
 
-#### Title
+##### Title
 
 ![image](/img/pages/journeys/customize-fullpage-title.png)
 
@@ -581,7 +584,7 @@ The content block contains everything except for the background image. Dimension
 | Formatting Bar | WYSIWYG styling for title text |
 | Title | The text of the title. Maximum 35 characters, will wrap to multiple lines |
 
-#### Description
+##### Description
 
 ![image](/img/pages/journeys/customize-fullpage-description.png)
 
@@ -590,7 +593,7 @@ The content block contains everything except for the background image. Dimension
 | Formatting Bar | WYSIWYG styling for description text |
 | Description | The text of the description. Maximum 60 characters, will wrap to multiple lines |
 
-#### Button
+##### Button
 
 ![image](/img/pages/journeys/customize-fullpage-button.png)
 
@@ -599,11 +602,11 @@ The content block contains everything except for the background image. Dimension
 | Text Color | Change the color of the button text and button outline |
 | Background Color | Change the color of the button background
 | Button Text | Change the text shown when the app is installed and not installed. |
-| Channel | Set the **[Channel]({{base.url}}/getting-started/configuring-links/guide/#analytics-labels)** for the Branch link attached to the button. For example, `website`
-| Tags | Set the **[Tags]({{base.url}}/getting-started/configuring-links/guide/#analytics-labels)** for the Branch link attached to the button. For example, `purchase` and `fall-sale`
-| Deep Link Data | Insert deep link data and advanced link control parameters. Can contain any [Branch link parameter](https://dev.branch.io/getting-started/configuring-links/)
+| Channel | Set the **[Channel](/pages/links/integrate/#analytical-labels)** for the Branch link attached to the button. For example, `website`
+| Tags | Set the **[Tags](/pages/links/integrate/#analytical-labels)** for the Branch link attached to the button. For example, `purchase` and `fall-sale`
+| Deep Link Data | Insert deep link data and advanced link control parameters. Can contain any [Branch link parameter](/pages/links/integrate/#configure-deep-links)
 
-#### Dismiss
+##### Dismiss
 
 ![image](/img/pages/journeys/customize-fullpage-dismiss.png)
 
@@ -619,20 +622,18 @@ All Journeys features are available to upgraded apps, and are charged per event 
 #### Limitations for apps with free accounts
 
 - Any number of Journeys may be created in **Draft** mode using all features.
-- An invitation to upgrade will be displayed when premium-only functionality (indicated with a {% premiumflag %}{% endpremiumflag %} icon) is enabled
+- An invitation to upgrade will be displayed when premium-only functionality is enabled
 - Only a single Journey using the Smart Banner template (either top or bottom position) may be **Active** at any one time.
 - To enable a different Journey, the currently active Journey must first be put into **Stopped** mode.
 - Any Journey using premium-only features cannot be placed into **Active** mode until the app has been upgraded.
 
 ## Web to app routing without Journeys
 
-If you maintain a mobile website, Branch allows you to deep link mobile visitors directly into your app, or easily and automatically give them the option of downloading it. Here's a diagram that describes how it works:
-
-{% image src='/img/pages/features/website-to-app-routing/deepview-websdk-routing.png)' center full alt='Deepviews web routing' %}
+If you maintain a mobile website, Branch allows you to deep link mobile visitors directly into your app, or easily and automatically give them the option of downloading it.
 
 ### Open app if installed
 
-Add the following code somewhere inside the `<head></head>` tags on your website and customize the [link parameters]({{base.url}}/getting-started/configuring-links) to suit your needs.
+Add the following code somewhere inside the `<head></head>` tags on your website and customize the [link parameters](/pages/links/integrate/#configure-deep-links) to suit your needs.
 
 !!! protip
     What this script does is move a lot of the Branch redirection logic to the Javascript on your own page, effectively 'clicking a Branch link' on page load.
@@ -641,7 +642,7 @@ Add the following code somewhere inside the `<head></head>` tags on your website
 ```javascript
 <script type="text/javascript">
 // load the Branch SDK file
-{% ingredient web-sdk-initialization %}{% endingredient %}
+{! partials/web-sdk-init.md !}
 // define the deepview structure
 branch.deepview(
     {
@@ -661,7 +662,7 @@ branch.deepview(
 </script>
 ```
 
-{% ingredient replace-branch-key %}{% endingredient %}
+{! partials/replace-branch-key.md !}
 
 ### Add an install call to action
 
@@ -669,9 +670,9 @@ Trigger the `branch.deepviewCta()` function with a button or hyperlink on your p
 
 | Platform | Result of Call To Action
 | --- | ---
-| Mobile, app installed | Open app, deep link directly to content [if configured]({{base.url}}/features/website-to-app-routing/advanced/#deep-linking-from-your-website). This is a failsafe action in case the 'link click' on page load didn't fire correctly.
-| Mobile, app NOT installed | Open App Store or Play Store page for your app, deep link directly to content after download [if configured]({{base.url}}/features/website-to-app-routing/advanced/#deep-linking-from-your-website).
-| Desktop | Redirect to `$desktop_url` specified in the `deepview()` call, or fall back to your default web url from [Link Settings](https://dashboard.branch.io/#/settings/link).
+| Mobile, app installed | Open app, deep link directly to content. This is a failsafe action in case the 'link click' on page load didn't fire correctly.
+| Mobile, app NOT installed | Open App Store or Play Store page for your app, deep link directly to content after download.
+| Desktop | Redirect to `$desktop_url` specified in the `deepview()` call, or fall back to your default web url from [Link Settings](https://dashboard.branch.io/link-settings).
 
 
 Here's how to add a simple hyperlink call to action:
@@ -695,13 +696,13 @@ Here's how to add a simple hyperlink call to action:
 
 ### Calls to [branchsubdomain] blocked
 
-{% ingredient branchsubdomain %}{% endingredient %}
+{! ingredients/branchsubdomain.md !}
 
 Please make sure to add `[branchsubdomain]` to the CSP header for your pages. We've seen some browsers that attempt to block it outright. You can deliver this in an HTTP header from your web server or you can add a simple metatag to your site like so:
 
-{% highlight html %}
+```html
 <meta http-equiv="Content-Security-Policy" content="default-src https://[branchsubdomain]; child-src 'none'; object-src 'none'">
-{% endhighlight %}
+```
 
 ### Non-mobile optimized sites
 
@@ -721,11 +722,11 @@ The image will not look scaled properly in the editor view. This is because the 
 
 The Journeys audience tool is extremely powerful, but sometimes a few examples can help kickstart your creative juices. Here are are a couple common audience use cases to help you get started.
 
-1. [New users](#example-new-users)
-2. [Loyal users](#example-loyal-users)
-3. [Retargeting users who have taken some action](#example-retargeting-users)
-4. [Users from Google (for SEO)](#example-seo-friendly)
-5. [iOS users from English-speaking countries](#example-english-speaking-ios-users)
+1. [New users](/pages/web/journeys/#example-new-users)
+2. [Loyal users](/pages/web/journeys/#example-loyal-users)
+3. [Retargeting users who have taken some action](/pages/web/journeys/#example-retargeting-users)
+4. [Users from Google (for SEO)](/pages/web/journeys/#example-seo-friendly)
+5. [iOS users from English-speaking countries](/pages/web/journeys/#example-english-speaking-ios-users)
 
 All of these examples require you to configure advanced audience rules, which is a premium feature. You can add any set of complex rules using the following button:
 

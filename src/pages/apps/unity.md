@@ -166,6 +166,9 @@
 
 	- Read Deeplink params from a **BUO** in your `BranchInitSession callback`
 
+	- Returns [deep link properties](/pages/links/integrate/#read-deep-links)
+
+
 		```csharp
 		public void CallbackWithBranchUniversalObject(BranchUniversalObject universalObject, BranchLinkProperties linkProperties, string error) {
 			if (error != null) {

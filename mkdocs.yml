@@ -60,7 +60,7 @@ extra:
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company-beta/3813083'
   disqus: 'branch-docs'
-  google_optimize:
+  google:
     optimize: 'GTM-PCPBXCN'
     analytics: 'UA-98205710-1'
   algolia_docsearch:

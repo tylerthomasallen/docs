@@ -74,97 +74,48 @@
 
 ## Create deep links
 
+<<<<<<< HEAD
 - ### Short links
-    - #### Dashboard
-        - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
-    - #### App
-        - Use our [App SDK](#dialog-code) to create and share links within your app
-    - #### Web
-        - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
-    - #### API
-        - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
+    - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
+    - Use our [App SDK](#dialog-code) to create and share links within your app
+    - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
+    - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
 
 - ###  Long links
-    - #### Dyamically
-        - If you don't need a short link and care to avoid a network call, you can create links by appending query parameters to the Branch domain.
-            1. Start with an exiting Branch link, or your Branch link domain: **http://[branchsubdomain]**, like _yourapp.app.link_ or _links.yourdomain.com_.
-            2. Append `?` to start the query params string: **http://[branchsubdomain]?**
-                - If you're creating a new link and and you're using the legacy `bnc.lt` domain or a custom domain/subdomain as the base for your links, instead append `/a/your_Branch_key?`: **http://bnc.lt/a/your_branch_key?**
-            3. Append any additional key/value pairs, and analytics or link control parameters.
+    - If you don't need a short link and care to avoid a network call, you can create links by appending query parameters to the Branch domain.
+        1. Start with an exiting Branch link, or your Branch link domain: **http://[branchsubdomain]**, like _yourapp.app.link_ or _links.yourdomain.com_.
+        2. Append `?` to start the query params string: **http://[branchsubdomain]?**
+            - If you're creating a new link and and you're using the legacy `bnc.lt` domain or a custom domain/subdomain as the base for your links, instead append `/a/your_Branch_key?`: **http://bnc.lt/a/your_branch_key?**
+        3. Append any additional key/value pairs, and analytics or link control parameters.
 
-        - Here's an example of a finalized dynamic link (line breaks added for legibility):
+    - Here's an example of a finalized dynamic link (line breaks added for legibility):
 
-            ```sh
-            https://[branchsubdomain]?
-              %24deeplink_path=article%2Fjan%2F123&
-              %24fallback_url=https%3A%2F%2Fgoogle.com&
-              channel=facebook&
-              feature=affiliate&
-              user_id=4562&
-              name=Alex
-            ```
+        ```sh
+        https://[branchsubdomain]?
+          %24deeplink_path=article%2Fjan%2F123&
+          %24fallback_url=https%3A%2F%2Fgoogle.com&
+          channel=facebook&
+          feature=affiliate&
+          user_id=4562&
+          name=Alex
+        ```
 
-            The following keys have been embedded:
+        The following keys have been embedded:
 
-            | Key | Value |
-            | --- | --- |
-            | **$deeplink_path** | article/jan/123 |
-            | **$fallback_url** | https://google.com |
-            | **channel** | facebook |
-            | **feature** | affiliate |
-            | **user_id** | 4562 |
-            | **name** | Alex |
+        | Key | Value |
+        | --- | --- |
+        | **$deeplink_path** | article/jan/123 |
+        | **$fallback_url** | https://google.com |
+        | **channel** | facebook |
+        | **feature** | affiliate |
+        | **user_id** | 4562 |
+        | **name** | Alex |
 
 ## Configure deep links
 
-- #### Structure
-
-    - Deep link data structure
-
-        ```js
-        {
-          tags: [ 'tag1', 'tag2' ],
-          channel: 'facebook',
-          feature: 'dashboard',
-          stage: 'new user',
-          alias: 'myalias',
-          data: {
-            mydata: 'something',
-            foo: 'bar',
-            $desktop_url: 'http://myappwebsite.com',
-            $ios_url: 'http://myappwebsite.com/ios',
-            $android_url: 'http://myappwebsite.com/android',
-            $og_app_id: '12345',
-            $og_title: 'My App',
-            $og_description: 'My app\'s description.',
-            $og_image_url: 'http://myappwebsite.com/image.png'
-          }
-        }
-        ```
-
-    - Branch reserved keys
-
-        | Prefix | Usage |
-        | --- | --- |
-        | $ | Branch reserved keyword
-        | ~ | Branch analytical data
-        | + | Branch added values
-
-        | Key | Default | Usage
-        | --- | --- | ---
-        | ~id | | Automatically generated 18 digit ID number for the link that drove the install/open, if present (0 for dynamic and 3P links)
-        | ~referring_link | | The referring link that drove the install/open, if present
-        | ~creation_source | |  Where the link was created ('API', 'Dashboard', 'SDK', 'iOS SDK', 'Android SDK', or 'Web SDK')
-        | +match_guaranteed | | If the match was made with 100% accuracy
-        | +referrer | | The referrer for the link click, if a link was clicked
-        | +phone_number | | The phone number of the user, if the user texted himself/herself the app
-        | +is_first_session | `false` | `true` if first session (install), `false` if any other session (open)
-        | +clicked_branch_link | `false` | Whether or not the user clicked a Branch link that triggered this session
-        | +non_branch_link | | App was opened from a non Branch link (third party, invalid Branch deep link, or Branch key mismatch)
-
 - #### Analytical labels
 
-    - For [Create Deep Link](#create-deep-link) and [Share Deep Link](#share-deep-link)
+    - These labels allow you to filter and organize your deep links
 
         | Key | Default | Usage
         | --- | --- | ---
@@ -282,7 +233,7 @@
 
 - #### Universal Object
 
-    - Properties for the Branch Universal Object
+    - Properties for the Branch Universal Object within your [app](#dialog-code) integration
 
         | Key | Default | Usage | Link Property
         | --- | :-: | --- | :-:
@@ -308,6 +259,78 @@
             - Wait to initialize the object and register views until the user goes to share
             - Wait to initialize the object until you conveniently need a link
             - Create many objects at once and register views in a `for` loop.
+
+
+## Read deep links
+
+- Deep link data gets sent from your link to your [app](#dialog-code) or [website](/pages/web/integrate/) integration
+
+- #### Data structure
+
+    - Example deep link data structure
+
+        ```json
+        {
+          "identity_id": "427469360685348303",
+          "link": "https://example.app.link?%24identity_id=427469360685348303",
+          "session_id": "429691081177874743",
+          "data": {
+            "$canonical_identifier": "item/1503684554354.28",
+            "$desktop_url": "http://example.com/home",
+            "$exp_date": 0,
+            "$identity_id": "427469360685348303",
+            "$og_description": "My Content Description",
+            "$og_image_url": "http://lorempixel.com/200/200/",
+            "$og_title": "46D6D28E-0390-40E4-A856-BD74F34D24C8",
+            "$one_time_use": false,
+            "$publicly_indexable": 1,
+            "+click_timestamp": 1503684563,
+            "+clicked_branch_link": true,
+            "+is_first_session": false,
+            "+match_guaranteed": true,
+            "custom": "blue",
+            "random": "FE848A5B-78F7-42EC-A253-9F795FE91692",
+            "added": "1503684554354.33",
+            "~campaign": "new launch",
+            "~channel": "facebook",
+            "~creation_source": 3,
+            "~feature": "sharing",
+            "~id": 429691043152332059,
+            "~referring_link": "https://example.app.link/X7OsnWv9TF",
+            "~stage": "new person",
+            "~tags": [
+              "one",
+              "two"
+            ]
+          }
+        }
+        ```
+
+- #### Reserved prefixes
+
+    - Branch adds additional properties to your deep link data to explain the link
+
+        | Prefix | Usage |
+        | --- | --- |
+        | $ | Branch reserved keyword
+        | ~ | Branch analytical data
+        | + | Branch added values
+
+- #### Callback values
+    
+    - Additional properties read from the `initSession` within your [app](#dialog-code) and [website](/pages/web/integrate/) integrations
+
+        | Key | Default | Usage
+        | --- | --- | ---
+        | ~id | | Automatically generated 18 digit ID number for the link that drove the install/open, if present (0 for dynamic and 3P links)
+        | ~referring_link | | The referring link that drove the install/open, if present
+        | ~creation_source | |  Where the link was created (`0` API , `1` Quick Link, `2` SDK, `3` iOS SDK , `4` Android SDK , `5` Web SDK, `6` A links, `7` Dynamic, `8` Third party)
+        | +match_guaranteed | | If the match was made with 100% accuracy
+        | +referrer | | The referrer for the link click, if a link was clicked
+        | +phone_number | | The phone number of the user, if the user texted himself/herself the app
+        | +is_first_session | `false` | `true` if first session (install), `false` if any other session (open)
+        | +clicked_branch_link | `false` | Whether or not the user clicked a Branch link that triggered this session
+        | +non_branch_link | | App was opened from a non Branch link (third party, invalid Branch deep link, or Branch key mismatch)
 
 ## Troubleshoot issues
 
