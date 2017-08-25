@@ -355,6 +355,7 @@ a.algolia-docsearch-footer--logo {
 }
 .branch-old-docs {
   left: 0;
+  padding: 0.6em 0.75em;
   border-top-right-radius: 1em;
 }
 
