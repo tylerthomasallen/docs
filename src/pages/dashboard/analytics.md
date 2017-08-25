@@ -5,11 +5,16 @@
 - #### Journey Banners
     - View more information in [Journey app banners](/pages/web/journeys/)
     - View more information in [Journey Amp banners](/pages/web/amp-journeys/)
+
 - #### DeepView Preview
     - View more information in [Deepviews](/pages/web/deep-views/)
+
 - #### Desktop SMS
     - View more information in [Text me the app](/pages/web/text-me-the-app/)
+
 - #### Ads
+    - [Dashboard Ads](https://dashboard.branch.io/email) allows you to easily integrate Branch deep links with your email providers
+
 - #### Emails
     - [Dashboard Emails](https://dashboard.branch.io/email) allows you to easily integrate Branch deep links with your email providers
     - View more information [here](/pages/emails/appboy/)
