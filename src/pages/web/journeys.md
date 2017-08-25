@@ -696,7 +696,7 @@ Here's how to add a simple hyperlink call to action:
 
 ### Calls to [branchsubdomain] blocked
 
-{! ingredient/branchsubdomain.md !}
+{! ingredients/branchsubdomain.md !}
 
 Please make sure to add `[branchsubdomain]` to the CSP header for your pages. We've seen some browsers that attempt to block it outright. You can deliver this in an HTTP header from your web server or you can add a simple metatag to your site like so:
 
