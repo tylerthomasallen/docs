@@ -29,7 +29,7 @@
 
 - #### Configure info.pList
 
-    - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+    - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
         ![image](http://i.imgur.com/PwXnHWz.png)
 

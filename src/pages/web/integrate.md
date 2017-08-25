@@ -34,7 +34,7 @@
     </html>
     ```
 
-    - Change `key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt` to match your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Change `key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt` to match your [Branch Dashboard](https://dashboard.branch.io/account-settings/app)
 
 ## Implement features
 

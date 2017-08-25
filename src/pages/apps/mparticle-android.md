@@ -49,7 +49,7 @@
 
 - #### Enable Branch on mParticle
 
-    - Retrieve your Branch Key on the [Link Settings](https://dashboard.branch.io/settings/link) page of the Branch dashboard.
+    - Retrieve your Branch Key on the [App Settings](https://dashboard.branch.io/account-settings/app) page of the Branch dashboard.
     - From your [mParticle dashboard](https://app.mparticle.com/) navigate to the Services page. (The paper airplane icon on the left side)
     - Scroll down to the Branch tile, or enter Branch in the search bar.
     - Click on the Branch tile and then select "Activate a Platform".

@@ -119,7 +119,7 @@
         </manifest>
         ```
 
-    - Replace the following with values from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Replace the following with values from your [Branch Dashboard](https://dashboard.branch.io/account-settings/app)
         - `androidexample`
         - `example.app.link`
         - `key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw`

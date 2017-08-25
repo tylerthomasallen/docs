@@ -2,7 +2,7 @@
 
   - Use `Postman` to test Branch API for requests, responses, and code examples
 
-  - Change the `branch_key` to match your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+  - Change the `branch_key` to match your [Branch Dashboard](https://dashboard.branch.io/account-settings/app)
 
   - [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3dadd3558239b25f385d)
 
@@ -48,7 +48,7 @@
 
         | Key | Value | Usage | Required
         | --- | :-: | --- | :-:
-        | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
+        | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/account-settings/app) | √
         | ... | ... | Parameters from [Configuring Links](/pages/links/integrate/) |
 
 - #### Link create bulk 

@@ -22,7 +22,7 @@ Note that the **Live** and **Test** apps on the Branch dashboard are completely 
 
 Register the app on the Branch dashboard, here: [https://dashboard.branch.io](https://dashboard.branch.io)
 
-The Branch key can be found on the [General Settings](https://dashboard.branch.io/settings) page. The app's Branch link domain  will be listed at the very bottom of the [Link Settings](https://dashboard.branch.io/link) page.
+The Branch key can be found on the [General Settings](https://dashboard.branch.io/account-settings/app) page. The app's Branch link domain  will be listed at the very bottom of the [Link Settings](https://dashboard.branch.io/link) page.
 
 - #### Configure app
 
