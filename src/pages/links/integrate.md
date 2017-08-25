@@ -43,7 +43,7 @@
         - Basics are `$og_title`, `$og_description`, and `$og_image_url`
     - Use [Deep Views]() to display content as a website
         - Increases [install attribution](https://branch.io/deepview/)
-        - Completes deep linking experience in [certain apps](#supported-platforms)
+        - Completes deep linking experience in [certain apps](#expected-redirect-behavior)
 
 - #### Expected redirect behavior
 
@@ -363,7 +363,7 @@
     - Make sure you have completed [Configure your dashboard](/pages/dashboard/integrate/) and [Configure your app](#dialog-code)
     - Make sure the `Branch key` in your app ([Configure your app](#dialog-code)) matches the `Branch key` in your deep link ([View deep link data](#view-deep-link-data))
     - Make sure you have not disabled deep linking ([Re-enable universal linking](/pages/apps/ios/#re-enable-universal-linking))
-    - Make sure you meet the requirements for [Supported platforms](#supported-platforms)
+    - Make sure you meet the requirements for [Supported platforms](#expected-redirect-behavior)
     - Make sure the link the user is click on matches your `link domain` from the [Branch Dashboard](https://dashboard.branch.io/link-settings)
 
 - #### View deep link data

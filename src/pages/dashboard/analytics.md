@@ -35,7 +35,7 @@
 - #### Deepview Preview
     - The [Dashboard Preview](https://dashboard.branch.io/) is a content preview for your app to increase app install conversion
     - Find more information in [Deepviews](/pages/web/deep-views/)
-    - Deepviews also help deep links work in all platforms [Supported Platforms](/pages/links/integrate/#supported-platforms)
+    - Deepviews also help deep links work in all platforms [Supported Platforms](/pages/links/integrate/#expected-redirect-behavior)
 
 - #### Desktop SMS
     - The [Dashboard Text Me The App](https://dashboard.branch.io/) allows you to send a deep link with in a text message to users to convert desktop users to app users
