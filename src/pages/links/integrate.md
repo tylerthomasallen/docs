@@ -74,14 +74,46 @@
 
 ## Create deep links
 
-- #### Dashboard
-    - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
-- #### App
-    - Use our [App SDK](#dialog-code) to create and share links within your app
-- #### Web
-    - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
-- #### API
-    - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
+- ### Short links
+    - #### Dashboard
+        - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
+    - #### App
+        - Use our [App SDK](#dialog-code) to create and share links within your app
+    - #### Web
+        - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
+    - #### API
+        - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
+
+- ###  Long links
+    - #### Dyamically
+        - If you don't need a short link and care to avoid a network call, you can create links by appending query parameters to the Branch domain.
+            1. Start with an exiting Branch link, or your Branch link domain: **http://[branchsubdomain]**, like _yourapp.app.link_ or _links.yourdomain.com_.
+            2. Append `?` to start the query params string: **http://[branchsubdomain]?**
+                - If you're creating a new link and and you're using the legacy `bnc.lt` domain or a custom domain/subdomain as the base for your links, instead append `/a/your_Branch_key?`: **http://bnc.lt/a/your_branch_key?**
+            3. Append any additional key/value pairs, and analytics or link control parameters.
+
+        - Here's an example of a finalized dynamic link (line breaks added for legibility):
+
+            ```sh
+            https://[branchsubdomain]?
+              %24deeplink_path=article%2Fjan%2F123&
+              %24fallback_url=https%3A%2F%2Fgoogle.com&
+              channel=facebook&
+              feature=affiliate&
+              user_id=4562&
+              name=Alex
+            ```
+
+            The following keys have been embedded:
+
+            | Key | Value |
+            | --- | --- |
+            | **$deeplink_path** | article/jan/123 |
+            | **$fallback_url** | https://google.com |
+            | **channel** | facebook |
+            | **feature** | affiliate |
+            | **user_id** | 4562 |
+            | **name** | Alex |
 
 ## Configure deep links
 
