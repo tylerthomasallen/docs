@@ -30,8 +30,8 @@ Android | Yes | Uses Final URL with ValueTrack Parameters, no tracking template 
 ## Setup
 
 !!! warning "Prerequisites"
-	* [x] To track installs from Google Ads you should [integrate the Branch SDK](TODO) into your app.
-	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](TODO).
+	* [x] To track installs from Google Ads you should integrate the Branch SDK into your app.
+	* [x] If you want to deep link from your ads directly to content, you should configure deep link routing.
 	* [x] Ensure you have entered your Android application's URI scheme under `Link Settings > Android URI Scheme` in your Branch dashboard.
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
@@ -41,16 +41,19 @@ Android | Yes | Uses Final URL with ValueTrack Parameters, no tracking template 
 
 ## Create an Ad Link
 
-1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `App Install or Engagement`
-<img src="/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png" alt="Link Creation" class="three-quarters center">
-1. Under the Define Section, pick a Link Name for later reference
-1. Configure the link with the Ad Format set to **App Only**, the Ad Partner set to **Google Adwords**, and the Secondary Ad Format set to **Google Search App Engagement Android**.
-![Create Ad Link](/img/pages/deep-linked-ads/google-search-engagement-ads/android/ad-link-setup.png)
-1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Google Adwords and set the campaign field to the same ad campaign name used in Adwords.
-![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
+- Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="\_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `App Install or Engagement`
 
-!!! note "Optional: Deep Link Data"
-	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](TODO) page to learn more.
+![image](/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png)
+
+- Under the Define Section, pick a Link Name for later reference
+
+- Configure the link with the Ad Format set to **App Only**, the Ad Partner set to **Google Adwords**, and the Secondary Ad Format set to **Google Search App Engagement Android**.
+
+![Create Ad Link](/img/pages/deep-linked-ads/google-search-engagement-ads/android/ad-link-setup.png)
+
+- Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Google Adwords and set the campaign field to the same ad campaign name used in Adwords.
+
+![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
 !!! tip "Setting Attribution Windows"
 	You can specify the attribution windows for your links either at an overall account or per link level. Use these windows to accurately measure attribution data for your Branch links. Refer to [Changing attribution windows](/pages/deep-linked-ads/branch-universal-ads/#change-attribution-windows) for instructions.
@@ -61,18 +64,24 @@ To set up a Search Network Mobile App Engagement Campaign on Android, you will n
 
 #### Create Your Campaign
 
-1. Select `Search Network only` on Adwords
-<img src="/img/pages/deep-linked-ads/reusable-images/adwords-search-network.png" alt="Adwords Network" class="half center">
-1. For the type of Search campaign select `Mobile app engagement`
+- Select `Search Network only` on Adwords
+![image](/img/pages/deep-linked-ads/reusable-images/adwords-search-network.png)
+
+- For the type of Search campaign select `Mobile app engagement`
+
 ![Adwords Setup](/img/pages/deep-linked-ads/google-search-engagement-ads/adwords-search-engagement.png)
-1. Continue setting the campaign and ad group parameters
+
+- Continue setting the campaign and ad group parameters
 
 #### Ad Creation
 
-1. Copy the Branch Ad link from the first section and ensure that it is in the format _App URI://open?link_click_id=link-..._. Refer to the [Create A Branch Ad Link]({{base.url}}/marketing-channels/google-search-engagement-ads/guide/android/#create-a-branch-ad-link) section if the link is not in this format to ensure the link creation was setup properly.
+- Copy the Branch Ad link from the first section and ensure that it is in the format _App URI://open?link_click_id=link-..._. Refer to the [Create A Branch Ad Link](#create-a-branch-ad-link) section if the link is not in this format to ensure the link creation was setup properly.
+
 ![Example Link](/img/pages/deep-linked-ads/google-search-engagement-ads/android/full-branch-link.png)
-1. In the Ad creator, locate the **Scheme** field and enter the scheme portion of the Branch Ad link. This should be the portion of the link before the **://** symbol.
-1. Now locate the **Host and path** field and enter the rest of your Branch Ad link following the **://** symbol.
+
+- In the Ad creator, locate the **Scheme** field and enter the scheme portion of the Branch Ad link. This should be the portion of the link before the **://** symbol.
+
+- Now locate the **Host and path** field and enter the rest of your Branch Ad link following the **://** symbol.
 ![Example Ad](/img/pages/deep-linked-ads/google-search-engagement-ads/android/adwords-configuration.png)
 
 {! ingredients/deep-linked-ads/view-ad-link-data.md !}
@@ -93,4 +102,4 @@ To set up a Search Network Mobile App Engagement Campaign on Android, you will n
 
 **A:** On the Adwords Ad creator page or the when editing your ad, locate and click the `Test this app URI` button. With an Android phone that has your mobile app installed, use a QR code reader application to read the generated QR code to simulate a click on your Ad. Now you can verify that your Branch Ad link works and deep linked data is passed through to the app.
 
-<img src="/img/pages/deep-linked-ads/google-search-engagement-ads/android/debug-uri.png" alt="Debug Link" class="three-quarters center">
+![image](/img/pages/deep-linked-ads/google-search-engagement-ads/android/debug-uri.png)

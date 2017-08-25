@@ -4,7 +4,6 @@ To help you grow your app, Facebook offers a feature called App Invites as an al
 
 ![image](/img/pages/app-to-app/facebook-app-invites/appinvite.png)
 
-
 ## Set Up
 
 !!! tip "Before you get started"
@@ -14,9 +13,15 @@ To help you grow your app, Facebook offers a feature called App Invites as an al
 
 In order for Branch to work with Facebook App Invites, you must first allow Branch to access your Facebook app information.
 
-1. Log in to Facebook, navigate to [developers.facebook.com/apps](http://developers.facebook.com/apps) and choose your app. You'll need the **App ID** and **App Secret**.{% image src='/img/pages/features/facebook-app-invites/fb_auth_fb.png' three-quarters center alt='Facebook Auth' %}
-1. On the Branch Dashboard, go to [Link Settings](https://dashboard.branch.io/#/settings/link) and scroll down to 'Authenticate for Facebook Install Ads'. Enter your **App ID** and **App Secret** from Facebook.{% image src='/img/pages/features/facebook-app-invites/fb_auth_branch.png' three-quarters center alt='Facebook Auth' %}
-1. Press 'Authenticate'.
+1. Log in to Facebook, navigate to [developers.facebook.com/apps](http://developers.facebook.com/apps) and choose your app. You'll need the **App ID** and **App Secret**.
+
+![image](/img/pages/app-to-app/facebook-app-invites/fb_auth_fb.png)
+
+2. On the Branch Dashboard, go to [Link Settings](https://dashboard.branch.io/link-settings) and scroll down to 'Authenticate for Facebook Install Ads'. Enter your **App ID** and **App Secret** from Facebook.
+
+![image](/img/pages/app-to-app/facebook-app-invites/fb_auth_branch.png)
+
+3. Press 'Authenticate'.
 
 ### Insert Branch link into App Invite
 
@@ -34,7 +39,6 @@ In Swift
 ```obj-c
 In the Bridging Header, add the following:
 
-{% highlight objective-c %}
 #import "Branch.h"
 #import "BranchUniversalObject.h"
 #import "BranchLinkProperties.h"
@@ -186,7 +190,7 @@ The [Quick Links page](https://dashboard.branch.io/quick-links) on the Branch da
 
 To view more details stats, click the _small button that looks like a bar chart_ on the far right. Note that these stats are **limited to the date range** at the top. You can expand the range if you'd like.
 
-![image](/img/pages/features/facebook-app-invites/click_flow_analytics.png)
+![image](/img/pages/app-to-app/facebook-app-invites/click_flow_analytics.png)
 
 ## Advanced
 
@@ -194,7 +198,7 @@ To view more details stats, click the _small button that looks like a bar chart_
 
 Since you used a Branch link for the URL in the App Invite, you can use Branch to determine if a new user came from an existing app user, and show a personalized welcome.
 
-![image](/img/pages/features/facebook-app-invites/gogobot_onboarding_screens.png')
+![image](/img/pages/app-to-app/facebook-app-invites/gogobot_onboarding_screens.png')
 
 <!--- iOS -->
 
@@ -260,8 +264,8 @@ protected void onStart() {
 ```
 
 1. Inside the Activity you want to display, you'll need to hook into the `onNewIntent` method specified inside the Activity lifecycle and set the intent. This is required for conformity with Facebook's AppLinks.
-1. Verify that the activity you're implementing has `launchMode` set to `singleTask` inside the Manifest declaration.
-1. Once that's done, go to said Activity and do something like the following:
+2. Verify that the activity you're implementing has `launchMode` set to `singleTask` inside the Manifest declaration.
+3. Once that's done, go to said Activity and do something like the following:
 
 ```java
 @Override
@@ -277,16 +281,16 @@ public void onNewIntent(Intent intent) {
 
 If Facebook is having trouble reading the AppLinks from the Branch link, you might see this message while trying to test out the flow. This means that there is something corrupted in the OG tags causing Facebook to not parse it.
 
-![image](/img/pages/features/facebook-ads/missing_applinks.png)
+![image](/img/pages/app-to-app/facebook-ads/missing_applinks.png)
 
 ### Re-scrape OG tags
 
 You can test the OG tags using the [OG tag tester tool](https://developers.facebook.com/tools/debug/og/object) provided by Facebook:
 
 1. Paste the Branch Link into the Input URL box.
-1. Click on the Show existing scrape information button.
-1. Examine errors regarding App Links from the output window.
-1. Click on the Fetch New Scrape Information button. This last step typically resolves this problem if you are certain that your Branch Link Settings are correct.
+2. Click on the Show existing scrape information button.
+3. Examine errors regarding App Links from the output window.
+4. Click on the Fetch New Scrape Information button. This last step typically resolves this problem if you are certain that your Branch Link Settings are correct.
 
 !!! Note
    You can further automate the rescraping process by using this command after you create a new link and before you use it for any ads:
@@ -297,7 +301,7 @@ You can test the OG tags using the [OG tag tester tool](https://developers.faceb
 
 1. Examine your [Link Settings](https://dashboard.branch.io/link-settings) and ensure that for all platforms (for which an app is available), that a URI scheme and a link to the app in the Play/App Store is configured. If you are using a Custom URL for your iOS Redirect, then you need to append `?id[10-digit App Store ID]` to the URL. This is necessary in order to fully generate the App Links and OG tags that the Facebook scraper expects to find.
     - For example, if your App Store URL is `https://itunes.apple.com/us/app/my-app-name/id1234567890`, then your Custom URL value should be `https://example.com?id1234567890`
-1. If errors from the output window pertain to OG tags i.e. missing title, description etc. then examine link OG tags by appending `?debug=true` as described on the [Integration Testing page]({{base.url}}/getting-started/integration-testing/guide/#debugging-an-individual-link).
+1. If errors from the output window pertain to OG tags i.e. missing title, description etc. then examine link OG tags by appending `?debug=true` to the end of your link.
 1. If you haven't set OG tags on a per link level, then please check your Dashboard's global Social Media Display Customization settings from the [Link Settings](https://dashboard.branch.io/link-settings) page.
 
 ### Known issue with App Restrictions
@@ -330,4 +334,4 @@ If you have entered the correct App ID and Secret but are still getting issues, 
 
 If you have enabled "Native or desktop app", then your advanced options should appear like the following:
 
-![image](/img/pages/features/facebook-ads/facebook_secret.png)
+![image](/img/pages/app-to-app/facebook-ads/facebook_secret.png)

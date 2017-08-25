@@ -8,10 +8,10 @@ Listing your app content on Apple's new Spotlight search with Branch is easy. No
 
 ## Setup
 
-!!! note "Pre-reqs"
+### Prerequisites
+
     This guide requires you to have already [integrated the Branch SDK](/pages/apps/ios/) into your app. For Spotlight search results to function as intended, you should also [configure deep link routing](/pages/apps/ios/#navigate-to-content).
 
-{% endprerequisite %}
 
 ### List Content
 
@@ -41,7 +41,6 @@ branchUniversalObject.addMetadataKey("property2", value: "red")
 
 // important to set this flag to true
 branchUniversalObject.automaticallyListOnSpotlight = true
-{% endhighlight %}
 ```
 
 Then call the `userCompletedAction` method with the `View` event on your `BranchUniversalObject`. You will want to do this every single time a user goes to view a page in your app, so we recommend putting this in `viewDidAppear`, which means you must initialize the Branch Universal Object with all appropriate metadata before `viewDidAppear`.
@@ -58,7 +57,6 @@ This will create the appropriate NSUserActivity and tell Apple that a view occur
 
 ### Handle incoming traffic from Spotlight
 
-
 Open your **AppDelegate.m** file and add the following method. If you completed the basic SDK integration guide, this is likely already present.
 
 ```obj-c
@@ -72,7 +70,6 @@ Open your **AppDelegate.m** file and add the following method. If you completed 
 In Swift:
 
 ```swift
-{% highlight swift %}
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
     // pass the url to the handle deep link call
     return Branch.getInstance().continueUserActivity(userActivity)
