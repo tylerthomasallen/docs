@@ -133,6 +133,8 @@
 
 - #### Read deep link
 
+    - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
+
     - Install & Open
 
         ```as3

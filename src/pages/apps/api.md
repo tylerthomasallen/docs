@@ -116,6 +116,8 @@
 
 - #### Link read
 
+    - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
+
     - *Request*
 
         ```bash

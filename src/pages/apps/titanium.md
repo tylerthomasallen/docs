@@ -233,6 +233,8 @@
         
     - Refer to `$.onInitSessionFinished()` in [Initialize Branch](#initialize-branch)
     
+    - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
+
 - #### Track content
 
     - Track how many times a piece of content is viewed

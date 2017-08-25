@@ -234,7 +234,7 @@
 
 - Deep link data gets sent from your link to your [app](#dialog-code) or [website](/pages/web/integrate/) integration
 
-- #### Structure
+- #### Data structure
 
     - Example deep link data structure
 

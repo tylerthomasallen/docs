@@ -886,6 +886,8 @@ ShareLink (IBranchLinkShareInterface callback,
 
 - #### Read deep link
 
+- Returns [deep link properties](/pages/links/integrate/#read-deep-links)
+
 ##### Retrieve session (install or open) parameters
 
 Session parameters will be available at any point. If there are no params, the dictionary will be empty. This refreshes with every new session (app installs AND app opens)
