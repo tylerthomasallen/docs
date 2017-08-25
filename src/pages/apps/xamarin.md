@@ -794,22 +794,9 @@ namespace TestXamarinFormsApp.Droid
 }
 ```
 
-____
+- #### Receive deep link data
 
-#### 4 - Submitting iOS Apps to the App Store
-
-Branch uses the Apple Advertising Identifier, or _IDFA_, to identify users across our entire partner network, greatly increasing the accuracy of matching. Read more about matching accuracy on the [Matching Platform](https://dev.branch.io/getting-started/matching-accuracy/overview/) page.  
-
-##### Notifying Apple of IDFA usage
-
-Be sure to let Apple know that you are using the IDFA when submitting apps to the App Store after integrating the Branch SDK.  
-
-1. Answer **Yes** when presented with the question: **Does this app use the Advertising Identifier (IDFA)?**  
-2. Check the following two boxes:  
-- **Attribute this app installation to a previously served advertisement**  
-- **Attribute an action taken within this app to a previously served advertisement**  
-
-![Apple Advertising Identifier](/docs/images/idfa.png)
+    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link
 
