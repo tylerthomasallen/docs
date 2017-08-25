@@ -6,7 +6,7 @@ source: imessage-apps.md
 ---
 ## Overview
 
-With iOS 10, Branch has [added support](https://blog.branch.io/setting-up-your-ios-10-imessages-app-with-attribution-and-deep-linking){:target="_blank"} for extension type apps so that you can bundle the SDK into your iMessage app. Apple didn't build full deep linking support into extension apps, so unfortunately the use cases are limited to driving new installs for now. We'll wait patiently to observe updates over time
+With iOS 10, Branch has [added support](https://blog.branch.io/setting-up-your-ios-10-imessages-app-with-attribution-and-deep-linking){:target="\_blank"} for extension type apps so that you can bundle the SDK into your iMessage app. Apple didn't build full deep linking support into extension apps, so unfortunately the use cases are limited to driving new installs for now. We'll wait patiently to observe updates over time
 
 iMessage apps are now completely separate from your main App Store app, and should be treated as such. Thus, there is some common confusion that we wanted to clear up regarding how to use Branch with your iMessage app. Here's a list of best practices to ensure your integration is successful.
 
@@ -41,7 +41,7 @@ If you've read the above, you know that the iMessage App Store is a completely d
 
 #### Configure your Branch links
 
-First, create an entirely new app via the [Branch dashboard](https://dashboard.branch.io/). You can do this in the pull down selector that shows your app name in the top right section. Then head to the [link settings page](https://dashboard.branch.io/settings/link) and scroll to the iOS section to configure it as follows:
+First, create an entirely new app via the [Branch dashboard](https://dashboard.branch.io/). You can do this in the pull down selector that shows your app name in the top right section. Then head to the [link settings page](https://dashboard.branch.io/link-settings) and scroll to the iOS section to configure it as follows:
 
 ![dashboard settings](/img/pages/app-to-app/imessage-apps/dashboard_link_settings.png){ .full-width }
 
@@ -58,4 +58,4 @@ You're all set! All of your Branch links will correctly link to the iMessages Ap
 
 ### Tracking installs
 
-To track installs and personalize the first time user experience, you simply need to follow the instructions in the **[SDK integration guide](/pages/apps/imessage/)** for iMessage apps. You'll integrate the SDK just as you have for your main App Store app.
+To track installs and personalize the first time user experience, you simply need to follow the instructions in the [SDK integration guide](/pages/apps/ios/) for iMessage apps. You'll integrate the SDK just as you have for your main App Store app.
