@@ -70,8 +70,10 @@
           branchInit: function() {
             // Branch initialization
             Branch.initSession(function(data) {
-              // read deep link data on click
-              alert('Deep Link Data: ' + JSON.stringify(data));
+              if (data['+clicked_branch_link']) {
+                // read deep link data on click
+                alert('Deep Link Data: ' + JSON.stringify(data));
+              }
             });
           }
         };
@@ -107,8 +109,10 @@
             function branchInit() {
               // Branch initialization
               Branch.initSession(function(data) {
-                // read deep link data on click
-                alert('Deep Link Data: ' + JSON.stringify(data));
+                if (data['+clicked_branch_link']) {
+                  // read deep link data on click
+                  alert('Deep Link Data: ' + JSON.stringify(data));
+                }
               });
             }
           });
@@ -151,8 +155,10 @@
                 // only on devices
                 if (!platform.is('cordova')) { return }
                 Branch.initSession(data => {
-                  // read deep link data on click
-                  alert('Deep Link Data: ' + JSON.stringify(data));
+                  if (data['+clicked_branch_link']) {
+                    // read deep link data on click
+                    alert('Deep Link Data: ' + JSON.stringify(data));
+                  }
                 });
               }
             }
@@ -199,8 +205,10 @@
 
         // Branch initialization
         Branch.initSession(function(data) {
-          // read deep link data on click
-          alert('Deep Link Data: ' + JSON.stringify(data))
+          if (data['+clicked_branch_link']) {
+            // read deep link data on click
+            alert('Deep Link Data: ' + JSON.stringify(data))
+          }
         }).then(function(res) {
           alert('Response: ' + JSON.stringify(res))
         }).catch(function(err) {
@@ -345,8 +353,10 @@
         ```js
         // Branch initialization within your deviceready and resume
         Branch.initSession(function(deepLinkData) {
-          // handler for deep link data on click
-          alert('Response: ' + JSON.stringify(deepLinkData))
+          if (data['+clicked_branch_link']) {
+            // handler for deep link data on click
+            alert('Response: ' + JSON.stringify(deepLinkData))
+          }
         })
         ```
 
@@ -378,14 +388,16 @@
 
         ```js
         Branch.initSession(function(data) {
-          // option 1: save to model to be used later
-          window.localStorage['branchData'] = data;
+          if (data['+clicked_branch_link']) {
+            // option 1: save to model to be used later
+            window.localStorage['branchData'] = data;
 
-          // option 2: navigate to page
-          window.location.href = '#/content/123'
+            // option 2: navigate to page
+            window.location.href = '#/content/123'
 
-          // option 3: display data
-          alert(JSON.stringify(data));
+            // option 3: display data
+            alert(JSON.stringify(data));
+          }
         });
         ```
 
