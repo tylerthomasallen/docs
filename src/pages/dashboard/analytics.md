@@ -11,9 +11,19 @@
     - View more information in [Text me the app](/pages/web/text-me-the-app/)
 - #### Ads
 - #### Emails
+    - [Dashboard Emails](https://dashboard.branch.io/email) allows you to easily integrate Branch deep links with your email providers
+    - View more information [here](/pages/emails/appboy/)
+
 - #### Organic Search
+
+    - [Dashboard Organic Search](https://dashboard.branch.io/search) shows you how your deep links and content are being scraped by search engines
+    - Use [app indexing](#dialog-code) within your app to enable
     - Validate with the [App indexing validator](https://branch.io/resources/app-indexing/)
+    - TODO
+
 - #### Referrals
+
+    - [Dashboard Referrals](https://dashboard.branch.io/referrals/analytics) allows you to track referrals between users  
 
     - ##### Implementing
 
@@ -49,7 +59,14 @@
 - #### Quick Links
 - #### Link Settings
     - View more information in [Configure your dashboard](/pages/dashboard/integrate/)
+
 - #### Sources
+    - [Dashboard Sources](https://dashboard.branch.io/sources) display `clicks`, `installs`, `sessions`, and `custom events` per [analytical label](/pages/links/integrate/#analytical-labels)
+    - Use the `Event` dropdown to see a funnel of your analytics to a [custom event](#dialog-code) inside your app
+    - Use the `Export` button to get a email with a `.cvs` of your source data
+    - Use the `Slice by platform` to remove robot traffic from your analytics
+    - Use the `filter` dropdowns to limit data (values are limited to the data within the `date range` dropdown)
+
 - #### Content
     - [Dashboard Content](https://dashboard.branch.io/content) tracks the attribution per content
     - Updates every 1.5 hours
@@ -62,24 +79,29 @@
         - (not all required. ordered by precedence)
 
 - #### Data Integrations
+    - [Dashboard Integrations](https://dashboard.branch.io/data-import-export/integrations) allows you to create data integrations to send Branch data to third party vendors
+    - View more information [here](/pages/exports/webhooks/)
 - #### Webhooks
-    - View more information in [Export webhooks](/pages/exports/webhooks/)
+    - [Dashboard Webhooks](https://dashboard.branch.io/data-import-export/webhooks) allows you to create webhooks to send Branch data to your servers
+    - View more information [here](/pages/exports/webhooks/)
 - #### Liveview
+    - [Dashboard Liveview](https://dashboard.branch.io/liveview/links) allows you to view real time data for everything related to Branch
+
 - #### Account settings
-    - View more information in [Configure your dashboard](/pages/dashboard/integrate/)
+    - View more information [here](/pages/dashboard/integrate/)
 
 ## Troubleshoot issues
-
+    
 - #### Analytical behavior
-    + Whenever a user `clicks` on a deep link and `opens` the app
-    + This triggers either an `install` or an `open`
-        + `installs` represent Branch recognizing the app_id and device_id for the first time
-        + `installs` represent new app users and the success rate of your Branch deep links
-        + `installs` do **not** represent App Store downloads
-        + `non-Branch installs` are installs outside of Branch deep link clicks
-        + `opens` are non-installs
-        + If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
-        + If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
+    - Whenever a user `clicks` on a deep link and `opens` the app
+    - This triggers either an `install` or an `open`
+        - `installs` represent Branch recognizing the app_id and device_id for the first time
+        - `installs` represent new app users and the success rate of your Branch deep links
+        - `installs` do **not** represent App Store downloads
+        - `non-Branch installs` are installs outside of Branch deep link clicks
+        - `opens` are non-installs
+        - If a user uninstalls and reinstalls the app, this will be an `open` because Branch recognizes the device
+        - If a user has the app and clicks a Branch deep link, this will be an `open` because the user is not new
 
 - #### Revenue analytics
 

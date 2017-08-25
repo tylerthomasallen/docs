@@ -132,7 +132,7 @@
 
 - #### Analytical labels
 
-    - For [Create Deep Link](#create-deep-link) and [Share Deep Link](#share-deep-link)
+    - These labels allow you to filter and organize your deep links
 
         | Key | Default | Usage
         | --- | --- | ---
