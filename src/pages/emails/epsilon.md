@@ -5,11 +5,11 @@
 
 ### Prerequisites
 
-- This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app.
+- This guide requires you to have already integrated the Branch SDK into your app.
 
 {! ingredients/email/email-set-up-deep-linking.md !}
 
-You can retrieve your click tracking domain from your {{page.title}} settings. We recommend creating a new click tracking domain for the Epsilon Harmony integration. You can switch over your production click tracking domain to Epsilon but we recommend testing with a different domain to get started.
+You can retrieve your click tracking domain from your Epsilon settings. We recommend creating a new click tracking domain for the Epsilon Harmony integration. You can switch over your production click tracking domain to Epsilon but we recommend testing with a different domain to get started.
 
 For Epsilon, you may also need an IP address. Notify your Epsilon Harmony Account Manager that you plan to use Branch Deep Linked Email, and ask your Harmony Account Manager to provide the IP that you set your click tracking domains to. Add that next to your click tracking domain in this step.
 
@@ -34,16 +34,16 @@ Only do this step after you've [provided your click tracking domain](#tell-us-yo
 
 ### Options for generating Branch links for email
 
-There are a few different ways you can create Branch links that are compatible with Deep Linked Email + {{ page.title }}. You will need to replace the web URLs in your templates with these. To create Branch links, you can either:
+There are a few different ways you can create Branch links that are compatible with Deep Linked Email + Epsilon. You will need to replace the web URLs in your templates with these. To create Branch links, you can either:
 
 1. [Configure your Epsilon Harmony Content ](#configure-your-epsilon-harmony-content)
 1. [Making regular Branch links compatible with email](#making-regular-branch-links-compatible-with-email)
 1. [Create email links via API without changing your email templates](#create-email-links-via-api-without-changing-your-email-templates)
 1. [Convert all web links in your email to deep links](#convert-all-web-links-in-your-email-to-deep-links)
 
-#### Configure your Epsilon Harmony Content 
+#### Configure your Epsilon Harmony Content
 
-This code is referred to as the "Branch script" - this script will convert your web URLs to deep links. 
+This code is referred to as the "Branch script" - this script will convert your web URLs to deep links.
 Get your Branch base URL from the email tab in the dashboard or from your Branch account manager.
 
 The Harmony integration requires you to add email template code in two places with HTML content.
@@ -57,7 +57,7 @@ Copy the following snippet, and using the "Source" view (ie not the design view)
 [#assign branch_base_url='appsolutely.app.link/3p?%243p=e_ep&%24original_url=']
 ```
 
-Remember to get the value of `branch_base_url` from the Branch dashboard or from your account manager and to exclude `https://` from it when entering it in to the assign statement. 
+Remember to get the value of `branch_base_url` from the Branch dashboard or from your account manager and to exclude `https://` from it when entering it in to the assign statement.
 
 ##### Create deep links
 

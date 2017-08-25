@@ -5,7 +5,7 @@
 
 ### Prerequisites
 
-- This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app.
+- This guide requires you to have already integrated the Branch SDK into your app.
 
 {! ingredients/email/email-set-up-deep-linking.md !}
 
@@ -39,7 +39,7 @@ To set up your AASA file, download the AASA file from the [email you received fr
 
 ### Options for generating Branch links for email
 
-There are a few different ways you can create Branch links that are compatible with Deep Linked Email + {{ page.title }}. You will need to replace the web URLs in your templates with these. To create Branch links, you can either:
+There are a few different ways you can create Branch links that are compatible with Deep Linked Email + Sailthru. You will need to replace the web URLs in your templates with these. To create Branch links, you can either:
 
 1. [Automatically populate emails with content via Zephyr](#automatically-populate-emails-with-content-via-zephyr)
 1. [Making regular Branch links compatible with email](#making-regular-branch-links-compatible-with-email)
