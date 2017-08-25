@@ -7,11 +7,11 @@ Deepviews are discoverable in all search portals (Google, Apple Spotlight, Bing,
 
 ![image](/img/pages/deepviews/deepviews_allthecooks.gif)
 
-!!! note "If you already have a mobile website"
-    The [Website to App Routing]({{base.url}}/features/website-to-app-routing) feature can be used to recreate the functionality of Deepviews using your own website. If you already host your own content previews, this is a good alternative!
+!!! note "Intended for apps without a mobile website"
+    If you already have a mobile website with content, [Journeys](/pages/web/journeys/) is better suited.
 
 !!! warning
-    For Deepviews to function as intended, you should [integrate the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app and [configure deep link routing]({{base.url}}/getting-started/deep-link-routing).
+    For Deepviews to function as intended, you should integrate the Branch SDK and configure deep link routing.
 
 
 ## Setup
@@ -24,7 +24,7 @@ Deepviews are discoverable in all search portals (Google, Apple Spotlight, Bing,
 ![image](/img/pages/deepviews/deepviews_enable.png)
 
 !!! warning
-    If you enable desktop Deepviews, they will override any [Text-Me-The-App]({{base.url}}/features/text-me-the-app) page you have configured.
+    If you enable desktop Deepviews, they will override any [Text-Me-The-App](/pages/web/text-me-the-app/) page you have configured.
 
 !!! note "Changing the app icon"
     If we pulled the wrong app icon, you can upload a new one in the _Social Media Display Customization_ section of the [dashboard Settings](https://dashboard.branch.io/link-settings).
@@ -48,7 +48,7 @@ Only users who do not have the app will go through this flow. You can view the t
 
 ### Customizing Deepviews
 
-The default Deepview template simply displays the content from three of the link's [control parameters]({{base.url}}/getting-started/configuring-links). You can specify the content of these parameters when creating your link to control what will display in that link’s Deepview. If nothing is set for a particular link, we will gracefully fall back to the OG values set for your entire app in _Settings > Link Settings > Social Media Display Customization._
+The default Deepview template simply displays the content from three of the link's [control parameters](/pages/links/integrate/#redirections). You can specify the content of these parameters when creating your link to control what will display in that link’s Deepview. If nothing is set for a particular link, we will gracefully fall back to the OG values set for your entire app in _Settings > Link Settings > Social Media Display Customization._
 
 | Key | Value
 | --- | ---
@@ -116,7 +116,7 @@ Edit the Title, Description and Image URL in the _Social Media_ section.
 
 ### Enable per-link Deepviews
 
-If you don't want to enable Deepviews globally, you can do it for each platform on a per link basis by inserting custom link control parameters [link control parameters]({{base.url}}/getting-started/configuring-links).
+If you don't want to enable Deepviews globally, you can do it for each platform on a per link basis by inserting custom link control parameters [link control parameters](/pages/links/integrate/#deepview).
 
 Enable Desktop Deepviews by appending query parameters:
 
@@ -219,7 +219,7 @@ You can use the Deepview editor to edit created templates. You cannot edit pre-c
 
 ### Inject Other Data Into Deepviews
 
-By customizing your Deepview template, you have the ability to pass through other parameters from your link's [data dictionary]({{base.url}}/getting-started/configuring-links).
+By customizing your Deepview template, you have the ability to pass through other parameters from your link's [data dictionary](/pages/links/integrate/#configure-deep-links).
 
 Here's a full list of liquid available tags:
 
@@ -245,7 +245,7 @@ This is the App object, which contains app data not specific to any link. This w
 
 **link data**
 
-Link Object, which contains all of your link's parameters, including your deep link values from the data dictionary. See the [Configuring Links]({{base.url}}/getting-started/configuring-links) page for more information. You can surface this object in your Deepview like so:
+Link Object, which contains all of your link's parameters, including your deep link values from the data dictionary. See the [Configuring Links](/pages/links/integrate/#configure-deep-links) page for more information. You can surface this object in your Deepview like so:
 
 ```
 {{link_data}}
