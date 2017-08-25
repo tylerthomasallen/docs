@@ -31,7 +31,7 @@ On **Done** click, an AASA file - required for Universal Links - specific to tha
 
 ### Flag your deep links
 
-To use Branch links within your {{ page.title }} campaigns, you’ll need to add an HTML tag to the Branch URLs within your {{ page.title }} email templates.
+To use Branch links within your appboy campaigns, you’ll need to add an HTML tag to the Branch URLs within your appboy email templates.
 
 1. Create your email template same as you normally would.
 1. Add Branch links to your email for all links you would like to deep link users to specific app content (this works for existing app users as well as those without your app). Be sure to add `"$3p":"e_ab"` to the deep link data of any links you use in email to ensure Universal Link and click tracking works as expected.

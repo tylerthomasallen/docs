@@ -5,11 +5,11 @@
 
 ### Prerequisites
 
-- This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app.
+- This guide requires you to have already integrated the Branch SDK into your app.
 
 {! ingredients/email/email-set-up-deep-linking.md !}
 
-You can retrieve your click tracking domains from your {{page.title}} settings. On **Done** click, an AASA file - required for Universal Links - specific to that domain will be generated.
+You can retrieve your click tracking domains from your Postup settings. On **Done** click, an AASA file - required for Universal Links - specific to that domain will be generated.
 
 {! ingredients/email/email-technical-setup.md !}
 
