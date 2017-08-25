@@ -84,11 +84,13 @@ Branch uses Twilio to provide your users the ability to text themselves the app 
 
 The `~referring_link` parameter is returned in the Web SDK's init() callback, buried in the referring link data. See the code below:
 
+```javascript
 branch.init('YOUR-BRANCH-KEY', function(err, data) {
 	if (data.data['~referring_link']) {
 		console.log("data.data['~referring_link']:", data.data['~referring_link']);
 	}
 });
+```
 
 ### Use a custom form with SendSMS()
 
@@ -125,7 +127,7 @@ If you want to customize this, Branch allows you to set a default for all messag
 
 You can create your own custom default message that will be sent if the specific link someone clicks doesn't have a customized message itself. Navigate back to the Desktop SMS page on the [Branch dashboard](https://dashboard.branch.io/web/sms). You should see the following section below.
 
- ![image](/img/pages/text-me-the-app/default-message.png)
+![image](/img/pages/text-me-the-app/default-message.png)
 
  Editing this field will modify **all** SMS messages sent.
 
@@ -168,7 +170,7 @@ Here's an example to illustrate this scenario.
 
 ### SendSMS() parameters
 
-The `sendSMS()` method requires a phone number and [link parameters]({{base.url}}/getting-started/configuring-links). You may optionally specify configuration options and a callback.
+The `sendSMS()` method requires a phone number and [link parameters](/pages/links/integrate/#configure-deep-links). You may optionally specify configuration options and a callback.
 
 ```javascript
 branch.sendSMS(
@@ -226,7 +228,7 @@ This occurs when a carrier filters you SMS out due to spam. We try our hardest t
 
 ### How come my (non US) phone number isn't working?
 
-With full numbers, you are required to use "+" and the country code. If you know your users are only in a certain country, you can automatically prepend "+" and the country code so that they only need to enter their regular number. To do this, you must [configure a custom url](/features/text-me-the-app/guide/#configure-custom-url-in-branch-dashboard) and complete subsequent steps to create a custom text-me-the-app page. Then, you can alter the code snippet in [step 2](/features/text-me-the-app/guide/#insert-sendsms-snippet-into-your-page) with the following:
+With full numbers, you are required to use "+" and the country code. If you know your users are only in a certain country, you can automatically prepend "+" and the country code so that they only need to enter their regular number. To do this, you must create a custom text-me-the-app page. Then, you can alter the code snippet in [step 2](#insert-sendsms-snippet-into-your-page) with the following:
 
 ```javascript
     var phone = "+91" + form.phone.value;
