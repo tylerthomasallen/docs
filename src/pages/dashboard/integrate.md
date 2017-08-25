@@ -54,7 +54,7 @@
 
     - Go to [Deepview Previews](https://dashboard.branch.io/web/deepviews) on the Branch Dashboard
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
-    - This will make your deep links before optimally on all [Supported platforms](/pages/links/integrate/#supported-platforms)
+    - This will make your deep links before optimally on all [Supported platforms](/pages/links/integrate/#expected-redirect-behavior)
     - Additional details about [Deepviews](/pages/web/deep-views/)
         
         ![image](/img/pages/dashboard/deepview.png)

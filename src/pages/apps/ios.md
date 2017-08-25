@@ -29,7 +29,7 @@
 
 - #### Configure info.pList
 
-    - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+    - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
         ![image](http://i.imgur.com/PwXnHWz.png)
 
@@ -152,6 +152,10 @@
 
         @end
         ```
+
+- #### Receive deep link data
+
+    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link
 

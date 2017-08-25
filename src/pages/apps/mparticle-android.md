@@ -49,7 +49,7 @@
 
 - #### Enable Branch on mParticle
 
-    - Retrieve your Branch Key on the [Link Settings](https://dashboard.branch.io/settings/link) page of the Branch dashboard.
+    - Retrieve your Branch Key on the [App Settings](https://dashboard.branch.io/account-settings/app) page of the Branch dashboard.
     - From your [mParticle dashboard](https://app.mparticle.com/) navigate to the Services page. (The paper airplane icon on the left side)
     - Scroll down to the Branch tile, or enter Branch in the search bar.
     - Click on the Branch tile and then select "Activate a Platform".
@@ -112,10 +112,6 @@
         - `branchandroid`
         - `uobg.app.link`
 
-- #### Initialize Branch
-
-    As with any kit, mParticle will automatically handle initializing Branch sessions. At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.
-
 - #### Handle Incoming Links
 
     Open the `Activity` for which you registered the `Intent Filter` in the previous section, and hook into the `onStart` lifecycle method by adding this override:
@@ -143,6 +139,12 @@
       });
     }
     ```
+
+- #### Initialize Branch
+
+    As with any kit, mParticle will automatically handle initializing Branch sessions. At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.
+    
+    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link
 
