@@ -74,61 +74,13 @@
 
 ## Create deep links
 
-- #### Dashboard
+- There are multiple methods to create Branch deep links:
     - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
-- #### App
     - Use our [App SDK](#dialog-code) to create and share links within your app
-- #### Web
     - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
-- #### API
     - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
 
 ## Configure deep links
-
-- #### Structure
-
-    - Deep link data structure
-
-        ```js
-        {
-          tags: [ 'tag1', 'tag2' ],
-          channel: 'facebook',
-          feature: 'dashboard',
-          stage: 'new user',
-          alias: 'myalias',
-          data: {
-            mydata: 'something',
-            foo: 'bar',
-            $desktop_url: 'http://myappwebsite.com',
-            $ios_url: 'http://myappwebsite.com/ios',
-            $android_url: 'http://myappwebsite.com/android',
-            $og_app_id: '12345',
-            $og_title: 'My App',
-            $og_description: 'My app\'s description.',
-            $og_image_url: 'http://myappwebsite.com/image.png'
-          }
-        }
-        ```
-
-    - Branch reserved keys
-
-        | Prefix | Usage |
-        | --- | --- |
-        | $ | Branch reserved keyword
-        | ~ | Branch analytical data
-        | + | Branch added values
-
-        | Key | Default | Usage
-        | --- | --- | ---
-        | ~id | | Automatically generated 18 digit ID number for the link that drove the install/open, if present (0 for dynamic and 3P links)
-        | ~referring_link | | The referring link that drove the install/open, if present
-        | ~creation_source | |  Where the link was created ('API', 'Dashboard', 'SDK', 'iOS SDK', 'Android SDK', or 'Web SDK')
-        | +match_guaranteed | | If the match was made with 100% accuracy
-        | +referrer | | The referrer for the link click, if a link was clicked
-        | +phone_number | | The phone number of the user, if the user texted himself/herself the app
-        | +is_first_session | `false` | `true` if first session (install), `false` if any other session (open)
-        | +clicked_branch_link | `false` | Whether or not the user clicked a Branch link that triggered this session
-        | +non_branch_link | | App was opened from a non Branch link (third party, invalid Branch deep link, or Branch key mismatch)
 
 - #### Analytical labels
 
@@ -250,7 +202,7 @@
 
 - #### Universal Object
 
-    - Properties for the Branch Universal Object
+    - Properties for the Branch Universal Object within your [app](#dialog-code) integration
 
         | Key | Default | Usage | Link Property
         | --- | :-: | --- | :-:
@@ -276,6 +228,78 @@
             - Wait to initialize the object and register views until the user goes to share
             - Wait to initialize the object until you conveniently need a link
             - Create many objects at once and register views in a `for` loop.
+
+
+## Read deep links
+
+- Deep link data gets sent from your link to your [app](#dialog-code) or [website](/pages/web/integrate/) integration
+
+- #### Structure
+
+    - Example deep link data structure
+
+        ```json
+        {
+          "identity_id": "427469360685348303",
+          "link": "https://example.app.link?%24identity_id=427469360685348303",
+          "session_id": "429691081177874743",
+          "data": {
+            "$canonical_identifier": "item/1503684554354.28",
+            "$desktop_url": "http://example.com/home",
+            "$exp_date": 0,
+            "$identity_id": "427469360685348303",
+            "$og_description": "My Content Description",
+            "$og_image_url": "http://lorempixel.com/200/200/",
+            "$og_title": "46D6D28E-0390-40E4-A856-BD74F34D24C8",
+            "$one_time_use": false,
+            "$publicly_indexable": 1,
+            "+click_timestamp": 1503684563,
+            "+clicked_branch_link": true,
+            "+is_first_session": false,
+            "+match_guaranteed": true,
+            "custom": "blue",
+            "random": "FE848A5B-78F7-42EC-A253-9F795FE91692",
+            "added": "1503684554354.33",
+            "~campaign": "new launch",
+            "~channel": "facebook",
+            "~creation_source": 3,
+            "~feature": "sharing",
+            "~id": 429691043152332059,
+            "~referring_link": "https://example.app.link/X7OsnWv9TF",
+            "~stage": "new person",
+            "~tags": [
+              "one",
+              "two"
+            ]
+          }
+        }
+        ```
+
+- #### Reserved prefixes
+
+    - Branch adds additional properties to your deep link data to explain the link
+
+        | Prefix | Usage |
+        | --- | --- |
+        | $ | Branch reserved keyword
+        | ~ | Branch analytical data
+        | + | Branch added values
+
+- #### Callback values
+    
+    - Additional properties read from the `initSession` within your [app](#dialog-code) and [website](/pages/web/integrate/) integrations
+
+        | Key | Default | Usage
+        | --- | --- | ---
+        | ~id | | Automatically generated 18 digit ID number for the link that drove the install/open, if present (0 for dynamic and 3P links)
+        | ~referring_link | | The referring link that drove the install/open, if present
+        | ~creation_source | |  Where the link was created (`0` API , `1` Quick Link, `2` SDK, `3` iOS SDK , `4` Android SDK , `5` Web SDK, `6` A links, `7` Dynamic, `8` Third party)
+        | +match_guaranteed | | If the match was made with 100% accuracy
+        | +referrer | | The referrer for the link click, if a link was clicked
+        | +phone_number | | The phone number of the user, if the user texted himself/herself the app
+        | +is_first_session | `false` | `true` if first session (install), `false` if any other session (open)
+        | +clicked_branch_link | `false` | Whether or not the user clicked a Branch link that triggered this session
+        | +non_branch_link | | App was opened from a non Branch link (third party, invalid Branch deep link, or Branch key mismatch)
 
 ## Troubleshoot issues
 
