@@ -166,7 +166,7 @@
         - You can also define as many custom events (signups, purchases, shares, etc.) as you wish - see the [User Value Attribution](/pages/dashboard/analytics/#user-value-attribution) guide for more on tracking custom events. You can see these events as they occur on the Live View > Events page.
 
         - You must [identify your users](/pages/dashboard/analytics/#growth-attribution) in order for the `User ID` column to be populated. The `Branch ID` refers to the internal Branch ID associated with that user. The `Developer ID` is the value you assign when you set the identity
-        - You must [Setting Identities](#dialog-code?ios=track-users&android=track-users&adobe-air=track-users&cordova-phonegap-ionic=track-users&mparticle-android=track-users&mparticle-ios=track-users&titanium=track-users&react-native=track-users&unity=track-users&xamarin=track-users) within your app
+        - You must [Setting Identities](#dialog-code?ios=track-users&android=track-users&adobe=track-users&cordova=track-users&mparticleAndroid=track-users&mparticleIos=track-users&titanium=track-users&reactNative=track-users&unity=track-users&xamarin=track-users) within your app
 
         - Measuring influencers
         The [Analytics](https://dashboard.branch.io/referrals/analytics) page on the dashboard will show you who is driving the most new signups.
