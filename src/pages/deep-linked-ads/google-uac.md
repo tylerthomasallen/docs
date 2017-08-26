@@ -32,23 +32,27 @@ Android | Yes | Conversion and Postback setup, no tracking template | [link](/pa
 Universal App Campaigns don’t use traditional ads and ad groups. Instead different types of ad units are automatically created by Google using information given at the campaign level. There are no destination URLs, you will just use your Apple App Store or Google Play Store Applications.
 
 !!! warning "Prerequisites"
-	* [x] To track installs from Google Ads you should [integrate the Branch SDK](TODO) into your app.
-	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](TODO).
+	* [x] To track installs from Google Ads you should integrate the Branch SDK into your app.
+	* [x] If you want to deep link from your ads directly to content, you should configure deep link routing.
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
 #### Enable Google as an ad partner
 
 Set up Google as an Ad Partner and conversion tracking from Adwords on the Branch dashboard. If you already have Google enabled as an ad partner, follow the conversion tracking steps to ensure the conversion ID and label parameters are setup.
 
-1. Navigate to the [Partner Management tab](https://dashboard.branch.io/ads/partner-management){:target="_blank"}.
+- Navigate to the [Partner Management tab](https://dashboard.branch.io/ads/partner-management){:target="\_blank"}.
+
 ![Ads Partner Management](/img/ingredients/deep-linked-ads/enable-google-ad-partner/ads-partner-management.png)
-1. Search for **Google AdWords**.
+
+- Search for **Google AdWords**.
+
 ![Find Google Adwords in Partner Manager](/img/ingredients/deep-linked-ads/enable-google-ad-partner/find-google-partner.png)
-1. We will now fill in the conversion ID and Label fields.
+
+- We will now fill in the conversion ID and Label fields.
 
 #### Enable Adwords Conversions
 
-1. Go to your [Adwords dashboard](https://adwords.google.com/cm/CampaignMgmt){:target="_blank"}.
+1. Go to your [Adwords dashboard](https://adwords.google.com/cm/CampaignMgmt){:target="\_blank"}.
 1. In the top nav bar, click into `Tools` > `Conversions`.
 1. Click `+ Add a Conversion` button.
 1. Select `App` from the cards.
@@ -65,7 +69,7 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 1. Select the option to have a server report conversions: `Set up a server-to-server conversion feed...`.
 1. Note your `Conversion ID` & `Conversion label` as shown in the screenshot below.
 ![Conversion IDs](/img/pages/deep-linked-ads/google-uac/adwords-conversions.png)
-1. Head to the [Branch Dashboard Adwords Settings](https://dashboard.branch.io/ads/partner-management/a_google_adwords?tab=settings){:target="_blank"}.
+1. Head to the [Branch Dashboard Adwords Settings](https://dashboard.branch.io/ads/partner-management/a_google_adwords?tab=settings){:target="\_blank"}.
 1. Paste in the `Conversion ID` and `Conversion label` from your Adwords dashboard into the appropriate fields for either iOS or Android
 1. Click the `Save and Enable` button in the lower right hand corner.
 ![Save and Enable Google Adwords in Partner Manager](/img/ingredients/deep-linked-ads/enable-google-ad-partner/save-and-enable-google.png)
@@ -79,7 +83,7 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 
 #### Create an Ad Link
 
-1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `App Install or Engagement`
+1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="\_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `App Install or Engagement`
 <img src="/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **Display**, the Ad Partner set to **Google Adwords**, and the Secondary Ad Format set to **Universal App Campaign iOS/Android**.
@@ -87,8 +91,6 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Google Adwords and set the campaign field to the same ad campaign name used in Adwords.
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
-!!! note "Optional: Deep Link Data"
-	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](TODO) page to learn more.
 
 #### Configure an Add
 
@@ -104,7 +106,7 @@ To setup a Universal App Campaign we will place our unique Branch Ad link into a
 
 1. Copy the generated Branch Ad link from the last section which should be in the general form shown below (there are slight differences between iOS/Android). Ensure that the `link-identifier` param of the link has a unique id filled in.
 ![Adwords Network](/img/pages/deep-linked-ads/google-uac/full-branch-link.png)
-1. Go to your [Adwords dashboard](https://adwords.google.com/cm/CampaignMgmt){:target="_blank"}.
+1. Go to your [Adwords dashboard](https://adwords.google.com/cm/CampaignMgmt){:target="\_blank"}.
 1. In the top nav bar, click into `Tools` > `Conversions`.
 1. Locate the Conversion that was setup in the previous section.
 1. Click `Edit Settings` and locate the **Postback URL** field.
@@ -122,7 +124,7 @@ The setup to measure your Universal App Campaign is complete and Adwords will se
 
 **Q: I'm not seeing any click data for my campaign.**
 
-**A:** Branch uses Google Adwords' server to server [App Conversion Confirmation](https://developers.google.com/app-conversion-tracking/api/legacy/confirm){:target="_blank"} for attribution data which reports on conversion events. Therefore, we only collect **install (conversion) data**. Click data is not supported for this campaign type.
+**A:** Branch uses Google Adwords' server to server [App Conversion Confirmation](https://developers.google.com/app-conversion-tracking/api/legacy/confirm){:target="\_blank"} for attribution data which reports on conversion events. Therefore, we only collect **install (conversion) data**. Click data is not supported for this campaign type.
 
 **Q: I'm getting discrepancy between conversion counts in Branch and Google Adwords**
 
@@ -136,8 +138,8 @@ The setup to measure your Universal App Campaign is complete and Adwords will se
 
 **A:** If you see absolutely 0 data coming through from your integration, it's possible that you're not collecting Google Advertising ID (GAID) on Android or IDFA on iOS.
 
-- iOS: Add the AdSupport.framework and read this extra info about [submitting](TODO) to the store.
-- Android: Add Google Play Services so that we can collect GAID. See [here](TODO).
+- iOS: Add the AdSupport.framework.
+- Android: Add Google Play Services so that we can collect GAID.
 
 **Q: There seems to be a discrepancy between the Install and Opens values?**
 

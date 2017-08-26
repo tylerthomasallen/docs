@@ -21,7 +21,7 @@ Here are explanations of what each field on this screen controls:
 
 - **Webhook URL:** Enter the URL where you would like the events to be sent.
 - **Postback Method:** Events can be sent either via POST or GET.
-- **Event Frequency:** You can choose to receive a webhook for ever single event occurence, or only for the first time that even is triggered for each unique user.
+- **Event Frequency:** You can choose to receive a webhook for ever single event occurrence, or only for the first time that even is triggered for each unique user.
 - **Event Trigger:** You may select between the following default events:
 
 | Event | Description
@@ -31,7 +31,7 @@ Here are explanations of what each field on this screen controls:
 | **referred session** | Triggered in _addition_ to install, open or web session start if a user comes from a Branch link
 | **web session start** | Triggered when the user views a webpage using the Branch Web SDK
 | **click** | Triggered whenever a Branch link is clicked on any platform
-| **-- other --** | Enter an event you [created through the Branch SDK](https://dev.branch.io/cross-channel-analytics/user-value-attribution/), or a wildcard (`*`) to return ever single event tracked through Branch.
+| **-- other --** | Enter an event you created through the Branch SDK, or a wildcard (`*`) to return ever single event tracked through Branch.
 
 !!! tip
 	The **referred session** and **web session start** options will only appear after at least one event of that type has been recorded.

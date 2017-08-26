@@ -1,6 +1,6 @@
 # Branch Docs
 
-> Repository for Branch's public documentation [https://branchmetrics.github.io/docs/](https://branchmetrics.github.io/docs/)
+> Repository for Branch's public documentation [https://docs.branch.io](https://docs.branch.io)
 
 ## Environment
 
@@ -38,7 +38,7 @@
 
 - #### Production
 
-    - https://branchmetrics.github.io/docs/
+    - https://docs.branch.io
 
 ## Contributing
 
@@ -82,8 +82,7 @@
 - #### Images
     - Content pages are kept in the `img/pages` 
     - Example images used in ingredients are kept in the `img/ingredients` 
-    - with width `<img src="http://i.imgur.com/dyfhN0L.png" width="100px" />`
-    - without width `![image](http://i.imgur.com/dyfhN0L.png)`
+    - `![image](http://i.imgur.com/dyfhN0L.png)`
 
 - #### Includes
     - For reusable snippet, use the format `{! path/file_name_here.md !}` where the base path begins at the includes directory.
@@ -133,3 +132,6 @@
 - #### Slow page render
 
   - The docs should load within `1400ms`. If it takes `5000ms`, please disable `Ghostery` and `Adblocker` (the docs have AB testing)
+
+- #### Missing search
+    - Some ad blockers prevent the search from appearing

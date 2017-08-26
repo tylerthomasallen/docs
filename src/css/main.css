@@ -70,8 +70,8 @@
   padding: 0.5em 0;
 }
 .tab-code-button.active {
-  color: #03a9f4;
-  border-bottom: 2px solid #03a9f4;
+  color: black;
+  border-bottom: 2px solid black;
 }
 .tab-code-content {
   display: none;
@@ -87,6 +87,8 @@
 /* ////////////////////////////// */
 .md-typeset img {
   box-shadow: 0px 0px 1px #ccc;
+  max-width: 400px;
+  max-height: 400px;
 }
 .md-typeset h2 {
   font-weight: 700;
@@ -102,7 +104,7 @@
   color: rgba(0,0,0,.87);
   font-weight: 600;
   font-size: 1.6rem;
-  line-height: 1.6;
+  margin: 0.5em 0;
 }
 .md-typeset li > h3:before, .md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
   content: close-quote !important;
@@ -117,6 +119,10 @@
 }
 .highlight pre {
   background-color: #f6f8fa;
+}
+.branch-image-override {
+  max-width: 550px !important;
+  max-height: 550px !important;
 }
 
 
@@ -197,7 +203,7 @@ body.modal {
 }
 .modal-content a {
   display: inline-block;
-  background-color: #03a9f4;
+  background-color: black;
   color: white;
   padding: 1em;
   margin-right: 1em;
@@ -224,14 +230,15 @@ body.modal {
 /* ////////////////////////////// */
 /* MODAL CODE */
 /* ////////////////////////////// */
-.modal.active.dialog.code .flex {
+.modal.active.dialog .flex {
   display: flex;
   width: 100%;
   margin-top: 1em;
 }
-.modal.active.dialog.code .flex button {
+.modal.active.dialog .flex button, .modal.active.dialog .flex a {
   flex: 1;
   font-size: 1.5em;
+  text-align: center;
   color: white;
   padding: 1em;
   margin: 0.25em 0.5em;
@@ -322,10 +329,46 @@ a.algolia-docsearch-footer--logo {
 
 
 /* ////////////////////////////// */
+/* NAVIGATION */
+/* ////////////////////////////// */
+.md-nav__item {
+  padding-left: 1.6rem;
+}
+.md-nav--secondary > .md-nav__list > .md-nav__item, .md-nav--primary > .md-nav__list > .md-nav__item {
+  padding-left: 1.2rem;
+}
+
+
+
+/* ////////////////////////////// */
+/* FOOTER FLOATERS */
+/* ////////////////////////////// */
+.branch-floater {
+  background-color: #004875;
+  color: white;
+  font-size: 1.3em;
+  padding: 0.75em;
+  font-weight: 600;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 0 0.25em rgba(0,0,0,0.5);
+}
+.branch-beta {
+  right: 0;
+  border-top-left-radius: 1em;
+}
+.branch-old-docs {
+  left: 0;
+  padding: 0.6em 0.75em;
+  border-top-right-radius: 1em;
+}
+
+
+/* ////////////////////////////// */
 /* BRANCH STYLING */
 /* ////////////////////////////// */
 /* primary */
-.md-header, .modal-content > a, .modal.active.dialog.code button {
+.md-header, .modal-content a, .modal-content button {
   background-color: #004875 !important;
 }
 @media only screen and (max-width: 76.1875em) {
@@ -375,23 +418,4 @@ a.algolia-docsearch-footer--logo {
 /* disabled */
 .modal.active.dialog.code button.disabled {
   background-color: rgba(0,0,0,0.25) !important;
-}
-/* warning */
-.branch-warning {
-  background-color: #f42534;
-  color: white;
-  font-size: 1.25em;
-  padding: 0.75em;
-  font-weight: 600;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  border-top-left-radius: 1em;
-  box-shadow: 0 0 0.25em rgba(0,0,0,0.5);
-}
-.md-nav__item {
-  padding-left: 1.6rem;
-}
-.md-nav--secondary > .md-nav__list > .md-nav__item, .md-nav--primary > .md-nav__list > .md-nav__item {
-  padding-left: 1.2rem;
 }

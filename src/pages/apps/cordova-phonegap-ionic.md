@@ -70,8 +70,10 @@
           branchInit: function() {
             // Branch initialization
             Branch.initSession(function(data) {
-              // read deep link data on click
-              alert('Deep Link Data: ' + JSON.stringify(data));
+              if (data['+clicked_branch_link']) {
+                // read deep link data on click
+                alert('Deep Link Data: ' + JSON.stringify(data));
+              }
             });
           }
         };
@@ -107,8 +109,10 @@
             function branchInit() {
               // Branch initialization
               Branch.initSession(function(data) {
-                // read deep link data on click
-                alert('Deep Link Data: ' + JSON.stringify(data));
+                if (data['+clicked_branch_link']) {
+                  // read deep link data on click
+                  alert('Deep Link Data: ' + JSON.stringify(data));
+                }
               });
             }
           });
@@ -151,13 +155,19 @@
                 // only on devices
                 if (!platform.is('cordova')) { return }
                 Branch.initSession(data => {
-                  // read deep link data on click
-                  alert('Deep Link Data: ' + JSON.stringify(data));
+                  if (data['+clicked_branch_link']) {
+                    // read deep link data on click
+                    alert('Deep Link Data: ' + JSON.stringify(data));
+                  }
                 });
               }
             }
           }
           ```
+
+- #### Receive deep link data
+
+    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link iOS
 
@@ -199,8 +209,10 @@
 
         // Branch initialization
         Branch.initSession(function(data) {
-          // read deep link data on click
-          alert('Deep Link Data: ' + JSON.stringify(data))
+          if (data['+clicked_branch_link']) {
+            // read deep link data on click
+            alert('Deep Link Data: ' + JSON.stringify(data))
+          }
         }).then(function(res) {
           alert('Response: ' + JSON.stringify(res))
         }).catch(function(err) {
@@ -212,7 +224,7 @@
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](#/pages/links/setup/#universal-object)
+    - Uses the [Universal Object Properties](#/pages/links/integrate/#universal-object)
 
         ```js
         // only canonicalIdentifier is required
@@ -248,7 +260,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -290,7 +302,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
         ```js
         // optional fields
@@ -340,13 +352,17 @@
 
     - Best practice to receive data from the `listener` (to prevent a race condition)
 
+    - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
+
     - Listener
 
         ```js
         // Branch initialization within your deviceready and resume
         Branch.initSession(function(deepLinkData) {
-          // handler for deep link data on click
-          alert('Response: ' + JSON.stringify(deepLinkData))
+          if (data['+clicked_branch_link']) {
+            // handler for deep link data on click
+            alert('Response: ' + JSON.stringify(deepLinkData))
+          }
         })
         ```
 
@@ -378,14 +394,16 @@
 
         ```js
         Branch.initSession(function(data) {
-          // option 1: save to model to be used later
-          window.localStorage['branchData'] = data;
+          if (data['+clicked_branch_link']) {
+            // option 1: save to model to be used later
+            window.localStorage['branchData'] = data;
 
-          // option 2: navigate to page
-          window.location.href = '#/content/123'
+            // option 2: navigate to page
+            window.location.href = '#/content/123'
 
-          // option 3: display data
-          alert(JSON.stringify(data));
+            // option 3: display data
+            alert(JSON.stringify(data));
+          }
         });
         ```
 
@@ -591,7 +609,7 @@
 
     - Need to select `"app uses IDFA or GAID"` when publishing your app
 
-    - Best to enable [Deep views](https://dashboard.branch.io/settings/deepviews) ([Supported platforms](/pages/links/behavior/#supported-platforms))
+    - Best to enable [Deep views](https://dashboard.branch.io/settings/deepviews) ([Supported platforms](/pages/links/behavior/#expected-redirect-behavior))
 
 - #### Optional app config
 

@@ -32,7 +32,7 @@ Here's a list of the potential use cases for Branch links and Instant Apps:
 
 ### Integrating Branch for your Instant App
 
-So you're convinced. Let's get started! If at any time, you need a real example, you can check out a [full demo application](https://github.com/BranchMetrics/Branch-Monster-Factory-Example-Android-Instant-Apps){:target="_blank"} on our Github. We've replicated our [original Android demo application](https://github.com/BranchMetrics/Branch-Example-Deep-Linking-Branchster-Android){:target="_blank"} and modified it to support Android Instant Apps.
+So you're convinced. Let's get started! If at any time, you need a real example, you can check out a [full demo application](https://github.com/BranchMetrics/Branch-Monster-Factory-Example-Android-Instant-Apps){:target="\_blank"} on our Github. We've replicated our [original Android demo application](https://github.com/BranchMetrics/Branch-Example-Deep-Linking-Branchster-Android){:target="\_blank"} and modified it to support Android Instant Apps.
 
 ### Initialize the Branch SDK
 
@@ -78,7 +78,7 @@ Instant Apps can be rather confusing as there are many different manifests, but 
 
 This guide presumes that you've already configured Branch for Android App Links in the past. If you haven't configured your full native app to use Branch as Android App Links, [please complete this guide](/pages/apps/universal-app-links) which will correctly configure the dashboard and manifest.
 
-Now, you simply need to edit the above manifest and paste in the following snippet _inside_ the `application` element. Then you'll need to replace the `xxxx` with your own custom subdomain which will be visible on [the Branch link settings dashboard](https://dashboard.branch.io/link-settings){:target="_blank"} at the bottom of the page. If you're using a custom subdomain, you can find the advanced instructions in the above link regarding configuring Android App Links.
+Now, you simply need to edit the above manifest and paste in the following snippet _inside_ the `application` element. Then you'll need to replace the `xxxx` with your own custom subdomain which will be visible on [the Branch link settings dashboard](https://dashboard.branch.io/link-settings){:target="\_blank"} at the bottom of the page. If you're using a custom subdomain, you can find the advanced instructions in the above link regarding configuring Android App Links.
 
 ``` xml
 <application
@@ -154,4 +154,4 @@ if (Branch.isInstantApp(this)) {
 
 ### Test Instant Apps
 
-You can create Branch links in [a million different ways](/pages/apps/ios/), but to quickly test your Branch integration, head to the [quick links section](https://dashboard.branch.io/quick-links){:target="_blank"} on our dashboard and create a link. If you configured deep linking via a specific key in the deep link data, make sure that you add it to your quick link to properly simulate a real live Branch link.
+You can create Branch links in a variety of ways, but to quickly test your Branch integration, head to the [quick links section](https://dashboard.branch.io/quick-links){:target="\_blank"} on our dashboard and create a link. If you configured deep linking via a specific key in the deep link data, make sure that you add it to your quick link to properly simulate a real live Branch link.

@@ -6,11 +6,11 @@
 ### Prerequisites
 
 - You must have the Salesforce Marketing Cloud Sender Authentication Package (SAP) in order to benefit from Universal Links + click tracking functionality.
-- This guide requires you to have already [integrated the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide) into your app.
+- This guide requires you to have already integrated the Branch SDK into your app.
 
 {! ingredients/email/email-set-up-deep-linking.md !}
 
-You can retrieve your click tracking domain from your {{ page.title }} settings. We **highly** recommend using a new click tracking domain for this implementation to ensure that the user experience for pre-Branch links on the original click tracking domain doesn't break.
+You can retrieve your click tracking domain from your Salesforce settings. We **highly** recommend using a new click tracking domain for this implementation to ensure that the user experience for pre-Branch links on the original click tracking domain doesn't break.
 
 {! ingredients/email/email-technical-setup.md !}
 
@@ -40,7 +40,7 @@ Your Salesforce account must be configured to correctly handle Universal Links. 
 
 ### Options for generating Branch links for email
 
-There are a few different ways you can create Branch links that are compatible with Deep Linked Email + {{ page.title }}. You will need to replace the web URLs in your templates with these. To create Branch links, you can either:
+There are a few different ways you can create Branch links that are compatible with Deep Linked Email + Salesforce. You will need to replace the web URLs in your templates with these. To create Branch links, you can either:
 
 1. [Add a new Content Area for easy deep linking](#add-a-new-content-area-for-easy-deep-linking)
 1. [Making regular Branch links compatible with email](#making-regular-branch-links-compatible-with-email)
@@ -51,7 +51,7 @@ There are a few different ways you can create Branch links that are compatible w
 
 In this step, we'll add a new Content Area in Salesforce that makes it very easy to create deep links in your emails.
 
-1. Work with your Branch account manager to modify the following code snippet, replacing `DOMAIN-HERE` with your Branch base domain: 
+1. Work with your Branch account manager to modify the following code snippet, replacing `DOMAIN-HERE` with your Branch base domain:
    ```
    %%[ VAR @deeplink, @branch_base_url SET @branch_base_url = "https://DOMAIN-HERE/3p?%243p=e_et" SET @deeplink = CONCAT(@branch_base_url, CONCAT("&%24original_url=", URLEncode(@link_to_be_wrapped, 1, 1))) ]%%
    ```
@@ -68,7 +68,7 @@ In this step, we'll add a new Content Area in Salesforce that makes it very easy
 You have now successfully created the deep linking script.  
 
 !!! example "Code snippet"
-    The snippet will follow this format: 
+    The snippet will follow this format:
     ```
     %%[ VAR @deeplink, @branch_base_url SET @branch_base_url = "BASE URL FROM BRANCH" SET @deeplink = CONCAT(@branch_base_url, CONCAT("&%24original_url=", URLEncode(@link_to_be_wrapped, 1, 1))) ]%%
     ```
@@ -83,7 +83,7 @@ To convert a link to a Branch deep link, let's use an example:
 <a style="border-radius: 4px;display: inline-block;font-size: 14px;font-weight: bold;line-height: 24px;padding: 12px 24px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #fff;background-color: #00afd1;font-family: sans-serif;" href="https://www.blueapron.com/recipes/five-spice-chicken-vermicelli-with-mushrooms-collard-greens-baby-fennel">I want it!</a>
 ```
 
-This is what the link will look like **after** you have modified it to support Branch deep links: 
+This is what the link will look like **after** you have modified it to support Branch deep links:
 ```
 %%[ SET @link_to_be_wrapped = "https://www.blueapron.com/recipes/five-spice-chicken-vermicelli-with-mushrooms-collard-greens-baby-fennel" ContentAreaByName("My Contents\deeplink") ]%%
 <a style="border-radius: 4px;display: inline-block;font-size: 14px;font-weight: bold;line-height: 24px;padding: 12px 24px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #fff;background-color: #00afd1;font-family: sans-serif;"  href="%%=RedirectTo(@deeplink)=%%">I want this!</a>

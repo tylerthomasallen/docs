@@ -2,7 +2,7 @@
 
   - Use `Postman` to test Branch API for requests, responses, and code examples
 
-  - Change the `branch_key` to match your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+  - Change the `branch_key` to match your [Branch Dashboard](https://dashboard.branch.io/account-settings/app)
 
   - [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3dadd3558239b25f385d)
 
@@ -48,8 +48,8 @@
 
         | Key | Value | Usage | Required
         | --- | :-: | --- | :-:
-        | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
-        | ... | ... | Parameters from [Configuring Links](/pages/links/setup/) |
+        | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/account-settings/app) | √
+        | ... | ... | Parameters from [Configuring Links](/pages/links/integrate/) |
 
 - #### Link create bulk 
 
@@ -112,9 +112,11 @@
         | Key | Value | Usage | Required
         | --- | :-: | --- | :-:
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
-        | ... | ... | Parameters from [Configuring Links](/pages/links/setup/) |
+        | ... | ... | Parameters from [Configuring Links](/pages/links/integrate/) |
 
 - #### Link read
+
+    - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
 
     - *Request*
 
@@ -126,9 +128,15 @@
 
         ```js
         {
-          "alias": null,
           "campaign": "new product",
           "channel": "facebook",
+          "feature": "onboarding",
+          "stage": "new user",
+          "tags": [
+            "one",
+            "two",
+            "three"
+          ],
           "data": {
             "$canonical_identifier": "content/123",
             "$desktop_url": "http://www.example.com",
@@ -150,27 +158,21 @@
               "random": "dictionary"
             },
             "custom_string": "everything",
-            "url": "https://eneff.app.link/cCeWJt6mqF",
             "~campaign": "new product",
             "~channel": "facebook",
             "~creation_source": 0,
             "~feature": "onboarding",
-            "~id": "423188696347619242",
+            "~id": "423196192848102356",
             "~stage": "new user",
             "~tags": [
               "one",
               "two",
               "three"
-            ]
+            ],
+            "url": "https://example.app.link/WgiqvsepqF"
           },
-          "feature": "onboarding",
-          "stage": "new user",
-          "tags": [
-            "one",
-            "two",
-            "three"
-          ],
-          "type": 0
+          "type": 0,
+          "alias": null
         }
         ```
 

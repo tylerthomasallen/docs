@@ -1,55 +1,63 @@
 
 ## Basic integration
 
-- #### Find the Branch Key
+- #### Understand the Branch Key
 
     - Go to [Account settings](https://dashboard.branch.io/account-settings/app) on the Branch Dashboard
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
     - These keys are unique to your Branch app
     - Never expose your `Branch Secret` as it can be maliciously used
-    - <img src="/img/pages/dashboard/branch-keys.png" width="500px" />
+        
+        ![image](/img/pages/dashboard/branch-keys.png)
 
 - #### Configure default behavior
 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    - Set the default behavior for your deep links on [Link Settings](https://dashboard.branch.io/link-settings)
+
+    - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) for each deep link
 
     - ##### iOS
-
         - Use these settings to control the default behavior of your deep links on iOS
-        - <img src="/img/pages/dashboard/ios.png" width="500px" />
+            
+            ![image](/img/pages/dashboard/ios.png)
 
     - ##### Android
         - Use these settings to control the default behavior of your deep links on Android
-        - <img src="/img/pages/dashboard/android.png" width="500px" />
+            
+            ![image](/img/pages/dashboard/android.png)
     
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
-        - <img src="/img/pages/dashboard/desktop.png" width="500px" />
+            
+            ![image](/img/pages/dashboard/desktop.png)
     
     - ##### Fallback
         - Use these settings to control the default behavior of your deep links on any other platform
-        - <img src="/img/pages/dashboard/fallback.png" width="500px" />
+            
+            ![image](/img/pages/dashboard/fallback.png)
     
     - ##### Link domain
         - Choose a `link domain` which will be used for all your links
         - The `link domain` is the website which hosts your deep links
         - The `link domain` is not a deep link
-            - The deep links will have an `alias` behind them to uniquely identify content
+            - Deep links will have an `alias` behind them to uniquely identify them
                 - https://example.app.link/VZsTctoINF
                 - https://example.app.link/custom-alias
-        - <img src="/img/pages/dashboard/link-domain.png" width="500px" />
+            ![image](/img/pages/dashboard/link-domain.png)
     
     - ##### Save
         - Make sure you commit any changes
-        - <img src="/img/pages/dashboard/save.png" width="500px" />
+            
+            ![image](/img/pages/dashboard/save.png)
 
 - #### Enable Deepview
 
     - Go to [Deepview Previews](https://dashboard.branch.io/web/deepviews) on the Branch Dashboard
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
-    - This will make your deep links before optimally on all [Supported platforms](/pages/links/setup/#supported-platforms)
+    - This will make your deep links before optimally on all [Supported platforms](/pages/links/integrate/#expected-redirect-behavior)
     - Additional details about [Deepviews](/pages/web/deep-views/)
-    - <img src="/img/pages/dashboard/deepview.png" width="200px" />
+        
+        ![image](/img/pages/dashboard/deepview.png)
 
 ## Advance integration
 
@@ -57,14 +65,17 @@
     - Go to [Account settings](https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
     - Handle your Branch user account with email, password, and user id
     - Connect your Github account to your Branch dashboard for easier sign in
+
 - #### Configure billing
     - Go to [Account settings](https://dashboard.branch.io/account-settings/billing) on the Branch Dashboard
     - Set your billing information for Branch premium features
+
 - #### Configure team
     - Go to [Account settings](https://dashboard.branch.io/account-settings/team) on the Branch Dashboard
     - Add and update team members to your Branch dashboard
         - `Admin` = full access
         - `Reports` = read reports only
+
 - #### Change advanced settings
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Set `Match type` to either `unique` or `normal` (default)
@@ -73,19 +84,32 @@
         - Duration is how long a `click` will live in our system before it is consumed by either an app `open` or system delete. Modifying this value will change how long we wait to fingerprint a user. If a user is fingerprinted within the set duration, then deep link data will flow into the app. The default the expiration is 2 hours (7200 seconds).
     - Set `UTM tags`
         - Recommend `disabled`. If you enable this, Branch will automatically set channel, feature, campaign, tags and $keywords based on UTM params. This only applies to dynamically created links, not links generated through the Dashboard, API or SDKs.
+
+            | UTM parameter | Branch parameter 
+            | --- | --- |
+            | utm_source | Channel
+            | utm_medium | Feature
+            | utm_campaign | Campaign
+            | utm_content | Tags
+            | utm_term | Keywords (not visible on Dashboard)
+
 - #### Enable Facebook App Invites
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard    
     - Add your Facebook credentials to allow us to link your Facebook dashboard to the Branch dashboard
     - This configuration allows us to send and receive attribution data from Facebook
-- #### Configure social media display 
+
+- #### Configure social media 
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Set the default image preview for your deep links when shared on social media
-    - These values are typically overridden by [Open Graph](pages/links/setup/#open-graph) which differentiate your deep links between one another
+    - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
+
 - #### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
+    
     - ##### Use app.link domain
         - Understand [Domain change warning](#domain-change-warning) 
         - Make changes to [Link settings](https://dashboard.branch.io/link-settings) or contact support
+   
     - ##### Use custom sub domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
@@ -94,6 +118,7 @@
         - Update your `CNAME` record on your custom sub domain
             - `CNAME` = `custom.bnc.lt`
         - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings) 
+    
     - ##### Use custom root domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)

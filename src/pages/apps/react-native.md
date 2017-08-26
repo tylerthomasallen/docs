@@ -73,7 +73,7 @@
 
 		- Configure info.pList
 
-		    - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+		    - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
 		        ![image](http://i.imgur.com/PwXnHWz.png)
 
@@ -147,7 +147,7 @@
 	        </manifest>
 	        ```
 
-	    - Replace the following with values from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+	    - Replace the following with values from your [Branch Dashboard](https://dashboard.branch.io/account-settings/app)
 	        - `branchandroid`
 	        - `uobg.app.link`
 	        - `key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa`
@@ -281,6 +281,10 @@
 			}
 			```
 
+- #### Receive deep link data
+
+    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
+
 - #### Test deep link iOS
 
     - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
@@ -330,7 +334,7 @@
 
 	- The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
-    - Uses the [Universal Object Properties](/pages/links/setup/#universal-object)
+    - Uses the [Universal Object Properties](/pages/links/integrate/#universal-object)
 
     ```js
     // only canonicalIdentifier is required
@@ -347,7 +351,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
 
@@ -370,7 +374,7 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-    - Uses [Deep Link Properties](/pages/links/setup/)
+    - Uses [Deep Link Properties](/pages/links/integrate/)
 
 	```js
 	let shareOptions = { messageHeader: 'Check this out', messageBody: 'No really, check this out!' }
@@ -384,6 +388,8 @@
 	- Retrieve Branch data from a deep link
 
     - Best practice to receive data from the `listener` (to prevent a race condition)
+
+    - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
 
     - Listener
 
