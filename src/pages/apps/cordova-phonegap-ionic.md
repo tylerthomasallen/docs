@@ -62,12 +62,12 @@
             document.addEventListener('resume', this.onDeviceResume, false);
           },
           onDeviceReady: function() {
-            app.branchInit();
+            app.handleBranch();
           },
           onDeviceResume: function() {
-            app.branchInit();
+            app.handleBranch();
           },
-          branchInit: function() {
+          handleBranch: function() {
             // Branch initialization
             Branch.initSession(function(data) {
               if (data['+clicked_branch_link']) {
@@ -99,14 +99,14 @@
 
             // Branch
             $ionicPlatform.on('deviceready', function() {
-              branchInit();
+              handleBranch();
             });
 
             $ionicPlatform.on('resume', function() {
-              branchInit();
+              handleBranch();
             });
 
-            function branchInit() {
+            function handleBranch() {
               // Branch initialization
               Branch.initSession(function(data) {
                 if (data['+clicked_branch_link']) {
@@ -122,16 +122,13 @@
 
     - *Ionic 2 and 3*
 
-          ```typescript hl_lines="9 21 25 29 30 31 32 33 34 35 36"
+          ```java hl_lines="18 22 25 26 27 28 29 30 31 32 33 34 35 36"
           // sample app.component.js
           import { Component } from '@angular/core';
           import { Platform } from 'ionic-angular';
           import { StatusBar, Splashscreen } from 'ionic-native';
 
-          import { TabsPage } from '../pages/tabs/tabs';
-
-          // Branch import
-          declare var Branch;
+          import { TabsPage } from '../pages/tabs/tabs
 
           @Component({
             template: `<ion-nav [root]="rootPage"></ion-nav>`
@@ -143,17 +140,18 @@
               platform.ready().then(() => {
                 StatusBar.styleDefault();
                 Splashscreen.hide();
-                branchInit();
+                handleBranch();
               });
 
               platform.resume.subscribe(() => {
-                branchInit();
+                handleBranch();
               });
 
               // Branch initialization
-              const branchInit = () => {
+              const handleBranch = () => {
                 // only on devices
                 if (!platform.is('cordova')) { return }
+                const Branch = window['Branch'];
                 Branch.initSession(data => {
                   if (data['+clicked_branch_link']) {
                     // read deep link data on click
@@ -917,7 +915,7 @@
 
             ```js
             // Ionic 2/3 - missing Branch import
-            declare var Branch
+            const Branch = window['Branch'];
             ```
 
     - Provisioning Profile missing
