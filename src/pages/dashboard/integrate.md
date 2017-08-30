@@ -142,9 +142,7 @@
         - Your new `app.link` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
         - If your old `app.link` are active, it is recommend to switch to a `custom link domain instead`
     - From `app.link` to `custom link domain`
-        - Your old `app.link` deep links will navigate to your `$fallback_url` instead of opening the app
-        - Your old `app.link` deep links will still pass data once the user opens the app
-        - Your old `app.link` deep links will need to be remade to your new `custom link domain`
+        - Your old `app.link` deep links will still work
         - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
     - From `custom link domain` to `custom link domain`
         - Your old `custom link domain` deep links will fail
