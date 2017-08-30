@@ -59,7 +59,7 @@ extra:
       link: 'https://www.facebook.com/branchmetrics'
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company-beta/3813083'
-  disqus: 'branch-docs'
+#  disqus: 'branch-docs'
   google:
     optimize: 'GTM-PCPBXCN'
     analytics: 'UA-98205710-1'
