@@ -9,45 +9,37 @@
 
 - #### Install Branch
 
-    - Option 1: Simple (iOS or Android)
+    - Install the NPM module
 
-		```
-		npm install --save react-native-branch@2.0.0-beta.7
-		react-native link react-native-branch
-		```
-		Add `pod "Branch"` as a dependency in you iOS/Podfile
-		```
-		cd ios; pod install --repo-update
-		```
+        ```bash
+        yarn add react-native-branch
+        ```
 
+        or
 
-	- Option 2: [CocoaPods](https://cocoapods.org/)
+        ```bash
+        npm install --save react-native-branch
+        ```
 
-		```
-		pod "React",
-		  path: "../node_modules/react-native",
-		  subspecs: %w{
-		    Core
-		    RCTAnimation
-		    RCTImage
-		    RCTText
-		    RCTNetwork
-		    RCTWebSocket
-		  }
-		pod "Yoga", path: "../node_modules/react-native/ReactCommon/yoga"
-		pod "react-native-branch", path: "../node_modules/react-native-branch"
-		pod "Branch-SDK", path: "../node_modules/react-native-branch/ios"
-		```
-		```
-		cd ios; pod install --repo-update
-		```
+    - In a pure React Native app using `react-native link`
 
-	- Option 3: [Carthage](https://github.com/Carthage/Carthage)
+        ```bash
+        react-native link react-native-branch
+        ```
 
-		```
-		github "BranchMetrics/ios-branch-deep-linking"
-		carthage update
-		```
+    - In a native iOS app using the `React` pod
+
+        This configuration is for native apps that include a React Native component as
+        described in the [React Native docs](https://facebook.github.io/react-native/docs/integration-with-existing-apps.html#configuring-cocoapods-dependencies).
+
+        Add these lines to your `Podfile`:
+        ```ruby
+        pod 'react-native-branch', path: '../node_modules/react-native-branch'
+        pod 'Branch-SDK', path: '../node_modules/react-native-branch/ios'
+        ```
+
+        Then run `pod install` to regenerate the `Pods` project with the new dependencies.
+        Note that the location of `node_modules` relative to your `Podfile` may vary.
 
 - #### Configure app
 
@@ -85,7 +77,7 @@
 
 	- Android
 
-		- `Android Manifest.xml`
+		- `AndroidManifest.xml`
 
 	        ```xml hl_lines="9 17 26 27 28 29 30 31 32 34 35 36 37 38 39 40 43 44 45 46 48 49 50 51 52 53"
 	        <?xml version="1.0" encoding="utf-8"?>
@@ -157,26 +149,30 @@
 
 	- Swift 3.0 `AppDelegate.swift`
 
-		Add `#import <react-native-branch/RNBranch.h>` to your Bridging header.
-		```swift hl_lines="3 4 5 10 11 12 13 14 15 16 17"
-		// Initialize the Branch Session at the top of existing application:didFinishLaunchingWithOptions:
-		func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		    // Uncomment this line to use the test key instead of the live one.
-		    // RNBranch.useTestInstance()
-		    RNBranch.initSession(launchOptions: launchOptions, isReferrable: true) // <-- add this
+    Add `#import <react-native-branch/RNBranch.h>` to your Bridging header if you have one.
 
-		    //...
-		}
+    If you are using the `React` pod in a native app with `use_frameworks!`, you may simply use
+    a Swift import in the AppDelegate.swift: `import react_native_branch`.
 
-		// Add the openURL and continueUserActivity functions
-		func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-		    return RNBranch.handleDeepLink(url)
-		}
+      ```swift hl_lines="3 4 5 10 11 12 13 14 15 16 17"
+      // Initialize the Branch Session at the top of existing application:didFinishLaunchingWithOptions:
+      func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+          // Uncomment this line to use the test key instead of the live one.
+          // RNBranch.useTestInstance()
+          RNBranch.initSession(launchOptions: launchOptions, isReferrable: true) // <-- add this
 
-		func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-		    return RNBranch.continue(userActivity)
-		}
-		```
+          //...
+      }
+
+      // Add the openURL and continueUserActivity functions
+      func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+          return RNBranch.branch.application(app, open: url, options: options)
+      }
+
+      func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+          return RNBranch.continue(userActivity)
+      }
+      ```
 
 	- Objective C `AppDelegate.m`
 
@@ -214,7 +210,7 @@
 			// ...
 
 			// import Branch and RNBranch
-			import io.branch.rnbranch.*;
+			import io.branch.rnbranch.RNBranchPackage;
 			import io.branch.referral.Branch;
 
 			//...
@@ -236,50 +232,33 @@
 			}
 			```
 
-			```java hl_lines="1 2 15 18 19 20 21"
-			import io.branch.rnbranch.*; // <-- add this
-			import android.content.Intent; // <-- and this
+    - MainActivity.java
 
-			public class MainActivity extends ReactActivity {
+		```java hl_lines="1 2 15 18 19 20 21"
+		import io.branch.rnbranch.*; // <-- add this
+		import android.content.Intent; // <-- and this
 
-			    @Override
-			    protected String getMainComponentName() {
-			        return "base";
-			    }
+		public class MainActivity extends ReactActivity {
 
-			    // Override onStart, onNewIntent:
-			    @Override
-			    protected void onStart() {
-			        super.onStart();
-			        RNBranchModule.initSession(this.getIntent().getData(), this);
-			    }
+			  @Override
+			  protected String getMainComponentName() {
+			      return "base";
+			  }
 
-			    @Override
-			    public void onNewIntent(Intent intent) {
-			        this.setIntent(intent);
-			    }
-			    // ...
-			}
-			```
+			  // Override onStart, onNewIntent:
+			  @Override
+			  protected void onStart() {
+			      super.onStart();
+			      RNBranchModule.initSession(getIntent().getData(), this);
+			  }
 
-		- `CustomApplicationClass.java`
-			```java hl_lines="2 9 10 11 12 13"
-			import android.app.Application;
-			import io.branch.referral.Branch;
-
-			public class CustomApplicationClass extends Application {
-			    @Override
-			    public void onCreate() {
-			        super.onCreate();
-
-			        // Branch logging for debugging
-			        Branch.enableLogging();
-
-			        // Branch object initialization
-			        Branch.getAutoInstance(this);
-			    }
-			}
-			```
+			  @Override
+			  public void onNewIntent(Intent intent) {
+			      setIntent(intent);
+			  }
+			  // ...
+		}
+		```
 
 - #### Receive deep link data
 
@@ -316,7 +295,8 @@
 
 - #### Import Branch
 
-	- `index.ios.js`/`index.android.js`
+	- In any React Native source file that uses the Branch SDK. You can import
+    only the symbols you are using.
 
 		```js
 		import branch, {
@@ -393,21 +373,55 @@
 
     - Listener
 
-	```js
-	// Subscribe to incoming links (both Branch & non-Branch)
-	branch.subscribe(({ error, params }) => {
-	    if (params && !error) {
-	        // grab deep link data and route appropriately.
-	    }
-	})
+    ```js
+    branch.subscribe(({ error, params }) => {
+      if (error) {
+        console.error('Error from Branch: ' + error)
+        return
+      }
 
-	let lastParams = await branch.getLatestReferringParams() // params from last open
-	let installParams = await branch.getFirstReferringParams() // params from original install
-	```
+      // params will never be null if error is null
+    })
+
+    let lastParams = await branch.getLatestReferringParams() // params from last open
+    let installParams = await branch.getFirstReferringParams() // params from original install
+    ```
 
 - #### Navigate to content
 
-	TO-DO
+    ```js
+    branch.subscribe(({ error, params }) => {
+      if (error) {
+        console.error('Error from Branch: ' + error)
+        return
+      }
+
+      // params will never be null if error is null
+
+      if (params['+non_branch_link']) {
+        const nonBranchUrl = params['+non_branch_link']
+        // Route non-Branch URL if appropriate.
+        return
+      }
+
+      if (!params['+clicked_branch_link']) {
+        // Indicates initialization success and some other conditions.
+        // No link was opened.
+        return
+      }
+
+      // A Branch link was opened.
+      // Route link based on data in params, e.g.
+
+      // Get title and url for route
+      const title = params.$og_title
+      const url = params.$canonical_url
+      const image = params.$og_image_url
+
+      // Now push the view for this URL
+      this.navigator.push({ title: title, url: url, image: image })
+    })
+    ```
 
 - #### Display content
 
@@ -415,9 +429,24 @@
 
     - Needs a [Branch Universal Object](#create-content-reference)
 
-	```js
-	let spotlightResult = await branchUniversalObject.listOnSpotlight()
-	```
+    - Listing on Spotlight requires adding `CoreSpotlight.framework` to your Xcode project.
+
+    - Recommended
+
+    ```js
+    let branchUniversalObject = await branch.createBranchUniversalObject('canonicalIdentifier', {
+      automaticallyListOnSpotlight: true,
+      // other properties
+    })
+
+    branchUniversalObject.userCompletedAction(RegisterViewEvent)
+    ```
+
+    - Alternate method
+
+    ```js
+    branchUniversalObject.listOnSpotlight()
+    ```
 
 - #### Track content
 
@@ -427,7 +456,7 @@
 
     - Uses [Track content properties](#track-content-properties)
 
-    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
     ```js
     import branch, { RegisterViewEvent } from 'react-native-branch'
@@ -463,12 +492,17 @@
 
 - #### Track commerce
 
-	TODO
+    - Use the `branch.sendCommerceEvent` method to record commerce events
+
+    ```js
+    branch.sendCommerceEvent("20.00")
+    branch.sendCommerceEvent(50, {key1: "value1", key2: "value2"})
+    ```
 
 - #### Handle referrals
 
     - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
-    
+
     - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
     - Reward credits
