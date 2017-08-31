@@ -78,17 +78,7 @@
     
     - `Complete [Integrate your app](#dialog-code?ios=create-deep-link&android=install-branch)`
     - `Complete [Integrate your app](#dialog-code)`
-    - Naming conventions
-        - ios
-        - android
-        - adobe
-        - cordova
-        - mparticleAndroid
-        - mparticleIos
-        - titanium
-        - reactNative
-        - unity
-        - xamarin
+    - `ios`, `android`, `adobe`, `cordova`, `mparticleAndroid`, `mparticleIos`, `titanium`, `reactNative`, `unity`, `xamarin`
 
 - #### Images
     - Content pages are kept in the `img/pages` 
