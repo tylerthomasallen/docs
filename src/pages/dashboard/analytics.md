@@ -141,10 +141,6 @@
 <!-- - #### Revenue analytics -->
 
 - #### User value attribution
-    + what
-    + why
-    + how
-
     - Measure app growth through automatic `event tracking` and `user identity` tracking
     - Use [Configure you app](#dialog-code) to send events and user information (`email`, `ID`, `UUID`, etc) from your app to the [Branch dashboard](https://dashboard.branch.io/)
     - The `identity` is retroactively associate any previously recorded events
