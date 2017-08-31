@@ -52,7 +52,7 @@ extra:
     - type: 'globe'
       link: 'https://branch.io'
     - type: 'github'
-      link: 'https://github.com/BranchMetrics/Documentation'
+      link: 'https://github.com/branchmetrics/docs'
     - type: 'twitter'
       link: 'https://twitter.com/branchmetrics'
     - type: 'facebook'
