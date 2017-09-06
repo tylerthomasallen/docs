@@ -16,7 +16,7 @@
         - Add link data from [Configuring deep links](#configure-deep-links)
         - Add key-values pairs from [Quick Links](/pages/dashboard/analytics/#quick-links)
         - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123` 
-    - #####  Open website instead of app
+    - #####  Open web instead of app
         - When app is not installed 
             - Add query string `https://example.app.link?$ios_url=https://example.com`
             - Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
