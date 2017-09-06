@@ -879,7 +879,7 @@
         <plugin name="branch-cordova-sdk" spec="^2.5.0" />
         ```
 
-- #### Incompatible plugins
+- #### Incompatibilities
 
     - The following plugins will not work with the Branch SDK
 
@@ -890,6 +890,8 @@
         - [Cordova Universal Links Plugin](https://github.com/nordnet/cordova-universal-links-plugin)
 
         - [Ionic Deeplinks Plugin](https://github.com/driftyco/ionic-plugin-deeplinks)
+
+    - PhoneGap Build is also not supported by the Branch SDK because we need plugin hooks to enable Entitlements, Universal Links, App Links, and URI Scheme redirects but PhoneGap Build does not allow plugin hooks
 
 - #### Cordova errors
 
