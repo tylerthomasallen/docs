@@ -203,7 +203,7 @@
         | $publicly_indexable | `1` | Cannot modify here. Needs to be set by the Branch Universal Object
         | $keywords | | Keywords for which this content should be discovered by. Just assign an array of strings with the keywords you'd like to use
         | $canonical_identifier | | This is the unique identifier for content that will help Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities
-        | $exp_date | `0` | Cannot modify here. Needs to be set by the Branch Universal Object. Must be epoch timestamp with milliseconds
+        | $exp_date | `0` | The date when the content will not longer be available or valid. Cannot modify here. Needs to be set by the Branch Universal Object. Must be epoch timestamp with milliseconds
         | $content_type | | This is a label for the type of content present. Apple recommends that you use uniform type identifier as described here
 
 - #### DeepView
