@@ -145,6 +145,11 @@
 	        - `key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa`
 	        - `key_test_edwDakKcMeWzJ3hC3aZs9kniyuaWGCTa`
 
+      - `android/app/proguard-rules.pro`
+          ```proguard
+          -dontwarn io.branch.**
+          ```
+
 - #### Initialize Branch
 
 	- Swift 3.0 `AppDelegate.swift`
