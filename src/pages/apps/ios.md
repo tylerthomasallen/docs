@@ -325,42 +325,21 @@
     - *Objective C*
 
         ```objc
-        ```
+        [[Branch getInstance] initSessionWithLaunchOptions:launchOptions
+                                andRegisterDeepLinkHandler:^(NSDictionary * _Nullable params,
+                                                             NSError * _Nullable error) {
+            if (!error) {
+                //Referring params
+                NSLog(@"Referring link params %@",params);
+            }
+        }];
+        
+        // latest
+        NSDictionary *sessionParams = [[Branch getInstance] getLatestReferringParams];
+    
+        // first
+        NSDictionary *installParams =  [[Branch getInstance] getFirstReferringParams];
 
-- #### Navigate to content
-
-    - Handled within `Branch.initSession()`
-
-    - *Swift 3*
-
-        ```swift
-        // within AppDelegate application.didFinishLaunchingWithOptions
-        Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
-          // Option 1: read deep link data
-          guard let data = params as? [String: AnyObject] else { return }
-
-          // Option 2: save deep link data to global model
-          BranchData.sharedInstance.data = data
-
-          // Option 3: display data
-          let alert = UIAlertController(title: "Deep link data", message: "\(data)", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-          self.window?.rootViewController?.present(alert, animated: true, completion: nil)
-
-          // Option 3: navigate to view controller
-          guard let options = data["nav_to"] as? String else { return }
-          switch options {
-              case "landing_page": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
-              case "tutorial": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
-              case "content": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
-              default: break
-          }
-        }
-        ```
-
-    - *Objective C*
-
-        ```objc
         ```
 
 - #### Display content
@@ -457,7 +436,13 @@
 
         ```objc
         // option 1
-
+        NSString *action = @"signup";
+        [[Branch getInstance] userCompletedAction:action];
+    
+        // option 2
+        NSDictionary *metadata = @{@"custom_dictionary":@123, @"anything": @"everything"};
+        [[Branch getInstance] userCompletedAction:action
+                                        withState:metadata];
         ```
 
 - #### Track commerce
@@ -517,6 +502,46 @@
     - *Objective C*
 
         ```objc
+         // only revenue is required
+        BNCCommerceEvent *commerceEvent = [BNCCommerceEvent new];
+        commerceEvent.affiliation = @"affiliation";
+        commerceEvent.coupon = @"coupon";
+        commerceEvent.currency = @"USD";
+        commerceEvent.transactionID = @"transactionID";
+        commerceEvent.shipping = [[NSDecimalNumber alloc] initWithFloat:11.22];
+        commerceEvent.revenue = [[NSDecimalNumber alloc] initWithFloat:99.99];
+        commerceEvent.tax = [[NSDecimalNumber alloc] initWithFloat:4.2];;
+    
+        // optional
+        BNCProduct *product1 = [BNCProduct new];
+        product1.sku = @"sku1";
+        product1.name = @"name1";
+        product1.price = [[NSDecimalNumber alloc] initWithFloat:11.11];
+        product1.quantity = [[NSDecimalNumber alloc] initWithFloat:1.0];
+        product1.brand = @"brand1";
+        product1.category = @"category1";
+        product1.variant = @"variant1";
+    
+        // optional
+        BNCProduct *product2 = [BNCProduct new];
+        product2.sku = @"sku2";
+        product2.name = @"name2";
+        product2.price = [[NSDecimalNumber alloc] initWithFloat:22.22];
+        product2.quantity = [[NSDecimalNumber alloc] initWithFloat:2.0];
+        product2.brand = @"brand2";
+        product2.category = @"category2";
+        product2.variant = @"variant2";
+    
+        commerceEvent.products = @[product1, product2];
+    
+        // optional
+        NSDictionary *metadata = @{@"custom_dictionary":@123,
+                               @"anything": @"everything"};
+
+        [[Branch getInstance] sendCommerceEvent:commerceEvent metadata:metadata
+                             withCompletion:^(NSDictionary *response, NSError *error) {
+            NSLog(@"%@",response);
+        }];
         ```
 
 - #### Handle referrals
@@ -546,6 +571,13 @@
         - *Objective C*
 
             ```objc
+            // option 1 (default bucket)
+            NSInteger amount = 5;
+            [[Branch getInstance] redeemRewards:amount];
+    
+            // option 2
+            NSString *bucket = @"signup";
+            [[Branch getInstance] redeemRewards:amount forBucket:bucket];
             ```
 
     - Load credits
@@ -566,6 +598,17 @@
         - *Objective C*
 
             ```objc
+            [[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError * _Nullable error) {
+                if (changed) {
+                // option 1 (defualt bucket)
+                NSInteger credits = [[Branch getInstance] getCredits];
+            
+                // option 2
+                NSString *bucket = @"signup";
+                NSInteger credit = [[Branch getInstance] getCreditsForBucket:bucket];
+                }
+            }];
+
             ```
 
     - Load history
@@ -581,6 +624,9 @@
         - *Objective C*
 
             ```objc
+            [[Branch getInstance] getCreditHistoryWithCallback:^(NSArray * _Nullable creditHistory, NSError * _Nullable error) {
+                NSLog(@"%@",creditHistory);
+            }];
             ```
 
 - #### Handle push notifications
@@ -621,6 +667,7 @@
     - *Objective C*
 
         ```objc
+        [[Branch getInstance] delayInitToCheckForSearchAds];
         ```
 
     - Test with fake campaign params (do not test in production)
@@ -634,6 +681,7 @@
     - *Objective C*
 
         ```objc
+        [[Branch getInstance] setAppleSearchAdsDebugMode];
         ```
 
 - #### Enable 100% matching
@@ -742,6 +790,7 @@
     - *Objective C*
 
         ```objc
+        [[Branch getInstance] setDebug];
         ```
 
 - #### Associated domain details
@@ -796,6 +845,9 @@
     - *Objective C*
 
         ```objc
+        [[Branch getInstance] registerDeepLinkController:customViewController
+                                                  forKey:@"my-key"
+                                        withPresentation:BNCViewControllerOptionShow];
         ```
 
 - #### Share to email options
