@@ -363,22 +363,122 @@
         ```objc
         ```
 
-- #### Display content
+- #### Content Discovery
 
-    - List content on `iOS Spotlight`
-
-    - Needs a [Create content reference](#create-content-reference)
+    - Index single Branch Universal Object on Spotlight
 
     - *Swift 3*
 
         ```swift
-        buo.automaticallyListOnSpotlight = true
+        universalObject.listOnSpotlight(with: linkProperty) { (url, error) in
+            if (error == nil) {
+                print("Successfully indexed on spotlight")     
+             }
+        }
         ```
 
     - *Objective-C*
 
         ```objc
-        buo.automaticallyListOnSpotlight = YES;
+        [universalObject listOnSpotlightWithLinkProperties:linkProperties callback:^(NSString * _Nullable url, NSError * _Nullable error) {
+            if (!error) {
+                 NSLog(@"Successfully indexed on spotlight");
+            }
+        }];
+        ```
+!!! note: "Content would be index using NSUserActivity if contentIndexMode of BranchUniversalObject is Public, else would be index using CSSearchableIndex"
+
+    - Index Multiple Branch Universal Objects On Spotlight using CSSearchableIndex
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().indexOnSpotlight(usingSearchableItems: universalObjects, 
+                                                completion: { (universalObjects, error) in
+             if (error) {
+                // Successfully able to index all the BUO on spotloght
+            }
+        })
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        [[Branch getInstance] indexOnSpotlightUsingSearchableItems:universalObjects
+                                                    completion:^(NSArray<BranchUniversalObject *> *universalObjects,
+                                                                 NSError *error) {
+                if (!error) {
+                   // Successfully able to index all the BUO on spotloght
+                }
+        }];
+        ```
+
+!!! note: "All the BranchUniversalObjects would indexed using CSSearchableIndex irrespective of contentIndexMode of it"  
+
+    - Remove Branch Universal Object from Spotlight if privately indexed
+
+    - *Swift 3*
+
+        ```swift
+        universalObject.removeFromSpotlight { (error) in
+            if(error == nil) {
+                print("BUO successfully removed")
+            }
+        }
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        [universalObject removeFromSpotlightWithCallback:^(NSError * _Nullable error) {
+            if (!error) {
+                NSLog(@"universal Object removed from spotlight");
+            }
+        }];
+        ```
+
+    - Remove multiple Branch Universal Objects from Spotlight if privately indexed
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().removeSearchableItems(with: [BUO1,BUO2]) { (error) in
+            if (error == nil) {
+                print("An array of BUOs removed from spotlight")
+            }
+        }
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        [[Branch getInstance] removeSearchableItemsWithBranchUniversalObjects:@[BUO1,BUO2] callback:^(NSError *error) {
+            if (!error) {
+                NSLog(@"An array of BUOs removed from spotlight");
+            }
+        }];
+        ```
+
+    - Remove all Branch Universal Objects from Spotlight if privately indexed
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().removeAllPrivateContentFromSpotLight { (error) in
+            if (error == nil) {
+                print("All branch privately indexed content removed from spotlight")
+            }
+        }
+        ```
+
+    - *Objective-C*
+
+        ```objc
+        [[Branch getInstance] removeAllPrivateContentFromSpotLightWithCallback:^(NSError *error) {
+            if (!error) {
+                NSLog(@"All branch privately indexed content removed from spotlight");
+            }
+        }];
         ```
 
 - #### Track content
