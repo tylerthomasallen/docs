@@ -92,6 +92,7 @@ extra:
     - 'Facebook Traffic and Conversion Ads'
     - 'Facebook Platform Ads'
     - 'Facebook Dynamic Ads'
+    - 'Single Sign-on'
   is_visible:
     footer_floater_beta: true
     footer_floater_old_docs: true
@@ -102,7 +103,9 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard: pages/dashboard/integrate.md
+  - Configure your dashboard: 
+    - Integrate: pages/dashboard/integrate.md
+    - Single Sign-on: pages/dashboard/sso.md
   - Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
