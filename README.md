@@ -2,11 +2,21 @@
 
 > Repository for Branch's public documentation [https://docs.branch.io](https://docs.branch.io)
 
+## Goal
+
+- #### Get partners up and running as fast as possible
+    - Educate with `a single best path` (do not list all the override methods)
+    - Educate with `working code examples`
+    - `Bullet point` key points, procedures, and steps to promote progression
+    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity
+    - Trigger action by `beginning each sentence with a verb`
+    - Write in the viewpoint of the `user's wants`, not what Branch wants
+    - Keep is simple (KISS) (`1 -> 2 -> 3`)
+    - Don't repeat yourself (DRY) (`this can be found here`)
+- #### Answer any question a partner will have
+    - Make sure you answer `why`, `what`, `how` (example) with each section
+
 ## Environment
-
-- #### Todo
-
-  - [spreadsheet](https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216)
 
 - #### Code
 
@@ -42,15 +52,6 @@
 
 ## Contributing
 
-- #### Best Practices
-    - Educate with `working code examples`
-    - `Bullet point` key points, procedures, and steps to promote progression
-    - Use `shorter sentences with simpler words` (3rd grade) to prevent ambiguity
-    - Trigger action by `beginning each sentence with a verb`
-    - Write in the viewpoint of the `user's wants`, not what Branch wants
-    - Keep is simple (KISS) (`1 -> 2 -> 3`)
-    - Don't repeat yourself (DRY) (`this can be found here`)
-
 - #### Folders
     - Must be lowercase and hyphened
 
@@ -66,16 +67,10 @@
     - Category `- #### Section`
     - Content `    - content`
 
-- #### Search
-    - Hosted by [Algolia Docsearch](https://community.algolia.com/docsearch/)
-    - Localhost scrapes production
-    - Production is scraped once a day
-
 - #### Code Tabs
     - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
-- #### Code Modals
-    
+- #### Code Modals  
     - `Complete [Integrate your app](#dialog-code?ios=create-deep-link&android=install-branch)`
     - `Complete [Integrate your app](#dialog-code)`
     - `ios`, `android`, `adobe`, `cordova`, `mparticleAndroid`, `mparticleIos`, `titanium`, `reactNative`, `unity`, `xamarin`
@@ -85,14 +80,10 @@
     - Example images used in ingredients are kept in the `img/ingredients` 
     - `![image](http://i.imgur.com/dyfhN0L.png)`
 
-- #### Includes
-    - For reusable snippet, use the format `{! path/file_name_here.md !}` where the base path begins at the includes directory.
-    - Content snippets should be placed in the `ingredients` subdirectory. (E.g. `{! ingredients/content_snippet.md !}`)
-    - Frequently updated content/code should be kept within the `includes`
-
-- #### Hidden Pages
-    - By default all pages in the mkdocs.yml file will be built and included in the navbar
-    - To not include a page in the navbar, add the page's title to the `hidden_pages` array in the mkdocs.yml
+- #### Search
+    - Hosted by [Algolia Docsearch](https://community.algolia.com/docsearch/)
+    - Localhost scrapes production
+    - Production is scraped once a day
 
 ## Additional
 
@@ -132,7 +123,7 @@
 
 - #### Slow page render
 
-  - The docs should load within `1400ms`. If it takes `5000ms`, please disable `Ghostery` and `Adblocker` (the docs have AB testing)
+  - The docs should load within `1400ms`. If it takes `5000ms`, please disable `Ghostery` (Google Analytics) and `Adblocker` (the docs have AB testing)
 
 - #### Missing search
     - Some ad blockers prevent the search from appearing
