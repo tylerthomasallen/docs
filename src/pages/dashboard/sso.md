@@ -26,7 +26,7 @@ SSO for the Branch dashboard restricts access for designated email domains to a 
 
 ### Add Branch to your identity provider
 
-If you want your Atlassian application to provide SSO, You will need to add Branch to your IdP. Once this is complete, your IdP will provide you with details that you'll need to add to the Branch dashboard in order to enable SSO.
+If you want the dashboard to provide SSO for your team, You will need to add Branch to your IdP. Once this is complete, your IdP will provide you with details that you'll need to add to the Branch dashboard in order to enable SSO.
 
 Branch currently works with Okta and OneLogin, and should also be compatible with any identity provider that supports SAML. 
 
@@ -38,7 +38,16 @@ When you add Branch to your identity provider, add the following SAML attribute 
 | firstName | User's first name
 | lastName | User's last name
 
-For IdP initiated SAML, enter your site's URL as the default relay state. Include https:// as part of your site's URL.
+Here is some initial information that your IdP might ask for:
+
+| IdP Field | Value
+| --- | ---
+| Platform | Web
+| Sign-on method | SAML 2.0
+| Application name | Branch
+| Logo | [Download here](https://branch.io/press/#kit){:target="\_blank"} 
+
+Ask your account manager or [support](https://support.branch.io/support/tickets/new){:target="\_blank"} for the additional configuration information that you need.
 
 ### Copy your details back to Branch
 
