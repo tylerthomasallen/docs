@@ -15,9 +15,9 @@
     - ##### Pass data from link to app
         - Add link data from [Configuring deep links](#configure-deep-links)
         - Add key-values pairs from [Quick Links](/pages/dashboard/analytics/#quick-links)
-        - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123` 
+        - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123`
     - #####  Open web instead of app
-        - When app is not installed 
+        - When app is not installed
             - Add query string `https://example.app.link?$ios_url=https://example.com`
             - Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
             - Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
@@ -51,29 +51,29 @@
 
         | App | iOS App Installed | iOS App Not Installed | Android App Installed| Android App Not Installed | Notes
         | --- | --- | --- | --- | --- | --- |
-        | Facebook Newsfeed | Fallback | Fallback | App | Fallback | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-        | Facebook browser | App | Fallback | App | Fallback |
-        | Facebook Messenger | Fallback | Fallback | App | Fallback | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-        | Facebook Messenger browser | App | Fallback | App | Fallback |
-        | Instagram | Fallback | Fallback | App | Fallback | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-        | Snapchat | Fallback | Fallback | App | Fallback |
-        | Twitter | Fallback | Fallback | App | Fallback | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-        | Pinterest | Fallback | Fallback | Fallback | Fallback |
-        | Chrome browser | App | Fallback | App | Fallback |
-        | Safari address bar | Fallback | Fallback | - | - |
-        | Safari web page | App | Fallback | - | - |
-        | Firefox browser | Fallback | Fallback | App | Fallback |
-        | UC browser | - | - | App | Fallback |
-        | Naver browser | - | - | App | Fallback |
-        | Kakao browser | - | - | App | Fallback |
-        | Opera browser | - | - | Fallback | Fallback | 
-        | Hangouts | App | Fallback | App | Fallback |
-        | iMessage | App | Fallback | - | - |
-        | Slack | App | Fallback | App | Fallback |
-        | WeChat | Fallback | Fallback | Fallback | Fallback | You can customize [WeChat fallback urls](#redirections)
-        | WhatsApp | App | Fallback | App | Fallback | `app.link` require https/http to be clickable
-        | Apple Mail | App | Fallback | - | - |
-        | Gmail | App | Fallback | App | Fallback 
+        | Facebook Newsfeed | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
+        | Facebook browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+        | Facebook Messenger | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
+        | Facebook Messenger browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+        | Instagram | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
+        | Snapchat | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store |
+        | Twitter | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
+        | Pinterest | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store |
+        | Chrome browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+        | Safari address bar | Falls back to web or app store | Falls back to web or app store | - | - |
+        | Safari web page | App opens | Falls back to web or app store | - | - |
+        | Firefox browser | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store |
+        | UC browser | - | - | App opens | Falls back to web or play store |
+        | Naver browser | - | - | App opens | Falls back to web or play store |
+        | Kakao browser | - | - | App opens | Falls back to web or play store |
+        | Opera browser | - | - | Falls back to web or play store | Falls back to web or play store |
+        | Hangouts | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+        | iMessage | App opens | Falls back to web or app store | - | - |
+        | Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+        | WeChat | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store | You can customize [WeChat fallback urls](#redirections)
+        | WhatsApp | App opens | Falls back to web or app store | App opens | Falls back to web or play store | `app.link` require https/http to be clickable
+        | Apple Mail | App opens | Falls back to web or app store | - | - |
+        | Gmail | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
 
 - #### Supported platforms
 
@@ -102,7 +102,6 @@
         | iMessage | ✔ | | |
         | Apple Mail | ✔ | | |
         | Gmail | ✔ | | ✔ |
-
 
 ## Create deep links
 
@@ -178,7 +177,11 @@
         | Key | Default | Usage
         | --- | --- | ---
         | $fallback_url | | Change the redirect endpoint for all platforms - so you don't have to enable it by platform. Note that Branch will forward all robots to this URL, which **overrides any OG tags** entered in the link.  System-wide Default URL (set in Link Settings)
+<<<<<<< HEAD
         | $fallback_url_xx | | Change the redirect endpoint for all platforms based on a lower-case Alpha-2 country code conforming to [ISO 3166](https://www.iso.org/obp/ui/#search). (e.g. `$fallback_url_de` for Germany)
+=======
+        | $fallback_url_xx | | Change the redirect endpoint at the country level. Conforms to [ISO 3166](https://www.iso.org/obp/ui/#search) country code standard. Example: `$fallback_url_de` would have a different redirect for people clicking in Germany.
+>>>>>>> b7345a554b3451ffbcf7b39b697b0a060559915b
         | $desktop_url | | Change the redirect endpoint on desktops Text-Me-The-App page (set in Link Settings)
         | $ios_url | | Change the redirect endpoint for iOS  App Store page for your app (set in Link Settings)
         | $ipad_url | | Change the redirect endpoint for iPads `$ios_url` value
@@ -199,7 +202,7 @@
         | --- | --- | ---
         | $uri_redirect_mode | **0** | This is the default value that yields the standard behavior where we don't try to open the app if the user can see an error.
         | $uri_redirect_mode | **1** | Smart redirect mode. Same behavior as 0 until we know the user has the app installed through Branch persona data. In that case, force URI schemes to open the app.
-        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed. 
+        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed.
 
     - Supported Apps
 
@@ -374,7 +377,7 @@
         | + | Branch added values
 
 - #### Callback values
-    
+
     - Additional properties read from the `initSession` within your [app](#dialog-code) and [website](/pages/web/integrate/) integrations
 
         | Key | Default | Usage
