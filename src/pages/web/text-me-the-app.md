@@ -110,8 +110,8 @@ function sendSMS(form) {
     },
     { make_new_link: false }, // Default: false. If set to true, sendSMS will generate a new link even if one already exists.
     function(err) { console.log(err); }
-  }
-});
+  );
+}
 </script>
 ```
 
