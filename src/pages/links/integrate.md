@@ -15,9 +15,9 @@
     - ##### Pass data from link to app
         - Add link data from [Configuring deep links](#configure-deep-links)
         - Add key-values pairs from [Quick Links](/pages/dashboard/analytics/#quick-links)
-        - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123` 
+        - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123`
     - #####  Open web instead of app
-        - When app is not installed 
+        - When app is not installed
             - Add query string `https://example.app.link?$ios_url=https://example.com`
             - Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
             - Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
@@ -64,7 +64,7 @@
     | UC browser | - | - | App opens | Falls back to web or play store |
     | Naver browser | - | - | App opens | Falls back to web or play store |
     | Kakao browser | - | - | App opens | Falls back to web or play store |
-    | Opera browser | - | - | Falls back to web or play store | Falls back to web or play store | 
+    | Opera browser | - | - | Falls back to web or play store | Falls back to web or play store |
     | Hangouts | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
     | iMessage | App opens | Falls back to web or app store | - | - |
     | Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
@@ -147,6 +147,7 @@
         | Key | Default | Usage
         | --- | --- | ---
         | $fallback_url | | Change the redirect endpoint for all platforms - so you don't have to enable it by platform. Note that Branch will forward all robots to this URL, which **overrides any OG tags** entered in the link.  System-wide Default URL (set in Link Settings)
+        | $fallback_url_xx | | Change the redirect endpoint at the country level. Conforms to [ISO 3166](https://www.iso.org/obp/ui/#search) country code standard. Example: `$fallback_url_de` would have a different redirect for people clicking in Germany.
         | $desktop_url | | Change the redirect endpoint on desktops Text-Me-The-App page (set in Link Settings)
         | $ios_url | | Change the redirect endpoint for iOS  App Store page for your app (set in Link Settings)
         | $ipad_url | | Change the redirect endpoint for iPads `$ios_url` value
@@ -167,7 +168,7 @@
         | --- | --- | ---
         | $uri_redirect_mode | **0** | This is the default value that yields the standard behavior where we don't try to open the app if the user can see an error.
         | $uri_redirect_mode | **1** | Smart redirect mode. Same behavior as 0 until we know the user has the app installed through Branch persona data. In that case, force URI schemes to open the app.
-        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed. 
+        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed.
 
     - Apps/browsers that support deep linking with this forceful redirect mode:
 
@@ -342,7 +343,7 @@
         | + | Branch added values
 
 - #### Callback values
-    
+
     - Additional properties read from the `initSession` within your [app](#dialog-code) and [website](/pages/web/integrate/) integrations
 
         | Key | Default | Usage
