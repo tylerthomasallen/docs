@@ -342,7 +342,6 @@
             .setFeature("sharing")
             .setCampaign("content 123 launch")
             .setStage("new user")
-            .addControlParameter("\$deeplink_path", "content/123")
             .addControlParameter("\$desktop_url", "http://example.com/home")
             .addControlParameter("custom", "data")
             .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()));
@@ -365,7 +364,6 @@
             .setFeature("sharing")
             .setCampaign("content 123 launch")
             .setStage("new user")
-            .addControlParameter("$deeplink_path", "content/123")
             .addControlParameter("$desktop_url", "http://example.com/home")
             .addControlParameter("custom", "data")
             .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()))
@@ -393,7 +391,6 @@
             .setFeature("sharing")
             .setCampaign("content 123 launch")
             .setStage("new user")
-            .addControlParameter("\$deeplink_path", "content/123")
             .addControlParameter("\$desktop_url", "http://example.com/home")
             .addControlParameter("custom", "data")
             .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()));
@@ -432,7 +429,6 @@
             .setFeature("sharing")
             .setCampaign("content 123 launch")
             .setStage("new user")
-            .addControlParameter("$deeplink_path", "content/123")
             .addControlParameter("$desktop_url", "http://example.com/home")
             .addControlParameter("custom", "data")
             .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()))

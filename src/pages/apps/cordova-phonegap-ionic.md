@@ -274,7 +274,6 @@
           $android_url: 'http://www.example.com/android',
           $ios_url: 'http://www.example.com/ios',
           $ipad_url: 'http://www.example.com/ipad',
-          $deeplink_path: 'content/123',
           $match_duration: 2000,
           custom_string: 'data',
           custom_integer: Date.now(),
