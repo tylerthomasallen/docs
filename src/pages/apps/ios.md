@@ -348,7 +348,7 @@
 
     - *Swift 3*
 
-       ```swift
+        ```swift
         // within AppDelegate application.didFinishLaunchingWithOptions
         Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
           // Option 1: read deep link data
