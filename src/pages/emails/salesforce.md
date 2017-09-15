@@ -32,7 +32,11 @@ Your Salesforce account must be configured to correctly handle Universal Links. 
 {! ingredients/email/email-bounce-web.md !}
 
 !!! protip "Do not open the app"
-    Salesforce has communicated to us that in a future release customers will have the ability to choose not to open the app at all rather than open the app and launch a browser. While it is slated for 2017, there is no confirmed timeline. Salesforce Marketing Cloud uses this feature for your Unsubscribe button by default.
+    If you want any web-only links to not open the app on iOS, Salesforce has a special attribute that you can apply to these links.
+
+    Add ```mc-deep-link="false"``` to your link tag like this:
+
+    ```<a mc-deep-link="false" href="https://my.app.link/3p?$3p=e_et&$original_url=..." >This link will not open the app.</a>```
 
 {! ingredients/email/email-validate-test.md !}
 
