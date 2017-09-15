@@ -73,9 +73,11 @@ extra:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
   nav_header:
     - index: 2
-      title: Basic deep linking
+      title: Basic integration
+    - index: 5
+      title: Basic usage
     - index: 7
-      title: Advanced deep linking
+      title: Advance usage
     - index: 14
       title: Resources
   nav_hidden:
