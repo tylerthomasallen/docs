@@ -347,6 +347,7 @@
     - Handled within `Branch.initSession()`
 
     - *Swift 3*
+
        ```swift
         // within AppDelegate application.didFinishLaunchingWithOptions
         Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
@@ -376,7 +377,6 @@
 
         ```objc
         ```
-   
 
 - #### Display content
 
