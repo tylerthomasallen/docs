@@ -342,6 +342,42 @@
 
         ```
 
+- #### Navigate to content
+
+    - Handled within `Branch.initSession()`
+
+    - *Swift 3*
+       ```swift
+        // within AppDelegate application.didFinishLaunchingWithOptions
+        Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
+          // Option 1: read deep link data
+          guard let data = params as? [String: AnyObject] else { return }
+
+          // Option 2: save deep link data to global model
+          BranchData.sharedInstance.data = data
+
+          // Option 3: display data
+          let alert = UIAlertController(title: "Deep link data", message: "\(data)", preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+          self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+
+          // Option 3: navigate to view controller
+          guard let options = data["nav_to"] as? String else { return }
+          switch options {
+              case "landing_page": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
+              case "tutorial": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
+              case "content": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
+              default: break
+          }
+        }
+        ```
+
+    - *Objective C*
+
+        ```objc
+        ```
+   
+
 - #### Display content
 
     - List content on `iOS Spotlight`
