@@ -16,7 +16,7 @@
 
 - #### Configure associated domains
 
-    - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+    - Add xxxx.app.link and xxxx-alternate.app.link from the "Link Domain" section of the [Branch Dashboard Settings](https://dashboard.branch.io/settings/link)
     - Additional [Associated domain details](#associated-domain-details)
 
         ![image](http://i.imgur.com/67t6hSY.png)
