@@ -88,9 +88,10 @@
 ## Additional
 
 - #### Resources
-    - http://www.mkdocs.org/
-    - https://github.com/squidfunk/mkdocs-material
-    - https://github.com/facelessuser/pymdown-extensions
+    - framework http://www.mkdocs.org/
+    - design https://github.com/squidfunk/mkdocs-material
+    - extensions https://github.com/facelessuser/pymdown-extensions
+    - docsearch config https://github.com/algolia/docsearch-configs/commit/04e17eb6e8bb1fdb1239ec6d9cec4ae14295813b
 
 - #### Mkdocs Local Deploy
 
