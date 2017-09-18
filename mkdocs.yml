@@ -93,6 +93,7 @@ extra:
     - 'Facebook Platform Ads'
     - 'Facebook Dynamic Ads'
     - 'Single Sign-on'
+    - 'V2 Event'
   is_visible:
     footer_floater_beta: true
     footer_floater_old_docs: true
@@ -103,7 +104,7 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard: 
+  - Configure your dashboard:
     - Integrate: pages/dashboard/integrate.md
     - Single Sign-on: pages/dashboard/sso.md
   - Configure your app:
@@ -118,6 +119,7 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
+    - V2 Event: pages/apps/v2event.md
   - Configure your website: pages/web/integrate.md
   - Create deep links: pages/links/integrate.md
   - Track analytics: pages/dashboard/analytics.md
