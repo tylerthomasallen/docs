@@ -94,6 +94,7 @@ extra:
     - 'Facebook Dynamic Ads'
     - 'Single Sign-on'
     - 'V2 Event'
+    - 'New Analytics Platform'
   is_visible:
     footer_floater_beta: true
     footer_floater_old_docs: true
@@ -120,6 +121,7 @@ pages:
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
     - V2 Event: pages/apps/v2event.md
+    - New Analytics Platform: pages/dashboard/unified-analytics.md
   - Configure your website: pages/web/integrate.md
   - Create deep links: pages/links/integrate.md
   - Track analytics: pages/dashboard/analytics.md
