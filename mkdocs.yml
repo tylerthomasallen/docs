@@ -126,6 +126,7 @@ pages:
     - Journeys App Banners: pages/web/journeys.md
     - AMP Journeys: pages/web/amp-journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
+    - Hosted Deep Link Data: pages/web/hosted-data.md
   - Deep link ads:
     - Dynamic Product Feeds: pages/deep-linked-ads/dynamic-product-feeds.md
     - Branch Universal Ads: pages/deep-linked-ads/branch-universal-ads.md
