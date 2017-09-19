@@ -73,9 +73,11 @@ extra:
     apiKey: '47ec8ea9ac102b1370221dcda476091c'
   nav_header:
     - index: 2
-      title: Basic deep linking
+      title: Basic integration
+    - index: 5
+      title: Basic usage
     - index: 7
-      title: Advanced deep linking
+      title: Advance deep linking
     - index: 14
       title: Resources
   nav_hidden:
@@ -92,7 +94,7 @@ extra:
     - 'Facebook Traffic and Conversion Ads'
     - 'Facebook Platform Ads'
     - 'Facebook Dynamic Ads'
-    - 'Single Sign-on'
+    - 'Enable Single Sign On'
   is_visible:
     footer_floater_beta: true
     footer_floater_old_docs: true
@@ -103,9 +105,7 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard:
-    - Integrate: pages/dashboard/integrate.md
-    - Single Sign-on: pages/dashboard/sso.md
+  - Configure your dashboard: pages/dashboard/integrate.md
   - Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
@@ -126,6 +126,7 @@ pages:
     - Journeys App Banners: pages/web/journeys.md
     - AMP Journeys: pages/web/amp-journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
+    - Hosted Deep Link Data: pages/web/hosted-data.md
   - Deep link ads:
     - Dynamic Product Feeds: pages/deep-linked-ads/dynamic-product-feeds.md
     - Branch Universal Ads: pages/deep-linked-ads/branch-universal-ads.md
@@ -182,5 +183,6 @@ pages:
     - Localytics: pages/integrations/localytics.md
     - Mixpanel: pages/integrations/mixpanel.md
     - Tune: pages/integrations/tune.md
+  - Enable Single Sign On: pages/dashboard/sso.md
   - Validation Tools: pages/resources/validation-tools.md
   - Case Studies and Infographics: pages/resources/case-studies.md
