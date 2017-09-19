@@ -524,7 +524,7 @@
                     editor.commit();
 
                     // option 3: navigate to page
-                    Intent intent = new Intent(, OtherActivity.class);
+                    Intent intent = new Intent(MainActivity.this, OtherActivity.class);
                     intent.putExtra("branchData", referringParams.toString(2));
                     startActivity(intent);
 
