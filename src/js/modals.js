@@ -44,15 +44,15 @@ var modals = (function() {
   function route() {
     var search = document.getElementById('algolia-doc-search');
     router.add('#dialog-helpful', function() {
-      analytics.track('viewed modal helpful');
+      progress.track('viewed modal helpful');
       modals.toggle('modal-helpful', 'notification', 1500);
     });
     router.add('#dialog-unhelpful', function() {
-      analytics.track('viewed modal unhelpful');
+      progress.track('viewed modal unhelpful');
       modals.toggle('modal-unhelpful', 'dialog');
     });
     router.add('#dialog-search', function() {
-      analytics.track('viewed modal search');
+      progress.track('viewed modal search');
       modals.toggle('modal-search', 'dialog');
       search.focus();
     });

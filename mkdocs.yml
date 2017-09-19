@@ -21,7 +21,7 @@ extra_javascript:
   - 'js/modals.js'
   - 'js/images.js'
   - 'js/buttons.js'
-  - 'js/analytics.js'
+  - 'js/progress.js'
   - 'js/tabs.js'
   - 'js/languages.js'
   - 'js/utils.js'
