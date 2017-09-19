@@ -40,7 +40,7 @@
     {% endblock %}
     {% if config.extra.google %}
       <style>.async-hide{opacity:0!important}</style>
-      <script>!function(e,n,t,a,o,c,i,m,s){n.className+=" "+t,c.start=1*new Date,c.end=i=function(){n.className=n.className.replace(RegExp(" ?"+t),"")},(e[a]=e[a]||[]).hide=c,setTimeout(function(){i(),c.end=null},o),c.timeout=o}(window,document.documentElement,"async-hide","dataLayer",4e3,{"{{ config.extra.google.optimize }}":!0})</script>
+      <script>!function(e,n,t,a,o,c,i,m,s){n.className+=" "+t,c.start=1*new Date,c.end=i=function(){n.className=n.className.replace(RegExp(" ?"+t),"")},(e[a]=e[a]||[]).hide=c,setTimeout(function(){i(),c.end=null},o),c.timeout=o}(window,document.documentElement,"async-hide","dataLayer",1e3,{"{{ config.extra.google.optimize }}":!0})</script>
     {% endif %}
     {% if config.extra.algolia_docsearch %}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
