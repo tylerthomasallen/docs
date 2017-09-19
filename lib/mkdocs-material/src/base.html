@@ -26,7 +26,7 @@
 <html lang="{{ lang.t('language') }}" class="no-js">
   <head>
 
-    <!-- Block: metatags -->
+    <!-- Metatags -->
     {% block site_meta %}
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,7 +68,7 @@
           content="mkdocs-{{ mkdocs_version }}, $md-name$-$md-version$" />
     {% endblock %}
 
-    <!-- Block: site title -->
+    <!-- Site title -->
     {% block htmltitle %}
       {% if page and page.meta.title %}
         <title>{{ page.meta.title | first }}</title>
@@ -79,7 +79,7 @@
       {% endif %}
     {% endblock %}
 
-    <!-- Block: JavaScript libraries -->
+    <!-- JavaScript libraries -->
     {% block libs %}
       <script src="{{ base_url }}/assets/javascripts/modernizr.js"></script>
     {% endblock %}
@@ -96,7 +96,7 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     {% endif %}
 
-    <!-- Block: stylesheets -->
+    <!-- Stylesheets -->
     {% block styles %}
 
       <!-- Theme-related stylesheets -->
@@ -110,7 +110,7 @@
       {% endif %}
     {% endblock %}
 
-    <!-- Block: webfonts -->
+    <!-- Webfonts -->
     {% block fonts %}
       <!-- TODO: remove the second check in the next major version -->
       {% if config.extra.font != false and config.extra.font != "none" %}
@@ -142,7 +142,7 @@
       <link rel="stylesheet" type="text/css" href="{{ path }}" />
     {% endfor %}
 
-    <!-- Block: custom front matter -->
+    <!-- Custom front matter -->
     {% block extrahead %}{% endblock %}
   </head>
 
@@ -201,7 +201,7 @@
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
 
-          <!-- Block: navigation -->
+          <!-- Navigation -->
           {% block site_nav %}
 
             <!-- Main navigation -->
@@ -233,14 +233,14 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
 
-              <!-- Block: content -->
+              <!-- Content -->
               {% block content %}
 
                 <!-- Edit button, if URL was defined -->
                 {% if config.edit_uri %}
                   <a href="{{ page.edit_url }}"
                       title="{{ lang.t('edit.link.title') }}"
-                      class="md-icon md-content__icon">edit</a>
+                      class="md-icon md-content__icon">&#xE3C9;<!-- edit --></a>
                 {% endif %}
 
                 <!--
@@ -376,7 +376,7 @@
       {% endblock %}
     </div>
 
-    <!-- Block: theme-related JavaScript -->
+    <!-- Theme-related JavaScript -->
     {% block scripts %}
       <script src="{{ base_url }}/assets/javascripts/application.js"></script>
 
@@ -424,7 +424,7 @@
       {% endfor %}
     {% endblock %}
 
-    <!-- Block: analytic scripts -->
+    <!-- Analytic scripts -->
     {% block analytics %}
     <!-- Start of Async Marketo Munchkin Code -->
          <script type="text/javascript">
