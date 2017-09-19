@@ -8,6 +8,12 @@
 
   - [spreadsheet](https://docs.google.com/spreadsheets/d/11Sh4KuBl93ZRzT8F2R4O5SPskgTk2JpcEOKmszVaq5k/edit#gid=1507731216)
 
+- #### Dependencies
+
+    ```bash
+    sudo chmod -R 755 /usr/local/bin
+    ```
+
 - #### Code
 
     ```bash
@@ -20,15 +26,13 @@
     ```bash
     pip install --upgrade pip
     pip install --editable lib/mkdocs
-    pip install pygments
-    pip install pymdown-extensions
-    pip install markdown-include
-    pip install mkdocs-material
+    pip install pygments pymdown-extensions markdown-include mkdocs-material
     ```
 
 - #### Develop
 
     ```bash
+    open http://127.0.0.1:8000
     mkdocs serve
     ```
 
@@ -117,7 +121,8 @@
 
 - #### Mkdocs-Material Locally
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
-    - update to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
+    - add to repo `git subtree add --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
+    - update to repo `git subtree pull --prefix lib/mkdocs-material https://github.com/squidfunk/mkdocs-material master --squash`
     - test live update in `/materials` 
     - prod code in `/src`
         - `cd lib/mkdocs-material` 
