@@ -161,7 +161,7 @@
 
     - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
-    - Reward credits with the [Referral guide](/pages/analytics/referrals/)
+    - Reward credits with the [Referral guide](/pages/dashboard/analytics/#referrals)
 
     - Redeem credits
 
