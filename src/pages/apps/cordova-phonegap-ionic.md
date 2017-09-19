@@ -2,7 +2,7 @@
 
 - #### Configure Branch
 
-    - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Complete your [Branch Dashboard](https://branch.dashboard.branch.io/link-settings)
 
         ![image](http://i.imgur.com/wazVu3U.png)
         ![image](http://i.imgur.com/9PEylbS.png)
@@ -39,7 +39,7 @@
           </branch-config>
         ```
 
-    - Change the following values to match your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Change the following values to match your [Branch Dashboard](https://branch.dashboard.branch.io/link-settings)
 
         - `com.eneff.branch.cordovatestbed`
         - `key_live_ndqptlgXNE4LHqIahH1WIpbiyFlb62J3`
