@@ -179,7 +179,7 @@
 body.modal {
   overflow-y: hidden;
 }
-.modal > ::-webkit-scrollbar {
+.modal > ::-webkit-scrollbar, .md-content > ::-webkit-scrollbar {
   display: none;
 }
 .right {
