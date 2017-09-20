@@ -177,11 +177,7 @@
         | Key | Default | Usage
         | --- | --- | ---
         | $fallback_url | | Change the redirect endpoint for all platforms - so you don't have to enable it by platform. Note that Branch will forward all robots to this URL, which **overrides any OG tags** entered in the link.  System-wide Default URL (set in Link Settings)
-<<<<<<< HEAD
         | $fallback_url_xx | | Change the redirect endpoint for all platforms based on a lower-case Alpha-2 country code conforming to [ISO 3166](https://www.iso.org/obp/ui/#search). (e.g. `$fallback_url_de` for Germany)
-=======
-        | $fallback_url_xx | | Change the redirect endpoint at the country level. Conforms to [ISO 3166](https://www.iso.org/obp/ui/#search) country code standard. Example: `$fallback_url_de` would have a different redirect for people clicking in Germany.
->>>>>>> b7345a554b3451ffbcf7b39b697b0a060559915b
         | $desktop_url | | Change the redirect endpoint on desktops Text-Me-The-App page (set in Link Settings)
         | $ios_url | | Change the redirect endpoint for iOS  App Store page for your app (set in Link Settings)
         | $ipad_url | | Change the redirect endpoint for iPads `$ios_url` value
