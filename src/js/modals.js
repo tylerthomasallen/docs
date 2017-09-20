@@ -77,9 +77,20 @@ var modals = (function() {
     }
   }
 
+  function clear() {
+    for (var key in cache) {
+      if (cache.hasOwnProperty(key)) {
+        var modal = cache[key]
+        modal.classList.remove('active');
+      }
+    }
+    document.body.classList.remove('modal');
+  }
+
   // public
   return {
     toggle: toggle,
-    route: route
+    route: route,
+    clear: clear
   };
 })();
