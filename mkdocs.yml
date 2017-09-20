@@ -64,7 +64,7 @@ extra:
     mixpanel: '47ec8ea9ac102b1370221dcda476091c'
     google:
       optimize: 'GTM-PCPBXCN'
-      analytics: 'UA-98205710-1'
+      analytics: 'UA-53307642-1'
     facebook: '1040694199304729'
     munchkin: '315-FTT-121'
     linkedin: '21211'
