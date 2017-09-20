@@ -28,6 +28,12 @@
   vertical-align: middle;
   text-align: center;
 }
+.branch-header-search {
+  top: 0.8rem;
+  left: 1.2rem;
+  z-index: 2;
+  position: absolute;
+}
 .branch-header-label {
   display: none;
   margin: 0;

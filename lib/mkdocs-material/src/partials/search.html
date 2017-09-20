@@ -31,9 +31,13 @@
           required placeholder="{{ lang.t('search.placeholder') }}"
           autocapitalize="off" autocorrect="off" autocomplete="off"
           spellcheck="false" data-md-component="query" />
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon"
-          data-md-component="reset">&#xE5CD;<!-- close --></button>
+      {% if config.extra.sources.algolia %}
+        <i class="branch-header-search md-icon material-icons">search</i>
+      {% else %}
+        <label class="md-icon md-search__icon" for="search"></label>
+        <button type="reset" class="md-icon md-search__icon"
+            data-md-component="reset">&#xE5CD;<!-- close --></button>
+      {% endif %}
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
