@@ -4,8 +4,12 @@
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" required placeholder="{{ lang.t('search.placeholder') }}" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+      {% if config.extra.sources.algolia %}
+        <i class="branch-header-search md-icon material-icons">search</i>
+      {% else %}
+        <label class="md-icon md-search__icon" for="search"></label>
+        <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+      {% endif %}
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>

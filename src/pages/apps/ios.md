@@ -882,6 +882,14 @@
                                         withPresentation:BNCViewControllerOptionShow];
         ```
 
+- #### Determine if deep link is from Branch without network
+
+    - Use for Universal Linking if you want to get the `true/false` response from `Branch.getInstance().continue(userActivity)` within `continueUserActivity` without a Branch network call
+    - Use only if you have a custom link domain
+    - Add your link domain from your [Branch Dashboard](https://dashboard.branch.io/settings/link) to your `info.plist`
+
+        ![image](https://i.imgur.com/ECNnpyS.png)
+
 - #### Share to email options
 
     - Change the way your deep links behave when shared to email
