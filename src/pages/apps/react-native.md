@@ -571,7 +571,7 @@
     - *Android*
 
         ```
-	<meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
+	<meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
 	```
 
 - #### Sample app
