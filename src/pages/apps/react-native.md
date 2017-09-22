@@ -542,6 +542,38 @@
 	| ShareInitiatedEvent | User started to share the object |
 	| ShareCompletedEvent | User completed a share |
 
+- #### Use test key
+
+    - Use the Branch `test key` instead of the `live key`
+
+    - In iOS, add before `initSession` [Initialize Branch](#initialize-branch)
+
+    - In iOS, update `branch_key` in your `Info.plist` to a dictionary ([example](https://github.com/BranchMetrics/ios-branch-deep-linking/blob/master/Branch-TestBed/Branch-TestBed/Branch-TestBed-Info.plist#L58-L63))
+
+    - In Android, set `test mode` to `true`
+
+    - The `test key` of your app must match the `test key` of your deep link
+
+    - Remove before releasing to production
+
+    - *Swift 3*
+
+        ```swift
+	RNBranch.useTestInstance()    
+	```
+
+    - *Objective C*
+
+        ```objc
+	[RNBranch useTestInstance]
+	```
+
+    - *Android*
+
+        ```
+	<meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
+	```
+
 - #### Sample app
 
 	[Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)
