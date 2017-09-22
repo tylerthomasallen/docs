@@ -277,7 +277,7 @@
 
         | Key | Default | Usage
         | --- | --- | ---
-        | $twitter_card | | Set the Twitter card type of the link
+        | $twitter_card | | Set the Twitter card type of the link (e.g. `player`) (you must whitelist your deep link with the [Twitter Card Validator](https://cards-dev.twitter.com/validator)
         | $twitter_title | Set on dashboard | Set the title of the Twitter card
         | $twitter_description | Set on dashboard | Set the description of the Twitter card
         | $twitter_image_url | Set on dashboard | Set the image URL for the Twitter card
@@ -286,9 +286,6 @@
         | $twitter_player | | Set the video player's URL. Defaults to the value of `$og_video`.
         | $twitter_player_width | | Set the player's width in pixels
         | $twitter_player_height | | Set the player's height in pixels
-        
-!!! note "Twitter Player card"
-If you set the **$twitter_card** parameter to Player (i.e. If your Branch link contains $og_video or $twitter_player and you want your Twitter card to show up as a Player) you need to whitelist you link subdomain on the Twitter Card Validator [here]https://cards-dev.twitter.com/validator. Just paste the Branch link you created with '$twitter_card: player' parameter in the validator and you will be provided with a link to whitelist your link subdomain.
 
 - #### Universal Object
 
