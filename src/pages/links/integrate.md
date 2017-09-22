@@ -277,7 +277,7 @@
 
         | Key | Default | Usage
         | --- | --- | ---
-        | $twitter_card | | Set the Twitter card type of the link
+        | $twitter_card | | Set the Twitter card type of the link (e.g. `player`) (you must whitelist your deep link with the [Twitter Card Validator](https://cards-dev.twitter.com/validator)
         | $twitter_title | Set on dashboard | Set the title of the Twitter card
         | $twitter_description | Set on dashboard | Set the description of the Twitter card
         | $twitter_image_url | Set on dashboard | Set the image URL for the Twitter card
