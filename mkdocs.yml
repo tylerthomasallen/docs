@@ -160,6 +160,7 @@ pages:
     - SparkPost: pages/emails/sparkpost.md
     - Vero: pages/emails/vero.md
     - Zeta: pages/emails/zeta.md
+    - Support: pages/emails/support.md
     - Self Serve: pages/emails/self-serve.md
   - Deep link organic search:
     - Firebase: pages/organic-search/firebase.md
