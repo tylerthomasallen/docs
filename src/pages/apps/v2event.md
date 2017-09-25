@@ -315,7 +315,7 @@ new BranchEvent(BRANCH_STANDARD_EVENT.SPEND_CREDITS)
 	.addContentItems(branchUniversalObject)
 	.logEvent(MainActivity.this);
 ```
-
+<!---
 ## Track Content Events
 
 Content events are events that occur when a user engages with your in-app content. For example, if you have in-app articles, you would want to track events related to when users search, view content, rate the content, and share. This can apply to a wide variety of content, like e-commerce events.
@@ -359,3 +359,4 @@ Fire this event when a user reaches a certain stage in your app.
 ### Unlock achievement
 
 Fire this event when a user hits an achievement point in your app.
+-->
