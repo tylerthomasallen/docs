@@ -86,7 +86,7 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="\_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `App Install or Engagement`
 <img src="/img/pages/deep-linked-ads/reusable-images/create-link-install-engagement.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
-1. Configure the link with the Ad Format set to **Display**, the Ad Partner set to **Google Adwords**, and the Secondary Ad Format set to **Universal App Campaign iOS/Android**.
+1. Configure the link with the Ad Format set to **App Only**, the Ad Partner set to **Google Adwords**, and the Secondary Ad Format set to **Universal App Campaign iOS/Android**.
 ![Create Ad Link](/img/pages/deep-linked-ads/google-uac/ad-link-setup.png)
 1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Google Adwords and set the campaign field to the same ad campaign name used in Adwords.
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
