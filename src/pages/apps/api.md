@@ -196,7 +196,6 @@
             "data":{
               "name":"alex",
               "user_id":"12346",
-              "$deeplink_path":"article/jan/123"
             }
           }'
           ```
@@ -215,7 +214,6 @@
               "three"
             ],
             "data": {
-              "$deeplink_path": "article/jan/123",
               "$one_time_use": false,
               "name": "alex",
               "user_id": "12346",

@@ -21,7 +21,7 @@ extra_javascript:
   - 'js/modals.js'
   - 'js/images.js'
   - 'js/buttons.js'
-  - 'js/analytics.js'
+  - 'js/progress.js'
   - 'js/tabs.js'
   - 'js/languages.js'
   - 'js/utils.js'
@@ -60,22 +60,28 @@ extra:
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company-beta/3813083'
 #  disqus: 'branch-docs'
-  google:
-    optimize: 'GTM-PCPBXCN'
-    analytics: 'UA-98205710-1'
-  algolia_docsearch:
-    apiKey: '887017d17a2c1e9490ad2c44caa7e817'
-    indexName: 'branchmetrics'
-    inputSelector: '#algolia-doc-search'
-    debug: true
-    hits: 15
-  mixpanel:
-    apiKey: '47ec8ea9ac102b1370221dcda476091c'
+  sources:
+    mixpanel: '47ec8ea9ac102b1370221dcda476091c'
+    google:
+      optimize: 'GTM-PCPBXCN'
+      analytics: 'UA-53307642-1'
+    facebook: '1040694199304729'
+    munchkin: '315-FTT-121'
+    linkedin: '21211'
+    quora: '247e840cafa44cae9ac4b50a0cc1965a'
+    algolia:
+      key: '887017d17a2c1e9490ad2c44caa7e817'
+      index: 'branchmetrics'
+      selector: '#algolia-doc-search'
+      debug: true
+      hits: 15
   nav_header:
     - index: 2
-      title: Basic deep linking
+      title: Basic integration
+    - index: 5
+      title: Basic usage
     - index: 7
-      title: Advanced deep linking
+      title: Advance deep linking
     - index: 14
       title: Resources
   nav_hidden:
@@ -92,9 +98,9 @@ extra:
     - 'Facebook Traffic and Conversion Ads'
     - 'Facebook Platform Ads'
     - 'Facebook Dynamic Ads'
-    - 'Single Sign-on'
     - 'V2 Event'
     - 'New Analytics Platform'
+    - 'Enable Single Sign On'
   is_visible:
     footer_floater_beta: true
     footer_floater_old_docs: true
@@ -105,9 +111,7 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard:
-    - Integrate: pages/dashboard/integrate.md
-    - Single Sign-on: pages/dashboard/sso.md
+  - Configure your dashboard: pages/dashboard/integrate.md
   - Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
@@ -130,6 +134,7 @@ pages:
     - Journeys App Banners: pages/web/journeys.md
     - AMP Journeys: pages/web/amp-journeys.md
     - Text Me The App: pages/web/text-me-the-app.md
+    - Hosted Deep Link Data: pages/web/hosted-data.md
   - Deep link ads:
     - Dynamic Product Feeds: pages/deep-linked-ads/dynamic-product-feeds.md
     - Branch Universal Ads: pages/deep-linked-ads/branch-universal-ads.md
@@ -186,5 +191,6 @@ pages:
     - Localytics: pages/integrations/localytics.md
     - Mixpanel: pages/integrations/mixpanel.md
     - Tune: pages/integrations/tune.md
+  - Enable Single Sign On: pages/dashboard/sso.md
   - Validation Tools: pages/resources/validation-tools.md
   - Case Studies and Infographics: pages/resources/case-studies.md

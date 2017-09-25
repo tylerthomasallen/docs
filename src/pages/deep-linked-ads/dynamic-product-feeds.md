@@ -26,7 +26,7 @@ You'll be asked to enter some attribution tags and optionally configure linking.
 A couple of things to note:
 
 - Be sure that your Feed Source has a `link` column with each product's web URL. This is the minimum requirement for Branch to create deep links (although it will likely not be sufficient to be accepted by Facebook or partners.)
-- We recommend [hosting deep link data](/getting-started/hosted-deep-link-data/guide/) on your website for each web URL in your feed. We won't use it to modify your feed, but when your link is clicked from an ad, we'll get the link data from your website and return it to your app.
+- We recommend [hosting deep link data](/pages/web/hosted-data/) on your website for each web URL in your feed. We won't use it to modify your feed, but when your link is clicked from an ad, we'll get the link data from your website and return it to your app.
 
 If you choose this option, go to your [Link Settings](https://dashboard.branch.io/link-settings) > Advanced Settings and check **Enable Link Scraping**. This option is only available once you've enabled the Deep Linked Feeds product for your account (you can enable the product by creating and downloading a Deep Linked Feed).
 
@@ -161,7 +161,7 @@ We look for the presence of the following columns, and for each one we either mo
 
 ### Deep links aren't working
 
-- Ensure you've included your deep link data. Branch will scrape any [Hosted Deep Link Data](/getting-started/hosted-deep-link-data/guide/) corresponding to the Web URL in your Feed Source's `link` column for every link. Alternatively, you can include deep link data as a column in your Feed Source and then select the relevant data in Step 2 of Deep Linked creation.
+- Ensure you've included your deep link data. Branch will scrape any [Hosted Deep Link Data](/pages/web/hosted-data/) corresponding to the Web URL in your Feed Source's `link` column for every link. Alternatively, you can include deep link data as a column in your Feed Source and then select the relevant data in Step 2 of Deep Linked creation.
 - To see which data is getting through to your app, click the link and then view the link click in [Live View](https://dashboard.branch.io/liveview/link_clicks) to see the data going through to your app.
 -  If you don't know what deep link data you need to include, ask a technical teammate to show you which data is included in a working Branch link.
 

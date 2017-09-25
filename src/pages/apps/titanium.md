@@ -92,10 +92,6 @@
            }
         ```
 
-- #### Receive deep link data
-
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
-
 - #### Test deep link iOS
 
     - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
@@ -299,7 +295,7 @@
 
     - Reward credits
 
-        -  [Referral guide](/pages/analytics/referrals/)
+        -  [Referral guide](/pages/dashboard/analytics/#referrals)
 
     - Redeem credits
     

@@ -265,10 +265,6 @@
 		}
 		```
 
-- #### Receive deep link data
-
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
-
 - #### Test deep link iOS
 
     - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
@@ -512,7 +508,7 @@
 
     - Reward credits
 
-        -  [Referral guide](/pages/analytics/referrals/)
+        -  [Referral guide](/pages/dashboard/analytics/#referrals)
 
     - Redeem rewards
 
@@ -545,6 +541,38 @@
 	| PurchasedEvent | User purchased the item |
 	| ShareInitiatedEvent | User started to share the object |
 	| ShareCompletedEvent | User completed a share |
+
+- #### Use test key
+
+    - Use the Branch `test key` instead of the `live key`
+
+    - In iOS, add before `initSession` [Initialize Branch](#initialize-branch)
+
+    - In iOS, update `branch_key` in your `Info.plist` to a dictionary ([example](https://github.com/BranchMetrics/ios-branch-deep-linking/blob/master/Branch-TestBed/Branch-TestBed/Branch-TestBed-Info.plist#L58-L63))
+
+    - In Android, set `test mode` to `true`
+
+    - The `test key` of your app must match the `test key` of your deep link
+
+    - Remove before releasing to production
+
+    - *Swift 3*
+
+        ```swift
+	RNBranch.useTestInstance()    
+	```
+
+    - *Objective C*
+
+        ```objc
+	[RNBranch useTestInstance]
+	```
+
+    - *Android*
+
+        ```
+	<meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
+	```
 
 - #### Sample app
 

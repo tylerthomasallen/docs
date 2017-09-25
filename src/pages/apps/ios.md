@@ -153,10 +153,6 @@
         @end
         ```
 
-- #### Receive deep link data
-
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
-
 - #### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
@@ -885,6 +881,14 @@
                                                   forKey:@"my-key"
                                         withPresentation:BNCViewControllerOptionShow];
         ```
+
+- #### Determine if deep link is from Branch without network
+
+    - Use for Universal Linking if you want to get the `true/false` response from `Branch.getInstance().continue(userActivity)` within `continueUserActivity` without a Branch network call
+    - Use only if you have a custom link domain
+    - Add your link domain from your [Branch Dashboard](https://dashboard.branch.io/settings/link) to your `info.plist`
+
+        ![image](https://i.imgur.com/ECNnpyS.png)
 
 - #### Share to email options
 

@@ -15,7 +15,9 @@
     - The [Branch Dashboard](https://dashboard.branch.io/) is a great tool for measuring growth and engagement of your app
     - Branch tracks `click`, `installs`, and `opens` (`re-opens`) for both Branch related events and non-Branch related events
     - The values of the dropdowns are limited to the data within the `date range`
+    - The `date range` filters for any any events (e.g. `clicks`, `installs`, `purchases`) in the selected date range. For example, this means the dashboard will show all attributed `purchases` that occurred during the selected date range, regardless of the date of click that lead to those purchases.
     - `Untracked` means this metric is non-Branch related (e.g. installs that don't come from Branch deep links)
+    - `Unique` are the same unique user/browser based off fingerprint id and the time frame
     - `Unspecified` means that this metric does not have the selected filter (e.g. the Campaign field for the deep link is blank)
 
 ## Dashboard pages
