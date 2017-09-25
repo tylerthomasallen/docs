@@ -24,6 +24,21 @@ Fire this event when your users add a product to their cart.
 
 ```objc
 BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventAddToCart];
+event.transactionID   = @"12344555";
+    event.currency        = BNCCurrencyUSD;
+    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon          = @"test_coupon";
+    event.affiliation     = @"test_affiliation";
+    event.eventDescription= @"Event _description";
+    event.searchQuery     = @"Query";
+    event.customData      = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    event.contentItems = @[ buo ];
+    [event logEvent];
 ```
 
 #### Android
@@ -50,6 +65,27 @@ new BranchEvent(BRANCH_STANDARD_EVENT.ADD_TO_CART)
 
 Fire this event when your users add your product to a wishlist.
 
+#### iOS
+
+```objc
+BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventAddToWishlist];
+event.transactionID   = @"12344555";
+    event.currency        = BNCCurrencyUSD;
+    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon          = @"test_coupon";
+    event.affiliation     = @"test_affiliation";
+    event.eventDescription= @"Event _description";
+    event.searchQuery     = @"Query";
+    event.customData      = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    event.contentItems = @[ buo ];
+    [event logEvent];
+```
+
 #### Android
 
 ```Java
@@ -68,6 +104,27 @@ new BranchEvent(BRANCH_STANDARD_EVENT.ADD_TO_WISHLIST)
 ### View cart
 
 Fire this event when a user views a cart.
+
+#### iOS
+
+```objc
+BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventViewCart];
+event.transactionID   = @"12344555";
+    event.currency        = BNCCurrencyUSD;
+    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon          = @"test_coupon";
+    event.affiliation     = @"test_affiliation";
+    event.eventDescription= @"Event _description";
+    event.searchQuery     = @"Query";
+    event.customData      = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    event.contentItems = @[ buo ];
+    [event logEvent];
+```
 
 #### Android
 
@@ -89,6 +146,27 @@ new BranchEvent(BRANCH_STANDARD_EVENT.VIEW_CART)
 ### Initiate purchase
 
 Fire this event when a user begins a purchase, but doesn't complete. This is equivalent to when someone hits the 'checkout' button, but doesn't complete the act of purchasing. For that, see [#purchase](purchase).
+
+#### iOS
+
+```objc
+BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventInitiatePurchase];
+event.transactionID   = @"12344555";
+    event.currency        = BNCCurrencyUSD;
+    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon          = @"test_coupon";
+    event.affiliation     = @"test_affiliation";
+    event.eventDescription= @"Event _description";
+    event.searchQuery     = @"Query";
+    event.customData      = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    event.contentItems = @[ buo ];
+    [event logEvent];
+```
 
 #### Android
 
@@ -112,6 +190,27 @@ new BranchEvent(BRANCH_STANDARD_EVENT.INITIATE_PURCHASE)
 
 Fire this event anytime someone adds payment information.
 
+#### iOS
+
+```objc
+BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventAddPaymentInfo];
+event.transactionID   = @"12344555";
+    event.currency        = BNCCurrencyUSD;
+    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon          = @"test_coupon";
+    event.affiliation     = @"test_affiliation";
+    event.eventDescription= @"Event _description";
+    event.searchQuery     = @"Query";
+    event.customData      = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    event.contentItems = @[ buo ];
+    [event logEvent];
+```
+
 #### Android
 
 ```Java
@@ -129,6 +228,27 @@ new BranchEvent(BRANCH_STANDARD_EVENT.ADD_PAYMENT_INFO)
 ### Purchase
 
 Fire this event when a purchase occurs.
+
+#### iOS
+
+```objc
+BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventPurchase];
+event.transactionID   = @"12344555";
+    event.currency        = BNCCurrencyUSD;
+    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon          = @"test_coupon";
+    event.affiliation     = @"test_affiliation";
+    event.eventDescription= @"Event _description";
+    event.searchQuery     = @"Query";
+    event.customData      = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    event.contentItems = @[ buo ];
+    [event logEvent];
+```
 
 #### Android
 
@@ -154,6 +274,27 @@ new BranchEvent(BRANCH_STANDARD_EVENT.PURCHASE)
 ### Spend credits
 
 Fire this event any time someone applies credits or a promo code to a purchase.
+
+#### iOS
+
+```objc
+BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventSpendCredits];
+event.transactionID   = @"12344555";
+    event.currency        = BNCCurrencyUSD;
+    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon          = @"test_coupon";
+    event.affiliation     = @"test_affiliation";
+    event.eventDescription= @"Event _description";
+    event.searchQuery     = @"Query";
+    event.customData      = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    event.contentItems = @[ buo ];
+    [event logEvent];
+```
 
 #### Android
 
