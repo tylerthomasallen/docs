@@ -57,9 +57,11 @@ Now that deep linking and attribution analytics are separate, we have attributio
 
 Using the default value of 2 hours for deep linking and attribution under the old system, and 2 hours for deep linking with 7 days for install attribution, here's what you can expect.
 
+<!--
 Behavior | Old Analytics | New Analytics
 | --- | --- | --- |
 | User clicks link in
+-->
 
 ### Unique behavior
 
@@ -107,7 +109,7 @@ Visually, you will see the query selector that is present on Install Summary. Th
 
 ### Journeys
 
-Journeys data will line up to what's viewed on Source Analytics. 
+Journeys data will line up to what's viewed on Source Analytics.
 
 ### Universal Ads
 
