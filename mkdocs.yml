@@ -159,13 +159,20 @@ pages:
   - Deep link emails:
     - Appboy: pages/emails/appboy.md
     - Blueshift: pages/emails/blueshift.md
+    - Bronto: pages/emails/bronto.md
     - Epsilon: pages/emails/epsilon.md
-    - MailGun: pages/emails/mailgun.md
+    - Kahuna: pages/emails/kahuna.md
+    - Leanplum: pages/emails/leanplum.md
+    - Mailgun: pages/emails/mailgun.md
+    - Mailjet: pages/emails/mailjet.md
+    - Mandrill: pages/emails/mandrill.md
     - PostUp: pages/emails/postup.md
     - Responsys: pages/emails/responsys.md
     - Sailthru: pages/emails/sailthru.md
     - Salesforce: pages/emails/salesforce.md
     - SendGrid: pages/emails/sendgrid.md
+    - SparkPost: pages/emails/sparkpost.md
+    - Vero: pages/emails/vero.md
     - Zeta: pages/emails/zeta.md
     - Self Serve: pages/emails/self-serve.md
   - Deep link organic search:
