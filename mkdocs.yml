@@ -149,6 +149,8 @@ pages:
     - Blueshift: pages/emails/blueshift.md
     - Bronto: pages/emails/bronto.md
     - Epsilon: pages/emails/epsilon.md
+    - Kahuna: pages/emails/kahuna.md
+    - Leanplum: pages/emails/leanplum.md
     - Mailgun: pages/emails/mailgun.md
     - Mailjet: pages/emails/mailjet.md
     - Mandrill: pages/emails/mandrill.md
