@@ -15,8 +15,8 @@ On a daily basis, Google Search drives **more app installs** than all of Faceboo
 !!! note "Journeys is a paid product"
     Journeys introduces many more advanced features on top of the basic smart app banner functionality, but **you can still create an Android and iOS smart app banner for free if your MAU are under 20k**. After 20k MAU, we'd ask that you pay a small fee for use. Premium-only advanced features (including the option to run multiple Journeys simultaneously) are available through a 14 day trial.
 
-!!! note
-You should integrate the Branch SDK into your app and configure deep link routing for deferred deep linking and attribution before implementing Journeys..
+!!! note "Pre-reqs"
+    You should integrate the Branch SDK into your app and configure deep link routing for deferred deep linking and attribution before implementing Journeys.
 
 ## Setup
 
@@ -300,7 +300,7 @@ The technical definition is that they've clicked on a link with an Email Service
 
 #### Is viewing a page with metadata key
 
-Use this filter to target users viewing web pages with certain [Branch-specific metatags](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site) on them (in the form of the HTML `<meta>` tag). 
+Use this filter to target users viewing web pages with certain [Branch-specific metatags](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site) on them (in the form of the HTML `<meta>` tag).
 
 For example, you could target users on pages containing the metadata key “foo” and value “bar” by adding this tag to the HTML: `<meta name="branch:deeplink:foo" content="bar" />`. Only metadata in this format will be targetable.
 
