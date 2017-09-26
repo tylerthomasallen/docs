@@ -98,6 +98,8 @@ extra:
     - 'Facebook Traffic and Conversion Ads'
     - 'Facebook Platform Ads'
     - 'Facebook Dynamic Ads'
+    - 'V2 Event'
+    - 'New Analytics Platform'
     - 'Enable Single Sign On'
   is_visible:
     footer_floater_beta: true
@@ -122,6 +124,8 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
+    - V2 Event: pages/apps/v2event.md
+    - New Analytics Platform: pages/dashboard/unified-analytics.md
   - Configure your website: pages/web/integrate.md
   - Create deep links: pages/links/integrate.md
   - Track analytics: pages/dashboard/analytics.md
@@ -155,13 +159,20 @@ pages:
   - Deep link emails:
     - Appboy: pages/emails/appboy.md
     - Blueshift: pages/emails/blueshift.md
+    - Bronto: pages/emails/bronto.md
     - Epsilon: pages/emails/epsilon.md
-    - MailGun: pages/emails/mailgun.md
+    - Kahuna: pages/emails/kahuna.md
+    - Leanplum: pages/emails/leanplum.md
+    - Mailgun: pages/emails/mailgun.md
+    - Mailjet: pages/emails/mailjet.md
+    - Mandrill: pages/emails/mandrill.md
     - PostUp: pages/emails/postup.md
     - Responsys: pages/emails/responsys.md
     - Sailthru: pages/emails/sailthru.md
     - Salesforce: pages/emails/salesforce.md
     - SendGrid: pages/emails/sendgrid.md
+    - SparkPost: pages/emails/sparkpost.md
+    - Vero: pages/emails/vero.md
     - Zeta: pages/emails/zeta.md
     - Self Serve: pages/emails/self-serve.md
   - Deep link organic search:
