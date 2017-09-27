@@ -128,3 +128,9 @@ Data Integrations now mirrors the UI of our ads flow. The data we send is also u
 ### Webhooks
 
 Webhooks, like data integratons, is no longer session based. This means we will send more webhooks to you automatically. This update hasn't completed yet.
+
+## FAQ
+
+### Data speed
+
+This new analytics platform isn't real time like the old dashboard analytics, but does not have a significant delay. We're continually improving the speed, and hope to have a standard SLA for dashboard reporting. 
