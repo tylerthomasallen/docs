@@ -10,7 +10,7 @@ This guide requires you to have already [integrated the Branch SDK](#dialog-code
 
 ### Receive push notification links
 
-Please ensure that your Branch SDk is correctly configured to receive the push notification and parse out the link. You can find the specific methods needed on [this page of the integration guide](#dialog-code?ios=handle-push-notifications&android=handle-push-notification). Only native iOS and Android supported.
+Please ensure that your Branch SDK is correctly configured to receive the push notification and parse out the link. You can find the specific methods needed on [this page of the integration guide](#dialog-code?ios=handle-push-notifications&android=handle-push-notification). Only native iOS and Android supported.
 
 ### Create a Branch powered push message
 

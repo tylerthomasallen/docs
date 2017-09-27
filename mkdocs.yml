@@ -78,11 +78,11 @@ extra:
   nav_header:
     - index: 2
       title: Basic integration
-    - index: 5
+    - index: 6
       title: Basic usage
-    - index: 7
+    - index: 8
       title: Advanced usage
-    - index: 14
+    - index: 17
       title: Resources
   nav_hidden:
     - 'Google Search App Install Ads'
@@ -126,6 +126,9 @@ pages:
     - API: pages/apps/api.md
     - V2 Event: pages/apps/v2event.md
     - New Analytics Platform: pages/dashboard/unified-analytics.md
+  - Launch your app:
+    - Apple App Store: pages/apps/ios-launch.md
+    - Google Play: pages/apps/android-launch.md
   - Configure your website: pages/web/integrate.md
   - Create deep links: pages/links/integrate.md
   - Track analytics: pages/dashboard/analytics.md
@@ -171,8 +174,8 @@ pages:
   - Routing push notifications:
     - Generic push support: pages/push/generic-push.md
   - Powering organic search:
-    - Firebase: pages/organic-search/firebase.md
-    - Spotlight: pages/organic-search/spotlight.md
+    - Firebase App Indexing: pages/organic-search/firebase.md
+    - Spotlight Search: pages/organic-search/spotlight.md
   - Viral & referral infrastructure:
     - Content sharing: pages/viral/content-sharing.md
     - Referral programs: pages/viral/referrals.md
@@ -197,5 +200,6 @@ pages:
     - Mixpanel: pages/integrations/mixpanel.md
     - Tune: pages/integrations/tune.md
   - Enable Single Sign On: pages/dashboard/sso.md
+  - Branch Matching Overview: pages/resources/matching.md
   - Validation Tools: pages/resources/validation-tools.md
   - Case Studies and Infographics: pages/resources/case-studies.md

@@ -65,44 +65,44 @@ When you create links via a mobile SDK, you simply need to set the OG tag parame
 
 - *iOS - Objective C*
 
-  ```objective-c
+    ```obj-c
 
-  BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-  // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
-  branchUniversalObject.title = @"My Content Title";
-  branchUniversalObject.contentDescription = @"My Content Description";
-  branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
+    BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+    // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
+    branchUniversalObject.title = @"My Content Title";
+    branchUniversalObject.contentDescription = @"My Content Description";
+    branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
 
-  // Add any additional custom OG tags here
-  [branchUniversalObject addMetadataKey:@"$og_video" value:@"http://mysite/video.mpg"];
-  ```
+    // Add any additional custom OG tags here
+    [branchUniversalObject addMetadataKey:@"$og_video" value:@"http://mysite/video.mpg"];
+    ```
 
 - *iOS - Swift*
 
-  ```swift
-  let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-  // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
-  branchUniversalObject.title = "My Content Title"
-  branchUniversalObject.contentDescription = "My Content Description"
-  branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
+    ```swift
+    let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
+    // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
+    branchUniversalObject.title = "My Content Title"
+    branchUniversalObject.contentDescription = "My Content Description"
+    branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
 
-  // Add any additional custom OG tags here
-  branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mpg")
-  ```
+    // Add any additional custom OG tags here
+    branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mpg")
+    ```
 
 - *Android*
 
-  ```java
-   BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
-                  .setCanonicalIdentifier("item/12345")
-  // Facebook OG tags -- This will overwrite any defaults you have set on the Branch Dashboard
-                  .setTitle("My Content Title")
-                  .setContentDescription("My Content Description")
-                  .setContentImageUrl("https://example.com/mycontent-12345.png")
+    ```java
+     BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
+                    .setCanonicalIdentifier("item/12345")
+    // Facebook OG tags -- This will overwrite any defaults you have set on the Branch Dashboard
+                    .setTitle("My Content Title")
+                    .setContentDescription("My Content Description")
+                    .setContentImageUrl("https://example.com/mycontent-12345.png")
 
-  // Add any additional custom OG tags here
-                  .addContentMetadata("$og_video", "http://mysite/video.mpg");
-  ```
+    // Add any additional custom OG tags here
+                    .addContentMetadata("$og_video", "http://mysite/video.mpg");
+    ```
 
 
 Edit the Title, Description and Image URL in the _Social Media_ section.
@@ -126,33 +126,33 @@ Enable iOS and Android Deepviews through the SDK. Below are few examples, but yo
 
 - *iOS - Objective C*
 
-  ```objective-c
-  BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-  linkProperties.feature = @"sharing";
-  linkProperties.channel = @"facebook";
-  [linkProperties addControlParam:@"$ios_deepview" withValue:@"default_template"];
-  [linkProperties addControlParam:@"$android_deepview" withValue:@"default_template"];
-  ```
+    ```obj-c
+    BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
+    linkProperties.feature = @"sharing";
+    linkProperties.channel = @"facebook";
+    [linkProperties addControlParam:@"$ios_deepview" withValue:@"default_template"];
+    [linkProperties addControlParam:@"$android_deepview" withValue:@"default_template"];
+    ```
 
 - *iOS - Swift*
 
-  ```swift
-  let linkProperties: BranchLinkProperties = BranchLinkProperties()
-  linkProperties.feature = "sharing"
-  linkProperties.channel = "facebook"
-  linkProperties.addControlParam("$ios_deepview", withValue: "default_template")
-  linkProperties.addControlParam("$android_deepview", withValue: "default_template")
-  ```
+    ```swift
+    let linkProperties: BranchLinkProperties = BranchLinkProperties()
+    linkProperties.feature = "sharing"
+    linkProperties.channel = "facebook"
+    linkProperties.addControlParam("$ios_deepview", withValue: "default_template")
+    linkProperties.addControlParam("$android_deepview", withValue: "default_template")
+    ```
 
 - *Android*
 
-  ```android
-  LinkProperties linkProperties = new LinkProperties()
-                 .setChannel("facebook")
-                 .setFeature("sharing")
-                 .addControlParameter("$ios_deepview", "default_template")
-                 .addControlParameter("$android_deepview", "default_template");
-  ```
+    ```android
+    LinkProperties linkProperties = new LinkProperties()
+                   .setChannel("facebook")
+                   .setFeature("sharing")
+                   .addControlParameter("$ios_deepview", "default_template")
+                   .addControlParameter("$android_deepview", "default_template");
+    ```
 
 Finally, enable Deepviews for an individual link on the [Marketing dashboard](https://dashboard.branch.io/quick-links/mlc/define) by selecting Deepviews as a redirect option under the second page.
 
