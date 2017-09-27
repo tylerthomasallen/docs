@@ -93,8 +93,8 @@ Add `compile 'com.android.support:customtabs:23.3.0'` to the dependencies sectio
 
 Unlike on iOS where we assume that your domain is on `bnc.lt`, on Android we assume it is the `app.link` domain. If you want to override it, you must set the domain you want via a call to Branch like so:
 
-{% highlight java %}
+```java
 // call before calling getAutoInstance in the Application class
 Branch.enableCookieBasedMatching("bnc.lt");
 Branch.getAutoInstance(this);
-{% endhighlight %}
+```

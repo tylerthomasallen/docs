@@ -78,11 +78,11 @@ extra:
   nav_header:
     - index: 2
       title: Basic integration
-    - index: 6
+    - index: 7
       title: Basic usage
-    - index: 8
+    - index: 9
       title: Advanced usage
-    - index: 17
+    - index: 18
       title: Resources
   nav_hidden:
     - 'Google Search App Install Ads'
@@ -126,6 +126,10 @@ pages:
     - API: pages/apps/api.md
     - V2 Event: pages/apps/v2event.md
     - New Analytics Platform: pages/dashboard/unified-analytics.md
+  - Configure your deep linking:
+    - iOS Universal Links: pages/deep-linking/universal-links.md
+    - Android App Links: pages/deep-linking/android-app-links.md
+    - In-app deep link routing: pages/deep-linking/routing.md
   - Launch your app:
     - Apple App Store: pages/apps/ios-launch.md
     - Google Play: pages/apps/android-launch.md

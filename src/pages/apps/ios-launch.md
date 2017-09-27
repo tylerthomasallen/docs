@@ -3,9 +3,9 @@
 After integrating the Branch SDK, you need to let Apple know that you use the IDFA. To follow proper protocol when submitting your next release to the App Store, you should:
 
 1. Answer `Yes` to the question **Does this app use the Advertising Identifier (IDFA)?**
-1. Check the two boxes for:
-   - **Attribute this app installation to a previously served advertisement**
-   - **Attribute an action taken within this app to a previously served advertisement**
+2. Check the two boxes for:
+	1. **Attribute this app installation to a previously served advertisement**
+	2. **Attribute an action taken within this app to a previously served advertisement**
 
 ![image](/img/pages/apps/idfa.png)
 

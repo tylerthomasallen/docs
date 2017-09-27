@@ -21,11 +21,19 @@
             
             ![image](/img/pages/dashboard/ios.png)
 
+        - To get the Apple App Prefix, head to [this page](https://developer.apple.com/account/ios/identifier/bundle) in Apple’s Developer Portal.
+
     - ##### Android
         - Use these settings to control the default behavior of your deep links on Android
             
             ![image](/img/pages/dashboard/android.png)
     
+        - To generate your SHA256 Cert Fingerprints, do the following:
+            - Navigate to your keystore file. This is the file that you use to build the debug and production version of your APK file before deploying it.
+            - Run this command on it to generate the fingerprint: `keytool -list -v -keystore my-release-key.keystore`
+            - You’ll see a value like `14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5` come out the other end. Copy this.
+            - Paste it into the link settings
+
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
             
