@@ -10,10 +10,6 @@ Deepviews are discoverable in all search portals (Google, Apple Spotlight, Bing,
 !!! note "Intended for apps without a mobile website"
     If you already have a mobile website with content, [Journeys](/pages/web/journeys/) is better suited.
 
-!!! warning
-    For Deepviews to function as intended, you should integrate the Branch SDK and configure deep link routing.
-
-
 ## Setup
 
 ### Enable Deepviews
@@ -65,46 +61,48 @@ If you're creating a link by appending query parameters, just append the paramet
 "https://[branchsubdomain]?%24og_title=MyApp%20is%20disrupting%20apps&$og_image_url=http%3A%2F%2Fmyapp.com%2Fimage.png"
 ```
 
-When you create links via a mobile SDK, you simply need to set the OG tag parameters.
+When you create links via a mobile SDK, you simply need to set the OG tag parameters. Below are few examples, but you can [see every platform here](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference).
 
-<!--- iOS -->
-```objective-c
+- *iOS - Objective C*
 
-BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-// Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
-branchUniversalObject.title = @"My Content Title";
-branchUniversalObject.contentDescription = @"My Content Description";
-branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
+  ```objective-c
 
-// Add any additional custom OG tags here
-[branchUniversalObject addMetadataKey:@"$og_video" value:@"http://mysite/video.mpg"];
-```
+  BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+  // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
+  branchUniversalObject.title = @"My Content Title";
+  branchUniversalObject.contentDescription = @"My Content Description";
+  branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
 
-```swift
-let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-// Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
-branchUniversalObject.title = "My Content Title"
-branchUniversalObject.contentDescription = "My Content Description"
-branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
+  // Add any additional custom OG tags here
+  [branchUniversalObject addMetadataKey:@"$og_video" value:@"http://mysite/video.mpg"];
+  ```
 
-// Add any additional custom OG tags here
-branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mpg")
-```
-<!--- /iOS -->
+- *iOS - Swift*
 
-<!--- Android -->
-```java
- BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
-                .setCanonicalIdentifier("item/12345")
-// Facebook OG tags -- This will overwrite any defaults you have set on the Branch Dashboard
-                .setTitle("My Content Title")
-                .setContentDescription("My Content Description")
-                .setContentImageUrl("https://example.com/mycontent-12345.png")
+  ```swift
+  let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
+  // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
+  branchUniversalObject.title = "My Content Title"
+  branchUniversalObject.contentDescription = "My Content Description"
+  branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
 
-// Add any additional custom OG tags here
-                .addContentMetadata("$og_video", "http://mysite/video.mpg");
-```
-<!--- /Android -->
+  // Add any additional custom OG tags here
+  branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mpg")
+  ```
+
+- *Android*
+
+  ```java
+   BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
+                  .setCanonicalIdentifier("item/12345")
+  // Facebook OG tags -- This will overwrite any defaults you have set on the Branch Dashboard
+                  .setTitle("My Content Title")
+                  .setContentDescription("My Content Description")
+                  .setContentImageUrl("https://example.com/mycontent-12345.png")
+
+  // Add any additional custom OG tags here
+                  .addContentMetadata("$og_video", "http://mysite/video.mpg");
+  ```
 
 
 Edit the Title, Description and Image URL in the _Social Media_ section.
@@ -124,35 +122,37 @@ Enable Desktop Deepviews by appending query parameters:
 "https://[branchsubdomain]?%24desktop_deepview=default_template&%24ios_deepview=default_template"
 ```
 
-Enable iOS and Android Deepviews through the SDK:
+Enable iOS and Android Deepviews through the SDK. Below are few examples, but you can [see every platform here](#dialog-code?ios=create-link-reference&android=create-link-reference&adobe=create-deep-link&cordova=create-link-reference&mparticleAndroid=create-link-reference&mparticleIos=create-link-reference&titanium=create-link-reference&reactNative=create-link-reference&unity=create-link-reference&xamarin=create-link-reference)
 
-<!--- iOS -->
-```objective-c
-BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-linkProperties.feature = @"sharing";
-linkProperties.channel = @"facebook";
-[linkProperties addControlParam:@"$ios_deepview" withValue:@"default_template"];
-[linkProperties addControlParam:@"$android_deepview" withValue:@"default_template"];
-```
-```swift
-let linkProperties: BranchLinkProperties = BranchLinkProperties()
-linkProperties.feature = "sharing"
-linkProperties.channel = "facebook"
-linkProperties.addControlParam("$ios_deepview", withValue: "default_template")
-linkProperties.addControlParam("$android_deepview", withValue: "default_template")
-```
-<!--- /iOS -->
+- *iOS - Objective C*
 
-<!--- Android -->
-```android
-LinkProperties linkProperties = new LinkProperties()
-               .setChannel("facebook")
-               .setFeature("sharing")
-               .addControlParameter("$ios_deepview", "default_template")
-               .addControlParameter("$android_deepview", "default_template");
-```
-<!--- /Android -->
+  ```objective-c
+  BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
+  linkProperties.feature = @"sharing";
+  linkProperties.channel = @"facebook";
+  [linkProperties addControlParam:@"$ios_deepview" withValue:@"default_template"];
+  [linkProperties addControlParam:@"$android_deepview" withValue:@"default_template"];
+  ```
 
+- *iOS - Swift*
+
+  ```swift
+  let linkProperties: BranchLinkProperties = BranchLinkProperties()
+  linkProperties.feature = "sharing"
+  linkProperties.channel = "facebook"
+  linkProperties.addControlParam("$ios_deepview", withValue: "default_template")
+  linkProperties.addControlParam("$android_deepview", withValue: "default_template")
+  ```
+
+- *Android*
+
+  ```android
+  LinkProperties linkProperties = new LinkProperties()
+                 .setChannel("facebook")
+                 .setFeature("sharing")
+                 .addControlParameter("$ios_deepview", "default_template")
+                 .addControlParameter("$android_deepview", "default_template");
+  ```
 
 Finally, enable Deepviews for an individual link on the [Marketing dashboard](https://dashboard.branch.io/quick-links/mlc/define) by selecting Deepviews as a redirect option under the second page.
 

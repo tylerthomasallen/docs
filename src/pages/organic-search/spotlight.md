@@ -10,7 +10,7 @@ Listing your app content on Apple's new Spotlight search with Branch is easy. No
 
 ### Prerequisites
 
-    This guide requires you to have already [integrated the Branch SDK](/pages/apps/ios/) into your app. For Spotlight search results to function as intended, you should also [configure deep link routing](/pages/apps/ios/#navigate-to-content).
+This guide requires you to have already [integrated the Branch SDK](/pages/apps/ios/) into your app. For Spotlight search results to function as intended, you should also [configure deep link routing](/pages/apps/ios/#navigate-to-content).
 
 
 ### List Content
@@ -19,39 +19,47 @@ Content can be added to Spotlight search by using the `BranchUniversalObject`. W
 
 First, define the content that you'd like to be listed by customizing the `BranchUniversalObject`. We'd recommend that you do this in `viewDidLoad`
 
-```obj-c
-BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-branchUniversalObject.title = @"My Content Title";
-branchUniversalObject.contentDescription = @"My Content Description";
-branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
-[branchUniversalObject addMetadataKey:@"property1" value:@"blue"];
-[branchUniversalObject addMetadataKey:@"property2" value:@"red"];
+- *Objective C*
 
-// important to set this flag to true
-branchUniversalObject.automaticallyListOnSpotlight = YES;
-```
+    ```obj-c
+    BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+    branchUniversalObject.title = @"My Content Title";
+    branchUniversalObject.contentDescription = @"My Content Description";
+    branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
+    [branchUniversalObject addMetadataKey:@"property1" value:@"blue"];
+    [branchUniversalObject addMetadataKey:@"property2" value:@"red"];
 
-```swift
-let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-branchUniversalObject.title = "My Content Title"
-branchUniversalObject.contentDescription = "My Content Description"
-branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
-branchUniversalObject.addMetadataKey("property1", value: "blue")
-branchUniversalObject.addMetadataKey("property2", value: "red")
+    // important to set this flag to true
+    branchUniversalObject.automaticallyListOnSpotlight = YES;
+    ```
 
-// important to set this flag to true
-branchUniversalObject.automaticallyListOnSpotlight = true
-```
+- *Swift 3*
+
+    ```swift
+    let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
+    branchUniversalObject.title = "My Content Title"
+    branchUniversalObject.contentDescription = "My Content Description"
+    branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
+    branchUniversalObject.addMetadataKey("property1", value: "blue")
+    branchUniversalObject.addMetadataKey("property2", value: "red")
+
+    // important to set this flag to true
+    branchUniversalObject.automaticallyListOnSpotlight = true
+    ```
 
 Then call the `userCompletedAction` method with the `View` event on your `BranchUniversalObject`. You will want to do this every single time a user goes to view a page in your app, so we recommend putting this in `viewDidAppear`, which means you must initialize the Branch Universal Object with all appropriate metadata before `viewDidAppear`.
 
-```obj-c
-[branchUniversalObject userCompletedAction:BNCRegisterViewEvent];
-```
+- *Objective C*
 
-```swift
-branchUniversalObject.userCompletedAction(BNCRegisterViewEvent)
-```
+    ```obj-c
+    [branchUniversalObject userCompletedAction:BNCRegisterViewEvent];
+    ```
+
+- *Swift 3*
+
+    ```swift
+    branchUniversalObject.userCompletedAction(BNCRegisterViewEvent)
+    ```
 
 This will create the appropriate NSUserActivity and tell Apple that a view occurred, adding it to the local Spotlight index if not already present in addition to increasing it's ranking in the global index. To read more about this, check out [this blog post](https://blog.branch.io/ios-10-spotlight-app-discovery-nsuseractivity-and-search-relevancy).
 
@@ -59,24 +67,26 @@ This will create the appropriate NSUserActivity and tell Apple that a view occur
 
 Open your **AppDelegate.m** file and add the following method. If you completed the basic SDK integration guide, this is likely already present.
 
-```obj-c
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
-    [[Branch getInstance] continueUserActivity:userActivity];
+- *Objective C*
 
-    return YES;
-}
-```
+    ```obj-c
+    - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+        [[Branch getInstance] continueUserActivity:userActivity];
 
-In Swift:
+        return YES;
+    }
+    ```
 
-```swift
-func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-    // pass the url to the handle deep link call
-    return Branch.getInstance().continueUserActivity(userActivity)
+- *Swift 3*
 
-    return true
-}
-```
+    ```swift
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        // pass the url to the handle deep link call
+        return Branch.getInstance().continueUserActivity(userActivity)
+
+        return true
+    }
+    ```
 
 ## Advanced
 
