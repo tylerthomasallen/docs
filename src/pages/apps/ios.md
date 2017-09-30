@@ -864,6 +864,8 @@
         [[Branch getInstance] setDebug];
         ```
 
+    - Make sure `OS_ACTIVITY_MODE` is not disabled ([link](https://stackoverflow.com/a/39503602/2690774))
+
 - #### Use test key
 
     - Use the Branch `test key` instead of the `live key`
@@ -916,7 +918,7 @@
 
     - Use for Universal Linking if you want to get the `true/false` response from `Branch.getInstance().continue(userActivity)` within `continueUserActivity` without a Branch network call
     - Use only if you have a custom link domain
-    - Add your link domain from your [Branch Dashboard](https://dashboard.branch.io/settings/link) to your `info.plist`
+    - Add `branch_universal_link_domains` to your `info.plist` with an array of your link domain from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](https://i.imgur.com/ECNnpyS.png)
 
