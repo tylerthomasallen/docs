@@ -63,12 +63,12 @@
 
     - ##### Implementing
 
-        - Referrer has their [identity set](#dialog-code)
+        - Referrer has their [identity set](#dialog-code?ios=track-users&android=track-users&adobe=track-users&cordova=track-users&mparticleAndroid=track-users&mparticleIos=track-users&titanium=track-users&reactNative=track-users&unity=track-users&xamarin=track-users)
         - Referrer `creates` a deep link
         - Referrer `shares` the deep link
         - Referee `clicks` on the deep link
-        - Referee has their [identity set](#dialog-code)
-        - Referee triggers a [custom event](#dialog-code)
+        - Referee has their [identity set](#dialog-code?ios=track-users&android=track-users&adobe=track-users&cordova=track-users&mparticleAndroid=track-users&mparticleIos=track-users&titanium=track-users&reactNative=track-users&unity=track-users&xamarin=track-users)
+        - Referee triggers a [custom event](#dialog-code?ios=track-events&android=track-events&adobe=track-events&cordova=track-events&mparticleAndroid=track-events&mparticleIos=track-events&titanium=track-events&reactNative=track-events&unity=track-events&xamarin=track-events)
         - The custom event triggers a [Reward rule](https://dashboard.branch.io/referrals/rules) to assign referral points
 
     - ##### Troubleshooting
@@ -95,7 +95,7 @@
 - #### Quick Links
     - [Dashboard Quick Links](https://dashboard.branch.io/quick-links) allows you to quickly create deep links and track their analytics in the dashboard
     - Use the `Click Link` button in the header to generate a quick link
-    - Use the `Event` dropdown to see a funnel of your analytics to a [custom event](#dialog-code) inside your app
+    - Use the `Event` dropdown to see a funnel of your analytics to a [custom event](#dialog-code?ios=track-events&android=track-events&adobe=track-events&cordova=track-events&mparticleAndroid=track-events&mparticleIos=track-events&titanium=track-events&reactNative=track-events&unity=track-events&xamarin=track-events) inside your app
     - Use the `Export` button to get a email with a `.cvs` of your quick link data
     - Use the `Bulk Create Links` to upload a `.cvs` file with deep link to be created
     - Use the `...` button to `Edit`, `View stats`, `Debug`, `Duplicate`, or `Archive` quick links
@@ -106,7 +106,7 @@
 
 - #### Sources
     - [Dashboard Sources](https://dashboard.branch.io/sources) display `clicks`, `installs`, `sessions`, and `custom events` per [analytical label](/pages/links/integrate/#analytical-labels)
-    - Use the `Event` dropdown to see a funnel of your analytics to a [custom event](#dialog-code) inside your app
+    - Use the `Event` dropdown to see a funnel of your analytics to a [custom event](#dialog-code?ios=track-events&android=track-events&adobe=track-events&cordova=track-events&mparticleAndroid=track-events&mparticleIos=track-events&titanium=track-events&reactNative=track-events&unity=track-events&xamarin=track-events) inside your app
     - Use the `Export` button to get a email with a `.cvs` of your source data
     - Use the `Slice by platform` to remove robot traffic from your analytics
     - Use the `filter` dropdowns to limit data 
@@ -136,7 +136,7 @@
 
 - #### Account settings
     - [Dashboard Account Setting](https://dashboard.branch.io/account-settings/app) is where you find your `Branch Keys`, `User information`, `Billing`, and `Team`
-    - Find more information in [Configure your dashboard](/pages/dashboard/integrate/)
+    - Find more information in [Configure your dashboard](/pages/dashboard/integrate/#advance-integration)
 
 ## Troubleshoot issues
 
@@ -144,7 +144,7 @@
 
 - #### User value attribution
     - Measure app growth through automatic `event tracking` and `user identity` tracking
-    - Use [Configure you app](#dialog-code) to send events and user information (`email`, `ID`, `UUID`, etc) from your app to the [Branch dashboard](https://dashboard.branch.io/)
+    - Use [Configure you app](#dialog-code?ios=track-events&android=track-events&adobe=track-events&cordova=track-events&mparticleAndroid=track-events&mparticleIos=track-events&titanium=track-events&reactNative=track-events&unity=track-events&xamarin=track-events) to send events and user information (`email`, `ID`, `UUID`, etc) from your app to the [Branch dashboard](https://dashboard.branch.io/)
     - The `identity` is retroactively associate any previously recorded events
     - Define all the custom events (`signups`, `purchases`, `shares`, etc.) you want to track
     - Branch automatically creates certain events whenever a user accesses your site or your app:
@@ -163,7 +163,7 @@
     - You can measure your app growth in the [Dashboard](https://dashboard.branch.io) through automatic event tracking and user identity tracking.
         - You can also define as many custom events (signups, purchases, shares, etc.) as you wish - see the [User Value Attribution](/pages/dashboard/analytics/#user-value-attribution) guide for more on tracking custom events. You can see these events as they occur on the Live View > Events page.
 
-        - You must [identify your users](/pages/dashboard/analytics/#growth-attribution) in order for the `User ID` column to be populated. The `Branch ID` refers to the internal Branch ID associated with that user. The `Developer ID` is the value you assign when you set the identity
+        - You must [identify your users](#dialog-code?ios=track-users&android=track-users&adobe=track-users&cordova=track-users&mparticleAndroid=track-users&mparticleIos=track-users&titanium=track-users&reactNative=track-users&unity=track-users&xamarin=track-users) in order for the `User ID` column to be populated. The `Branch ID` refers to the internal Branch ID associated with that user. The `Developer ID` is the value you assign when you set the identity
         - You must [setting identities](#dialog-code?ios=track-users&android=track-users&adobe=track-users&cordova=track-users&mparticleAndroid=track-users&mparticleIos=track-users&titanium=track-users&reactNative=track-users&unity=track-users&xamarin=track-users) within your app
 
         - Measuring influencers
