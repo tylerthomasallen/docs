@@ -88,7 +88,7 @@
 - #### Organic Search
 
     - [Dashboard Organic Search](https://dashboard.branch.io/search) shows you how your deep links and content are being scraped by search engines
-    - Use [app indexing](#dialog-code) within your app to enable
+    - Use [app indexing](/pages/organic-search/firebase/) within your app to enable
     - Validate with the [App indexing validator](https://branch.io/resources/app-indexing/)
 
 - #### Referrals
