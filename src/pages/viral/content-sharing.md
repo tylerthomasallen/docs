@@ -2,203 +2,256 @@
 
 If your users are creating content in your app, they will probably want to share that content with their friends. You can encourage this by making it easy to generate sharing links that open your app *and* route back exactly to the piece of content that was originally shared. This will even work when the user who opens the link doesn't have your app installed yet.
 
-## Option 1: Have Branch use your existing deep link routing
+## Guide
 
-If your app already supports deep linking using URI paths, you can populate the `$deeplink_path`, `$ios_deeplink_path` or `$android_deeplink_path` link parameters with the URI path of the content to be displayed within the app. When the Branch SDK receives a link containing one of these parameters it will automatically load the specified URI path.
+Let's say you have developed an app called **Branch Monster Factory**. You want your users to share the monsters they create with their friends, and see the monster that was shared as soon as your app opens. Let's get started!
 
-{% if page.android or page.mparticle_android %}
+### Generate shareable links
 
-In your app's Manifest, add this meta-data key to the definition of the Activity you want to show when a link to content is opened:
+The first thing we need to do is allow your users to create links. These links will contain references to the content being shared, which generate analytics data and allow your app to route straight back to that content when a link is opened.
 
-{% highlight xml %}
-<meta-data android:name="io.branch.sdk.auto_link_path" android:value="custom/path/*,another/path/" />
-{% endhighlight %}
+Start by importing the relevant Branch frameworks into the view controller you will be using:
 
-{% endif %}
-{% if page.android or page.mparticle_android %}{% else %}
+- *iOS - Objective C*
 
-{% caution title="Incomplete support on iOS" %}
-[Universal Links]({{base.url}}/getting-started/universal-app-links) and [Spotlight]({{base.url}}/features/spotlight-indexing) do not support deep linking via URI paths. If you use `$deeplink_path` or `$ios_deeplink_path`, you will need to implement some custom logic. [Click here for more information]({{base.url}}/getting-started/universal-app-links/advanced/ios/#how-to-handle-uri-paths-with-universal-links).
-{% endcaution %}
+    ```obj-c
+    #import "BranchUniversalObject.h"
+    #import "BranchLinkProperties.h"
+    ```
 
-{% endif %}
+- *iOS - Swift*
 
-### How to insert custom deep link routes into a Branch link
+    ```obj-c
+    {% highlight objective-c %}
+    #import "BranchUniversalObject.h"
+    #import "BranchLinkProperties.h"
+    #import "BranchConstants.h"
+    ```
 
-All of the examples below create links that will cause Branch to display `myapp://content/1234` after launch.
+Create a `BranchUniversalObject` containing details about the content that is being shared. You can find examples for the [other platforms here](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference).
 
-{% example title="When creating links dynamically" %}
+- *iOS - Objective C*
 
-If you're creating a link by appending query parameters, just append the control parameters to the URL. Please make sure to URL encode everything, lest the link will break.
+    ```obj-c
+    BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"monster/12345"];
+    branchUniversalObject.title = @"Meet Mr. Squiggles";
+    branchUniversalObject.contentDescription = @"Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!";
+    branchUniversalObject.imageUrl = @"https://example.com/monster-pic-12345.png";
+    [branchUniversalObject addMetadataKey:@"userId" value:@"12345"];
+    [branchUniversalObject addMetadataKey:@"userName" value:@"Josh"];
+    [branchUniversalObject addMetadataKey:@"monsterName" value:@"Mr. Squiggles"];
+    ```
 
-{% highlight javascript %}
-"https://[branchsubdomain]?%24deeplink_path=content%2F1234"
-{% endhighlight %}
+- *iOS - Swift*
 
-{% endexample %}
+    ```swift
+    let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "monster/12345")
+    branchUniversalObject.title = "Meet Mr. Squiggles"
+    branchUniversalObject.contentDescription = "Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!"
+    branchUniversalObject.imageUrl = "https://example.com/monster-pic-12345.png"
+    branchUniversalObject.addMetadataKey("userId", value: "12345")
+    branchUniversalObject.addMetadataKey("userName", value: "Josh")
+    branchUniversalObject.addMetadataKey("monsterName", value: "Mr. Squiggles")
+    ```
 
-{% example title="When using a mobile SDK" %}
+- *Android*
 
-When you create links via a mobile SDK, you simply need to set the control parameters.
+    ```java
+     BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
+                    .setCanonicalIdentifier("monster/12345")
+                    .setTitle("Meet Mr. Squiggles")
+                    .setContentDescription("Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!")
+                    .setContentImageUrl("https://example.com/monster-pic-12345.png")
+                    .addContentMetadata("userId", "12345")
+                    .addContentMetadata("userName", "Josh")
+                    .addContentMetadata("monsterName", "Mr. Squiggles");
+    ```
 
-{% if page.ios or page.mparticle_ios %}
+!!! tip
+    The `canonicalIdentifier` or `canonicalUrl` parameter greatly improves the content analytics data Branch captures. It should be unique to that piece of content and helps Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities.
 
-{% tabs %}
-{% tab objective-c %}
-{% highlight objc %}
-BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-linkProperties.feature = @"sharing";
-linkProperties.channel = @"facebook";
-[linkProperties addControlParam:@"$deeplink_path" withValue:@"content/1234"];
-{% endhighlight %}
-{% endtab %}
-{% tab swift %}
-{% highlight swift %}
-let linkProperties: BranchLinkProperties = BranchLinkProperties()
-linkProperties.feature = "sharing"
-linkProperties.channel = "facebook"
-linkProperties.addControlParam("$deeplink_path", withValue: "content/1234")
-{% endhighlight %}
-{% endtab %}
-{% endtabs %}
+Then define the properties of the link. In the example, our properties reflect that this is shared content and the user selected Facebook as the destination. You can find examples of [the other platforms here](#dialog-code?ios=create-link-reference&android=create-link-reference&adobe=create-deep-link&cordova=create-link-reference&mparticleAndroid=create-link-reference&mparticleIos=create-link-reference&titanium=create-link-reference&reactNative=create-link-reference&unity=create-link-reference&xamarin=create-link-reference).
 
-{% endif %}
-<!--- /iOS -->
+- *iOS - Objective C*
 
+    ```obj-c
+    BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
+    linkProperties.feature = @"share";
+    linkProperties.channel = @"facebook";
+    ```
 
-<!--- Android -->
-{% if page.android or page.mparticle_android %}
+- *iOS - Swift*
 
-{% highlight java %}
-LinkProperties linkProperties = new LinkProperties()
-               .setChannel("facebook")
-               .setFeature("sharing")
-               .addControlParameter("$deeplink_path", "content/1234");
-{% endhighlight %}
+    ```swift
+    let linkProperties: BranchLinkProperties = BranchLinkProperties()
+    linkProperties.feature = "share"
+    linkProperties.channel = "facebook"
+    ```
 
-{% endif %}
+- *Android*
 
-<!--- Cordova -->
+    ```java
+    LinkProperties linkProperties = new LinkProperties()
+                   .setChannel("facebook")
+                   .setFeature("sharing")
+    ```
 
-{% if page.cordova %}
+Note that on Android, you can customize the styling with the ShareSheetStyle class. Since iOS share sheet is baked into the platform, it's not customizable.
 
-{% highlight js %}
-// optional fields
-var analytics = {
-    channel: 'channel',
-    feature: 'feature',
-    campaign: 'campaign',
-    stage: 'stage',
-    tags: ['one', 'two', 'three']
-};
+**Android**
+```java
+ShareSheetStyle shareSheetStyle = new ShareSheetStyle(MainActivity.this, "Check this out!", "This stuff is awesome: ")
+                        .setCopyUrlStyle(getResources().getDrawable(android.R.drawable.ic_menu_send), "Copy", "Added to clipboard")
+                        .setMoreOptionStyle(getResources().getDrawable(android.R.drawable.ic_menu_search), "Show more")
+                        .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
+                        .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
+                        .setAsFullWidthStyle(true)
+                        .setSharingTitle("Share With");
+```
 
-// optional fields
-var properties = {
-    $fallback_url: 'http://www.example.com/fallback',
-    $desktop_url: 'http://www.example.com/desktop',
-    $android_url: 'http://www.example.com/android',
-    $ios_url: 'http://www.example.com/ios',
-    $ipad_url: 'http://www.example.com/ipad',
-    $deeplink_path: 'content/123',
-    more_custom: 'data',
-    even_more_custom: true,
-    this_is_custom: 321
-};
+Then, trigger the share sheet to appear without having to create a link. Calling this method will automatically generate a Branch link with the appropriate analytics channel when the user selects a sharing destination. You can find examples of [the other platforms here](#dialog-code?ios=share-deep-link&android=share-deep-link&adobe=create-deep-link&cordova=share-deep-link&mparticleAndroid=share-deep-link&mparticleIos=share-deep-link&titanium=share-deep-link&reactNative=share-deep-link&unity=share-deep-link&xamarin=share-deep-link).
 
-branchUniversalObj.generateShortUrl(analytics, properties).then(function(res) {
-    alert('Response: ' + JSON.stringify(res.url));
-}).catch(function(err) {
-    alert('Error: ' + JSON.stringify(err));
-});
-{% endhighlight %}
-{% endif %}
+- *iOS - Objective C*
 
-<!--- Xamarin -->
+    ```obj-c
+    [branchUniversalObject showShareSheetWithLinkProperties:linkProperties
+                                               andShareText:@"Super amazing thing I want to share!"
+                                         fromViewController:self
+                                                completion:^(NSString *activityType, BOOL completed) {
+        NSLog(@"finished presenting");
+    }];
+    ```
 
-{% if page.xamarin %}
-{% highlight c# %}
-BranchLinkProperties linkProperties = new BranchLinkProperties();
-linkProperties.feature = "sharing";
-linkProperties.channel = "facebook";
-linkProperties.controlParams.Add("$deeplink_path", "content/1234");
-{% endhighlight %}
-{% endif %}
+- *iOS - Swift*
 
-<!--- Unity -->
+    ```swift
+    branchUniversalObject.showShareSheet(with: linkProperties,
+                                         andShareText: "Super amazing thing I want to share!",
+                                         from: self) { (activityType, completed) in
+        if (completed) {
+            print(String(format: "Completed sharing to %@", activityType!))
+        } else {
+            print("Link sharing cancelled")
+        }
+    }
+    ```
 
-{% if page.unity %}
+- *Android*
 
-{% highlight objective-c %}
-BranchLinkProperties linkProperties = new BranchLinkProperties();
-linkProperties.feature = "sharing";
-linkProperties.channel = "facebook";
-linkProperties.controlParams.Add("$deeplink_path", "content/1234");
-{% endhighlight %}
+    ```java
+    branchUniversalObject.showShareSheet(this,
+                                          linkProperties,
+                                          shareSheetStyle,
+                                           new Branch.BranchLinkShareListener() {
+        @Override
+        public void onShareLinkDialogDismissed() {
+        }
+    });
+    ```
 
-{% endif %}
+Here's an example of what you'll see with iOS on the left and Android on the right:
 
-<!--- Adobe -->
+![image](/img/pages/viral/content-sharing/combined_share_sheet.png)
 
-{% if page.adobe %}
+!!! note "To learn more about the concepts we used, visit these pages"
+    - [Creating Links in Apps](#dialog-code?ios=create-deep-link&android=create-deep-link&adobe=create-deep-link&cordova=create-deep-link&mparticleAndroid=create-deep-link&mparticleIos=create-deep-link&titanium=create-deep-link&reactNative=create-deep-link&unity=create-deep-link&xamarin=create-deep-link)
+    - [Configuring Links](/pages/links/integrate/#configure-deep-links)
+    - [Branch Universal Object](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference)
+    - [Deep Link Routing](/pages/deep-linking/routing/)
 
-{% highlight java %}
-var dataToInclude:Object = {
-	"article_id": "1234",
-	"$deeplink_path": "content/1234"
-};
+### Route incoming users directly to content
 
-branch.getShortUrl(tags, "sms", BranchConst.FEATURE_TAG_SHARE, JSON.stringify(dataToInclude));
-{% endhighlight %}
-{% endif %}
+Now that your user has created a link and sent it to a friend, you should detect the incoming link when that friend opens your app, and route directly to the shared content. Read more about how to do this on the [Deep Link Routing](/pages/deep-linking/routing/) page.
 
-<!--- Titanium -->
+If you want to give a preview of the content to users who have not yet downloaded your app, try out [Deepviews](/pages/web/deep-views/).
 
-{% if page.titanium %}
+### Viewing live data on the Branch dashboard
 
-{% highlight js %}
-branchUniversalObject.generateShortUrl({
-  "feature" : "sample-feature",
-  "alias" : "sample-alias",
-  "channel" : "sample-channel",
-  "stage" : "sample-stage",
-}, {
-  "$deeplink_path" : "content/1234",
-});
-{% endhighlight %}
+The [Analytics page](https://dashboard.branch.io/content) on the Branch dashboard allows you to see data on content your users are sharing, and which pieces of content are the most popular. You can also use the dashboard's [Live View page](https://dashboard.branch.io/liveview/links) to see links and link clicks in real time.
 
-{% endif %}
+!!! tip "Measure influencers"
+    The [Influencers page](https://dashboard.branch.io/referrals/analytics) on the dashboard will show you who is driving the most new signups.
 
-<!--- React -->
+## Advanced
 
-{% if page.react %}
+### Creating dynamic links without the share sheet
 
-{% highlight js %}
-let linkProperties = {
-  feature: 'share',
-  channel: 'facebook'
-}
+If you've built your own share sheet and you want to just create a Branch link for an individual share message or have another use case, you can create deep links directly with the following call:
 
-let controlParams = {
-  $desktop_url: 'http://desktop-url.com/monster/12345'
-}
+- *iOS - Objective C*
 
-let {url} = await branchUniversalObject.generateShortUrl(linkProperties, controlParams)
-{% endhighlight %}
+    ```obj-c
+    [branchUniversalObject getShortUrlWithLinkProperties:linkProperties andCallback:^(NSString *url, NSError *error) {
+        if (!error) {
+            NSLog(@"got my Branch invite link to share: %@", url);
+        }
+    }];
+    ```
 
-{% endif %}
+- *iOS - Swift*
 
-{% endexample %}
+    ```swift
+    branchUniversalObject.getShortUrl(with: linkProperties) { (url, error) in
+        if (error == nil) {
+            print("Got my Branch link to share: (url)")
+        } else {
+            print(String(format: "Branch error : %@", error! as CVarArg))
+        }
+    }
+    ```
 
-{% example title="When creating Quick Links on the Branch dashboard" %}
+- *Android*
 
-You can specify the control parameters for individual Quick Links by inserting the keys and values into the _Deep Link Data (Advanced)_ section.
+    ```java
+    branchUniversalObject.generateShortUrl(this, linkProperties, new BranchLinkCreateListener() {
+        @Override
+        public void onLinkCreate(String url, BranchError error) {
+            if (error == null) {
+                Log.i("MyApp", "got my Branch link to share: " + url);
+            }
+        }
+    });
+    ```
 
-{% image src='/img/pages/getting-started/deep-link-routing/deep-link_path.png' 3-quarters center alt='deeplink path' %}
+You can find examples of `linkProperties` above. You would next use the returned link and help the user post it to (in this example) Facebook.
 
-{% endexample %}
+### Specifying an shared email subject
 
+The majority of share options only include one string of text, except email, which has a subject and a body. The share text will fill in the body and you can specify the email subject in the link properties as shown below.
 
-## Option 2: Build custom routing inside the routing callback
+- *iOS - Objective C*
 
+    ```obj-c
+    BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
+    linkProperties.feature = @"share";
+    linkProperties.channel = @"facebook";
+    [linkProperties addControlParam:@"$email_subject" withValue:@"Therapists hate him"];
+    ```
 
-## Option 3: Use Branch's easy config deep link routing
+- *iOS - Swift*
+
+    ```swift
+    let linkProperties: BranchLinkProperties = BranchLinkProperties()
+    linkProperties.feature = "share"
+    linkProperties.channel = "facebook"
+    linkProperties.addControlParam("$email_subject", withValue: "Therapists hate him")
+    ```
+
+- *Android*
+
+    ```java
+    ShareSheetStyle shareSheetStyle = new ShareSheetStyle(MainActivity.this, "Therapists hate him", "You will never believe what happened next!")
+                            .setCopyUrlStyle(getResources().getDrawable(android.R.drawable.ic_menu_send), "Copy", "Added to clipboard")
+                            .setMoreOptionStyle(getResources().getDrawable(android.R.drawable.ic_menu_search), "Show more")
+                            .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
+                            .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
+                            .setAsFullWidthStyle(true)
+                            .setSharingTitle("Share With");
+    ```
+
+### Previewing and debugging links
+
+- You can debug any Branch link by appending `?debug=true` to the link and pasting it into your desktop browser. It shows
+    - All deep link parameters and analytics tags
+    - Specific routing guidance across many browsers
+- Facebook's [OG tag tester tool](https://developers.facebook.com/tools/debug/og/object) will show you all the meta data for your link, and a preview of what it will look like when shared on Facebook or other social media platforms.
