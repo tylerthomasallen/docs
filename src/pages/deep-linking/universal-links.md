@@ -22,7 +22,8 @@ Branch makes it simple to enable Universal Links all while greatly improving on 
 1. Scroll down and enable `Associated Domains`. ![image](/img/pages/deep-linking/universal-links/enable_ass_domains.png
 
 !!! tip "If you see an error after this step"
-	![image](/img/pages/deep-linking/universal-links/enable_ass_domains_error.png
+	![image](/img/pages/deep-linking/universal-links/enable_ass_domains_error.png)
+	
 	Please ensure...
 
 	- The right team selected for your Xcode project.
