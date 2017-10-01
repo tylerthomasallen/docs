@@ -21,11 +21,19 @@
             
             ![image](/img/pages/dashboard/ios.png)
 
+        - To get the Apple App Prefix, head to [this page](https://developer.apple.com/account/ios/identifier/bundle) in Apple’s Developer Portal.
+
     - ##### Android
         - Use these settings to control the default behavior of your deep links on Android
             
             ![image](/img/pages/dashboard/android.png)
     
+        - To generate your SHA256 Cert Fingerprints, do the following:
+            - Navigate to your keystore file. This is the file that you use to build the debug and production version of your APK file before deploying it.
+            - Run this command on it to generate the fingerprint: `keytool -list -v -keystore my-release-key.keystore`
+            - You’ll see a value like `14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5` come out the other end. Copy this.
+            - Paste it into the link settings
+
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
             
@@ -45,19 +53,14 @@
                 - https://example.app.link/custom-alias
             ![image](/img/pages/dashboard/link-domain.png)
     
+    - ##### Configure social media 
+        - Set the default image preview for your deep links when shared on social media
+        - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
+
     - ##### Save
         - Make sure you commit any changes
             
             ![image](/img/pages/dashboard/save.png)
-
-- #### Enable Deepview
-
-    - Go to [Deepview Previews](https://dashboard.branch.io/web/deepviews) on the Branch Dashboard
-    - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
-    - This will make your deep links perform optimally on all [Supported platforms](/pages/links/integrate/#expected-redirect-behavior)
-    - Additional details about [Deepviews](/pages/web/deep-views/)
-        
-        ![image](/img/pages/dashboard/deepview.png)
 
 ## Advance integration
 
@@ -98,11 +101,6 @@
     - Add your Facebook credentials to allow us to link your Facebook dashboard to the Branch dashboard
     - This configuration allows us to send and receive attribution data from Facebook
 
-- #### Configure social media 
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
-    - Set the default image preview for your deep links when shared on social media
-    - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
-
 - #### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     
@@ -139,17 +137,17 @@
     - From `app.link` to `app.link`
         - Your old `app.link` deep links will fail
         - Your old `app.link` deep links will navigate to a File Not Found website and not open your app.
-        - Your new `app.link` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
+        - Your new `app.link` deep links will open your app after your [update your code](#dialog-code?ios=configure-associated-domains&android=configure-app&adobe=configure-app&cordova=configure-app&mparticleAndroid=configure-app&mparticleIos=configure-associated-domains&titanium=configure-app&reactNative=configure-app&unity=configure-app&xamarin=configure-app) to append the new link domain
         - If your old `app.link` are active, it is recommend to switch to a `custom link domain instead`
     - From `app.link` to `custom link domain`
         - Your old `app.link` deep links will still work
-        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
+        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code?ios=configure-associated-domains&android=configure-app&adobe=configure-app&cordova=configure-app&mparticleAndroid=configure-app&mparticleIos=configure-associated-domains&titanium=configure-app&reactNative=configure-app&unity=configure-app&xamarin=configure-app) to append the new link domain
     - From `custom link domain` to `custom link domain`
         - Your old `custom link domain` deep links will fail
-        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
+        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code?ios=configure-associated-domains&android=configure-app&adobe=configure-app&cordova=configure-app&mparticleAndroid=configure-app&mparticleIos=configure-associated-domains&titanium=configure-app&reactNative=configure-app&unity=configure-app&xamarin=configure-app) to append the new link domain
     - From legacy `bnc.lt` to `custom link domain`
         - Both your `bnc.lt` and `custom link domain` deep links will work
-        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code) to append the new link domain
+        - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code?ios=configure-associated-domains&android=configure-app&adobe=configure-app&cordova=configure-app&mparticleAndroid=configure-app&mparticleIos=configure-associated-domains&titanium=configure-app&reactNative=configure-app&unity=configure-app&xamarin=configure-app) to append the new link domain
 
 - #### Custom domain warning
     - Used for [Change link domain](#change-link-domain)

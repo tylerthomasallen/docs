@@ -9,7 +9,7 @@
 
 - #### Configure app
 
-    In your project’s `*-app.xml` file, insert the platform-specific snippet(s) below. Change `yourapp` to the URI scheme you’ve selected.
+    In your project’s `*-app.xml` file, insert the platform-specific snippet(s) below. Change `YOUR URI SCHEME` to the URI scheme you’ve selected.
 
     - *iOS*
 
@@ -17,7 +17,17 @@
         <iPhone><InfoAdditions><![CDATA[
             <!-- other stuff -->
             <key>branch_key</key>
-            <string>key_live_xxxxxxxxxxxxxxx</string>
+            <string>key_live_YOUR BRANCH KEY</string>
+            <key>CFBundleURLTypes</key>
+            <!-- Put your URI scheme below -->
+            <array>
+                <dict>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>YOUR URI SCHEME</string>
+                    </array>
+                </dict>
+            </array>
         ]]></InfoAdditions></iPhone>
         ```
 
@@ -27,7 +37,15 @@
         <android><manifestAdditions><![CDATA[
             <!-- other stuff -->
             <application>
-                <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_xxxxxxxxxxxxxxx" />
+                <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_YOUR BRANCH KEY" />
+                <activity>
+                    <intent-filter>
+                        <data android:scheme="YOUR URI SCHEME" />
+                        <action android:name="android.intent.action.VIEW" />
+                        <category android:name="android.intent.category.DEFAULT" />
+                        <category android:name="android.intent.category.BROWSABLE" />
+                    </intent-filter>
+                </activity>
                 <activity android:name="io.branch.nativeExtensions.branch.BranchActivity" android:launchMode="singleTask" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
             </application>
         ]]></manifestAdditions></android>
@@ -182,5 +200,7 @@
         ```
 
 ## Troubleshoot issues
-- #### Recommendations
+
 - #### Sample app
+
+    You can find a full sample app in the main open source repo for the Air ANE. Visit the [Github page here](https://github.com/BranchMetrics/air-ane-branch-deep-linking).
