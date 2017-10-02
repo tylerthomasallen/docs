@@ -136,9 +136,9 @@ Make sure it's configured correctly. You can find configuration issues by using 
 
 The following error message will appear in your OS-level logs if your domain doesn't have SSL set up properly:
 
-{% highlight js %}
+```js
 Sep 21 14:27:01 Derricks-iPhone swcd[2044] <Notice>: 2015-09-21 02:27:01.878907 PM [SWC] ### Rejecting URL 'https://examplecustomdomain.com/apple-app-site-association' for auth method 'NSURLAuthenticationMethodServerTrust': -6754/0xFFFFE59E kAuthenticationErr
-{% endhighlight %}
+```
 
 These logs can be found for physical devices connected to Xcode by navigating to Window > Devices > choosing your device and then clicking the "up" arrow in the bottom left corner of the main view.
 
