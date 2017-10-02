@@ -24,7 +24,7 @@
         - To get the Apple App Prefix, head to [this page](https://developer.apple.com/account/ios/identifier/bundle) in Apple’s Developer Portal.
 
     - ##### Android
-        - Use these settings to control the default behavior of your deep links on Android
+        - Use these settings to control the default behavior of your deep links on Android. Play Store is for published apps, if your app cannot be located or is a local/dev build, please use the Custom URL option.
             
             ![image](/img/pages/dashboard/android.png)
     
