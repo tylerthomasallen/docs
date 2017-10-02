@@ -14,25 +14,38 @@
             - In your project’s tiapp.xml file, insert the snippet below. Change yourapp to the URI scheme you’ve selected.
               
               ```
-                 <ios>
-                     <plist>
-                       <dict>
-                         <!-- Add branch key as key-value pair -->
-                         <key>branch_key</key>
-                         <string>key_live_xxxxxxxxxxxxxxx</string>
-                         <!-- Add unique string for direct deep links -->
-                         <key>CFBundleURLTypes</key>
-                         <array>
-                           <dict>
-                             <key>CFBundleURLSchemes</key>
-                             <array>
-                               <string>yourapp</string>
-                             </array>
-                           </dict>
-                         </array>
-                       </dict>
-                     </plist>
-                   </ios>
+               <ios>
+                   <plist>
+                     <dict>
+                       <!-- Add branch key as key-value pair -->
+                       <key>branch_key</key>
+                       <string>key_live_xxxxxxxxxxxxxxx</string>
+                       <!-- Add unique string for direct deep links -->
+                       <key>CFBundleURLTypes</key>
+                       <array>
+                         <dict>
+                           <key>CFBundleURLSchemes</key>
+                           <array>
+                             <string>yourapp</string>
+                           </array>
+                         </dict>
+                       </array>
+                       <!-- Add domains to support Universal Links -->
+                       <key>com.apple.developer.associated-domains</key>
+                       <array>
+                           <string>applinks:xxxx.app.link</string>
+                           <string>applinks:xxxx-alternate.app.link</string>
+                           <string>applinks:xxxx.test-app.link</string>
+                           <string>applinks:xxxx-alternate.test-app.link</string>
+                       </array>
+                       <!-- Required step for Universal Links on cold start -->
+                       <key>NSUserActivityTypes</key>
+                       <array>
+                         <string>io.branch.testbed.universalLink</string>
+                       </array>
+                     </dict>
+                   </plist>
+                 </ios>
               ```
               
     - Android
@@ -80,6 +93,20 @@
                        branch.initSession();
                    });
                }
+
+               if (OS_IOS) { // Don't forget this condition.
+                  var activity = Ti.App.iOS.createUserActivity({
+                      activityType:'io.branch.testbed.universalLink'
+                  });
+
+                  activity.becomeCurrent();
+
+                  Ti.App.iOS.addEventListener('continueactivity', function(e) {
+                      if (e.activityType === 'io.branch.testbed.universalLink') {
+                          branch.continueUserActivity(e.activityType, e.webpageURL, e.userInfo);
+                      }
+                  });
+              }
            };
            
            $.onInitSessionFinished = function(data) {
