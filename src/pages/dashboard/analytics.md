@@ -22,8 +22,6 @@
 
 ## Common Analytics Objectives
 
-<!-- - #### Revenue analytics -->
-
 - #### User value attribution
     - Measure app growth through automatic `event tracking` and `user identity` tracking
     - Use [Configure you app](#dialog-code?ios=track-events&android=track-events&adobe=track-events&cordova=track-events&mparticleAndroid=track-events&mparticleIos=track-events&titanium=track-events&reactNative=track-events&unity=track-events&xamarin=track-events) to send events and user information (`email`, `ID`, `UUID`, etc) from your app to the [Branch dashboard](https://dashboard.branch.io/)
@@ -93,7 +91,9 @@
 
 - #### Referrals
 
-    - [Dashboard Referrals](https://dashboard.branch.io/referrals/analytics) allows you to track referrals between users  
+    - [Dashboard Referrals](https://dashboard.branch.io/referrals/analytics) allows you to track referrals between users
+
+    - The dashboard updates every 4 hours
 
     - ##### Implementing
 
