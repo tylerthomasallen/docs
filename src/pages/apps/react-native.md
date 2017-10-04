@@ -21,6 +21,13 @@
         npm install --save react-native-branch
         ```
 
+    - (Optional) Add a branch.json file to the root of your app (next to package.json).
+        You can configure the contents at any time, but it must be present when you
+        run `react-native link` in order to be automatically included in your native
+        projects. This allows you to configure certain behaviors that otherwise require
+        native code changes. See https://rnbranch.app.link/branch-json for full details
+        on the branch.json file.
+
     - In a pure React Native app using `react-native link`
 
         ```bash
@@ -69,11 +76,11 @@
 		- Configure info.pList
 
 		    - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
- 
+
 		        - Add `branch_app_domain` with your live key domain
 		        - Add `branch_key` with your current Branch key
 		        - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
-		    
+
 		    ![image](http://i.imgur.com/PwXnHWz.png)
 
 		- Confirm app prefix
@@ -159,7 +166,7 @@
 
 - #### Initialize Branch
 
-	- Swift 3.0 `AppDelegate.swift`
+	- Swift 3 & 4 `AppDelegate.swift`
 
     Add `#import <react-native-branch/RNBranch.h>` to your Bridging header if you have one.
 
@@ -535,6 +542,70 @@
 		let creditHistory = await branch.getCreditHistory()
 		```
 
+- #### Track Apple Search Ads
+
+    - Allows Branch to track Apple Search Ads deep linking analytics
+
+    - Analytics from Apple's API have been slow which will make our analytics lower. Additionally, Apple's API does not send us all the data of an ad every time which will make ads tracked by us to show a generic campaign sometimes.
+
+    - This requires an option to be set before the native SDK initializes, which
+        happens before JS finishes loading. There are two options:
+
+        1. Add `"delayInitToCheckForSearchAds": true` to your `branch.json` file:
+
+            ```json
+            {
+                "delayInitToCheckForSearchAds": true
+            }
+            ```
+
+        2. Modify your AppDelegate in Xcode. Insert the following before the call
+            to `[RNBranch initSessionWithLaunchOptions:isReferrable:]`.
+
+            - *Swift 3 & 4*
+
+                ```swift
+                Branch.getInstance().delayInitToCheckForSearchAds()
+                ```
+
+            - *Objective C*
+
+                ```objc
+                [[Branch getInstance] delayInitToCheckForSearchAds];
+                ```
+
+    - Test with fake campaign params (do not test in production)
+
+        1. Add `"appleSearchAdsDebugMode": true` to `branch.debug.json`. Do
+            not set this parameter in `branch.json`, or it will be enabled in
+            release builds.
+
+            ```json
+            {
+                "delayInitToCheckForSearchAds": true,
+                "appleSearchAdsDebugMode": true
+            }
+            ```
+
+        2. Add the following call to your AppDelegate (before the `initSession`) call.
+            Use conditional compilation or remove before releasing to production.
+
+            - *Swift 3 & 4*
+
+                ```swift
+                #if DEBUG
+                    Branch.getInstance().setAppleSearchAdsDebugMode()
+                #endif
+                ```
+
+            - *Objective C*
+
+                ```objc
+                #ifdef DEBUG
+                    [[Branch getInstance] setAppleSearchAdsDebugMode];
+                #endif
+                ```
+
 ## Troubleshoot issues
 
 - #### Track content properties
@@ -563,24 +634,25 @@
 
     - Remove before releasing to production
 
-    - *Swift 3*
+    - *Swift 3 & 4*
 
         ```swift
-	RNBranch.useTestInstance()    
-	```
+	      RNBranch.useTestInstance()
+	      ```
 
     - *Objective C*
 
         ```objc
-	[RNBranch useTestInstance]
-	```
+	      [RNBranch useTestInstance]
+	      ```
 
     - *Android*
 
         ```
-	<meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
-	```
+	      <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
+	      ```
 
-- #### Sample app
+- #### Sample apps
 
-	[Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)
+  [Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)  
+  [Tutorial](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples/webview_tutorial)
