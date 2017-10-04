@@ -166,7 +166,7 @@
 
 - #### Initialize Branch
 
-	- Swift 3.0 `AppDelegate.swift`
+	- Swift 3 & 4 `AppDelegate.swift`
 
     Add `#import <react-native-branch/RNBranch.h>` to your Bridging header if you have one.
 
@@ -634,23 +634,23 @@
 
     - Remove before releasing to production
 
-    - *Swift 3*
+    - *Swift 3 & 4*
 
         ```swift
-	RNBranch.useTestInstance()
-	```
+	      RNBranch.useTestInstance()
+	      ```
 
     - *Objective C*
 
         ```objc
-	[RNBranch useTestInstance]
-	```
+	      [RNBranch useTestInstance]
+	      ```
 
     - *Android*
 
         ```
-	<meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
-	```
+	      <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
+	      ```
 
 - #### Sample apps
 
