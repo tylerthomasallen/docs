@@ -8,6 +8,10 @@ Left: Branch default. Right: a customized version.
 
 This document will cover how to create a custom Text Me The App page, as well as a general FAQ for this product.
 
+## Usage Policies
+
+Branch reserves the right to limit your use of the Text Me The App service and charge for SMS costs at its own discretion. To understand Branch's policies in this regard, please contact your Branch Account Manager or accounts@branch.io at any time for assistance.
+
 ## Setup
 
 If you don't want to use Branch's default Text Me The App Page or show a desktop deepview, follow these instructions. This will let you customize a Text Me The App page using Branch.
