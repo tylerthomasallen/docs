@@ -6,9 +6,11 @@ When users click your links on desktop, they have the option to text themselves 
 
 Left: Branch default. Right: a customized version.
 
-Branch reserves the right to limit your use of the Text Me The App service and charge for SMS costs at its own discretion. To understand Branch's policies in this regard, please contact your Branch Account Manager or accounts@branch.io at any time for assistance.
-
 This document will cover how to create a custom Text Me The App page, as well as a general FAQ for this product.
+
+## Usage Policies
+
+Branch reserves the right to limit your use of the Text Me The App service and charge for SMS costs at its own discretion. To understand Branch's policies in this regard, please contact your Branch Account Manager or accounts@branch.io at any time for assistance.
 
 ## Setup
 
