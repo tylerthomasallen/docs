@@ -69,7 +69,7 @@
 | Opera browser | - | - | Falls back to web or play store | Falls back to web or play store |
 | Hangouts | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
 | iMessage | App opens | Falls back to web or app store | - | - |
-| Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+| Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store | Must configure Slack to open links with Safari
 | WeChat | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store | You can customize [WeChat fallback urls](#redirections)
 | WhatsApp | App opens | Falls back to web or app store | App opens | Falls back to web or play store | `app.link` require https/http to be clickable
 | Apple Mail | App opens | Falls back to web or app store | - | - |
