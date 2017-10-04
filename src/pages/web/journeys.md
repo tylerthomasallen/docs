@@ -298,13 +298,13 @@ Use this to target users who have been part of an email campaign; maybe with a s
 
 The technical definition is that they've clicked on a link with an Email Service Provider's custom `$3p` value in link data, but you just need to consider the way the link is created - in this case, through a Deep Linked Email integration.
 
-#### Is viewing a page with metadata key
+#### Is viewing a page with hosted deeplink data key
 
 Use this filter to target users viewing web pages with certain [Branch-specific metatags](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site) on them (in the form of the HTML `<meta>` tag).
 
 For example, you could target users on pages containing the metadata key “foo” and value “bar” by adding this tag to the HTML: `<meta name="branch:deeplink:foo" content="bar" />`. Only metadata in this format will be targetable.
 
-Once metadata has been added to a webpage, you can target users on that page using the “Is viewing a page with metadata key” audience filter.
+Once metadata has been added to a webpage, you can target users on that page using the “Is viewing a page with hosted deeplink data key” audience filter.
 
 ### Set up split testing
 
