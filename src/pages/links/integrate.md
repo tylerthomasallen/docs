@@ -200,7 +200,7 @@
         | $always_deeplink | `true` | Set to `false` to make links always fall back to your mobile site. Does not apply to Universal Links or Android App Links.
         | $ios_redirect_timeout | `750` | Control the timeout that the client-side JS waits after trying to open up the app before redirecting to the App Store. Specified in milliseconds
         | $android_redirect_timeout | `750` | Control the timeout that the client side JS waits after trying to open up the app before redirecting to the Play Store. Specified in milliseconds
-        | $one_time_use | `false` | Set to `true` to limit deep linking behavior of the generated link to a single use. Can also be set using type
+        | $one_time_use | `false` | Set to `true` to limit deep linking behavior of the generated link to a single use. Can also be set using type. Note: links with $one_time_use set to `true` will work for ~15 minutes after the first click before the link expires.
         | $custom_sms_text | | Text for SMS link sent for desktop clicks to this link. Must contain `{{ link }}` Value of Text me the app page in Settings
         | $marketing_title | | The Marketing Title for the deep link in the [Quick Links](https://dashboard.branch.io/marketing)
 
