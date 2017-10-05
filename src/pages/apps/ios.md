@@ -768,7 +768,7 @@
     - When using a custom domain, add a `branch_app_domain` string key in your Info.plist with your custom domain
     to enable 100% matching.
 
-    - By default, cookie-based matching is enabled on iOS 9 and 10 if the `SFSafariServices.framework`
+    - By default, cookie-based matching is enabled on iOS 9 and 10 if the `SafariServices.framework`
     is included in an app's dependencies, and the app uses an app.link subdomain or sets the `branch_app_domain`
     in the Info.plist. It can be disabled with a call to the SDK.
 
