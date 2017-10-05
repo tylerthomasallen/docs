@@ -32,7 +32,7 @@
 - #### Configure info.pList
 
     - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
-    
+
         - Add `branch_app_domain` with your live key domain
         - Add `branch_key` with your current Branch key
         - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
@@ -351,10 +351,10 @@
                 NSLog(@"Referring link params %@",params);
             }
         }];
-        
+
         // latest
         NSDictionary *sessionParams = [[Branch getInstance] getLatestReferringParams];
-    
+
         // first
         NSDictionary *installParams =  [[Branch getInstance] getFirstReferringParams];
 
@@ -398,18 +398,18 @@
         [[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
           // Option 1: read deep link data
           NSLog(@"%@", params);
-          
+
           // Option 2: save deep link data to global model
           NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
           [defaults setObject:params.description forKey:@"BranchData"];
           [defaults synchronize];
-          
+
           // Option 3: display data
           UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Title" message:params.description preferredStyle:UIAlertControllerStyleAlert];
           UIAlertAction *button = [UIAlertAction actionWithTitle:@"Deep Link Data" style:UIAlertActionStyleDefault handler:nil];
           [alert addAction:button];
           [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-          
+
           // Option 4: navigate to view controller
           if ([params objectForKey:@"navHere"]) {
             ViewController *anotherViewController = [[ViewController alloc] initWithNibName:@"anotherViewController" bundle:nil];
@@ -514,7 +514,7 @@
         // option 1
         NSString *action = @"signup";
         [[Branch getInstance] userCompletedAction:action];
-    
+
         // option 2
         NSDictionary *metadata = @{@"custom_dictionary":@123, @"anything": @"everything"};
         [[Branch getInstance] userCompletedAction:action withState:metadata];
@@ -586,7 +586,7 @@
         commerceEvent.shipping = [[NSDecimalNumber alloc] initWithFloat:11.22];
         commerceEvent.revenue = [[NSDecimalNumber alloc] initWithFloat:99.99];
         commerceEvent.tax = [[NSDecimalNumber alloc] initWithFloat:4.2];;
-    
+
         // optional
         BNCProduct *product1 = [BNCProduct new];
         product1.sku = @"sku1";
@@ -596,7 +596,7 @@
         product1.brand = @"brand1";
         product1.category = @"category1";
         product1.variant = @"variant1";
-    
+
         // optional
         BNCProduct *product2 = [BNCProduct new];
         product2.sku = @"sku2";
@@ -606,9 +606,9 @@
         product2.brand = @"brand2";
         product2.category = @"category2";
         product2.variant = @"variant2";
-    
+
         commerceEvent.products = @[product1, product2];
-    
+
         // optional
         NSDictionary *metadata = @{@"custom_dictionary":@123,
                                @"anything": @"everything"};
@@ -649,7 +649,7 @@
             // option 1 (default bucket)
             NSInteger amount = 5;
             [[Branch getInstance] redeemRewards:amount];
-    
+
             // option 2
             NSString *bucket = @"signup";
             [[Branch getInstance] redeemRewards:amount forBucket:bucket];
@@ -677,7 +677,7 @@
                 if (changed) {
                 // option 1 (defualt bucket)
                 NSInteger credits = [[Branch getInstance] getCredits];
-            
+
                 // option 2
                 NSString *bucket = @"signup";
                 NSInteger credit = [[Branch getInstance] getCreditsForBucket:bucket];
@@ -761,9 +761,16 @@
 
 - #### Enable 100% matching
 
-    - Use the `SFViewController` to increase the attribution matching success
-    
+    - Use the `SFSafariViewController` to increase the attribution matching success
+
     - The 100% match is a bit of a misnomer, as it is only 100% match from when a user clicks from the Safari browser. According to our analysis, clicking through Safari happens about 50-75% of the time depending on the use case. For example, clicking from Facebook, Gmail or Chrome won’t trigger a 100% match here. However, it’s still beneficial to the matching accuracy, so we recommend employing it.
+
+    - When using a custom domain, add a `branch_app_domain` string key in your Info.plist with your custom domain
+    to enable 100% matching.
+
+    - By default, cookie-based matching is enabled on iOS 9 and 10 if the `SafariServices.framework`
+    is included in an app's dependencies, and the app uses an app.link subdomain or sets the `branch_app_domain`
+    in the Info.plist. It can be disabled with a call to the SDK.
 
     - Add before `initSession` [Initialize Branch](#initialize-branch)
 
@@ -915,7 +922,7 @@
     - *Objective C*
 
         ```objc
-        [[Branch getInstance] registerDeepLinkController:customViewController forKey:@"my-key"withPresentation:BNCViewControllerOptionShow]; 
+        [[Branch getInstance] registerDeepLinkController:customViewController forKey:@"my-key"withPresentation:BNCViewControllerOptionShow];
         ```
 
 - #### Determine if deep link is from Branch without network
@@ -979,4 +986,3 @@
           shareLink.shareText = [NSString stringWithFormat:@"@%", shareLink.linkProperties.channel];
         }
         ```
-
