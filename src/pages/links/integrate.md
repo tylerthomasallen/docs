@@ -69,7 +69,7 @@
 | Opera browser | - | - | Falls back to web or play store | Falls back to web or play store |
 | Hangouts | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
 | iMessage | App opens | Falls back to web or app store | - | - |
-| Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+| Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store | Must configure Slack to open links with Safari
 | WeChat | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store | You can customize [WeChat fallback urls](#redirections)
 | WhatsApp | App opens | Falls back to web or app store | App opens | Falls back to web or play store | `app.link` require https/http to be clickable
 | Apple Mail | App opens | Falls back to web or app store | - | - |
@@ -112,6 +112,14 @@
         | **feature** | affiliate |
         | **user_id** | 4562 |
         | **name** | Alex |
+        
+        The URL formats based on the link domain type
+        
+        | Link Type | bnc.lt | wxyz.app.link | customdomain.com |
+        | --- | --- | --- | --- |
+        | New link | https://bnc.lt/a/key_live_xxxxxxxxxxxxxxx?param=value | https://wxyz.app.link?param=value | https://customdomain.com/a/key_live_xxxxxxxxxxxxxxx?param=value
+        | Existing SDK link | https://bnc.lt/wxyz/KDSYTMnSZs?param=value | https://wxyz.app.link/KDSYTMnSZs?param=value | https://customdomain.com/wxyz/KDSYTMnSZs?param=value
+        | Existing Quick Link | https://bnc.lt/linkslug?param=value | https://wxyz.app.link/linkslug?param=value | https://customdomain.com/linkslug?param=value
 
 ## Configure deep links
 
