@@ -364,6 +364,56 @@
         | +is_first_session | `false` | `true` if first session (install), `false` if any other session (open)
         | +clicked_branch_link | `false` | Whether or not the user clicked a Branch link that triggered this session
         | +non_branch_link | | App was opened from a non Branch link (third party, invalid Branch deep link, or Branch key mismatch)
+        
+## Supported Standards
+
+### Link display formatting standards
+
+Branch allows you to customize the app default and the settings for each individual link.
+
+- Facebook open graph [tags](https://ogp.me)
+	- this covers nearly everything (Slack, Messenger, WhatsApp, Snapchat, etc..)
+- Twitter cards
+- Pinterest pins
+
+### Deep linking standards
+
+Branch handles all standards adoption automatically for you, so you don't need to do any work.
+
+- Facebook App Links
+- Facebook Deferred Deeplinking
+- Facebook App Invites
+- Apple Spotlight
+- Apple Universal Links
+- Twitter App Cards (optional)
+- Pinterest App Cards (optional)
+
+### App search portals
+
+Branch makes every link scrapable and indexable by the following search engines:
+
+- Google App Indexing
+- Bing App Search
+- Apple Spotlight Cloud Search
+
+### Browser and platforms
+
+Here is a list of browsers and platforms where we have slaved for many hours to ensure the links still work:
+
+- Email
+	- Gmail, Yahoo, etc
+- Social networks
+	- Facebook, Pinterest, Twitter, etc
+- Messaging
+	- SMS, MMS, Messenger, WhatsApp, etc 
+- iOS browsers
+	- Safari, Chrome, etc
+- Android browsers
+	- Stock, Chrome, Firefox, UC, etc
+- Windows mobile OS browsers
+- Amazon Kindle, Fire browsers
+- Blackberry browsers
+- Desktop Chrome, Internet Explorer, Firefox
 
 ## Troubleshoot issues
 
