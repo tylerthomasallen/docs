@@ -658,6 +658,88 @@
 	      <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
 	      ```
 
+- #### Simulate an install
+
+    **Do not test in production.**
+
+    This requires a native method call that must be made before JS has loaded. There are two options.
+
+    1. Use a `branch.json` file with your project. See https://rnbranch.app.link/branch-json for full details.
+        Add `"debugMode": true` to `branch.debug.json`:
+
+        ```json
+        {
+            "appleSearchAdsDebugMode": true,
+            "debugMode": true,
+            "delayInitToCheckForSearchAds": true
+        }
+        ```
+
+        Do not add this setting to `branch.json`, or it will be enabled for release builds.
+
+    2. Modify your native app code.
+
+        **Android**
+
+        Simulated installs may be enabled on Android by adding `<meta-data android:name="io.branch.sdk.TestMode" android:value="true"/>` to the `application` element of your Android manifest. Use this in a build type
+        such as `debug` or a product flavor, or be sure to remove it from your manifest before releasing to prod.
+        See https://docs.branch.io/pages/apps/android/#simulate-an-install for full details.
+
+        Alternately, add `RNBranchModule.setDebug();` in your MainActivity before the call to `initSession`. Be sure to remove it
+        before releasing to prod.
+
+        ```java
+            // Remove before prod release
+            RNBranchModule.setDebug();
+            RNBranchModule.initSession(getIntent().getData(), this);
+        ```
+
+        **iOS**
+
+        Add `[RNBranch setDebug];` or `RNBranch.setDebug()` in your AppDelegate before the call to `initSession`.
+        Use conditional compilation or remove before releasing to prod.
+
+        - *Swift 3 & 4*
+
+            ```Swift
+            #if DEBUG
+                RNBranch.setDebug()
+            #endif
+            RNBranch.initSession(launchOptions: launchOptions, isReferrable: true)
+            ```
+
+        - *Objective-C*
+
+            ```Objective-C
+            #ifdef DEBUG
+                [RNBranch setDebug];
+            #endif
+            [RNBranch initSessionWithLaunchOptions:launchOptions isReferrable:YES];
+            ```
+
+- #### Using getLatestReferringParams to handle link opens
+
+    The `getLatestReferringParams` method is essentially a synchronous method that retrieves the latest
+    referring link parameters stored by the native SDK. However, React Native does not support synchronous
+    calls to native code from JavaScript, so the method returns a promise. You must `await` the response
+    or use `then` to receive the result. The same remarks apply to the `getFirstReferringParams` method.
+    However, this is only a restriction of React Native. The purpose of `getLatestReferringParams` is to
+    retrieve those parameters one time. The promise will only return one result. It will not continue
+    to return results when links are opened or wait for a link to be opened. This method is not intended
+    to notify the app when a link has been opened.
+
+    To receive notification whenever a link is opened, _including at app launch_, call
+    `branch.subscribe`. The callback to this method will return any initial link that launched the
+    app and all subsequent link opens. There is no need to call `getLatestReferringParams` at app
+    launch to check for an initial link. Use `branch.subscribe` to handle all link opens.
+
+- #### General troubleshooting
+
+    See the troubleshooting guide for each native SDK:
+
+    - [iOS](https://docs.branch.io/pages/apps/ios/#troubleshoot-issues)
+    - [Android](https://docs.branch.io/pages/apps/android/#troubleshoot-issues)
+
 - #### Sample apps
 
   [Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)  
