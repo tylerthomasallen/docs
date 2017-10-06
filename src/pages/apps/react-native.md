@@ -193,7 +193,7 @@
       }
       ```
 
-	- Objective C `AppDelegate.m`
+	- Objective-C `AppDelegate.m`
 
 		```objc hl_lines="1 6 7 8 14 15 16 17 18 19 20 21 22 23"
 		#import <react-native-branch/RNBranch.h> // at the top
@@ -505,6 +505,19 @@
 	branchUniversalObject.userCompletedAction('Custom Action', { key: 'value' })
 	```
 
+- #### Track content properties
+
+  | Event | Description |
+  | ----- | --- |
+  | RegisterViewEvent | User viewed the object |
+  | AddToWishlistEvent | User added the object to their wishlist |
+  | AddToCartEvent | User added object to cart |
+  | PurchaseInitiatedEvent | User started to check out |
+  | PurchasedEvent | User purchased the item |
+  | ShareInitiatedEvent | User started to share the object |
+  | ShareCompletedEvent | User completed a share |
+
+
 - #### Track commerce
 
     - Use the `branch.sendCommerceEvent` method to record commerce events
@@ -568,7 +581,7 @@
                 Branch.getInstance().delayInitToCheckForSearchAds()
                 ```
 
-            - *Objective C*
+            - *Objective-C*
 
                 ```objc
                 [[Branch getInstance] delayInitToCheckForSearchAds];
@@ -598,7 +611,7 @@
                 #endif
                 ```
 
-            - *Objective C*
+            - *Objective-C*
 
                 ```objc
                 #ifdef DEBUG
@@ -608,45 +621,38 @@
 
 ## Troubleshoot issues
 
-- #### Track content properties
-
-	| Event | Description |
-	| ----- | --- |
-	| RegisterViewEvent | User viewed the object |
-	| AddToWishlistEvent | User added the object to their wishlist |
-	| AddToCartEvent | User added object to cart |
-	| PurchaseInitiatedEvent | User started to check out |
-	| PurchasedEvent | User purchased the item |
-	| ShareInitiatedEvent | User started to share the object |
-	| ShareCompletedEvent | User completed a share |
-
 - #### Use test key
 
-    - Use the Branch `test key` instead of the `live key`
+    - Use the Branch `test key` instead of the `live key`.
 
-    - In iOS, add before `initSession` [Initialize Branch](#initialize-branch)
+    - In iOS, add before `initSession` [Initialize Branch](#initialize-branch).
 
-    - In iOS, update `branch_key` in your `Info.plist` to a dictionary ([example](https://github.com/BranchMetrics/ios-branch-deep-linking/blob/master/Branch-TestBed/Branch-TestBed/Branch-TestBed-Info.plist#L58-L63))
+    - In iOS, update `branch_key` in your `Info.plist` to a dictionary ([example](https://github.com/BranchMetrics/ios-branch-deep-linking/blob/master/Branch-TestBed/Branch-TestBed/Branch-TestBed-Info.plist#L58-L63)).
 
-    - In Android, set `test mode` to `true`
+    - In Android, set `test mode` to `true`.
 
-    - The `test key` of your app must match the `test key` of your deep link
+    - The `test key` of your app must match the `test key` of your deep link.
 
-    - Remove before releasing to production
+    - Use conditional compilation or remove before releasing to production.
 
-    - *Swift 3 & 4*
+        - *Swift 3 & 4*
 
-        ```swift
-	      RNBranch.useTestInstance()
-	      ```
+            ```swift
+            #if DEBUG
+                RNBranch.useTestInstance()
+            #endif
+            ```
 
-    - *Objective C*
+        - *Objective-C*
 
-        ```objc
-	      [RNBranch useTestInstance]
-	      ```
+            ```objc
+            #ifdef DEBUG
+                [RNBranch useTestInstance];
+            #endif
+            ```
 
-    - *Android*
+    - *Android:* Use this in a build type or product flavor or be sure to remove before
+        releasing to production.
 
         ```
 	      <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
