@@ -54,7 +54,7 @@ ___
 
 ###### Xamarin Native solutions  
 
-####### **Integrating the Branch SDK with an iOS Native project**  
+###### **Integrating the Branch SDK with an iOS Native project**  
 
 **I. Create an Apple device Provisioning Profile for the app**  
 
@@ -184,7 +184,7 @@ namespace TestiOSApp.iOS
 
 ___
 
-####### **Integrating the Branch SDK with an Android Native project**
+###### **Integrating the Branch SDK with an Android Native project**
 
 **I. Ensure that the Android project is not using the Shared Mono Runtime**
 
@@ -447,7 +447,7 @@ ___
 
 ###### Xamarin Forms solutions
 
-####### **Configuring the C# project**
+###### **Configuring the C# project**
 
 These steps are required for all Forms projects, both iOS and Android.
 
@@ -548,7 +548,7 @@ namespace TestXamarinFormsApp
 ```
 
 
-####### **Integrating with an iOS Forms app**
+###### **Integrating with an iOS Forms app**
 
 **I. Create an Apple device Provisioning Profile for the app**
 
@@ -646,7 +646,7 @@ namespace TestXamarinFormsApp.iOS
 
 ___
 
-####### **Integrating with an Android Forms app**
+###### **Integrating with an Android Forms app**
 
 **I. Ensure that the Android project is not using the Shared Mono Runtime**
 
@@ -793,10 +793,6 @@ namespace TestXamarinFormsApp.Droid
 	}
 }
 ```
-
-- #### Receive deep link data
-
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link
 

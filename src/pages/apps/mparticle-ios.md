@@ -15,7 +15,10 @@
 
 - #### Configure associated domains
 
-    - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+    - Add your link domains from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - `-alternate` is needed for Universal Linking with the [Web SDK](/pages/web/integrate/) inside your Website
+    - `test-` is needed if you need use a [test key](#use-test-key)
+    - If you use a [custom link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your old link domain, your `-alternate` link domain, and your new link domain
 
         ![image](http://i.imgur.com/67t6hSY.png)
 
@@ -29,7 +32,11 @@
 
     - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
-        ![image](http://i.imgur.com/PwXnHWz.png)
+        - Add `branch_app_domain` with your live key domain
+        - Add `branch_key` with your current Branch key
+        - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
+
+    ![image](http://i.imgur.com/PwXnHWz.png)
 
 - #### Confirm app prefix
 
@@ -208,11 +215,11 @@
 
         @end
         ```
+
 - #### Initialize Branch
 
     As with any kit, mParticle will automatically handle initializing Branch sessions. At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.
     
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link
 

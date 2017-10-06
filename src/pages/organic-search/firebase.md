@@ -20,9 +20,50 @@ Note that in order for you to get traffic from this feature, your Branch link wi
 
 ## Setup
 
-### Index Your Content
+### Define Your Content
 
-Assuming you followed our get started guide, you have already indexed your content by creating *Branch Universal Objects*. If you haven't, please go to the get started section and do so.
+The first step to listing your app content in Google is to tell Branch what the content is and how it should appear in search. Assuming you followed our get started guide, you have already indexed your content by creating **Branch Universal Objects**. You can create these objects using the native SDKs, where you simply need to set the OG tag parameters. Below are few examples, but you can [see every platform here](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference).
+
+- *iOS - Objective C*
+
+    ```obj-c
+
+    BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+    // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
+    branchUniversalObject.title = @"My Content Title";
+    branchUniversalObject.contentDescription = @"My Content Description";
+    branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
+
+    // Add any additional custom OG tags here
+    [branchUniversalObject addMetadataKey:@"$og_video" value:@"http://mysite/video.mpg"];
+    ```
+
+- *iOS - Swift*
+
+    ```swift
+    let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
+    // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
+    branchUniversalObject.title = "My Content Title"
+    branchUniversalObject.contentDescription = "My Content Description"
+    branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
+
+    // Add any additional custom OG tags here
+    branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mpg")
+    ```
+
+- *Android*
+
+    ```java
+     BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
+                    .setCanonicalIdentifier("item/12345")
+    // Facebook OG tags -- This will overwrite any defaults you have set on the Branch Dashboard
+                    .setTitle("My Content Title")
+                    .setContentDescription("My Content Description")
+                    .setContentImageUrl("https://example.com/mycontent-12345.png")
+
+    // Add any additional custom OG tags here
+                    .addContentMetadata("$og_video", "http://mysite/video.mpg");
+    ```
 
 ### Enable App Indexing
 
@@ -128,19 +169,26 @@ We automatically tag clicks on these links as coming from Google App Indexing. I
 
 Not all content is public, and not all content should be publicly indexed. If you want to enable Branch's automatic sitemap generation but exclude certain pieces of content, you can mark that content as private. You should set the content indexing mode for the individual Branch Universal Object. This property is called *contentIndexMode*.
 
-```obj-c
-BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-branchUniversalObject.contentIndexMode = ContentIndexModePrivate;
-```
+- *iOS - Objective C*
 
-```swift
-let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-branchUniversalObject.contentIndexMode = ContentIndexModePrivate
-```
+    ```obj-c
+    BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+    branchUniversalObject.contentIndexMode = ContentIndexModePrivate;
+    ```
 
+- *iOS - Swift*
 
-```java
- BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
-                .setCanonicalIdentifier("item/12345")
-                .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PRIVATE);
-```
+    ```swift
+    let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
+    branchUniversalObject.contentIndexMode = ContentIndexModePrivate
+    ```
+
+- *Android - Java*
+
+    ```java
+     BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
+                    .setCanonicalIdentifier("item/12345")
+                    .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PRIVATE);
+    ```
+
+You can see other platform coding examples of this on the [respective sections of the integration docs](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference).

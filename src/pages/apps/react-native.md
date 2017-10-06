@@ -21,6 +21,13 @@
         npm install --save react-native-branch
         ```
 
+    - (Optional) Add a branch.json file to the root of your app (next to package.json).
+        You can configure the contents at any time, but it must be present when you
+        run `react-native link` in order to be automatically included in your native
+        projects. This allows you to configure certain behaviors that otherwise require
+        native code changes. See https://rnbranch.app.link/branch-json for full details
+        on the branch.json file.
+
     - In a pure React Native app using `react-native link`
 
         ```bash
@@ -53,7 +60,10 @@
 
 		- Configure associated domains
 
-		    - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
+		    - Add your link domains from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+		    - `-alternate` is needed for Universal Linking with the [Web SDK](/pages/web/integrate/) inside your Website
+		    - `test-` is needed if you need use a [test key](#use-test-key)
+		    - If you use a [custom link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your old link domain, your `-alternate` link domain, and your new link domain
 
 		        ![image](http://i.imgur.com/67t6hSY.png)
 
@@ -67,7 +77,11 @@
 
 		    - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
-		        ![image](http://i.imgur.com/PwXnHWz.png)
+		        - Add `branch_app_domain` with your live key domain
+		        - Add `branch_key` with your current Branch key
+		        - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
+
+		    ![image](http://i.imgur.com/PwXnHWz.png)
 
 		- Confirm app prefix
 
@@ -145,9 +159,14 @@
 	        - `key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa`
 	        - `key_test_edwDakKcMeWzJ3hC3aZs9kniyuaWGCTa`
 
+      - `android/app/proguard-rules.pro`
+          ```proguard
+          -dontwarn io.branch.**
+          ```
+
 - #### Initialize Branch
 
-	- Swift 3.0 `AppDelegate.swift`
+	- Swift 3 & 4 `AppDelegate.swift`
 
     Add `#import <react-native-branch/RNBranch.h>` to your Bridging header if you have one.
 
@@ -259,10 +278,6 @@
 			  // ...
 		}
 		```
-
-- #### Receive deep link data
-
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link iOS
 
@@ -507,7 +522,7 @@
 
     - Reward credits
 
-        -  [Referral guide](/pages/analytics/referrals/)
+        -  [Referral guide](/pages/dashboard/analytics/#referrals)
 
     - Redeem rewards
 
@@ -527,6 +542,70 @@
 		let creditHistory = await branch.getCreditHistory()
 		```
 
+- #### Track Apple Search Ads
+
+    - Allows Branch to track Apple Search Ads deep linking analytics
+
+    - Analytics from Apple's API have been slow which will make our analytics lower. Additionally, Apple's API does not send us all the data of an ad every time which will make ads tracked by us to show a generic campaign sometimes.
+
+    - This requires an option to be set before the native SDK initializes, which
+        happens before JS finishes loading. There are two options:
+
+        1. Add `"delayInitToCheckForSearchAds": true` to your `branch.json` file:
+
+            ```json
+            {
+                "delayInitToCheckForSearchAds": true
+            }
+            ```
+
+        2. Modify your AppDelegate in Xcode. Insert the following before the call
+            to `[RNBranch initSessionWithLaunchOptions:isReferrable:]`.
+
+            - *Swift 3 & 4*
+
+                ```swift
+                Branch.getInstance().delayInitToCheckForSearchAds()
+                ```
+
+            - *Objective C*
+
+                ```objc
+                [[Branch getInstance] delayInitToCheckForSearchAds];
+                ```
+
+    - Test with fake campaign params (do not test in production)
+
+        1. Add `"appleSearchAdsDebugMode": true` to `branch.debug.json`. Do
+            not set this parameter in `branch.json`, or it will be enabled in
+            release builds.
+
+            ```json
+            {
+                "delayInitToCheckForSearchAds": true,
+                "appleSearchAdsDebugMode": true
+            }
+            ```
+
+        2. Add the following call to your AppDelegate (before the `initSession`) call.
+            Use conditional compilation or remove before releasing to production.
+
+            - *Swift 3 & 4*
+
+                ```swift
+                #if DEBUG
+                    Branch.getInstance().setAppleSearchAdsDebugMode()
+                #endif
+                ```
+
+            - *Objective C*
+
+                ```objc
+                #ifdef DEBUG
+                    [[Branch getInstance] setAppleSearchAdsDebugMode];
+                #endif
+                ```
+
 ## Troubleshoot issues
 
 - #### Track content properties
@@ -541,6 +620,39 @@
 	| ShareInitiatedEvent | User started to share the object |
 	| ShareCompletedEvent | User completed a share |
 
-- #### Sample app
+- #### Use test key
 
-	[Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)
+    - Use the Branch `test key` instead of the `live key`
+
+    - In iOS, add before `initSession` [Initialize Branch](#initialize-branch)
+
+    - In iOS, update `branch_key` in your `Info.plist` to a dictionary ([example](https://github.com/BranchMetrics/ios-branch-deep-linking/blob/master/Branch-TestBed/Branch-TestBed/Branch-TestBed-Info.plist#L58-L63))
+
+    - In Android, set `test mode` to `true`
+
+    - The `test key` of your app must match the `test key` of your deep link
+
+    - Remove before releasing to production
+
+    - *Swift 3 & 4*
+
+        ```swift
+	      RNBranch.useTestInstance()
+	      ```
+
+    - *Objective C*
+
+        ```objc
+	      [RNBranch useTestInstance]
+	      ```
+
+    - *Android*
+
+        ```
+	      <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
+	      ```
+
+- #### Sample apps
+
+  [Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)  
+  [Tutorial](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples/webview_tutorial)

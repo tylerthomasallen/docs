@@ -15,8 +15,8 @@ On a daily basis, Google Search drives **more app installs** than all of Faceboo
 !!! note "Journeys is a paid product"
     Journeys introduces many more advanced features on top of the basic smart app banner functionality, but **you can still create an Android and iOS smart app banner for free if your MAU are under 20k**. After 20k MAU, we'd ask that you pay a small fee for use. Premium-only advanced features (including the option to run multiple Journeys simultaneously) are available through a 14 day trial.
 
-!!! note
-You should integrate the Branch SDK into your app and configure deep link routing for deferred deep linking and attribution before implementing Journeys..
+!!! note "Pre-reqs"
+    You should integrate the Branch SDK into your app and configure deep link routing for deferred deep linking and attribution before implementing Journeys.
 
 ## Setup
 
@@ -297,6 +297,14 @@ A user is grouped into "Has clicked on Email" when they've clicked a link from [
 Use this to target users who have been part of an email campaign; maybe with a specific call to action to get them download the app if they don't have it and they've landed on mobile web.
 
 The technical definition is that they've clicked on a link with an Email Service Provider's custom `$3p` value in link data, but you just need to consider the way the link is created - in this case, through a Deep Linked Email integration.
+
+#### Is viewing a page with hosted deeplink data key
+
+Use this filter to target users viewing web pages with certain [Branch-specific metatags](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site) on them (in the form of the HTML `<meta>` tag).
+
+For example, you could target users on pages containing the metadata key “foo” and value “bar” by adding this tag to the HTML: `<meta name="branch:deeplink:foo" content="bar" />`. Only metadata in this format will be targetable.
+
+Once metadata has been added to a webpage, you can target users on that page using the “Is viewing a page with hosted deeplink data key” audience filter.
 
 ### Set up split testing
 

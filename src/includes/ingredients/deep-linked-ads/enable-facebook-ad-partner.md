@@ -10,9 +10,7 @@ If you haven't enabled Facebook as an Ad Partner on the Branch dashboard follow 
 	- First register your app with Facebook. If you haven't registered an app, see instructions [here](https://developers.facebook.com/docs/apps/register){:target="_blank"}.
 1. Now log in to Facebook and navigate to [developers.facebook.com/apps](http://developers.facebook.com/apps){:target="_blank"} and select your app. You'll need both the **App ID** and **App Secret** values.
 ![Facebook Auth](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/fb-auth-id-secret.png)
-1. Go to the following [page](https://developers.facebook.com/tools/explorer/?method=GET&path=oauth%2Faccess_token%3Fclient_id%3D1234%26client_secret%3D5678%26grant_type%3Dclient_credentials&version=v2.10) to retrieve your app access token. Where it shows client_id, replace `1234` with your Facebook **App ID**. Where it shows client_secret, replace `5678` with your Facebook **App Secret**. Hit submit and copy the returned value of `access_token`.
-![Facebook Access Token](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/og-fb.png)
-1. Return to the Branch Ad Partner Management Page and fill out the **OG App ID** and **App Access Token** fields which correspond to the Facebook **App ID** and the **access token** respectively.
+1. Return to the Branch Ad Partner Management Page and fill out the **OG App ID** and **App Access Token** fields which correspond to the Facebook **App ID** and the **App Secret** respectively. We do not store the App Secret, and instead convert it into an App Access Token.
 ![Facebook Auth](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/branch-dash-fb-values.png)
 1. Click the `Save and Enable` button in the lower right hand corner.
 ![Save and Enable Facebook in Partner Manager](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/save-and-enable-facebook.png)

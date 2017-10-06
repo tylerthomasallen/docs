@@ -196,7 +196,6 @@
             "data":{
               "name":"alex",
               "user_id":"12346",
-              "$deeplink_path":"article/jan/123"
             }
           }'
           ```
@@ -215,7 +214,6 @@
               "three"
             ],
             "data": {
-              "$deeplink_path": "article/jan/123",
               "$one_time_use": false,
               "name": "alex",
               "user_id": "12346",
@@ -581,10 +579,61 @@
         }
         ```
 
+- #### Referral create rule
+
+    - *Request*
+
+        ```bash
+        curl -XPOST https://api.branch.io/v1/eventresponse \
+          -d '{
+          "branch_key": "key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt",
+          "branch_secret": "secret_live_RrrsLqpzVcoVWf5t4ncQVpzlg2pRpGH9",
+          "calculation_type": 2,
+          "location": 4,
+          "type": "credit",
+          "event": "signup",
+          "metadata": {
+            "web_hook_url": "http://www.example.com",
+            "amount": "20",    
+            "bucket": "default"
+          },
+          "filter": {
+          "viewed_tutorial": true,
+          "geo": "over_here"
+          }
+        }
+        '
+        ```
+
+    - *Response*
+
+        ```js
+        {}
+        ```
+
+    - Parameters
+
+        | Key | Value | Usage | Required
+        | --- | :-: | --- | :-:
+        | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
+        | branch_secret | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
+        | calculation_type | `int` | `0` reward for each use, `1` reward for first use only | √
+        | location | `int` | `0` all acting users, `1` referring users, `4`, referred acting users | √
+        | type | `string` | `credit` reward points, `web_hook` reward webhook callback | √
+        | web_hook | `string` | The url to call when an event occurs |  `type` = `web_hook`
+        | amount | `string` | Number of credits |  `type` = `credit`
+        | bucket | `string` | The category where the credits are save to | `type` = `credit`
+        | filter | `json` | This is the set of keys and values that must be contained in the event metadata for this reward to be issued | 
 
 - #### Referral troubleshooting
 
     - Referral `credits` cannot go below zero
+
+## Webhook 
+
+- #### Webhook create
+
+    - See [Referral create rule](#referral-create-rule)
 
 ## App 
 

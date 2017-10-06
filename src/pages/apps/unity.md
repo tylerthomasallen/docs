@@ -18,7 +18,7 @@
 
 - #### Configure app
 
-	- Add the Branch prefab asset to the **first scene** of your Unity project 
+	- Add the Branch prefab asset to the **first scene** of your Unity project
 
 	- ##### Update your Branch prefab
 
@@ -35,11 +35,11 @@
 		| **Test Branch Key** | This is the test Branch key found on the [App Settings page](https://dashboard.branch.io/account-settings/app) of your Test Branch app|
 		| **Test Branch URI** | This is the test URI scheme that you have set for your app on the [Link Settings page](https://dashboard.branch.io/link-settings) for your Test Branch app|
 		| **Test Android Path Prefix** | This field is only applicable if you are on the `bnc.lt` domain of your Test Branch app. You can find it underneath the field labeled SHA256 Cert Fingerprints on the [Link Settings page](https://dashboard.branch.io/link-settings) once you’ve enabled App Links. It will look something like this: `/WSuf` (the initial / character should be included).|
-		| **Test App Links** | This field is applicable if you want to enable `APPLINKS` and `UNIVERSAL LINKS` for your domain. Please make sure to add the correct domain found on the bottom of the [Link Settings page](https://dashboard.branch.io/link-settings) of your Test Branch app. Add the -alternate domain to have your Branch links deeplink from your [Deepviews](https://branchmetrics.github.io/docs/pages/web/deep-views/) and [Journeys](https://branchmetrics.github.io/docs/pages/web/journeys/). If you are not using a `app.links` domain please write into [integrations@branch.io](mailto:integrations@branch.io)|
+		| **Test App Links** | This field is applicable if you want to enable `APPLINKS` and `UNIVERSAL LINKS` for your domain. Please make sure to add the correct domain found on the bottom of the [Link Settings page](https://dashboard.branch.io/link-settings) of your Test Branch app. Add the -alternate domain to have your Branch links deeplink from your [Deepviews](https://docs.branch.io/docs/pages/web/deep-views/) and [Journeys](https://docs.branch.iopages/web/journeys/). If you are not using a `app.links` domain please write into [integrations@branch.io](mailto:integrations@branch.io)|
 		| **Live Branch Key** | This is the Live Branch key found on the [App Settings page](https://dashboard.branch.io/account-settings/app) of your Live Branch app|
 		| **Live Branch URI** | This is the Live URI scheme that you have set for your app on the [Link Settings page](https://dashboard.branch.io/link-settings) for your Live Branch app|
 		| **Live Android Path Prefix** | This field is only applicable if you are on the `bnc.lt` domain [Link Settings page](https://dashboard.branch.io/link-settings) for your Live Branch app. You can find it underneath the field labeled SHA256 Cert Fingerprints on the [Link Settings page](https://dashboard.branch.io/link-settings) once you’ve enabled App Links. It will look something like this: `/WSuf` (the initial / character should be included).|
-		| **Live App Links** | This field is applicable if you want to enable `APPLINKS` and `UNIVERSAL LINKS` for your domain. Please make sure to add the correct domain found on the bottom of the [Link Settings page](https://dashboard.branch.io/link-settings) of your Live Branch app. Add the -alternate domain to have your Branch links deeplink from your [Deepviews](https://branchmetrics.github.io/docs/pages/web/deep-views/) and [Journeys](https://branchmetrics.github.io/docs/pages/web/journeys/). If you are not using a `app.links` domain please write into [integrations@branch.io](mailto:integrations@branch.io)|
+		| **Live App Links** | This field is applicable if you want to enable `APPLINKS` and `UNIVERSAL LINKS` for your domain. Please make sure to add the correct domain found on the bottom of the [Link Settings page](https://dashboard.branch.io/link-settings) of your Live Branch app. Add the -alternate domain to have your Branch links deeplink from your [Deepviews](https://docs.branch.iopages/web/deep-views/) and [Journeys](https://docs.branch.iopages/web/journeys/). If you are not using a `app.links` domain please write into [integrations@branch.io](mailto:integrations@branch.io)|
 
 		- Note for Android
 		> 	Occasionally, Android will barf after you add our library due to generic issues unrelated to Branch. Please see this [Android troubleshooting section](/pages/apps/android/#troubleshoot-issues)
@@ -59,15 +59,15 @@
 				Branch.initSession(CallbackWithBranchUniversalObject);
 			}
 
-			void CallbackWithBranchUniversalObject(BranchUniversalObject buo, 
-													BranchLinkProperties linkProps, 
+			void CallbackWithBranchUniversalObject(BranchUniversalObject buo,
+													BranchLinkProperties linkProps,
 													string error) {
 				if (error != null) {
-					System.Console.WriteLine("Error : " 
+					System.Console.WriteLine("Error : "
 											+ error);
 				} else if (linkProperties.controlParams.Count > 0) {
-					System.Console.WriteLine("Deeplink params : " 
-											+ buo.ToJsonString() 
+					System.Console.WriteLine("Deeplink params : "
+											+ buo.ToJsonString()
 											+ linkProps.ToJsonString());
 				}
 			}
@@ -79,10 +79,6 @@
 			}
 		}
 		```
-
-- #### Receive deep link data
-
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
 
 - #### Test deep link
 
@@ -186,7 +182,7 @@
 		```
 
 		##### Read session (install or open) parameters from anywhere after Branch initsession
-			
+
 		```csharp
 		BranchUniversalObject obj = Branch.getLatestReferringBranchUniversalObject();
 		BranchLinkProperties link = Branch.getLatestReferringBranchLinkProperties();
@@ -194,7 +190,7 @@
 		> This refereshes with every session (App Installs and App Opens)
 
 		##### Read install (install or open) parameters from anywhere after Branch initsession
-			
+
 		```csharp
 		BranchUniversalObject obj = Branch.getFirstReferringBranchUniversalObject();
 		BranchLinkProperties link = Branch.getFirstReferringBranchLinkProperties();
@@ -247,7 +243,7 @@
 	- ##### Track custom events
 
 		```csharp
-		Branch.userCompletedAction("your_custom_event"); 
+		Branch.userCompletedAction("your_custom_event");
 		```
 
 	- ##### Store meta data with these custom events
@@ -305,8 +301,8 @@
 
 - #### iOS + Unity 4.6 Note
 
-	Branch requires ARC, and we don’t intend to add checks thoughout the SDK to try and support pre-ARC. 
-	However, you can add flags to the project to compile the Branch files with ARC. If you wish to do this 
+	Branch requires ARC, and we don’t intend to add checks thoughout the SDK to try and support pre-ARC.
+	However, you can add flags to the project to compile the Branch files with ARC. If you wish to do this
 	add `-fobjc-arc` to all Branch files.
 
 	> Note: we by default have this flag checked, but please check before building for iOS.
@@ -335,7 +331,7 @@
 
 - #### Support Branch with different Plugins
 
-	The Branch SDK has its own custom `activity` and `application` class. Other plugins that use their own 
+	The Branch SDK has its own custom `activity` and `application` class. Other plugins that use their own
 	custom activity and application classes can cause "conflicts" between these classes. To resolve these conflicts:
 
 	1. Create a empty android library

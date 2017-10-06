@@ -10,14 +10,16 @@
 
 - #### Configure bundle identifier
 
-    - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - Make sure Bundle Id matches your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](http://i.imgur.com/BHAQIQf.png)
 
 - #### Configure associated domains
 
-    - Add [Branch Dashboard](https://dashboard.branch.io/settings/link) values
-    - Additional [Associated domain details](#associated-domain-details)
+    - Add your link domains from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+    - `-alternate` is needed for Universal Linking with the [Web SDK](/pages/web/integrate/) inside your Website
+    - `test-` is needed if you need use a [test key](#use-test-key)
+    - If you use a [custom link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your old link domain, your `-alternate` link domain, and your new link domain
 
         ![image](http://i.imgur.com/67t6hSY.png)
 
@@ -31,7 +33,11 @@
 
     - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
-        ![image](http://i.imgur.com/PwXnHWz.png)
+        - Add `branch_app_domain` with your live key domain
+        - Add `branch_key` with your current Branch key
+        - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
+
+    ![image](http://i.imgur.com/PwXnHWz.png)
 
 - #### Confirm app prefix
 
@@ -93,7 +99,7 @@
         }
 
         func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-          // handler for URI Schemes (depreciated in iOS 9.2+, but still used by some Google apps)
+          // handler for URI Schemes (depreciated in iOS 9.2+, but still used by some apps)
           Branch.getInstance().application(app, open: url, options: options)
           return true
         }
@@ -134,7 +140,7 @@
         }
 
         - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-          // handler for URI Schemes (depreciated in iOS 9.2+, but still used by some Google apps)
+          // handler for URI Schemes (depreciated in iOS 9.2+, but still used by some apps)
           [[Branch getInstance] application:app openURL:url options:options];
           return YES;
         }
@@ -153,18 +159,14 @@
         @end
         ```
 
-- #### Receive deep link data
-
-    All of your deep link parameters and Branch-added parameters will be returned to you when initialization completes. You can find a summary of [Branch-added values in the table here](/pages/links/integrate/#callback-values). If no referring link data was present, you'll see `+clicked_branch_link` equal to `false`.
-
 - #### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
     - Delete your app from the device
     - Compile and test on a device
     - Paste deep link in `Apple Notes`
-    - Long press on the deep link *(not 3D Touch)*
-    - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
+    - Long press on the deep link (not 3D Touch)
+    - Click `Open in "APP_NAME"` to open your app ([example](http://i.imgur.com/VJVICXd.png))
 
 ## Implement features
 
@@ -195,12 +197,16 @@
 
         ```objc
         // only canonical identifier is required
-        BranchUniversalObject *buo = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-        buo.title = @"My Content Title";
-        buo.contentDescription = @"My Content Description";
-        buo.imageUrl = @"https://example.com/mycontent-12345.png";
-        [buo addMetadataKey:@"property1" value:@"blue"];
-        [buo addMetadataKey:@"property2" value:@"red"];
+        BranchUniversalObject *buo = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"content/123"];
+        buo.title = @"Content 123 Title";
+        buo.contentDescription = @"Content 123 Description";
+        buo.imageUrl = @"https://lorempixel.com/400/400";
+        buo.price = 12.12;
+        buo.currency = @"USD";
+        buo.contentIndexMode = ContentIndexModePublic;
+        buo.automaticallyListOnSpotlight = YES;
+        [buo addMetadataKey:@"custom" value:[[NSUUID UUID] UUIDString]];
+        [buo addMetadataKey:@"anything" value:@"everything"];
         ```
 
 - #### Create link reference
@@ -237,10 +243,22 @@
 
         ```objc
         BranchLinkProperties *lp = [[BranchLinkProperties alloc] init];
-        lp.feature = @"sharing";
-        lp.channel = @"facebook";
-        [lp addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
-        [lp addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
+        lp.feature = @"facebook";
+        lp.channel = @"sharing";
+        lp.campaign = @"content 123 launch";
+        lp.stage = @"new user";
+        lp.tags = @[@"one", @"two", @"three"];
+
+        [lp addControlParam:@"$desktop_url" withValue: @"http://example.com/desktop"];
+        [lp addControlParam:@"$ios_url" withValue: @"http://example.com/ios"];
+        [lp addControlParam:@"$ipad_url" withValue: @"http://example.com/ios"];
+        [lp addControlParam:@"$android_url" withValue: @"http://example.com/android"];
+        [lp addControlParam:@"$match_duration" withValue: @"2000"];
+
+        [lp addControlParam:@"custom_data" withValue: @"yes"];
+        [lp addControlParam:@"look_at" withValue: @"this"];
+        [lp addControlParam:@"nav_to" withValue: @"over here"];
+        [lp addControlParam:@"random" withValue: [[NSUUID UUID] UUIDString]];
         ```
 
 - #### Create deep link
@@ -325,6 +343,21 @@
     - *Objective C*
 
         ```objc
+        [[Branch getInstance] initSessionWithLaunchOptions:launchOptions
+                                andRegisterDeepLinkHandler:^(NSDictionary * _Nullable params,
+                                                             NSError * _Nullable error) {
+            if (!error) {
+                //Referring params
+                NSLog(@"Referring link params %@",params);
+            }
+        }];
+
+        // latest
+        NSDictionary *sessionParams = [[Branch getInstance] getLatestReferringParams];
+
+        // first
+        NSDictionary *installParams =  [[Branch getInstance] getFirstReferringParams];
+
         ```
 
 - #### Navigate to content
@@ -340,14 +373,14 @@
           guard let data = params as? [String: AnyObject] else { return }
 
           // Option 2: save deep link data to global model
-          BranchData.sharedInstance.data = data
+          SomeCustomClass.sharedInstance.branchData = data
 
           // Option 3: display data
           let alert = UIAlertController(title: "Deep link data", message: "\(data)", preferredStyle: .alert)
           alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
           self.window?.rootViewController?.present(alert, animated: true, completion: nil)
 
-          // Option 3: navigate to view controller
+          // Option 4: navigate to view controller
           guard let options = data["nav_to"] as? String else { return }
           switch options {
               case "landing_page": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
@@ -361,6 +394,28 @@
     - *Objective C*
 
         ```objc
+        // within AppDelegate application.didFinishLaunchingWithOptions
+        [[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
+          // Option 1: read deep link data
+          NSLog(@"%@", params);
+
+          // Option 2: save deep link data to global model
+          NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+          [defaults setObject:params.description forKey:@"BranchData"];
+          [defaults synchronize];
+
+          // Option 3: display data
+          UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Title" message:params.description preferredStyle:UIAlertControllerStyleAlert];
+          UIAlertAction *button = [UIAlertAction actionWithTitle:@"Deep Link Data" style:UIAlertActionStyleDefault handler:nil];
+          [alert addAction:button];
+          [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+
+          // Option 4: navigate to view controller
+          if ([params objectForKey:@"navHere"]) {
+            ViewController *anotherViewController = [[ViewController alloc] initWithNibName:@"anotherViewController" bundle:nil];
+            [self.window.rootViewController presentViewController:anotherViewController animated:YES completion:nil];
+          }
+        }];
         ```
 
 - #### Content Discovery
@@ -557,7 +612,12 @@
 
         ```objc
         // option 1
+        NSString *action = @"signup";
+        [[Branch getInstance] userCompletedAction:action];
 
+        // option 2
+        NSDictionary *metadata = @{@"custom_dictionary":@123, @"anything": @"everything"};
+        [[Branch getInstance] userCompletedAction:action withState:metadata];
         ```
 
 - #### Track commerce
@@ -617,6 +677,46 @@
     - *Objective C*
 
         ```objc
+         // only revenue is required
+        BNCCommerceEvent *commerceEvent = [BNCCommerceEvent new];
+        commerceEvent.affiliation = @"affiliation";
+        commerceEvent.coupon = @"coupon";
+        commerceEvent.currency = @"USD";
+        commerceEvent.transactionID = @"transactionID";
+        commerceEvent.shipping = [[NSDecimalNumber alloc] initWithFloat:11.22];
+        commerceEvent.revenue = [[NSDecimalNumber alloc] initWithFloat:99.99];
+        commerceEvent.tax = [[NSDecimalNumber alloc] initWithFloat:4.2];;
+
+        // optional
+        BNCProduct *product1 = [BNCProduct new];
+        product1.sku = @"sku1";
+        product1.name = @"name1";
+        product1.price = [[NSDecimalNumber alloc] initWithFloat:11.11];
+        product1.quantity = [[NSDecimalNumber alloc] initWithFloat:1.0];
+        product1.brand = @"brand1";
+        product1.category = @"category1";
+        product1.variant = @"variant1";
+
+        // optional
+        BNCProduct *product2 = [BNCProduct new];
+        product2.sku = @"sku2";
+        product2.name = @"name2";
+        product2.price = [[NSDecimalNumber alloc] initWithFloat:22.22];
+        product2.quantity = [[NSDecimalNumber alloc] initWithFloat:2.0];
+        product2.brand = @"brand2";
+        product2.category = @"category2";
+        product2.variant = @"variant2";
+
+        commerceEvent.products = @[product1, product2];
+
+        // optional
+        NSDictionary *metadata = @{@"custom_dictionary":@123,
+                               @"anything": @"everything"};
+
+        [[Branch getInstance] sendCommerceEvent:commerceEvent metadata:metadata
+                             withCompletion:^(NSDictionary *response, NSError *error) {
+            NSLog(@"%@",response);
+        }];
         ```
 
 - #### Handle referrals
@@ -646,6 +746,13 @@
         - *Objective C*
 
             ```objc
+            // option 1 (default bucket)
+            NSInteger amount = 5;
+            [[Branch getInstance] redeemRewards:amount];
+
+            // option 2
+            NSString *bucket = @"signup";
+            [[Branch getInstance] redeemRewards:amount forBucket:bucket];
             ```
 
     - Load credits
@@ -666,6 +773,17 @@
         - *Objective C*
 
             ```objc
+            [[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError * _Nullable error) {
+                if (changed) {
+                // option 1 (defualt bucket)
+                NSInteger credits = [[Branch getInstance] getCredits];
+
+                // option 2
+                NSString *bucket = @"signup";
+                NSInteger credit = [[Branch getInstance] getCreditsForBucket:bucket];
+                }
+            }];
+
             ```
 
     - Load history
@@ -681,6 +799,9 @@
         - *Objective C*
 
             ```objc
+            [[Branch getInstance] getCreditHistoryWithCallback:^(NSArray * _Nullable creditHistory, NSError * _Nullable error) {
+                NSLog(@"%@",creditHistory);
+            }];
             ```
 
 - #### Handle push notifications
@@ -712,35 +833,44 @@
 
     - Add before `initSession` [Initialize Branch](#initialize-branch)
 
-    - *Swift 3*
+        - *Swift 3*
 
-        ```swift
-        Branch.getInstance().delayInitToCheckForSearchAds()
-        ```
+            ```swift
+            Branch.getInstance().delayInitToCheckForSearchAds()
+            ```
 
-    - *Objective C*
+        - *Objective C*
 
-        ```objc
-        ```
+            ```objc
+            [[Branch getInstance] delayInitToCheckForSearchAds];
+            ```
 
     - Test with fake campaign params (do not test in production)
 
-    - *Swift 3*
+        - *Swift 3*
 
-        ```swift
-        Branch.getInstance().setAppleSearchAdsDebugMode()
-        ```
+            ```swift
+            Branch.getInstance().setAppleSearchAdsDebugMode()
+            ```
 
-    - *Objective C*
+        - *Objective C*
 
-        ```objc
-        ```
+            ```objc
+            [[Branch getInstance] setAppleSearchAdsDebugMode];
+            ```
 
 - #### Enable 100% matching
 
-    - Use the `SFViewController` to increase the attribution matching success
-    
+    - Use the `SFSafariViewController` to increase the attribution matching success
+
     - The 100% match is a bit of a misnomer, as it is only 100% match from when a user clicks from the Safari browser. According to our analysis, clicking through Safari happens about 50-75% of the time depending on the use case. For example, clicking from Facebook, Gmail or Chrome won’t trigger a 100% match here. However, it’s still beneficial to the matching accuracy, so we recommend employing it.
+
+    - When using a custom domain, add a `branch_app_domain` string key in your Info.plist with your custom domain
+    to enable 100% matching.
+
+    - By default, cookie-based matching is enabled on iOS 9 and 10 if the `SafariServices.framework`
+    is included in an app's dependencies, and the app uses an app.link subdomain or sets the `branch_app_domain`
+    in the Info.plist. It can be disabled with a call to the SDK.
 
     - Add before `initSession` [Initialize Branch](#initialize-branch)
 
@@ -842,14 +972,10 @@
     - *Objective C*
 
         ```objc
+        [[Branch getInstance] setDebug];
         ```
 
-- #### Associated domain details
-
-    - Used for [Configure associated domains](#configure-associated-domains)
-    - `-alternate` is needed for Universal Linking with the [Configure your website](/pages/web/integrate/)
-    - `test-` is needed if you need [Use test key](#use-test-key)
-    - If you [Change link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your `old link domain as well as your new link domain
+    - Make sure `OS_ACTIVITY_MODE` is not disabled ([link](https://stackoverflow.com/a/39503602/2690774))
 
 - #### Use test key
 
@@ -896,7 +1022,16 @@
     - *Objective C*
 
         ```objc
+        [[Branch getInstance] registerDeepLinkController:customViewController forKey:@"my-key"withPresentation:BNCViewControllerOptionShow];
         ```
+
+- #### Determine if deep link is from Branch without network
+
+    - Use for Universal Linking if you want to get the `true/false` response from `Branch.getInstance().continue(userActivity)` within `continueUserActivity` without a Branch network call
+    - Use only if you have a custom link domain
+    - Add `branch_universal_link_domains` to your `info.plist` with an array of your link domain from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
+
+        ![image](https://i.imgur.com/ECNnpyS.png)
 
 - #### Share to email options
 
@@ -951,4 +1086,3 @@
           shareLink.shareText = [NSString stringWithFormat:@"@%", shareLink.linkProperties.channel];
         }
         ```
-
