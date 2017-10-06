@@ -17,6 +17,7 @@
     - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) for each deep link
 
     - ##### iOS
+
         - Use these settings to control the default behavior of your deep links on iOS
             
             ![image](/img/pages/dashboard/ios.png)
@@ -24,7 +25,9 @@
         - The Apple App Prefix is found within the [Apple Developer Portal](https://developer.apple.com/account/ios/identifier/bundle) for your app
 
     - ##### Android
-        - Use these settings to control the default behavior of your deep links on Android 
+
+        - Use these settings to control the default behavior of your deep links on Android
+
         - Play Store is for published apps, if your app cannot be located or is a local/dev build, please use the Custom URL option
             
             ![image](/img/pages/dashboard/android.png)
