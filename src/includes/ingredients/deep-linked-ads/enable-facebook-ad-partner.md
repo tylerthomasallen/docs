@@ -18,7 +18,7 @@ If you haven't enabled Facebook as an Ad Partner on the Branch dashboard follow 
 
     ![Facebook Auth](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/fb-auth-id-secret.png)
 
-1. Return to the Branch Ad Partner Management Page and fill out the **OG App ID** and **App Access Token** fields which correspond to the Facebook **App ID** and the **App Secret** respectively. We do not store the App Secret, and instead convert it into an App Access Token, so you'll notice the App Access Token field will be empty after you authenticate.
+1. Return to the Branch Ad Partner Management Page and fill out the **OG App ID** and **App Access Token** fields which correspond to the Facebook **App ID** and the **App Secret** respectively. We do not store the App Secret, and instead convert it into an App Access Token, so you'll notice the App Access Token field will be empty after you authenticate and reload the page.
 
     ![Facebook Auth](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/branch-dash-fb-values.png)
 
