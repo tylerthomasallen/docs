@@ -15,9 +15,9 @@
     - ##### Pass data from link to app
         - Add link data from [Configuring deep links](#configure-deep-links)
         - Add key-values pairs from [Quick Links](/pages/dashboard/analytics/#quick-links)
-        - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123` 
+        - Add query string `https://example.app.link/fzmLEhobLD?$custom_data=123`
     - #####  Open web instead of app
-        - When app is not installed 
+        - When app is not installed
             - Add query string `https://example.app.link?$ios_url=https://example.com`
             - Add link data `$ios_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
             - Add link data `$fallback_url = 'https://example.com'` ([docs](/pages/links/integrate/#redirections))
@@ -47,37 +47,39 @@
 
 - #### Expected redirect behavior
 
-    | App | iOS App Installed | iOS App Not Installed | Android App Installed| Android App Not Installed | Notes
-    | --- | --- | --- | --- | --- | --- |
-    | Facebook Newsfeed | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-    | Facebook browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
-    | Facebook Messenger | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-    | Facebook Messenger browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
-    | Instagram | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-    | Snapchat | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store |
-    | Twitter | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#deep-linking)
-    | Pinterest | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store |
-    | Chrome browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
-    | Safari address bar | Falls back to web or app store | Falls back to web or app store | - | - |
-    | Safari web page | App opens | Falls back to web or app store | - | - |
-    | Firefox browser | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store |
-    | UC browser | - | - | App opens | Falls back to web or play store |
-    | Naver browser | - | - | App opens | Falls back to web or play store |
-    | Kakao browser | - | - | App opens | Falls back to web or play store |
-    | Opera browser | - | - | Falls back to web or play store | Falls back to web or play store | 
-    | Hangouts | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
-    | iMessage | App opens | Falls back to web or app store | - | - |
-    | Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
-    | WeChat | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store | You can customize [WeChat fallback urls](#redirections)
-    | WhatsApp | App opens | Falls back to web or app store | App opens | Falls back to web or play store | `app.link` require https/http to be clickable
-    | Apple Mail | App opens | Falls back to web or app store | - | - |
-    | Gmail | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+    - Default behavior of deep link clicks
+
+| App | iOS App Installed | iOS App Not Installed | Android App Installed| Android App Not Installed | Notes
+| --- | --- | --- | --- | --- | --- |
+| Facebook Newsfeed | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#force-redirect-to-apps-on-all-platforms)
+| Facebook browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+| Facebook Messenger | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#force-redirect-to-apps-on-all-platforms)
+| Facebook Messenger browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+| Instagram | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#force-redirect-to-apps-on-all-platforms)
+| Snapchat | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store |
+| Twitter | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store | Can force open iOS app using [`$uri_redirect_mode`](#force-redirect-to-apps-on-all-platforms)
+| Pinterest | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store |
+| Chrome browser | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+| Safari address bar | Falls back to web or app store | Falls back to web or app store | - | - |
+| Safari web page | App opens | Falls back to web or app store | - | - |
+| Firefox browser | Falls back to web or app store | Falls back to web or app store | App opens | Falls back to web or play store |
+| UC browser | - | - | App opens | Falls back to web or play store |
+| Naver browser | - | - | App opens | Falls back to web or play store |
+| Kakao browser | - | - | App opens | Falls back to web or play store |
+| Opera browser | - | - | Falls back to web or play store | Falls back to web or play store |
+| Hangouts | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
+| iMessage | App opens | Falls back to web or app store | - | - |
+| Slack | App opens | Falls back to web or app store | App opens | Falls back to web or play store | Must configure Slack to open links with Safari
+| WeChat | Falls back to web or app store | Falls back to web or app store | Falls back to web or play store | Falls back to web or play store | You can customize [WeChat fallback urls](#redirections)
+| WhatsApp | App opens | Falls back to web or app store | App opens | Falls back to web or play store | `app.link` require https/http to be clickable
+| Apple Mail | App opens | Falls back to web or app store | - | - |
+| Gmail | App opens | Falls back to web or app store | App opens | Falls back to web or play store |
 
 ## Create deep links
 
 - #### Short links
     - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
-    - Use our [App SDK](#dialog-code) to create and share links within your app
+    - Use our [App SDK](#dialog-code?ios=create-deep-link&android=create-deep-link&adobe=create-deep-link&cordova=create-deep-link&mparticleAndroid=create-deep-link&mparticleIos=create-deep-link&titanium=create-deep-link&reactNative=create-deep-link&unity=create-deep-link&xamarin=create-deep-link) to create and share links within your app
     - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
     - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
 
@@ -110,6 +112,14 @@
         | **feature** | affiliate |
         | **user_id** | 4562 |
         | **name** | Alex |
+        
+        The URL formats based on the link domain type
+        
+        | Link Type | bnc.lt | wxyz.app.link | customdomain.com |
+        | --- | --- | --- | --- |
+        | New link | https://bnc.lt/a/key_live_xxxxxxxxxxxxxxx?param=value | https://wxyz.app.link?param=value | https://customdomain.com/a/key_live_xxxxxxxxxxxxxxx?param=value
+        | Existing SDK link | https://bnc.lt/wxyz/KDSYTMnSZs?param=value | https://wxyz.app.link/KDSYTMnSZs?param=value | https://customdomain.com/wxyz/KDSYTMnSZs?param=value
+        | Existing Quick Link | https://bnc.lt/linkslug?param=value | https://wxyz.app.link/linkslug?param=value | https://customdomain.com/linkslug?param=value
 
 ## Configure deep links
 
@@ -147,6 +157,7 @@
         | Key | Default | Usage
         | --- | --- | ---
         | $fallback_url | | Change the redirect endpoint for all platforms - so you don't have to enable it by platform. Note that Branch will forward all robots to this URL, which **overrides any OG tags** entered in the link.  System-wide Default URL (set in Link Settings)
+        | $fallback_url_xx | | Change the redirect endpoint for all platforms based on a lower-case Alpha-2 country code conforming to [ISO 3166](https://www.iso.org/obp/ui/#search). (e.g. `$fallback_url_de` for Germany)
         | $desktop_url | | Change the redirect endpoint on desktops Text-Me-The-App page (set in Link Settings)
         | $ios_url | | Change the redirect endpoint for iOS  App Store page for your app (set in Link Settings)
         | $ipad_url | | Change the redirect endpoint for iPads `$ios_url` value
@@ -154,22 +165,21 @@
         | $windows_phone_url  | | Change the redirect endpoint for Windows OS Windows Phone default URL (set in Link Settings)
         | $blackberry_url | | Change the redirect endpoint for Blackberry OS  BlackBerry default URL (set in Link Settings)
         | $fire_url | | Change the redirect endpoint for Amazon Fire OS Fire default URL (set in Link Settings)
-        | $ios_wechat_url | | Change the redirect endpoint for WeChat on iOS devices `$ios_url value`
+        | $ios_wechat_url | | Change the redirect endpoint for WeChat on iOS devices `$ios_url` value
         | $android_wechat_url | | Change the redirect endpoint for WeChat on Android devices  `$android_url` value
-        | $after_click_url | | URL redirect to after the main click redirect has completed
         | $web_only | `false` | Force to open the `$fallback_url` instead of the app
 
-- #### Redirection Errors   
+- #### Force redirect to apps on all platforms
 
-    - Branch's linking philosophy is to never show an error message to the user, so in [many cases](#expected-redirect-behavior), we'd rather redirect to the App Store, Play Store or website even when the app is installed than risk showing an error message. You can control this using `$uri_redirect_mode` and setting the values as follows when you create a link or when you summon a banner.
+    - Prevent error messages from other apps when Branch deep links are clicked
 
         | Key | Value | Usage
         | --- | --- | ---
         | $uri_redirect_mode | **0** | This is the default value that yields the standard behavior where we don't try to open the app if the user can see an error.
         | $uri_redirect_mode | **1** | Smart redirect mode. Same behavior as 0 until we know the user has the app installed through Branch persona data. In that case, force URI schemes to open the app.
-        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed. 
+        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed.
 
-    - Apps/browsers that support deep linking with this forceful redirect mode:
+    - Supported Apps
 
         - Facebook newsfeed iOS
         - Instagram iOS
@@ -190,7 +200,6 @@
         | $always_deeplink | `true` | Set to `false` to make links always fall back to your mobile site. Does not apply to Universal Links or Android App Links.
         | $ios_redirect_timeout | `750` | Control the timeout that the client-side JS waits after trying to open up the app before redirecting to the App Store. Specified in milliseconds
         | $android_redirect_timeout | `750` | Control the timeout that the client side JS waits after trying to open up the app before redirecting to the Play Store. Specified in milliseconds
-        | $one_time_use | `false` | Set to `true` to limit deep linking behavior of the generated link to a single use. Can also be set using type
         | $custom_sms_text | | Text for SMS link sent for desktop clicks to this link. Must contain `{{ link }}` Value of Text me the app page in Settings
         | $marketing_title | | The Marketing Title for the deep link in the [Quick Links](https://dashboard.branch.io/marketing)
 
@@ -246,7 +255,7 @@
 
         | Key | Default | Usage
         | --- | --- | ---
-        | $twitter_card | | Set the Twitter card type of the link
+        | $twitter_card | | Set the Twitter card type of the link (e.g. `player`) (you must whitelist your deep link with the [Twitter Card Validator](https://cards-dev.twitter.com/validator)
         | $twitter_title | Set on dashboard | Set the title of the Twitter card
         | $twitter_description | Set on dashboard | Set the description of the Twitter card
         | $twitter_image_url | Set on dashboard | Set the image URL for the Twitter card
@@ -258,7 +267,7 @@
 
 - #### Universal Object
 
-    - Properties for the Branch Universal Object within your [app](#dialog-code) integration
+    - Properties for the Branch Universal Object within your [app](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference) integration
 
         | Key | Default | Usage | Link Property
         | --- | :-: | --- | :-:
@@ -288,7 +297,7 @@
 
 ## Read deep links
 
-- Deep link data gets sent from your link to your [app](#dialog-code) or [website](/pages/web/integrate/) integration
+- Deep link data gets sent from your link to your [app](#dialog-code?ios=read-deep-link&android=read-deep-link&adobe=read-deep-link&cordova=read-deep-link&mparticleAndroid=read-deep-link&mparticleIos=read-deep-link&titanium=read-deep-link&reactNative=read-deep-link&unity=read-deep-link&xamarin=read-deep-link) or [website](/pages/web/integrate/) integration
 
 - #### Data structure
 
@@ -307,7 +316,6 @@
             "$og_description": "My Content Description",
             "$og_image_url": "http://lorempixel.com/200/200/",
             "$og_title": "46D6D28E-0390-40E4-A856-BD74F34D24C8",
-            "$one_time_use": false,
             "$publicly_indexable": 1,
             "+click_timestamp": 1503684563,
             "+clicked_branch_link": true,
@@ -342,8 +350,8 @@
         | + | Branch added values
 
 - #### Callback values
-    
-    - Additional properties read from the `initSession` within your [app](#dialog-code) and [website](/pages/web/integrate/) integrations
+
+    - Additional properties read from the `initSession` within your [app](#dialog-code?ios=initialize-branch&android=initialize-branch&adobe=initialize-branch&cordova=initialize-branch&mparticleAndroid=initialize-branch&mparticleIos=initialize-branch&titanium=initialize-branch&reactNative=initialize-branch&unity=initialize-branch&xamarin=initialize-branch) and [website](/pages/web/integrate/) integrations
 
         | Key | Default | Usage
         | --- | --- | ---
@@ -356,6 +364,56 @@
         | +is_first_session | `false` | `true` if first session (install), `false` if any other session (open)
         | +clicked_branch_link | `false` | Whether or not the user clicked a Branch link that triggered this session
         | +non_branch_link | | App was opened from a non Branch link (third party, invalid Branch deep link, or Branch key mismatch)
+        
+## Supported Standards
+
+### Link display formatting standards
+
+Branch allows you to customize the app default and the settings for each individual link.
+
+- Facebook open graph [tags](https://ogp.me)
+	- this covers nearly everything (Slack, Messenger, WhatsApp, Snapchat, etc..)
+- Twitter cards
+- Pinterest pins
+
+### Deep linking standards
+
+Branch handles all standards adoption automatically for you, so you don't need to do any work.
+
+- Facebook App Links
+- Facebook Deferred Deeplinking
+- Facebook App Invites
+- Apple Spotlight
+- Apple Universal Links
+- Twitter App Cards (optional)
+- Pinterest App Cards (optional)
+
+### App search portals
+
+Branch makes every link scrapable and indexable by the following search engines:
+
+- Google App Indexing
+- Bing App Search
+- Apple Spotlight Cloud Search
+
+### Browser and platforms
+
+Here is a list of browsers and platforms where we have slaved for many hours to ensure the links still work:
+
+- Email
+	- Gmail, Yahoo, etc
+- Social networks
+	- Facebook, Pinterest, Twitter, etc
+- Messaging
+	- SMS, MMS, Messenger, WhatsApp, etc 
+- iOS browsers
+	- Safari, Chrome, etc
+- Android browsers
+	- Stock, Chrome, Firefox, UC, etc
+- Windows mobile OS browsers
+- Amazon Kindle, Fire browsers
+- Blackberry browsers
+- Desktop Chrome, Internet Explorer, Firefox
 
 ## Troubleshoot issues
 

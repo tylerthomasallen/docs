@@ -57,6 +57,16 @@
         });
         ```
 
+    - Returns the following inside the `data` object
+
+    | Key | Value
+    | --- | ---
+    | data_parsed | `object`. If the user was referred from a link, and the link has associated data, the data is passed in here.
+    | has_app | `boolean`. Does the user have the app installed already, using Branch's persona data.
+    | identity | *optional* - `string`. Unique string that identifies the user, if set from `setIdentity`
+    | referring_link | `string`. The referring link clicked, if available.
+    | referring_identity | `string`. If the user was referred from a link, and the link was created by a user with an identity, that identity is here.
+
 - #### Create deep link
 
     - Creates a deep link URL with encapsulated data
@@ -159,7 +169,7 @@
         });
         ```
 
-- #### Create Journey banner
+- #### Create banner
 
     - Converts mobile users to app users
 
@@ -167,9 +177,10 @@
 
     - Validate by testing your website on a mobile device
 
-    - Append additional deep link data to the Journey button (optional)
+    - Append additional deep link data to the Journey button
 
         ```js
+        // optional additional deep link data
         var linkData = {
           campaign: 'content 123',
           channel: 'facebook',
@@ -238,6 +249,19 @@
           console.log(err);
         });
         ```
+
+- #### Host deep link data
+  
+    - Make it easier for marketers to create deep links
+    - Used for [Journeys](/pages/web/journeys/), [Deep Linked Emails](/pages/emails/appboy/), [Quick links](/pages/dashboard/analytics/#quick-links), and the [Chrome Extension](https://chrome.google.com/webstore/detail/branch-link-creator/pekdpppibljpmpbcjelehhnldnfbglgf)
+    - Branch will scrape the web URL for deep link data on link creation
+    - Validate by creating a [Quick Link](https://branch.dashboard.branch.io/quick-links) and fill in `web URL` to your web page
+
+        | Example URL | URL data | Metatags to add to your site
+        | --- | --- | --- 
+        | https://shop.com/shoes/brown-loafers | productId=1234, productView=true | `<meta name="branch:deeplink:productId" content="1234" />`, `<meta name="branch:deeplink:productView" content="true" />`
+        | https://shop.com/shoes | categoryId=5678 | `<meta name="branch:deeplink:categoryId" content="5678" />`
+        |https://shop.com/your-mother-is-great | No corresponding app content ([open web](/pages/links/integrate/#open-web-instead-of-app)) | `<meta name="branch:deeplink:$web_only" content="true" />`
 
 - #### Track users
 
@@ -342,7 +366,7 @@
 
     - Reward credits
 
-        -  [Referral guide](/pages/analytics/referrals/)
+        -  [Referral guide](/pages/dashboard/analytics/#referrals)
 
     - Redeem credits
 

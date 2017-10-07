@@ -24,7 +24,7 @@
       {% else %}
         <link rel="shortcut icon" href="{{ base_url }}/assets/images/favicon.png">
       {% endif %}
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-1.7.5">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-1.10.1">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta.title %}
@@ -36,22 +36,45 @@
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script src="{{ base_url }}/assets/javascripts/modernizr-1df76c4e58.js"></script>
+      <script src="{{ base_url }}/assets/javascripts/modernizr-e826f8942a.js"></script>
     {% endblock %}
-    {% if config.extra.google %}
+    {% if config.extra.sources.google %}
       <style>.async-hide{opacity:0!important}</style>
-      <script>!function(e,t,a,n,o,c,i,s,g){t.className+=" "+a,c.start=1*new Date,c.end=i=function(){t.className=t.className.replace(RegExp(" ?"+a),"")},(e[n]=e[n]||[]).hide=c,setTimeout(function(){i(),c.end=null},o),c.timeout=o}(window,document.documentElement,"async-hide","dataLayer",4e3,{"{{ config.extra.google.optimize }}":!0}),function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","{{ config.extra.google.analytics }}","auto"),ga("require","{{ config.extra.google.optimize }}"),ga("send","pageview")</script>
+      <script>!function(e,n,t,a,o,c,i,s,m){n.className+=" "+t,c.start=1*new Date,c.end=i=function(){n.className=n.className.replace(RegExp(" ?"+t),"")},(e[a]=e[a]||[]).hide=c,setTimeout(function(){i(),c.end=null},o),c.timeout=o}(window,document.documentElement,"async-hide","dataLayer",1e3,{"{{ config.extra.sources.google.optimize }}":!0})</script>
     {% endif %}
-    {% if config.extra.mixpanel %}
-      <script>!function(e,t){if(!t.__SV){var n=window;try{var i,a,p,o=n.location,r=o.hash;i=function(e,t){return(a=e.match(RegExp(t+"=([^&]*)")))?a[1]:null},r&&i(r,"state")&&(p=JSON.parse(decodeURIComponent(i(r,"state"))),"mpeditor"===p.action&&(n.sessionStorage.setItem("_mpcehash",r),history.replaceState(p.desiredHash||"",e.title,o.pathname+o.search)))}catch(e){}var l,s;window.mixpanel=t,t._i=[],t.init=function(e,n,i){function a(e,t){var n=t.split(".");2==n.length&&(e=e[n[0]],t=n[1]),e[t]=function(){e.push([t].concat(Array.prototype.slice.call(arguments,0)))}}var p=t;for("undefined"!=typeof i?p=t[i]=[]:i="mixpanel",p.people=p.people||[],p.toString=function(e){var t="mixpanel";return"mixpanel"!==i&&(t+="."+i),e||(t+=" (stub)"),t},p.people.toString=function(){return p.toString(1)+".people (stub)"},l="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" "),s=0;s<l.length;s++)a(p,l[s]);t._i.push([e,n,i])},t.__SV=1.2,n=e.createElement("script"),n.type="text/javascript",n.async=!0,n.src="undefined"!=typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js",i=e.getElementsByTagName("script")[0],i.parentNode.insertBefore(n,i)}}(document,window.mixpanel||[]),mixpanel.init("{{ config.extra.mixpanel.apiKey }}")</script>
+    {% if config.extra.sources.mixpanel %}
+      <script>!function(e,t){if(!t.__SV){var n=window;try{var i,a,p,o=n.location,r=o.hash;i=function(e,t){return(a=e.match(RegExp(t+"=([^&]*)")))?a[1]:null},r&&i(r,"state")&&(p=JSON.parse(decodeURIComponent(i(r,"state"))),"mpeditor"===p.action&&(n.sessionStorage.setItem("_mpcehash",r),history.replaceState(p.desiredHash||"",e.title,o.pathname+o.search)))}catch(e){}var l,s;window.mixpanel=t,t._i=[],t.init=function(e,n,i){function a(e,t){var n=t.split(".");2==n.length&&(e=e[n[0]],t=n[1]),e[t]=function(){e.push([t].concat(Array.prototype.slice.call(arguments,0)))}}var p=t;for("undefined"!=typeof i?p=t[i]=[]:i="mixpanel",p.people=p.people||[],p.toString=function(e){var t="mixpanel";return"mixpanel"!==i&&(t+="."+i),e||(t+=" (stub)"),t},p.people.toString=function(){return p.toString(1)+".people (stub)"},l="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" "),s=0;s<l.length;s++)a(p,l[s]);t._i.push([e,n,i])},t.__SV=1.2,n=e.createElement("script"),n.type="text/javascript",n.async=!0,n.src="undefined"!=typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js",i=e.getElementsByTagName("script")[0],i.parentNode.insertBefore(n,i)}}(document,window.mixpanel||[]),mixpanel.init("{{ config.extra.sources.mixpanel }}")</script>
     {% endif %}
-    {% if config.extra.algolia_docsearch %}
+    {% if config.extra.sources.google %}
+      <script>function getCookie(e){var i="; "+document.cookie,t=i.split("; "+e+"=");if(t.length>=2)return t.pop().split(";").shift()}function setCookie(e,i,t){var o=new Date;o=new Date(o.getTime()+864e5*t),document.cookie=e+"="+i+"; expires="+o.toGMTString()+"; path=/; domain=.branch.io"}var returning_visitor=getCookie("bnc_returning_visitor"),page_url=window.location.host+window.location.pathname;setCookie("bnc_returning_visitor","1",30),function(e,i,t,o,n,a,r){e.GoogleAnalyticsObject=n,e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},e[n].l=1*new Date,a=i.createElement(t),r=i.getElementsByTagName(t)[0],a.async=1,a.src=o,r.parentNode.insertBefore(a,r)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","{{ config.extra.sources.google.analytics }}","auto"),ga("require","{{ config.extra.sources.google.optimize }}"),ga("send","pageview"),ga("require","linkid","linkid.js"),returning_visitor||ga("set","dimension1",page_url)</script>
+    {% endif %}
+    {% if config.extra.sources.facebook %}
+      <script>!function(e,t,n,o,c,a,f){e.fbq||(c=e.fbq=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},e._fbq||(e._fbq=c),c.push=c,c.loaded=!0,c.version="2.0",c.queue=[],a=t.createElement(n),a.async=!0,a.src=o,f=t.getElementsByTagName(n)[0],f.parentNode.insertBefore(a,f))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js"),fbq("init","{{ config.extra.sources.facebook }}"),fbq("track","PageView")</script>
+      <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{ config.extra.sources.facebook }}&ev=PageView&noscript=1"></noscript>
+    {% endif %}
+    {% if config.extra.sources.linkedin %}
+      <script>_linkedin_data_partner_id="{{ config.extra.sources.linkedin }}",function(){var e=document.getElementsByTagName("script")[0],t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://snap.licdn.com/li.lms-analytics/insight.min.js",e.parentNode.insertBefore(t,e)}()</script>
+    {% endif %}
+    {% if config.extra.sources.bizible %}
+      <script src="//cdn.bizible.com/scripts/bizible.js" async></script>
+    {% endif %}
+    {% if config.extra.sources.demandbase %}
+      <script>!function(e,n,s,t,a){var c=n.createElement(s),d=n.getElementsByTagName(s)[0];c.async=1,c.id=a,c.src=t,d.parentNode.insertBefore(c,d)}(window,document,"script","https://scripts.demandbase.com/ucA8pUay.min.js","demandbase_js_lib")</script>
+    {% endif %}
+    {% if config.extra.sources.munchkin %}
+      <script>!function(){function e(){n===!1&&(n=!0,Munchkin.init("{{ config.extra.sources.munchkin }}",{domainLevel:2}))}var n=!1,t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//munchkin.marketo.net/munchkin.js",t.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||e()},t.onload=e,document.getElementsByTagName("head")[0].appendChild(t)}()</script>
+    {% endif %}
+    {% if config.extra.sources.quora %}
+      <script>!function(e,t,n,o,c,p){e.qp||(o=e.qp=function(){o.qp?o.qp.apply(o,arguments):o.queue.push(arguments)},o.queue=[],c=document.createElement(t),c.async=!0,c.src=n,p=document.getElementsByTagName(t)[0],p.parentNode.insertBefore(c,p))}(window,"script","https://a.quora.com/qevents.js"),qp("init","{{ config.extra.sources.quora }}"),qp("track","ViewContent")</script>
+      <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/{{ config.extra.sources.quora }}/pixel?tag=ViewContent&noscript=1"></noscript>
+    {% endif %}
+    {% if config.extra.sources.algolia %}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
     {% endif %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application-769c285a91.css">
+      <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application-a20f419c8e.css">
       {% if config.extra.palette %}
-        <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application-02c2a4388f.palette.css">
+        <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application-23f75ab9c7.palette.css">
       {% endif %}
     {% endblock %}
     {% block fonts %}
@@ -127,7 +150,7 @@
             <article class="md-content__inner md-typeset">
               {% block content %}
                 {% if config.edit_uri %}
-                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-icon md-content__icon">edit</a>
+                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-icon md-content__icon">&#xE3C9;</a>
                 {% endif %}
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
@@ -245,135 +268,15 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ base_url }}/assets/javascripts/application-68a35578af.js"></script>
-      {% set languages = lang.t("search.languages").split(",") %}
-      {% if languages | length and languages[0] != "" %}
-        {% set path = base_url + "/assets/javascripts/lunr" %}
-        <script src="{{ path }}/lunr.stemmer.support.js"></script>
-        {% for language in languages | map("trim") %}
-          {% if language != "en" %}
-            {% if language == "jp" %}
-              <script src="{{ path }}/tinyseg.js"></script>
-            {% endif %}
-            <script src="{{ path }}/lunr.{{ language }}.js"></script>
-          {% endif %}
-        {% endfor %}
-        {% if languages | length > 1 %}
-          <script src="{{ path }}/lunr.multi.js"></script>
-        {% endif %}
-      {% endif %}
+      <script src="{{ base_url }}/assets/javascripts/application-26aeb842c9.js"></script>
       <script>app.initialize({url:{base:"{{ base_url }}"}})</script>
-      {% if config.extra.algolia_docsearch %}
-        <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-        <script>docsearch({apiKey:"{{ config.extra.algolia_docsearch.apiKey }}",indexName:"{{ config.extra.algolia_docsearch.indexName }}",inputSelector:"{{ config.extra.algolia_docsearch.inputSelector }}",debug:"{{ config.extra.algolia_docsearch.debug }}",algoliaOptions:{hitsPerPage:"{{ config.extra.algolia_docsearch.hits }}"}})</script>
-      {% endif %}
       {% for path in extra_javascript %}
         <script src="{{ path }}"></script>
       {% endfor %}
-    {% endblock %}
-    {% block analytics %}
-    <!-- Start of Async Marketo Munchkin Code -->
-         <script type="text/javascript">
-           (function() {
-             var didInit = false;
-             function initMunchkin() {
-               if (didInit === false) {
-                 didInit = true;
-                 Munchkin.init('315-FTT-121', { domainLevel: 2 });
-               }
-             }
-             var s = document.createElement('script');
-             s.type = 'text/javascript';
-             s.async = true;
-             s.src = '//munchkin.marketo.net/munchkin.js';
-             s.onreadystatechange = function() {
-               if (this.readyState == 'complete' || this.readyState == 'loaded') {
-                 initMunchkin();
-               }
-             };
-             s.onload = initMunchkin;
-             document.getElementsByTagName('head')[0].appendChild(s);
-           })();
-         </script>
-         <!-- End of Async Marketo Munchkin Code -->
-
-         <!-- Start of Async Demandbase Code -->
-         <script>
-         (function(d,b,a,s,e){ var t = b.createElement(a),
-             fs = b.getElementsByTagName(a)[0]; t.async=1; t.id=e; t.src=s;
-             fs.parentNode.insertBefore(t, fs); })
-         (window,document,'script','https://scripts.demandbase.com/ucA8pUay.min.js','demandbase_js_lib');
-         </script>
-         <!-- End of Async Demandbase Code -->
-
-         <!-- Start of Google Analytics -->
-         <script>
-           // Cookie helper functions
-           function getCookie(name) {
-             var value = "; " + document.cookie;
-             var parts = value.split("; " + name + "=");
-             if (parts.length >= 2) return parts.pop().split(";").shift();
-           }
-           function setCookie(name, value, expires_days) {
-             var d = new Date();
-             d = new Date(d.getTime() + 1000*60*60*24 * expires_days);
-             document.cookie = name + '=' + value + '; expires=' + d.toGMTString() + '; path=/; domain=.branch.io';
-           }
-           var returning_visitor = getCookie('bnc_returning_visitor'); // Cookie will have a value of '1' if user has been seen before, or won't exist if not
-           var page_url = window.location.host + window.location.pathname; // Page URL for first time visitor attribution
-           setCookie('bnc_returning_visitor', "1", 30); // Extend first time visitor attribution window to 30 days from current visit
-           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-           ga('create', 'UA-53307642-1', 'auto');
-           ga('require', 'linkid', 'linkid.js');
-           // Set initial landing page URL for first time visitors
-           if (!returning_visitor) {
-             ga('set', 'dimension1', page_url );
-           }
-           ga('send', 'pageview');
-         </script>
-         <!-- End of Google Analytics -->
-
-         <!-- Start of Facebook Pixel Code -->
-         <script>
-           !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-           n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-           n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-           t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-           document,'script','https://connect.facebook.net/en_US/fbevents.js');
-           fbq('init', '1040694199304729'); // Insert your pixel ID here.
-           fbq('track', 'PageView');
-         </script>
-         <noscript><img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1040694199304729&ev=PageView&noscript=1"
-         /></noscript>
-         <!-- End of Facebook Pixel Code -->
-
-         <!-- Start LinkedIn Insight -->
-         <script type="text/javascript">
-           _linkedin_data_partner_id = "21211";
-         </script>
-         <script type="text/javascript">
-           (function()
-           {var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);}
-           )();
-         </script>
-         <!-- End LinkedIn Insight -->
-
-         <!-- Start Bizible Script -->
-         <script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
-         <!-- End Bizible Script -->
-
-         <!-- Start Quora Pixel -->
-         <script>
-         !function(q,e,v,n,t,s){if(q.qp) return; n=q.qp=function(){n.qp?n.qp.apply(n,arguments):n.queue.push(arguments);}; n.queue=[];t=document.createElement(e);t.async=!0;t.src=v; s=document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);}(window, 'script', 'https://a.quora.com/qevents.js');
-         qp('init', '247e840cafa44cae9ac4b50a0cc1965a');
-         qp('track', 'ViewContent');
-         </script>
-         <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/247e840cafa44cae9ac4b50a0cc1965a/pixel?tag=ViewContent&noscript=1"/></noscript>
-         <!-- End Quora Pixel -->
+      {% if config.extra.sources.algolia %}
+        <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+        <script>docsearch({apiKey:"{{ config.extra.sources.algolia.key }}",indexName:"{{ config.extra.sources.algolia.index }}",inputSelector:"{{ config.extra.sources.algolia.selector }}",debug:"{{ config.extra.sources.algolia.debug }}",algoliaOptions:{hitsPerPage:"{{ config.extra.sources.algolia.hits }}"}})</script>
+      {% endif %}
     {% endblock %}
   </body>
 </html>
