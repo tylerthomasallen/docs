@@ -959,10 +959,8 @@ new BranchEvent(BRANCH_STANDARD_EVENT.UNLOCK_ACHIEVEMENT)
     .logEvent(context);
 ```
 
-<<<<<<< HEAD
-=======
+
 Fire this event when a user hits an achievement point in your app.
--->
 
 ## Track Custom Events
 
@@ -1000,4 +998,3 @@ As of now, any calls made through these SDK methods will **not**:
 - Be settable events for Webhooks or sent via Data Integrations.
 - Be events you can target a Journey with.
 - See Analytics on the old Analytics pipeline. Read more about our new [Analytics](https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
->>>>>>> master
