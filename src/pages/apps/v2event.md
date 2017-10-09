@@ -959,3 +959,45 @@ new BranchEvent(BRANCH_STANDARD_EVENT.UNLOCK_ACHIEVEMENT)
     .logEvent(context);
 ```
 
+<<<<<<< HEAD
+=======
+Fire this event when a user hits an achievement point in your app.
+-->
+
+## Track Custom Events
+
+If you want to track an event that isn't a pre-defined event, simply do the following:
+
+### iOS
+
+```objc
+[BranchEvent.customEventWithName(@"User_Scanned_Item") logEvent];
+```
+
+### Android
+
+```Java
+new BranchEvent("Some Custom Event")
+    .addCustomProperty("Custom_Event_Property_Key11", "Custom_Event_Property_val11")
+    .addCustomProperty("Custom_Event_Property_Key22", "Custom_Event_Property_val22")
+    .logEvent(MainActivity.this);
+}
+```
+
+## Current Support
+
+### Acceptance
+
+These events tracked through the SDK will appear to ad networks, like Criteo.
+
+These events will also have analytics, so you can understand their performance, using the new Analytics Platform. Read more about the new Analytics Platform [here]((https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
+
+### Limitations
+
+As of now, any calls made through these SDK methods will **not**:
+
+- Appear in your .csv exports or Liveview.
+- Be settable events for Webhooks or sent via Data Integrations.
+- Be events you can target a Journey with.
+- See Analytics on the old Analytics pipeline. Read more about our new [Analytics](https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
+>>>>>>> master

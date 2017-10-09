@@ -60,13 +60,24 @@ Properties you can define:
 
 Once users have credits, they should be able to redeem them. Checking the balance involves loading the most recent balance from the server and then reading the balance. These can be two separate steps but for the sake of simplicity we have combined them into one example:
 
+- *iOS - Swift*
+
+	```swift
+	Branch.getInstance().loadRewards { (changed, error) in
+		if (error == nil) {
+			let credits = Branch.getInstance().getCredits()
+			print("credit: \(credits)")
+		}
+	}
+	```
+
 - *iOS - Objective C*
 
 	```obj-c
-	[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *err) {
-	    if (!err) {
-	        NSLog(@"credit: %lu", [[Branch getInstance] getCredits]);
-	    }
+	[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *error) {
+		if (!error) {
+			NSLog(@"credit: %lu", [[Branch getInstance] getCredits]);
+		}
 	}];
 	```
 
@@ -86,14 +97,25 @@ Once users have credits, they should be able to redeem them. Checking the balanc
 
 If you want to see the number of credits in a custom bucket you've specified, such as `myBucket`, then you can do the following:
 
+- *iOS - Swift*
+
+	```swift
+	Branch.getInstance().loadRewards { (changed, error) in
+		if (error == nil) {
+			let creditsForBucket = Branch.getInstance().getCreditsForBucket()
+			print("credit for bucket: \(creditsForBucket)")
+		}
+	}
+	```
+
 - *iOS - Objective C*
 
 	```obj-c
-	[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *err) {
-	    if (!err) {
-	        NSString *bucket = @"myBucket";
-	        NSLog(@"credit for %@ bucket: %lu", bucket, [[Branch getInstance] getCreditsForBucket:bucket]);
-	    }
+	[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *error) {
+		if (!error) {
+			NSString *bucket = @"myBucket";
+			NSLog(@"credit for %@ bucket: %lu", bucket, [[Branch getInstance] getCreditsForBucket:bucket]);
+		}
 	}];
 	```
 
@@ -106,8 +128,8 @@ If you want to see the number of credits in a custom bucket you've specified, su
 			// changed boolean will indicate if the balance changed from what is currently in memory
 
 			if (error == null) {
-			    String bucket = "myBucket";
-			    Branch.getInstance(getApplicationContext()).getCreditsForBucket(bucket);
+				String bucket = "myBucket";
+				Branch.getInstance(getApplicationContext()).getCreditsForBucket(bucket);
 			}
 		}
 	});
@@ -117,16 +139,29 @@ If you want to see the number of credits in a custom bucket you've specified, su
 
 When users spend credits, you can make a simple call to redeem their credits.
 
+- *iOS - Swift*
+
+	```swift
+	Branch.getInstance().redeemRewards(5, callback: {(success, error) in
+		if success {
+			print("Redeemed 5 credits!")
+		}
+		else {
+			print("Failed to redeem credits: \(error)")
+		}
+	})
+	```
+
 - *iOS - Objective C*
 
 	```obj-c
 	[[Branch getInstance] redeemRewards:5 callback:^(BOOL success, NSError *error) {
-	    if (success) {
-	        NSLog(@"Redeemed 5 credits!");
-	    }
-	    else {
-	        NSLog(@"Failed to redeem credits: %@", error);
-	    }
+		if (success) {
+			NSLog(@"Redeemed 5 credits!");
+		}
+		else {
+			NSLog(@"Failed to redeem credits: %@", error);
+		}
 	}];
 	```
 
@@ -138,16 +173,29 @@ When users spend credits, you can make a simple call to redeem their credits.
 
 If you want to redeem credits in a custom bucket you've specified, such as `myBucket`, then you can do the following:
 
+- *iOS - Swift*
+
+	```swift
+	Branch.getInstance().redeemRewards(5, forBucket: "myBucket", callback: {(success, error) in
+		if success {
+			print("Redeemed 5 credits for myBucket!")
+		}
+		else {
+			print("Failed to redeem credits: \(error)")
+		}
+	})
+	```
+
 - *iOS - Objective C*
 
 	```obj-c
 	[[Branch getInstance] redeemRewards:5 forBucket:@"myBucket" callback:^(BOOL success, NSError *error) {
-	    if (success) {
-	        NSLog(@"Redeemed 5 credits for myBucket!");
-	    }
-	    else {
-	        NSLog(@"Failed to redeem credits: %@", error);
-	    }
+		if (success) {
+			NSLog(@"Redeemed 5 credits for myBucket!");
+		}
+		else {
+			NSLog(@"Failed to redeem credits: %@", error);
+		}
 	}];
 	```
 
@@ -165,20 +213,35 @@ If you want to redeem credits in a custom bucket you've specified, such as `myBu
 	1. Call the `redeemRewards` method and show a progress dialog.
 	1. Show a completion dialog and reflect updates in balance.
 
+	- *iOS - Swift*
+
+		```swift
+			Branch.getInstance().loadRewards(withCallback: {(_ changed: Bool, _ error: Error?) -> Void in
+				if !(error && Branch.getInstance().getCredits() > 5) {
+					Branch.getInstance().redeemRewards(5, callback: {(_ success: Bool, _ err: Error?) -> Void in
+						if err == nil {
+							var newBalance: Int = Branch.getInstance().getCredits()
+							var successMsg = "You redeemed 5 credits! You have \(Int(newBalance)) remaining."
+							UIAlertView(title: "Success", message: successMsg, delegate: nil, cancelButtonTitle: "OK", otherButtonTitles: "").show()
+						}
+					})
+				}
+			})
+		```
 
 	- *iOS - Objective C*
 
 		```obj-c
 		[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *error) {
-		    if (!error && [[Branch getInstance] getCredits] > 5) {
-		        [[Branch getInstance] redeemRewards:5 callback:^(BOOL success, NSError *err) {
-		            if (!err) {
-		                NSInteger newBalance = [[Branch getInstance] getCredits];
-		                NSString *successMsg = [NSString stringWithFormat:@"You redeemed 5 credits! You have %ld remaining.", (long)newBalance];
-		                [[[UIAlertView alloc] initWithTitle:@"Success" message:successMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-		            }
-		        }];
-		    }
+			if (!error && [[Branch getInstance] getCredits] > 5) {
+				[[Branch getInstance] redeemRewards:5 callback:^(BOOL success, NSError *err) {
+					if (!err) {
+						NSInteger newBalance = [[Branch getInstance] getCredits];
+						NSString *successMsg = [NSString stringWithFormat:@"You redeemed 5 credits! You have %ld remaining.", (long)newBalance];
+						[[[UIAlertView alloc] initWithTitle:@"Success" message:successMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+					}
+				}];
+			}
 		}];
 		```
 
@@ -186,11 +249,11 @@ If you want to redeem credits in a custom bucket you've specified, such as `myBu
 
 		```java
 		Branch.getInstance().loadRewards(new BranchReferralStateChangedListener() {
-		    @Override
-		    public void onStateChanged(boolean changed, BranchError error) {
-		        if (error == null && Branch.getInstance().getCredits() > 5) {
-		            Branch.getInstance().redeemRewards(5);
-		        }
-		    }
+			@Override
+			public void onStateChanged(boolean changed, BranchError error) {
+				if (error == null && Branch.getInstance().getCredits() > 5) {
+					Branch.getInstance().redeemRewards(5);
+				}
+			}
 		});
 		```
