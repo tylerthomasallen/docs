@@ -54,6 +54,9 @@
                 - https://example.app.link/VZsTctoINF
                 - https://example.app.link/custom-alias
             ![image](/img/pages/dashboard/link-domain.png)
+            
+            !!! warning "Alias must be unique and cannot include '/'"
+                If an alias is already taken, creating the link will result in a 409 conflict error. Also, including a '/' will modify the structure and invalidate the Branch link.
     
     - ##### Social media 
         - Set the default image preview for your deep links when shared on social media
