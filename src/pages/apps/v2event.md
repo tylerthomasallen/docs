@@ -8,7 +8,7 @@ The new v2 events have better tracking and analytics options in the Branch dashb
 
 We're standardizing the way you track "classes" of events. For example: all events related to a customer purchasing are bucketed into a "purchase" class of data items, and all events related to users interacting with your in-app content are linked to a "content" class of data items.
 
-Below are examples of the kinds of events you'll likely be interested in tracking. , and we'll show you the way to track through our SDKs.
+Below are examples of the kinds of events you'll likely be interested in tracking, and we'll show you the way to track through our SDKs.
 
 ## Prerequisites
 
