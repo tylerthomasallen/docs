@@ -78,10 +78,16 @@
 ## Create deep links
 
 - #### Short links
-    - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
-    - Use our [App SDK](#dialog-code?ios=create-deep-link&android=create-deep-link&adobe=create-deep-link&cordova=create-deep-link&mparticleAndroid=create-deep-link&mparticleIos=create-deep-link&titanium=create-deep-link&reactNative=create-deep-link&unity=create-deep-link&xamarin=create-deep-link) to create and share links within your app
-    - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
-    - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
+    - Short links are the most common deep link
+    - Short links encapsulate [link data](#configure-deep-links) inside them on link creation
+        - e.g. `https://example.app.link/fzmLEhobLD`
+    - Short links can have additional data appended to them
+        - e.g. `https://example.app.link/fzmLEhobLD?content_id=123`
+    - Methods of creating short links
+        - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
+        - Use our [App SDK](#dialog-code?ios=create-deep-link&android=create-deep-link&adobe=create-deep-link&cordova=create-deep-link&mparticleAndroid=create-deep-link&mparticleIos=create-deep-link&titanium=create-deep-link&reactNative=create-deep-link&unity=create-deep-link&xamarin=create-deep-link) to create and share links within your app
+        - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
+        - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
 
 - #### Long links
     - Long links can be created without a network call to Branch
