@@ -71,6 +71,10 @@ We now default every visualization in the dashboard to be unique. This means tha
 
 We have a cut off date -- September 16th -- which represents the data where you can't mix and match data. As we've introduced this new analytics platform, we've kept systems running in parallel. However, there is the above date which represents dates where you can't mix old data with new. You can query data from any time before September 16th up until September 16th. You can query data from September 16th onwards. If you wanted to do, say, September 15th to September 17th, you would need two separate queries.
 
+#### Differences From Cutoff Date
+
+If you are tracking Purchase events, and want to see unique values for Purchases before the cut off date of September 16th, those values will display as 0. This is because the Purchase event hasn't stored unique counts before September 16th. However, moving forward, it does.
+
 ## Changes to the Branch Dashboard
 
 ### Branch Summary Analytics

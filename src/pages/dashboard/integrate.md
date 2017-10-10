@@ -50,12 +50,14 @@
         - Choose a `link domain` which will be used for all your links
         - The `link domain` is the website which hosts your deep links
         - The `link domain` is not a deep link
-            - Deep links will have an `alias` behind them to uniquely identify them
-                - https://example.app.link/VZsTctoINF
-                - https://example.app.link/custom-alias
+            - Deep links have an `alias` behind them to uniquely identify the link data inside them
+                - e.g. https://example.app.link/VZsTctoINF
+                - e.g. https://example.app.link/custom-alias
+        
             ![image](/img/pages/dashboard/link-domain.png)
+    
+    - ##### Social media 
 
-    - ##### Social media
         - Set the default image preview for your deep links when shared on social media
         - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
 
