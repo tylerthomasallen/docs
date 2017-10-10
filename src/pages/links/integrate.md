@@ -143,7 +143,9 @@
         | $android_wechat_url | | Change the redirect endpoint for WeChat on Android devices  `$android_url` value
         | $web_only | `false` | Force to open the `$fallback_url` instead of the app
 
-- #### Force redirect to apps on all platforms
+- #### Forced redirections
+
+    - Override
 
     - Prevent error messages from other apps when Branch deep links are clicked
 
