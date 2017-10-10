@@ -19,7 +19,7 @@
 
     - Your app is installed
 
-        - If the app supports deep linking, then your app will either open or navigate to the [fallback](#fallback-to-a-specific-url)
+        - If the app supports deep linking, then your app will open or navigate to the [fallback](#fallback-to-a-specific-url)
         - For some apps, you can force your app to open using [`$uri_redirect_mode`](#forced-redirections) or enabling a [Deepview](/pages/web/deep-views/)
 
             | App | iOS | Notes | Android | Notes
