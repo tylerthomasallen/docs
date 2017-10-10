@@ -683,6 +683,55 @@
                 #endif
                 ```
 
+- #### Enable 100% matching
+
+    - Android
+
+        - Uses `Chrome Tabs` to increase attribute matching success
+
+        - Add `compile 'com.android.support:customtabs:23.3.0'` to your `build.gradle`
+
+        - Add to your application class before `getAutoInstance` ([Load Branch](#load-branch))
+
+        - *Java*
+
+            ```java
+            Branch.enableCookieBasedMatching("your.linkdomain.com");
+            ```
+
+        - *Kotlin*
+
+            ```java
+            Branch.enableCookieBasedMatching("your.linkdomain.com")
+            ```
+
+    - iOS
+
+        - Use the `SFSafariViewController` to increase the attribution matching success
+
+        - The 100% match is a bit of a misnomer, as it is only 100% match from when a user clicks from the Safari browser. According to our analysis, clicking through Safari happens about 50-75% of the time depending on the use case. For example, clicking from Facebook, Gmail or Chrome won’t trigger a 100% match here. However, it’s still beneficial to the matching accuracy, so we recommend employing it.
+
+        - When using a custom domain, add a `branch_app_domain` string key in your Info.plist with your custom domain
+        to enable 100% matching.
+
+        - By default, cookie-based matching is enabled on iOS 9 and 10 if the `SafariServices.framework`
+        is included in an app's dependencies, and the app uses an app.link subdomain or sets the `branch_app_domain`
+        in the Info.plist. It can be disabled with a call to the SDK.
+
+        - Add before `initSession` [Initialize Branch](#initialize-branch)
+
+        - *Swift 3 & 4*
+
+            ```swift
+            Branch.getInstance().disableCookieBasedMatching()
+            ```
+
+        - *Objective C*
+
+            ```objc
+            [[Branch getInstance] disableCookieBasedMatching];
+            ```
+
 ## Troubleshoot issues
 
 - #### Use test key
