@@ -94,7 +94,7 @@
                 - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/integrate/#deep-linking))
 
 - #### Social link behavior
-    - Use [OG Tags](#open-graph) to display content as a preview
+    - Use [OG Tags](#open-graph) to display content as a preview card in Facebook, Twitter, Pinterest, iMessage, etc.
         - Basics are `$og_title`, `$og_description`, and `$og_image_url`
     - Use [Deep Views]() to display content as a website
         - Increases [install attribution](https://branch.io/deepview/)
