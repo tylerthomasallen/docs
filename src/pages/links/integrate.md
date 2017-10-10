@@ -223,7 +223,7 @@
         | $exp_date | `0` | The date when the content will not longer be available or valid. Cannot modify here. Needs to be set by the Branch Universal Object. Must be epoch timestamp with milliseconds
         | $content_type | | This is a label for the type of content present. Apple recommends that you use uniform type identifier as described here
 
-- #### DeepView
+- #### Deepview
 
     - Enable / control [active deepview](/pages/web/deep-views/#active-deepviews) properties
 

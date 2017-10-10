@@ -602,7 +602,7 @@
 
     - Need to select `"app uses IDFA or GAID"` when publishing your app
 
-    - Best to enable [Deep views](https://dashboard.branch.io/settings/deepviews) ([Supported platforms](/pages/links/behavior/#expected-redirect-behavior))
+    - Best to enable [Deepviews](https://dashboard.branch.io/settings/deepviews) ([Supported platforms](/pages/links/behavior/#expected-redirect-behavior))
 
 - #### Optional app config
 
