@@ -1,4 +1,6 @@
-## Branch Mobile Linking and Attribution Platform
+# Getting started with Branch
+
+## Mobile Linking and Attribution Platform
 
 Branch offers hosted, branded short links packed with 3 key value props:
 
