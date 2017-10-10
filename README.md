@@ -117,6 +117,8 @@
 
     - Production is scraped once a day
 
+    - Prevent search results by adding production url to `stop_urls` ([config](https://github.com/algolia/docsearch-configs/blob/master/configs/branchmetrics.json))
+
 ## Additional
 
 - #### Resources
@@ -127,7 +129,7 @@
 
     - extensions https://github.com/facelessuser/pymdown-extensions
 
-    - docsearch config https://github.com/algolia/docsearch-configs/commit/04e17eb6e8bb1fdb1239ec6d9cec4ae14295813b
+    - docsearch config https://github.com/algolia/docsearch-configs/blob/master/configs/branchmetrics.json
 
 - #### Mkdocs Local Deploy
 
