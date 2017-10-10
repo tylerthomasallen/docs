@@ -48,6 +48,70 @@
         Then run `pod install` to regenerate the `Pods` project with the new dependencies.
         Note that the location of `node_modules` relative to your `Podfile` may vary.
 
+- #### Update from < 2.0.0
+
+    - If also upgrading React Native, use `react-native-git-upgrade` to upgrade
+        your React Native app to the latest version of React Native, if possible.
+
+        ```bash
+        npm install -g react-native-git-upgrade
+        cd /path/to/myapp
+        react-native-git-upgrade
+        ```
+
+    - Version 2.x includes the native SDKs in the NPM module. Please remove any installation
+        of the native Branch SDK from Maven, CocoaPods, Carthage or by manually adding the framework (iOS).
+
+    - Android:
+
+        - In `android/app/build.gradle`:
+
+        - Remove
+
+        ```gradle
+        compile 'io.branch.sdk.android:library:2.+'
+        ```
+
+    - iOS
+
+        - Remove the Branch SDK depending on how you originally installed it.
+
+        - Originally installed using CocoaPods:
+
+            - Remove `pod "Branch"` from your `Podfile`.
+
+            - If using the `React` pod from `node_modules`, add `pod "Branch-SDK", path: "../node_modules/react-native-branch/ios"`. (Note the different pod name.)
+
+                ```ruby hl_lines="2"
+                pod "react-native-branch", path: "../node_modules/react-native-branch"
+                pod "Branch-SDK", path: "../node_modules/react-native-branch/ios"
+                ```
+
+            - `pod install`
+
+            - To remove CocoaPods entirely from your project, in case you were only using it for Branch:
+
+                ```bash
+                pod deintegrate
+                ```
+
+        - Originally installed using Carthage:
+
+            - Remove the `Branch.framework` from your project's dependencies.
+
+            - Remove `Branch.framework` from the input and output paths of your `carthage copy-frameworks` build phase.
+
+        - Originally installed manually:
+
+            - Remove the `Branch.framework` from your project's dependencies.
+
+        - If also updating from react-native < 0.40 (react-native-branch 0.9), replace `#import "RNBranch.h"` with:
+
+            ```Objective-C hl_lines="2"
+            #import <React/RCTRootView.h>
+            #import <react-native-branch/RNBranch.h>
+            ```
+
 - #### Configure app
 
     - iOS
