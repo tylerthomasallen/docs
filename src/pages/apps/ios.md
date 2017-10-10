@@ -37,7 +37,7 @@
         - Add `branch_key` with your current Branch key
         - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
 
-    ![image](http://i.imgur.com/PwXnHWz.png)
+        ![image](http://i.imgur.com/PwXnHWz.png)
 
 - ### Confirm app prefix
 
