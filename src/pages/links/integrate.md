@@ -20,17 +20,18 @@
     - Your app is installed
 
         - If the app supports deep linking, then your app will open or navigate to the [fallback](#fallback-to-a-specific-url)
-        - For some apps, you can force your app to open using [`$uri_redirect_mode`](#forced-redirections) or enabling a [Deepview](/pages/web/deep-views/)
+        
+        - `*Able to force app open` using [`$uri_redirect_mode`](#forced-redirections) or enabling a [Deepview](/pages/web/deep-views/)
 
             | App | iOS | Notes | Android | Notes
             | --- | :-: | :-: | :-: | :-:
-            | Facebook Newsfeed | Fallback | Can force app open | App |
+            | Facebook Newsfeed | Fallback | *Able to force app open | App |
             | Facebook Browser | App | | App |
-            | Facebook Messenger | Fallback | Can force app open | App |
+            | Facebook Messenger | Fallback | *Able to force app open | App |
             | Facebook Messenger browser | App | | App |
-            | Instagram | Fallback | Can force app open | App |
+            | Instagram | Fallback | *Able to force app open | App |
             | Snapchat | Fallback | | App |
-            | Twitter | Fallback | Can force app open | App |
+            | Twitter | Fallback | *Able to force app open | App |
             | Pinterest | Fallback | | Fallback |
             | Chrome browser | App | | App |
             | Safari address bar | Fallback |
