@@ -84,42 +84,16 @@
     - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
 
 - #### Long links
-    - If you don't need a short link and care to avoid a network call, you can create links by appending query parameters to the Branch domain.
-        1. Start with an exiting Branch link, or your Branch link domain: **http://[branchsubdomain]**, like _yourapp.app.link_ or _links.yourdomain.com_.
-        2. Append `?` to start the query params string: **http://[branchsubdomain]?**
-            - If you're creating a new link and and you're using the legacy `bnc.lt` domain or a custom domain/subdomain as the base for your links, instead append `/a/your_Branch_key?`: `http://bnc.lt/a/your_branch_key?`
-        3. Append any additional key/value pairs, and analytics or link control parameters.
-
-    - Here's an example of a finalized dynamic link (line breaks added for legibility):
-
-        ```sh
-        https://[branchsubdomain]?
-          %24deeplink_path=article%2Fjan%2F123&
-          %24fallback_url=https%3A%2F%2Fgoogle.com&
-          channel=facebook&
-          feature=affiliate&
-          user_id=4562&
-          name=Alex
-        ```
-
-        The following keys have been embedded:
-
-        | Key | Value |
-        | --- | --- |
-        | **$deeplink_path** | article/jan/123 |
-        | **$fallback_url** | https://google.com |
-        | **channel** | facebook |
-        | **feature** | affiliate |
-        | **user_id** | 4562 |
-        | **name** | Alex |
-        
-        The URL formats based on the link domain type
-        
-        | Link Type | bnc.lt | wxyz.app.link | customdomain.com |
-        | --- | --- | --- | --- |
-        | New link | https://bnc.lt/a/key_live_xxxxxxxxxxxxxxx?param=value | https://wxyz.app.link?param=value | https://customdomain.com/a/key_live_xxxxxxxxxxxxxxx?param=value
-        | Existing SDK link | https://bnc.lt/wxyz/KDSYTMnSZs?param=value | https://wxyz.app.link/KDSYTMnSZs?param=value | https://customdomain.com/wxyz/KDSYTMnSZs?param=value
-        | Existing Quick Link | https://bnc.lt/linkslug?param=value | https://wxyz.app.link/linkslug?param=value | https://customdomain.com/linkslug?param=value
+    - Long links can be created without a network call to Branch
+    - Long links need [link data](#configure-deep-links) to be URI encoded as a query string
+        - existing link `https://example.app.link/fzmLEhobLD?foo=bar&baz=456`
+        - dynamic link `https://example.app.link/?foo=bar&baz=456`
+    - Long links need a `/a/` and a [Branch Key](/pages/dashboard/integrate/#understand-the-branch-key) if you use a `custom link domain`
+        - existing link `https://link.example.com/5NPh/p4M09KRLrD?foo=bar&baz=456`
+        - dynamic link `https://link.example.com/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
+    - Long links need a `/a/` and a [Branch Key](/pages/dashboard/integrate/#understand-the-branch-key) if you use a `bnc.lt`
+        - existing link `https://bnc.lt/5NPh/p4M09KRLrD?foo=bar&baz=456`
+        - dynamic link `https://bnc.lt/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
 
 ## Configure deep links
 
