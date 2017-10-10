@@ -1,14 +1,23 @@
 ## Understand deep linking
 
-- #### Default link behavior
+- ### Default link behavior
+
     - Your app is not installed
+
         - User `clicks` on a Branch deep link
+
         - Device `navigates` to the [fallback](#fallback-to-a-specific-url) (e.g. an app store or website)
+
         - User `installs` and `opens` app
+
         - Branch passes deep link `data` into app
+
     - Your app is installed
+
         -  User `clicks` on a Branch deep link
+
         -  Device `opens` app
+
         -  Branch passes deep link `data` into app
 
 - #### Expected redirect behavior
@@ -20,7 +29,7 @@
     - Your app is installed
 
         - If the app supports deep linking, then your app will open or navigate to the [fallback](#fallback-to-a-specific-url)
-        
+
         - `*Able to force app open` using [`$uri_redirect_mode`](#forced-redirections) or enabling a [Deepview](/pages/web/deep-views/)
 
             | App | iOS | Notes | Android | Notes
@@ -52,7 +61,7 @@
 
 
 
-- #### Custom link behavior
+- ### Custom link behavior
 
     - ##### Pass data from link to app
 
@@ -94,7 +103,7 @@
                 - Add redirect `$android_url = 'https://google.com'` ([docs](/pages/links/integrate/#redirections))
                 - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/integrate/#deep-linking))
 
-- #### Social link behavior
+- ### Social link behavior
     - Use [OG Tags](#open-graph) to display content as a preview card in Facebook, Twitter, Pinterest, iMessage, etc.
         - Basics are `$og_title`, `$og_description`, and `$og_image_url`
     - Use [Deep Views]() to display content as a website
@@ -103,7 +112,7 @@
 
 ## Create deep links
 
-- #### Short links
+- ### Short links
     - Short links are the most common deep link
     - Short links encapsulate [link data](#configure-deep-links) inside them on link creation
         - e.g. existing link `https://example.app.link/fzmLEhobLD`
@@ -115,7 +124,7 @@
         - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
         - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
 
-- #### Long links
+- ### Long links
     - Long links can be created without a network call to Branch
     - Long links need [link data](#configure-deep-links) to be URI encoded as a query string
         - e.g. existing link `https://example.app.link/fzmLEhobLD?foo=bar&baz=456`
@@ -129,7 +138,7 @@
 
 ## Configure deep links
 
-- #### Analytical labels
+- ### Analytical labels
 
     - These labels allow you to filter and organize your deep links
 
@@ -143,7 +152,7 @@
         | alias | | Specify a link alias in place of the standard encoded short URL e.g. `yourdomain.com/youralias`. Link aliases are unique, immutable objects that cannot be deleted. You cannot change the alias of existing links. Aliases on the legacy `bnc.lt` domain are incompatible with Universal Links and Spotlight
         | type | `0` | Must be an `int`. Set to `1` to limit deep link to a single use. Set to `2` to make the link show up under [Quick Links](https://dashboard.branch.io/marketing) while adding `$marketing_title` to `data`. Does not work with the Native SDKs.
 
-- #### Custom data
+- ### Custom data
 
     - Pass any custom data to be read inside your app
 
@@ -155,7 +164,7 @@
         | look_at | `[1,2,3,4,5,6]` | Any key-value pair
         | nav_here | `content/123` | Any key-value pair
 
-- #### Redirections
+- ### Redirections
 
     - Navigate to different locations based on device information
     - Navigation URLs must be websites, not deep links
@@ -175,7 +184,7 @@
         | $android_wechat_url | | Change the redirect endpoint for WeChat on Android devices  `$android_url` value
         | $web_only | `false` | Force to open the `$fallback_url` instead of the app
 
-- #### Forced redirections
+- ### Forced redirections
 
     - Override
 
@@ -195,7 +204,7 @@
         - Safari iOS
         - Firefox iOS & Android
 
-- #### Deep linking
+- ### Deep linking
 
     - Navigate to different locations based on device information
 
@@ -211,7 +220,7 @@
         | $custom_sms_text | | Text for SMS link sent for desktop clicks to this link. Must contain `{{ link }}` Value of Text me the app page in Settings
         | $marketing_title | | The Marketing Title for the deep link in the [Quick Links](https://dashboard.branch.io/marketing)
 
-- #### Content
+- ### Content
 
     - Handle content properties
 
@@ -223,7 +232,7 @@
         | $exp_date | `0` | The date when the content will not longer be available or valid. Cannot modify here. Needs to be set by the Branch Universal Object. Must be epoch timestamp with milliseconds
         | $content_type | | This is a label for the type of content present. Apple recommends that you use uniform type identifier as described here
 
-- #### Deepview
+- ### Deepview
 
     - Enable / control [active deepview](/pages/web/deep-views/#active-deepviews) properties
 
@@ -240,7 +249,7 @@
         | $ios_passive_deepview | The name of the template to use for iOS. | `default_template`
         | $android_passive_deepview | The name of the template to use for Android. | `default_template`
 
-- #### Open Graph
+- ### Open Graph
 
     - Handle Facebook properties
 
@@ -257,7 +266,7 @@
         | $og_redirect | | (Advanced, not recommended) Set a custom URL that we redirect the social media robots to in order to retrieve all the appropriate tags
         | $og_app_id | Set on dashboard | (Rarely used) Sets the app id tag
 
-- #### Twitter
+- ### Twitter
 
     - Handle Twitter properties
 
@@ -273,7 +282,7 @@
         | $twitter_player_width | | Set the player's width in pixels
         | $twitter_player_height | | Set the player's height in pixels
 
-- #### Universal Object
+- ### Universal Object
 
     - Properties for the Branch Universal Object within your [app](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference) integration
 
@@ -307,7 +316,7 @@
 
 - Deep link data gets sent from your link to your [app](#dialog-code?ios=read-deep-link&android=read-deep-link&adobe=read-deep-link&cordova=read-deep-link&mparticleAndroid=read-deep-link&mparticleIos=read-deep-link&titanium=read-deep-link&reactNative=read-deep-link&unity=read-deep-link&xamarin=read-deep-link) or [website](/pages/web/integrate/) integration
 
-- #### Data structure
+- ### Data structure
 
     - Example deep link data structure
 
@@ -347,7 +356,7 @@
         }
         ```
 
-- #### Reserved prefixes
+- ### Reserved prefixes
 
     - Branch adds additional properties to your deep link data to explain the link
 
@@ -357,7 +366,7 @@
         | ~ | Branch analytical data
         | + | Branch added values
 
-- #### Callback values
+- ### Callback values
 
     - Additional properties read from the `initSession` within your [app](#dialog-code?ios=initialize-branch&android=initialize-branch&adobe=initialize-branch&cordova=initialize-branch&mparticleAndroid=initialize-branch&mparticleIos=initialize-branch&titanium=initialize-branch&reactNative=initialize-branch&unity=initialize-branch&xamarin=initialize-branch) and [website](/pages/web/integrate/) integrations
 
@@ -375,13 +384,13 @@
 
 ## Troubleshoot issues
 
-- #### Deep links do not open app
+- ### Deep links do not open app
     - Make sure you have completed [Configure your dashboard](/pages/dashboard/integrate/) and [Configure your app](#dialog-code)
     - Make sure the `Branch key` in your app ([Configure your app](#dialog-code)) matches the `Branch key` in your deep link ([View deep link data](#view-deep-link-data))
     - Make sure you have not disabled deep linking ([Re-enable universal linking](/pages/apps/ios/#re-enable-universal-linking))
     - Make sure you meet the requirements for [Supported platforms](#expected-redirect-behavior)
     - Make sure the link the user is click on matches your `link domain` from the [Branch Dashboard](https://dashboard.branch.io/link-settings)
 
-- #### View deep link data
+- ### View deep link data
     - Add `?debug=1` to the end of your deep link
     - For example: https://example.app.link/aQXXDHaxKF?debug=1

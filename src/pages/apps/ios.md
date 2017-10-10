@@ -1,6 +1,6 @@
 ## Integrate Branch
 
-- #### Configure Branch
+- ### Configure Branch
 
     - Complete the `Basic integration` within [Configure your dashboard](/pages/dashboard/integrate/)
 
@@ -8,13 +8,13 @@
 
         ![image](/img/pages/dashboard/ios.png)
 
-- #### Configure bundle identifier
+- ### Configure bundle identifier
 
     - Make sure Bundle Id matches your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](http://i.imgur.com/BHAQIQf.png)
 
-- #### Configure associated domains
+- ### Configure associated domains
 
     - Add your link domains from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
     - `-alternate` is needed for Universal Linking with the [Web SDK](/pages/web/integrate/) inside your Website
@@ -23,13 +23,13 @@
 
         ![image](http://i.imgur.com/67t6hSY.png)
 
-- #### Configure entitlements
+- ### Configure entitlements
 
     - Confirm entitlements are within target
 
         ![image](http://i.imgur.com/vhwis7f.png)
 
-- #### Configure info.pList
+- ### Configure info.pList
 
     - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
@@ -39,13 +39,13 @@
 
     ![image](http://i.imgur.com/PwXnHWz.png)
 
-- #### Confirm app prefix
+- ### Confirm app prefix
 
     - From your [Apple Developer Account](https://developer.apple.com/account/ios/identifier/bundle)
 
         ![image](http://i.imgur.com/2EoN1i0.png)
 
-- #### Install Branch
+- ### Install Branch
 
     - Option 1: [CocoaPods](https://cocoapods.org/)
 
@@ -74,7 +74,7 @@
 
         ![image](http://i.imgur.com/YY0enst.png)
 
-- #### Initialize Branch
+- ### Initialize Branch
 
     - *Swift 3*
 
@@ -159,7 +159,7 @@
         @end
         ```
 
-- #### Test deep link
+- ### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
     - Delete your app from the device
@@ -170,7 +170,7 @@
 
 ## Implement features
 
-- #### Create content reference
+- ### Create content reference
 
     - The `Branch Universal Object` encapsulates the thing you want to share
 
@@ -209,7 +209,7 @@
         [buo addMetadataKey:@"anything" value:@"everything"];
         ```
 
-- #### Create link reference
+- ### Create link reference
 
     - Generates the analytical properties for the deep link
 
@@ -261,7 +261,7 @@
         [lp addControlParam:@"random" withValue: [[NSUUID UUID] UUIDString]];
         ```
 
-- #### Create deep link
+- ### Create deep link
 
     - Generates a deep link within your app
 
@@ -290,7 +290,7 @@
         ```
 
 
-- #### Share deep link
+- ### Share deep link
 
     -  Will generate a Branch deep link and tag it with the channel the user selects
 
@@ -317,7 +317,7 @@
         }];
         ```
 
-- #### Read deep link
+- ### Read deep link
 
     - Retrieve Branch data from a deep link
 
@@ -360,7 +360,7 @@
 
         ```
 
-- #### Navigate to content
+- ### Navigate to content
 
     - Handled within `Branch.initSession()`
 
@@ -418,7 +418,7 @@
         }];
         ```
 
-- #### Display content
+- ### Display content
 
     - List content on `iOS Spotlight`
 
@@ -436,7 +436,7 @@
         buo.automaticallyListOnSpotlight = YES;
         ```
 
-- #### Track content
+- ### Track content
 
     - Track how many times a piece of content is viewed
 
@@ -456,7 +456,7 @@
         [buo userCompletedAction:BNCRegisterViewEvent];
         ```
 
-- #### Track users
+- ### Track users
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
 
@@ -483,7 +483,7 @@
         ```
 
 
-- #### Track events
+- ### Track events
 
     - Registers a custom event
 
@@ -520,7 +520,7 @@
         [[Branch getInstance] userCompletedAction:action withState:metadata];
         ```
 
-- #### Track commerce
+- ### Track commerce
 
     - Registers a custom commerce event
 
@@ -619,7 +619,7 @@
         }];
         ```
 
-- #### Handle referrals
+- ### Handle referrals
 
     - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
 
@@ -704,7 +704,7 @@
             }];
             ```
 
-- #### Handle push notifications
+- ### Handle push notifications
 
     - Allows you to track Branch deep links in your push notifications
 
@@ -725,7 +725,7 @@
 
     - Read deep link data from `initSession` [Initialize Branch](#initialize-branch) ([example](http://i.imgur.com/5QHWDX9.gif))
 
-- #### Track Apple Search Ads
+- ### Track Apple Search Ads
 
     - Allows Branch to track Apple Search Ads deep linking analytics
 
@@ -759,7 +759,7 @@
             [[Branch getInstance] setAppleSearchAdsDebugMode];
             ```
 
-- #### Enable 100% matching
+- ### Enable 100% matching
 
     - Use the `SFSafariViewController` to increase the attribution matching success
 
@@ -789,11 +789,11 @@
 
 ## Troubleshoot issues
 
-- #### Submitting to the App Store
+- ### Submitting to the App Store
 
     - Need to select `app uses IDFA or GAID` when publishing your app (for better deep link matching)
 
-- #### App not opening
+- ### App not opening
 
     - Double check [Integrate Branch](#integrate-branch)
 
@@ -807,13 +807,13 @@
 
     - Use [Test deep link](#test-deep-link)
 
-- #### App not passing data
+- ### App not passing data
 
     - See if issue is related to [App not opening](#app-not-opening)
 
     - Investigate Branch console logs ([Enable logging](#enable-logging))
 
-- #### Simulate an install
+- ### Simulate an install
 
     - Delete your app
 
@@ -829,19 +829,19 @@
 
     - Read from `params` within `initSession` for `+is_first_session = true`
 
-- #### Deep links are long
+- ### Deep links are long
 
     - Happens whenever the app cannot make a connection to the Branch servers
 
     - The long deep links will still open the app and pass data
 
-- #### Sample apps
+- ### Sample apps
 
     - [Swift testbed](https://github.com/BranchMetrics/ios-branch-deep-linking/tree/master/Branch-TestBed-Swift)
 
     - [Objective C testbed](https://github.com/BranchMetrics/ios-branch-deep-linking/tree/master/Branch-TestBed)
 
-- #### Track content properties
+- ### Track content properties
 
     - Used for [Track content](#track-content)
 
@@ -855,7 +855,7 @@
         | BNCShareInitiatedEvent | User started to share the object
         | BNCShareCompletedEvent | User completed a share
 
-- #### Enable logging
+- ### Enable logging
 
     - Use the Branch test key instead of the live key
 
@@ -877,7 +877,7 @@
 
     - Make sure `OS_ACTIVITY_MODE` is not disabled ([link](https://stackoverflow.com/a/39503602/2690774))
 
-- #### Use test key
+- ### Use test key
 
     - Use the Branch `test key` instead of the `live key`
 
@@ -901,13 +901,13 @@
         [Branch setUseTestBranchKey:YES];
         ```
 
-- #### Re-enable universal linking
+- ### Re-enable universal linking
 
     - Apple allows users to disable universal linking on a per app per device level on iOS 9 and iOS 10 (fixed in iOS 11)
 
     - Use [Test deep link](#test-deep-link) to re-enable universal linking on the device
 
-- #### Deep link routing with a Branch ViewController
+- ### Deep link routing with a Branch ViewController
 
     - Add before `initSession` [Initialize Branch](#initialize-branch)
 
@@ -925,7 +925,7 @@
         [[Branch getInstance] registerDeepLinkController:customViewController forKey:@"my-key"withPresentation:BNCViewControllerOptionShow];
         ```
 
-- #### Determine if deep link is from Branch without network
+- ### Determine if deep link is from Branch without network
 
     - Use for Universal Linking if you want to get the `true/false` response from `Branch.getInstance().continue(userActivity)` within `continueUserActivity` without a Branch network call
     - Use only if you have a custom link domain
@@ -933,7 +933,7 @@
 
         ![image](https://i.imgur.com/ECNnpyS.png)
 
-- #### Share to email options
+- ### Share to email options
 
     - Change the way your deep links behave when shared to email
 
@@ -957,7 +957,7 @@
         [lp addControlParam:@"$email_html_link_text" withValue:@"Tap here"];
         ```
 
-- #### Share message dynamically
+- ### Share message dynamically
 
     - Change the message you share based on the source the users chooses
 

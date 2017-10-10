@@ -1,13 +1,13 @@
 ## Integrate Branch
 
-- #### Configure Branch
+- ### Configure Branch
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](http://i.imgur.com/wazVu3U.png)
         ![image](http://i.imgur.com/9PEylbS.png)
 
-- #### Install Branch
+- ### Install Branch
 
     - Install the module
 
@@ -48,7 +48,7 @@
         Then run `pod install` to regenerate the `Pods` project with the new dependencies.
         Note that the location of `node_modules` relative to your `Podfile` may vary.
 
-- #### Update from < 2.0.0
+- ### Update from < 2.0.0
 
     - If also upgrading React Native, use `react-native-git-upgrade` to upgrade
         your React Native app to the latest version of React Native, if possible.
@@ -112,7 +112,7 @@
             #import <react-native-branch/RNBranch.h>
             ```
 
-- #### Configure app
+- ### Configure app
 
     - iOS
 
@@ -228,7 +228,7 @@
           -dontwarn io.branch.**
           ```
 
-- #### Initialize Branch
+- ### Initialize Branch
 
     - iOS
 
@@ -343,7 +343,7 @@
             }
             ```
 
-- #### Test deep link iOS
+- ### Test deep link iOS
 
     - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
 
@@ -357,7 +357,7 @@
 
     - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
 
-- #### Test deep link Android
+- ### Test deep link Android
 
     - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
 
@@ -372,7 +372,7 @@
 
 ## Implement features
 
-- #### Import Branch
+- ### Import Branch
 
     - In any React Native source file that uses the Branch SDK. You can import
     only the symbols you are using.
@@ -389,7 +389,7 @@
         } from 'react-native-branch'
         ```
 
-- #### Create content reference
+- ### Create content reference
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
@@ -404,7 +404,7 @@
         contentDescription: 'Cool Content Description'})
     ```
 
-- #### Create deep link
+- ### Create deep link
 
     - Creates a deep link URL with encapsulated data
 
@@ -427,7 +427,7 @@
     let {url} = await branchUniversalObject.generateShortUrl(linkProperties, controlParams)
     ```
 
-- #### Share deep link
+- ### Share deep link
 
     -  Will generate a Branch deep link and tag it with the channel the user selects
 
@@ -442,7 +442,7 @@
     let {channel, completed, error} = await branchUniversalObject.showShareSheet(shareOptions, linkProperties, controlParams)
     ```
 
-- #### Read deep link
+- ### Read deep link
 
     - Retrieve Branch data from a deep link
 
@@ -466,7 +466,7 @@
     let installParams = await branch.getFirstReferringParams() // params from original install
     ```
 
-- #### Navigate to content
+- ### Navigate to content
 
     ```js
     branch.subscribe(({ error, params }) => {
@@ -502,7 +502,7 @@
     })
     ```
 
-- #### Display content
+- ### Display content
 
     - List content on iOS Spotlight
 
@@ -527,7 +527,7 @@
     branchUniversalObject.listOnSpotlight()
     ```
 
-- #### Track content
+- ### Track content
 
     - Track how many times a piece of content is viewed
 
@@ -542,7 +542,7 @@
     branchUniversalObject.userCompletedAction(RegisterViewEvent)
     ```
 
-- #### Track users
+- ### Track users
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
 
@@ -553,7 +553,7 @@
     branch.logout()
     ```
 
-- #### Track events
+- ### Track events
 
     - Track custom events
 
@@ -569,7 +569,7 @@
     branchUniversalObject.userCompletedAction('Custom Action', { key: 'value' })
     ```
 
-- #### Track content properties
+- ### Track content properties
 
     | Event | Description |
     | ----- | --- |
@@ -582,7 +582,7 @@
     | ShareCompletedEvent | User completed a share |
 
 
-- #### Track commerce
+- ### Track commerce
 
     - Use the `branch.sendCommerceEvent` method to record commerce events
 
@@ -591,7 +591,7 @@
     branch.sendCommerceEvent(50, {key1: "value1", key2: "value2"})
     ```
 
-- #### Handle referrals
+- ### Handle referrals
 
     - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
 
@@ -619,7 +619,7 @@
         let creditHistory = await branch.getCreditHistory()
         ```
 
-- #### Track Apple Search Ads
+- ### Track Apple Search Ads
 
     - Allows Branch to track Apple Search Ads deep linking analytics
 
@@ -683,7 +683,7 @@
                 #endif
                 ```
 
-- #### Enable 100% matching
+- ### Enable 100% matching
 
     - Android
 
@@ -734,7 +734,7 @@
 
 ## Troubleshoot issues
 
-- #### Use test key
+- ### Use test key
 
     - Use the Branch `test key` instead of the `live key`.
 
@@ -771,7 +771,7 @@
           <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
           ```
 
-- #### Simulate an install
+- ### Simulate an install
 
     **Do not test in production.**
 
@@ -830,7 +830,7 @@
             [RNBranch initSessionWithLaunchOptions:launchOptions isReferrable:YES];
             ```
 
-- #### Using getLatestReferringParams to handle link opens
+- ### Using getLatestReferringParams to handle link opens
 
     The `getLatestReferringParams` method is essentially a synchronous method that retrieves the latest
     referring link parameters stored by the native SDK. However, React Native does not support synchronous
@@ -846,14 +846,14 @@
     app and all subsequent link opens. There is no need to call `getLatestReferringParams` at app
     launch to check for an initial link. Use `branch.subscribe` to handle all link opens.
 
-- #### General troubleshooting
+- ### General troubleshooting
 
     See the troubleshooting guide for each native SDK:
 
     - [iOS](https://docs.branch.io/pages/apps/ios/#troubleshoot-issues)
     - [Android](https://docs.branch.io/pages/apps/android/#troubleshoot-issues)
 
-- #### Sample apps
+- ### Sample apps
 
-    - [Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)  
+    - [Examples](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples)
     - [Tutorial](https://github.com/BranchMetrics/react-native-branch-deep-linking/tree/master/examples/webview_tutorial)

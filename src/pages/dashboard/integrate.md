@@ -1,7 +1,7 @@
 
 ## Basic integration
 
-- #### Understand the Branch Key
+- ### Understand the Branch Key
 
     - Go to [Account settings](https://dashboard.branch.io/account-settings/app) on the Branch Dashboard
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
@@ -10,7 +10,7 @@
 
         ![image](/img/pages/dashboard/branch-keys.png)
 
-- #### Configure default behavior
+- ### Configure default behavior
 
     - Set the default behavior for your deep links on [Link Settings](https://dashboard.branch.io/link-settings)
 
@@ -68,7 +68,7 @@
 
             ![image](/img/pages/dashboard/save.png)
 
-- #### Enable a Deepview
+- ### Enable a Deepview
 
     - Go to [Deepview Previews](https://dashboard.branch.io/web/deepviews) on the Branch Dashboard
     - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
@@ -79,22 +79,22 @@
 
 ## Advance integration
 
-- #### Configure user
+- ### Configure user
     - Go to [Account settings](https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
     - Handle your Branch user account with email, password, and user id
     - Connect your Github account to your Branch dashboard for easier sign in
 
-- #### Configure billing
+- ### Configure billing
     - Go to [Account settings](https://dashboard.branch.io/account-settings/billing) on the Branch Dashboard
     - Set your billing information for Branch premium features
 
-- #### Configure team
+- ### Configure team
     - Go to [Account settings](https://dashboard.branch.io/account-settings/team) on the Branch Dashboard
     - Add and update team members to your Branch dashboard
         - `Admin` = full access
         - `Reports` = read reports only
 
-- #### Change advanced settings
+- ### Change advanced settings
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Set `Match type` to either `unique` or `normal` (default)
         - Recommended `Normal`. Selecting `Unique` means that Branch will only make a deep link through install match if there is a single, unique outstanding footprint. For example, if you and your twin both have iPhone 5s with the same OS/version, etc and click different links for the same app, then open the app up at the same time, we won’t deep link when Unique is selected. You probably don’t want this as it’s mostly for very special circumstances.
@@ -111,12 +111,12 @@
             | utm_content | Tags
             | utm_term | Keywords (not visible on Dashboard)
 
-- #### Enable Facebook App Invites
+- ### Enable Facebook App Invites
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Add your Facebook credentials to allow us to link your Facebook dashboard to the Branch dashboard
     - This configuration allows us to send and receive attribution data from Facebook
 
-- #### Change link domain
+- ### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
 
     - ##### Use app.link domain
@@ -147,7 +147,7 @@
 
 ## Troubleshoot issues
 
-- #### Domain change warning
+- ### Domain change warning
     - Used for [Change link domain](#change-link-domain)
     - From `app.link` to `app.link`
         - Your old `app.link` deep links will fail
@@ -164,14 +164,14 @@
         - Both your `bnc.lt` and `custom link domain` deep links will work
         - Your new `custom link domain` deep links will open your app after your [update your code](#dialog-code?ios=configure-associated-domains&android=configure-app&adobe=configure-app&cordova=configure-app&mparticleAndroid=configure-app&mparticleIos=configure-associated-domains&titanium=configure-app&reactNative=configure-app&unity=configure-app&xamarin=configure-app) to append the new link domain
 
-- #### Custom domain warning
+- ### Custom domain warning
     - Used for [Change link domain](#change-link-domain)
     - The `NS` or `CNAME` records of your `custom link domain` will need to point to Branch if you want to use your own domain for your deep links
     - Whenever you change your `NS` or `CNAME` records of a domain, you are making Branch the authoritative registrar for your domain. This will grant Branch control of your domain and you will lose all access to that `custom root domain` or `custom sub domain`. The web page will become blank, and the control of the domain will change to Branch
     - Branch will use your domain to route all deep linked traffic. Branch will also host your AASA file and SSL certificates
     - If you have content on your `custom root domain` (e.g. https://example.com/), Branch recommends using an unused `custom sub domain` instead (e.g. https://link.example.com/)
 
-- #### Custom domain debugging
+- ### Custom domain debugging
     - Used for [Change link domain](#change-link-domain)
     - You can test your domain record changes with `dig ns <domain>` or `dig cname <domain>`
     - We recommend that you choose one domain or subdomain to use with Branch and stick with it, as switching can cause significant problems with your existing links

@@ -8,7 +8,7 @@
 
 ## Link
 
-- #### Link create 
+- ### Link create
 
     - *Request*
 
@@ -23,7 +23,7 @@
           "tags": ["one", "two", "three"],
           "data": {
             "$canonical_identifier": "content/123",
-            "$og_title": "Title from Deep Link",    
+            "$og_title": "Title from Deep Link",
             "$og_description": "Description from Deep Link",
             "$og_image_url": "http://www.lorempixel.com/400/400/",
             "$desktop_url": "http://www.example.com",
@@ -51,7 +51,7 @@
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/account-settings/app) | √
         | ... | ... | Parameters from [Configuring Links](/pages/links/integrate/) |
 
-- #### Link create bulk 
+- ### Link create bulk
 
     - *Request*
 
@@ -66,7 +66,7 @@
               "tags": ["one", "two", "three"],
               "data": {
                 "$canonical_identifier": "content/123",
-                "$og_title": "Title from Deep Link",    
+                "$og_title": "Title from Deep Link",
                 "$og_description": "Description from Deep Link",
                 "$og_image_url": "http://www.lorempixel.com/400/400/",
                 "$desktop_url": "http://www.example.com",
@@ -85,7 +85,7 @@
               "tags": ["one", "two", "three"],
               "data": {
                 "$canonical_identifier": "content/123",
-                "$og_title": "Title from Deep Link",    
+                "$og_title": "Title from Deep Link",
                 "$og_description": "Description from Deep Link",
                 "$og_image_url": "http://www.lorempixel.com/400/400/",
                 "$desktop_url": "http://www.example.com"
@@ -114,7 +114,7 @@
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | ... | ... | Parameters from [Configuring Links](/pages/links/integrate/) |
 
-- #### Link read
+- ### Link read
 
     - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
 
@@ -183,7 +183,7 @@
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | url | `string` | The deep link url | √
 
-- #### Link update
+- ### Link update
 
     - *Request*
 
@@ -243,7 +243,7 @@
         | branch_secret | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | url | `string` | The deep link url | √
 
-- #### Link troubleshooting 
+- ### Link troubleshooting
 
     - `data` is overridden on [Link update](#link-update), not appended
 
@@ -251,7 +251,7 @@
 
 ## Event
 
-- #### Event create
+- ### Event create
 
     - *Request*
 
@@ -283,7 +283,7 @@
         | identity | `string` | Unique user id, also known as the `Developer Id` on your [Branch Identity Dashboard](https://dashboard.branch.io/liveview/identities)
         | metadata | `{}` | Custom key-value pairs related to the event
 
-- #### Event create commerce
+- ### Event create commerce
 
     - *Request*
 
@@ -305,7 +305,7 @@
             "tax": 5.0,
             "affiliation": "foo-affiliation",
             "products": [
-              { 
+              {
                 "sku": "foo-sku-1",
                 "name": "foo-item-1",
                 "price": 45.00,
@@ -314,7 +314,7 @@
                 "category": "Electronics",
                 "variant": "foo-variant-1"
               },
-              { 
+              {
                 "sku": "foo-sku-2",
                 "price": 2.50,
                 "quantity": 2
@@ -323,7 +323,7 @@
           }
         }'
         ```
-   
+
     - *Response*
 
         ```js
@@ -332,10 +332,10 @@
 
 ## User
 
-- #### User create
+- ### User create
 
     - *Request*
-        
+
         ```bash
         curl -XPOST https://api.branch.io/v1/profile \
           -d '{
@@ -362,20 +362,20 @@
         | identity | `string` | Unique user id, also known as the `Developer Id` on your [Branch Identity Dashboard](https://dashboard.branch.io/liveview/identities) | √
         | identity_id | `string` | Unique user id for Branch, also known as the `Branch Identity Id` on your [Branch Identity Dashboard](https://dashboard.branch.io/liveview/identities) | √
 
-- #### User read
+- ### User read
 
     - *Request*
 
         ```bash
         # identity
-        curl -XGET 'https://api.branch.io/v1/profile?branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&identity=steve' 
+        curl -XGET 'https://api.branch.io/v1/profile?branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&identity=steve'
 
         # identity id
         curl -XGET 'https://api.branch.io/v1/profile?branch_key=key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&identity_id=444'
         ```
 
     - *Response*
-        
+
         ```js
         {
           "identity_id": 444,
@@ -396,7 +396,7 @@
 
 ## Referral
 
-- #### Referral reward
+- ### Referral reward
 
     - *Request*
 
@@ -429,7 +429,7 @@
         | amount | `string` | Number of credits | √
         | bucket | `string` | The category where the credits are save to (defaults to `default`) |
 
-- #### Referral redeem
+- ### Referral redeem
 
     - *Request*
 
@@ -459,7 +459,7 @@
         }
         ```
 
-- #### Referral read
+- ### Referral read
 
     - *Request*
 
@@ -475,7 +475,7 @@
         }
         ```
 
-- #### Referral history
+- ### Referral history
 
     - *Request*
 
@@ -550,7 +550,7 @@
         ]
         ```
 
-- #### Referral reconcile
+- ### Referral reconcile
 
     - *Request*
 
@@ -579,7 +579,7 @@
         }
         ```
 
-- #### Referral create rule
+- ### Referral create rule
 
     - *Request*
 
@@ -594,7 +594,7 @@
           "event": "signup",
           "metadata": {
             "web_hook_url": "http://www.example.com",
-            "amount": "20",    
+            "amount": "20",
             "bucket": "default"
           },
           "filter": {
@@ -623,21 +623,21 @@
         | web_hook | `string` | The url to call when an event occurs |  `type` = `web_hook`
         | amount | `string` | Number of credits |  `type` = `credit`
         | bucket | `string` | The category where the credits are save to | `type` = `credit`
-        | filter | `json` | This is the set of keys and values that must be contained in the event metadata for this reward to be issued | 
+        | filter | `json` | This is the set of keys and values that must be contained in the event metadata for this reward to be issued |
 
-- #### Referral troubleshooting
+- ### Referral troubleshooting
 
     - Referral `credits` cannot go below zero
 
-## Webhook 
+## Webhook
 
-- #### Webhook create
+- ### Webhook create
 
     - See [Referral create rule](#referral-create-rule)
 
-## App 
+## App
 
-- #### App create
+- ### App create
 
     - *Request*
 
@@ -651,35 +651,35 @@
 
           "always_open_app": "1",
 
-          "android_app": "2", 
-          "android_url": "https://www.example.com/ios", 
-          "android_uri_scheme": "branchtest://", 
-          "android_package_name": "com.branch.test", 
-          "android_app_links_enabled": "1",  
+          "android_app": "2",
+          "android_url": "https://www.example.com/ios",
+          "android_uri_scheme": "branchtest://",
+          "android_package_name": "com.branch.test",
+          "android_app_links_enabled": "1",
 
-          "ios_app": "2", 
-          "ios_url": "https://www.example.com/ios", 
-          "ios_uri_scheme": "branchtest://", 
-          "ios_store_country": "US", 
-          "universal_linking_enabled": "1",   
-          "ios_bundle_id": "com.branch.test", 
-          "ios_team_id": "PW4Q8885U8", 
+          "ios_app": "2",
+          "ios_url": "https://www.example.com/ios",
+          "ios_uri_scheme": "branchtest://",
+          "ios_store_country": "US",
+          "universal_linking_enabled": "1",
+          "ios_bundle_id": "com.branch.test",
+          "ios_team_id": "PW4Q8885U8",
 
-          "fire_url": "https://www.example.com/amazon", 
-          "windows_phone_url": "https://www.example.com/windows", 
-          "blackberry_url": "https://www.example.com/blackberry", 
-          "web_url": "https://www.example.com/web", 
-          "default_desktop_url": "https://www.example.com/desktop", 
+          "fire_url": "https://www.example.com/amazon",
+          "windows_phone_url": "https://www.example.com/windows",
+          "blackberry_url": "https://www.example.com/blackberry",
+          "web_url": "https://www.example.com/web",
+          "default_desktop_url": "https://www.example.com/desktop",
 
-          "text_message": "click here to download {{ link }}", 
+          "text_message": "click here to download {{ link }}",
 
-          "og_app_id": "branch 123", 
-          "og_title": "branch test", 
-          "og_description": "branch description", 
-          "og_image_url": "http://lorempixel.com/400/400/", 
+          "og_app_id": "branch 123",
+          "og_title": "branch test",
+          "og_description": "branch description",
+          "og_image_url": "http://lorempixel.com/400/400/",
 
-          "deepview_desktop": "branch_default", 
-          "deepview_ios": "branch_default", 
+          "deepview_desktop": "branch_default",
+          "deepview_ios": "branch_default",
           "deepview_android": "branch_default"
         }'
         ```
@@ -764,10 +764,10 @@
         | deepview_ios | `string` | The current deepview selected for the iOS platform
         | deepview_android | `string` | The current deepview selected for the Android platform
 
-- #### App read
+- ### App read
 
     - *Request*
-        
+
         ```js
         curl -XGET 'https://api.branch.io/v1/app/key_live_kkDv1y82q6RdiaazE5wAyipkqCnI9i0a?branch_secret=secret_live_igBCicZbq9H3NvYgBishHWuQu4aMbQ0n'
         ```
@@ -836,21 +836,21 @@
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | branch_secret | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
 
-- #### App update
+- ### App update
 
     - *Request*
-        
+
         ```js
         curl -XPUT https://api.branch.io/v1/app/key_live_icCccJIpd7GlYY5oOmoEtpafuDiuyXhT \
           -d '{
-          "branch_secret": "secret_live_D3sN7UDL27glpNKZfGPt6BlmKD9txUBp",  
+          "branch_secret": "secret_live_D3sN7UDL27glpNKZfGPt6BlmKD9txUBp",
           "dev_email": "YOUR_EMAIL",
           "app_name": "eneff_test_3_updated"
         }'
         ```
 
     - *Response*
-        
+
         ```js
         {
           "alternate_short_url_domain": "eneff-alternate.app.link",
@@ -916,7 +916,7 @@
         | ... | ... | Parameters from [App Create](#app-create) |
 
 ## API troubleshooting
-    
+
 - Use your `branch_key` and `branch_secret` from your [Branch Settings Dashboard](https://dashboard.branch.io/settings)
 
 - Use your `user_id` from your [Branch Account Dashboard](https://dashboard.branch.io/settings/account)

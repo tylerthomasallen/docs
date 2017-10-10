@@ -1,13 +1,13 @@
 ## Integrate Branch
 
-- #### Configure Branch
+- ### Configure Branch
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
         ![image](http://i.imgur.com/r057ie0.png)
         ![image](http://i.imgur.com/SdcICpL.png)
 
-- #### Install Branch
+- ### Install Branch
 
     - Import the Branch SDK to your `build.gradle`
 
@@ -40,14 +40,14 @@
             })
             compile 'com.android.support:appcompat-v7:25.2.0'
             compile 'com.android.support:design:25.2.0'
-            
+
             compile 'com.mparticle:android-core:4.+'
 
             compile 'com.mparticle:android-branch-kit:4+'
         }
         ```
 
-- #### Enable Branch on mParticle
+- ### Enable Branch on mParticle
 
     - Retrieve your Branch Key on the [App Settings](https://dashboard.branch.io/account-settings/app) page of the Branch dashboard.
     - From your [mParticle dashboard](https://app.mparticle.com/) navigate to the Services page. (The paper airplane icon on the left side)
@@ -56,7 +56,7 @@
     - Click on the Android icon, then toggle the status ON.
     - Enter your Branch key in the marked field and click "Save".
 
-- #### Configure app
+- ### Configure app
 
     - Add Branch to your `AndroidManifest.xml`
 
@@ -112,7 +112,7 @@
         - `branchandroid`
         - `uobg.app.link`
 
-- #### Handle Incoming Links
+- ### Handle Incoming Links
 
     Open the `Activity` for which you registered the `Intent Filter` in the previous section, and hook into the `onStart` lifecycle method by adding this override:
 
@@ -140,11 +140,11 @@
     }
     ```
 
-- #### Initialize Branch
+- ### Initialize Branch
 
     As with any kit, mParticle will automatically handle initializing Branch sessions. At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.
 
-- #### Test deep link
+- ### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
@@ -158,7 +158,7 @@
 
 ## Implement features
 
-- #### Create content reference
+- ### Create content reference
 
     ```java
     BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
@@ -181,7 +181,7 @@
        .addContentMetadata("property2", "red");
     ```
 
-- #### Create deep link
+- ### Create deep link
 
     ```java
     LinkProperties linkProperties = new LinkProperties()
@@ -197,10 +197,10 @@
                Log.i("MyApp", "got my Branch link to share: " + url);
            }
         }
-    });                   
+    });
     ```
 
-- #### Share deep link
+- ### Share deep link
 
     ```java
     ShareSheetStyle shareSheetStyle = new ShareSheetStyle(MainActivity.this, "Check this out!", "This stuff is awesome: ")
@@ -211,7 +211,7 @@
         .setAsFullWidthStyle(true)
         .setSharingTitle("Share With");
 
-    branchUniversalObject.showShareSheet(this, 
+    branchUniversalObject.showShareSheet(this,
                                           linkProperties,
                                           shareSheetStyle,
                                            new Branch.BranchLinkShareListener() {
@@ -230,12 +230,12 @@
     });
     ```
 
-- #### Read deep link
-- #### Navigate to content
-- #### Display content
-- #### Track content
-- #### Track users
-    
+- ### Read deep link
+- ### Navigate to content
+- ### Display content
+- ### Track content
+- ### Track users
+
     ```java
     Branch branch = Branch.getInstance(getApplicationContext());
     branch.setIdentity(your user id); // your user id should not exceed 127 characters
@@ -245,8 +245,8 @@
     Branch.getInstance(getApplicationContext()).logout();
     ```
 
-- #### Track events
-    
+- ### Track events
+
     ```java
     Branch branch = Branch.getInstance(getApplicationContext());
     branch.userCompletedAction("your_custom_event");
@@ -257,11 +257,11 @@
     branch.userCompletedAction("your_custom_event", (JSONObject)appState); // same 63 characters max limit
     ```
 
-- #### Track commerce
-- #### Handle referrals
+- ### Track commerce
+- ### Handle referrals
 
 ## Troubleshoot issues
-- #### Recommendations
-- #### Simulate an install
-- #### Sample app
-- #### Android instant app
+- ### Recommendations
+- ### Simulate an install
+- ### Sample app
+- ### Android instant app

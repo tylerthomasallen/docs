@@ -2,7 +2,7 @@
 
 ## Overview
 
-It's always been possible to track events with the Branch SDK, including installs, opens, purchases, and more. Now we're introducing a new way to track events that make reporting and analytics a whole lot better and easier. 
+It's always been possible to track events with the Branch SDK, including installs, opens, purchases, and more. Now we're introducing a new way to track events that make reporting and analytics a whole lot better and easier.
 
 The new v2 events have better tracking and analytics options in the Branch dashboard, and the new event structure makes integration with third party analytics providers quicker and tighter.
 
@@ -73,7 +73,7 @@ branchUniversalObject.title               = "My Item Title"
 let event = BranchEvent.standardEvent(.purchase)
 
 // Add the BranchUniversalObjects with the content:
-event.contentItems     = [ branchUniversalObject ] 
+event.contentItems     = [ branchUniversalObject ]
 
 // Add relevant event data:
 event.transactionID    = "12344555"
@@ -95,7 +95,7 @@ event.logEvent() // Log the event.
 #### Android
 
 ```java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); 
+BranchUniversalObject branchUniversalObject = new BranchUniversalObject();
 // ...continue adding data to the BUO...
 
 new BranchEvent(BRANCH_STANDARD_EVENT.ADD_TO_CART)
@@ -166,7 +166,7 @@ branchUniversalObject.title               = "My Item Title"
 let event = BranchEvent.standardEvent(.addToWishlist)
 
 // Add the BranchUniversalObjects with the content:
-event.contentItems     = [ branchUniversalObject ] 
+event.contentItems     = [ branchUniversalObject ]
 
 // Add relevant event data:
 event.transactionID    = "12344555"
@@ -253,7 +253,7 @@ branchUniversalObject.title               = "My Item Title"
 let event = BranchEvent.standardEvent(.viewCart)
 
 // Add the BranchUniversalObjects with the content:
-event.contentItems     = [ branchUniversalObject ] 
+event.contentItems     = [ branchUniversalObject ]
 
 // Add relevant event data:
 event.transactionID    = "12344555"
@@ -342,7 +342,7 @@ branchUniversalObject.title               = "My Item Title"
 let event = BranchEvent.standardEvent(.initiatePurchase)
 
 // Add the BranchUniversalObjects with the content:
-event.contentItems     = [ branchUniversalObject ] 
+event.contentItems     = [ branchUniversalObject ]
 
 // Add relevant event data:
 event.transactionID    = "12344555"
@@ -466,7 +466,7 @@ branchUniversalObject.title               = "My Item Title"
 let event = BranchEvent.standardEvent(.purchase)
 
 // Add the BranchUniversalObjects with the content:
-event.contentItems     = [ branchUniversalObject ] 
+event.contentItems     = [ branchUniversalObject ]
 
 // Add relevant event data:
 event.transactionID    = "12344555"
@@ -559,7 +559,7 @@ branchUniversalObject.title               = "My Item Title"
 let event = BranchEvent.standardEvent(.spendCredits)
 
 // Add the BranchUniversalObjects with the content:
-event.contentItems     = [ branchUniversalObject ] 
+event.contentItems     = [ branchUniversalObject ]
 
 // Add relevant event data:
 event.transactionID    = "12344555"
