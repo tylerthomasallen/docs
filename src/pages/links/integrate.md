@@ -106,9 +106,9 @@
 - #### Short links
     - Short links are the most common deep link
     - Short links encapsulate [link data](#configure-deep-links) inside them on link creation
-        - e.g. `https://example.app.link/fzmLEhobLD`
+        - e.g. existing link `https://example.app.link/fzmLEhobLD`
     - Short links can have additional data appended to them
-        - e.g. `https://example.app.link/fzmLEhobLD?content_id=123`
+        - e.g. dynamic link `https://example.app.link/fzmLEhobLD?content_id=123`
     - Methods of creating short links
         - Use [Quick Links](/pages/dashboard/analytics/#quick-links) for fast link creation and easy tracking
         - Use our [App SDK](#dialog-code?ios=create-deep-link&android=create-deep-link&adobe=create-deep-link&cordova=create-deep-link&mparticleAndroid=create-deep-link&mparticleIos=create-deep-link&titanium=create-deep-link&reactNative=create-deep-link&unity=create-deep-link&xamarin=create-deep-link) to create and share links within your app
@@ -118,14 +118,14 @@
 - #### Long links
     - Long links can be created without a network call to Branch
     - Long links need [link data](#configure-deep-links) to be URI encoded as a query string
-        - existing link `https://example.app.link/fzmLEhobLD?foo=bar&baz=456`
-        - dynamic link `https://example.app.link/?foo=bar&baz=456`
+        - e.g. existing link `https://example.app.link/fzmLEhobLD?foo=bar&baz=456`
+        - e.g. dynamic link `https://example.app.link/?foo=bar&baz=456`
     - Long links need a `/a/` and a [Branch Key](/pages/dashboard/integrate/#understand-the-branch-key) if you use a `custom link domain`
-        - existing link `https://link.example.com/5NPh/p4M09KRLrD?foo=bar&baz=456`
-        - dynamic link `https://link.example.com/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
+        - e.g. existing link `https://link.example.com/5NPh/p4M09KRLrD?foo=bar&baz=456`
+        - e.g. dynamic link `https://link.example.com/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
     - Long links need a `/a/` and a [Branch Key](/pages/dashboard/integrate/#understand-the-branch-key) if you use a `bnc.lt`
-        - existing link `https://bnc.lt/5NPh/p4M09KRLrD?foo=bar&baz=456`
-        - dynamic link `https://bnc.lt/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
+        - e.g. existing link `https://bnc.lt/5NPh/p4M09KRLrD?foo=bar&baz=456`
+        - e.g. dynamic link `https://bnc.lt/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
 
 ## Configure deep links
 
