@@ -1,13 +1,14 @@
 #### Making regular Branch links compatible with email
 
-Be sure to add `"$3p":"{{ page.machine_name }}"` to the deep link data of any links you use in email to ensure Universal Link and click tracking works as expected.
+Be sure to add `"$3p":"e_xx"` to the deep link data of any links you use in email to ensure Universal Link and click tracking works as expected.
 
 #### Create email links via API without changing your email templates
 
 To create email links via API, please use the instructions on how to [create links via API](/getting-started/creating-links/other-ways/#http-api), but include the following key value pairs in your call:
 
-1. `"$3p":"{{ page.machine_name }}"` This is required for Universal Link and click tracking functionality.
-1. `"$original_url":"{{your web url URI encoded}}"` For each piece of content, include a URI encoded version of your content's web URL. You can also add deep link data as query parameters on that web URL. This ensures accurate Content Analytics reporting. **Example: `"$original_url":"https%3A%2F%2Fshop.com%2Fshoes%2Fbrown-shoes%3Fmy_key%3Dmy_value%26campaign%3Dshoe_discounts"`**
+1. `"$3p":"e_xx"` This is required for Universal Link and click tracking functionality.
+1. `"$original_url":"{{your web url URI encoded}}"` For each piece of content, include a URI encoded version of your content's web URL. You can also add deep link data as query parameters on that web URL. This ensures accurate Content Analytics reporting. 
+   **Example:** `"$original_url":"https%3A%2F%2Fshop.com%2Fshoes%2Fbrown-shoes%3Fmy_key%3Dmy_value%26campaign%3Dshoe_discounts"`
 
 #### Convert all web links in your email to deep links
 
@@ -20,7 +21,7 @@ var crypto = require('crypto');
 module.exports = function(original_url, branch_base_url) {
     if (!original_url) { return new Error('Missing original_url'); }
     if (typeof original_url != 'string') { return new Error('Invalid original_url'); }
-    if (!branch_base_url) { return new Error('Missing branch_base_url, should be similar to https://bnc.lt/abcd/3p?%243p=xx'); }
+    if (!branch_base_url) { return new Error('Missing branch_base_url, should be similar to https://bnc.lt/abcd/3p?%243p=e_xx'); }
     if (typeof branch_base_url != 'string') { return new Error('Invalid branch_base_url'); }
 
     return branch_base_url + '&%24original_url=' + encodeURIComponent(original_url);
@@ -30,6 +31,6 @@ module.exports = function(original_url, branch_base_url) {
 Here is how links look before and after (the latter being a Branch deep link).
 
 1. *Before:* http://example.com/?foo=bar
-2. *After:* https://vza3.app.link/3p?%243p={{ page.machine_name }}&%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar
+2. *After:* https://vza3.app.link/3p?%243p=e_xx&%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar
 
-(note that these are simplified examples, not actual demo links)
+**Note** that these are simplified examples, not actual demo links.

@@ -1,20 +1,18 @@
 ---
 ---
 
-{! ingredients/email/email-overview.md !}
-
-### Prerequisites
-
-- This guide requires you to have already integrated the Branch SDK into your app.
-
-{! ingredients/email/email-set-up-deep-linking.md !}
+{! ingredients/email/email-configure-esp.md !}
 
 You can retrieve your click tracking domain from your Sailthru settings:
 
 1. Log in to your Sailthru account
-1. Go to Settings > Setup > Domains: ![image](/img/pages/email/sailthru/sailthru-view-domain.png)
+1. Go to Settings > Setup > Domains:
+   <br>
+   ![image](/img/pages/email/sailthru/sailthru-view-domain.png)
 1. Note or copy the value in the Link Domain field
-1. Enter the domain in item 1 of this step: ![image](/img/pages/email/sailthru/configure-sailthru-1.png)
+1. Enter the domain in item 1 of this step:
+   <br>
+   ![image](/img/pages/email/sailthru/configure-sailthru-1.png)
 1. Click **Done**
 
 On **Done** click, an AASA file - required for Universal Links - specific to that domain will be generated.

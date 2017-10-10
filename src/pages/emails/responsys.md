@@ -1,14 +1,12 @@
 ---
 ---
 
-{! ingredients/email/email-overview.md !}
 
 ### Prerequisites
 
 - You must have an EMD (Email Message Designer) enabled account in order to use the Branch integration. If you do not have one, or if you’re not sure, please talk to your Responsys Account Manager.
-- This guide requires you to have already integrated the Branch SDK into your app.
 
-{! ingredients/email/email-set-up-deep-linking.md !}
+{! ingredients/email/email-configure-esp.md !}
 
 You can retrieve your click tracking domain from your Responsys settings. Enter it in item 1 of this step. On **Done** click, an AASA file - required for Universal Links - specific to that domain will be generated.
 
@@ -30,6 +28,8 @@ There are a few different ways you can create Branch links that are compatible w
 1. [Making regular Branch links compatible with email](#making-regular-branch-links-compatible-with-email)
 1. [Create email links via API without changing your email templates](#create-email-links-via-api-without-changing-your-email-templates)
 1. [Convert all web links in your email to deep links](#convert-all-web-links-in-your-email-to-deep-links)
+
+**Responsys uses the shortcode `e_rs` for links in emails** - please use this in place of `e_xx` in the guide below.
 
 #### Use the Branch Responsys SDK
 
@@ -107,7 +107,7 @@ In some cases you may have content on web that isn’t in the app - for example,
 
 ![image](/img/pages/email/responsys/branch_responsys_deeplink.png)
 
-{! ingredients/email/email-support.md !}
+## Support
 
 ### Styling
 If you include style tags within your `<a>` tags, you’ll need to separate those out into a separate div inside the `<@deeplink>` tag. If you use tracked links with `<a>` tags, those will work fine.
@@ -139,3 +139,5 @@ The `<@deeplink >` and `<@tracked_deeplink />` tags even work with dynamic links
 ```
 <@deeplink "${latestProduct.url}">${latestProduct.name}</@deeplink>
 ```
+
+{! ingredients/email/email-support.md !}

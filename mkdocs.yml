@@ -166,6 +166,7 @@ pages:
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter: pages/deep-linked-ads/twitter.md
   - Links in your emails:
+    - Get Started: pages/emails/get-started.md
     - Appboy: pages/emails/appboy.md
     - Blueshift: pages/emails/blueshift.md
     - Bronto: pages/emails/bronto.md
