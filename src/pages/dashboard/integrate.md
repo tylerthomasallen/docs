@@ -7,7 +7,7 @@
     - `Branch Keys` allow you to interact with your Branch SDKs and create deep links
     - These keys are unique to your Branch app
     - Never expose your `Branch Secret` as it can be maliciously used
-        
+
         ![image](/img/pages/dashboard/branch-keys.png)
 
 - #### Configure default behavior
@@ -19,7 +19,7 @@
     - ##### iOS
 
         - Use these settings to control the default behavior of your deep links on iOS
-            
+
             ![image](/img/pages/dashboard/ios.png)
 
         - The Apple App Prefix is found within the [Apple Developer Portal](https://developer.apple.com/account/ios/identifier/bundle) for your app
@@ -29,36 +29,35 @@
         - Use these settings to control the default behavior of your deep links on Android
 
         - Play Store is for published apps, if your app cannot be located or is a local/dev build, please use the Custom URL option
-            
+
             ![image](/img/pages/dashboard/android.png)
-    
+
         - Generate a SHA256 Cert Fingerprint
             - Navigate to your `keystore file` (used to build the debug and production version of your APK file before it gets deployed)
             - Run `keytool -list -v -keystore my-release-key.keystore` to generate a fingerprint
 
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
-            
+
             ![image](/img/pages/dashboard/desktop.png)
-    
+
     - ##### Fallback
         - Use these settings to control the default behavior of your deep links on any other platform
-            
+
             ![image](/img/pages/dashboard/fallback.png)
-    
+
     - ##### Link domain
         - Choose a `link domain` which will be used for all your links
         - The `link domain` is the website which hosts your deep links
         - The `link domain` is not a deep link
-            - Deep links will have an `alias` behind them to uniquely identify them
-                - https://example.app.link/VZsTctoINF
-                - https://example.app.link/custom-alias
+            - Deep links have an `alias` behind them to uniquely identify the link data inside them
+                - e.g. https://example.app.link/VZsTctoINF
+                - e.g. https://example.app.link/custom-alias
+        
             ![image](/img/pages/dashboard/link-domain.png)
-            
-            !!! warning "Alias must be unique and cannot include '/'"
-                If an alias is already taken, creating the link will result in a 409 conflict error. Also, including a '/' will modify the structure and invalidate the Branch link.
     
     - ##### Social media 
+
         - Set the default image preview for your deep links when shared on social media
         - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
 
@@ -66,8 +65,17 @@
 
     - ##### Save
         - Make sure you commit any changes
-            
+
             ![image](/img/pages/dashboard/save.png)
+
+- #### Enable a Deepview
+
+    - Go to [Deepview Previews](https://dashboard.branch.io/web/deepviews) on the Branch Dashboard
+    - Toggle `Enabled` for `branch_default` for `iOS` and `Android`
+    - This will make your deep links perform optimally on all [Supported platforms](/pages/links/integrate/#expected-redirect-behavior)
+    - Additional details about [Deepviews](/pages/web/deep-views/)
+
+        ![image](/img/pages/dashboard/deepview.png)
 
 ## Advance integration
 
@@ -95,7 +103,7 @@
     - Set `UTM tags`
         - Recommend `disabled`. If you enable this, Branch will automatically set channel, feature, campaign, tags and $keywords based on UTM params. This only applies to dynamically created links, not links generated through the Dashboard, API or SDKs.
 
-            | UTM parameter | Branch parameter 
+            | UTM parameter | Branch parameter
             | --- | --- |
             | utm_source | Channel
             | utm_medium | Feature
@@ -104,17 +112,17 @@
             | utm_term | Keywords (not visible on Dashboard)
 
 - #### Enable Facebook App Invites
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard    
+    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
     - Add your Facebook credentials to allow us to link your Facebook dashboard to the Branch dashboard
     - This configuration allows us to send and receive attribution data from Facebook
 
 - #### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
-    
+
     - ##### Use app.link domain
-        - Understand [Domain change warning](#domain-change-warning) 
+        - Understand [Domain change warning](#domain-change-warning)
         - Make changes to [Link settings](https://dashboard.branch.io/link-settings) or contact support
-   
+
     - ##### Use custom sub domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
@@ -122,8 +130,8 @@
         - Change your link domain to your custom sub domain on [Link settings](https://dashboard.branch.io/link-settings)
         - Update your `CNAME` record on your custom sub domain
             - `CNAME` = `custom.bnc.lt`
-        - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings) 
-    
+        - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings)
+
     - ##### Use custom root domain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
@@ -163,7 +171,7 @@
     - Branch will use your domain to route all deep linked traffic. Branch will also host your AASA file and SSL certificates
     - If you have content on your `custom root domain` (e.g. https://example.com/), Branch recommends using an unused `custom sub domain` instead (e.g. https://link.example.com/)
 
-- #### Custom domain debugging 
+- #### Custom domain debugging
     - Used for [Change link domain](#change-link-domain)
     - You can test your domain record changes with `dig ns <domain>` or `dig cname <domain>`
     - We recommend that you choose one domain or subdomain to use with Branch and stick with it, as switching can cause significant problems with your existing links

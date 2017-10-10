@@ -104,8 +104,8 @@ extra:
     - 'New Analytics Platform'
     - 'Enable Single Sign On'
   is_visible:
-    footer_floater_beta: true
-    footer_floater_old_docs: true
+    footer_floater_beta: false
+    footer_floater_old_docs: false
     footer_nav: false
     header_git: false
     header_breadcrumb: true
@@ -184,8 +184,7 @@ pages:
     - Vero: pages/emails/vero.md
     - Zeta: pages/emails/zeta.md
     - Self Serve: pages/emails/self-serve.md
-  - Links in push notifications:
-    - Generic push support: pages/push/generic-push.md
+  - Links in push notifications: pages/advance/push-notifications.md
   - Links in organic search:
     - Firebase App Indexing: pages/organic-search/firebase.md
     - Spotlight Search: pages/organic-search/spotlight.md
