@@ -368,7 +368,7 @@ You can access this feature from the **Validate & Test** step or directly from t
     
     ![image](/img/pages/journeys/schedule-modal-recurring.png)
 
-#### FAQ
+#### Scheduling FAQ
 
 1. **When does my scheduled Journey become active or stopped?**
    There can be up to a 5 minute delay between a scheduled time and your Journey becoming active or stopped.
