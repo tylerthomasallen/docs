@@ -47,7 +47,7 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
 !!! note "Optional: Deep Link Data"
-	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](TODO) page to learn more.
+	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](/pages/deep-linking/routing/) page to learn more.
 
 !!! tip "Setting Attribution Windows"
 	You can specify the attribution windows for your links either at an overall account or per link level. Use these windows to accurately measure attribution data for your Branch links. Refer to [Changing attribution windows](/pages/deep-linked-ads/branch-universal-ads/#change-attribution-windows) for instructions.
@@ -92,7 +92,7 @@ To set up a Display Network Mobile App Engagement Campaign on iOS, you will need
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
 !!! note "Optional: Deep Link Data"
-	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](TODO) page to learn more.
+	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](/pages/deep-linking/routing/) page to learn more.
 
 !!! tip "Setting Attribution Windows"
 	You can specify the attribution windows for your links either at an overall account or per link level. Use these windows to accurately measure attribution data for your Branch links. Refer to [Changing attribution windows](/pages/deep-linked-ads/branch-universal-ads/#change-attribution-windows) for instructions.
