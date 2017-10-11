@@ -26,8 +26,8 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 ## Setup
 
 !!! warning "Prerequisites"
-	* [x] To track installs from Google Ads you should [integrate the Branch SDK](TODO) into your app.
-	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](TODO).
+	* [x] To track installs from Google Ads you should [integrate the Branch SDK](/pages/apps/ios/#integrate-branch) into your app.
+	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](/pages/deep-linking/routing/).
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
 {! ingredients/deep-linked-ads/enable-google-ad-partner.md !}
@@ -59,9 +59,13 @@ To set up a Display Network Mobile App Engagement Campaign on iOS, you will need
 #### Create Your Campaign
 
 1. Select `Display Network only` on Adwords
-<img src="/img/pages/deep-linked-ads/reusable-images/adwords-display-network.png" alt="Adwords Network" class="half center">
+
+	<img src="/img/pages/deep-linked-ads/reusable-images/adwords-display-network.png" alt="Adwords Network" class="half center">
+
 1. For the type of Display campaign select `Engage with your mobile app`
-![Adwords Setup](/img/pages/deep-linked-ads/google-display-engagement-ads/adwords-display-engagement.png)
+
+	![Adwords Setup](/img/pages/deep-linked-ads/google-display-engagement-ads/adwords-display-engagement.png)
+
 1. Continue setting the campaign and ad group parameters
 
 #### Ad Creation
@@ -100,9 +104,14 @@ To set up a Display Network Mobile App Install Campaign on iOS, you will need to
 #### Create Your Campaign
 
 1. Select `Display Network only` on Adwords
-<img src="/img/pages/deep-linked-ads/reusable-images/adwords-display-network.png" alt="Adwords Network" class="half center">
+
+	<img src="/img/pages/deep-linked-ads/reusable-images/adwords-display-network.png" alt="Adwords Network" class="half center">
+
 1. For the type of Display campaign select `Engage with your mobile app`
-![Adwords Setup](/img/pages/deep-linked-ads/google-display-engagement-ads/adwords-display-engagement.png)1. Continue setting the campaign and ad group parameters
+
+	![Adwords Setup](/img/pages/deep-linked-ads/google-display-engagement-ads/adwords-display-engagement.png)
+
+1. Continue setting the campaign and ad group parameters
 
 ## Configure an Ad
 

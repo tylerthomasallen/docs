@@ -33,8 +33,8 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 ## Setup
 
 !!! warning "Prerequisites"
-	* [x] To track installs from Google Ads you should [integrate the Branch SDK](TODO) into your app.
-	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](TODO).
+	* [x] To track installs from Google Ads you should [integrate the Branch SDK](/pages/apps/ios/#integrate-branch) into your app.
+	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](/pages/deep-linking/routing/).
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
 {! ingredients/deep-linked-ads/enable-google-ad-partner.md !}
@@ -44,13 +44,20 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 #### Create an Ad Link
 
 1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `Create Display Link`
-<img src="/img/pages/deep-linked-ads/reusable-images/create-display-search.png" alt="Link Creation" class="three-quarters center">
+
+	![Create Display Link](/img/pages/deep-linked-ads/reusable-images/create-display-search.png)
+
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **Display** and the Ad Partner set to **Google Adwords**.
-![Create Ad Link](/img/pages/deep-linked-ads/google-video/link-setup.png)
+
+	![Create Ad Link](/img/pages/deep-linked-ads/google-video/link-setup.png)
+
 1. Under the Configure Options tab, navigate to the Redirects sub section and ensure that the iOS/Android redirect is set to the desired app being promoted by the ad campaign.
-![Create Ad Link](/img/pages/deep-linked-ads/reusable-images/example-link-redirect.png)
+
+	![Create Ad Link](/img/pages/deep-linked-ads/reusable-images/example-link-redirect.png)
+
 1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Google Adwords and set the campaign field to the same ad campaign name used in Adwords.
+
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
 !!! note "Optional: Deep Link Data"
@@ -66,9 +73,13 @@ To set up a Video Campaign, you will need to first create your campaign and then
 #### Create Your Campaign
 
 1. Select `Video` on Adwords
-<img src="/img/pages/deep-linked-ads/reusable-images/adwords-video-network.png" alt="Adwords Network" class="half center">
+
+	<img src="/img/pages/deep-linked-ads/reusable-images/adwords-video-network.png" alt="Adwords Network" class="half center">
+
 1. Select the 'Mobile app installs' campaign type
-![Adwords Setup](/img/pages/deep-linked-ads/google-video/install/video-install.png)
+
+	![Adwords Setup](/img/pages/deep-linked-ads/google-video/install/video-install.png)
+
 1. Complete the rest of the ad campaign setup
 
 #### Ad Creation
@@ -114,9 +125,13 @@ To set up a Video Campaign, you will need to first create your campaign and then
 #### Create Your Campaign
 
 1. Select `Video` on Adwords
-<img src="/img/pages/deep-linked-ads/reusable-images/adwords-video-network.png" alt="Adwords Network" class="half center">
+
+	<img src="/img/pages/deep-linked-ads/reusable-images/adwords-video-network.png" alt="Adwords Network" class="half center">
+
 1. Select the 'Standard' campaign type
-![Adwords Setup](/img/pages/deep-linked-ads/google-video/standard/video-standard.png)
+
+	![Adwords Setup](/img/pages/deep-linked-ads/google-video/standard/video-standard.png)
+
 1. Complete the rest of the campaign and ad group setup
 
 #### Ad Creation
@@ -127,7 +142,7 @@ To set up a Video Campaign, you will need to first create your campaign and then
 1. On the ad creation section, select your desired Video ad format and fill in the **Final URL** field with the final website URL of your ad
 1. Locate the `Ad URL options (advanced)` section and expand it. Now copy your Branch Ad link from the previous step into the **Tracking Template** field.
 
-![Example Link](/img/pages/deep-linked-ads/google-video/full-branch-link.png)
+	![Example Link](/img/pages/deep-linked-ads/google-video/full-branch-link.png)
 
 #### Instream Video Setup
 

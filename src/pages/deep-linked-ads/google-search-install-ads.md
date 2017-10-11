@@ -123,7 +123,7 @@ To set up a Search Network Mobile App Install Campaign on Android, you will need
 
 - Select `Search Network only` on Adwords
 
-<img src="/img/pages/deep-linked-ads/reusable-images/adwords-search-network.png" alt="Adwords Network" class="half center">
+![image](/img/pages/deep-linked-ads/reusable-images/adwords-search-network.png)
 
 - For the type of Search campaign select `Mobile app installs`
 
