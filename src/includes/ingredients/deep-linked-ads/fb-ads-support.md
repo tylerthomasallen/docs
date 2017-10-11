@@ -36,11 +36,11 @@ If it's close, you know that this is the root cause.
 
 **Don't Use setDebug**
 
-Facebook ads are incompatible with [debug mode]({{base.url}}/getting-started/integration-testing/guide/ios/#use-debug-mode-to-simulate-fresh-installs TODO), as this prevents us from sending the correct hardware ID to Facebook.
+Facebook ads are incompatible with [debug mode](/pages/apps/ios/#simulate-an-install), as this prevents us from sending the correct hardware ID to Facebook.
 
 **Conflicts with Facebook SDK (iOS)**
 
-If your app integrates the FBSDK, be certain you are *not* using the [`FBSDKAppLinkUtility` method](https://developers.facebook.com/docs/reference/ios/current/class/FBSDKAppLinkUtility/ TODO). This has been known to cause conflicts with Branch when handling incoming deep links.
+If your app integrates the FBSDK, be certain you are *not* using the [`FBSDKAppLinkUtility` method](https://developers.facebook.com/docs/reference/ios/current/class/FBSDKAppLinkUtility/). This has been known to cause conflicts with Branch when handling incoming deep links.
 
 #### Testing Deep Linked Ads
 
@@ -111,6 +111,7 @@ We recently discovered a bug within the Facebook system that prevents App Links 
 - Country Restricted is set to **No**
 
 It has to look like this **exactly**:
+
 ![App Restrictions Troubleshooting](/img/ingredients/deep-linked-ads/fb-ads-support/app_restrictions.png)
 
 **No IP Whitelists**

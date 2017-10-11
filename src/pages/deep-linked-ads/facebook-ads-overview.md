@@ -16,15 +16,13 @@ This documentation supports the following Facebook Ad Campaigns:
 
 Facebook Campaign Category | Campaign Type/Objective | Branch Documentation Link | Branch Ad Format
 --- | --- | --- | ---
-Awareness | Brand Awareness | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-platform-ads/#brand-awareness-campaign-setup)** | Cross-platform Display
-Awareness | Reach | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-platform-ads/#reach-campaign-setup)** | Cross-platform Display
-Consideration | Traffic | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-traffic-conversion-ads/#traffic-campaign-setup)** | Cross-platform Display
-Consideration | App Installs | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-app-install-ads/)** | App Only: Installs
-Consideration | Video Views | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-platform-ads/#video-views-campaign-setup)** | Cross-platform Display
-Consideration | Lead Generation | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-platform-ads/#lead-generation-campaign-setup)** | Cross-platform Display
-Conversion | Conversions | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-traffic-conversion-ads/#conversions-campaign-setup)** | Cross-platform Display
-Conversion | Product Catalogue Sales | **[link](https://docs.branch.io/pages/deep-linked-ads/facebook-dynamic-ads/)** | Cross-platform Product Links
-
-<!-- Conversion | Store Visits | **[link]()** | Cross-platform Product Links -->
+Awareness | Brand Awareness | **[link](/pages/deep-linked-ads/facebook-platform-ads/#brand-awareness-campaign-setup)** | Cross-platform Display
+Awareness | Reach | **[link](/pages/deep-linked-ads/facebook-platform-ads/#reach-campaign-setup)** | Cross-platform Display
+Consideration | Traffic | **[link](/pages/deep-linked-ads/facebook-traffic-conversion-ads/#traffic-campaign-setup)** | Cross-platform Display
+Consideration | App Installs | **[link](/pages/deep-linked-ads/facebook-app-install-ads/)** | App Only: Installs
+Consideration | Video Views | **[link](/pages/deep-linked-ads/facebook-platform-ads/#video-views-campaign-setup)** | Cross-platform Display
+Consideration | Lead Generation | **[link](/pages/deep-linked-ads/facebook-platform-ads/#lead-generation-campaign-setup)** | Cross-platform Display
+Conversion | Conversions | **[link](/pages/deep-linked-ads/facebook-traffic-conversion-ads/#conversions-campaign-setup)** | Cross-platform Display
+Conversion | Product Catalogue Sales | **[link](/pages/deep-linked-ads/facebook-dynamic-ads/)** | Cross-platform Product Links
 
 {! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}

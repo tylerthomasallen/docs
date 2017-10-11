@@ -32,8 +32,8 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 ## Setup
 
 !!! warning "Prerequisites"
-	* [x] To track installs from Google Ads you should [integrate the Branch SDK](TODO) into your app.
-	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](TODO).
+	* [x] To track installs from Google Ads you should [integrate the Branch SDK](/pages/apps/ios/#integrate-branch) into your app.
+	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](/pages/deep-linking/routing/).
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
 {! ingredients/deep-linked-ads/enable-google-ad-partner.md !}
@@ -53,7 +53,7 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
 !!! note "Optional: Deep Link Data"
-	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](TODO) page to learn more.
+	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](/pages/deep-linking/routing/) page to learn more.
 
 !!! tip "Setting Attribution Windows"
 	You can specify the attribution windows for your links either at an overall account or per link level. Use these windows to accurately measure attribution data for your Branch links. Refer to [Changing attribution windows](/pages/deep-linked-ads/branch-universal-ads/#change-attribution-windows) for instructions.
@@ -98,7 +98,7 @@ To set up a Search Network Campaign, you will need to first create your campaign
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
 !!! note "Optional: Deep Link Data"
-	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](TODO) page to learn more.
+	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](/pages/deep-linking/routing/) page to learn more.
 
 !!! tip "Setting Attribution Windows"
 	You can specify the attribution windows for your links either at an overall account or per link level. Use these windows to accurately measure attribution data for your Branch links. Refer to [Changing attribution windows](/pages/deep-linked-ads/branch-universal-ads/#change-attribution-windows) for instructions.

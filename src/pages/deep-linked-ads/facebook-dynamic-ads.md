@@ -29,9 +29,9 @@ Product Catalogue Sales | ✔︎ |  | ✔︎ |  |  |  |
 {! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
 
 !!! warning "Prerequisites"
-	* [x] To track installs from Facebook Ads you should [integrate the Branch SDK]({{base.url}}/getting-started/sdk-integration-guide TODO) into your app.
-	* [x] To use Branch links in Facebook App Install Ads ensure you have Universal Links set up on iOS or App Links enabled on Android to ensure correct routing behavior. For setup, checkout [Universal and App Links]({{base.url}}/getting-started/universal-app-links TODO).
-	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing]({{base.url}}/getting-started/deep-link-routing TODO).
+	* [x] To track installs from Facebook Ads you should [integrate the Branch SDK](/pages/apps/ios/#integrate-branch) into your app.
+	* [x] To use Branch links in Facebook App Install Ads ensure you have Universal Links set up on iOS or App Links enabled on Android to ensure correct routing behavior. For setup, checkout [Universal](/pages/deep-linking/universal-links/) and [App Links](/pages/deep-linking/android-app-links/).
+	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](/pages/deep-linking/routing/).
 	* [x] Use [Branch Deep Linked Feeds](/pages/deep-linked-ads/dynamic-product-feeds/) to create your Facebook Dynamic Ad compatible deep links.
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
