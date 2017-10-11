@@ -348,6 +348,34 @@ We ask you to prioritize all non-Archived Journeys because Journeys can be set l
 #### What happens if I have some Journeys with priorities set and some without?
 We recommend setting priority for all Journeys. All new Journeys you create will automatically have the lowest priority assigned to them, as well as *Draft* or *Stopped* Journeys *without priority* that are set live (Journeys with priority will not have their priority changed unless you explicitly set them). If you don't set a priority for all your Journeys, then any matching Journey (i.e. Journey passing the audience filter you set) without priority will be picked at random to show.
 
+### Scheduling
+
+You can set a time when your Journey will become active and be visible to your users and/or a time when it will no longer be displayed. You can also schedule Journeys on a recurring basis. 
+
+You can access this feature from the **Validate & Test** step or directly from the action menu on the Journeys manager page.
+
+![image](/img/pages/journeys/schedule-action.png)
+
+!!! example "Example: Scheduling a Journey"
+    Imagine you want to show your users a Journey during the month of November that advertises a 25% sale if they download your app. You can set it to start at 12 AM on November 1st, and end at 12 AM on December 1st:
+    
+    
+    ![image](/img/pages/journeys/schedule-modal.png)
+
+!!! example "Example: Recurring Schedules"
+    Imagine you have a show that airs from 9-10 PM every Sunday, and you want to encourage users to view the episode in-app during that time. You can set a start time of 9 PM on the upcoming Sunday, set a stop time of 10 PM that same day, and then set it to repeat weekly:
+    
+    
+    ![image](/img/pages/journeys/schedule-modal-recurring.png)
+
+#### FAQ
+
+1. **When does my scheduled Journey become active or stopped?**
+   There can be up to a 5 minute delay between a scheduled time and your Journey becoming active or stopped.
+1. **How do I set an end date for a Journey with a recurring schedule?**
+   This is not supported with scheduling at this time. To do this, set a start and stop time for your Journey and add your repeat rules. When you want the Journey to stop for good, stop it from the action menu or Edit Schedule > Delete.
+
+
 ### Dynamic Journeys layout customization
 
 We now support the use case where you can customize the appearance of a Journey depending on which link referred the web session. So, you can create a Branch link with a set of defined keys and values that will change properties such as the title or images when the user is referred to your website from this link.
