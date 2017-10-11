@@ -114,7 +114,7 @@ $click_conversion_window_days | https://branchster.app.link/hpNVE52gxE?$click_se
 $impression_session_start_window_days | https://branchster.app.link/hpNVE52gxE?$click_session_start_window_days=1
 $impression_conversion_window_days | https://branchster.app.link/hpNVE52gxE?$click_session_start_window_days=7
 
-!!! "warning" Link Level Attribution Support for Standard Branch links"
+!!! warning "Link Level Attribution Support for Standard Branch links"
     As of July 2017, link level attribution window setting is only available on standard Branch links. Special Branch links such as the ones used for Google's Universal App Campaign or Play Store links with Branch link Ids are currently not supported.
 
 ## Support
