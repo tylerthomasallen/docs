@@ -890,7 +890,7 @@
 
 - ### Cordova errors
 
-    - Branch opens and installs your app, so you cannot simulate Branch in the desktop browser
+    - ##### Device only
 
         - Error
 
@@ -904,6 +904,8 @@
 
         - Solution
 
+            - Branch opens and installs your app, so you cannot simulate Branch in the desktop browser or simulator
+
             ```js
             // Ionic 2/3 - running on browser instead of device
             if (!platform.is('cordova')) { return }
@@ -915,7 +917,7 @@
             const Branch = window['Branch'];
             ```
 
-    - Provisioning Profile missing
+    - ##### Provisioning Profile missing
 
         - Error
 
@@ -936,7 +938,7 @@
 
             - Fix by opening your app in `Xcode` and launch from there (to select a `Provisioning Profile`)
 
-    - Invalid bundle id
+    - ##### Invalid bundle id
 
         - Error
 
