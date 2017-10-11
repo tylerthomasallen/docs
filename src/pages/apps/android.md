@@ -1334,10 +1334,15 @@
 
 - ### Proguard warning or errors with answers-shim module
 
-    - Often caused when you exclude the `answers-shim`. Try adding -dontwarn com.crashlytics.android.answers.shim` to your `Proguard` file
+    - Often caused when you exclude the `answers-shim`. Try adding `-dontwarn com.crashlytics.android.answers.shim.**` to your `Proguard` file
+
+- ### Proguard warning or errors with AppIndexing module
+
+    - The Branch SDK has an optional dependency on Firebase app indexing classes to provide new Firebase content listing
+        features. This may cause a proguard warning depending on your proguard settings. Please add the following to your
+        proguard file to solve this issue `-dontwarn com.google.firebase.appindexing.**`.
 
 - ### Unable to open this link error
 
     - Happens whenever URI Scheme redirection fails.
-    - Make sure you do not have `$deeplink_path` or you have a `$deeplink_path` which your `AndroidManfiest.xml` can accept
-
+    - Make sure you do not have `$deeplink_path` or you have a `$deeplink_path` which your `AndroidManifest.xml` can accept

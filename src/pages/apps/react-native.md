@@ -846,6 +846,34 @@
     app and all subsequent link opens. There is no need to call `getLatestReferringParams` at app
     launch to check for an initial link. Use `branch.subscribe` to handle all link opens.
 
+- ### Common build problems
+
+    - Be sure to follow the instructions to [Update from < 2.0.0](#update-from-200) if your
+        app used an earlier version of react-native-branch. In version 2.x, the native SDKs are embedded
+        in the NPM module and must not also be added from elsewhere (Gradle, CocoaPods, etc.).
+
+    - Note that when using the `React` pod in a native app, the name of the native SDK pod is `Branch-SDK`,
+        not `Branch`, and it comes from `node_modules`, not the CocoaPods repo.
+
+    - Starting with React Native 0.40, all external iOS headers in Objective-C must be imported as
+        `#import <PackageName/Header.h>`.
+        This applies to React Native headers as well as the `<react-native-branch/RNBranch.h>` header
+        from this SDK.
+
+    - If you upgraded from RN < 0.40 manually, without adjusting your Xcode project settings, you may
+        still be importing headers with double quotes. This probably indicates a problem with your settings.
+
+    - The `react-native-git-upgrade` tool from NPM may be used to update dependencies as well as project
+        settings.
+
+    - On Android, when using Proguard in release builds, depending on your build settings, it may be
+        necessary to add one or both of these lines to your `android/app/proguard-rules.pro` file:
+
+        ```proguard
+        -dontwarn com.crashlytics.android.answers.shim.**
+        -dontwarn com.google.firebase.appindexing.**
+        ```
+
 - ### General troubleshooting
 
     See the troubleshooting guide for each native SDK:
