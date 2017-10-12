@@ -1,13 +1,7 @@
 ---
 ---
 
-{! ingredients/email/email-overview.md !}
-
-### Prerequisites
-
-- This guide requires you to have already integrated the Branch SDK into your app.
-
-{! ingredients/email/email-set-up-deep-linking.md !}
+{! ingredients/email/email-configure-esp.md !}
 
 You can retrieve your click tracking domain from your Epsilon settings. We recommend creating a new click tracking domain for the Epsilon Harmony integration. You can switch over your production click tracking domain to Epsilon but we recommend testing with a different domain to get started.
 
@@ -40,6 +34,8 @@ There are a few different ways you can create Branch links that are compatible w
 1. [Making regular Branch links compatible with email](#making-regular-branch-links-compatible-with-email)
 1. [Create email links via API without changing your email templates](#create-email-links-via-api-without-changing-your-email-templates)
 1. [Convert all web links in your email to deep links](#convert-all-web-links-in-your-email-to-deep-links)
+
+**Epsilon uses the shortcode `e_ep` for links in emails** - please use this in place of `e_xx` in the guide below.
 
 #### Configure your Epsilon Harmony Content
 

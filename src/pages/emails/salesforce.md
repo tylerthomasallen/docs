@@ -1,14 +1,11 @@
 ---
 ---
 
-{! ingredients/email/email-overview.md !}
-
 ### Prerequisites
 
 - You must have the Salesforce Marketing Cloud Sender Authentication Package (SAP) in order to benefit from Universal Links + click tracking functionality.
-- This guide requires you to have already integrated the Branch SDK into your app.
 
-{! ingredients/email/email-set-up-deep-linking.md !}
+{! ingredients/email/email-configure-esp.md !}
 
 You can retrieve your click tracking domain from your Salesforce settings. We **highly** recommend using a new click tracking domain for this implementation to ensure that the user experience for pre-Branch links on the original click tracking domain doesn't break.
 
@@ -28,15 +25,6 @@ Your Salesforce account must be configured to correctly handle Universal Links. 
 ![image](/img/pages/email/salesforce/salesforce-aasa-form.png)
 
 {! ingredients/email/email-associated-domains.md !}
-
-{! ingredients/email/email-bounce-web.md !}
-
-!!! protip "Do not open the app"
-    If you want any web-only links to not open the app on iOS, Salesforce has a special attribute that you can apply to these links.
-
-    Add ```mc-deep-link="false"``` to your link tag like this:
-
-    ```<a mc-deep-link="false" href="https://my.app.link/3p?$3p=e_et&$original_url=..." >This link will not open the app.</a>```
 
 {! ingredients/email/email-validate-test.md !}
 
@@ -135,6 +123,20 @@ This converted code is referred to as the "Branch script" - this script will con
 
 {! ingredients/email/email-link-options.md !}
 
-{! ingredients/email/email-usage-bounce.md !}
+### Flag your web-only links
+
+If you want any web-only links to not open the app on iOS, Salesforce has a special attribute that you can apply to these links.
+
+Add ```mc-deep-link="false"``` to your link tag like this:
+
+```html
+<a mc-deep-link="false" href="https://my.app.link/3p?$3p=e_et&$original_url=..." >This link will not open the app.</a>
+```
+
+To ensure that the app does not open on other platforms, add `%24web_only%3Dtrue` to your links as a query parameter, for example:
+
+```html
+<a href="https://vza3.app.link/3p?%243p=e_xx&%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar%24web_only%3Dtrue" >Link to your app!</a>
+```
 
 {! ingredients/email/email-support.md !}

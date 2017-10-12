@@ -166,6 +166,7 @@ pages:
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter: pages/deep-linked-ads/twitter.md
   - Links in your emails:
+    - Get Started: pages/emails/get-started.md
     - Appboy: pages/emails/appboy.md
     - Blueshift: pages/emails/blueshift.md
     - Bronto: pages/emails/bronto.md
@@ -183,6 +184,7 @@ pages:
     - SparkPost: pages/emails/sparkpost.md
     - Vero: pages/emails/vero.md
     - Zeta: pages/emails/zeta.md
+    - Support: pages/emails/support.md
     - Self Serve: pages/emails/self-serve.md
   - Links in push notifications: pages/advance/push-notifications.md
   - Links in organic search:

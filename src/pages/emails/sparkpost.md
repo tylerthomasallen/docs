@@ -1,13 +1,7 @@
 ---
 ---
 
-{! ingredients/email/email-overview.md !}
-
-### Prerequisites
-
-- This guide requires you to have already integrated the Branch SDK into your app.
-
-{! ingredients/email/email-set-up-deep-linking.md !}
+{! ingredients/email/email-configure-esp.md !}
 
 You can retrieve your click tracking domain from the **[Tracking Domains](https://app.sparkpost.com/account/tracking-domains){:target="\_blank"}** section of your SparkPost account. If you have not added a custom click tracking domain yet, follow the instructions [here](#create-a-custom-click-tracking-domain). 
 
