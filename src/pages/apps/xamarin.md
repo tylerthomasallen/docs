@@ -382,6 +382,11 @@
                 Categories = new[] { "android.intent.category.DEFAULT", "android.intent.category.BROWSABLE" },
                 DataScheme = "https",
                 DataHost = "testandroidapp.app.link")]
+                
+                [IntentFilter(new[] { "android.intent.action.VIEW" },
+                Categories = new[] { "android.intent.category.DEFAULT", "android.intent.category.BROWSABLE" },
+                DataScheme = "https",
+                DataHost = "testandroidapp-alternate.app.link")]
 
                 public class MainActivity : Activity, IBranchSessionInterface
                 {
