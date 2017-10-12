@@ -94,6 +94,10 @@
 
     - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
+- #### Tips, notes, warnings etc.
+
+    - Syntax for tips and other highlighted blocks can be found here: http://squidfunk.github.io/mkdocs-material/extensions/admonition/
+
 - #### Code Modals
 
     - `Complete [Integrate your app](#dialog-code?ios=create-deep-link&android=install-branch)`
