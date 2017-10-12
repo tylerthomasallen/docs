@@ -34,7 +34,7 @@ We have built a custom integration to automatically send all Branch install data
 1. On the Branch Dashboard (dashboard.branch.io), navigate to the [Integrations page](https://dashboard.branch.io/integrations).
 1. Locate Localytics and choose **Enable**.
   * If you have not yet entered billing information, please do so now.
-1. Enter your Localytics API Key for each platform and hit **Save**
+1. Enter your Localytics Attribution ID for each platform and hit **Save**
 
 ![image](/img/pages/integrations/localytics/enable-localytics-integration.png)
 
