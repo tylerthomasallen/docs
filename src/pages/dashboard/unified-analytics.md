@@ -15,22 +15,22 @@ This document also covers every section where you can expect a difference when i
 
 Previously, when you integrated the Branch SDK, and started clicking links, we automatically tracked clicks, installs, opens, and web session starts and pageviews (if you installed the web SDK). Ultimately, if you enabled Deepviews or Journeys, we counted clicks when a click didn't actually occur, such as when a Deepview displayed, a Journey automatically opened the app without any physical click. This caused confusion on our dashboard, as people would notice clicks occurring without anyone ever clicking a link! Fortunately, we've cleaned up our pre-defined events, and have introduced a new way to think of events.  
 
-We now have classifications of events. Think of when you track when a user adds payment info, and initiates a purchase, and finally completes a purchase: those are all *commerce* events. The full mapping of events is below. What this means is that
+We now have classifications of events. Think of when you track when a user adds payment info, and initiates a purchase, and finally completes a purchase: those are all *commerce* events. The full mapping of events is below.
 
-impression
-click
-Branch CTA view
-web to app auto redirect
-SMS sent
-install
-open
-reinstall
-pageview
-web session start
-commerce event
-content event
-user lifecycle event
-custom event
+- impression
+- click
+- Branch CTA view
+- web to app auto redirect
+- SMS sent
+- install
+- open
+- reinstall
+- pageview
+- web session start
+- commerce event
+- content event
+- user lifecycle event
+- custom event
 
 
 ## What's changed?
