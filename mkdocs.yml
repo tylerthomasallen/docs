@@ -205,6 +205,7 @@ pages:
     - AppMetrica: pages/integrations/appmetrica.md
     - Appboy: pages/integrations/appboy.md
     - Appsflyer: pages/integrations/appsflyer.md
+    - CleverTap: pages/integrations/clevertap.md
     - Fabric Answers: pages/integrations/fabric-answers.md
     - Google Analytics: pages/integrations/google-analytics.md
     - Kochava: pages/integrations/kochava.md
