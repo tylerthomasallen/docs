@@ -131,6 +131,7 @@
         - Update your `CNAME` record on your custom sub domain
             - `CNAME` = `custom.bnc.lt`
         - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings)
+        - If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `Registered Domains` tab, and not the `Hosted zones` section
 
     - ##### Use custom root domain
         - Understand [Domain change warning](#domain-change-warning)
@@ -144,6 +145,7 @@
                 - `ns-991.awsdns-59.net`
                 - `ns-428.awsdns-53.com`
         - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings)
+        - If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `Registered Domains` tab, and not the `Hosted zones` section
 
 ## Troubleshoot issues
 
