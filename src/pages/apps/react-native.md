@@ -691,20 +691,6 @@
 
         - Add `compile 'com.android.support:customtabs:23.3.0'` to your `build.gradle`
 
-        - Add to your application class before `getAutoInstance` ([Load Branch](#load-branch))
-
-        - *Java*
-
-            ```java
-            Branch.enableCookieBasedMatching("your.linkdomain.com");
-            ```
-
-        - *Kotlin*
-
-            ```java
-            Branch.enableCookieBasedMatching("your.linkdomain.com")
-            ```
-
     - iOS
 
         - Use the `SFSafariViewController` to increase the attribution matching success
