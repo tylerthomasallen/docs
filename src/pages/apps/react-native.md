@@ -515,7 +515,7 @@
         milliseconds.
 
     ```js hl_lines="1"
-    branch.initSessionTTL = 10000 // Set to 10 seconds
+    branch.initSessionTtl = 10000 // Set to 10 seconds
     branch.subscribe({ error, params } => {
       // ...
     })
