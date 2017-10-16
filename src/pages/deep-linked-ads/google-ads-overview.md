@@ -27,6 +27,6 @@ Video | Mobile App Installs | **[link](/pages/deep-linked-ads/google-video-ads/#
 Video | Standard | **[link](/pages/deep-linked-ads/google-video-ads/#video-standard-ads)** | Cross-platform Display
 Universal App Campaigns | Universal App Campaigns | **[link](/pages/deep-linked-ads/google-uac)** | App Only: Install
 
-For setup instructions for Adwords Conversion tracking with Branch check out **[Google Conversion Setup](/pages/deep-linked-ads/google-conversions)**.
+For setup instructions for Adwords Conversion tracking with Branch check out **[Google Conversion Setup](https://docs.branch.io/pages/deep-linked-ads/google-conversions)**.
 
 {! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
