@@ -15,7 +15,9 @@ This document also covers every section where you can expect a difference when i
 
 Previously, when you integrated the Branch SDK, and started clicking links, we automatically tracked clicks, installs, opens, and web session starts and pageviews (if you installed the web SDK). Ultimately, if you enabled Deepviews or Journeys, we counted clicks when a click didn't actually occur, such as when a Deepview displayed, a Journey automatically opened the app without any physical click. This caused confusion on our dashboard, as people would notice clicks occurring without anyone ever clicking a link! Fortunately, we've cleaned up our pre-defined events, and have introduced a new way to think of events.  
 
-We now have classifications of events. Think of when you track when a user adds payment info, and initiates a purchase, and finally completes a purchase: those are all *commerce* events. The full mapping of events is below.
+We now have classifications of events. Think of when you track when a user adds payment info, and initiates a purchase, and finally completes a purchase: those are all *commerce* events. Similarly, we now have *content* events and *user lifecycle* events. 
+
+The full mapping of events is below.
 
 - impression
 - click
@@ -41,7 +43,7 @@ The biggest change is the analytics associated with deep linking. Previously, wh
 
 Now, we've separated this concept. Deep linking windows remain two hours, but attribution windows are adjustable. Going with the previous example, if someone clicks your link, and installs the app after 4 hours, they will *not* receive deep link data, but will be counted as an install.
 
-Note: no code changes are needed, and if you want to expand the deep linking window, you can do so. Read the [attribution window](#attribution-windows) section for more information.
+Note: no code changes are needed, and if you want to change the deep linking window, you can do so. Read the [attribution window](#attribution-windows) section for more information.
 
 ### Attribution Windows
 
@@ -51,9 +53,9 @@ Now that deep linking and attribution analytics are separate, we have attributio
 
 - `Deep Linking Duration` refers to the duration of time someone is eligible to receive deep link data. This includes anyone clicking a Branch link, or being automatically redirected to the app through a Branch Web SDK call. Measured in minutes.
 
-- `Click to x` refers to events that occur after someone clicks a Branch link. If someone clicks and installs from a link, and comes back 10 days later to purchase, we would count that as a conversion, and it would surface in our dashboard.
+- `Click to x` refers to events that occur after someone clicks a Branch link. If someone clicks and installs from a link, and comes back 10 days later to purchase, we would count that as a conversion, and it would surface in our dashboard. Measured in days.
 
-- `Impression to x` refers to events that occur after someone views a Branch impression link.
+- `Impression to x` refers to events that occur after someone views a Branch impression link. Measured in days.
 
 Using the default value of 2 hours for deep linking and attribution under the old system, and 2 hours for deep linking with 7 days for install attribution, here's what you can expect.
 
@@ -65,7 +67,9 @@ Behavior | Old Analytics | New Analytics
 
 ### Unique behavior
 
-We now default every visualization in the dashboard to be unique. This means that if you are testing Branch links, and click a link 5 times, we will display that as one click. If you'd like to see *all* clicks, export our data. This applies to all events, as well.
+We now default every visualization in the dashboard to be unique. This means that if you are testing Branch links, and click a link 5 times, we will display that as one click. This applies to events as well. This applies to all events, as well.
+
+Select visualizations also allow you to see total (i.e. non-unique) numbers as well. If you'd like to see total numbers on a visualization that does not support it, you can also export raw data.
 
 ### Cutoff date
 
@@ -89,13 +93,15 @@ This is the first chart found on the main page. This chart surfaces install coun
 
 *old*
 
-![image](/img/pages/dashboard/unified-analytics/installs-summary-old.png)
+![image](/img/pages/dashboard/unified-analytics/installs-summary-new.png)
 
 *new*
 
 **Changes**
 
-We've removed the pie chart from the old visualizations; this is simply removing a chart, not removing any data. This new install summary chart by default shows Branch only installs, that are powered by the new attribution [windows](#attribution-windows). If you want to see all installs, and not just Branch driven installs, simply click `Show All Installs`. You will likely notice a higher number of installs driven by Branch--this is because we have a bigger window to count an install.
+We've removed the pie chart from the old visualizations; this is simply removing a chart, not removing any data. You can see the same breakdowns by campaign, channel, etc on the new install summary chart, making the pie chart redundant. (See also this article on why [pie charts](http://www.businessinsider.com/pie-charts-are-the-worst-2013-6) are misleading.)
+
+This new install summary chart by default shows Branch only installs, that are powered by the new attribution [windows](#attribution-windows). If you want to see all installs, and not just Branch driven installs, simply click `Show All Installs`. You will likely notice a higher number of installs driven by Branch--this is because we have a bigger window to count an install.
 
 Filtering is improved on this chart, as you can add additional query logic by clicking `Add Compare` and `Add Filter`. Previously, you could only filter by one dimension, and now you can filter with more dimensions, with more comparisons.
 
@@ -105,7 +111,7 @@ This section is visually the same, but different in terms of *how* clicks are tr
 
 ### Quick Link Analytics
 
-Just like clow flow analytics, this section is visually the same, but clicks are tracked differently. These clicks are tracked by unique counts, and follow the model where only a click is counted when someone physically taps a link. Mobile deepview views or SMS sents do not count as clicks in this chart.
+Just like clow flow analytics, this section is visually the same, but clicks are tracked differently. These clicks are tracked by unique counts, and follow the model where only a click is counted when someone physically taps a link. Mobile deepview views or SMS sents do not count as clicks in this chart. The data can be exported.
 
 ### Source Analytics
 
@@ -113,11 +119,11 @@ Visually, you will see the query selector that is present on Install Summary. Th
 
 ### Journeys
 
-Journeys data will line up to what's viewed on Source Analytics.
+Journeys data has also changed substantially. Previously, Journeys only included paid Journeys. Now it includes all of our Web SDK's web-to-app offerings. So it also includes analytics from the .banner() and .deepview() functions.
 
 ### Universal Ads
 
-Universal Ads were introduced using the new Analytics platform, so there is no expected change.
+Universal Ads were introduced using the new Analytics platform, so there is no expected change. The data is unique as well, and can be exported.
 
 ## Changes to exported data
 
