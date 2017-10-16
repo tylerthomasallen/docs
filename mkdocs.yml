@@ -103,6 +103,7 @@ extra:
     - 'V2 Event'
     - 'New Analytics Platform'
     - 'Enable Single Sign On'
+    - 'Export API v3'
   is_visible:
     footer_floater_beta: false
     footer_floater_old_docs: false
@@ -200,6 +201,7 @@ pages:
   - Export Branch data:
     - Export API: pages/exports/api.md
     - Webhooks: pages/exports/webhooks.md
+    - Export API v3: pages/exports/api-v3.md
   - Send data to other tools:
     - Adobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
