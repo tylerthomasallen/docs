@@ -12,6 +12,9 @@ If you're running Google's new Universal App Campaign, Branch links can be place
 
 Branch uses Google Adwords' server to server [App Conversion Confirmation](https://developers.google.com/app-conversion-tracking/api/legacy/confirm) for attribution data which reports on conversion events. Therefore, we only collect **install (conversion) data**. Click data is not supported for this campaign type.
 
+!!! warning "Newer AdWords user interface not supported"
+    If you're using the new AdWords experience, you will need to switch back to the old experience to create Universal App Campaigns. Once the campaign is created, you can switch back to the new AdWords experience. We're currently building support for our new style of AdWords integration.
+
 Google Campaign | Campaign Type/Objective | Branch Ad Format
 --- | --- | ---
 Universal App Campaign | Mobile App Install | App Only: Install
