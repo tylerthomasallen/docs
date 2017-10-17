@@ -27,7 +27,7 @@ You can click into `branch_int` in the above screenshot and then see the breakdo
 
 In your AppsFlyer dashboard, grab your app identifier information.
 
-For iOS, this will be the ID of your iOS AP, without the `id` portion. If you have `id123`, simply put `123` into the Branch data integration card.
+For iOS, this will be the iTunes ID of your iOS app, without the `id` portion. If you have `id123`, simply put `123` into the Branch data integration card.
 
 For Android, this will be your package name registered on AppsFlyer. If your package is registered as `io.branch.test`, then simply put `io.branch.test` in the Android section of the AppsFlyer Data Integration card.
 
