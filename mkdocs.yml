@@ -104,6 +104,7 @@ extra:
     - 'New Analytics Platform'
     - 'Enable Single Sign On'
     - 'Export API v3'
+    - 'Export API'
   is_visible:
     footer_floater_beta: false
     footer_floater_old_docs: false
