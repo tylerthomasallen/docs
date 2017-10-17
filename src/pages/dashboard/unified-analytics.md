@@ -2,22 +2,27 @@
 
 ## Overview
 
-Branch has introduced a brand new way of counting analytics. The simplest way to describe the change is by saying that deep linking is no longer tied together with attribution, meaning that you will see different numbers on your Branch dashboard. Everything from unique counts to clicks and attributions are modified.
+Branch is introducing a new and improved analytics platform for you to preview.
 
-While we were at it, we decided to unify our events. Now, anytime you analyze data in the Branch dashboard, or export it out, you will receive consistent column names. The definitions for each column is found in the [data mapping](#data-mapping) section.
+While the most visible impact of this change is our new and visually improved Summary Graph, it is important to understand that we have fundamentally changed the underlying model we use for counting events. This is the result of consistent feedback from Branch partners who have requested we provide deeper insights and clarity around campaigns powered by Branch links. As you want to understand the events associated with clicks on Branch links beyond the course of one user session and across all types of Branch links, we developed a new attribution engine to accurately attribute user events across interaction platforms and across channels.
 
-This document also covers every section where you can expect a difference when interacting with your data on the Branch dashboard, or exporting.
+The biggest change is that we decoupled deep linking and attribution. Now you can measure the impact of events that are not directly associated with the user session in which the click occurred and this means you will now see different numbers on your Branch dashboard.
+
+In some cases, a user may click a link and only open the app several hours or days later. With this new analytics platform, we are still able to attribute both the open and any subsequent events, even though we did not deep link the user.
+Also and from now on, anytime you analyze data in the Branch dashboard, or export it out, you will see consistency in naming across all our reports and products, for all events.
+
+This document highlights each of the section where you can expect to see differences between our old and new analytics.
 
 !!! protip "No changes required"
     We've changed the entire back-end of analytics without requiring any code or implementation changes on your end.
 
 ## Data Mapping
 
-Previously, when you integrated the Branch SDK, and started clicking links, we automatically tracked clicks, installs, opens, and web session starts and pageviews (if you installed the web SDK). Ultimately, if you enabled Deepviews or Journeys, we counted clicks when a click didn't actually occur, such as when a Deepview displayed, a Journey automatically opened the app without any physical click. This caused confusion on our dashboard, as people would notice clicks occurring without anyone ever clicking a link! Fortunately, we've cleaned up our pre-defined events, and have introduced a new way to think of events.  
+From now, Branch provides you a well defined standard to keep track of and categorize events.
 
-We now have classifications of events. Think of when you track when a user adds payment info, and initiates a purchase, and finally completes a purchase: those are all *commerce* events. Similarly, we now have *content* events and *user lifecycle* events. 
+This is different than previous behavior from when you integrated the Branch SDK. Once you created and clicked links, we automatically tracked clicks, installs, opens, and web session starts and pageviews (if you installed the web SDK). If you enabled Deepviews or Journeys, we counted clicks when a click didn't actually occur, such as when a Deepview displayed, a Journey automatically opened the app without any physical click. This caused confusion on our dashboard, as users would noticed clicks occurring without anyone ever clicking a link! Fortunately, thanks to a weel defined standard and categorization of events, this will no longer be the case.
 
-The full mapping of events is below.
+Below is the new classification of events. Think of when you track when a user adds payment info, and initiates a purchase, and finally completes a purchase: those are all *commerce* events. Similarly, we now have *content* events and *user lifecycle* events.
 
 - impression
 - click
@@ -33,7 +38,6 @@ The full mapping of events is below.
 - content event
 - user lifecycle event
 - custom event
-
 
 ## What's changed?
 
@@ -73,11 +77,11 @@ Select visualizations also allow you to see total (i.e. non-unique) numbers as w
 
 ### Cutoff date
 
-We have a cut off date -- September 16th -- which represents the data where you can't mix and match data. As we've introduced this new analytics platform, we've kept systems running in parallel. However, there is the above date which represents dates where you can't mix old data with new. You can query data from any time before September 16th up until September 16th. You can query data from September 16th onwards. If you wanted to do, say, September 15th to September 17th, you would need two separate queries.
+As far as the deployment of our new analytics platform, we created our cut off date on September 16th 2017 and we kept the old and new analytical systems running in parallel since then and will continue to do this for a short while. This mean you can query data from any time before September 16th up until September 16th with the old analytics. You can query data from September 16th onwards with both analytics. But if you wanted to do report across this line, say, September 15th to September 17th, you would need two separate queries.
 
 #### Differences From Cutoff Date
 
-If you are tracking Purchase events, and want to see unique values for Purchases before the cut off date of September 16th, those values will display as 0. This is because the Purchase event hasn't stored unique counts before September 16th. However, moving forward, it does.
+If you are tracking Purchase events, and want to see unique values for Purchases before the cut off date of September 16th 2017, those values will display as 0. This is because the Purchase event hasn't stored unique counts before September 16th. However, we are now storing this information since then.
 
 ## Changes to the Branch Dashboard
 
@@ -143,4 +147,4 @@ Webhooks, like data integratons, is no longer session based. This means we will 
 
 ### Data speed
 
-This new analytics platform isn't real time like the old dashboard analytics, but does not have a significant delay. We're continually improving the speed, and hope to have a standard SLA for dashboard reporting. 
+This new analytics platform isn't real time like the old dashboard analytics, but does not have a significant delay. We're continually improving the speed, and hope to have a standard SLA for dashboard reporting.
