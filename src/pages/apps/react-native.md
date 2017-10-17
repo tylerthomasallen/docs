@@ -502,6 +502,25 @@
     })
     ```
 
+- ### Adjust cached link TTL
+
+    - Any link that launched the app is cached by the native layers and returned
+        to the `branch.subscribe` listener after JavaScript finishes loading.
+
+    - By default, the initial link is cached for 5 seconds. This allows you to
+        unsubscribe and resubscribe later without receiving the initial link.
+
+    - If your app takes longer than this to load, you can adjust the TTL for
+        the initial link by adjusting `branch.initSessionTtl` to a value in
+        milliseconds.
+
+    ```js hl_lines="1"
+    branch.initSessionTtl = 10000 // Set to 10 seconds
+    branch.subscribe({ error, params } => {
+      // ...
+    })
+    ```
+
 - ### Display content
 
     - List content on iOS Spotlight
