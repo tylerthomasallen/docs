@@ -20,7 +20,7 @@ This document highlights each of the section where you can expect to see differe
 
 From now, Branch provides you a well defined standard to keep track of and categorize events.
 
-This is different than previous behavior from when you integrated the Branch SDK. Once you created and clicked links, we automatically tracked clicks, installs, opens, and web session starts and pageviews (if you installed the web SDK). If you enabled Deepviews or Journeys, we counted clicks when a click didn't actually occur, such as when a Deepview displayed, a Journey automatically opened the app without any physical click. This caused confusion on our dashboard, as users would noticed clicks occurring without anyone ever clicking a link! Fortunately, thanks to a weel defined standard and categorization of events, this will no longer be the case.
+This is different than previous behavior from when you integrated the Branch SDK. Once you created and clicked links, we automatically tracked clicks, installs, opens, and web session starts and pageviews (if you installed the web SDK). If you enabled Deepviews or Journeys, we counted clicks when a click didn't actually occur, such as when a Deepview displayed, a Journey automatically opened the app without any physical click. This caused confusion on our dashboard, as users would noticed clicks occurring without anyone ever clicking a link! Fortunately, thanks to a well-defined standard and categorization of events, this will no longer be the case.
 
 Below is the new classification of events. Think of when you track when a user adds payment info, and initiates a purchase, and finally completes a purchase: those are all *commerce* events. Similarly, we now have *content* events and *user lifecycle* events.
 
