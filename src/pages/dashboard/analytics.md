@@ -139,6 +139,7 @@
 
 - ### Sources
     - [Dashboard Sources](https://dashboard.branch.io/sources) display `clicks`, `installs`, `sessions`, and `custom events` per [analytical label](/pages/links/integrate/#analytical-labels)
+    - Updates every 1.5 hours
     - Use the `Event` dropdown to see a funnel of your analytics to a [custom event](#dialog-code?ios=track-events&android=track-events&adobe=track-events&cordova=track-events&mparticleAndroid=track-events&mparticleIos=track-events&titanium=track-events&reactNative=track-events&unity=track-events&xamarin=track-events) inside your app
     - Use the `Export` button to get a email with a `.cvs` of your source data
     - Use the `Slice by platform` to remove robot traffic from your analytics
@@ -162,6 +163,7 @@
 - ### Webhooks
     - [Dashboard Webhooks](https://dashboard.branch.io/data-import-export/webhooks) allows you to create webhooks to send Branch data to your servers
     - Find more information in [Webhooks](/pages/exports/webhooks/)
+    - Best to test using Liveview, as Liveview, like Webhooks, doesn't have a long delay when displaying data
 
 - ### LiveView
     - [Dashboard Liveview](https://dashboard.branch.io/liveview/links) allows you to view real time data for everything related to Branch
