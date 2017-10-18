@@ -16,6 +16,32 @@ With event tracking, it's important to track the objects related to the event oc
 
 Refer to the above document to set up Branch Universal Objects.
 
+## Available Events
+
+Use the table below to quickly find the event you want to track.
+
+| Event Name | Event Category | Objective C | Swift | Java | HTTP API
+| :-: | :-: | :-: | :-: | :-: | :-: | :-:
+| Add To Cart | Commerce Event | [Code](/pages/apps/v2event/#objective-c) | [Code](/pages/apps/v2event/#swift) | [Code](/pages/apps/v2event/#android) | [Code]()
+| Add To Wishlist | Commerce Event | [Code](/pages/apps/v2event/#objective-c_1) | [Code](/pages/apps/v2event/#swift_1) | [Code](/pages/apps/v2event/#android_1) | [Code]()
+| View Cart | Commerce Event | [Code](/pages/apps/v2event/#objective-c_2) | [Code](/pages/apps/v2event/#swift_2) | [Code](/pages/apps/v2event/#android_2) | [Code]()
+| Initiate Purchase | Commerce Event | [Code](/pages/apps/v2event/#objective-c_3) | [Code](/pages/apps/v2event/#swift_3) | [Code](/pages/apps/v2event/#android_3) | [Code]()
+| Add Payment Info | Commerce Event | [Code](/pages/apps/v2event/#objective-c_4) | [Code](/pages/apps/v2event/#swift_4) | [Code](/pages/apps/v2event/#android_4) | [Code]()
+| Purchase | Commerce Event | [Code](/pages/apps/v2event/#objective-c_5) | [Code](/pages/apps/v2event/#swift_5) | [Code](/pages/apps/v2event/#android_5) | [Code]()
+| Spend Credits | Commerce Event | [Code](/pages/apps/v2event/#objective-c_6) | [Code](/pages/apps/v2event/#swift_6) | [Code](/pages/apps/v2event/#android_6) | [Code]()
+| Search | Content Event | [Code](/pages/apps/v2event/#objective-c_7) | [Code](/pages/apps/v2event/#swift_7) | [Code](/pages/apps/v2event/#android_7) | [Code]()
+| View Item | Content Event | [Code](/pages/apps/v2event/#objective-c_8) | [Code](/pages/apps/v2event/#swift_8) | [Code](/pages/apps/v2event/#android_8) | [Code]()
+| View Items | Content Event | [Code](/pages/apps/v2event/#objective-c_9) | [Code](/pages/apps/v2event/#swift_9) | [Code](/pages/apps/v2event/#android_9) | [Code]()
+| Rate | Content Event | [Code](/pages/apps/v2event/#objective-c_10) | [Code](/pages/apps/v2event/#swift_10) | [Code](/pages/apps/v2event/#android_10) | [Code]()
+| Share | Content Event | [Code](/pages/apps/v2event/#objective-c_11) | [Code](/pages/apps/v2event/#swift_11) | [Code](/pages/apps/v2event/#android_11) | [Code]()
+| Complete Registration | Lifecycle Event | [Code](/pages/apps/v2event/#objective-c_12) | [Code](/pages/apps/v2event/#swift_12) | [Code](/pages/apps/v2event/#android_12) | [Code]()
+| Complete Tutorial | Lifecycle Event | [Code](/pages/apps/v2event/#objective-c_13) | [Code](/pages/apps/v2event/#swift_13) | [Code](/pages/apps/v2event/#android_13) | [Code]()
+| Achieve Level | Lifecycle Event | [Code](/pages/apps/v2event/#objective-c_14) | [Code](/pages/apps/v2event/#swift_14) | [Code](/pages/apps/v2event/#android_14) | [Code]()
+| Unlock Achievement | Lifecycle Event | [Code](/pages/apps/v2event/#objective-c_15) | [Code](/pages/apps/v2event/#swift_15) | [Code](/pages/apps/v2event/#android_15) | [Code]()
+
+
+
+
 ## Track Commerce Events
 
 Commerce events describe events that relate to a customer interacting with your products and converting by purchasing. These are events like adding payment information, purchasing, viewing products, etc. If you have enabled Branch Universal Ads, these events will automatically map to certain Ad Partners.
@@ -827,7 +853,7 @@ new BranchEvent(BRANCH_STANDARD_EVENT.SHARE)
     .logEvent(context);
 ```
 
-## Lifecycle Events
+## Track Lifecycle Events
 
 Lifecycle events can be described as events a user takes in your app to continue progressing. These events can apply to game apps, as well as non game apps, for when a user completes a user profile, registration or tutorial.
 
@@ -966,10 +992,16 @@ Fire this event when a user hits an achievement point in your app.
 
 If you want to track an event that isn't a pre-defined event, simply do the following:
 
-### iOS
+### Objective-C
 
 ```objc
 [BranchEvent.customEventWithName(@"User_Scanned_Item") logEvent];
+```
+
+### Swift
+
+```swift
+ BranchEvent.customEventWithName("User_Scanned_Item").logEvent()
 ```
 
 ### Android
@@ -984,9 +1016,11 @@ new BranchEvent("Some Custom Event")
 
 ## Current Support
 
+There are a few products and features unsupported by this new method of tracking events. We clarify what's currently supported and what isn't below.
+
 ### Acceptance
 
-These events tracked through the SDK will appear to ad networks, like Criteo.
+Tracking these events will propagate to Ad Networks, like Criteo. For example, if you track the purchae event through Branch, this will map to Criteo's Purchase event.
 
 These events will also have analytics, so you can understand their performance, using the new Analytics Platform. Read more about the new Analytics Platform [here]((https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
 
