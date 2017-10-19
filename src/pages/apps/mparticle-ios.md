@@ -33,7 +33,6 @@
     - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
         - Add `branch_app_domain` with your live key domain
-        - Add `branch_key` with your current Branch key
         - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
 
     ![image](http://i.imgur.com/PwXnHWz.png)
