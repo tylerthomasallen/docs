@@ -48,21 +48,21 @@ Use the table below to quickly find the event you want to track.
 | Add Payment Info | [Commerce Event](#track-commerce-events) |
 | Purchase | [Commerce Event](#track-commerce-events) |
 | Spend Credits | [Commerce Event](#track-commerce-events) |
-| Search | Content Event(#track-content-events) |
-| View Item | Content Event(#track-content-events) |
-| View Items | Content Event(#track-content-events) |
-| Rate | Content Event(#track-content-events) |
-| Share | Content Event(#track-content-events) |
-| Complete Registration | Lifecycle Event(#track-lifecycle-events) |
-| Complete Tutorial | Lifecycle Event(#track-lifecycle-events) |
-| Achieve Level | Lifecycle Event(#track-lifecycle-events) |
-| Unlock Achievement | Lifecycle Event(#track-lifecycle-events) |
+| Search | [Content Event](#track-content-events) |
+| View Item | [Content Event](#track-content-events) |
+| View Items | [Content Event](#track-content-events) |
+| Rate | [Content Event](#track-content-events) |
+| Share | [Content Event](#track-content-events) |
+| Complete Registration | [Lifecycle Event](#track-lifecycle-events) |
+| Complete Tutorial | [Lifecycle Event](#track-lifecycle-events) |
+| Achieve Level | [Lifecycle Event](#track-lifecycle-events) |
+| Unlock Achievement | [Lifecycle Event](#track-lifecycle-events) |
 
 ## Track Commerce Events
 
 Commerce events describe events that relate to a customer interacting with your products and converting by purchasing. These are events like adding payment information, purchasing, viewing products, etc. If you have enabled Branch Universal Ads, these events will automatically map to certain Ad Partners. Start by creating a Branch Universal Object for each product that is associated with the event you're tracking.
 
-From there, add the Branch universal object to the tracked event, and use the right pre-defined constant.
+From there, add the Branch universal object to the tracked event, and use the right pre-defined constant. For example, the code snippet below is to track when a user adds to cart, but simply replace that constant with another constant to track a different event.
 
 ### iOS
 ```objc
