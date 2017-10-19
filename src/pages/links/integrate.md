@@ -385,11 +385,14 @@
 ## Troubleshoot issues
 
 - ### Deep links do not open app
-    - Make sure you have completed [Configure your dashboard](/pages/dashboard/integrate/) and [Configure your app](#dialog-code)
-    - Make sure the `Branch key` in your app ([Configure your app](#dialog-code)) matches the `Branch key` in your deep link ([View deep link data](#view-deep-link-data))
-    - Make sure you have not disabled deep linking ([Re-enable universal linking](/pages/apps/ios/#re-enable-universal-linking))
-    - Make sure you meet the requirements for [Supported platforms](#expected-redirect-behavior)
-    - Make sure the link the user is click on matches your `link domain` from the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+    - Make sure you are clicking on a deep link (e.g. `https://example.app.link/fzmLEhobLD`)
+    - Make sure you are not pasting a deep link in the address bar (in most cases, deep links must be clicked on)
+    - Make sure the deep link is not wrapped (e.g. `http://bit.ly/2yz3b8D` instead of `https://example.app.link/fzmLEhobLD`)
+    - Make sure you have [configure your dashboard](/pages/dashboard/integrate/) and [configure your app](#dialog-code)
+    - Make sure the `Branch key` [in your app](#dialog-code) matches the `Branch key` [in your deep link](#view-deep-link-data)
+    - Make sure you have not [disabled universal linking on iOS](/pages/apps/ios/#re-enable-universal-linking)
+    - Make sure you understand the [expected behavior of deep links](#expected-redirect-behavior)
+    - Make sure the deep link domain matches your [link domain](https://dashboard.branch.io/link-settings) (e.g. link domain = `example.app.link`, deep link = `https://example.app.link/fzmLEhobLD`)
 
 - ### View deep link data
     - Add `?debug=1` to the end of your deep link
