@@ -163,7 +163,7 @@
 - ### Webhooks
     - [Dashboard Webhooks](https://dashboard.branch.io/data-import-export/webhooks) allows you to create webhooks to send Branch data to your servers
     - Find more information in [Webhooks](/pages/exports/webhooks/)
-    - Best to test using Liveview, as Liveview, like Webhooks, doesn't have a long delay when displaying data
+    - Best to test with [Liveview](#liveview)
 
 - ### LiveView
     - [Dashboard Liveview](https://dashboard.branch.io/liveview/links) allows you to view real time data for everything related to Branch
