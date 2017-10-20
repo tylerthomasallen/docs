@@ -43,13 +43,15 @@
             | Twitter | Fallback | *Able to force app open | App |
             | Pinterest | Fallback | | Fallback |
             | Chrome browser | App | | App |
-            | Safari address bar | Fallback |
             | Safari browser | App |
             | Firefox browser | Fallback | | App |
             | UC browser | | | App |
             | Naver browser | | | App |
             | Kakao browser | | | App |
-            | Opera browser | | | Fallback |
+            | Opera browser | App | | App |
+            | Safari address bar | Fallback | [App open blocked by Apple](https://blog.branch.io/the-problem-with-safari-app-redirects/)
+            | Chrome address bar | Fallback | | Fallback | Deep link data will not pass into the app
+            | Firefox address bar | Fallback | | App
             | Hangouts | App | | App |
             | iMessage | App |
             | Slack | App | Must configure Slack to open links with Safari | App | Must configure Slack to open links with Safari
