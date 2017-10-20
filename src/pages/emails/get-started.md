@@ -113,6 +113,7 @@ Completing your integration requires some setup that is specific to your email s
 - **[Appboy](/pages/emails/appboy)**
 - **[Blueshift](pages/emails/blueshift)**
 - **[Bronto](/pages/emails/bronto)**
+- **[Campaign Monitor](/pages/emails/campaign-monitor)**
 - **[Epsilon](/pages/emails/epsilon)**
 - **[Kahuna](/pages/emails/kahuna)**
 - **[Leanplum](/pages/emails/leanplum)**

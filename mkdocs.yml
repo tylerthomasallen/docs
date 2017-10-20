@@ -172,6 +172,7 @@ pages:
     - Appboy: pages/emails/appboy.md
     - Blueshift: pages/emails/blueshift.md
     - Bronto: pages/emails/bronto.md
+    - Campaign Monitor: pages/emails/campaign-monitor.md
     - Epsilon: pages/emails/epsilon.md
     - Kahuna: pages/emails/kahuna.md
     - Leanplum: pages/emails/leanplum.md
