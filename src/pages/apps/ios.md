@@ -71,6 +71,9 @@
         ```
 
     - Option 3: Manually install the [source code](https://github.com/BranchMetrics/ios-branch-deep-linking/releases) with dependencies
+        
+        - Drag and drop `Branch.framework` into `Embedded Binaries` (select `Copy items if needed`)
+        - Import `AdSupport`, `SafariServices`, `MobileCoreServices`, `CoreSpotlight`, and `iAd` into `Linked Frameworks`
 
         ![image](http://i.imgur.com/YY0enst.png)
 
