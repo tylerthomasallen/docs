@@ -22,7 +22,7 @@ There are a few products and features unsupported by this new method of tracking
 
 ### Acceptance
 
-Tracking these events will propagate to Ad Networks, like Criteo. For example, if you track the purchae event through Branch, this will map to Criteo's Purchase event.
+Tracking these events will propagate to Ad Networks, like Criteo. For example, if you track the purchase event through Branch, this will map to Criteo's Purchase event.
 
 These events will also have analytics, so you can understand their performance, using the new Analytics Platform. Read more about the new Analytics Platform [here](https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
 
@@ -39,30 +39,30 @@ As of now, any calls made through these SDK methods will **not**:
 
 Use the table below to quickly find the event you want to track.
 
-| Event Name | Event Category |
-| :-: | :-:
-| Add To Cart | [Commerce Event](#track-commerce-events) |
-| Add To Wishlist | [Commerce Event](#track-commerce-events) |
-| View Cart | [Commerce Event](#track-commerce-events) |
-| Initiate Purchase | [Commerce Event](#track-commerce-events) |
-| Add Payment Info | [Commerce Event](#track-commerce-events) |
-| Purchase | [Commerce Event](#track-commerce-events) |
-| Spend Credits | [Commerce Event](#track-commerce-events) |
-| Search | [Content Event](#track-content-events) |
-| View Item | [Content Event](#track-content-events) |
-| View Items | [Content Event](#track-content-events) |
-| Rate | [Content Event](#track-content-events) |
-| Share | [Content Event](#track-content-events) |
-| Complete Registration | [Lifecycle Event](#track-lifecycle-events) |
-| Complete Tutorial | [Lifecycle Event](#track-lifecycle-events) |
-| Achieve Level | [Lifecycle Event](#track-lifecycle-events) |
-| Unlock Achievement | [Lifecycle Event](#track-lifecycle-events) |
+| Event Name | Event Category | iOS | Android | API
+| :-: | :-: | :-: | :-: | :-:
+| Add To Cart | [Commerce Event](#track-commerce-events) | BranchStandardEventAddToCart | BRANCH_STANDARD_EVENT.ADD_TO_CART | ADD_TO_CART
+| Add To Wishlist | [Commerce Event](#track-commerce-events) | BranchStandardEventAddToWishlist | BRANCH_STANDARD_EVENT.ADD_TO_WISHLIST | ADD_TO_WISHLIST
+| View Cart | [Commerce Event](#track-commerce-events) | BranchStandardEventViewCart | BRANCH_STANDARD_EVENT.VIEW_CART | VIEW_CART
+| Initiate Purchase | [Commerce Event](#track-commerce-events) | BranchStandardEventInitiatePurchase | BRANCH_STANDARD_EVENT.INITIATE_PURCHASE | INITIATE_PURCHASE
+| Add Payment Info | [Commerce Event](#track-commerce-events) | BranchStandardEventAddPaymentInfo | BRANCH_STANDARD_EVENT.ADD_PAYMENT_INFO | ADD_PAYMENT_INFO
+| Purchase | [Commerce Event](#track-commerce-events) | BranchStandardEventPurchase | BRANCH_STANDARD_EVENT.PURCHASE | PURCHASE
+| Spend Credits | [Commerce Event](#track-commerce-events) | BranchStandardEventSpendCredits | BRANCH_STANDARD_EVENT.SPEND_CREDITS | SPEND_CREDITS
+| Search | [Content Event](#track-content-events) | BranchStandardEventSearch | BRANCH_STANDARD_EVENT.SEARCH | SEARCH
+| View Item | [Content Event](#track-content-events) | BranchStandardEventViewItem | BRANCH_STANDARD_EVENT.VIEW_ITEM | VIEW_ITEM
+| View Items | [Content Event](#track-content-events) | BranchStandardEventViewItems | BRANCH_STANDARD_EVENT.VIEW_ITEMS | VIEW_ITEMS
+| Rate | [Content Event](#track-content-events) | BranchStandardEventRate | BRANCH_STANDARD_EVENT.RATE | RATE
+| Share | [Content Event](#track-content-events) | BranchStandardEventShare | BRANCH_STANDARD_EVENT.SHARE | SHARE
+| Complete Registration | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventCompleteRegistration | BRANCH_STANDARD_EVENT.COMPLETE_REGISTRATION | COMPLETE_REGISTRATION
+| Complete Tutorial | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventCompleteTutorial | BRANCH_STANDARD_EVENT.COMPLETE_TUTORIAL | COMPLETE_TUTORIAL
+| Achieve Level | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventAchieveLevel | BRANCH_STANDARD_EVENT.ACHIEVE_LEVEL | ACHIEVE_LEVEL
+| Unlock Achievement | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventUnlockAchievement | BRANCH_STANDARD_EVENT.UNLOCK_ACHIEVEMENT | UNLOCK_ACHIEVEMENT
 
 ## Track Commerce Events
 
 Commerce events describe events that relate to a customer interacting with your products and converting by purchasing. These are events like adding payment information, purchasing, viewing products, etc. If you have enabled Branch Universal Ads, these events will automatically map to certain Ad Partners. Start by creating a Branch Universal Object for each product that is associated with the event you're tracking.
 
-From there, add the Branch universal object to the tracked event, and use the right pre-defined constant. For example, the code snippet below is to track when a user adds to cart, but simply replace that constant with another constant to track a different event.
+From there, add the Branch universal object to the tracked event, and use the right predefined constant. For example, the code snippet below is to track when a user adds to cart, but simply replace that constant with another constant to track a different event.
 
 ### iOS
 ```objc
@@ -480,7 +480,7 @@ curl -vvv -d '{
 
 ## Track Custom Events
 
-If you want to track an event that isn't a pre-defined event, simply do the following:
+If you want to track an event that isn't a predefined event, simply do the following:
 
 ### iOS
 
