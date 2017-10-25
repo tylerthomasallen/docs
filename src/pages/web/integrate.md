@@ -169,7 +169,7 @@
         });
         ```
 
-- ### Create banner
+- ### Create Journeys banner
 
     - Converts mobile users to app users
 
