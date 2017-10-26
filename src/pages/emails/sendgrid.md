@@ -8,22 +8,24 @@ You can retrieve your click tracking domains from your Sendgrid settings:
 1. Log in to your SendGrid account.
 1. Go to Settings > Whitelabels > Email Links.
 1. Find your email link whitelabeled domain, click on the gear icon and click "View" (or create a new whitelabel).
-   
-
+   <br>
    ![image](/img/pages/email/sendgrid/sendgrid-view-domain.png)
-   
+   <br>
 1. Note the "Host" email click tracking domain (e.g. email.mydomain.com) and the SendGrid domain under "Data".
-   
-
+   <br>
    ![image](/img/pages/email/sendgrid/sendgrid-whitelabel.png)
+   <br>
 1. Enter both the click tracking domain and the SendGrid domain in item 1 of this step:
-   
-
+   <br>
    ![image](/img/pages/email/sendgrid/configure-sendgrid-1.png)
-
+   <br>
 On **Done** click, an AASA file - required for Universal Links - specific to that domain will be generated.
 
 {! ingredients/email/email-technical-setup.md !}
+
+#### Validate your click tracking domain in SendGrid
+
+Before you CNAME to Branch, you must CNAME your click tracking domain to sendgrid.net and validate the domain in Whitelabel > Email Links within SendGrid. Once there is a green checkmark indicating that the domain is valid, then you can proceed to the next step.
 
 {! ingredients/email/email-cname.md !}
 
