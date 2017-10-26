@@ -215,7 +215,7 @@ If you've built your own share sheet and you want to just create a Branch link f
 
 You can find examples of `linkProperties` above. You would next use the returned link and help the user post it to (in this example) Facebook.
 
-### Specifying an shared email subject
+### Specifying a shared email subject
 
 The majority of share options only include one string of text, except email, which has a subject and a body. The share text will fill in the body and you can specify the email subject in the link properties as shown below.
 
