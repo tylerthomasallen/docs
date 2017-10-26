@@ -148,6 +148,9 @@
 
     branch.getShortUrl(tags, "sms", BranchConst.FEATURE_TAG_SHARE, JSON.stringify(dataToInclude));
     ```
+    
+    !!! warning "Deep linking is not fully supported at the moment"
+        Deferred deep linking will still pass data through install, but if the user already has the app installed, the user must click the Branch link twice to pass data. Recommended use case: referrals.
 
 - ### Read deep link
 
