@@ -25,8 +25,6 @@ Android | Yes | Uses Final URL with ValueTrack Parameters, no tracking template 
 
 {! ingredients/deep-linked-ads/link-to-google-ads-overview.md !}
 
-{! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
-
 ## Setup
 
 !!! warning "Prerequisites"

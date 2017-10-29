@@ -32,8 +32,6 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |
 
 {! ingredients/deep-linked-ads/link-to-facebook-ads-overview.md !}
 
-{! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
-
 ## Setup
 
 !!! warning "Prerequisites"

@@ -28,8 +28,6 @@ Android | Yes | Conversion and Postback setup, no tracking template | [link](/pa
 
 {! ingredients/deep-linked-ads/link-to-google-ads-overview.md !}
 
-{! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
-
 ## Setup
 
 Universal App Campaigns don’t use traditional ads and ad groups. Instead different types of ad units are automatically created by Google using information given at the campaign level. There are no destination URLs, you will just use your Apple App Store or Google Play Store Applications.
