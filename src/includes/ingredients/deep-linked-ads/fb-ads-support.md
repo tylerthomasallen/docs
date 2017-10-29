@@ -38,10 +38,6 @@ If it's close, you know that this is the root cause.
 
 Facebook ads are incompatible with [debug mode](/pages/apps/ios/#simulate-an-install), as this prevents us from sending the correct hardware ID to Facebook.
 
-**Conflicts with Facebook SDK (iOS)**
-
-If your app integrates the FBSDK, be certain you are *not* using the [`FBSDKAppLinkUtility` method](https://developers.facebook.com/docs/reference/ios/current/class/FBSDKAppLinkUtility/). This has been known to cause conflicts with Branch when handling incoming deep links.
-
 #### Testing Deep Linked Ads
 
 Unfortunately, the demo/preview ads used during the ads creation flow on Facebook use a different mechanism than live Facebook ads. **This prevents you from testing deep linking from your Facebook ads**. Do not waste time trying to get this to work. We've confirmed with Facebook representatives that this is broken.
@@ -56,15 +52,18 @@ The only way to test the deep linking functionality is outside of the actual ads
 1. Click 'Send to iOS/Android'
 1. Install the app and it should deep link!
 
-!!! note ""
-	If you see that someone liked your ad, do not bother trying to click and test it. Clicking your own ad that shows up in notifications **will not deep link**.
+!!! note "Note the following common mistakes for testing"
+	1. If you reset the GAID or IDFA on a device, you must uninstall Facebook and re-install prior to testing. Facebook does not update the IDFA/GAID every time it's opened.
+	2. Send deferred does not require a notification to be sent or to be clicked. Checking "Send Deferred" will automatically queue up a match for the test device with the deep link data. The notifiation is completely separate from deferred deep linking.
+	3. The Facebook account on the desktop where you click "Send Deferred" must match the account logged into the test device for deferred deep link data to be queued up. Note that we've observed issues where you log in and out of multiple accounts on test devices that cause Facebook to not correctly queue up a match.
+	4. If you see that someone liked your ad, do not bother trying to click and test it. Clicking your own, live advertisement that shows up in notifications will not deep link.
 
 #### Issues Reading Facebook App Links
 
 If Facebook is having trouble reading the App Links from the Branch link, you might see messages like these while trying to test out the flow. This means that there is something corrupted in the OG tags causing Facebook to not parse your link.
 
 <img src="/img/ingredients/deep-linked-ads/fb-ads-support/invalid-app-links-error.png" alt="Invalid App Links" class="center three-quarters">
-<img src="/img/ingredients/deep-linked-ads/fb-ads-support/missing_applinks.png" alt="Troubleshooting" class="center half">
+<img src="/img/ingredients/deep-linked-ads/fb-ads-support/missing_applinks.png" alt="Troubleshooting" class="center">
 
 **Rescrape the OG Tags**
 

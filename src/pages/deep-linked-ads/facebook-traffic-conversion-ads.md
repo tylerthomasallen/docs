@@ -28,8 +28,6 @@ Conversion | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
 
 {! ingredients/deep-linked-ads/link-to-facebook-ads-overview.md !}
 
-{! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
-
 !!! warning "Prerequisites"
 	* [x] To track installs from Facebook Ads you should [integrate the Branch SDK](/pages/apps/ios/#integrate-branch) into your app.
 	* [x] To use Branch links in Facebook App Install Ads ensure you have Universal Links set up on iOS or App Links enabled on Android to ensure correct routing behavior. For setup, checkout [Universal](/pages/deep-linking/universal-links/) and [App Links](/pages/deep-linking/android-app-links/).
