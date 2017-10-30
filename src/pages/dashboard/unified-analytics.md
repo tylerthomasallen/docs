@@ -148,3 +148,7 @@ Webhooks, like data integratons, is no longer session based. This means we will 
 ### Data speed
 
 This new analytics platform isn't real time like the old dashboard analytics, but does not have a significant delay. We're continually improving the speed, and hope to have a standard SLA for dashboard reporting.
+
+### Unique counts
+
+One thing to be aware of is that unique counts may be within a 4% window of error across the dashboard. For example, if you have 100 total clicks, and 90 were truly unique, it's possible that the dashboard could report within 4% of that 90 number. If you want true uniques, the export functionality will help. 
