@@ -188,8 +188,6 @@
 
 - ### Forced redirections
 
-    - Override
-
     - Prevent error messages from other apps when Branch deep links are clicked
 
         | Key | Value | Usage
