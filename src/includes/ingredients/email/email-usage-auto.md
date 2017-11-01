@@ -15,6 +15,6 @@ This will also ensure that your links are converted to Branch links that will op
 
     Where `vza3.app.link` is your Branch domain.
 
-The conversion to Branch links will only work when your links are wrapped in your click tracking domain. To test links without wrapping, please generate a test link on step 3 of email onboarding:
+The conversion to Branch links will only work when your links are wrapped in your click tracking domain. To test links without wrapping, please generate a test link on step 3 of email onboarding, also accessible by clicking the gear icon for your ESP on the [email page](https://dashboard.branch.io/email){:target="\_blank"}.
 
 ![image](/img/pages/email/test-link.png)
