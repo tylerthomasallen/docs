@@ -37,7 +37,7 @@ Find your CleverTap Account Credentials. Later, you'll enter them into the Branc
 
 ### Configure the Branch Dashboard
 
-1. On the Branch Dashboard (dashboard.branch.io), navigate to the [Integrations page](https://branch.dashboard.branch.io/data-import-export/integrations).
+1. On the Branch Dashboard (dashboard.branch.io), navigate to the [Integrations page](https://dashboard.branch.io/data-import-export/integrations).
 1. Search for CleverTap. If you don't see CleverTap, please contact your Branch Account Manager or [integrations@branch.io](mailto:integrations@branch.io) to enable the CleverTap Data Integration.
     
     ![image](/img/pages/integrations/clevertap/search-clevertap.png)

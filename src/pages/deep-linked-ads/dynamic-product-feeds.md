@@ -93,13 +93,13 @@ If you used a Feed Source hosted on a URL (recommended), you will see two option
 
 ![image](/img/pages/deep-linked-ads/dynamic-product-ads/hosted-dlf.png)
 
-You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](https://branch.dashboard.branch.io/ads/links/deep-linked-feeds) tab.
+You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](https://dashboard.branch.io/ads/links/deep-linked-feeds) tab.
 
 ### Download CSV
 
 Click "Download CSV" if you just need a one-time file with your Deep Linked Feed.
 
-You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](https://branch.dashboard.branch.io/ads/links/deep-linked-feeds) tab.
+You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](https://dashboard.branch.io/ads/links/deep-linked-feeds) tab.
 
 ### Use your Deep Linked Feed
 
