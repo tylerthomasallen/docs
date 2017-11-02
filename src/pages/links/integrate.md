@@ -39,7 +39,7 @@
             | Facebook Messenger | Fallback | *Able to force app open | App |
             | Facebook Messenger browser | App | | App |
             | Instagram | Fallback | *Able to force app open | App |
-            | Snapchat | Fallback | | App |
+            | Snapchat | Fallback | *Able to force app open | App |
             | Twitter | Fallback | *Able to force app open | App |
             | Pinterest | Fallback | | Fallback |
             | Chrome browser | App | | App |
