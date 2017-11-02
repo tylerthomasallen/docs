@@ -49,7 +49,7 @@
         - Measuring influencers
         The [Analytics](https://dashboard.branch.io/referrals/analytics) page on the dashboard will show you who is driving the most new signups.
 
-            ![image](http://i.imgur.com/SYppuDL.png)
+            ![image](/img/pages/dashboard/referrals.png)
 
 
 ## Dashboard pages
