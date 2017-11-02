@@ -558,6 +558,18 @@
         });
         ```
 
+- ### Journey not sticking to nav
+
+    - Navigate to [Dashboard Journey Page](https://branch.dashboard.branch.io/web/journeys)
+    - Select Journey -> Edit -> Configure Views -> Banner -> Page Placement
+    - Banner Scroll = `sticky`
+    - Press `Save & Close`
+    - Add the following div to your nav
+
+        ```html
+        <div class="branch-journeys-top"></div>
+        ```
+
 - ### Create smart banner
 
     - (**Deprecated**) Recommend to use [Create Journey banner](#create-journey-banner) instead
