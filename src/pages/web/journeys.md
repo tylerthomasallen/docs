@@ -784,6 +784,21 @@ If you're not using a mobile viewport tag (`<meta name="viewport" content="width
 
 The image will not look scaled properly in the editor view. This is because the dashboard is mobile optimized. Use the preview test link on the validation page to make sure the banner looks right
 
+### Journey not sticking to nav
+
+- Navigate to [Dashboard Journey Page](https://branch.dashboard.branch.io/web/journeys)
+- Select Journey -> Edit -> Configure Views -> Banner -> Page Placement
+- Banner Scroll = `sticky`
+- Press `Save & Close`
+- Add the following div to your nav
+
+    ```html
+    <div class="branch-journeys-top"></div>
+    ```
+
+    ![image](/img/pages/journeys/sticky.png)
+
+
 ## Examples
 
 ### Example audiences
