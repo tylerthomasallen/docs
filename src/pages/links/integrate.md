@@ -262,7 +262,7 @@
         | $og_image_height | | Set the image's height in pixels for social media displays
         | $og_video | | Set a video as it will be seen in social media displays
         | $og_url | | Set the base URL of the link as it will be seen in social media displays
-        | $og_type | | Set the type of custom card format link as it will be seen in social media displays
+        | $og_type | | Set the type of custom card format link as it will be seen in social media displays. Don't set this property when sharing deep links on Facebook
         | $og_redirect | | (Advanced, not recommended) Set a custom URL that we redirect the social media robots to in order to retrieve all the appropriate tags
         | $og_app_id | Set on dashboard | (Rarely used) Sets the app id tag
 
