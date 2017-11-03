@@ -626,8 +626,7 @@
         };
         var linkOptions = {
           make_new_link: false, // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
-          o
-          e // will attempt to open the app if install (URI Scheme deep linking only - will not work with Safari)
+          open_app: true  // will attempt to open the app if install (URI Scheme deep linking only - will not work with Safari)
         };
         branch.deepview(linkData, linkOptions, function(err, data) {
           console.log(err, data);
