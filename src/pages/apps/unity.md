@@ -181,12 +181,6 @@
         }
         ```
 
-        ##### Read session (install or open) parameters from anywhere after Branch initsession
-
-        ```csharp
-        BranchUniversalObject obj = Branch.getLatestReferringBranchUniversalObject();
-        BranchLinkProperties link = Branch.getLatestReferringBranchLinkProperties();
-        ```
         > This refereshes with every session (App Installs and App Opens)
 
         ##### Read install (install or open) parameters from anywhere after Branch initsession
