@@ -73,7 +73,7 @@ MixpanelAPI mp = MixpanelAPI.getInstance(this, "<your project token>");
 Branch.getInstance().setRequestMetadata("$mixpanel_distinct_id", mp.getDistinctId());
 ```
 
-For more information, see [Why We Recommend Passing Mixpanel Distinct ID](/third-party-integrations/mixpanel/advanced/#why-we-recommend-passing-mixpanel-distinct-id).
+For more information, see [Why We Recommend Passing Mixpanel Distinct ID](#what-branch-sends-to-mixpanel).
 
 !!! warning "Changes in Mixpanel Distinct ID"
     If you at any point change the Mixpanel Distinct ID for a user as she’s using your app, you should invoke the same one line of code as above. This way, future calls from Branch to Mixpanel use the updated distinct id.
