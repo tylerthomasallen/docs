@@ -54,7 +54,7 @@ To retrieve Branch's **Publisher ID** from Tune it is first necessary to set Bra
 
 ### What Branch sends to Tune
 
-Branch will send any parameters that you append to a link on to Tune (see [below for adding advanced attribution parameters](/third-party-integrations/tune/advanced/#advanced-network-segmentation-with-tune)). By default, if you don't append any additional parameters to your link, Branch will pass Branch Analytics tags on to Tune with the below mapping.
+Branch will send any parameters that you append to a link on to Tune (see [below for adding advanced attribution parameters](#advanced-network-segmentation-with-tune)). By default, if you don't append any additional parameters to your link, Branch will pass Branch Analytics tags on to Tune with the below mapping.
 
 !!! warning "Caution"
     If you enabled the Tune integration before August 10th 2016, your analytics tags will map to sub_publisher and sub_placement. To get the updated mappings please disable and re-enable the Tune card in your dashboard.
