@@ -35,7 +35,7 @@ For the basic, codeless integration: find your Mixpanel Token and enter it into 
 
 1. Navigate to [https://mixpanel.com](https://mixpanel.com) and log into the Dashboard.
 1. Click on **Account** in the navigation bar at the top of the page.
-1. Choose **Projects** in the modal that appears, then copy your app’s Token: ![image](img/pages/integrations/mixpanel/mixpanel-token.png)
+1. Choose **Projects** in the modal that appears, then copy your app’s Token: ![image](/img/pages/integrations/mixpanel/mixpanel-token.png)
 
 ### Configure Branch Dashboard
 
@@ -44,7 +44,7 @@ For the basic, codeless integration: find your Mixpanel Token and enter it into 
   * If you have not yet entered billing information, please do so now.
 1. Enter your Mixpanel Token and hit **Save**.
 
-![image](/img/pages/third-party-integrations/mixpanel/enable-mixpanel-integration.png)
+![image](/img/pages/integrations/mixpanel/enable-mixpanel-integration.png)
 
 !!! warning "Please test integration!"
     Branch is not responsible for inaccurate API keys.
