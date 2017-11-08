@@ -115,8 +115,8 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard: pages/dashboard/integrate.md
-  - Configure your app:
+  - 1. Configure your dashboard: pages/dashboard/integrate.md
+  - 2. Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
@@ -130,16 +130,16 @@ pages:
     - API: pages/apps/api.md
     - V2 Event: pages/apps/v2event.md
     - New Analytics Platform: pages/dashboard/unified-analytics.md
-  - Configure your deep linking:
+  - 3. Configure your deep linking:
     - iOS Universal Links: pages/deep-linking/universal-links.md
     - Android App Links: pages/deep-linking/android-app-links.md
     - In-app deep link routing: pages/deep-linking/routing.md
-  - Launch your app:
+  - 4. Launch your app:
     - Apple App Store: pages/apps/ios-launch.md
     - Google Play: pages/apps/android-launch.md
-  - Configure your website: pages/web/integrate.md
-  - Create deep links: pages/links/integrate.md
-  - Track analytics: pages/dashboard/analytics.md
+  - 5. Configure your website: pages/web/integrate.md
+  - 6. Create deep links: pages/links/integrate.md
+  - 7. Track analytics: pages/dashboard/analytics.md
   - Links on your website:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
