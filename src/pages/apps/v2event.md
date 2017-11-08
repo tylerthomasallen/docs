@@ -98,6 +98,7 @@ From there, add the Branch universal object to the tracked event, and use the ri
 	]
 	event.logEvent() // Log the event.
 	```
+	
 - *Objective-C*
 
 	```objc
