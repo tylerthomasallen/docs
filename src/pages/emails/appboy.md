@@ -34,12 +34,16 @@ To use Branch links within your appboy campaigns, you’ll need to add an HTML t
 1. Create your email template same as you normally would.
 1. Add Branch links to your email for all links you would like to deep link users to specific app content (this works for existing app users as well as those without your app). Be sure to add `"$3p":"e_ab"` to the deep link data of any links you use in email to ensure Universal Link and click tracking works as expected.
 1.Once you’re done composing your email template, click on the “Source” button in the email creator toolbar
-   ![image](/img/pages/email/appboy/appboy-source.png)
+
+    ![image](/img/pages/email/appboy/appboy-source.png)
+
 1. Add universal="true" to the HTML for any link which you want to convert intoa Branch deep link, for example:
-   ```html
-   <a href="links.example.com" universal="true">Link to your app!</a>
-   ```
-   ![image](/img/pages/email/appboy/appboy-universal.png)
+
+    ```html
+    <a href="links.example.com" universal="true">Link to your app!</a>
+    ```
+
+    ![image](/img/pages/email/appboy/appboy-universal.png)
 
 All done! So long as you’ve taken the above steps, the links in your Appboy email campaigns will now dynamically deep link users to app content, even if they have uninstalled your app, giving you the best chance of engaging or re-acquiring them.
 
