@@ -4,8 +4,8 @@
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](http://i.imgur.com/r057ie0.png)
-        ![image](http://i.imgur.com/SdcICpL.png)
+        ![image](/img/pages/dashboard/android.png)
+        ![image](/img/pages/dashboard/link-domain.png)
 
 - ### Install Branch
 

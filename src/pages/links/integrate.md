@@ -39,7 +39,7 @@
             | Facebook Messenger | Fallback | *Able to force app open | App |
             | Facebook Messenger browser | App | | App |
             | Instagram | Fallback | *Able to force app open | App |
-            | Snapchat | Fallback | | App |
+            | Snapchat | Fallback | *Able to force app open | App |
             | Twitter | Fallback | *Able to force app open | App |
             | Pinterest | Fallback | | Fallback |
             | Chrome browser | App | | App |
@@ -59,9 +59,6 @@
             | WhatsApp | App | `app.link` require https/http to be clickable | App | `app.link` require https/http to be clickable
             | Apple Mail | App |
             | Gmail | App | | App
-
-
-
 
 - ### Custom link behavior
 
@@ -125,6 +122,7 @@
         - Use our [App SDK](#dialog-code?ios=create-deep-link&android=create-deep-link&adobe=create-deep-link&cordova=create-deep-link&mparticleAndroid=create-deep-link&mparticleIos=create-deep-link&titanium=create-deep-link&reactNative=create-deep-link&unity=create-deep-link&xamarin=create-deep-link) to create and share links within your app
         - Use our [Web SDK](/pages/web/integrate/#create-deep-link) to create to links convert web to app users
         - Use our [HTTP API](/pages/apps/api/#link-create) to programmatically create links from your server
+        - Use our [Chrome Extension](https://chrome.google.com/webstore/detail/branch-link-creator/pekdpppibljpmpbcjelehhnldnfbglgf) to generate links from your browser
 
 - ### Long links
     - Long links can be created without a network call to Branch
@@ -187,8 +185,6 @@
         | $web_only | `false` | Force to open the `$fallback_url` instead of the app
 
 - ### Forced redirections
-
-    - Override
 
     - Prevent error messages from other apps when Branch deep links are clicked
 
@@ -264,7 +260,7 @@
         | $og_image_height | | Set the image's height in pixels for social media displays
         | $og_video | | Set a video as it will be seen in social media displays
         | $og_url | | Set the base URL of the link as it will be seen in social media displays
-        | $og_type | | Set the type of custom card format link as it will be seen in social media displays
+        | $og_type | | Set the type of custom card format link as it will be seen in social media displays. Don't set this property when sharing deep links on Facebook
         | $og_redirect | | (Advanced, not recommended) Set a custom URL that we redirect the social media robots to in order to retrieve all the appropriate tags
         | $og_app_id | Set on dashboard | (Rarely used) Sets the app id tag
 

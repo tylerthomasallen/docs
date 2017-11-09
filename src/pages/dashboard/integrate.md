@@ -14,7 +14,7 @@
 
     - Set the default behavior for your deep links on [Link Settings](https://dashboard.branch.io/link-settings)
 
-    - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) for each deep link
+    - These values are typically overridden by [Custom link behavior](/pages/links/integrate/#custom-link-behavior) for each deep link
 
     - ##### iOS
 
@@ -59,9 +59,9 @@
     - ##### Social media 
 
         - Set the default image preview for your deep links when shared on social media
-        - These values are typically overridden by [Custom link behavior](pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
+        - These values are typically overridden by [Custom link behavior](/pages/links/integrate/#custom-link-behavior) which differentiate your deep links between one another
 
-            ![image](https://i.imgur.com/QjbORqg.png)
+            ![image](/img/pages/dashboard/social-media.png)
 
     - ##### Save
         - Make sure you commit any changes

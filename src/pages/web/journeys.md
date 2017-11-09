@@ -64,14 +64,6 @@ branch.setBranchViewData({
 });
 ```
 
-Also, if the user has the app installed on their phone, we can try to open the app automaticaly and deeplink them.
-
-```javascript
-branch.setBranchViewData({
-    open_app: true
-});
-```
-
 If a user is referred to a page running Journeys via a Branch link, then referring link data will be passed into the Journeys call-to-action by default. If you’re using setBranchViewData() to specify link data for Journeys on that page, the only data from setBranchViewData() that will be used are [dynamic Journeys layout parameters](/pages/web/journeys/#dynamic-journeys-layout-customization); all other data in that call will be ignored, unless `make_new_link` is set to `true` in `branch.init()`. You can find more information [here](/pages/web/journeys/#preserve-or-discard-referring-link-data).
 
 ### Create Journey banner or interstitial
@@ -317,6 +309,47 @@ Note that if you are planning on just using the free banner, you can skip this s
 !!! protip "Variation Display Limitations"
     You may have up to three variations in each Journey. Your total percentage allocation must not equal more than **100%**. Your total percentage allocation may be _less_ than **100%**. In this situation, the remainder of your audience will be shown your standard website without a Journey. This allows you to A/B test against your non-Journeys website experience.
 
+### Auto-open
+
+You can auto-open the app for users have your app installed with Journeys. You can find this setting by selecting the CTA in the template editor:
+
+![image](/img/pages/journeys/auto-open-find.png)
+
+When this box is checked, if a user views this Journey variation on your website and they have the app installed, the app will automatically open without them clicking.
+
+![image](/img/pages/journeys/auto-open.png)
+
+As opening the app automatically is the best user experience in most cases, this is checked by default for all new templates. 
+
+!!! caution "Web SDK open app setting"
+    If you use the open_app setting within the web SDK, this setting will still work for old Journeys (older than 10/25). For all new Journeys, the template setting will take precedence.
+
+#### Auto-open the app on iOS
+
+The auto-open setting in the template editor will work on iOS Chrome and Android. Because auto-open is powered by URI schemes and these can lead to error messages on iOS Safari for users without your app, this is not enabled on iOS by default. 
+
+If you would like the app to open automatically on iOS Safari as well, you'll need to use a setting called `$uri_redirect_mode`. Since Branch has a massive pool of cookies tied to device identifiers, we know if your app is installed when the user clicks a link. We use this intelligence to determine when to use URI schemes. If we have the history that the user installed your app, we’ll use URI schemes to open up the app. 
+
+You can [reach out to support](https://support.branch.io/support/tickets/new){:target="\_blank"} to enable this behavior across all your links, or set it just for Journeys in the web SDK:
+
+```
+<script type="text/javascript">
+// load the Branch web lib
+(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="build.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+// init Branch and pass in your preference to open the app
+branch.init('BRANCH_KEY');
+// Trigger your Journeys banner to use the correct redirect mode
+branch.setBranchViewData({
+        '$uri_redirect_mode': 1
+});
+</script>
+```
+
+Or, set it for individual templates by adding deep link data `$uri_redirect_mode:1`:
+
+![image](/img/pages/journeys/uri-redirect-mode.png)
+
+[Read our blog](https://blog.branch.io/making-uri-schemes-great-again-uri_redirect_mode/){:target="\_blank"} to learn more about the challenges of URI schemes on iOS and the URI redirect mode feature.
 
 ### Preserve or discard referring link data
 
@@ -493,6 +526,16 @@ Journeys now has an entire localization framework. Due to the complexity of this
 If you have an upgraded premium account, you may also modify your CSS code directly in addition to using the WYSIWYG View Editor. To do so, go to the **Configure Views** step, click to edit a template, and then select the **CSS Editor** tab on the **Customize Template** screen.
 
 ![image](/img/pages/journeys/view-css-editor.png)
+
+#### Custom fonts with Journeys
+
+1) Go to [Google Fonts](https://fonts.google.com/) and select a font.
+
+![image](/img/pages/journeys/font_embedding.png)
+
+2) Add to CSS EDITOR in Journeys. Please note: trailing semicolon on @import line is important. It's always good to have a fallback web font in case the google font fails to load.
+
+![image](/img/pages/journeys/custom_font.png)
 
 ### Template customization options
 
@@ -717,17 +760,6 @@ Here's how to add a simple hyperlink call to action:
 <a id='downloadapp' onclick='branch.deepviewCta()'>View this in app</a>
 ```
 
-### Custom fonts with Journeys
-
-1) Go to [Google Fonts](https://fonts.google.com/) and select a font.
-
-![image](/img/pages/journeys/font_embedding.png)
-
-2) Add to CSS EDITOR in Journeys. Please note: trailing semicolon on @import line is important. It's always good to have a fallback web font in case the google font fails to load.
-
-![image](/img/pages/journeys/custom_font.png)
-
-
 ## Troubleshooting
 
 ### Calls to [branchsubdomain] blocked
@@ -751,6 +783,21 @@ If you're not using a mobile viewport tag (`<meta name="viewport" content="width
     - `zoom: 3;`
 
 The image will not look scaled properly in the editor view. This is because the dashboard is mobile optimized. Use the preview test link on the validation page to make sure the banner looks right
+
+### Journey not sticking to nav
+
+- Navigate to [Dashboard Journey Page](https://branch.dashboard.branch.io/web/journeys)
+- Select Journey -> Edit -> Configure Views -> Banner -> Page Placement
+- Banner Scroll = `sticky`
+- Press `Save & Close`
+- Add the following div to your nav
+
+    ```html
+    <div class="branch-journeys-top"></div>
+    ```
+
+    ![image](/img/pages/journeys/sticky.png)
+
 
 ## Examples
 

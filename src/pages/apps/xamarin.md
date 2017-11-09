@@ -5,8 +5,8 @@
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](http://i.imgur.com/wazVu3U.png)
-        ![image](http://i.imgur.com/9PEylbS.png)
+        ![image](/img/pages/apps/cordova-configure.png)
+        ![image](/img/pages/apps/cordova-link-domain.png)
 
 - ### Install Branch
 
@@ -382,7 +382,7 @@
                 Categories = new[] { "android.intent.category.DEFAULT", "android.intent.category.BROWSABLE" },
                 DataScheme = "https",
                 DataHost = "testandroidapp.app.link")]
-                
+
                 [IntentFilter(new[] { "android.intent.action.VIEW" },
                 Categories = new[] { "android.intent.category.DEFAULT", "android.intent.category.BROWSABLE" },
                 DataScheme = "https",
@@ -782,7 +782,7 @@
 
     - Long press on the deep link *(not 3D Touch)*
 
-    - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
+    - Click `Open in "APP_NAME"` to open your app *([example](/img/pages/apps/ios-notes.png))*
 
 - ### Test deep link Android
 

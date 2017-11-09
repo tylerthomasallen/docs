@@ -31,4 +31,6 @@ For more information on how to set up a tracking domain please visit Mandrill's 
 
 {! ingredients/email/email-usage-auto-bounce.md !}
 
+{! ingredients/email/email-usage-auto.md !}
+
 {! ingredients/email/email-support.md !}

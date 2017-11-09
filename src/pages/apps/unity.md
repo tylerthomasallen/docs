@@ -4,11 +4,11 @@
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](http://i.imgur.com/eTuQXyZ.png)
+        ![image](/img/pages/apps/unity-configure.png)
 
     - Customize your app.link domain:
 
-        ![image](http://i.imgur.com/XPF1i6Z.png)
+        ![image](/img/pages/apps/unity-link-domain.png)
 
 - ### Get the Branch SDK
 
@@ -22,7 +22,7 @@
 
     - ##### Update your Branch prefab
 
-        ![image](http://i.imgur.com/j0ODW8S.png)
+        ![image](/img/pages/apps/unity-settings.png)
 
         > Do not forget to click on the **Update iOS Wrapper** and the **Update Android Manifest** buttons once you are done.
 
@@ -181,12 +181,6 @@
         }
         ```
 
-        ##### Read session (install or open) parameters from anywhere after Branch initsession
-
-        ```csharp
-        BranchUniversalObject obj = Branch.getLatestReferringBranchUniversalObject();
-        BranchLinkProperties link = Branch.getLatestReferringBranchLinkProperties();
-        ```
         > This refereshes with every session (App Installs and App Opens)
 
         ##### Read install (install or open) parameters from anywhere after Branch initsession

@@ -21,8 +21,6 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 
 {! ingredients/deep-linked-ads/link-to-google-ads-overview.md !}
 
-{! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
-
 ## Setup
 
 !!! warning "Prerequisites"

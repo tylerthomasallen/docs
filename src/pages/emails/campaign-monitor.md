@@ -32,4 +32,6 @@ For more information on how to set up your domain, please visit Campaign Monitor
 
 {! ingredients/email/email-usage-auto-bounce.md !}
 
+{! ingredients/email/email-usage-auto.md !}
+
 {! ingredients/email/email-support.md !}

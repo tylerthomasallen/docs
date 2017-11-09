@@ -24,5 +24,3 @@ Consideration | Video Views | **[link](/pages/deep-linked-ads/facebook-platform-
 Consideration | Lead Generation | **[link](/pages/deep-linked-ads/facebook-platform-ads/#lead-generation-campaign-setup)** | Cross-platform Display
 Conversion | Conversions | **[link](/pages/deep-linked-ads/facebook-traffic-conversion-ads/#conversions-campaign-setup)** | Cross-platform Display
 Conversion | Product Catalogue Sales | **[link](/pages/deep-linked-ads/facebook-dynamic-ads/)** | Cross-platform Product Links
-
-{! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}

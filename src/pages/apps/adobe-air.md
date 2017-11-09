@@ -4,8 +4,8 @@
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](https://i.imgur.com/wazVu3U.png)
-        ![image](https://i.imgur.com/9PEylbS.png)
+        ![image](/img/pages/apps/cordova-configure.png)
+        ![image](/img/pages/apps/cordova-link-domain.png)
 
 - ### Configure app
 
@@ -96,19 +96,19 @@
 
     - Finally open a command line, `cd` in the directory and just call `ant`.
 
-- ### Test deep link iOS
+- ### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
     - Delete your app from the device
 
-    - Compile your app
+    - Compile and test on a device
 
     - Paste deep link in `Apple Notes`
 
-    - Long press on the deep link *(not 3D Touch)*
+    - Long press on the deep link (not 3D Touch)
 
-    - Click `Open in "APP_NAME"` to open your app *([example](https://i.imgur.com/VJVICXd.png))*
+    - Click `Open in "APP_NAME"` to open your app ([example](/img/pages/apps/ios-notes.png))
 
 - ### Test deep link Android
 
@@ -148,6 +148,9 @@
 
     branch.getShortUrl(tags, "sms", BranchConst.FEATURE_TAG_SHARE, JSON.stringify(dataToInclude));
     ```
+
+    !!! warning "Deep linking is not fully supported at the moment"
+        Deferred deep linking will still pass data through install, but if the user already has the app installed, the user must click the Branch link twice to pass data. Recommended use case: referrals.
 
 - ### Read deep link
 

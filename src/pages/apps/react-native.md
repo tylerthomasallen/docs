@@ -4,8 +4,8 @@
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](http://i.imgur.com/wazVu3U.png)
-        ![image](http://i.imgur.com/9PEylbS.png)
+        ![image](/img/pages/apps/cordova-configure.png)
+        ![image](/img/pages/apps/cordova-link-domain.png)
 
 - ### Install Branch
 
@@ -114,13 +114,13 @@
 
 - ### Configure app
 
-    - iOS
+    - #### iOS
 
         - Configure bundle identifier
 
             - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-                ![image](http://i.imgur.com/BHAQIQf.png)
+                ![image](/img/pages/apps/ios-bundle-id.png)
 
         - Configure associated domains
 
@@ -129,13 +129,13 @@
             - `test-` is needed if you need use a [test key](#use-test-key)
             - If you use a [custom link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your old link domain, your `-alternate` link domain, and your new link domain
 
-                ![image](http://i.imgur.com/67t6hSY.png)
+                ![image](/img/pages/apps/ios-entitlements.png)
 
         - Configure entitlements
 
             - Confirm entitlements are within target
 
-                ![image](http://i.imgur.com/vhwis7f.png)
+                ![image](/img/pages/apps/ios-package.png)
 
         - Configure info.pList
 
@@ -145,15 +145,15 @@
                 - Add `branch_key` with your current Branch key
                 - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
 
-            ![image](http://i.imgur.com/PwXnHWz.png)
+                ![image](/img/pages/apps/ios-plist.png)
 
         - Confirm app prefix
 
             - From your [Apple Developer Account](https://developer.apple.com/account/ios/identifier/bundle)
 
-                ![image](http://i.imgur.com/2EoN1i0.png)
+                ![image](/img/pages/apps/ios-team-id.png)
 
-    - Android
+    - #### Android
 
         - `AndroidManifest.xml`
 
@@ -230,7 +230,7 @@
 
 - ### Initialize Branch
 
-    - iOS
+    - #### iOS
 
         If you are using Swift, add `#import <react-native-branch/RNBranch.h>` to your Bridging header if you have one.
 
@@ -285,7 +285,7 @@
             }
             ```
 
-    - Android
+    - #### Android
 
         - `MainApplication.java`
 
@@ -355,7 +355,7 @@
 
     - Long press on the deep link *(not 3D Touch)*
 
-    - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
+    - Click `Open in "APP_NAME"` to open your app *([example](/img/pages/apps/ios-notes.png))*
 
 - ### Test deep link Android
 

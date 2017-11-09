@@ -77,11 +77,11 @@ Select visualizations also allow you to see total (i.e. non-unique) numbers as w
 
 ### Cutoff date
 
-As far as the deployment of our new analytics platform, we created our cut off date on September 16th 2017 and we kept the old and new analytical systems running in parallel since then and will continue to do this for a short while. This mean you can query data from any time before September 16th up until September 16th with the old analytics. You can query data from September 16th onwards with both analytics. But if you wanted to do report across this line, say, September 15th to September 17th, you would need two separate queries.
+As far as the deployment of our new analytics platform, we created our cut off date on October 14th 2017 and we kept the old and new analytical systems running in parallel since then and will continue to do this for a short while. This mean you can query data from any time before October 14th up until October 14th with old analytics. You can query data from October 14th onwards with both analytics. But if you wanted to do reports across this line, say, October 13th to October 15th, you would need two separate queries.
 
 #### Differences From Cutoff Date
 
-If you are tracking Purchase events, and want to see unique values for Purchases before the cut off date of September 16th 2017, those values will display as 0. This is because the Purchase event hasn't stored unique counts before September 16th. However, we are now storing this information since then.
+If you are tracking Purchase events, and want to see unique values for Purchases before the cut off date of October 14th 2017, those values will display as 0. This is because the Purchase event hasn't stored unique counts before October 14th. However, we are now storing this information since then.
 
 ## Changes to the Branch Dashboard
 
@@ -148,3 +148,7 @@ Webhooks, like data integratons, is no longer session based. This means we will 
 ### Data speed
 
 This new analytics platform isn't real time like the old dashboard analytics, but does not have a significant delay. We're continually improving the speed, and hope to have a standard SLA for dashboard reporting.
+
+### Unique counts
+
+One thing to be aware of is that unique counts may be within a 4% window of error across the dashboard. For example, if you have 100 total clicks, and 90 were truly unique, it's possible that the dashboard could report within 4% of that 90 number. If you want true uniques, the export functionality will help. 
