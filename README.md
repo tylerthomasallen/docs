@@ -1,6 +1,5 @@
-# Branch Docs
-
-> Repository for Branch's public documentation [https://docs.branch.io](https://docs.branch.io)
+<h1 align="center">Branch Docs</h1>
+<h6 align="center">Repository for Branch's public documentation https://docs.branch.io</h6>
 
 ## Goal
 
