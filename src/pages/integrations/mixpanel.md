@@ -8,7 +8,7 @@ Once the Branch SDK is integrated into an app, Branch can detect which links are
 
 ### What events does Branch send?
 
-Branch will send *referred* **installs** and **opens**, as well as any **custom events** you track with Branch. Non-referred events, clicks, web session starts, and pageviews will be excluded. Branch also sends all the data that is attached to the link that drove the referred event. This will allow you to analyze which campaigns, channels, etc. are helping you acquire and engage users. You can see the list of fields that we send to Mixpanel [here](/third-party-integrations/mixpanel/advanced/#what-branch-sends-to-mixpanel).
+Branch will send *referred* **installs** and **opens**, as well as any **custom events** you track with Branch. Non-referred events, clicks, web session starts, and pageviews will be excluded. Branch also sends all the data that is attached to the link that drove the referred event. This will allow you to analyze which campaigns, channels, etc. are helping you acquire and engage users. You can see the list of fields that we send to Mixpanel [here](#what-branch-sends-to-mixpanel).
 
 ### What does it look like?
 
@@ -35,7 +35,7 @@ For the basic, codeless integration: find your Mixpanel Token and enter it into 
 
 1. Navigate to [https://mixpanel.com](https://mixpanel.com) and log into the Dashboard.
 1. Click on **Account** in the navigation bar at the top of the page.
-1. Choose **Projects** in the modal that appears, then copy your app’s Token: ![image](img/pages/integrations/mixpanel/mixpanel-token.png)
+1. Choose **Projects** in the modal that appears, then copy your app’s Token: ![image](/img/pages/integrations/mixpanel/mixpanel-token.png)
 
 ### Configure Branch Dashboard
 
@@ -44,7 +44,7 @@ For the basic, codeless integration: find your Mixpanel Token and enter it into 
   * If you have not yet entered billing information, please do so now.
 1. Enter your Mixpanel Token and hit **Save**.
 
-![image](/img/pages/third-party-integrations/mixpanel/enable-mixpanel-integration.png)
+![image](/img/pages/integrations/mixpanel/enable-mixpanel-integration.png)
 
 !!! warning "Please test integration!"
     Branch is not responsible for inaccurate API keys.
@@ -73,7 +73,7 @@ MixpanelAPI mp = MixpanelAPI.getInstance(this, "<your project token>");
 Branch.getInstance().setRequestMetadata("$mixpanel_distinct_id", mp.getDistinctId());
 ```
 
-For more information, see [Why We Recommend Passing Mixpanel Distinct ID](/third-party-integrations/mixpanel/advanced/#why-we-recommend-passing-mixpanel-distinct-id).
+For more information, see [Why We Recommend Passing Mixpanel Distinct ID](#what-branch-sends-to-mixpanel).
 
 !!! warning "Changes in Mixpanel Distinct ID"
     If you at any point change the Mixpanel Distinct ID for a user as she’s using your app, you should invoke the same one line of code as above. This way, future calls from Branch to Mixpanel use the updated distinct id.

@@ -4,17 +4,17 @@
 
 ## Integrate Branch
 
-- #### Configure Branch
+- ### Configure Branch
 
     - Complete the `Basic integration` within [Configure your dashboard](/pages/dashboard/integrate/)
 
         ![image](/img/pages/dashboard/fallback.png)
 
-- #### Integrate app
+- ### Integrate app
 
     - Complete [Integrate your app](#dialog-code)
 
-- #### Initialize Branch
+- ### Initialize Branch
 
     ```html hl_lines="4 8 9 10 11 12 13"
     <!doctype html>
@@ -38,7 +38,7 @@
 
 ## Implement features
 
-- #### Initialize Branch features
+- ### Initialize Branch features
 
     - Loads Branch into your app
 
@@ -67,7 +67,7 @@
     | referring_link | `string`. The referring link clicked, if available.
     | referring_identity | `string`. If the user was referred from a link, and the link was created by a user with an identity, that identity is here.
 
-- #### Create deep link
+- ### Create deep link
 
     - Creates a deep link URL with encapsulated data
 
@@ -98,7 +98,7 @@
         });
         ```
 
-- #### Share deep link
+- ### Share deep link
 
     -  Will generate a Branch deep link and tag it with the channel the user selects
 
@@ -137,7 +137,7 @@
         });
         ```
 
-- #### Read deep link
+- ### Read deep link
 
     - Retrieve Branch data from a deep link
 
@@ -169,7 +169,7 @@
         });
         ```
 
-- #### Create banner
+- ### Create Journeys banner
 
     - Converts mobile users to app users
 
@@ -211,7 +211,7 @@
         branch.track("pageview");
         ```
 
-- #### Create text message
+- ### Create text message
 
     - Converts desktop users to app users
 
@@ -250,12 +250,12 @@
         });
         ```
 
-- #### Host deep link data
+- ### Host deep link data
   
     - Make it easier for marketers to create deep links
     - Used for [Journeys](/pages/web/journeys/), [Deep Linked Emails](/pages/emails/appboy/), [Quick links](/pages/dashboard/analytics/#quick-links), and the [Chrome Extension](https://chrome.google.com/webstore/detail/branch-link-creator/pekdpppibljpmpbcjelehhnldnfbglgf)
     - Branch will scrape the web URL for deep link data on link creation
-    - Validate by creating a [Quick Link](https://branch.dashboard.branch.io/quick-links) and fill in `web URL` to your web page
+    - Validate by creating a [Quick Link](https://dashboard.branch.io/quick-links) and fill in `web URL` to your web page
 
         | Example URL | URL data | Metatags to add to your site
         | --- | --- | --- 
@@ -263,7 +263,7 @@
         | https://shop.com/shoes | categoryId=5678 | `<meta name="branch:deeplink:categoryId" content="5678" />`
         |https://shop.com/your-mother-is-great | No corresponding app content ([open web](/pages/links/integrate/#open-web-instead-of-app)) | `<meta name="branch:deeplink:$web_only" content="true" />`
 
-- #### Track users
+- ### Track users
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
     
@@ -291,7 +291,7 @@
         });
         ```
 
-- #### Track events
+- ### Track events
 
     - Registers a custom event
     
@@ -315,7 +315,7 @@
         });
         ```
 
-- #### Track commerce
+- ### Track commerce
 
     - Registers a custom commerce event
 
@@ -358,7 +358,7 @@
         });
         ```
 
-- #### Handle referrals
+- ### Handle referrals
 
     - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
     
@@ -419,7 +419,7 @@
         | length | `100` | The number of credit transactions to retrieve
         | direction | `0` | The order of credit transactions to retrieve (**deprecated**)
 
-- #### Handle listeners
+- ### Handle listeners
 
     - Subscribe and unsubscribe to Branch events
 
@@ -456,7 +456,7 @@
         | didCloseJourney | Journey's close animation has completed and it is no longer visible to the user.
         | didCallJourneyClose | Emitted when developer calls branch.closeJourney() to dismiss Journey.
 
-- #### Handle Firebase App Indexing
+- ### Handle Firebase App Indexing
 
     - Inserts Firebase App Indexing tags on your website which will help Google index and surface content from your App to Google Search
 
@@ -498,12 +498,12 @@
 
 ## Troubleshoot issues
 
-- #### Sample testing apps
+- ### Sample testing apps
 
     - https://cdn.branch.io/example.html
     - http://cdn.branch.io/branchster-angular
 
-- #### Browser support
+- ### Browser support
 
     - The Branch Web SDK requires native browser Javascript and has been tested in all modern browsers with sessionStorage capability. No 3rd party libraries are needed to make use of the SDK as is it 100% native Javascript.
 
@@ -511,15 +511,15 @@
           | --- | --- | --- | --- 
           | &#10004; | &#10004; |  &#10004; | 9, 10, 11
 
-- #### Bower or Npm compatibility
+- ### Bower or Npm compatibility
 
     - Use `bower install branch-sdk` or `npm install branch-sdk`
 
-- #### CommonJS and RequireJS compatibility
+- ### CommonJS and RequireJS compatibility
 
     - Add `require('branch')` or `define(['branch'], function(branch) { ... });`
 
-- #### Branch init options
+- ### Branch init options
   
     - Properties which you can pass within `branch.initSession()`
 
@@ -534,7 +534,7 @@
         | disable_exit_animation | *optional* - `boolean`. When true, prevents a Journeys exit animation.
         | open_app | *optional* - `boolean`. Whether to try to open the app passively through Journeys (as opposed to opening it upon user clicking); defaults to false.
 
-- #### Testing read deep link
+- ### Testing read deep link
 
     - Used for [Read deep link](#read-deep-link)
 
@@ -558,7 +558,19 @@
         });
         ```
 
-- #### Create smart banner
+- ### Journey not sticking to nav
+
+    - Navigate to [Dashboard Journey Page](https://branch.dashboard.branch.io/web/journeys)
+    - Select Journey -> Edit -> Configure Views -> Banner -> Page Placement
+    - Banner Scroll = `sticky`
+    - Press `Save & Close`
+    - Add the following div to your nav
+
+        ```html
+        <div class="branch-journeys-top"></div>
+        ```
+
+- ### Create smart banner
 
     - (**Deprecated**) Recommend to use [Create Journey banner](#create-journey-banner) instead
 
@@ -599,7 +611,7 @@
         branch.closeBanner();
         ```
 
-- #### Create call to action
+- ### Create call to action
   
     - (**Deprecated**) Recommend to use [Share deep link](#share-deep-link) instead
 
@@ -614,15 +626,14 @@
         };
         var linkOptions = {
           make_new_link: false, // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
-          o
-          e // will attempt to open the app if install (URI Scheme deep linking only - will not work with Safari)
+          open_app: true  // will attempt to open the app if install (URI Scheme deep linking only - will not work with Safari)
         };
         branch.deepview(linkData, linkOptions, function(err, data) {
           console.log(err, data);
         });
         ```
 
-- #### No Access-Control Error
+- ### No Access-Control Error
 
     - Make sure the Branch key is the same within the deep link and website
 

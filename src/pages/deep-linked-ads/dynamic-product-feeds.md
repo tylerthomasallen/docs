@@ -41,23 +41,35 @@ If you choose this option, go to your [Link Settings](https://dashboard.branch.i
 
 ### Upload a Feed Source
 
-Go directly to [Ads section](https://dashboard.branch.io/ads/analytics?modal=ad-link) in the Branch dashboard to get started.
+Go directly to [Ads > Links > Feed Sources section](https://dashboard.branch.io/ads/links/feed-sources) in the Branch dashboard to get started.
 
-1. Click on the "Create Product Link" tab.
-2. Click the **Feed Sources** button. ![image](/img/pages/deep-linked-ads/dynamic-product-ads/add-new-feed-source.png)
-3. Name your Feed Source. You can supply a URL (recommended) or upload a file. ![image](/img/pages/deep-linked-ads/dynamic-product-ads/name-and-upload-feed-source.png)
+1. Click the **Feed Sources** tab if needed, then click "Add New Feed Source."
+
+    ![image](/img/pages/deep-linked-ads/dynamic-product-ads/add-new-feed-source.png)
+
+2. Name your Feed Source. You can supply a URL (recommended) or upload a file.
+
+    ![image](/img/pages/deep-linked-ads/dynamic-product-ads/name-and-upload-feed-source.png)
 
 You can see all of the **Feed Sources** you've uploaded by going to the [Feed Sources](http://dashboard.branch.io/ads/feedsources) tab.
 
 ### Create a New Deep Linked Feed
 
-1. Click the **Add Deep Linked Feed** button from either tab. ![image](/img/pages/deep-linked-ads/dynamic-product-ads/add-deep-linked-feed.png)
+1. Click the **Create Ad Link** button from either tab.
+
+    ![image](/img/pages/deep-linked-ads/dynamic-product-ads/add-deep-linked-feed.png)
+
+1. Select **Create Product Link** from the choices on the modal.
+
+    ![image](/img/pages/deep-linked-ads/dynamic-product-ads/select-product-from-modal.png)
 
 ### Deep Linked Feed Creation Flow
 
 1. In "Deep Linked Feed Information" you'll name your Deep Linked Feed for reference, and specify which Feed Source you'd like to turn into a Deep Linked Feed. You'll also input the Ad Platform on which you'd like to run your campaigns. This information will be used to modify the feed and insert well-structured Branch attribution data into the links.
 
-![image](/img/pages/deep-linked-ads/dynamic-product-ads/dlf-step-1.png)
+    ![image](/img/pages/deep-linked-ads/dynamic-product-ads/dlf-step-1.png)
+
+    Select "CSV" for Facebook Ads, and "TSV" for Google Product Listing Ads.
 
 2. In "Create Deep Links" you'll be presented with two optional elements. The first is a list of column names from your feed source. To add deep link data to each link, select the column that contains the relevant data.
 
@@ -81,20 +93,20 @@ If you used a Feed Source hosted on a URL (recommended), you will see two option
 
 ![image](/img/pages/deep-linked-ads/dynamic-product-ads/hosted-dlf.png)
 
-You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](http://dashboard.branch.io/ads/deeplinkedfeeds) tab.
+You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](https://dashboard.branch.io/ads/links/deep-linked-feeds) tab.
 
 ### Download CSV
 
 Click "Download CSV" if you just need a one-time file with your Deep Linked Feed.
 
-You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](http://dashboard.branch.io/ads/deeplinkedfeeds) tab.
+You can see all of the **Deep Linked Feeds** you've created by going to the [Deep Linked Feeds](https://dashboard.branch.io/ads/links/deep-linked-feeds) tab.
 
 ### Use your Deep Linked Feed
 
 After you've downloaded your feed, it's time to use it!
 
 !!! tip "Facebook Dynamic Ads"
-    Launch a [Facebook Dynamic Ad Campaign](/ads/facebook-dynamic-ads/guide/) to drive engagement or installs with your Deep Linked Feed!
+    Launch a [Facebook Dynamic Ad Campaign](/pages/deep-linked-ads/facebook-dynamic-ads/) to drive engagement or installs with your Deep Linked Feed!
 
 
 !!! tip "Ad Network Integrations"

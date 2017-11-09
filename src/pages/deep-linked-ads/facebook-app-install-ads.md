@@ -26,14 +26,12 @@ App Installs | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
 
 {! ingredients/deep-linked-ads/link-to-facebook-ads-overview.md !}
 
-{! ingredients/deep-linked-ads/deep-linked-ad-ideas.md !}
-
 ## Setup
 
 !!! warning "Prerequisites"
-	* [x] To track installs from Facebook Ads you should [integrate the Branch SDK](TODO) into your app.
-	* [x] To use Branch links in Facebook App Install Ads ensure you have Universal Links set up on iOS or App Links enabled on Android to ensure correct routing behavior. For setup, checkout [Universal and App Links]({{base.url}}/getting-started/universal-app-links TODO).
-	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](TODO).
+	* [x] To track installs from Facebook Ads you should [integrate the Branch SDK](/pages/apps/ios/#integrate-branch) into your app.
+	* [x] To use Branch links in Facebook App Install Ads ensure you have Universal Links set up on iOS or App Links enabled on Android to ensure correct routing behavior. For setup, checkout [Universal](/pages/deep-linking/universal-links/) and [App Links](/pages/deep-linking/android-app-links/).
+	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](/pages/deep-linking/routing/).
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
 {! ingredients/deep-linked-ads/enable-facebook-ad-partner.md !}
@@ -51,10 +49,10 @@ App Installs | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/facebook-analytics-tags.png)
 
 !!! warning ""
-	In order for your campaign to run effectively, be sure to disable Deepviews. You can either [disable Deepviews](https://dev.branch.io/features/deepviews/guide/ios/ TODO) for your entire account or [disable Deepviews for one link]({{base.url}}/features/deepviews/advanced/ios/#disabling-deepviews-for-one-link TODO).
+	In order for your campaign to run effectively, be sure to disable Deepviews. You can either [disable Deepviews](/pages/web/deep-views/) for your entire account or [disable Deepviews for one link](/pages/web/deep-views/#disable-per-link-deepviews).
 
 !!! note "Optional: Deep Link Data"
-	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](TODO) page to learn more.
+	You can use this configuration section to specify custom link parameters that will be deep linked into the app after install. These could include a coupon code or a page identifier to route the user. Visit the [Deep Link Routing](/pages/deep-linking/routing/) page to learn more.
 
 !!! tip "Setting Attribution Windows"
 	You can specify the attribution windows for your links either at an overall account or per link level. Use these windows to accurately measure attribution data for your Branch links. Refer to [Changing attribution windows](/pages/deep-linked-ads/branch-universal-ads/#change-attribution-windows) for instructions.

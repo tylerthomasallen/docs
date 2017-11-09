@@ -1,18 +1,18 @@
 
 ## Integrate Branch
-- #### Configure Branch
+- ### Configure Branch
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](http://i.imgur.com/wazVu3U.png)
-        ![image](http://i.imgur.com/9PEylbS.png)
-        
-- #### Configure App
+        ![image](/img/pages/apps/cordova-configure.png)
+        ![image](/img/pages/apps/cordova-link-domain.png)
+
+- ### Configure App
     - iOS
-    
+
         - Add your Branch key and register a URI scheme
-        
+
             - In your project’s tiapp.xml file, insert the snippet below. Change yourapp to the URI scheme you’ve selected.
-              
+
               ```
                <ios>
                    <plist>
@@ -47,11 +47,11 @@
                    </plist>
                  </ios>
               ```
-              
+
     - Android
-    
+
         - Add your Branch Key and register a URI Scheme
-        
+
             - Open your tiapp.xml and add the following <meta-data> tag:
             ```
                 <application>
@@ -59,9 +59,9 @@
                     <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_xxxxxxxxxxxxxxx" />
                 </application>
             ```
-            
+
             - Within your Deep Link Activity's definition, insert the intent filter provided below. Change yourapp under android:scheme to the URI scheme you’ve selected.
-            
+
             ```
                 <intent-filter>
                   <data android:scheme="yourapp" android:host="open" />
@@ -70,22 +70,22 @@
                   <category android:name="android.intent.category.BROWSABLE" />
                 </intent-filter>
             ```
-            
-- #### Initialize Branch
+
+- ### Initialize Branch
 
     - Initialize the SDK by inserting the following snippet into your index.js file:
-    
+
         ```
         $.initialize = function(params) {
                $.window.open();
-           
+
                $.initializeViews();
                $.initializeHandlers();
-           
+
                Ti.API.info("start initSession");
                branch.initSession();
                branch.addEventListener("bio:initSession", $.onInitSessionFinished);
-           
+
                if (OS_ANDROID) {
                    Ti.Android.currentActivity.addEventListener("newintent", function(e) {
                        Ti.API.info("inside newintent: " + e);
@@ -108,7 +108,7 @@
                   });
               }
            };
-           
+
            $.onInitSessionFinished = function(data) {
                Ti.API.info("inside onInitSessionFinished");
                for (key in data) {
@@ -119,7 +119,7 @@
            }
         ```
 
-- #### Test deep link iOS
+- ### Test deep link iOS
 
     - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
 
@@ -127,13 +127,13 @@
 
     - Compile your app
 
-    - Paste deep link in `Apple Notes` 
+    - Paste deep link in `Apple Notes`
 
     - Long press on the deep link *(not 3D Touch)*
 
-    - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
+    - Click `Open in "APP_NAME"` to open your app *([example](/img/pages/apps/ios-notes.png))*
 
-- #### Test deep link Android
+- ### Test deep link Android
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
@@ -147,12 +147,12 @@
 
 ## Implement features
 
-- #### Create content reference
+- ### Create content reference
 
 	- The `Branch Universal Object` encapsulates the thing you want to share
-	
+
 	- Uses the Universal Object Properties listed below:
-	
+
 	    | **Key** | Type | **Meaning**
         | --- | --- |---
         | canonicalIdentifier | `string` | The identifier of the object
@@ -161,7 +161,7 @@
         | contentImageUrl | `string` | URL of the image used by the object
         | contentIndexingMode | `string` | Indexing mode of the object. Set as "private" or "public".
         | contentMetadata | `dictionary` | Custom keys and values as metadata of the object
-	
+
         ```js
             var branchUniversalObject = branch.createBranchUniversalObject({
                 "canonicalIdentifier" : "content/12345",
@@ -175,17 +175,17 @@
                 },
             });
         ```
-        
-- #### Create deep link
+
+- ### Create deep link
 
     - Creates a deep link URL with encapsulated data
-    
+
     - Needs a [Branch Universal Object](#create-content-reference)
-    
+
     - Uses [Deep Link Properties](/pages/links/integrate/)
-        
+
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/links)
-    
+
     ```js
         branchUniversalObject.generateShortUrl({
           "feature" : "sample-feature",
@@ -198,20 +198,20 @@
             Ti.API.info(res);
         });
     ```
-    
+
     - The event listener bio:generateShortUrl returns a string object containing the generated link:
     ```js
         branchUniversalObject.addEventListener("bio:generateShortUrl", $.onGenerateUrlFinished);
     ```
-- #### Share deep link
+- ### Share deep link
     -  Will generate a Branch deep link and tag it with the channel the user selects
-    
+
     - Needs a [Branch Universal Object](#create-content-reference)
-    
+
     - Uses [Deep Link Properties](/pages/links/integrate/)
-    
+
     ```js
-    
+
         branchUniversalObject.showShareSheet({
           "feature" : "sample-feature",
           "channel" : "sample-channel",
@@ -221,103 +221,103 @@
         });
 
     ```
-    
+
     - Android only (Callbacks in iOS are ignored. There is no need to implement them as the events are handled by UIActivityViewController)
-    
+
     ```js
-    
+
         branchUniversalObject.shareLinkDialogLaunched(function () {
           console.log('Share sheet launched');
         });
 
     ```
-    
+
     ```js
-    
+
         branchUniversalObject.shareLinkDialogDismissed(function () {
          console.log('Share sheet dimissed');
        });
 
     ```
-    
+
     ```js
-    
+
         branchUniversalObject.shareLinkResponse(function (res) {
           console.log('Share link response: ' + JSON.stringify(res));
         });
 
     ```
-    
+
     ```js
-    
+
         branchUniversalObject.shareChannelSelected(function (res) {
           console.log('Channel selected: ' + JSON.stringify(res));
         });
 
     ```
 
-- #### Read deep link
-        
+- ### Read deep link
+
     - Refer to `$.onInitSessionFinished()` in [Initialize Branch](#initialize-branch)
-    
+
     - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
 
-- #### Track content
+- ### Track content
 
     - Track how many times a piece of content is viewed
-    
+
     - Needs a [Branch Universal Object](#create-content-reference)
-    
+
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
-    
+
     ```js
-    
+
         branchUniversalObject.registerView();
 
     ```
-    
-- #### Track users
+
+- ### Track users
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
-    
-    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)
 
         ```js
-        
+
             var userId = '123456';
             branch.setIdentity(userId);
-      
+
         ```
 
     - Removes the identity of a user
 
         ```js
-        
+
             branch.logout();
 
         ```
-        
-- #### Track events
+
+- ### Track events
 
     - Registers a custom event
-    
+
     - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
 
     - Best to [Track users](#track-users) before [Track events](#track-events) to associate a custom event to a user
-    
+
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
-    
+
     ```js
-    
+
         var eventName = 'clicked_on_this';
         branch.userCompletedAction(eventName);
-      
+
     ```
-    
-- #### Handle referral
+
+- ### Handle referral
 
     - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
-    
+
     - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
     - Reward credits
@@ -325,38 +325,38 @@
         -  [Referral guide](/pages/dashboard/analytics/#referrals)
 
     - Redeem credits
-    
+
     ```js
-    
+
         int value = 10;
         branch.redeemRewards(value);
-    
+
     ```
-    
+
     - Load credits
-    
+
     ```js
-    
+
         var bucket = 'this_bucket'
-        branch.loadRewards(bucket);  
-      
+        branch.loadRewards(bucket);
+
     ```
-    
+
     ```js
-        
-        branch.loadRewards();  
-          
+
+        branch.loadRewards();
+
     ```
-    
+
     To implement the callback, you must add a listener to the event bio:loadRewards. The event returns a dictionary object containing the balance.
-    
+
    - Load history
-    
+
     ```branch.getCreditHistory();```
-    
+
     Implement the callback, by adding a listener to the event bio:getCreditHistory.
 
 ## Troubleshoot issues
-- #### Sample app
+- ### Sample app
 
     - [Branch testbed app](https://github.com/BranchMetrics/titanium-branch-deep-linking/tree/master/testbed)

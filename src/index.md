@@ -1,4 +1,6 @@
-## Branch Mobile Linking and Attribution Platform
+# Getting started with Branch
+
+## Mobile Linking and Attribution Platform
 
 Branch offers hosted, branded short links packed with 3 key value props:
 
@@ -12,14 +14,14 @@ Branch offers hosted, branded short links packed with 3 key value props:
 <!-- 
 ## Getting started
 
-- #### Basic integration
+- ### Basic integration
 
     ||| 
     |:-:|:-:|:-:
     | Integrate your app | Create and share deep links | Track analytics
     |![image](https://d3js.org/ex/box.png)|![image](https://d3js.org/ex/bubble.png)|![image](https://d3js.org/ex/bullet.png)
 
-- #### Convert app users
+- ### Convert app users
 
     ||| 
     |:-:|:-:|:-:
@@ -28,14 +30,14 @@ Branch offers hosted, branded short links packed with 3 key value props:
     | Emails to app | Ads to app |
     |![image](https://d3js.org/ex/box.png)|![image](https://d3js.org/ex/bubble.png)|
 
-- #### Share app content
+- ### Share app content
 
     ||| 
     |:-:|:-:|:-:
     | Invites | Referrals | Content Navigation
     |![image](https://d3js.org/ex/box.png)|![image](https://d3js.org/ex/bubble.png)|![image](https://d3js.org/ex/bullet.png)
 
-- #### Track app engagement
+- ### Track app engagement
 
     ||| 
     |:-:|:-:|:-:

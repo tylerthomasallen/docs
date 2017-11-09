@@ -1,13 +1,13 @@
 ## Integrate Branch
 
-- #### Configure Branch
+- ### Configure Branch
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](https://i.imgur.com/wazVu3U.png)
-        ![image](https://i.imgur.com/9PEylbS.png)
+        ![image](/img/pages/apps/cordova-configure.png)
+        ![image](/img/pages/apps/cordova-link-domain.png)
 
-- #### Configure app
+- ### Configure app
 
     In your project’s `*-app.xml` file, insert the platform-specific snippet(s) below. Change `YOUR URI SCHEME` to the URI scheme you’ve selected.
 
@@ -51,7 +51,7 @@
         ]]></manifestAdditions></android>
         ```
 
-- #### Initialize Branch
+- ### Initialize Branch
 
     In `Main.as`
 
@@ -88,7 +88,7 @@
     !!! warning
         Be sure to have the INIT_SUCCESSED event called, otherwise read the bEvt.informations from the INIT_FAILED event.
 
-- #### Compiling ANE
+- ### Compiling ANE
 
     - To compile this ANE, you need to have [ANT](https://ant.apache.org/) installed on your (OS X) machine, and [Java 1.6](https://support.apple.com/kb/DL1572).
 
@@ -96,21 +96,21 @@
 
     - Finally open a command line, `cd` in the directory and just call `ant`.
 
-- #### Test deep link iOS
+- ### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
     - Delete your app from the device
 
-    - Compile your app
+    - Compile and test on a device
 
     - Paste deep link in `Apple Notes`
 
-    - Long press on the deep link *(not 3D Touch)*
+    - Long press on the deep link (not 3D Touch)
 
-    - Click `Open in "APP_NAME"` to open your app *([example](https://i.imgur.com/VJVICXd.png))*
+    - Click `Open in "APP_NAME"` to open your app ([example](/img/pages/apps/ios-notes.png))
 
-- #### Test deep link Android
+- ### Test deep link Android
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
@@ -124,7 +124,7 @@
 
 ## Implement features
 
-- #### Create deep link
+- ### Create deep link
 
     ```as3
     //be sure to add the event listeners:
@@ -149,7 +149,10 @@
     branch.getShortUrl(tags, "sms", BranchConst.FEATURE_TAG_SHARE, JSON.stringify(dataToInclude));
     ```
 
-- #### Read deep link
+    !!! warning "Deep linking is not fully supported at the moment"
+        Deferred deep linking will still pass data through install, but if the user already has the app installed, the user must click the Branch link twice to pass data. Recommended use case: referrals.
+
+- ### Read deep link
 
     - Returns [deep link properties](/pages/links/integrate/#read-deep-links)
 
@@ -166,14 +169,14 @@
         var installParamsObj:Object = JSON.parse(installParams);
         ```
 
-- #### Track users
+- ### Track users
 
     ```as3
     branch.setIdentity("your user id");
     branch.logout();
     ```
 
-- #### Handle referrals
+- ### Handle referrals
 
     - Referral points are obtained from events triggered by users from rules created on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
 
@@ -201,6 +204,6 @@
 
 ## Troubleshoot issues
 
-- #### Sample app
+- ### Sample app
 
     You can find a full sample app in the main open source repo for the Air ANE. Visit the [Github page here](https://github.com/BranchMetrics/air-ane-branch-deep-linking).

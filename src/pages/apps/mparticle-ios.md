@@ -1,34 +1,35 @@
 ## Integrate Branch
 
-- #### Configure Branch
+- ### Configure Branch
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-        ![image](http://i.imgur.com/aFb69BS.png)
-        ![image](http://i.imgur.com/Edpfn04.png)
+        ![image](/img/pages/dashboard/ios.png)
+        ![image](/img/pages/dashboard/link-domain.png)
 
-- #### Configure bundle identifier
 
-    - Bundle Id matches [Branch Dashboard](https://dashboard.branch.io/settings/link)
+- ### Configure bundle identifier
 
-        ![image](http://i.imgur.com/BHAQIQf.png)
+    - Make sure Bundle Id matches your [Branch Dashboard](https://dashboard.branch.io/settings/link)
 
-- #### Configure associated domains
+        ![image](/img/pages/apps/ios-bundle-id.png)
+
+- ### Configure associated domains
 
     - Add your link domains from your [Branch Dashboard](https://dashboard.branch.io/settings/link)
     - `-alternate` is needed for Universal Linking with the [Web SDK](/pages/web/integrate/) inside your Website
     - `test-` is needed if you need use a [test key](#use-test-key)
     - If you use a [custom link domain](/pages/dashboard/integrate/#change-link-domain), you will need to include your old link domain, your `-alternate` link domain, and your new link domain
 
-        ![image](http://i.imgur.com/67t6hSY.png)
+        ![image](/img/pages/apps/ios-entitlements.png)
 
-- #### Configure entitlements
+- ### Configure entitlements
 
     - Confirm entitlements are within target
 
-        ![image](http://i.imgur.com/vhwis7f.png)
+        ![image](/img/pages/apps/ios-package.png)
 
-- #### Configure info.pList
+- ### Configure info.pList
 
     - Add [Branch Dashboard](https://dashboard.branch.io/account-settings/app) values
 
@@ -36,15 +37,15 @@
         - Add `branch_key` with your current Branch key
         - Add your URI scheme as `URL Types` -> `Item 0` -> `URL Schemes`
 
-    ![image](http://i.imgur.com/PwXnHWz.png)
+        ![image](/img/pages/apps/ios-plist.png)
 
-- #### Confirm app prefix
+- ### Confirm app prefix
 
     - From your [Apple Developer Account](https://developer.apple.com/account/ios/identifier/bundle)
 
-        ![image](http://i.imgur.com/2EoN1i0.png)
+        ![image](/img/pages/apps/ios-team-id.png)
 
-- #### Install Branch Kit
+- ### Install Branch Kit
 
     - Option 1: [CocoaPods](https://cocoapods.org/)
 
@@ -65,7 +66,7 @@
         github "mparticle-integrations/mparticle-apple-integration-branchmetrics"
         ```
 
-- #### Enable Branch on mParticle
+- ### Enable Branch on mParticle
 
     - Retrieve your Branch Key on the [Link Settings](https://dashboard.branch.io/settings/link) page of the Branch dashboard.
     - From your [mParticle dashboard](https://app.mparticle.com/) navigate to the Services page. (The paper airplane icon on the left side)
@@ -74,7 +75,7 @@
     - Click on the Apple icon, then toggle the status ON.
     - Enter your Branch key in the marked field and click "Save".
 
-- #### Handle Incoming Links
+- ### Handle Incoming Links
 
     - Swift 3.0
 
@@ -87,7 +88,7 @@
         var window: UIWindow?
 
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-          
+
           // This observer must be added before initializing the mParticle session.
           // Failure to do so will cause some deep links to be missed.
           NotificationCenter.default.addObserver(self, selector: #selector(handleKitDidBecomeActive(_:)), name: Notification.Name.mParticleKitDidBecomeActive, object: nil)
@@ -216,30 +217,24 @@
         @end
         ```
 
-- #### Initialize Branch
+- ### Initialize Branch
 
     As with any kit, mParticle will automatically handle initializing Branch sessions. At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.
-    
 
-- #### Test deep link
+- ### Test deep link
 
-    - Create a deep link from the [Branch Marketing Dashboard](https://dashboard.branch.io/marketing)
-
+    - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
     - Delete your app from the device
-
-    - Compile your app *(`cordova run ios` `phonegap run ios` `ionic run ios`)*
-
+    - Compile and test on a device
     - Paste deep link in `Apple Notes`
-
-    - Long press on the deep link *(not 3D Touch)*
-
-    - Click `Open in "APP_NAME"` to open your app *([example](http://i.imgur.com/VJVICXd.png))*
+    - Long press on the deep link (not 3D Touch)
+    - Click `Open in "APP_NAME"` to open your app ([example](/img/pages/apps/ios-notes.png))
 
 ## Implement features
 
-- #### Create content reference
+- ### Create content reference
 
-    - The `Branch Universal Object` encapsulates the thing you want to share 
+    - The `Branch Universal Object` encapsulates the thing you want to share
 
     - Swift 3.0
 
@@ -266,7 +261,7 @@
         [buo addMetadataKey:@"property2" value:@"red"];
         ```
 
-- #### Create deep link
+- ### Create deep link
 
     - Generate a deep link within your app
 
@@ -302,7 +297,7 @@
         }];
         ```
 
-- #### Share deep link
+- ### Share deep link
 
     - Share deep links between users and apps
 
@@ -339,9 +334,9 @@
         }];
         ```
 
-- #### Read deep link
+- ### Read deep link
 
-- #### Navigate to content
+- ### Navigate to content
 
     - Navigate to any ViewController based on the deep link data from
 
@@ -373,18 +368,18 @@
 
         ```
 
-- #### Display content
-- #### Track content
-- #### Track users
-- #### Track events
-- #### Track commerce
-- #### Handle referrals
+- ### Display content
+- ### Track content
+- ### Track users
+- ### Track events
+- ### Track commerce
+- ### Handle referrals
 
-## Troubleshoot issues 
+## Troubleshoot issues
 
-- #### Recommendations
-- #### Sample app
-- #### Simulate an install
-- #### App not opening
-- #### Data not pass through
-- #### Deep links are long
+- ### Recommendations
+- ### Sample app
+- ### Simulate an install
+- ### App not opening
+- ### Data not pass through
+- ### Deep links are long

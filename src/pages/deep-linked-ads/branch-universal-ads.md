@@ -56,7 +56,7 @@ Once you've enabled an ad partner, it's time to create a tracking link.
 
 ### View your data with Unified Analytics
 
-The [Ads Analytics Page page](https://dashboard.branch.io/ads/analytics) on the Branch dashboard shows the performance of your ad campaigns _across both web and app_. You can view performance over time, including purchase and other custom events.
+The [Ads Analytics Page](https://dashboard.branch.io/ads/analytics) on the Branch dashboard shows the performance of your ad campaigns _across both web and app_. You can view performance over time, including purchase and other custom events.
 
 Events are attributed using Branch's unified last-click attribution model. This means that Branch will attribute to the last click across channels, and across platforms.
 
@@ -101,7 +101,9 @@ For customer experience and data accuracy, please do not set your deep linking w
 
 You can edit your attribution windows under Link Settings > Attribution Windows. View through attribution is not yet available, but will be coming soon.
 
-![image](/img/pages/deep-linked-ads/branch-universal-ads/attribution-windows.png)
+![image](/img/pages/dashboard/unified-analytics/attribution-windows.png)
+
+Learn more about account level attribution windows in [Unified Analytics](/pages/dashboard/unified-analytics/#attribution-windows).
 
 #### Link Level Attribution Windows
 
@@ -109,13 +111,15 @@ To set attribution windows on a link level, you can append the following paramet
 
 Key | Example Link
 --- | ---
+$click_install_window_days| https://branchster.app.link/hpNVE52gxE?$click_install_window_days=3
 $click_session_start_window_days | https://branchster.app.link/hpNVE52gxE?$click_session_start_window_days=7
 $click_conversion_window_days | https://branchster.app.link/hpNVE52gxE?$click_session_start_window_days=30
+$impression_install_window_days| https://branchster.app.link/hpNVE52gxE?$impression_install_window_days=3
 $impression_session_start_window_days | https://branchster.app.link/hpNVE52gxE?$click_session_start_window_days=1
 $impression_conversion_window_days | https://branchster.app.link/hpNVE52gxE?$click_session_start_window_days=7
 
-!!! "warning" Link Level Attribution Support for Standard Branch links"
-    As of July 2017, link level attribution window setting is only available on standard Branch links. Special Branch links such as the ones used for Google's Universal App Campaign or Play Store links with Branch link Ids are currently not supported.
+!!! warning "Link Level Attribution Support for Standard Branch links"
+    As of July 2017, link level attribution window setting is only available on standard Branch links. Special Branch links such as the ones used for Google's Universal App Campaign or Play Store links with Branch link id parameters are currently not supported.
 
 ## Support
 

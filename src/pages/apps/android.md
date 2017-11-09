@@ -1,6 +1,6 @@
 ## Integrate Branch
 
-- #### Configure Branch
+- ### Configure Branch
 
     - Complete the `Basic integration` within [Configure your dashboard](/pages/dashboard/integrate/)
 
@@ -8,7 +8,7 @@
 
         ![image](/img/pages/dashboard/android.png)
 
-- #### Install Branch
+- ### Install Branch
 
     - Import the Branch SDK to your `build.gradle`
 
@@ -41,11 +41,11 @@
             })
             compile 'com.android.support:appcompat-v7:25.2.0'
             compile 'com.android.support:design:25.2.0'
-            
+
             // required
             compile 'io.branch.sdk.android:library:2.+'
 
-            // optional 
+            // optional
             compile 'com.android.support:customtabs:23.3.0' // Chrome Tab matching
             compile 'com.google.android.gms:play-services-ads:9+' // GAID matching
             compile 'com.google.android.gms:play-services-appindexing:9.+' // App indexing
@@ -54,7 +54,7 @@
         }
         ```
 
-- #### Configure app
+- ### Configure app
 
     - Add Branch to your `AndroidManifest.xml`
 
@@ -125,7 +125,7 @@
         - `key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw`
         - `key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr`
 
-- #### Initialize Branch
+- ### Initialize Branch
 
     - Add Branch to your `MainActivity.java`
 
@@ -212,7 +212,7 @@
 
             override fun onStart() {
                 super.onStart()
-                
+
                 // Branch init
                 Branch.getInstance().initSession(object : BranchReferralInitListener {
                     override fun onInitFinished(referringParams: JSONObject, error: BranchError?) {
@@ -231,7 +231,7 @@
         }
         ```
 
-- #### Load Branch
+- ### Load Branch
 
     - Add Branch to your `CustomApplicationClass.java`
 
@@ -278,7 +278,7 @@
         }
         ```
 
-- #### Test deep link
+- ### Test deep link
 
     - Create a deep link from the [Branch Dashboard](https://dashboard.branch.io/marketing)
 
@@ -292,7 +292,7 @@
 
 ## Implement features
 
-- #### Create content reference
+- ### Create content reference
 
     - The `Branch Universal Object` encapsulates the thing you want to share (content or user)
 
@@ -322,9 +322,9 @@
             .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .setLocalIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .addContentMetadata("custom_data", "123")
-        ```      
+        ```
 
-- #### Create deep link
+- ### Create deep link
 
     - Creates a deep link URL with encapsulated data
 
@@ -375,7 +375,7 @@
         })
         ```
 
-- #### Share deep link
+- ### Share deep link
 
     -  Will generate a Branch deep link and tag it with the channel the user selects
 
@@ -451,7 +451,7 @@
         })
         ```
 
-- #### Read deep link
+- ### Read deep link
 
     - Retrieve Branch data from a deep link
 
@@ -502,8 +502,8 @@
         val installParams = Branch.getInstance().firstReferringParams
         ```
 
-- #### Navigate to content
-  
+- ### Navigate to content
+
     - Do stuff with the Branch deep link data
 
     - *Java*
@@ -557,7 +557,7 @@
                     val intent = Intent(this, MainActivity2::class.java)
                     intent.putExtra("branchData", referringParams.toString(2))
                     startActivity(intent)
-                    
+
                     // option 4: display data
                     Toast.makeText(this, referringParams.toString(2), Toast.LENGTH_SHORT).show()
                 } else {
@@ -567,14 +567,14 @@
         }, this.intent.data, this)
         ```
 
-- #### Display content
+- ### Display content
 
     - List content on `Google Search` with `App Indexing`
 
     - Enable App Indexing on the [Branch Dashboard](#https://dashboard.branch.io/search)
 
     - Validate with the [App indexing validator](https://branch.io/resources/app-indexing/)
-    
+
     - Needs a [Branch Universal Object](#create-content-reference)
 
     - Needs `build.gradle` library
@@ -596,12 +596,12 @@
         ```
 
 
-- #### Track content
+- ### Track content
 
     - Track how many times a piece of content is viewed
 
     - Needs a [Branch Universal Object](#create-content-reference)
-    
+
     - Uses [Track content properties](#track-content-properties)
 
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
@@ -618,13 +618,13 @@
         buo.userCompletedAction(BranchEvent.VIEW)
         ```
 
-- #### Track users
+- ### Track users
 
     - Sets the identity of a user (email, ID, UUID, etc) for events, deep links, and referrals
 
     - `127` character max for user id
-    
-    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)  
+
+    - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/identities)
 
     - *Java*
 
@@ -646,18 +646,18 @@
         Branch.getInstance().logout()
         ```
 
-- #### Track events
+- ### Track events
 
     - Registers a custom event
-    
+
     - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
 
     - `63` character max for event name
 
     - Best to [Track users](#track-users) before [Track events](#track-events) to associate a custom event to a user
-    
+
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
-        
+
     - *Java*
 
         ```java
@@ -685,15 +685,17 @@
         Branch.getInstance().userCompletedAction("your_custom_event", metadata)
         ```
 
-- #### Track commerce
+- ### Track commerce
 
     - Registers a custom commerce event
 
-    - Uses [Track commerce properties](#commerce-properties) for `Currency` and `Category` 
+    - Uses [Commerce properties](https://github.com/BranchMetrics/android-branch-deep-linking/blob/7fb24798d06f02a90acc3c73ec907dbb769caae1/Branch-SDK/src/io/branch/referral/util/CurrencyType.java) for `Currency` 
     
+    - Uses [Commerce properties](https://github.com/BranchMetrics/android-branch-deep-linking/blob/65f8c34ccc6705331b50348f99a66a13da19cf8c/Branch-SDK/src/io/branch/referral/util/ProductCategory.java) for `Category`
+
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/commerce)
-    
-    - Ensure to add `revenue` field to track purchase. All other fields are optional 
+
+    - Ensure to add `revenue` field to track purchase. All other fields are optional
 
     - *Java*
 
@@ -804,10 +806,10 @@
         Branch.getInstance().sendCommerceEvent(commerceEvent, metadata, null)
         ```
 
-- #### Handle referrals
+- ### Handle referrals
 
     - Referral points are obtained from referral rules on the [Branch Dashboard](https://dashboard.branch.io/referrals/rules)
-    
+
     - Validate on the [Branch Dashboard](https://dashboard.branch.io/referrals/analytics)
 
     - Reward credits
@@ -856,7 +858,7 @@
 
     - Load history
 
-        - *Java* 
+        - *Java*
 
             ```java
             Branch.getInstance().getCreditHistory(new BranchListResponseListener() {
@@ -886,7 +888,7 @@
             }
             ```
 
-- #### Handle push notification
+- ### Handle push notification
 
     - Deep link to content from GCM push notifications just by adding a Branch link to your result intent
 
@@ -908,35 +910,21 @@
         intent.putExtra("branch_force_new_session", true)
         ```
 
-- #### Enable 100% matching
+- ### Enable 100% matching
 
     - Uses `Chrome Tabs` to increase attribute matching success
 
     - Add `compile 'com.android.support:customtabs:23.3.0'` to your `build.gradle`
 
-    - Add to your application class before `getAutoInstance` ([Load Branch](#load-branch))
-
-    - *Java*
-
-        ```java
-        Branch.enableCookieBasedMatching("your.linkdomain.com");
-        ```
-
-    - *Kotlin*
-
-        ```java
-        Branch.enableCookieBasedMatching("your.linkdomain.com")
-        ```
-
 ## Troubleshoot issues
 
-- #### Sample testing apps
+- ### Sample testing apps
 
     - [Branchsters](https://github.com/BranchMetrics/Branch-Example-Deep-Linking-Branchster-Android)
 
     - [Testbed](https://github.com/BranchMetrics/android-branch-deep-linking/tree/master/Branch-SDK-TestBed)
 
-- #### Simulate an install
+- ### Simulate an install
 
     - Need to bypass the device's hardware_id
 
@@ -947,7 +935,7 @@
             ```
 
         - Do not use `TestMode` in production or in the Google Play Store
-        
+
     - Uninstall your app from the device
 
     - Click on any Branch deep link (will navigate to the fallback URL since the app is not installed)
@@ -956,7 +944,7 @@
 
     - Read deep link data from `Branch.initSession()` for `+is_first_session=true`
 
-- #### Track content properties
+- ### Track content properties
 
     - Used for [Track content](#track-content)
 
@@ -970,10 +958,10 @@
         | BNCShareInitiatedEvent | User started to share the object
         | BNCShareCompletedEvent | User completed a share
 
-- #### Using bnc.lt or a custom link domain
-    
+- ### Using bnc.lt or a custom link domain
+
     - *bnc.lt link domain*
-    
+
         ```xml
         <activity android:name="com.yourapp.your_activity">
             <!-- App Link your activity to Branch links-->
@@ -981,8 +969,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                 <data android:scheme="https" android:host="bnc.lt" android:pathPrefix="/LVeu" /> 
-                 <data android:scheme="https" android:host="bnc.lt" android:pathPrefix="/eVeu" /> 
+                 <data android:scheme="https" android:host="bnc.lt" android:pathPrefix="/LVeu" />
+                 <data android:scheme="https" android:host="bnc.lt" android:pathPrefix="/eVeu" />
             </intent-filter>
         </activity>
         ```
@@ -996,8 +984,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                 <data android:scheme="https" android:host="your.app.com" android:pathPrefix="/LVeu" /> 
-                 <data android:scheme="https" android:host="your.app.com" android:pathPrefix="/eVeu" /> 
+                 <data android:scheme="https" android:host="your.app.com" android:pathPrefix="/LVeu" />
+                 <data android:scheme="https" android:host="your.app.com" android:pathPrefix="/eVeu" />
             </intent-filter>
         </activity>
         ```
@@ -1008,17 +996,17 @@
         - `/eVeu` (test)
         - `your.app.com`
 
- - #### Branch with Fabric Answers
- 
+ - ### Branch with Fabric Answers
+
     - If you do not want to import `answers-shim`
 
         ```
         compile ('io.branch.sdk.android:library:2.+') {
           exclude module: 'answers-shim'
-        }   
-        ```    
+        }
+        ```
 
-- #### Deep link routing
+- ### Deep link routing
 
     - Loads a specific URI Scheme path, for example
         - `$deeplink_path="content/123"`
@@ -1030,7 +1018,7 @@
         <meta-data android:name="io.branch.sdk.auto_link_path" android:value="content/123/, another/path/, another/path/*" />
         ```
 
-- #### Deep link routing in app 
+- ### Deep link routing in app
 
     - Used for `WebView` and `ChromeTab` within the app to render HTML normally
 
@@ -1138,7 +1126,7 @@
             //finish() if launching same activity
             ```
 
-- #### Deep link activity finishes
+- ### Deep link activity finishes
 
     - Be notified when the deep link Activity finishes
 
@@ -1168,7 +1156,7 @@
         ```java
         override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
             super.onActivityResult(requestCode, resultCode, data)
-            
+
             // Checking if the previous activity is launched on branch Auto deep link.
             if (requestCode === resources.getInteger(R.integer.AutoDeeplinkRequestCode)) {
                 //Decide here where  to navigate  when an auto deep linked activity finishes.
@@ -1179,7 +1167,7 @@
         }
         ```
 
-- #### Pre Android 15 support
+- ### Pre Android 15 support
 
     - Use `Branch SDK 1.14.5`
 
@@ -1215,7 +1203,7 @@
         }
         ```
 
-- #### Using the default application class
+- ### Using the default application class
 
     - If your app does not have an application class
 
@@ -1223,7 +1211,7 @@
         <application android:name="io.branch.referral.BranchApp">
         ```
 
-- #### Custom install referrer class
+- ### Custom install referrer class
 
     - Google only allows one `BroadcastReceiver` per application
 
@@ -1253,7 +1241,7 @@
         listener.onReceive(context, intent)
         ```
 
-- #### Generate signing certificate 
+- ### Generate signing certificate
 
     - Used for Android `App Link` deep linking
 
@@ -1265,9 +1253,9 @@
 
     - Copy this value to your [Branch Dashboard](https://dashboard.branch.io/link-settings)
 
-- #### Matching through the install listener
+- ### Matching through the install listener
 
-    - Enable the ability to pass `link_click_id` from Google Play to Branch 
+    - Enable the ability to pass `link_click_id` from Google Play to Branch
 
     - This will increase attribution and deferred deep linking accuracy
 
@@ -1295,7 +1283,7 @@
         adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n io.branch.androidexampledemo/io.branch.referral.InstallListener --es "referrer" "link_click_id=123"
         ```
 
-- #### Enable multidexing
+- ### Enable multidexing
 
     - Adding additional dependencies may overrun the dex limit and lead to `NoClassDefFoundError` or `ClassNotFoundException`
 
@@ -1328,16 +1316,21 @@
         }
         ```
 
-- #### InvalidClassException, ClassLoadingError or VerificationError
+- ### InvalidClassException, ClassLoadingError or VerificationError
 
     - Often caused by a `Proguard` bug. Try the latest Proguard version or disable Proguard optimization by setting `-dontoptimize`
 
-- #### Proguard warning or errors with answers-shim module
+- ### Proguard warning or errors with answers-shim module
 
-    - Often caused when you exclude the `answers-shim`. Try adding -dontwarn com.crashlytics.android.answers.shim` to your `Proguard` file
+    - Often caused when you exclude the `answers-shim`. Try adding `-dontwarn com.crashlytics.android.answers.shim.**` to your `Proguard` file
 
-- #### Unable to open this link error
+- ### Proguard warning or errors with AppIndexing module
+
+    - The Branch SDK has an optional dependency on Firebase app indexing classes to provide new Firebase content listing
+        features. This may cause a proguard warning depending on your proguard settings. Please add the following to your
+        proguard file to solve this issue `-dontwarn com.google.firebase.appindexing.**`.
+
+- ### Unable to open this link error
 
     - Happens whenever URI Scheme redirection fails.
-    - Make sure you do not have `$deeplink_path` or you have a `$deeplink_path` which your `AndroidManfiest.xml` can accept
-
+    - Make sure you do not have `$deeplink_path` or you have a `$deeplink_path` which your `AndroidManifest.xml` can accept

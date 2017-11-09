@@ -1,13 +1,7 @@
 ---
 ---
 
-{! ingredients/email/email-overview.md !}
-
-### Prerequisites
-
-- This guide requires you to have already integrated the Branch SDK into your app.
-
-{! ingredients/email/email-set-up-deep-linking.md !}
+{! ingredients/email/email-configure-esp.md !}
 
 You can retrieve your click tracking domain from your Bronto account. If you have not added a private domain yet, follow the instructions [here](#set-up-a-private-domain). 
 
@@ -34,5 +28,7 @@ Enabling Click Through Link Tracking allows you to see which links your users ar
 {! ingredients/email/email-usage.md !}
 
 {! ingredients/email/email-usage-auto-bounce.md !}
+
+{! ingredients/email/email-usage-auto.md !}
 
 {! ingredients/email/email-support.md !}

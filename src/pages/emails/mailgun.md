@@ -1,13 +1,7 @@
 ---
 ---
 
-{! ingredients/email/email-overview.md !}
-
-### Prerequisites
-
-- This guide requires you to have already integrated the Branch SDK into your app.
-
-{! ingredients/email/email-set-up-deep-linking.md !}
+{! ingredients/email/email-configure-esp.md !}
 
 You can retrieve your click tracking domains from your Mailgun settings. On **Done** click, an AASA file - required for Universal Links - specific to that domain will be generated.
 
@@ -20,6 +14,8 @@ You can retrieve your click tracking domains from your Mailgun settings. On **Do
 {! ingredients/email/email-validate-test.md !}
 
 {! ingredients/email/email-usage.md !}
+
+{! ingredients/email/email-usage-auto-deeplink.md !}
 
 {! ingredients/email/email-usage-auto.md !}
 

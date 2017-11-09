@@ -103,9 +103,11 @@ extra:
     - 'V2 Event'
     - 'New Analytics Platform'
     - 'Enable Single Sign On'
+    - 'Export API v3'
+    - 'Export API'
   is_visible:
-    footer_floater_beta: true
-    footer_floater_old_docs: true
+    footer_floater_beta: false
+    footer_floater_old_docs: false
     footer_nav: false
     header_git: false
     header_breadcrumb: true
@@ -113,8 +115,8 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard: pages/dashboard/integrate.md
-  - Configure your app:
+  - 1. Configure your dashboard: pages/dashboard/integrate.md
+  - 2. Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
     - Adobe AIR: pages/apps/adobe-air.md
@@ -128,16 +130,16 @@ pages:
     - API: pages/apps/api.md
     - V2 Event: pages/apps/v2event.md
     - New Analytics Platform: pages/dashboard/unified-analytics.md
-  - Configure your deep linking:
+  - 3. Configure your deep linking:
     - iOS Universal Links: pages/deep-linking/universal-links.md
     - Android App Links: pages/deep-linking/android-app-links.md
     - In-app deep link routing: pages/deep-linking/routing.md
-  - Launch your app:
+  - 4. Launch your app:
     - Apple App Store: pages/apps/ios-launch.md
     - Google Play: pages/apps/android-launch.md
-  - Configure your website: pages/web/integrate.md
-  - Create deep links: pages/links/integrate.md
-  - Track analytics: pages/dashboard/analytics.md
+  - 5. Configure your website: pages/web/integrate.md
+  - 6. Create deep links: pages/links/integrate.md
+  - 7. Track analytics: pages/dashboard/analytics.md
   - Links on your website:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
@@ -166,9 +168,11 @@ pages:
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter: pages/deep-linked-ads/twitter.md
   - Links in your emails:
+    - Get Started: pages/emails/get-started.md
     - Appboy: pages/emails/appboy.md
     - Blueshift: pages/emails/blueshift.md
     - Bronto: pages/emails/bronto.md
+    - Campaign Monitor: pages/emails/campaign-monitor.md
     - Epsilon: pages/emails/epsilon.md
     - Kahuna: pages/emails/kahuna.md
     - Leanplum: pages/emails/leanplum.md
@@ -183,12 +187,13 @@ pages:
     - SparkPost: pages/emails/sparkpost.md
     - Vero: pages/emails/vero.md
     - Zeta: pages/emails/zeta.md
+    - Support: pages/emails/support.md
     - Self Serve: pages/emails/self-serve.md
-  - Links in push notifications:
-    - Generic push support: pages/push/generic-push.md
+  - Links in push notifications: pages/advance/push-notifications.md
   - Links in organic search:
     - Firebase App Indexing: pages/organic-search/firebase.md
     - Spotlight Search: pages/organic-search/spotlight.md
+    - General SEO Compatibility: pages/organic-search/branch-seo.md
   - Links for viral & referral:
     - Content sharing: pages/viral/content-sharing.md
     - Referral programs: pages/viral/referrals.md
@@ -199,13 +204,15 @@ pages:
   - Export Branch data:
     - Export API: pages/exports/api.md
     - Webhooks: pages/exports/webhooks.md
+    - Export API v3: pages/exports/api-v3.md
   - Send data to other tools:
-    - Abobe Analytics: pages/integrations/adobe-analytics.md
+    - Adobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
     - Amplitude: pages/integrations/amplitude.md
     - AppMetrica: pages/integrations/appmetrica.md
     - Appboy: pages/integrations/appboy.md
     - Appsflyer: pages/integrations/appsflyer.md
+    - CleverTap: pages/integrations/clevertap.md
     - Fabric Answers: pages/integrations/fabric-answers.md
     - Google Analytics: pages/integrations/google-analytics.md
     - Kochava: pages/integrations/kochava.md

@@ -2,361 +2,555 @@
 
 ## Overview
 
-With Branch's SDKs, it's always been possible to track events, including installs, opens, purchases, and more. We're introducing a new way to track events that make reporting and analytics a whole lot easier. We're standardizing the way you track "classes" of events. For example: all events related to a customer purchasing are bucketed into a purchase class, and all events related to users interacting with your in-app content are linked to a "content" class.
+It's always been possible to track events with the Branch SDK, including installs, opens, purchases, and more. Now we're introducing a new way to track events that make reporting and analytics a whole lot better and easier.
 
-Find the event you're interested in tracking, and we'll show you the way to track through our SDKs.
+The new v2 events have better tracking and analytics options in the Branch dashboard, and the new event structure makes integration with third party analytics providers quicker and tighter.
+
+We're standardizing the way you track "classes" of events. For example: all events related to a customer purchasing are bucketed into a "purchase" class of data items, and all events related to users interacting with your in-app content are linked to a "content" class of data items.
+
+Below are examples of the kinds of events you'll likely be interested in tracking, and we'll show you the way to track through our SDKs.
 
 ## Prerequisites
 
-With event tracking, it's important to track the objects related to the event occurring. Branch provides a map for all your in-app objects, and wraps them around a class called the [Branch Universal Object](/pages/apps/ios/#create-content-reference). For any of the events tracked below, make sure to include the universal object(s) involved. For example, if you want to track when someone purchases 3 items, you'd want to create a Branch Universal Object per item, and pass them along when saving the event.
+With event tracking, it's important to track the objects related to the event occurring. Branch provides a class to describe your in-app content items  called the [Branch Universal Object](/pages/apps/ios/#create-content-reference). For any of the events tracked below, make sure to include the universal object(s) involved. For example, if you want to track when someone purchases 3 items, you'd want to create a Branch Universal Object per item, and pass them along when tracking the event.
 
 Refer to the above document to set up Branch Universal Objects.
 
+## Current Compatibility
+
+There are a few products and features unsupported by this new method of tracking events. We clarify what's currently supported and what isn't below.
+
+### Acceptance
+
+Tracking these events will propagate to Ad Networks, like Criteo. For example, if you track the purchase event through Branch, this will map to Criteo's Purchase event.
+
+These events will also have analytics, so you can understand their performance, using the new Analytics Platform. Read more about the new Analytics Platform [here](https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
+
+### Limitations
+
+As of now, any calls made through these SDK methods will **not**:
+
+- Appear in your .csv exports or Liveview.
+- Be settable events for Webhooks or sent via Data Integrations.
+- Be events you can target a Journey with.
+- See Analytics on the old Analytics pipeline. Read more about our new [Analytics](https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
+
+## Available Events
+
+Use the table below to quickly find the event you want to track.
+
+| Event Name | Event Category | iOS | Android | API
+| :-: | :-: | :-: | :-: | :-:
+| Add To Cart | [Commerce Event](#track-commerce-events) | BranchStandardEventAddToCart | BRANCH_STANDARD_EVENT.ADD_TO_CART | ADD_TO_CART
+| Add To Wishlist | [Commerce Event](#track-commerce-events) | BranchStandardEventAddToWishlist | BRANCH_STANDARD_EVENT.ADD_TO_WISHLIST | ADD_TO_WISHLIST
+| View Cart | [Commerce Event](#track-commerce-events) | BranchStandardEventViewCart | BRANCH_STANDARD_EVENT.VIEW_CART | VIEW_CART
+| Initiate Purchase | [Commerce Event](#track-commerce-events) | BranchStandardEventInitiatePurchase | BRANCH_STANDARD_EVENT.INITIATE_PURCHASE | INITIATE_PURCHASE
+| Add Payment Info | [Commerce Event](#track-commerce-events) | BranchStandardEventAddPaymentInfo | BRANCH_STANDARD_EVENT.ADD_PAYMENT_INFO | ADD_PAYMENT_INFO
+| Purchase | [Commerce Event](#track-commerce-events) | BranchStandardEventPurchase | BRANCH_STANDARD_EVENT.PURCHASE | PURCHASE
+| Spend Credits | [Commerce Event](#track-commerce-events) | BranchStandardEventSpendCredits | BRANCH_STANDARD_EVENT.SPEND_CREDITS | SPEND_CREDITS
+| Search | [Content Event](#track-content-events) | BranchStandardEventSearch | BRANCH_STANDARD_EVENT.SEARCH | SEARCH
+| View Item | [Content Event](#track-content-events) | BranchStandardEventViewItem | BRANCH_STANDARD_EVENT.VIEW_ITEM | VIEW_ITEM
+| View Items | [Content Event](#track-content-events) | BranchStandardEventViewItems | BRANCH_STANDARD_EVENT.VIEW_ITEMS | VIEW_ITEMS
+| Rate | [Content Event](#track-content-events) | BranchStandardEventRate | BRANCH_STANDARD_EVENT.RATE | RATE
+| Share | [Content Event](#track-content-events) | BranchStandardEventShare | BRANCH_STANDARD_EVENT.SHARE | SHARE
+| Complete Registration | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventCompleteRegistration | BRANCH_STANDARD_EVENT.COMPLETE_REGISTRATION | COMPLETE_REGISTRATION
+| Complete Tutorial | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventCompleteTutorial | BRANCH_STANDARD_EVENT.COMPLETE_TUTORIAL | COMPLETE_TUTORIAL
+| Achieve Level | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventAchieveLevel | BRANCH_STANDARD_EVENT.ACHIEVE_LEVEL | ACHIEVE_LEVEL
+| Unlock Achievement | [Lifecycle Event](#track-lifecycle-events) | BranchStandardEventUnlockAchievement | BRANCH_STANDARD_EVENT.UNLOCK_ACHIEVEMENT | UNLOCK_ACHIEVEMENT
+
 ## Track Commerce Events
 
-Commerce events describe events that relate to a customer interacting with your products and converting by purchasing. These are events like adding payment information, purchasing, viewing products, etc. If you have enabled Branch Universal Ads, these events will automatically map to certain Ad Partners.
+Commerce events describe events that relate to a customer interacting with your products and converting by purchasing. These are events like adding payment information, purchasing, viewing products, etc. If you have enabled Branch Universal Ads, these events will automatically map to certain Ad Partners. Start by creating a Branch Universal Object for each product that is associated with the event you're tracking.
 
-### Add to cart
+From there, add the Branch universal object to the tracked event, and use the right predefined constant. For example, the code snippet below is to track when a user adds to cart, but simply replace that constant with another constant to track a different event.
 
-Fire this event when your users add a product to their cart.
+### iOS
 
-#### iOS
+- *Swift*
 
-```objc
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventAddToCart];
-event.transactionID   = @"12344555";
-    event.currency        = BNCCurrencyUSD;
-    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-    event.coupon          = @"test_coupon";
-    event.affiliation     = @"test_affiliation";
-    event.eventDescription= @"Event _description";
-    event.searchQuery     = @"Query";
-    event.customData      = (NSMutableDictionary*) @{
-        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-    };
-    event.contentItems = @[ buo ];
-    [event logEvent];
-```
+	```swift
+	// Create a BranchUniversalObject with your content data:
+	let branchUniversalObject = BranchUniversalObject.init()
 
-#### Android
+	// ...add data to the branchUniversalObject as needed...
+	branchUniversalObject.canonicalIdentifier = "item/12345"
+	branchUniversalObject.canonicalUrl        = "https://branch.io/item/12345"
+	branchUniversalObject.title               = "My Item Title"
+
+	// Create a BranchEvent:
+	let event = BranchEvent.standardEvent(.purchase)
+
+	// Add the BranchUniversalObjects with the content:
+	event.contentItems     = [ branchUniversalObject ]
+
+	// Add relevant event data:
+	event.transactionID    = "12344555"
+	event.currency         = .USD;
+	event.revenue          = 1.5
+	event.shipping         = 10.2
+	event.tax              = 12.3
+	event.coupon           = "test_coupon";
+	event.affiliation      = "test_affiliation";
+	event.eventDescription = "Event_description";
+	event.searchQuery      = "item 123"
+	event.customData       = [
+	    "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
+	    "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
+	]
+	event.logEvent() // Log the event.
+	```
+	
+- *Objective-C*
+
+	```objc
+	// Create a BranchUniversalObject with your content data:
+	BranchUniversalObject *branchUniversalObject = [BranchUniversalObject new];
+
+	// ...add data to the branchUniversalObject as needed...
+	branchUniversalObject.canonicalIdentifier = @"item/12345";
+	branchUniversalObject.canonicalUrl        = @"https://branch.io/item/12345";
+	branchUniversalObject.title               = @"My Item Title";
+
+	// Create an event and add the BranchUniversalObject to it.
+	BranchEvent *event     = [BranchEvent standardEvent:BranchStandardEventAddToCart];
+
+	// Add the BranchUniversalObjects with the content:
+	event.contentItems     = (id) @[ branchUniversalObject ];
+
+	// Add relevant event data:
+	event.transactionID    = @"12344555";
+	event.currency         = BNCCurrencyUSD;
+	event.revenue          = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+	event.shipping         = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+	event.tax              = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+	event.coupon           = @"test_coupon";
+	event.affiliation      = @"test_affiliation";
+	event.eventDescription = @"Event_description";
+	event.searchQuery      = @"item 123";
+	event.customData       = (NSMutableDictionary*) @{
+	    @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+	    @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+	};
+	[event logEvent];
+	```
+
+### Android
 
 ```java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); // Continue adding data to the BUO.
+BranchUniversalObject buo = new BranchUniversalObject();
+buo.setCanonicalIdentifier("my_canonical_id");
+buo = new BranchUniversalObject()
+.setCanonicalIdentifier("myprod/1234")
+.setCanonicalUrl("https://test_canonical_url")
+.setTitle("test_title")
+.setContentMetadata(
+    new ContentMetadata()
+        .addCustomMetadata("custom_metadata_key1", "custom_metadata_val1")
+        .addCustomMetadata("custom_metadata_key1", "custom_metadata_val1")
+        .addImageCaptions("image_caption_1", "image_caption2", "image_caption3")
+        .setAddress("Street_Name", "test city", "test_state", "test_country", "test_postal_code")
+        .setRating(5.2, 6.0, 5)
+        .setLocation(-151.67, -124.0)
+        .setPrice(10.0, CurrencyType.USD)
+        .setProductBrand("test_prod_brand")
+        .setProductCategory(ProductCategory.APPAREL_AND_ACCESSORIES)
+        .setProductName("test_prod_name")
+        .setProductCondition(ContentMetadata.CONDITION.EXCELLENT)
+        .setProductVariant("test_prod_variant")
+        .setQuantity(1.5)
+        .setSku("test_sku")
+        .setContentSchema(BranchContentSchema.COMMERCE_PRODUCT))
+    .addKeyWord("keyword1")
+    .addKeyWord("keyword2");
 
 new BranchEvent(BRANCH_STANDARD_EVENT.ADD_TO_CART)
-    .setAffiliation("test_affiliation")
-    .setCoupon("Coupon Code")
-    .setCurrency(CurrencyType.USD)
-    .setDescription("Customer added item to cart")
-    .setShipping(0.0)
-    .setTax(9.75)
-    .setRevenue(1.5)
-    .setSearchQuery("Test Search query")
-    .addCustomProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
-    .addCustomProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
-    .addContentItems(branchUniversalObject)
-    .logEvent(MainActivity.this);
+        .setAffiliation("test_affiliation")
+        .setCoupon("Coupon Code")
+        .setCurrency(CurrencyType.USD)
+        .setDescription("Customer added item to cart")
+        .setShipping(0.0)
+        .setTax(9.75)
+        .setRevenue(1.5)
+        .setSearchQuery("Test Search query")
+        .addCustomDataProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
+        .addCustomDataProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
+        .addContentItems(buo)
+        .logEvent(context);
 ```
 
-### Add to wishlist
+### HTTP API
 
-Fire this event when your users add your product to a wishlist.
-
-#### iOS
-
-```objc
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventAddToWishlist];
-event.transactionID   = @"12344555";
-    event.currency        = BNCCurrencyUSD;
-    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-    event.coupon          = @"test_coupon";
-    event.affiliation     = @"test_affiliation";
-    event.eventDescription= @"Event _description";
-    event.searchQuery     = @"Query";
-    event.customData      = (NSMutableDictionary*) @{
-        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-    };
-    event.contentItems = @[ buo ];
-    [event logEvent];
+```bash
+curl -vvv -d '{
+  "name": "PURCHASE",
+  "user_data": {
+    "os": "Android",
+    "os_version": 25,
+    "environment": "FULL_APP",
+    "aaid": "abcdabcd-0123-0123-00f0-000000000000",
+    "android_id": "a12300000000",
+    "limit_ad_tracking": false,
+    "user_agent": null,
+    "browser_fingerprint_id": null,
+    "http_origin": null,
+    "http_referrer": null,
+    "developer_identity": "user123",
+    "country": "US",
+    "language": "en",
+    "local_ip": "192.168.1.2",
+    "brand": "LGE",
+    "device_fingerprint_id": null,
+    "app_version": "1.0.0",
+    "model": "Nexus 5X",
+    "screen_dpi": 420,
+    "screen_height": 1794,
+    "screen_width": 1080
+  },
+  "custom_data": {
+    "purchase_loc": "Palo Alto",
+    "store_pickup": "unavailable"
+  },
+  "event_data": {
+    "transaction_id": "trans_Id_1232343434",
+    "currency": "USD",
+    "revenue": 180.2,
+    "shipping": 10.5,
+    "tax": 13.5,
+    "coupon": "promo-1234",
+    "affiliation": "high_fi",
+    "description": "Preferred purchase"
+  },
+  "content_items": [
+    {
+      "$content_schema": "COMMERCE_PRODUCT",
+      "$og_title": "Nike Shoe",
+      "$og_description": "Start loving your steps",
+      "$og_image_url": "http://example.com/img1.jpg",
+      "$canonical_identifier": "nike/1234",
+      "$publicly_indexable": false,
+      "$price": 101.2,
+      "$locally_indexable": true,
+      "$quantity": 1,
+      "$sku": "1101123445",
+      "$product_name": "Runner",
+      "$product_brand": "Nike",
+      "$product_category": "Sporting Goods",
+      "$product_variant": "XL",
+      "$rating_average": 4.2,
+      "$rating_count": 5,
+      "$rating_max": 2.2,
+      "$creation_timestamp": 1499892854966,
+      "$exp_date": 1499892854966,
+      "$keywords": [
+        "sneakers",
+        "shoes"
+      ],
+      "$address_street": "230 South LaSalle Street",
+      "$address_city": "Chicago",
+      "$address_region": "IL",
+      "$address_country": "US",
+      "$address_postal_code": "60604",
+      "$latitude": 12.07,
+      "$longitude": -97.5,
+      "$image_captions": [
+        "my_img_caption1",
+        "my_img_caption_2"
+      ],
+      "$condition": "NEW",
+      "$custom_fields": "{\"foo1\":\"bar1\",\"foo2\":\"bar2\"}"
+    },
+    {
+      "$og_title": "Nike Woolen Sox",
+      "$canonical_identifier": "nike/5324",
+      "$og_description": "Fine combed woolen sox for those who love your foot",
+      "$publicly_indexable": false,
+      "$price": 80.2,
+      "$locally_indexable": true,
+      "$quantity": 5,
+      "$sku": "110112467",
+      "$product_name": "Woolen Sox",
+      "$product_brand": "Nike",
+      "$product_category": "Apparel & Accessories",
+      "$product_variant": "Xl",
+      "$rating_average": 3.3,
+      "$rating_count": 5,
+       "$rating_max": 2.8,
+      "$creation_timestamp": 1499892854966
+     }
+   ],
+   "metadata": {},
+   "branch_key": "key_test_hdcBLUy1xZ1JD0tKg7qrLcgirFmPPVJc"
+ }' https://api.branch.io/v2/event/standard
 ```
 
-#### Android
-
-```Java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); // Continue adding data to the BUO.
-
-new BranchEvent(BRANCH_STANDARD_EVENT.ADD_TO_WISHLIST)
-	.setCurrency(CurrencyType.USD)
-	.setDescription("Customer added item to wishlist")
-	.setRevenue(1.5)
-	.addCustomProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
-	.addCustomProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
-	.addContentItems(branchUniversalObject)
-	.logEvent(MainActivity.this);
-```
-
-### View cart
-
-Fire this event when a user views a cart.
-
-#### iOS
-
-```objc
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventViewCart];
-event.transactionID   = @"12344555";
-    event.currency        = BNCCurrencyUSD;
-    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-    event.coupon          = @"test_coupon";
-    event.affiliation     = @"test_affiliation";
-    event.eventDescription= @"Event _description";
-    event.searchQuery     = @"Query";
-    event.customData      = (NSMutableDictionary*) @{
-        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-    };
-    event.contentItems = @[ buo ];
-    [event logEvent];
-```
-
-#### Android
-
-```Java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); // Continue adding data to the BUO.
-
-new BranchEvent(BRANCH_STANDARD_EVENT.VIEW_CART)
-	.setCurrency(CurrencyType.USD)
-	.setDescription("Customer Viewed Cart")
-	.setShipping(10.2)
-	.setTax(12.3)
-	.setRevenue(100.50)
-	.addCustomProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
-	.addCustomProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
-	.addContentItems(branchUniversalObject)
-	.logEvent(MainActivity.this);
-```
-
-### Initiate purchase
-
-Fire this event when a user begins a purchase, but doesn't complete. This is equivalent to when someone hits the 'checkout' button, but doesn't complete the act of purchasing. For that, see [#purchase](purchase).
-
-#### iOS
-
-```objc
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventInitiatePurchase];
-event.transactionID   = @"12344555";
-    event.currency        = BNCCurrencyUSD;
-    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-    event.coupon          = @"test_coupon";
-    event.affiliation     = @"test_affiliation";
-    event.eventDescription= @"Event _description";
-    event.searchQuery     = @"Query";
-    event.customData      = (NSMutableDictionary*) @{
-        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-    };
-    event.contentItems = @[ buo ];
-    [event logEvent];
-```
-
-#### Android
-
-```Java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); // Continue adding data to the BUO.
-
-new BranchEvent(BRANCH_STANDARD_EVENT.INITIATE_PURCHASE)
-	.setCoupon("Coupon Code")
-	.setCurrency(CurrencyType.USD)
-	.setDescription("Purchase flow initiated with applied coupon")
-	.setShipping(10.2)
-	.setTax(12.3)
-	.setRevenue(1.5)
-	.addCustomProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
-	.addCustomProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
-	.addContentItems(branchUniversalObject)
-	.logEvent(MainActivity.this);
-```
-
-### Add payment info
-
-Fire this event anytime someone adds payment information.
-
-#### iOS
-
-```objc
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventAddPaymentInfo];
-event.transactionID   = @"12344555";
-    event.currency        = BNCCurrencyUSD;
-    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-    event.coupon          = @"test_coupon";
-    event.affiliation     = @"test_affiliation";
-    event.eventDescription= @"Event _description";
-    event.searchQuery     = @"Query";
-    event.customData      = (NSMutableDictionary*) @{
-        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-    };
-    event.contentItems = @[ buo ];
-    [event logEvent];
-```
-
-#### Android
-
-```Java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); // Continue adding data to the BUO.
-
-new BranchEvent(BRANCH_STANDARD_EVENT.ADD_PAYMENT_INFO)
-	.setAffiliation("Amazon Prime")
-	.setCurrency(CurrencyType.USD)
-	.setDescription("Customer added payment info")
-	.addCustomProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
-	.addCustomProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
-	.logEvent(MainActivity.this);
-```
-
-### Purchase
-
-Fire this event when a purchase occurs.
-
-#### iOS
-
-```objc
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventPurchase];
-event.transactionID   = @"12344555";
-    event.currency        = BNCCurrencyUSD;
-    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-    event.coupon          = @"test_coupon";
-    event.affiliation     = @"test_affiliation";
-    event.eventDescription= @"Event _description";
-    event.searchQuery     = @"Query";
-    event.customData      = (NSMutableDictionary*) @{
-        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-    };
-    event.contentItems = @[ buo ];
-    [event logEvent];
-```
-
-#### Android
-
-```Java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); // Continue adding data to the BUO.
-
-new BranchEvent(BRANCH_STANDARD_EVENT.PURCHASE)
-	.setAffiliation("test_affiliation")
-	.setCoupon("Coupon Code")
-	.setCurrency(CurrencyType.USD)
-	.setDescription("Purchase occurred")
-	.setShipping(10.2)
-	.setTax(12.3)
-	.setRevenue(1.5)
-	.setTransactionID("12344555")
-	.setSearchQuery("Test Search query")
-	.addCustomProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
-	.addCustomProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
-	.addContentItems(branchUniversalObject)
-	.logEvent(MainActivity.this);
-```
-
-### Spend credits
-
-Fire this event any time someone applies credits or a promo code to a purchase.
-
-#### iOS
-
-```objc
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventSpendCredits];
-event.transactionID   = @"12344555";
-    event.currency        = BNCCurrencyUSD;
-    event.revenue         = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-    event.shipping        = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-    event.tax             = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-    event.coupon          = @"test_coupon";
-    event.affiliation     = @"test_affiliation";
-    event.eventDescription= @"Event _description";
-    event.searchQuery     = @"Query";
-    event.customData      = (NSMutableDictionary*) @{
-        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-    };
-    event.contentItems = @[ buo ];
-    [event logEvent];
-```
-
-#### Android
-
-```Java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject(); // Continue adding data to the BUO.
-
-new BranchEvent(BRANCH_STANDARD_EVENT.SPEND_CREDITS)
-	.setCoupon("Coupon Code")
-	.setCurrency(CurrencyType.USD)
-	.setDescription("Credits applied to purchase")
-	.setShipping(10.2)
-	.setTax(12.3)
-	.setRevenue(1.5)
-	.setTransactionID("12344555")
-	.setSearchQuery("Test Search query")
-	.addCustomProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
-	.addCustomProperty("Custom_Event_Property_Key2", "Custom_Event_Property_val2")
-	.addContentItems(branchUniversalObject)
-	.logEvent(MainActivity.this);
-```
-<!---
 ## Track Content Events
 
-Content events are events that occur when a user engages with your in-app content. For example, if you have in-app articles, you would want to track events related to when users search, view content, rate the content, and share. This can apply to a wide variety of content, like e-commerce events.
+Content events are events that occur when a user engages with your in-app content. For example, if you have in-app articles, you would want to track events related to when users search, view content, rate the content, and share. This can apply to a wide variety of in-app content, such as blog posts, music, video, pictures, and e-commerce catalogue items.
 
-### Search
+### iOS
 
-Fire this event any time a user searches for content inside your app.
+- *Swift*
 
-### View item
+	```swift
+	let event = BranchEvent.standardEvent(.search)
+	event.eventDescription = "Product Search"
+	event.searchQuery = "user search query terms for product xyz"
+	event.customData["Custom_Event_Property_Key1"] = "Custom_Event_Property_val1"
+	event.logEvent()
+	```
 
-Fire this event any time a user selects a single piece of content or item in your app.
+- *Objective-C*
 
-### View items
+	```obj-c
+	BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventSearch];
+	event.eventDescription = @"Product Search";
+	event.searchQuery = @"user search query terms for product xyz";
+	event.customData[@"Custom_Event_Property_Key1"] = @"Custom_Event_Property_val1";
+	[event logEvent];
+	```
 
-Fire this event
+### Android
 
-### Rate
+```Java
+ new BranchEvent(BRANCH_STANDARD_EVENT.SEARCH)
+    .setDescription("Product Search")
+    .setSearchQuery("product name")
+    .addCustomDataProperty("Custom_Event_Property_Key1", "Custom_Event_Property_val1")
+    .logEvent(context);
+```
 
-Fire this event when a user rates your content.
+### HTTP API
 
-### Share
+```
+curl -vvv -d '{
+  "name": "VIEW_ITEMS",
+  "user_data": {
+    "os": "Android",
+    "os_version": 25,
+    "environment": "FULL_APP",
+    "aaid": "abcdabcd-0123-0123-00f0-000000000000",
+    "android_id": "a12300000000",
+    "limit_ad_tracking": false,
+    "user_agent": null,
+    "browser_fingerprint_id": null,
+    "http_origin": null,
+    "http_referrer": null,
+    "developer_identity": "user123",
+    "country": "US",
+    "language": "en",
+    "local_ip": "192.168.1.2",
+    "brand": "LGE",
+    "device_fingerprint_id": null,
+    "app_version": "1.0.0",
+    "model": "Nexus 5X",
+    "screen_dpi": 420,
+    "screen_height": 1794,
+    "screen_width": 1080
+  },
+  "custom_data": {
+    "purchase_loc": "Palo Alto",
+    "store_pickup": "unavailable"
+  },
+  "event_data": {
+    "search_query": "red sneakers",
+    "description": "Preferred purchase"
+  },
+  "content_items": [
+    {
+      "$content_schema": "COMMERCE_PRODUCT",
+      "$og_title": "Nike Shoe",
+      "$og_description": "Start loving your steps",
+      "$og_image_url": "http://example.com/img1.jpg",
+      "$canonical_identifier": "nike/1234",
+      "$publicly_indexable": false,
+      "$price": 101.2,
+      "$locally_indexable": true,
+      "$sku": "1101123445",
+      "$product_name": "Runner",
+      "$product_brand": "Nike",
+      "$product_category": "Sporting Goods",
+      "$product_variant": "XL",
+      "$rating_average": 4.2,
+      "$rating_count": 5,
+      "$rating_max": 2.2,
+      "$creation_timestamp": 1499892854966,
+      "$exp_date": 1499892854966,
+      "$keywords": [
+        "sneakers",
+        "shoes"
+      ],
+      "$address_street": "230 South LaSalle Street",
+      "$address_city": "Chicago",
+      "$address_region": "IL",
+      "$address_country": "US",
+      "$address_postal_code": "60604",
+      "$latitude": 12.07,
+      "$longitude": -97.5,
+      "$image_captions": [
+        "my_img_caption1",
+        "my_img_caption_2"
+      ],
+      "$condition": "NEW",
+      "$custom_fields": "{\"foo1\":\"bar1\",\"foo2\":\"bar2\"}"
+    },
+    {
+      "$og_title": "Nike Woolen Sox",
+      "$canonical_identifier": "nike/5324",
+      "$og_description": "Fine combed woolen sox for those who love your foot",
+      "$publicly_indexable": false,
+      "$price": 80.2,
+      "$locally_indexable": true,
+      "$sku": "110112467",
+      "$product_name": "Woolen Sox",
+      "$product_brand": "Nike",
+      "$product_category": "Apparel & Accessories",
+      "$product_variant": "Xl",
+      "$rating_average": 3.3,
+      "$rating_count": 5,
+      "$rating_max": 2.8,
+      "$creation_timestamp": 1499892854966
+    }
+  ],
+  "metadata": {},
+  "branch_key": "key_test_hdcBLUy1xZ1JD0tKg7qrLcgirFmPPVJc"
+}' https://api.branch.io/v2/event/standard
+```
 
-Fire this event when a user shares your content.
-
-## Lifecycle Events
+## Track Lifecycle Events
 
 Lifecycle events can be described as events a user takes in your app to continue progressing. These events can apply to game apps, as well as non game apps, for when a user completes a user profile, registration or tutorial.
 
-### Complete registration
+### iOS
 
-Fire this event when a user successfully registers for an account.
+- *Swift*
 
-### Complete tutorial
+	```swift
+	let event = BranchEvent.standardEvent(.completeRegistration)
+	event.transactionID = "tx1234"
+	event.eventDescription = "User completed registration."
+	event.customData["registrationID"] = "12345"
+	event.logEvent()
+	```
 
-Fire this event when a user completes any tutorial you provide.
+- *Objective-C*
 
-### Achieve level
+	```obj-c
+	BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventCompleteRegistration];
+	event.transactionID = @"tx1234"
+	event.eventDescription = @"User completed registration.";
+	event.customData[@"registrationID"] = @"12345";
+	[event logEvent];
+	```
 
-Fire this event when a user reaches a certain stage in your app.
+### Android
 
-### Unlock achievement
+```java
+new BranchEvent(BRANCH_STANDARD_EVENT.COMPLETE_REGISTRATION)
+    .setTransactionID("tx1234")
+    .setDescription("User created an account")
+    .addCustomDataProperty("registrationID", "12345")
+    .logEvent(context);
+```
 
-Fire this event when a user hits an achievement point in your app.
--->
+### HTTP
+
+```
+curl -vvv -d '{
+  "name": "COMPLETE_REGISTRATION",
+  "user_data": {
+    "os": "Android",
+    "os_version": 25,
+    "environment": "FULL_APP",
+    "aaid": "abcdabcd-0123-0123-00f0-000000000000",
+    "android_id": "a12300000000",
+    "limit_ad_tracking": false,
+    "user_agent": null,
+    "browser_fingerprint_id": null,
+    "http_origin": null,
+    "http_referrer": null,
+    "developer_identity": "user123",
+    "country": "US",
+    "language": "en",
+    "local_ip": "192.168.1.2",
+    "brand": "LGE",
+    "device_fingerprint_id": null,
+    "app_version": "1.0.0",
+    "model": "Nexus 5X",
+    "screen_dpi": 420,
+    "screen_height": 1794,
+    "screen_width": 1080
+  },
+  "custom_data": {
+    "foo": "bar"
+  },
+  "event_data": {
+    "description": "Preferred purchase"
+  },
+  "metadata": {},
+  "branch_key": "key_test_hdcBLUy1xZ1JD0tKg7qrLcgirFmPPVJc"
+}' https://api.branch.io/v2/event/standard
+```
+
+## Track Custom Events
+
+If you want to track an event that isn't a predefined event, simply do the following:
+
+### iOS
+
+- *Swift*
+
+	```swift
+	BranchEvent.customEventWithName("User_Scanned_Item").logEvent()
+	```
+    
+- *Objective-C*
+
+	```obj-c
+	[BranchEvent.customEventWithName(@"User_Scanned_Item") logEvent];
+	```
+
+### Android
+
+```Java
+new BranchEvent("Some Custom Event")
+    .addCustomProperty("Custom_Event_Property_Key11", "Custom_Event_Property_val11")
+    .addCustomProperty("Custom_Event_Property_Key22", "Custom_Event_Property_val22")
+    .logEvent(MainActivity.this);
+}
+```
+
+### HTTP API
+
+```
+curl -vvv -d '{
+  "name": "picture swiped",
+  "user_data": {
+    "os": "Android",
+    "os_version": 25,
+    "environment": "FULL_APP",
+    "aaid": "abcdabcd-0123-0123-00f0-000000000000",
+    "android_id": "a12300000000",
+    "limit_ad_tracking": false,
+    "user_agent": null,
+    "browser_fingerprint_id": null,
+    "http_origin": null,
+    "http_referrer": null,
+    "developer_identity": "user123",
+    "country": "US",
+    "language": "en",
+    "local_ip": "192.168.1.2",
+    "brand": "LGE",
+    "device_fingerprint_id": null,
+    "app_version": "1.0.0",
+    "model": "Nexus 5X",
+    "screen_dpi": 420,
+    "screen_height": 1794,
+    "screen_width": 1080
+  },
+  "custom_data": {
+    "foo": "bar"
+  },
+  "metadata": {},
+  "branch_key": "key_test_hdcBLUy1xZ1JD0tKg7qrLcgirFmPPVJc"
+}' https://api.branch.io/v2/event/standard
+```
