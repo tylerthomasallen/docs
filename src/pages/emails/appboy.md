@@ -42,6 +42,7 @@ To use Branch links within your appboy campaigns, you’ll need to add an HTML t
     ```html
     <a href="links.example.com" universal="true">Link to your app!</a>
     ```
+
     ![image](/img/pages/email/appboy/appboy-universal.png)
 
 All done! So long as you’ve taken the above steps, the links in your Appboy email campaigns will now dynamically deep link users to app content, even if they have uninstalled your app, giving you the best chance of engaging or re-acquiring them.
