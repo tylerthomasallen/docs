@@ -97,8 +97,7 @@
                 - *[or]* Append `/e/` to the deep link
                     - e.g. `https://example.app.link/fzmLEhobLD` -> `https://example.app.link/e/fzmLEhobLD`
             - *Android:* need to override `App Links`
-                - TODO: validate. may need `Always open app` unchecked
-                - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+                - Uncheck `Always Open App`, `Enable App Links` and then hit `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
                 - Add redirect `$android_url = 'https://google.com'` ([docs](/pages/links/integrate/#redirections))
                 - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/integrate/#deep-linking))
 
