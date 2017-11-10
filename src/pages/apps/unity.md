@@ -153,12 +153,12 @@
     - Share deep links between users and apps
 
         ```csharp
-        Branch.shareLink(universalObject, linkProperties, "Sharing link: ", (url, error) => {
+        Branch.shareLink(universalObject, linkProperties, "Sharing link: ", (parameters, error) => {
             if (error != null) {
                 Debug.LogError("Branch.shareLink failed: " + error);
-            } else {
-                Debug.Log("Branch.shareLink shared params: " + url);
-            }
+            } else if (parameters != null) {
+					Debug.Log("Branch.shareLink: " + parameters["sharedLink"].ToString() + " " + parameters["sharedChannel"].ToString());
+				}
         });
         ```
 
