@@ -158,7 +158,7 @@
                 Debug.LogError("Branch.shareLink failed: " + error);
             } else if (parameters != null) {
 					Debug.Log("Branch.shareLink: " + parameters["sharedLink"].ToString() + " " + parameters["sharedChannel"].ToString());
-				}
+	    }
         });
         ```
 
