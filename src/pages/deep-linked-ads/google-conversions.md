@@ -8,7 +8,7 @@ source: google-conversions.md
 
 If you're using Google Adwords with Branch links, setting up conversion events in Adwords will allow Branch to send app install conversion information to Adwords for verification. We recommend setting this up to help minimize discrepancies between Adwords and Branch conversion values.
 
-Note: Conversions measured here are **app installs**.
+Note: Conversions measured here are **app installs**, purchases and custom events.
 
 {! ingredients/deep-linked-ads/link-to-google-ads-overview.md !}
 
@@ -49,7 +49,7 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 
 1. Select `First opens and in-app actions`.
 1. Select the appropriate platform (iOS or Android).
-1. Select `App installs (first-open)`.
+1. Select `App installs (first-open)` or `In-app actions`. Please note that iOS actions are only available for ads that show on the Display Network.
 
 	<img src="/img/pages/deep-linked-ads/google-conversions/adwords-app-conversion-card.png" alt="Conversion IDs" class="center three-quarters">
 
@@ -65,13 +65,23 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 	![Conversion IDs](/img/pages/deep-linked-ads/google-conversions/adwords-conversions.png)
 
 1. Head to the [Branch Dashboard Adwords Settings](https://dashboard.branch.io/ads/partner-management/a_google_adwords?tab=settings){:target="_blank"}.
-1. Paste in the `Conversion ID` and `Conversion label` from your Adwords dashboard into the appropriate fields for either iOS or Android
+1. Paste in the `Conversion ID` and `Conversion label` from your Adwords dashboard into the appropriate fields for either iOS or Android. If you plan on using custom events, please add the conversion ID for your account into the `Purchase or Custom Event Conversion ID` field.
 1. Click the `Save and Enable` button in the lower right hand corner.
 
 	![Save and Enable Google Adwords in Partner Manager](/img/ingredients/deep-linked-ads/enable-google-ad-partner/save-and-enable-google.png)
 
 1. Google AdWords is now enabled as an ad partner.
 1. Click `Done` in your Adwords dashboard.
+
+##### Purchase and custom event
+
+1. To add Purchase and other custom event conversion in Google, first [enable the conversions in AdWords](/pages/deep-linked-ads/google-conversions/).
+
+1. Under the Account Settings tab, ensure you have pasted in a *Conversion ID* into the `Purchase or Custom Event Conversion ID` field. This ID is actually the same across all the conversions set up in a single AdWords Account.
+
+1. Then, navigate to the Postback Config tab and add your *Conversion Label* into the Goal ID field.
+
+![AdWords Goal IDs](/img/pages/deep-linked-ads/google-conversions/aw-custom-goal-ids.png)
 
 You're all setup to confirm app install conversions between Branch and Adwords!
 
