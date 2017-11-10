@@ -75,13 +75,13 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 
 ##### Purchase and custom event
 
-1. To add Purchase and other custom event conversion in Google, first [enable the conversions in AdWords](/pages/deep-linked-ads/google-conversions/).
+1. To add Purchase and other custom event conversions in Google, first [enable the conversions in AdWords](/pages/deep-linked-ads/google-conversions/).
 
-1. Under the Account Settings tab, ensure you have pasted in a *Conversion ID* into the `Purchase or Custom Event Conversion ID` field. This ID is actually the same across all the conversions set up in a single AdWords Account.
+1. Under the Account Settings tab, ensure you have pasted in the *Conversion ID* you generated earlier for the purchase or other event, into the `Purchase or Custom Event Conversion ID` field.
 
 1. Then, navigate to the Postback Config tab and add your *Conversion Label* into the Goal ID field.
 
-![AdWords Goal IDs](/img/pages/deep-linked-ads/google-conversions/aw-custom-goal-ids.png)
+![AdWords Goal IDs](/img/pages/deep-linked-ads/google-conversions/aw-custom-goal-ids.png).
 
 You're all setup to confirm app install conversions between Branch and Adwords!
 
