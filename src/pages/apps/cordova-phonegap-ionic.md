@@ -873,6 +873,9 @@
         <!-- config.xml -->
         <plugin name="branch-cordova-sdk" spec="^2.5.0" />
         ```
+        
+    - [Test Deep Link iOS](#test-deep-link-ios)
+    - [Test Deep Link Android](#test-deep-link-android)
 
 - ### Incompatibilities
 
