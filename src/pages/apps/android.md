@@ -936,6 +936,7 @@
             ```xml
             <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
             ```
+        - *[or]* add `Branch.enableTestMode();` before your `Branch.getInstance().initSession()`
 
         - Do not use `TestMode` in production or in the Google Play Store
 
@@ -945,7 +946,7 @@
 
     - Reinstall your app
 
-    - Read deep link data from `Branch.initSession()` for `+is_first_session=true`
+    - Read deep link data from `Branch.getInstance().initSession()` for `+is_first_session=true`
 
 - ### Track content properties
 
