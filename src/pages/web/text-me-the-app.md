@@ -218,8 +218,8 @@ If the `link.data.author` information isn't found, the tag will just be replaced
 
 We enforce the following rate limits when sending SMS through Branch:
 
-    1. 5 texts to the same number within an hour.
-    1. 100 texts from the same IP within an hour.
+1. 5 texts to the same number within an hour.
+1. 100 texts from the same IP within an hour.
 
 ### Can I use this service for international phone numbers?
 
