@@ -311,7 +311,7 @@
             .setContentImageUrl("https://lorempixel.com/400/400")
             .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .setLocalIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
-            .addContentMetadata("custom_data", "123");
+            .setContentMetadata(new ContentMetadata().addCustomMetadata("key1", "value1"));
         ```
 
     - *Kotlin*
@@ -324,7 +324,7 @@
             .setContentImageUrl("https://lorempixel.com/400/400")
             .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
             .setLocalIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
-            .addContentMetadata("custom_data", "123")
+            .setContentMetadata(ContentMetadata().addCustomMetadata("key1", "value1"))
         ```
 
 - ### Create deep link
