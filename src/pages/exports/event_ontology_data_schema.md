@@ -33,8 +33,8 @@ The last four are groupings of multiple events. Custom events are any events you
 
 Here is a full breakdown of standard events trackable by Branch.
 
-| event grouping | events |
-| = | = |
+| *event grouping* | *events* |
+| - | - |
 | commerce event | ADD_TO_CART, ADD_TO_WISHLIST, VIEW_CART, INITIATE_PURCHASE, ADD_PAYMENT_INFO, PURCHASE, SPEND_CREDITS |
 | content event | SEARCH, VIEW_ITEM, VIEW_ITEMS, RATE, SHARE |
 | user lifecycle event | COMPLETE_REGISTRATION, COMPLETE_TUTORIAL, ACHIEVE_LEVEL, UNLOCK_ACHIEVEMENT |
@@ -43,8 +43,8 @@ Here is a full breakdown of standard events trackable by Branch.
 
 On each event, we provide a considerable number of information. The following table has an overview. Several of the fields below are objects which themselves have many fields.
 
-| field | format | definition |
-| = | = | = |
+| *field* | *format* | *definition* |
+| - | - | - |
 | id | string | a unique id for the event |
 | name | string | the name of the event, such as "CLICK", "INSTALL", "PURCHASE", or custom event names like "signup" |
 | timestamp | long | unix timestamp in milliseconds for the event |
