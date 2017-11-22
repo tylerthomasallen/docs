@@ -1,23 +1,12 @@
-# Data Feeds
+# Event Ontology Data Schema
 
 ## Products
 
-Data Feeds encompasses multiple Branch products:
+The Event Ontology is shared between all of the following places:
+- Dashboard
 - Webhooks
 - Data Integrations
-- Exports
-
-## Using Webhooks
-
-TODO
-
-## Using Data Integrations
-
-TODO
-
-## Using Exports
-
-To learn more about using our Exports API, please [click here](https://docs.branch.io/pages/exports/api-v3/).
+- [Exports](https://docs.branch.io/pages/exports/api-v3/)
 
 ## Events Included
 
