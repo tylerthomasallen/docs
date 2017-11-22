@@ -10,7 +10,7 @@ The Event Ontology is shared between all of the following places:
 
 ## Events Included
 
-As Branch transitions to our [new analytics platform](TODO), we are also making it easier than ever to get your data out. Previously, we had different formats for Webhooks vs Data Integrations vs Exports. Now we have a unified format. We refer to this as Branch's "Event Ontology". 
+As Branch transitions to our new analytics platform, we are also making it easier than ever to get your data out. Previously, we had different formats for Webhooks vs Data Integrations vs Exports. Now we have a unified format. We refer to this as Branch's "Event Ontology". 
 
 We split out events into logical groupings. We now have the following distinct event groupings:
 - impressions
@@ -66,4 +66,4 @@ On each event, we provide a considerable number of information. The following ta
 
 If you are building an integration with Branch or simply wish to learn more about the fields we offer, please download one of the CSV files below. They provide a comprehensive list of events and fields, along with definitions and data types. 
 
-[Full Event Ontology for Webhooks, Data Integrations and Exports](TODO)
+[Full Event Ontology for Webhooks, Data Integrations and Exports](webhook_export_di_export.csv)
