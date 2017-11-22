@@ -3,6 +3,7 @@
 ## Products
 
 The Event Ontology is shared between all of the following places:
+
 - Dashboard
 - Webhooks
 - Data Integrations
@@ -13,6 +14,7 @@ The Event Ontology is shared between all of the following places:
 As Branch transitions to our new analytics platform, we are also making it easier than ever to get your data out. Previously, we had different formats for Webhooks vs Data Integrations vs Exports. Now we have a unified format. We refer to this as Branch's "Event Ontology". 
 
 We split out events into logical groupings. We now have the following distinct event groupings:
+
 - impressions
 - click
 - web-to-app auto redirect
