@@ -175,7 +175,8 @@
         | $desktop_url | | Change the redirect endpoint on desktops Text-Me-The-App page (set in Link Settings)
         | $ios_url | | Change the redirect endpoint for iOS  App Store page for your app (set in Link Settings)
         | $ipad_url | | Change the redirect endpoint for iPads `$ios_url` value
-        | $android_url  | | Change the redirect endpoint for Android  Play Store page for your app (set in Link Settings)
+        | $android_url  | | Change the redirect endpoint for Android Play Store page for your app (set in Link Settings)
+        | $samsung_url  | | Redirect to Samsung Galaxy Store on Samsung devices. Only link level control. Format should be `http://www.samsungapps.com/appquery/appDetail.as?appId=YOUR.PACKAGE.NAME`
         | $windows_phone_url  | | Change the redirect endpoint for Windows OS Windows Phone default URL (set in Link Settings)
         | $blackberry_url | | Change the redirect endpoint for Blackberry OS  BlackBerry default URL (set in Link Settings)
         | $fire_url | | Change the redirect endpoint for Amazon Fire OS Fire default URL (set in Link Settings)
