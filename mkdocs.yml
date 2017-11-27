@@ -106,7 +106,7 @@ extra:
     - 'Export API v3'
     - 'Export API'
     - 'Event Ontology'
-    - 'FAQ: New Data Integrations'
+    - 'New Data Integrations'
   is_visible:
     footer_floater_beta: false
     footer_floater_old_docs: false
@@ -223,6 +223,7 @@ pages:
     - Localytics: pages/integrations/localytics.md
     - Mixpanel: pages/integrations/mixpanel.md
     - Tune: pages/integrations/tune.md
+    - New Data Integrations: pages/integrations/faq.md
   - Enable Single Sign On: pages/dashboard/sso.md
   - Branch Matching Overview: pages/resources/matching.md
   - Validation Tools: pages/resources/validation-tools.md
