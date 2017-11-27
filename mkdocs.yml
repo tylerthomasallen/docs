@@ -106,6 +106,7 @@ extra:
     - 'Export API v3'
     - 'Export API'
     - 'Event Ontology'
+    - 'FAQ: New Data Integrations'
   is_visible:
     footer_floater_beta: false
     footer_floater_old_docs: false
