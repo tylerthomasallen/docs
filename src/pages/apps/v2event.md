@@ -188,16 +188,11 @@ curl -vvv -d '{
     "aaid": "abcdabcd-0123-0123-00f0-000000000000",
     "android_id": "a12300000000",
     "limit_ad_tracking": false,
-    "user_agent": null,
-    "browser_fingerprint_id": null,
-    "http_origin": null,
-    "http_referrer": null,
     "developer_identity": "user123",
     "country": "US",
     "language": "en",
     "local_ip": "192.168.1.2",
     "brand": "LGE",
-    "device_fingerprint_id": null,
     "app_version": "1.0.0",
     "model": "Nexus 5X",
     "screen_dpi": 420,
@@ -281,6 +276,8 @@ curl -vvv -d '{
  }' https://api.branch.io/v2/event/standard
 ```
 
+See [full API docs here](https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-commerce-events).
+
 ## Track Content Events
 
 Content events are events that occur when a user engages with your in-app content. For example, if you have in-app articles, you would want to track events related to when users search, view content, rate the content, and share. This can apply to a wide variety of in-app content, such as blog posts, music, video, pictures, and e-commerce catalogue items.
@@ -329,16 +326,11 @@ curl -vvv -d '{
     "aaid": "abcdabcd-0123-0123-00f0-000000000000",
     "android_id": "a12300000000",
     "limit_ad_tracking": false,
-    "user_agent": null,
-    "browser_fingerprint_id": null,
-    "http_origin": null,
-    "http_referrer": null,
     "developer_identity": "user123",
     "country": "US",
     "language": "en",
     "local_ip": "192.168.1.2",
     "brand": "LGE",
-    "device_fingerprint_id": null,
     "app_version": "1.0.0",
     "model": "Nexus 5X",
     "screen_dpi": 420,
@@ -414,6 +406,8 @@ curl -vvv -d '{
 }' https://api.branch.io/v2/event/standard
 ```
 
+See [full API docs here](https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-content-events).
+
 ## Track Lifecycle Events
 
 Lifecycle events can be described as events a user takes in your app to continue progressing. These events can apply to game apps, as well as non game apps, for when a user completes a user profile, registration or tutorial.
@@ -462,16 +456,11 @@ curl -vvv -d '{
     "aaid": "abcdabcd-0123-0123-00f0-000000000000",
     "android_id": "a12300000000",
     "limit_ad_tracking": false,
-    "user_agent": null,
-    "browser_fingerprint_id": null,
-    "http_origin": null,
-    "http_referrer": null,
     "developer_identity": "user123",
     "country": "US",
     "language": "en",
     "local_ip": "192.168.1.2",
     "brand": "LGE",
-    "device_fingerprint_id": null,
     "app_version": "1.0.0",
     "model": "Nexus 5X",
     "screen_dpi": 420,
@@ -488,6 +477,8 @@ curl -vvv -d '{
   "branch_key": "key_test_hdcBLUy1xZ1JD0tKg7qrLcgirFmPPVJc"
 }' https://api.branch.io/v2/event/standard
 ```
+
+See [full API docs here](https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-user-lifecycle-events).
 
 ## Track Custom Events
 
@@ -529,16 +520,11 @@ curl -vvv -d '{
     "aaid": "abcdabcd-0123-0123-00f0-000000000000",
     "android_id": "a12300000000",
     "limit_ad_tracking": false,
-    "user_agent": null,
-    "browser_fingerprint_id": null,
-    "http_origin": null,
-    "http_referrer": null,
     "developer_identity": "user123",
     "country": "US",
     "language": "en",
     "local_ip": "192.168.1.2",
     "brand": "LGE",
-    "device_fingerprint_id": null,
     "app_version": "1.0.0",
     "model": "Nexus 5X",
     "screen_dpi": 420,
@@ -550,5 +536,7 @@ curl -vvv -d '{
   },
   "metadata": {},
   "branch_key": "key_test_hdcBLUy1xZ1JD0tKg7qrLcgirFmPPVJc"
-}' https://api.branch.io/v2/event/standard
+}' https://api.branch.io/v2/event/custom
 ```
+
+See [full API docs here](https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-custom-events).
