@@ -93,7 +93,7 @@
             }
           ]'
         ```
-
+        
     - *Response*
 
         ```js
@@ -113,6 +113,8 @@
         | --- | :-: | --- | :-:
         | branch_key | `string` | From your [Branch Settings Dashboard](https://dashboard.branch.io/settings) | √
         | ... | ... | Parameters from [Configuring Links](/pages/links/integrate/) |
+        
+    - Bulk link creator is limited to `1000` links at a time
 
 - ### Link read
 
@@ -247,7 +249,6 @@
 
     - `data` is overridden on [Link update](#link-update), not appended
 
-    - Bulk link creator is limited to `1000` links at a time
 
 ## Event
 
