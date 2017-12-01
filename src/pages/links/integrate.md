@@ -54,7 +54,7 @@
             | Firefox address bar | Fallback | | App
             | Hangouts | App | | App |
             | iMessage | App |
-            | Slack | App | Must configure Slack to open links with Safari | App | 
+            | Slack | App | Must configure Slack to open links with Safari | App |
             | WeChat | Fallback | Customize [WeChat fallback urls](#redirections) | Fallback | Customize [WeChat fallback urls](#redirections)
             | WhatsApp | App | `app.link` require https/http to be clickable | App | `app.link` require https/http to be clickable
             | Apple Mail | App |
@@ -281,7 +281,7 @@
         | $twitter_player_height | | Set the player's height in pixels
 
 - ### Custom Tags
-    
+
     - Handle custom meta tags
 
         | Key | Value
@@ -291,7 +291,7 @@
     - Valid dictionary example: "{\"twitter:player:stream\": \"https://branch.io\"}". This will result in the following meta tag: `<meta property="twitter:player:stream" content="https://branch.io" />`
     - If you create the link via the Dashboard, don’t worry about stringifying the dictionary. It will be done automatically.
     - apple_touch_icon is a special key in the dictionary. If you set it, we will add a `<link rel="apple-touch-icon" href="<url>" />` tag to the scraped HTML page. This will allow you to show a custom icon for previews in iMessage, Safari Bookmarks, Slack, etc.
-    
+
 - ### Universal Object
 
     - Properties for the Branch Universal Object within your [app](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference) integration
