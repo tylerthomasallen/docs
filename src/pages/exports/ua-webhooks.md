@@ -230,26 +230,7 @@ To create a filter:
 	![image](/img/pages/exports/ua-webhooks/coupon-filter-purchase.png)
 
 !!! caution "Array filtering not yet available"
-	Currently, webhooks do not support filtering on values inside arrays. Example arrays that cannot be filtered are **tags**, **+via_features** and **content_items**
-
-	![image](/img/pages/exports/click-filter.png)
-
-!!! note "Example: Filtering custom signup event by location"
-	Let’s say you’re interested in receiving a webhook for every **sign_up** event that is triggered via the **userCompletedAction** method in the SDKs, but only in a specific market, like Chicago. Your event metadata will look something like the following:
-
-	```javascript
-	event: {
-    	name: "sign_up",
-    	metadata: {
-        	"city" : "Chicago",
-        	"username" : "john_smith_1",
-    	}
-	}
-	```
-
-	You would configure a filter to fire a webhook only when **city** is equal to **Chicago**. The key would equal **event.metadata.city** and the value would equal **Chicago**.
-
-	![image](/img/pages/exports/filters.png)
+	Currently, webhooks do not support filtering on values inside arrays. Example arrays that cannot be filtered by value are **tags**, **+via_features** and **content_items**.
 
 ### Templating your Postback URL
 
@@ -286,147 +267,14 @@ If you plan on sending click or install data to a third party, you’ll likely n
 
     ![image](/img/pages/exports/template-finished.png)
 
-### Keys available for templating/filtering **Click** webhooks
-
-When a Branch link is opened, triggering a **click** event, you may access:
-
-- Properties of the visitor who opened the link.
-- Properties of the link that was opened.
-
-| Key | Description
-| --- | ---
-| **click.query.key** | Any key that was appended to the link when opened. To retrieve **value1** from **https://[branchsubdomain]/test?param1=value1**, you would use **click.query.param1**
-| **click.browser.branch_id** | The Branch ID we have for a user's unique broswer
-| **click.browser.metadata.userAgent** | The user agent of the browser
-| **click.device.hardware_id** | For iOS, this is the Advertising ID. For Android, this is the Android ID
-| **click.device.metadata.google_advertising_id** | Android only. The Google Advertising ID, if known
-| **click.device.metadata.os** | The OS of the device
-| **click.device.metadata.os_version** | The OS version
-| **click.date** | Time of link click
-
-!!! note ""
-    **click.device** will only be available for Universal/App Links without a browser redirect. Similarly, **click.browser** will only be available for non-Universal/App Links. Handle this appropriately in your code.
-
-| Key | Description
-| --- | ---
-| **click.link_data.~id** | ID of the link (0 for dynamic and 3P links)
-| **click.link_data.~creation_source** | How the link was created, e.g. iOS SDK, API, etc.
-| **click.link_data.~tags** | Tags of the link
-| **click.link_data.~campaign** | Campaign of the link
-| **click.link_data.~channel** | Channel of the link
-| **click.link_data.~feature** | Feature of the link
-| **click.link_data.~stage** | Stage of the link
-| **click.link_data.$one_time_use** | Whether this was a one time use link of not
-| **click.link_data.$one_time_use_used** | Whether this one time use link was used or not
-| **click.link_data.$identity_id** | Branch internal identity of user who generated the link
-| **click.link_data.$match_duration** | Length of time (in milliseconds) that a match could have occured
-| **click.link_data.+url** | The full URL of the link, e.g. [branchsubdomain]/m/abcde12345
-| **click.link_data.key** | Any key value you specified in the link’s data dictionary
-| **click.referring_identity.id** | ID you set for the user who created this link
-
-### Keys available for templating/filtering **Event** webhooks
-
-When a user triggers an event inside your app, either one [created by you](https://dev.branch.io/cross-channel-analytics/user-value-attribution/) or one tracked by Branch automatically (**install**, **open**, **referred session**, and **web session start**), you may access:
-
-- Properties of the event.
-- Identity properties of the user who triggered the event.
-- Session properties of the user who triggered the event.
-
-!!! Note "Identity vs. Session"
-    **Identity properties** are _set once_, the very first time Branch sees a user. Once set for each user, these are never changed. **Session properties** are the data of the _most recent_ record Branch has for a user.
-
-    For an initial **install** event, identity and session properties will be the same. For **open** events, session properties will be different if the user has subsequently opened another Branch link.
-
-Event Data
-
-| Key | Description
-| --- | ---
-| **event.name** | The name of the event (e.g., **install** or **my_custom_event**)
-| **event.metadata.referred** | Equals **true** if user installed app after opening a Branch link
-| **event.metadata.ip** | The IP address of the user
-| **event.metadata.key** | Data defined as **key** when creating a custom event
-| **event.date** | Timestamp of when the event occurred
-
-Device Data
-
-- Device data provides access to the device snapshot. Branch collects this snapshot both when a user is in the browser (via a click on a Branch link) and then after the user opens the app.
-
-| Key | Description
-| --- | ---
-| **device.metadata.os** | The OS of the device
-| **device.metadata.os_version** | The OS version of the device
-| **device.metadata.ip** | The IP address of the device
-| **device.metadata.model** | The model of the device
-
-Identity Data
-
-- Identity data is unique for each user Branch tracks. These values are permanently tied to that user, meaning if a link with a campaign of 'google' drives an install, then that user will have a permanent **identity.link_data.~campaign** value equal to 'google'.
-
-!!! note ""
-    Except for identity.id, these will not be populated if the user installed your app without opening a Branch link first.
-
-| Key | Description
-| --- | ---
-| **identity.link_data.~id** | ID of the link (0 for dynamic and 3P links)
-| **identity.link_data.~creation_source** | How the link was created, e.g. iOS SDK, API, etc.
-| **identity.link_data.~tags** | Tags of the link
-| **identity.link_data.~campaign** | Campaign of the link
-| **identity.link_data.~channel** | Channel of the link
-| **identity.link_data.~feature** | Feature of the link
-| **identity.link_data.~stage** | Stage of the link
-| **identity.link_data.$one_time_use** | Whether this was a one time use link of not
-| **identity.link_data.$one_time_use_used** | Whether this one time use link was used or not
-| **identity.link_data.$identity_id** | Branch internal identity of user who generated the link
-| **identity.link_data.$match_duration** | Length of time (in milliseconds) that a match could have occured
-| **identity.link_data.+url** | The full URL of the link, e.g. [branchsubdomain]/m/abcde12345
-| **identity.link_data.key** | Any key value you specified in the link’s data dictionary
-
-Session Data
-
-- Session data refers to the _most recent_ record Branch has for each user, regardless of whether it reflects an **install** or an **open** event. These will not be populated if the session was not initiated by opening a Branch link.
-
-| Key | Description
-| --- | ---
-| **session.link_click.query.key** | Any key that was appended to the link when opened. To retrieve **value1** from **https://[branchsubdomain]/test?param1=value1**, you would use **session.click.query.param1**.
-
-| Key | Description
-| --- | ---
-| **session.link_data.~id** | ID of the link (0 for dynamic and 3P links)
-| **session.link_data.~creation_source** | How the link was created, e.g. iOS SDK, API, etc.
-| **session.link_data.~tags** | Tags of the link
-| **session.link_data.~campaign** | Campaign of the link
-| **session.link_data.~channel** | Channel of the link
-| **session.link_data.~feature** | Feature of the link
-| **session.link_data.~stage** | Stage of the link
-| **session.link_data.$one_time_use** | Whether this was a one time use link of not
-| **session.link_data.$one_time_use_used** | Whether this one time use link was used or not
-| **session.link_data.$identity_id** | Branch internal identity of user who generated the link
-| **session.link_data.$match_duration** | Length of time (in milliseconds) that a match could have occured
-| **session.link_data.+url** | The full URL of the link, e.g. [branchsubdomain]/m/abcde12345
-| **session.link_data.key** | Any key value you specified in the link’s data dictionary
-
 ### Authenticating webhook events
 
-If you need to whitelist the webhook server IP addresses for security purposes, they are listed below.
-
-- 52.9.159.121/32
-- 52.9.176.205/32
-
-Reserved for future use:
-
-- 52.9.188.221/32
-- 52.9.188.236/32
-
-You can also create events through the Branch SDK, and specify a secret key inside the event metadata to pass into the URL of the webhook itself.
+TODO
 
 ## Support
 
 ### FAQs
 
-##### Why is my app not sending a device ID?
+##### Why is my webhook not firing?
 
-Check to see if you are in [Test Mode](https://dev.branch.io/getting-started/integration-testing/) with your SDK. If we are sending a fake ID to simulate installs, we will not send it inside a webhook.
-
-##### What is the difference between first referring data and session referring data?
-
-Because webhooks are event based, and tie back to a unique user, we send you data from the link that first drove this unique user into your app. Then, if they click another Branch link later, we also send you session referring data from this second link. For an initial install event, these should be the same. For any subsequent events, session referring data may be different.
+Check to see if you are in [Test Mode](https://dev.branch.io/getting-started/integration-testing/) with your SDK. If you are in test mode, we will not send a webhook.
