@@ -1,46 +1,84 @@
 ## Overview
 
-Branch’s webhook system allows you to receive install and down funnel event data from us as it occurs, for install attribution or conversion funnels in your own database. You simply need to specify a URL for us to send all this data to.
+Branch’s new webhook system for Unified Analytics allows you to export install and down-funnel event data as it occurs. You can import this data into your internal systems for analysis. You simply need to specify a URL for the POST or GET requests.
 
-The webhook system is very powerful and customizable. You can register to only receive notifications for specific events, as well as specific subsections of events, filtered by link data, user data or event properties. You can specify to only receive an event for the first time a user completes it, or every time. You can also specify to only receive events in the case of referrals.
+If you are looking for postback integrations for ad networks, please visit our [Universal Ads documentation](/pages/deep-linked-ads/universal-ads). For pre-configured integrations into popular analytics tools, please visit our [Data Integrations documentation](/pages/integrations/amplitude/).
+
+The webhook system is highly customizable. You can register to only receive notifications for specific events, as well as specific subsections of events, filtered by link data, user data or event properties.
+
+Our new webhook infrastructure supports for all Branch events. The data is formatted according to our updated event naming and metadata format which will get you through implementation and onto analysis in no time.
 
 ## Setup
 
 ### Register webhook
 
 1. Open the [Webhooks](https://dashboard.branch.io/data-import-export/webhooks) page on the Branch dashboard.
-1. Click **+ Add A New Webhook**:
+1. Click **+ Add New Webhook**:
 
-![image](/img/pages/exports/add.png)
+![image](/img/pages/exports/ua-webhooks/add-new-webhook.png)
 
 ### Configure webhook criteria
 
-![image](/img/pages/exports/edit.png)
+![image](/img/pages/exports/ua-webhooks/edit-webhook.png)
 
-Here are explanations of what each field on this screen controls:
+As you fill out the configuration, you'll see the following options:
 
-- **Webhook URL:** Enter the URL where you would like the events to be sent.
-- **Postback Method:** Events can be sent either via POST or GET.
-- **Event Frequency:** You can choose to receive a webhook for ever single event occurrence, or only for the first time that even is triggered for each unique user.
-- **Event Trigger:** You may select between the following default events:
+- **Send a webhook to:** Enter the URL where you would like the events to be sent. This URL can be written with Freemarker syntax to dynamically populate parameters and execute simple, logical expressions. There is more information on Freemarker support below.
+- **using a GET/POST:** Events can be sent either via POST or GET. POST events will be created with a default POST body. There is more information on POST bodies below.
+- **users trigger event:** When the selected event occurs, a webhook will fire:
 
 | Event | Description
 | --- | ---
-| **install** | Triggered the first time a user launches your app
-| **open** | Triggered whenever the app becomes active
-| **referred session** | Triggered in _addition_ to install, open or web session start if a user comes from a Branch link
+| **install** | Triggered the first time a user ever launches your app on their device. 
+| **reinstall** | Triggered if a user deletes and reinstalls your app on their device.
+| **open** | Triggered whenever the app is opened (and the open is neither an install or reinstall)
 | **web session start** | Triggered when the user views a webpage using the Branch Web SDK
 | **click** | Triggered whenever a Branch link is clicked on any platform
-| **-- other --** | Enter an event you created through the Branch SDK.
+| **-- additional events --** | A complete list of events you track through the Branch Web or App SDKs.
 
 !!! tip
-	The **referred session** and **web session start** options will only appear after at least one event of that type has been recorded.
+    Events will only appear in the event dropdown if at least one of those events has been recorded in the past 30 days.
 
-- **Filter (Advanced):** See the [Advanced](#advanced) page to read about customizing when events are sent.
+For an exhaustive list of events and more detailed definitions of each event, please see the [Event Ontology Data Schema](/pages/exports/event_ontology_data_schema/).
+
+- **NB**: Event frequency is not yet supported. At this time webhooks can only be sent every time an event occurs. The option to send webhooks **the first time** an event occurs is roadmapped for release in Q1 2018.
+
+#### Basic filtering
+
+In the **Advanced** section of the page you can create a filter. Only events that *pass the filter criteria* will be sent. 
+
+You'll notice a default filter that checks to see whether the event is **not** triggered by a known crawler/robot. To do this, we check if the Operating System does not equal "robots." With that filter applied, only events without OS equal to robots (i.e. iOS and Android) will trigger a webhook.
+
+The most popular filter options are available in a dropdown. This should help you get up and running quickly, while also providing an example structure for more [advanced filtering](#advanced-filtering) if you need it.
+
+To create a filter:
+
+1. Click the **Add Filter** button
+1. Select the metadata you'd like to filter on. For example, if you only want **iOS** installs, select "Operating System" from the dropdown. You'll see the text field to the right populate with the correct key. When doing advanced filtering later you will select "Custom" and manually set this key.
+1. Select "equals" or "does not equal" from next dropdown.
+1. Finally, set the **value** of the key that you'd like to filter in or out. For example, if you want iOS installs, you'll have set up "equals" and "IOS" in the dropdowns. In this example, the robots filter is redundant, so let's remove it using the minus button.
+
+This should be your final view before saving:
+
+![image](/img/pages/exports/ua-webhooks/basic-filtering.png)
+
+!!! note "Example: Filtering installs by attributed link campaign"
+    Let’s say you’re interested in receiving a webhook for every **install** event that is referred from a Branch link where you set the **Campaign** field to **App Install Campaign**. You would configure a filter to fire a webhook only when **Campaign** is equal to **"App Install Campaign"**. You would select **Campaign** from the dropdown, the key would be be autofilled and would equal **last_attributed_touch_data.~campaign**. Finally, you'd set the value equal to **App Install Campaign**.
+
+    ![image](/img/pages/exports/ua-webhooks/campaign-install-filter.png)
+
+!!! note "Example: Filtering clicks by link channel"
+    Let’s say you’re interested in receiving a webhook for every **click** event that is referred from a Branch link where you set the **Channel** field to **AppLovin**. You would configure a filter to fire a webhook only when **Channel** is equal to **AppLovin**. You would select **Channel** from the dropdown, the key would be be autofilled and would equal **last_attributed_touch_data.~channel**. Finally, you'd set the value equal to **AppLovin**.
+
+    ![image](/img/pages/exports/ua-webhooks/channel-click-filter.png)
+
+
+See the [Advanced Filtering](#advanced-filtering) page to read more about customizing when events are sent.
+
 
 ### Testing
 
-To test whether your webhook is configured correctly, you can use [requestb.in](https://requestb.in/). RequestBin gives you a URL that accepts events and allows you to see exactly what Branch is sending.
+To test whether your webhook is configured correctly, you can use [requestb.in](https://requestb.in/). RequestBin gives you a URL that accepts events for 24 hours and allows you to see exactly what Branch is sending.
 
 1. Go to [requestb.in](https://requestb.in/) and click **+ Create a RequestBin**:
 
@@ -52,138 +90,147 @@ To test whether your webhook is configured correctly, you can use [requestb.in](
 
 1. Paste this into the URL field of your Branch webhook's configuration screen:
 
-	![image](/img/pages/exports/requestbin_add_webhook.png)
+    ![image](/img/pages/exports/ua-webhooks/requestbin.png)
 
 1. Now whenever your webhook is triggered, you will see a full report on RequestBin:
 
 	![image](/img/pages/exports/requestbin_response.png)
 
-## Advanced
+    !!! caution
+        Please archive your Requestbin webhook when you have finished testing. Requestbins only last for 24 hours and return errors once they expire.
+
+
+## Unified Analytics Data Format
+
+One of the major advantages of Unified Analytics is that metadata is consistently located across all events. We call this schema the [Event Ontology Data Schema](/pages/exports/event_ontology_data_schema/). This consistent schema makes it easy to replicate Branch dashboards in your internal warehouse and compare large sets of data for different events.
+
+Setting up Advanced Filters or Freemarker macros requires an understanding of the Event Ontology data format. Before diving into the schema, you should understand some high level concepts about event metadata structure:
+
+- Each event has top level fields, such as "name" and "id" that are not nested
+- Link data is generally nested in "Last Attributed Touch Data"
+- User data (including device and OS data) is nested in "User Data"
+- Product or content level data is nested in "Content Items"
+- Transaction and generic content data is nested in "Event Data"
+- Journeys or Deepviews view data (e.g. Journey banners loads, not clicks) is "Last CTA View Data"
+- Client-specified custom data (e.g. internal fields your company requires on specific events) is nested in "Custom Data"
+
+You can find an [overview of critical fields](/pages/exports/event_ontology_data_schema/#fields-included) in that documentation, as well as an [exhaustive list of fields](/pages/exports/event_ontology_data_schema/#full-list-of-fields).
 
 ### Sample webhook POST body syntax
 
-There are two types of events that you can listen for, and each has a different format of webhook POST. The two are:
+The POST body for all webhooks follows the same structure:
 
-- **Click** webhooks: Clicks are the way users interact with your Branch links. Please note that a click does not always have to take place in a browser. For example, clicking a Universal Link will open up the app directly, and therefore no browser metadata information will be present.
-- **Event** webhooks: Events are user events that either Branch generates or you generate via a call to our event tracking API. Examples are shown on the previous page of this guide.
-
-### Sample POST body for **Click** webhooks
 
 ```javascript
 POST
 User-agent: Branch Metrics API
 Content-Type: application/json
 {
-    click_id: <a unique identififer>,
-    event: 'click',
-    event_timestamp: '<link click timestamp>',
-    os: 'iOS' | 'Android',
-    os_version: 'the OS version',
-    metadata: {
-        ip: '<click IP>',
-        userAgent: '<click UA>',
-        browser: '<browser>',
-        browser_version: '<browser version>',
-        brand: '<phone brand>',
-        model: '<phone model>',
-        os: '<browser OS>',
-        os_version: '<OS version>'
-    },
-    query: { <any query parameters appeneded to the link> },
-    link_data: { <link data dictionary - see below> }
-}
-
-// link data dictionary example
-{
-    branch_id: '<unique identifier for unique link>',
-    date_ms: '<link creation date with millisecond>',
-    date_sec: '<link creation date with second>',
-    date: '<link creation date>',
-    domain: '<domain label>',
-    data: {
-        +url: <the Branch link>,
-        ... <other deep link data>
-    },
-    campaign: '<campaign label>',
-    feature: '<feature label>',
-    channel: '<channel label>'
-    tags: [<tags array>],
-    stage: '<stage label>',
+    "name": "<event name e.g. open>",
+    "user_data": {},
+    "last_cta_view_data": {},
+    "last_attributed_touch_data": {},
+    "custom_data": {},
+    "event_data": {},
+    "content_items": {},
+    "timestamp": 'example timestamp (int)'
 }
 ```
 
-### Sample POST body for **Event** webhooks
+If any of these objects are empty, they will not appear in the POST body.
+
+Here's a POST body with example data for an attributed open:
 
 ```javascript
+
+// Attributed open
 POST
 User-agent: Branch Metrics API
 Content-Type: application/json
+
 {
-    event: '<event name>'
-    event_timestamp: '<time stamp for the event>'
-    os: 'iOS' | 'Android',
-    os_version: '<the OS version>',
-    metadata: {
-        '< ... event metadata  - specified in userCompletedAction withState >'
-        ip: '<IP of the user>',
-        referred: 'true' | 'false', // if event is install / open / web session start
-        reinstall: 'true' | 'false', if event is install / open
-    },
-    hardware_id: 'IDFA' (iOS) | 'Android ID' (Android),
-    google_advertising_id: 'GAID' (Android if present),
-
-
-    // optionally included:
-    identity: '<user ID>', // specified in setIdentity
-
-    // the referrer who created the new user
-    first_referring_click_timestamp: '<the first click timestamp>',
-    first_referring_click_query: { <any query parameters appeneded to the link> },
-    first_referring_identity: '<user ID who created the referring link>' - specified in setIdentity
-    first_referring_hardware_id: '<hardware identifier who created the referring link'
-    first_referring_link_data: { <link data dictionary - see below> }
-
-    // the referrer who referred this session
-    session_referring_click_timestamp: '<the session click timestamp>',
-    session_referring_click_query: { <any query parameters appeneded to the link> },
-    session_referring_identity: '<user ID who created the referring link>'
-    session_referring_hardware_id: '<hardware identifier who created the referring link'
-    session_referring_link_data: { <link data dictionary - see below> }
-}
-
-// link data dictionary example
-{
-    branch_id: 'unique identifier for unique link',
-    date_ms: 'link creation date with millisecond',
-    date_sec: 'link creation date with second',
-    date: 'link creation date',
-    domain: 'domain label',
-    data: {
-        +url: <the Branch link>,
-        ... <other deep link data>
-    },
-    campaign: 'campaign label',
-    feature: 'feature label',
-    channel: 'channel label'
-    tags: [tags array],
-    stage: 'stage label',
+  "name": "open",
+  "user_data": {
+    "os": "IOS",
+    "os_version": "11.1.2",
+    "environment": "FULL_APP",
+    "platform": "IOS_APP",
+    "idfa": "F520B35A-4165-4426-98F6-64F12F47E9BZ",
+    "idfv": "C6B869E7-7B0A-4A93-1C3D-960E8859DP5D",
+    "limit_ad_tracking": false,
+    "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202",
+    "ip": "50.200.105.218",
+    "developer_identity": "DB8C86A6-8B7C-4192-BD29-8107A5B788A1",
+    "country": "US",
+    "language": "EN",
+    "brand": "Apple"
+  },
+  "last_cta_view_data": {
+    "~id": 457624031399716729,
+    "~campaign": "_test",
+    "~feature": "journeys",
+    "+domain": "branchster.app.link",
+    "+url": "https://branchster.app.link/jeMczRn5XH",
+    "$deeplink_path": "open/item/1234",
+    "~creation_source": 5,
+    "+referrer": "https://store.com/products/green-table",
+    "foo": "bar",
+    "$canonical_url": "https://store.com/products/green-table",
+    "mydata": "set_branch_view_data_value",
+    "~tags": [
+      "tag1",
+      "tag2",
+      "bottom_banner_style"
+    ]
+  },
+  "last_attributed_touch_data": {
+    "~id": 467391383381228204,
+    "~feature": "marketing",
+    "~campaign": "december_test",
+    "~channel": "Facebook Organic",
+    "product_id": "XBA8198j",
+    "product_name": "Green Table AB10",
+    "+url": "https://branchster.app.link/test_linking",
+    "$marketing_title": "Deep Link Testing",
+    "$ios_deepview": "branch_default",
+    "+via_features": [
+      "QUICK_LINKS"
+    ]
+  },
+  "custom_data": {
+    "reinstall": "false",
+    "ip": "50.200.105.218",
+    "referred": "false"
+  },
+  "timestamp": 1512681005807
 }
 ```
 
-### Filter Webhooks
+### Advanced Filtering
 
-Filters allow you to specify when a webhook gets sent to your URL based off criteria matches. You can configure your filters to use any webhook keyword value by using liquid tags following this convention: `{{ param.name }}`.
+In [Basic Filtering](#basic-filtering) we covered what filters do, and how to set basic filters. Branch supports more advanced filtering which allows customers to set filters based on almost any event metadata.
 
-!!! tip "Wildcard Filtering"
-	If you want to filter on just a key being present, you can put a `*` in the value box.
+Make sure you've taken a look at the [Unified Analytics data format](#unified-analytics-data-format) before you attempt to set advanced filters.
 
-!!! note "Example: Filtering installs by referring link campaign"
-	Let’s say you’re interested in receiving a webhook for every **install** event that is referred from a Branch link where you set the **Campaign** field to **App Install Campaign**. You would configure a filter to fire a webhook only when **~campaign** is equal to **App Install Campaign**. The key would equal **session.link_data.~campaign** and the value would equal **App Install Campaign**.
+To create a filter:
 
-	![image](/img/pages/exports/session-filter.png)
+1. Click the **Add Filter** button
+1. Select the metadata you'd like to filter on. For advanced filtering, choose "Custom"
+1. Type in the key that you'd like to filter on. To find the key you'd like to filter on, check out our quick introduction to [Unified Analytics data format and the Event Ontology schema](#unified-analytics-data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
+1. Unless your key is part of the top level data (e.g. **timestamp** or **id**), it will likely be nested one level deep. Most keys will be of the format **object_name.key**. For example, if you want to filter for a custom key in deep link data called "product_deeplink_id", that would take the form **last_attributed_touch_data.product_deeplink_id**.
 
-!!! note "Example: Filtering clicks by link channel"
-	Let’s say you’re interested in receiving a webhook for every **click** event that is referred from a Branch link where you set the **Channel** field to **AppLovin**. You would configure a filter to fire a webhook only when **~channel** is equal to **AppLovin**. The key would equal **click.link_data.~channel** and the value would equal **AppLovin**.
+!!! note "Example: Filtering purchases for a specific coupon"
+	Let’s say you’re interested in receiving a webhook for every **Purchase** event using a specific coupon. When you set up the Purchase event in your app or on your website, you [added a specific piece of metadata for "coupon"](/pages/apps/v2event/#track-commerce-events). In the [Event Ontology Schema](/pages/exports/event_ontology_data_schema/#full-list-of-fields) you saw that "coupon" is inside "event_data". To configure your filter to fire a webhook only when **coupon** is equal to **SUMMERDEALS10** you will:
+
+    1. Select "Custom" from the filter key dropdown
+    1. Make the key **event_data.coupon**
+    1. Select "equals" on the equivalency dropdown
+    1. Enter a value of **SUMMERDEALS10**
+
+	![image](/img/pages/exports/ua-webhooks/coupon-filter-purchase.png)
+
+!!! caution "Array filtering not yet available"
+	Currently, webhooks do not support filtering on values inside arrays. Example arrays that cannot be filtered are **tags**, **+via_features** and **content_items**
 
 	![image](/img/pages/exports/click-filter.png)
 
