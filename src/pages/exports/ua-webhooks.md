@@ -216,7 +216,7 @@ To create a filter:
 
 1. Click the **Add Filter** button
 1. Select the metadata you'd like to filter on. For advanced filtering, choose "Custom"
-1. Type in the key that you'd like to filter on. To find the key you'd like to filter on, check out our quick introduction to [Unified Analytics data format and the Event Ontology schema](#unified-analytics-data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
+1. Type in the key that you'd like to filter on. To find the key you'd like to filter on, reference our quick introduction to the [Unified Analytics data format and the Event Ontology schema](#unified-analytics-data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
 1. Unless your key is part of the top level data (e.g. **timestamp** or **id**), it will likely be nested one level deep. Most keys will be of the format **object_name.key**. For example, if you want to filter for a custom key in deep link data called "product_deeplink_id", that would take the form **last_attributed_touch_data.product_deeplink_id**.
 
 !!! note "Example: Filtering purchases for a specific coupon"
@@ -234,42 +234,48 @@ To create a filter:
 
 ### Templating your Postback URL
 
-If you plan on sending click or install data to a third party, you’ll likely need to create one of our templated Postback URLs along side the aforementioned filters. These work very similarly to filters and use the same liquid tags structure: `{{ param.name }}`. Once the webhook is eligible, the correct value will be filled in to the slot.
+If you'd like to template your postback URL, you’ll likely need to create one of our templated Postback URLs along side the aforementioned filters. These work very similarly to filters but use Freemarker syntax.
 
-!!! note "Example: Creating a dynamic conversion postback for an ad agency"
-    Let’s say you have created a Branch link in the Ads tab specifically for SEM campaigns and you’re going to give the link to an advertising agency. This ad agency wants to receive install conversion events from Branch by tracking your Branch link with specific query parameters. Your Branch link might potentially look something like this: `http://branch.app.link/my-sf-campaign?clickId=12345`.
+#### Getting started with templates
 
-    Now, you want to report conversions back to the agency or your backend, and you know the structure of the desired Postback URL. For example, lets say you want to send a Postback to `http://myagency.com/tracking?event=install&clickId=12345&idfa=`.
+To start, we can add a simple template. Let's say we want to add campaign as a query parameter. The correct syntax is 
 
-    With that information, it’s very easy to setup the correct, dynamic Postback URL using our templates. In this case, you need 3 fields to be dynamically populated:
+`https://webhook.com?campaign=${(last_attributed_touch_data.~campaign)!}`
 
-    - event name
-    - clickId
-    - IDFA value
+Let's walk through the syntax:
 
-    Branch can easily populate those fields dynamically (and potentially add a lot more as described in the next section) using the following template keys:
+1. First, find the key for the value you want to template in. As with filtering, to find the key, reference our quick introduction to the [Unified Analytics data format and the Event Ontology schema](#unified-analytics-data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
+1. This exercise tells us that Campaign is nested inside `last_attributed_touch_data` and is represented by `last_attributed_touch_data.~campaign`.
+1. The additional syntax around `last_attributed_touch_data.~campaign` is because Branch's templating engine uses Freemarker. In Freemarker, you can print variables by surrounding them with `${}`. Finally, we add `()!` to the variable because we want to prevent errors in the case that there is no value.
+1. This leaves us with `${(last_attributed_touch_data.~campaign)!}`.
 
-    - `{{ event.name }}`
-    - `{{ session.link_click.query.clickId }}`
-    - `{{ device.hardware_id }}`
+Here is some more example Freemarker for common templates:
 
-    You can create your dynamic Postback URL by using those above tags in place of where the value should go. So, in keeping with the example, the dynamic Postback URL to give to Branch would be and should be pasted into the webhook creation URL field:
+| Parent object | Common name | Freemarker |
+| - | - | - |
+| Last Attributed Touch Data | Feature | `${(last_attributed_touch_data.~feature)!}` |
+| Last Attributed Touch Data | Channel | `${(last_attributed_touch_data.~channel)!}` |
+| Last Attributed Touch Data | Campaign | `${(last_attributed_touch_data.~campaign)!}` |
+| Last Attributed Touch Data | Ad Partner Name | `${(last_attributed_touch_data.~advertising_partner_name)!}` |
+| User Data | OS | `${(user_data.os)!}` |
+| User Data | Platform | `${(user_data.platform)!}` |
+| User Data | IDFA | `${(user_data.idfa)!}` |
+| User Data | IDFV | `${(user_data.idfv)!}` |
+| User Data | Android Advertising ID | `${(user_data.aaid)!}` |
 
-    - `http://myagency.com/tracking?event={{ event.name }}&clickId={{ session.link_click.query.clickId }}&idfa={{ device.hardware_id }}`
+#### Freemarker expressions
 
-    ![image](/img/pages/exports/templates.png)
+Due to security restrictions, Branch does not support the full list of Freemarker expressions.
 
-    Additionally, since you don’t want to send them _every_ install event, let’s add a [filter](#filtering-which-webhooks-are-sent) to only send the installs that are referred by links which have a **clickId** in the query parameter. In this case, we use a wildcard parameter (`*`) for the key **session.link_click.query.clickId**, which tells Branch to only trigger this webhook when an **install** event was referred by a link with a **clickId**.
+Here is a list of blocked expressions:
+```
+"<#import>", "<#visit>", "<#include>", "?eval", "<#recurse>", "<#setting>", "<#macro>", "<#function>", "<#nested>", "<#return>", "<#list>"
+```
 
-    ![image](/img/pages/exports/template-filters.png)
-
-    And with that, we’re finished creating our postback!
-
-    ![image](/img/pages/exports/template-finished.png)
 
 ### Authenticating webhook events
 
-TODO
+To request authentication headers for your webhooks, please contact `integrations@branch.io`.
 
 ## Support
 
