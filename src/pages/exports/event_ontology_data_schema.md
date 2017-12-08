@@ -29,7 +29,12 @@ We split out events into logical groupings. We now have the following distinct e
 - content event
 - user lifecycle event
 
-The last four are groupings of multiple events. Custom events are any events you choose to track with Branch that fall outside our list of standard events. Commerce events include a short list of events such as PURCHASE that involve e-commerce. Content events include a short list of events such as VIEW_ITEM that involve content and are not directly related to e-commerce. User lifecycle events are events marking a distinct action completed by a user as they progress through your app, such as COMPLETE_REGISTRATION.
+The last four are groupings of multiple events.
+
+- **Custom events** are any events you choose to track with Branch that fall outside our list of standard events. 
+- **Commerce events** include a short list of events such as PURCHASE that involve e-commerce. 
+-  **Content events** include a short list of events such as VIEW_ITEM that involve content and are not directly related to e-commerce. 
+-  **User lifecycle events** are events marking a distinct action completed by a user as they progress through your app, such as COMPLETE_REGISTRATION.
 
 ### Branch Standard Events
 
@@ -43,7 +48,7 @@ Here is a full breakdown of standard events trackable by Branch.
 
 ## Fields included
 
-On each event, we provide a considerable number of information. The following table has an overview. Several of the fields below are objects which themselves have many fields.
+On each event, we provide a considerable amount of information. The following table has an overview. Several of the fields below are objects which themselves have many fields.
 
 | *field* | *format* | *definition* |
 | - | - | - |
@@ -57,7 +62,7 @@ On each event, we provide a considerable number of information. The following ta
 | days_from_last_cta_view_to_event | int | number of days between when the last Branch CTA view occurred and when this event subsequently occurred (see datasource definition of cta view) |
 | last_cta_view_timestamp | long | unix timestamp in milliseconds for the last Branch CTA view |
 | last_cta_view_data | object | This is the data associated with the last qualifying Branch CTA View to occur before this event. Subject to attribution windows, within which the last click or web to app auto redirect trumps a more recent impression. |
-| first_event_for_user | boolean | if this is the first time for this persona that this event has been triggered |
+| first_event_for_user | boolean | if this is the first time for this persona that this event has been triggered (not yet supported)|
 | deep_linked | boolean | true if the current app or web session resulted in the user being deep linked |
 | user_data | object | data associated with the user who triggered the event |
 | event_data | object | data associated with commerce or content events, but not specific to any one item |
