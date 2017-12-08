@@ -62,9 +62,9 @@ Create a `BranchUniversalObject` containing details about the content that is be
                     .setTitle("Meet Mr. Squiggles")
                     .setContentDescription("Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!")
                     .setContentImageUrl("https://example.com/monster-pic-12345.png")
-                    .addContentMetadata("userId", "12345")
-                    .addContentMetadata("userName", "Josh")
-                    .addContentMetadata("monsterName", "Mr. Squiggles");
+                    .setContentMetadata(new ContentMetadata().addCustomMetadata("userId", "12345")
+                        .addCustomMetadata("userName", "Josh")
+                        .addCustomMetadata("monsterName", "Mr. Squiggles"));
     ```
 
 !!! tip
