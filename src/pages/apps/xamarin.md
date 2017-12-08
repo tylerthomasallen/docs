@@ -407,10 +407,17 @@
 
                     public void InitSessionComplete(Dictionary<string, object> data)
                     {
-                        var intent = new Intent(this, typeof(BranchActivity));
+                        //Handle custom logic based on deep link data in InitSessionComplete
+                        
+                        //View all the link data in the console
+                        Console.WriteLine("My Link Data: " + JsonConvert.SerializeObject(data));
+                        
+                        //Preferred method: use BranchActivity created previously to handle the link data
+                        //Will need to update BranchActivity with desired custom logic, to open the correct page in the app
+                        (this, typeof(BranchActivity));
                         intent.PutExtra("BranchData", JsonConvert.SerializeObject(data));
-
-                        StartActivity(intent);
+                        
+                        StartActivity(intent);var intent = new Intent
                     }
 
                     public void SessionRequestError(BranchError error)
