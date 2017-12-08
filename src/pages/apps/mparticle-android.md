@@ -177,8 +177,8 @@
        .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
 
         // Here is where you can add custom keys/values to the deep link data
-       .addContentMetadata("property1", "blue")
-       .addContentMetadata("property2", "red");
+       .setContentMetadata(new ContentMetadata().addCustomMetadata("property1", "blue")
+            .addCustomMetadata("property2", "red"));
     ```
 
 - ### Create deep link
