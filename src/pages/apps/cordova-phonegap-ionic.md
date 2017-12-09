@@ -636,9 +636,9 @@
     
     - Add before `Branch.initSession();` ([Initialize Branch Features](#initialize-branch-features))
  
-    ```js
-    Branch.setRequestMetadata("$mixpanel_distinct_id", "123")
-    ```
+        ```js
+        Branch.setRequestMetadata("$mixpanel_distinct_id", "123")
+        ```
 
 - ### Simulate an install
 
