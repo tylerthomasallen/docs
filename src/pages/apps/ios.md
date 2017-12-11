@@ -150,7 +150,7 @@
 
         - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
           // handler for Universal Links
-          [[Branch getInstance] continueUserActivity:userActivity];
+          [[Branch getInstance] continueContentUserActivity:userActivity];
           return YES;
         }
 
