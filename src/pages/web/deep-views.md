@@ -101,7 +101,7 @@ When you create links via a mobile SDK, you simply need to set the OG tag parame
                     .setContentImageUrl("https://example.com/mycontent-12345.png")
 
     // Add any additional custom OG tags here
-                    .addContentMetadata("$og_video", "http://mysite/video.mpg");
+                    .setContentMetadata(new ContentMetadata().addCustomMetadata("$og_video", "http://mysite/video.mpg"));
     ```
 
 

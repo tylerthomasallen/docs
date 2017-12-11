@@ -145,10 +145,18 @@ Webhooks, like data integratons, is no longer session based. This means we will 
 
 ## FAQ
 
-### Data speed
+### Data Speed
 
 This new analytics platform isn't real time like the old dashboard analytics, but does not have a significant delay. We're continually improving the speed, and hope to have a standard SLA for dashboard reporting.
 
-### Unique counts
+### Unique Counts
 
-One thing to be aware of is that unique counts may be within a 4% window of error across the dashboard. For example, if you have 100 total clicks, and 90 were truly unique, it's possible that the dashboard could report within 4% of that 90 number. If you want true uniques, the export functionality will help. 
+One thing to be aware of is that unique counts may be within a 4% window of error across the dashboard. For example, if you have 100 total clicks, and 90 were truly unique, it's possible that the dashboard could report within 4% of that 90 number. If you want true uniques, the export functionality will help.
+
+### Differing Installs
+
+As part of the new Analytics Platforms, your install numbers will likely not line up one to one. What this means is that if you see 200 Branch driven installs on the old Analytics Platform, it's ok to see 190 Branch driven installs (or even 210) on the same day. This is due to the way we have fundamentally changed the way we count attributions. 
+
+Some installs on the old analytics platform were actually "reinstalls", but were not counted as such, which would be one reason why installs are lower. Some campaigns will count higher installs, because they may be clicked on a variety of browsers and platforms, and Branch is able to connect those touch points to accurately count an install.
+
+If the difference in numbers is still concerning, reach out to your Branch account manager, or send us a message at integrations@branch.io

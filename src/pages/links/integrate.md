@@ -54,7 +54,7 @@
             | Firefox address bar | Fallback | | App
             | Hangouts | App | | App |
             | iMessage | App |
-            | Slack | App | Must configure Slack to open links with Safari | App | 
+            | Slack | App | Must configure Slack to open links with Safari | App |
             | WeChat | Fallback | Customize [WeChat fallback urls](#redirections) | Fallback | Customize [WeChat fallback urls](#redirections)
             | WhatsApp | App | `app.link` require https/http to be clickable | App | `app.link` require https/http to be clickable
             | Apple Mail | App |
@@ -97,8 +97,7 @@
                 - *[or]* Append `/e/` to the deep link
                     - e.g. `https://example.app.link/fzmLEhobLD` -> `https://example.app.link/e/fzmLEhobLD`
             - *Android:* need to override `App Links`
-                - TODO: validate. may need `Always open app` unchecked
-                - Uncheck `Enable App Links` and `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
+                - Uncheck `Always Open App`, `Enable App Links` and then hit `Save` the [Branch Dashboard](https://dashboard.branch.io/link-settings)
                 - Add redirect `$android_url = 'https://google.com'` ([docs](/pages/links/integrate/#redirections))
                 - Add a broken URI Scheme with `$android_deeplink_path = 'random'` ([docs](/pages/links/integrate/#deep-linking))
 
@@ -176,7 +175,8 @@
         | $desktop_url | | Change the redirect endpoint on desktops Text-Me-The-App page (set in Link Settings)
         | $ios_url | | Change the redirect endpoint for iOS  App Store page for your app (set in Link Settings)
         | $ipad_url | | Change the redirect endpoint for iPads `$ios_url` value
-        | $android_url  | | Change the redirect endpoint for Android  Play Store page for your app (set in Link Settings)
+        | $android_url  | | Change the redirect endpoint for Android Play Store page for your app (set in Link Settings)
+        | $samsung_url  | | Redirect to Samsung Galaxy Store on Samsung devices. Only link level control. Format should be `http://www.samsungapps.com/appquery/appDetail.as?appId=YOUR.PACKAGE.NAME`
         | $windows_phone_url  | | Change the redirect endpoint for Windows OS Windows Phone default URL (set in Link Settings)
         | $blackberry_url | | Change the redirect endpoint for Blackberry OS  BlackBerry default URL (set in Link Settings)
         | $fire_url | | Change the redirect endpoint for Amazon Fire OS Fire default URL (set in Link Settings)
@@ -192,7 +192,7 @@
         | --- | --- | ---
         | $uri_redirect_mode | **0** | This is the default value that yields the standard behavior where we don't try to open the app if the user can see an error.
         | $uri_redirect_mode | **1** | Smart redirect mode. Same behavior as 0 until we know the user has the app installed through Branch persona data. In that case, force URI schemes to open the app.
-        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed.
+        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an [error message](https://i.imgur.com/3eoGyeC.png) when the app is not installed.
 
     - Supported Apps
 
@@ -227,7 +227,7 @@
         | $publicly_indexable | `1` | Cannot modify here. Needs to be set by the Branch Universal Object
         | $keywords | | Keywords for which this content should be discovered by. Just assign an array of strings with the keywords you'd like to use
         | $canonical_identifier | | This is the unique identifier for content that will help Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities
-        | $exp_date | `0` | The date when the content will not longer be available or valid. Cannot modify here. Needs to be set by the Branch Universal Object. Must be epoch timestamp with milliseconds
+        | $exp_date | `0` | The date when the content will not longer be available or valid. The value must be an epoch time stamp in milliseconds (e.g. `1512000420`) within the Branch Universal Object. The click will be attributed, but the install/open will not be
         | $content_type | | This is a label for the type of content present. Apple recommends that you use uniform type identifier as described here
 
 - ### Deepview
@@ -281,7 +281,7 @@
         | $twitter_player_height | | Set the player's height in pixels
 
 - ### Custom Tags
-    
+
     - Handle custom meta tags
 
         | Key | Value
@@ -291,7 +291,7 @@
     - Valid dictionary example: "{\"twitter:player:stream\": \"https://branch.io\"}". This will result in the following meta tag: `<meta property="twitter:player:stream" content="https://branch.io" />`
     - If you create the link via the Dashboard, don’t worry about stringifying the dictionary. It will be done automatically.
     - apple_touch_icon is a special key in the dictionary. If you set it, we will add a `<link rel="apple-touch-icon" href="<url>" />` tag to the scraped HTML page. This will allow you to show a custom icon for previews in iMessage, Safari Bookmarks, Slack, etc.
-    
+
 - ### Universal Object
 
     - Properties for the Branch Universal Object within your [app](#dialog-code?ios=create-content-reference&android=create-content-reference&adobe=create-deep-link&cordova=create-content-reference&mparticleAndroid=create-content-reference&mparticleIos=create-content-reference&titanium=create-content-reference&reactNative=create-content-reference&unity=create-content-reference&xamarin=create-content-reference) integration
