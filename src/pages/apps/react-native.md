@@ -374,19 +374,10 @@
 
 - ### Import Branch
 
-    - In any React Native source file that uses the Branch SDK. You can import
-    only the symbols you are using.
+    - In any React Native source file that uses the Branch SDK.
 
         ```js
-        import branch, {
-          AddToCartEvent,
-          AddToWishlistEvent,
-          PurchasedEvent,
-          PurchaseInitiatedEvent,
-          RegisterViewEvent,
-          ShareCompletedEvent,
-          ShareInitiatedEvent
-        } from 'react-native-branch'
+        import branch, { BranchEvent } from 'react-native-branch'
         ```
 
 - ### Create content reference
@@ -398,10 +389,17 @@
     ```js
     // only canonicalIdentifier is required
     let branchUniversalObject = await branch.createBranchUniversalObject('canonicalIdentifier', {
-        automaticallyListOnSpotlight: true,
-        metadata: {prop1: 'test', prop2: 'abc'},
-        title: 'Cool Content!',
-        contentDescription: 'Cool Content Description'})
+      locallyIndex: true,
+      title: 'Cool Content!',
+      contentDescription: 'Cool Content Description'}),
+      contentMetadata: {
+        ratingAverage: 4.2,
+        customMetadata: {
+          prop1: 'test',
+          prop2: 'abc'
+        }
+      }
+    })
     ```
 
 - ### Create deep link
@@ -607,6 +605,27 @@
     buo.logEvent(BranchEvent.ViewItem)
     buo.logEvent(BranchEvent.Purchase, { revenue: 20 })
     ```
+
+- ### Standard events
+
+|Event constant|Description|
+|--------------|-----------|
+|BranchEvent.AddToCart|Standard Add to Cart event|
+|BranchEvent.AddToWishlist|Standard Add to Wishlist event|
+|BranchEvent.ViewCart|Standard View Cart event|
+|BranchEvent.InitiatePurchase|Standard Initiate Purchase event|
+|BranchEvent.AddPaymentInfo|Standard Add Payment Info event|
+|BranchEvent.Purchase|Standard Purchase event|
+|BranchEvent.SpendCredits|Standard Spend Credits event|
+|BranchEvent.Search|Standard Search event|
+|BranchEvent.ViewItem|Standard View Item event for a single Branch Universal Object|
+|BranchEvent.ViewItems|Standard View Items event for multiple Branch Universal Objects|
+|BranchEvent.Rate|Standard Rate event|
+|BranchEvent.Share|Standard Share event|
+|BranchEvent.CompleteRegistration|Standard Complete Registration event|
+|BranchEvent.CompleteTutorial|Standard Complete Tutorial event|
+|BranchEvent.AchieveLevel|Standard Achieve Level event|
+|BranchEvent.AchievementUnlocked|Standard Unlock Achievement event|
 
 - ### Handle referrals
 
