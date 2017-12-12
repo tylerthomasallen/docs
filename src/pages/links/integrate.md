@@ -8,17 +8,17 @@
 
         - Device `navigates` to the [fallback](#custom-link-behavior) (e.g. an app store or website)
 
-        - User `installs` and `opens` app
+        - User `installs` and `opens` your app
 
-        - Branch passes deep link `data` into app
+        - Branch passes deep link `data` into your app
 
     - Your app is installed
 
         -  User `clicks` on a Branch deep link
 
-        -  Device `opens` app
+        -  Device `opens` your app or initiates `Expected link behavior`
 
-        -  Branch passes deep link `data` into app
+        -  Branch passes deep link `data` into your app
 
     - Expected link behavior in different apps/browsers
 
