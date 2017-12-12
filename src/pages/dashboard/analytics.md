@@ -81,7 +81,7 @@
 
 - ### Emails
     - [Dashboard Emails](https://dashboard.branch.io/email) allows you to easily integrate Branch deep links with your email providers
-    - Find more information in [Emails](/pages/emails/appboy/)
+    - Find more information in [Emails](/pages/emails/braze/)
 
 - ### Organic Search
 
