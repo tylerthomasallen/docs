@@ -2,7 +2,7 @@
 
 - ### Default link behavior
 
-    - Your app is not installed
+    - #### Your app is not installed
 
         - User `clicks` on a Branch deep link
 
@@ -12,15 +12,17 @@
 
         - Branch passes deep link `data` into your app
 
-    - Your app is installed
+    - #### Your app is installed
 
         -  User `clicks` on a Branch deep link
 
-        -  Device `opens` your app or initiates `Expected link behavior`
+        -  Device `opens` your app or navigates to [expected link behavior](#expected-link-behavior)
 
         -  Branch passes deep link `data` into your app
 
-    - Expected link behavior in different apps/browsers
+    - #### Expected link behavior
+    
+        - Expected link behavior is depdentent on whether or not the app supports deep linking
 
         - `*Able to force app open` using [`$uri_redirect_mode`](#forced-redirections) or enabling a [Deepview](/pages/web/deep-views/)
 
@@ -54,7 +56,7 @@
 
 - ### Custom link behavior
 
-    - Pass data from link to app
+    - #### Pass data from link to app
 
         - Add [link data](#configure-deep-links) to each deep link
 
@@ -62,7 +64,7 @@
 
         - Append query strings `https://example.app.link/fzmLEhobLD?$custom_data=123&hello=world`
 
-    - Fallback to a specific URL
+    - #### Fallback to a specific URL
 
         - Determine where a deep link will navigate to if either
 
@@ -79,7 +81,7 @@
             - Add `iOS/Android Custom URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
             - Add `Default URL` (`$fallback_url`) on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
 
-    - Open web instead of app
+    - #### Open web instead of app
         - Your app is not installed
             - Device `navigates` to the [fallback](#custom-link-behavior) (e.g. an app store or website)
         - Your app is installed
