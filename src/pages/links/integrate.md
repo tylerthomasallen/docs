@@ -6,7 +6,7 @@
 
         - User `clicks` on a Branch deep link
 
-        - Device `navigates` to the [fallback](#fallback-to-a-specific-url) (e.g. an app store or website)
+        - Device `navigates` to the [fallback](#custom-link-behavior) (e.g. an app store or website)
 
         - User `installs` and `opens` app
 
@@ -20,15 +20,7 @@
 
         -  Branch passes deep link `data` into app
 
-- #### Expected redirect behavior
-
-    - Your app is not installed
-
-        - Device `navigates` to the [fallback](#fallback-to-a-specific-url) (e.g. an app store or website)
-
-    - Your app is installed
-
-        - If the app supports deep linking, then your app will open or navigate to the [fallback](#fallback-to-a-specific-url)
+    - Expected link behavior in different apps/browsers
 
         - `*Able to force app open` using [`$uri_redirect_mode`](#forced-redirections) or enabling a [Deepview](/pages/web/deep-views/)
 
@@ -62,7 +54,7 @@
 
 - ### Custom link behavior
 
-    - ##### Pass data from link to app
+    - Pass data from link to app
 
         - Add [link data](#configure-deep-links) to each deep link
 
@@ -70,7 +62,7 @@
 
         - Append query strings `https://example.app.link/fzmLEhobLD?$custom_data=123&hello=world`
 
-    - ##### Fallback to a specific URL
+    - Fallback to a specific URL
 
         - Determine where a deep link will navigate to if either
 
@@ -87,9 +79,9 @@
             - Add `iOS/Android Custom URL` on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
             - Add `Default URL` (`$fallback_url`) on the [Branch Dashboard](https://dashboard.branch.io/link-settings)
 
-    - ##### Open web instead of app
+    - Open web instead of app
         - Your app is not installed
-            - Device `navigates` to the [fallback](#fallback-to-a-specific-url) (e.g. an app store or website)
+            - Device `navigates` to the [fallback](#custom-link-behavior) (e.g. an app store or website)
         - Your app is installed
             - *iOS:* need to override `Universal Links`
                 - Add `$web_only = true` ([docs](/pages/links/integrate/#redirections))
@@ -106,7 +98,7 @@
         - Basics are `$og_title`, `$og_description`, and `$og_image_url`
     - Use [Deep Views]() to display content as a website
         - Increases [install attribution](https://branch.io/deepview/)
-        - Completes deep linking experience in [certain apps](#expected-redirect-behavior)
+        - Completes deep linking experience in [certain apps](#default-link-behavior)
 
 ## Create deep links
 
@@ -401,7 +393,7 @@
     - Make sure you have [configure your dashboard](/pages/dashboard/integrate/) and [configure your app](#dialog-code)
     - Make sure the `Branch key` [in your app](#dialog-code) matches the `Branch key` [in your deep link](#view-deep-link-data)
     - Make sure you have not [disabled universal linking on iOS](/pages/apps/ios/#re-enable-universal-linking)
-    - Make sure you understand the [expected behavior of deep links](#expected-redirect-behavior)
+    - Make sure you understand the [expected behavior of deep links](#default-link-behavior)
     - Make sure the deep link domain matches your [link domain](https://dashboard.branch.io/link-settings) (e.g. link domain = `example.app.link`, deep link = `https://example.app.link/fzmLEhobLD`)
 
 - ### View deep link data
