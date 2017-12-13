@@ -104,6 +104,7 @@ extra:
     - 'New Analytics Platform'
     - 'Enable Single Sign On'
     - 'Export API v3'
+    - 'Ad Networks List'
     - 'Export API'
     - 'Event Ontology'
     - 'New Data Integrations'
@@ -169,6 +170,7 @@ pages:
     - Facebook Platform Ads: pages/deep-linked-ads/facebook-platform-ads.md
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter: pages/deep-linked-ads/twitter.md
+    - Ad Networks List: pages/ad-networks/ad-networks-list.md
   - Links in your emails:
     - Get Started: pages/emails/get-started.md
     - Amazon SES: pages/emails/amazon-ses.md
