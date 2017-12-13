@@ -160,3 +160,15 @@ As part of the new Analytics Platforms, your install numbers will likely not lin
 Some installs on the old analytics platform were actually "reinstalls", but were not counted as such, which would be one reason why installs are lower. Some campaigns will count higher installs, because they may be clicked on a variety of browsers and platforms, and Branch is able to connect those touch points to accurately count an install.
 
 If the difference in numbers is still concerning, reach out to your Branch account manager, or send us a message at integrations@branch.io
+
+### New Dashboard Accounts
+
+Accounts created on or after December 15th, 2017 (UTC time zone) will be on the new Analytics Platform. 
+
+## Support
+
+### Discrepancies
+
+#### SDK Version
+
+While different install numbers are to be expected, there may be some discrepancies not related to the new attribution platform counting methodologies. You may notice numbers are off if you are on version 0.12.4 or below on the iOS SDK. If that is the case, please upgrade to the latest version of the SDK, or at least 0.12.5. There is no cut off for Android.
