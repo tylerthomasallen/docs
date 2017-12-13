@@ -151,7 +151,7 @@ pages:
     - Hosted Deep Link Data: pages/web/hosted-data.md
   - Links in your paid ads:
     - Dynamic Product Feeds: pages/deep-linked-ads/dynamic-product-feeds.md
-    - Ad Networks: 
+    - Ad Networks: pages/ad-networks/ad-networks-list.md
       - A4g: pages/ad-networks/a_a4g.md
       - Actionpay: pages/ad-networks/a_actionpay.md
       - Ad4screen: pages/ad-networks/a_ad4screen.md
@@ -258,7 +258,6 @@ pages:
     - Facebook Platform Ads: pages/deep-linked-ads/facebook-platform-ads.md
     - Facebook Dynamic Ads: pages/deep-linked-ads/facebook-dynamic-ads.md
     - Twitter: pages/deep-linked-ads/twitter.md
-    - Ad Networks List: pages/ad-networks/ad-networks-list.md
   - Links in your emails:
     - Get Started: pages/emails/get-started.md
     - Amazon SES: pages/emails/amazon-ses.md
