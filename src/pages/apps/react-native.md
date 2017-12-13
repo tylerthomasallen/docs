@@ -374,19 +374,10 @@
 
 - ### Import Branch
 
-    - In any React Native source file that uses the Branch SDK. You can import
-    only the symbols you are using.
+    - In any React Native source file that uses the Branch SDK.
 
         ```js
-        import branch, {
-          AddToCartEvent,
-          AddToWishlistEvent,
-          PurchasedEvent,
-          PurchaseInitiatedEvent,
-          RegisterViewEvent,
-          ShareCompletedEvent,
-          ShareInitiatedEvent
-        } from 'react-native-branch'
+        import branch, { BranchEvent } from 'react-native-branch'
         ```
 
 - ### Create content reference
@@ -398,10 +389,17 @@
     ```js
     // only canonicalIdentifier is required
     let branchUniversalObject = await branch.createBranchUniversalObject('canonicalIdentifier', {
-        automaticallyListOnSpotlight: true,
-        metadata: {prop1: 'test', prop2: 'abc'},
-        title: 'Cool Content!',
-        contentDescription: 'Cool Content Description'})
+      locallyIndex: true,
+      title: 'Cool Content!',
+      contentDescription: 'Cool Content Description'}),
+      contentMetadata: {
+        ratingAverage: 4.2,
+        customMetadata: {
+          prop1: 'test',
+          prop2: 'abc'
+        }
+      }
+    })
     ```
 
 - ### Create deep link
@@ -529,21 +527,14 @@
 
     - Listing on Spotlight requires adding `CoreSpotlight.framework` to your Xcode project.
 
-    - Recommended
-
     ```js
+    import branch, { BranchEvent } from 'react-native-branch'
     let branchUniversalObject = await branch.createBranchUniversalObject('canonicalIdentifier', {
-      automaticallyListOnSpotlight: true,
+      locallyIndex: true,
       // other properties
     })
 
-    branchUniversalObject.userCompletedAction(RegisterViewEvent)
-    ```
-
-    - Alternate method
-
-    ```js
-    branchUniversalObject.listOnSpotlight()
+    branchUniversalObject.logEvent(BranchEvent.ViewItem)
     ```
 
 - ### Track content
@@ -557,8 +548,8 @@
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/content)
 
     ```js
-    import branch, { RegisterViewEvent } from 'react-native-branch'
-    branchUniversalObject.userCompletedAction(RegisterViewEvent)
+    import { BranchEvent } from 'react-native-branch'
+    branchUniversalObject.logEvent(BranchEvent.ViewItem)
     ```
 
 - ### Track users
@@ -574,7 +565,7 @@
 
 - ### Track events
 
-    - Track custom events
+    - Track standard and custom events
 
     - Events named `open`, `close`, `install`, and `referred session` are Branch restricted
 
@@ -585,30 +576,56 @@
     - Validate with the [Branch Dashboard](https://dashboard.branch.io/liveview/events)
 
     ```js
-    branchUniversalObject.userCompletedAction('Custom Action', { key: 'value' })
+    import { BranchEvent } from 'react-native-branch'
+
+    // Associate one or more content items with an event
+    new BranchEvent(BranchEvent.ViewItems, [buo1, buo2]).logEvent()
+
+    // Log a standard event with parameters
+    new BranchEvent(BranchEvent.Purchase, buo, {
+      revenue: 20,
+      shipping: 2,
+      tax: 1.6,
+      currency: 'USD'
+    }).logEvent()
+
+    // Set parameters after initialization
+    let event = new BranchEvent(BranchEvent.Search)
+    event.searchQuery = "tennis rackets"
+    event.logEvent()
+
+    // Log a custom event
+    new BranchEvent("UserScannedItem", buo).logEvent()
     ```
 
-- ### Track content properties
-
-    | Event | Description |
-    | ----- | --- |
-    | RegisterViewEvent | User viewed the object |
-    | AddToWishlistEvent | User added the object to their wishlist |
-    | AddToCartEvent | User added object to cart |
-    | PurchaseInitiatedEvent | User started to check out |
-    | PurchasedEvent | User purchased the item |
-    | ShareInitiatedEvent | User started to share the object |
-    | ShareCompletedEvent | User completed a share |
-
-
-- ### Track commerce
-
-    - Use the `branch.sendCommerceEvent` method to record commerce events
+    - When logging an event with a single Branch Universal Object, use the
+        convenient logEvent method
 
     ```js
-    branch.sendCommerceEvent("20.00")
-    branch.sendCommerceEvent(50, {key1: "value1", key2: "value2"})
+    buo.logEvent(BranchEvent.ViewItem)
+    buo.logEvent(BranchEvent.Purchase, { revenue: 20 })
     ```
+
+- ### Standard events
+
+|Event constant|Description|
+|--------------|-----------|
+|BranchEvent.AddToCart|Standard Add to Cart event|
+|BranchEvent.AddToWishlist|Standard Add to Wishlist event|
+|BranchEvent.ViewCart|Standard View Cart event|
+|BranchEvent.InitiatePurchase|Standard Initiate Purchase event|
+|BranchEvent.AddPaymentInfo|Standard Add Payment Info event|
+|BranchEvent.Purchase|Standard Purchase event|
+|BranchEvent.SpendCredits|Standard Spend Credits event|
+|BranchEvent.Search|Standard Search event|
+|BranchEvent.ViewItem|Standard View Item event for a single Branch Universal Object|
+|BranchEvent.ViewItems|Standard View Items event for multiple Branch Universal Objects|
+|BranchEvent.Rate|Standard Rate event|
+|BranchEvent.Share|Standard Share event|
+|BranchEvent.CompleteRegistration|Standard Complete Registration event|
+|BranchEvent.CompleteTutorial|Standard Complete Tutorial event|
+|BranchEvent.AchieveLevel|Standard Achieve Level event|
+|BranchEvent.AchievementUnlocked|Standard Unlock Achievement event|
 
 - ### Handle referrals
 

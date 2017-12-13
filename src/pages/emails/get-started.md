@@ -111,7 +111,7 @@ The following are all the possible settings you can configure for deep linking w
 Completing your integration requires some setup that is specific to your email service provider. Please follow the documentation for your provider:
 
 - **[Amazon SES](/pages/emails/amazon-ses)**
-- **[Appboy](/pages/emails/appboy)**
+- **[Braze (formerly Appboy)](/pages/emails/braze)**
 - **[Blueshift](pages/emails/blueshift)**
 - **[Bronto](/pages/emails/bronto)**
 - **[Campaign Monitor](/pages/emails/campaign-monitor)**

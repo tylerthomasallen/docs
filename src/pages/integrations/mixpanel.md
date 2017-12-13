@@ -132,7 +132,7 @@ The User then gets placed into a drip email campaign, targeted for re-engagement
 
 The referred event associated with 5678 is not associated with 1234 / "User A".
 
-In order for any additional events on this device to be associated with "User A", the app should invoke the one line of code as recommended in the section [Pass Mixpanel Distinct ID](/third-party-integrations/mixpanel/guide/#pass-mixpanel-distinct-id-recommended). Example:
+In order for any additional events on this device to be associated with "User A", the app should invoke the one line of code as recommended in the section [Pass Mixpanel Distinct ID](#why-we-recommend-passing-mixpanel-distinct-id). Example:
 
 ```objc
 [[Branch getInstance] setRequestMetadataKey:@"$mixpanel_distinct_id" value:@"User A"];

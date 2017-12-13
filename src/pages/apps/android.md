@@ -913,6 +913,31 @@
         intent.putExtra("branch_force_new_session", true)
         ```
 
+- ### Handle links in your own app
+
+    - Allows you to deep link into your own app from your app itself by launching a Chrome intent
+
+    - *Java*
+
+        ```java
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse((String) "https://example.app.link/u3fzDwyyjF"));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setPackage("com.android.chrome");
+        startActivity(intent);
+        ```
+
+    - *Kotlin*
+
+        ```java
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://9wlb.app.link/hRXAHkUlxH"))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.`package` = "com.android.chrome"
+        startActivity(intent)
+        ```
+
+!!! warning
+    Handling a new deep link in your app will clear the current session data and a new referred "open" will be attributed.
+
 - ### Enable 100% matching
 
     - Uses `Chrome Tabs` to increase attribute matching success
