@@ -728,6 +728,25 @@
 
     - Read deep link data from `initSession` [Initialize Branch](#initialize-branch) ([example](/img/pages/apps/ios-example.png))
 
+- ### Handle links in your own app
+
+    - Allows you to deep link into your own from your app itself
+
+    - *Swift 3*
+
+        ```swift
+        Branch.getInstance().handleDeepLink(withNewSession: URL(string: "https://example.app.link/u3fzDwyyjF"))
+        ```
+
+    - *Objective C*
+
+        ```objc
+        [[Branch getInstance] handleDeepLinkWithNewSession:[NSURL URLWithString:@"https://example.app.link/u3fzDwyyjF"]];
+        ```
+
+!!! warning
+    Handling a new deep link in your app will clear the current session data and a new referred "open" will be attributed.
+
 - ### Track Apple Search Ads
 
     - Allows Branch to track Apple Search Ads deep linking analytics
