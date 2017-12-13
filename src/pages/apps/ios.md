@@ -150,7 +150,7 @@
 
         - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
           // handler for Universal Links
-          [[Branch getInstance] continueContentUserActivity:userActivity];
+          [[Branch getInstance] continueUserActivity:userActivity];
           return YES;
         }
 
@@ -421,7 +421,7 @@
         }];
         ```
 
-- ### Display content
+- ### Display 
 
     - List content on `iOS Spotlight`
 
