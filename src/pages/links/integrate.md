@@ -22,7 +22,7 @@
 
     - #### Expected link behavior
     
-        - Expected link behavior is depdentent on whether or not the app supports deep linking
+        - Expected link behavior is dependent on whether or not the app supports deep linking
 
         - `*Able to force app open` using [`$uri_redirect_mode`](#forced-redirections) or enabling a [Deepview](/pages/web/deep-views/)
 
