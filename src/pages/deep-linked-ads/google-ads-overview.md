@@ -20,7 +20,7 @@ Setting up Adwords conversion events with Branch allows Branch to get direct con
 
 ### Latest Method (OAuth method)
 
-If you are on the new AdWords integration through Branch, read these instructions. Do **not** follow the steps of the legacy instructions. If you would like to try the latest method, send an email to sahil@branch.io and w@branch.io. Benefits of the new integration include tracking all Universal App Campaigns automatically (no links required), and sending all conversion events back to AdWords for optimized spend.
+If you are on the new AdWords integration through Branch, read these instructions. Do **not** follow the steps of the legacy instructions. If you would like to try the latest method, send an email to sahil@branch.io. Benefits of the new integration include tracking all Universal App Campaigns automatically (no links required), and sending all conversion events back to AdWords for optimized spend.
 
 #### AdWords Setup
 
