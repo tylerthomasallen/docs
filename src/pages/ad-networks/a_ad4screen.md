@@ -1,25 +1,61 @@
-## ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/ad4screen-1504724050417.png)	***Ad4Screen***
-http://www.ad4screen.com/en/
+## ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/aai_logo_med_trans_black-1509989746768.png)	***AdAction Interactive***
+https://www.adaction.mobi/
 
 Integration Status |  ***active***
 
 ###  Description
-Ad4Screen is a marketing and advertising pioneer on Mobile Net (Smartphones, Tabletsâ€¦). Founded in 2010 and crowdfunding by OTC Agregator, a big French Insurance Company (MMA) and Web contractors (Business Interactive Founders as WCube, Betclic, Boncoin or Poweo), Ad4Screen helps companies to set up performant Mobile advertising campaigns and to increase App User engagement, retention and conversion.
+AdAction Interactive is the premier mobile app marketing ad network that delivers over 6 million monthly installs for elite agencies and Fortune 100 companies.
 
 ### Postbacks
 Event | Postback
 --- | ---
-INSTALL | http://bo.ad4screen.a4.tf/postback?clickid={sub1}&ios_idfa={ios_idfa}&android_id={android_id} OPEN | http://bo.ad4screen.a4.tf/postback?clickid={sub1}&ios_idfa={ios_idfa}&android_id={android_id}&status=5&goal=2 custom_event | http://bo.ad4screen.a4.tf/postback?sub1={sub1}&ios_idfa={ios_idfa}&android_id={android_id}&status=5&goal=3"}
+INSTALL | http://tracking.adactioninteractive.com/aff_lsr?transaction_id={transaction_id}&security_token={client_security_token}
+OPEN | http://tracking.adactioninteractive.com/aff_goal?a=lsr&goal_id={goal_id}&transaction_id={event_id}&security_token={client_security_token}
+PURCHASE | http://tracking.adactioninteractive.com/aff_goal?a=lsr&goal_id={goal_id}&transaction_id={event_id}&security_token={client_security_token}
+custom_event | http://tracking.adactioninteractive.com/aff_goal?a=lsr&goal_id={goal_id}&transaction_id={event_id}&security_token={client_security_token}
 
 ### Postback Parameters
 Parameter name | Branch Parameter | Link Macro | Dashboard Label | Webhook Template | Required | Description
 --- | --- | --- | --- | --- | --- | --- 
-{sub1} | CLICK_ID | {sub1} |  | null | false | null {ios_idfa} | IDFA |  |  | null | false | null {android_id} | ANDROID_ID |  |  | null | false | null
+{transaction_id}
+branch_parameter | CLICK_ID
+link_macro | {transaction_id}
+dashboard_label | 
+webhook_template | null | false | null
+{client_security_token}
+branch_parameter | ACCOUNT_CREDENTIAL
+link_macro | 
+dashboard_label | Client Security Token
+webhook_template | 
+required | false | 
+{goal_id}
+branch_parameter | GOAL_ID
+link_macro | 
+dashboard_label | 
+webhook_template | 
+required | false | 
+{event_id}
+branch_parameter | EVENT_ID
+link_macro | 
+dashboard_label | 
+webhook_template | 
+required | false | 
 
 ### Link-only Parameters
 Branch Parameter | Link Macro
 --- | ---
-CLICK_AAID | {sub4} CLICK_IDFA | {sub4}
+CLICK_IDFA
+link_macro | {ios_ifa}
+CLICK_AAID
+link_macro | {android_id}
+PLACEMENT
+link_macro | {source}
+SECONDARY_PUBLISHER
+link_macro | {affiliate_id}
+ANDROID_ID
+link_macro | {google_aid}
+CREATIVE_NAME
+link_macro | {aff_sub5}
 
 
 
