@@ -221,10 +221,10 @@ pages:
         - Mixpanel: pages/integrations/mixpanel.md
         - Tune: pages/integrations/tune.md
         - New Data Integrations: pages/integrations/faq.md
-      - Export API for Unified Analytics: pages/exports/api.md
-      - Webhooks for Unified Analytics: pages/exports/webhooks.md
-    - Legacy Export API: pages/exports/legacy-api.md
-    - Legacy Webhooks: pages/exports/legacy-webhooks.md
+      - Export API for Unified Analytics: pages/exports/api-v3.md
+      - Webhooks for Unified Analytics: pages/exports/ua-webhooks.md
+    - Legacy Export API: pages/exports/api.md
+    - Legacy Webhooks: pages/exports/webhooks.md
     - Event Ontology: pages/exports/event_ontology_data_schema.md    
   - Enable Single Sign On: pages/dashboard/sso.md
   - Branch Matching Overview: pages/resources/matching.md
