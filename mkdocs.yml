@@ -141,9 +141,7 @@ pages:
     - Google Play: pages/apps/android-launch.md
   - Configure your website: pages/web/integrate.md
   - Create deep links: pages/links/integrate.md
-  - Track analytics: 
-      - Dashboard analytics: pages/dashboard/analytics.md
-      - Time zone support: pages/dashboard/timezone.md
+  - Track analytics: pages/dashboard/analytics.md
   - Links on your website:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
