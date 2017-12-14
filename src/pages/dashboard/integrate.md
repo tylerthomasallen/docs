@@ -36,6 +36,8 @@
             - Navigate to your `keystore file` (used to build the debug and production version of your APK file before it gets deployed)
             - Run `keytool -list -v -keystore my-release-key.keystore` to generate a fingerprint
 
+            - Example fingerprint `AA:C9:D9:A5:E9:76:3E:51:1B:FB:35:00:06:9B:56:AC:FB:A6:28:CE:F3:D6:65:38:18:E3:9C:63:94:FB:D2:C1` to add to your [Branch Dashboard](https://dashboard.branch.io/link-settings)
+
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
 
