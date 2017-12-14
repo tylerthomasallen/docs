@@ -5,9 +5,10 @@
 The Event Ontology is shared between all of the following places:
 
 - Dashboard
-- [Webhooks](https://docs.branch.io/pages/exports/ua-webhooks/)
-- Data Integrations
-- [Exports](https://docs.branch.io/pages/exports/api-v3/)
+- [Data Feeds](/pages/exports/data-feeds/):
+    - [Webhooks](/pages/exports/ua-webhooks/)
+    - [Data Integrations](/pages/integrations/data-integrations/)
+    - [Data Export API](/pages/exports/api-v3/)
 
 ## Events Included
 
