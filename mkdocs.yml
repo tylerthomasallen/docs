@@ -103,8 +103,8 @@ extra:
     - 'V2 Event'
     - 'New Analytics Platform'
     - 'Enable Single Sign On'
-    - 'Export API v3'
-    - 'Export API'
+    - 'Legacy Webhooks'
+    - 'Legacy Data Export API'
     - 'Event Ontology'
     - 'New Data Integrations'
   is_visible:
@@ -205,8 +205,10 @@ pages:
     - Android Instant Apps: pages/app-to-app/android-instant-apps.md
     - iMessage Apps: pages/app-to-app/imessage-apps.md
   - Export Branch data:
-    - Data Feeds: pages/exports/data-feeds.md
-      - Data Integrations: pages/integrations/data-integrations.md
+    - Data Feeds: 
+      - Get Started: pages/exports/data-feeds.md
+      - Data Integrations: 
+        - Get Started: pages/integrations/data-integrations.md
         - Adobe Analytics: pages/integrations/adobe-analytics.md
         - Adjust: pages/integrations/adjust.md
         - Amplitude: pages/integrations/amplitude.md
@@ -221,9 +223,9 @@ pages:
         - Mixpanel: pages/integrations/mixpanel.md
         - Tune: pages/integrations/tune.md
         - New Data Integrations: pages/integrations/faq.md
-      - Export API for Unified Analytics: pages/exports/api-v3.md
-      - Webhooks for Unified Analytics: pages/exports/ua-webhooks.md
-    - Legacy Export API: pages/exports/api.md
+      - Data Export API: pages/exports/api-v3.md
+      - Webhooks: pages/exports/ua-webhooks.md
+    - Legacy Data Export API: pages/exports/api.md
     - Legacy Webhooks: pages/exports/webhooks.md
     - Event Ontology: pages/exports/event_ontology_data_schema.md    
   - Enable Single Sign On: pages/dashboard/sso.md
