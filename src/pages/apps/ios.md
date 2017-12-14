@@ -1,7 +1,7 @@
 ## Integrate Branch
 
 !!! warning "iOS 11.2 Universal Linking Issue"
-    With iOS 11.2 Apple introduced an issue causing AASA file to not always be updated after the application is installed through the App Store. This brakes Universal Deeplinking, causing links to resolve into the App Store, instead of opening the app. We are currently monitoring the issue. Please utilize our [forced uri redirect mode](https://docs.branch.io/pages/links/integrate/#forced-redirections) to assure deeplinking into the application. View [the Apple Bug report for the issue here](http://www.openradar.me/radar?id=4999496467480576).
+    With iOS 11.2 Apple introduced an issue causing AASA file to not always be updated after the application is installed through the App Store. This breaks Universal Links, causing links to resolve into the App Store, instead of opening the app. We are currently monitoring the issue. Please utilize our [forced uri redirect mode](https://docs.branch.io/pages/links/integrate/#forced-redirections) to assure deep linking into the application. View [the Apple Bug report for the issue here](http://www.openradar.me/radar?id=4999496467480576).
 
 
 - ### Configure Branch
