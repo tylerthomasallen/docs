@@ -39,4 +39,14 @@ Before you CNAME to Branch, you must CNAME your click tracking domain to sendgri
 
 {! ingredients/email/email-usage-auto.md !}
 
+## Troubleshoot issues
+
+If you are seeing this [error message](/img/pages/email/sengrid/sengrid_error.png), the reason is that Sendgrid will only consider the CNAME sendgrid.net valid. To get rid of this error, please:
+
+1. CNAME your subdomain to sendgrid.net
+1. Validate records on Sendgrid dashboard
+1. CNAME your subdomain to thirdparty.bnc.lt
+1. Do not validate records on Sendgrid after Step 3
+
+
 {! ingredients/email/email-support.md !}

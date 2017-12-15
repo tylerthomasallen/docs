@@ -24,6 +24,7 @@ To track installs from Ads you should integrate the Branch SDK into your app. If
 ![image](/img/pages/deep-linked-ads/branch-universal-ads/find-applovin.png)
 
 4. Enter any credentials that may be required, and click **Save and Enable** in the bottom right hand corner.
+
 ![image](/img/pages/deep-linked-ads/branch-universal-ads/save-and-enable.png)
 
 !!! tip "Enable postbacks"
@@ -46,6 +47,7 @@ Once you've enabled an ad partner, it's time to create a tracking link.
 ![image](/img/pages/deep-linked-ads/branch-universal-ads/add-analytics-tags.png)
 
 4. Click **Create Link Now**, and you have your tracking link! Take this link and give it to your Ad Partner's Account Manager or paste it into the tracking section of your campaign yourself.
+
 ![image](/img/pages/deep-linked-ads/branch-universal-ads/finished-ad-link.png)
 
 
