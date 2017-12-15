@@ -110,7 +110,6 @@ pages:
     - Unity: pages/apps/unity.md
     - Xamarin: pages/apps/xamarin.md
     - API: pages/apps/api.md
-
   - Configure your deep linking:
     - iOS Universal Links: pages/deep-linking/universal-links.md
     - Android App Links: pages/deep-linking/android-app-links.md
@@ -120,7 +119,9 @@ pages:
     - Google Play: pages/apps/android-launch.md
   - Configure your website: pages/web/integrate.md
   - Create deep links: pages/links/integrate.md
-  - Track analytics: pages/dashboard/analytics.md
+  - Track analytics:
+    - Dashboard analytics: pages/dashboard/analytics.md
+    - Time zone support: pages/dashboard/timezone.md
   - Links on your website:
     - Deepviews: pages/web/deep-views.md
     - Journeys App Banners: pages/web/journeys.md
