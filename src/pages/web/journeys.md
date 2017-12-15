@@ -290,13 +290,35 @@ Use this to target users who have been part of an email campaign; maybe with a s
 
 The technical definition is that they've clicked on a link with an Email Service Provider's custom `$3p` value in link data, but you just need to consider the way the link is created - in this case, through a Deep Linked Email integration.
 
-#### Is viewing a page with hosted deeplink data key
+#### Is viewing a page with metadata key
 
-Use this filter to target users viewing web pages with certain [Branch-specific metatags](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site) on them (in the form of the HTML `<meta>` tag).
+Use this filter to target users viewing web pages with certain metadata specified. This data can be specified in HTML `<meta>` tags on a webpage, passed in as options in the `init()` call that you use to initialize the Branch web SDK, or passed in using the `track()` call in Branch’s web SDK. Note that if you opt to use HTML `<meta>` tags, your tags should be formatted as [Branch hosted deep link data](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site).
 
-For example, you could target users on pages containing the metadata key “foo” and value “bar” by adding this tag to the HTML: `<meta name="branch:deeplink:foo" content="bar" />`. Only metadata in this format will be targetable.
+For example, you could target users on pages containing the metadata key “foo” and value “bar” by adding this tag to the page’s HTML: `<meta name="branch:deeplink:foo" content="bar" />`
 
-Once metadata has been added to a webpage, you can target users on that page using the “Is viewing a page with hosted deeplink data key” audience filter.
+Or by initializing Branch’s web SDK with the following options object:
+
+```javascript
+branch.init( 'BRANCH_KEY',
+    {
+        metadata : {
+            'foo' : 'bar'
+        }
+    }
+);
+```
+
+Or, finally, by using the track() call to [programmatically trigger a Journey to show](https://branchmetrics.github.io/docs/pages/web/journeys/#trigger-a-journey-to-show-by-firing-an-event):
+
+```javascript
+branch.track(‘pageview’,
+    {
+        ‘foo’ : ‘bar’
+    }
+);
+```
+
+Once metadata has been specified on a page in any or all of the three locations specified above, you can target users on that page using the “Is viewing a page with metadata key” audience filter. If metadata with the same key has been specified in either `init()` or `track()` _and_ in an HTML `meta` tag, the metadata passed into either `init()` or `track()` will take precedence.
 
 ### Set up split testing
 
