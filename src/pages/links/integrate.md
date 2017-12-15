@@ -401,3 +401,7 @@
 - ### View deep link data
     - Add `?debug=1` to the end of your deep link
     - For example: https://example.app.link/aQXXDHaxKF?debug=1
+    
+- ### View deep link stats
+    - Add `?stats=1` to the end of your deep link
+    - For example: https://example.app.link/aQXXDHaxKF?stats=1
