@@ -64,9 +64,6 @@ Commerce events describe events that relate to a customer interacting with your 
 
 From there, add the Branch universal object to the tracked event, and use the right predefined constant. For example, the code snippet below is to track when a user adds to cart, but simply replace that constant with another constant to track a different event.
 
-**A note on currency and exchange rates:**
-If you track commerce events without a currency, we assume they are USD. If you track commerce events with a currency other than USD, we will convert the `revenue` specified to USD, using a recent exchange rate. This allows you to easily visualize revenue on the Dashboard, across many countries and currencies, because all units are USD. The exchange rate is pulled from [openexchangerates.org](https://openexchangerates.org) regularly, and is generally within an hour of the realtime exchange rate. If you view raw Branch events via either Webhooks or Exports, you can see the exchange rate used.
-
 ### iOS
 
 - *Swift*
