@@ -814,8 +814,7 @@
         **Android**
 
         Simulated installs may be enabled on Android by adding `<meta-data android:name="io.branch.sdk.TestMode" android:value="true"/>` to the `application` element of your Android manifest. Use this in a build type
-        such as `debug` or a product flavor, or be sure to remove it from your manifest before releasing to prod.
-        See https://docs.branch.io/pages/apps/android/#simulate-an-install for full details.
+        such as `debug` or a product flavor, or be sure to remove it from your manifest before releasing to prod. [Click here](/pages/apps/android/#simulate-an-install) for more details.
 
         Alternately, add `RNBranchModule.setDebug();` in your MainActivity before the call to `initSession`. Be sure to remove it
         before releasing to prod.
@@ -897,8 +896,8 @@
 
     See the troubleshooting guide for each native SDK:
 
-    - [iOS](https://docs.branch.io/pages/apps/ios/#troubleshoot-issues)
-    - [Android](https://docs.branch.io/pages/apps/android/#troubleshoot-issues)
+    - [iOS](/pages/apps/ios/#troubleshoot-issues)
+    - [Android](/pages/apps/android/#troubleshoot-issues)
 
 - ### Sample apps
 

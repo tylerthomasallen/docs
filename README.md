@@ -93,6 +93,12 @@
 
     - Tabbed sections `*title*`, `code`, `*title*`, `code`
 
+- #### Navigation
+    
+    - Different page `click [here](/pages/apps/ios/#configure-bundle-identifier)`
+
+    - Same page `click [here](#configure-bundle-identifier)`
+
 - #### Tips, notes, warnings etc.
 
     - Syntax for tips and other highlighted blocks can be found here: http://squidfunk.github.io/mkdocs-material/extensions/admonition/

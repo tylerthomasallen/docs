@@ -1,8 +1,8 @@
 # Event Ontology Data Schema
 
-## Products
+## Overview
 
-The Event Ontology is shared between all of the following places:
+[Persona-Based Attribution](/pages/dashboard/persona-based-attribution/) relies on a new, unified data format. We refer to this as Branch's Event Ontology.  This unified format is shared across all Branch products:
 
 - Dashboard
 - [Data Feeds](/pages/exports/data-feeds/):
@@ -10,9 +10,10 @@ The Event Ontology is shared between all of the following places:
     - [Data Integrations](/pages/integrations/data-integrations/)
     - [Data Export API](/pages/exports/api-v3/)
 
+Previously, we had different formats for Webhooks vs Data Integrations vs Exports. With the release of Persona-Based Attribution, we have reconciled these differences.
+
 ## Events Included
 
-As Branch transitions to our new analytics platform, we are also making it easier than ever to get your data out. Previously, we had different formats for Webhooks vs Data Integrations vs Exports. Now we have a unified format. We refer to this as Branch's "Event Ontology". 
 
 We split out events into logical groupings. We now have the following distinct event groupings:
 

@@ -1,6 +1,6 @@
 ## Overview
 
-Branch’s new webhook system for Unified Analytics allows you to export install and down-funnel event data as it occurs. You can import this data into your internal systems for analysis. You simply need to specify a URL for the POST or GET requests.
+Branch’s new webhook system for Persona-Based Attribution allows you to export install and down-funnel event data as it occurs. You can import this data into your internal systems for analysis. You simply need to specify a URL for the POST or GET requests.
 
 If you are looking for postback integrations for ad networks, please visit our [Universal Ads documentation](/pages/deep-linked-ads/universal-ads). For pre-configured integrations into popular analytics tools, please visit our [Data Integrations documentation](/pages/integrations/amplitude/).
 
@@ -105,9 +105,9 @@ To test whether your webhook is configured correctly, you can use [requestb.in](
         Please archive your Requestbin webhook when you have finished testing. Requestbins only last for 24 hours and return errors once they expire.
 
 
-## Unified Analytics Data Format
+## Data Format
 
-One of the major advantages of Unified Analytics is that metadata is consistently located across all events. We call this schema the [Event Ontology Data Schema](/pages/exports/event_ontology_data_schema/). This consistent schema makes it easy to replicate Branch dashboards in your internal warehouse and compare large sets of data for different events.
+One of the major advantages of Persona-Based Attribution's data format is that metadata is consistently located across all events. We call this schema the [Event Ontology Data Schema](/pages/exports/event_ontology_data_schema/). This consistent schema makes it easy to replicate Branch dashboards in your internal warehouse and compare large sets of data for different events.
 
 Setting up Advanced Filters or Freemarker macros requires an understanding of the Event Ontology data format. Before diving into the schema, you should understand some high level concepts about event metadata structure:
 
@@ -215,13 +215,13 @@ Content-Type: application/json
 
 In [Basic Filtering](#basic-filtering) we covered what filters do, and how to set basic filters. Branch supports more advanced filtering which allows customers to set filters based on almost any event metadata.
 
-Make sure you've taken a look at the [Unified Analytics data format](#unified-analytics-data-format) before you attempt to set advanced filters.
+Make sure you've taken a look at the [data format](#data-format) before you attempt to set advanced filters.
 
 To create a filter:
 
 1. Click the **Add Filter** button
 1. Select the metadata you'd like to filter on. For advanced filtering, choose "Custom"
-1. Type in the key that you'd like to filter on. To find the key you'd like to filter on, reference our quick introduction to the [Unified Analytics data format and the Event Ontology schema](#unified-analytics-data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
+1. Type in the key that you'd like to filter on. To find the key you'd like to filter on, reference our quick introduction to the [Persona-Based Attribution's data format](#data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
 1. Unless your key is part of the top level data (e.g. **timestamp** or **id**), it will likely be nested one level deep. Most keys will be of the format **object_name.key**. For example, if you want to filter for a custom key in deep link data called "product_deeplink_id", that would take the form **last_attributed_touch_data.product_deeplink_id**.
 
 !!! note "Example: Filtering purchases for a specific coupon"
@@ -249,7 +249,7 @@ To start, we can add a simple template. Let's say we want to add campaign as a q
 
 Let's walk through the syntax:
 
-1. First, find the key for the value you want to template in. As with filtering, to find the key, reference our quick introduction to the [Unified Analytics data format and the Event Ontology schema](#unified-analytics-data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
+1. First, find the key for the value you want to template in. As with filtering, to find the key, reference our quick introduction to the [Persona-Based Attribution's data format](#data-format) to figure out where your key is likely nested. Another foolproof way to find your key is looking at your data in full before setting up your filter. You can do this by doing a [CSV export](https://dashboard.branch.io/data-import-export/csv-exports), [API export](/pages/exports/api-v3/) or send a single webhook with a POST body, and locate your key in that POST body.
 1. This exercise tells us that Campaign is nested inside `last_attributed_touch_data` and is represented by `last_attributed_touch_data.~campaign`.
 1. The additional syntax around `last_attributed_touch_data.~campaign` is because Branch's templating engine uses Freemarker. In Freemarker, you can print variables by surrounding them with `${}`. Finally, we add `()!` to the variable because we want to prevent errors in the case that there is no value.
 1. This leaves us with `${(last_attributed_touch_data.~campaign)!}`.
