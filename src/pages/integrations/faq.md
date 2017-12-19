@@ -2,7 +2,7 @@
 Frequently asked questions about Branch's new Data Integrations.
 
 ### How do I enable new Data Integrations?
-First, toggle to Branch’s new analytics system ([Persona-Based Attribution](/pages/dashboard/persona-based-attribution/)) using the banner at the top of the dashboard if you haven’t already. Next, navigate to the Data Import & Export section, where you’ll be able to enable new Data Integrations.
+First, toggle to Branch’s new analytics system ([People-Based Attribution](/pages/dashboard/people-based-attribution/)) using the banner at the top of the dashboard if you haven’t already. Next, navigate to the Data Import & Export section, where you’ll be able to enable new Data Integrations.
 
 ### How do I access my old Data Integrations?
 First, toggle to Branch’s old analytics system using the banner at the top of the dashboard. Next, navigate to the Data Import & Export section, where you’ll be able to access and modify old Data Integrations.
@@ -24,4 +24,4 @@ We’ll be charging for the new Data Integrations based on Monthly Active Users 
 Old Data Integrations will be available through the first quarter of 2018, after which we will no longer support them. At this point, if you want Branch to automatically send your data to other services, you’ll need to enable our new Data Integrations.
 
 ### What exactly has changed in the new Data Integrations? Will there be any changes in the data Branch sends to other services in the new Data Integrations?
-Event metadata and field mappings will not change in the new Data Integrations, but the events themselves will; in other words, Branch will be sending information to other services in the same format, but at slightly different times because of Branch’s new event definitions. New Data Integrations will send events based on Branch’s [Persona-Based Attribution platform](/pages/dashboard/persona-based-attribution/), meaning that we’ll use new criteria (like custom attribution windows) to count and send events.
+Event metadata and field mappings will not change in the new Data Integrations, but the events themselves will; in other words, Branch will be sending information to other services in the same format, but at slightly different times because of Branch’s new event definitions. New Data Integrations will send events based on Branch’s [People-Based Attribution platform](/pages/dashboard/people-based-attribution/), meaning that we’ll use new criteria (like custom attribution windows) to count and send events.

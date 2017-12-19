@@ -1,6 +1,6 @@
 ## Overview
 
-Branch’s new Data Export API for [Persona-Based Attribution](/pages/dashboard/persona-based-attribution/) can be used to pull granular Branch event data directly. A few important notes for this API:
+Branch’s new Data Export API for [People-Based Attribution](/pages/dashboard/people-based-attribution/) can be used to pull granular Branch event data directly. A few important notes for this API:
 
 - The data will only be retrievable for 7 days
 - The data will only appear after end of day since it's processed every 24 hours
@@ -62,7 +62,7 @@ The response payload will be in JSON format and for each export it will have an 
 }
 ```
 
-All exports via Data Feeds are powered by Branch's [Persona-Based Attribution](/pages/dashboard/persona-based-attribution). For an exhaustive list of events included in these exports and more detailed definitions of each event, please see the [Event Ontology Data Schema](/pages/exports/event_ontology_data_schema/).
+All exports via Data Feeds are powered by Branch's [People-Based Attribution](/pages/dashboard/people-based-attribution). For an exhaustive list of events included in these exports and more detailed definitions of each event, please see the [Event Ontology Data Schema](/pages/exports/event_ontology_data_schema/).
 
 !!! tip
     A full day's files will be available on our S3 bucket at that location to download around 8:00am UTC. It will return a blank array from s3 for any empty files until the UTC day is over and the data has been transfered to s3, therefore it is recommended you schedule any ETLs to fetch the data for the previous day around 8:00am UTC.

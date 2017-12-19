@@ -56,7 +56,7 @@ Once you've enabled an ad partner, it's time to create a tracking link.
     It's easier to slice your data in our analytics platform if you properly assign analytics parameters to your link. _Channels_ generally correspond to ad networks, and _Campaigns_ correspond to marketing initiatives that you're launching. For example: _Channel_: "YouTube", _Campaign_: "Summer 2017 Shoe Discounts."
 
 
-### View your data with Persona-Based Attribution
+### View your data with People-Based Attribution
 
 The [Ads Analytics Page](https://dashboard.branch.io/ads/analytics) on the Branch dashboard shows the performance of your ad campaigns _across both web and app_. You can view performance over time, including purchase and other custom events.
 
@@ -68,7 +68,7 @@ If the customer then goes on to purchase an item on web within the attribution w
 
 ![image](/img/pages/deep-linked-ads/branch-universal-ads/install-by-secondary-pub.png)
 
-You can read more about [Persona-Based Attribution here](/pages/dashboard/persona-based-attribution/).
+You can read more about [People-Based Attribution here](/pages/dashboard/people-based-attribution/).
 
 ## Advanced
 
@@ -105,9 +105,9 @@ For customer experience and data accuracy, please do not set your deep linking w
 
 You can edit your attribution windows under Link Settings > Attribution Windows. View through attribution is not yet available, but will be coming soon.
 
-![image](/img/pages/dashboard/persona-based-attribution/attribution-windows.png)
+![image](/img/pages/dashboard/people-based-attribution/attribution-windows.png)
 
-Learn more about account level attribution windows in [Persona-Based Attribution](/pages/dashboard/persona-based-attribution/#attribution-windows).
+Learn more about account level attribution windows in [People-Based Attribution](/pages/dashboard/people-based-attribution/#attribution-windows).
 
 #### Link Level Attribution Windows
 
