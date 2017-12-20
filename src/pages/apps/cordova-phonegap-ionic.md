@@ -207,10 +207,6 @@
             // read deep link data on click
             alert('Deep Link Data: ' + JSON.stringify(data))
           }
-        }).then(function(res) {
-          alert('Response: ' + JSON.stringify(res))
-        }).catch(function(err) {
-          alert('Error: ' + JSON.stringify(err))
         })
         ```
 
