@@ -24,7 +24,7 @@ There are a few products and features unsupported by this new method of tracking
 
 Tracking these events will propagate to Ad Networks, like Criteo. For example, if you track the purchase event through Branch, this will map to Criteo's Purchase event.
 
-These events will also have analytics, so you can understand their performance, using the new [Persona-Based Attribution](/pages/dashboard/persona-based-attribution/).
+These events will also have analytics, so you can understand their performance, using the new [People-Based Attribution](/pages/dashboard/people-based-attribution/).
 
 ### Limitations
 
@@ -33,7 +33,7 @@ As of now, any calls made through these SDK methods will **not**:
 - Appear in your .csv exports or Liveview.
 - Be settable events for Webhooks or sent via Data Integrations.
 - Be events you can target a Journey with.
-- See Analytics on the old Analytics pipeline. Read more about our new [Persona-Based Attribution](/pages/dashboard/persona-based-attribution/).
+- See Analytics on the old Analytics pipeline. Read more about our new [People-Based Attribution](/pages/dashboard/people-based-attribution/).
 
 ## Available Events
 

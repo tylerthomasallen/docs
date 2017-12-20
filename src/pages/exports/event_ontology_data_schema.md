@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Persona-Based Attribution](/pages/dashboard/persona-based-attribution/) relies on a new, unified data format. We refer to this as Branch's Event Ontology.  This unified format is shared across all Branch products:
+[People-Based Attribution](/pages/dashboard/people-based-attribution/) relies on a new, unified data format. We refer to this as Branch's Event Ontology.  This unified format is shared across all Branch products:
 
 - Dashboard
 - [Data Feeds](/pages/exports/data-feeds/):
@@ -10,7 +10,7 @@
     - [Data Integrations](/pages/integrations/data-integrations/)
     - [Data Export API](/pages/exports/api-v3/)
 
-Previously, we had different formats for Webhooks vs Data Integrations vs Exports. With the release of Persona-Based Attribution, we have reconciled these differences.
+Previously, we had different formats for Webhooks vs Data Integrations vs Exports. With the release of People-Based Attribution, we have reconciled these differences.
 
 ## Events Included
 
