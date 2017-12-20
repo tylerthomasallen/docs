@@ -24,16 +24,16 @@ There are a few products and features unsupported by this new method of tracking
 
 Tracking these events will propagate to Ad Networks, like Criteo. For example, if you track the purchase event through Branch, this will map to Criteo's Purchase event.
 
-These events will also have analytics, so you can understand their performance, using the new Analytics Platform. Read more about the new Analytics Platform [here](https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
+These events will also have analytics, so you can understand their performance, using the new [People-Based Attribution](/pages/dashboard/people-based-attribution/).
 
 ### Limitations
 
 As of now, any calls made through these SDK methods will **not**:
 
-- Appear in your .csv exports or Liveview.
+- Appear in Liveview.
 - Be settable events for Webhooks or sent via Data Integrations.
 - Be events you can target a Journey with.
-- See Analytics on the old Analytics pipeline. Read more about our new [Analytics](https://docs.branch.io/pages/deep-linked-ads/branch-universal-ads/#view-your-data-with-unified-analytics).
+- See Analytics on the old Analytics pipeline. Read more about our new [People-Based Attribution](/pages/dashboard/people-based-attribution/).
 
 ## Available Events
 
@@ -63,6 +63,9 @@ Use the table below to quickly find the event you want to track.
 Commerce events describe events that relate to a customer interacting with your products and converting by purchasing. These are events like adding payment information, purchasing, viewing products, etc. If you have enabled Branch Universal Ads, these events will automatically map to certain Ad Partners. Start by creating a Branch Universal Object for each product that is associated with the event you're tracking.
 
 From there, add the Branch universal object to the tracked event, and use the right predefined constant. For example, the code snippet below is to track when a user adds to cart, but simply replace that constant with another constant to track a different event.
+
+**A note on currency and exchange rates:**
+If you track commerce events without a currency, we assume they are USD. If you track commerce events with a currency other than USD, we will convert the `revenue` specified to USD, using a recent exchange rate. This allows you to easily visualize revenue on the Dashboard, across many countries and currencies, because all units are USD. The exchange rate is pulled from [openexchangerates.org](https://openexchangerates.org) regularly, and is generally within an hour of the realtime exchange rate. If you view raw Branch events via either Webhooks or Exports, you can see the exchange rate used.
 
 ### iOS
 

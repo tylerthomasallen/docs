@@ -186,7 +186,7 @@
         | --- | --- | ---
         | $uri_redirect_mode | **0** | This is the default value that yields the standard behavior where we don't try to open the app if the user can see an error.
         | $uri_redirect_mode | **1** | Smart redirect mode. Same behavior as 0 until we know the user has the app installed through Branch persona data. In that case, force URI schemes to open the app.
-        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an [error message](https://i.imgur.com/3eoGyeC.png) when the app is not installed.
+        | $uri_redirect_mode | **2** | Forceful redirect mode. Always try to force open the app, even if it risks showing an [error message](/img/pages/links/uri-error-message.png) when the app is not installed.
 
     - Supported Apps
 
@@ -401,3 +401,7 @@
 - ### View deep link data
     - Add `?debug=1` to the end of your deep link
     - For example: https://example.app.link/aQXXDHaxKF?debug=1
+    
+- ### View deep link stats
+    - Add `?stats=1` to the end of your deep link
+    - For example: https://example.app.link/aQXXDHaxKF?stats=1

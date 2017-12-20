@@ -197,7 +197,7 @@
             "channel": "twitter",
             "data":{
               "name":"alex",
-              "user_id":"12346",
+              "user_id":"12346"
             }
           }'
           ```

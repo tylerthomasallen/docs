@@ -1,5 +1,8 @@
 ## Overview
 
+!!! note
+    You are viewing docs for our legacy Webhooks system. We recommend viewing docs on the newer [Webhooks](/pages/exports/ua-webhooks/) offering, which is powered by [People-Based Attribution](/pages/dashboard/people-based-attribution).
+
 Branch’s webhook system allows you to receive install and down funnel event data from us as it occurs, for install attribution or conversion funnels in your own database. You simply need to specify a URL for us to send all this data to.
 
 The webhook system is very powerful and customizable. You can register to only receive notifications for specific events, as well as specific subsections of events, filtered by link data, user data or event properties. You can specify to only receive an event for the first time a user completes it, or every time. You can also specify to only receive events in the case of referrals.
