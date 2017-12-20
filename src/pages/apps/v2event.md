@@ -30,7 +30,7 @@ These events will also have analytics, so you can understand their performance, 
 
 As of now, any calls made through these SDK methods will **not**:
 
-- Appear in your .csv exports or Liveview.
+- Appear in Liveview.
 - Be settable events for Webhooks or sent via Data Integrations.
 - Be events you can target a Journey with.
 - See Analytics on the old Analytics pipeline. Read more about our new [People-Based Attribution](/pages/dashboard/people-based-attribution/).
