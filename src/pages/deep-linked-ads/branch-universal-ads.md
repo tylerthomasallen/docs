@@ -9,6 +9,10 @@ Branch Universal Ads help you drive results for web and app campaigns.
 !!! note "Paid Product"
     Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
+### Ad Partners
+
+Here is a list of integrated [Ad Partners](/pages/ad-networks/ad-networks-list).
+
 ## Setup
 
 ### Prerequisites
