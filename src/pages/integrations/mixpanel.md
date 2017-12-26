@@ -22,7 +22,6 @@ Additionally, individual events, such as those seen in Live View or visible when
 
 Branch events are similar to Mixpanel events in that they can be used in your existing funnels and tracked on the various pages and dashboards. However, unlike normal events, Branch events contain invaluable information about how users ended up in your app in the first place.
 
-
 ## Setup
 
 ### Prerequisites
@@ -39,16 +38,16 @@ For the basic, codeless integration: find your Mixpanel Token and enter it into 
 
 ### Configure Branch Dashboard
 
+{! ingredients/data-integrations/enable-data-integrations.md !}
+
 1. On the Branch Dashboard (dashboard.branch.io), navigate to the [Integrations page](https://dashboard.branch.io/integrations).
-1. Locate Mixpanel and choose **Enable**.
-  * If you have not yet entered billing information, please do so now.
-1. Enter your Mixpanel Token and hit **Save**.
+1. Search for Mixpanel and click on the tile.
+1. Enter your Mixpanel Token and hit **Enable**.
 
 ![image](/img/pages/integrations/mixpanel/enable-mixpanel-integration.png)
 
 !!! warning "Please test integration!"
     Branch is not responsible for inaccurate API keys.
-
 
 ### Pass Mixpanel Distinct ID
 

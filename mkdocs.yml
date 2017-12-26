@@ -188,6 +188,8 @@ pages:
         - Kochava: pages/integrations/kochava.md
         - Localytics: pages/integrations/localytics.md
         - Mixpanel: pages/integrations/mixpanel.md
+        - mParticle: pages/integrations/mparticle.md
+        - Segment: pages/integrations/segment.md
         - Tune: pages/integrations/tune.md
       - Data Export API: pages/exports/api-v3.md
       - Webhooks: pages/exports/ua-webhooks.md
