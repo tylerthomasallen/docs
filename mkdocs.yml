@@ -180,7 +180,7 @@ pages:
         - Adjust: pages/integrations/adjust.md
         - Amplitude: pages/integrations/amplitude.md
         - AppMetrica: pages/integrations/appmetrica.md
-        - Appboy: pages/integrations/appboy.md
+        - Braze: pages/integrations/appboy.md
         - Appsflyer: pages/integrations/appsflyer.md
         - CleverTap: pages/integrations/clevertap.md
         - Fabric Answers: pages/integrations/fabric-answers.md
