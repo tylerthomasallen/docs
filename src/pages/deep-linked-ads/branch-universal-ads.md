@@ -9,6 +9,10 @@ Branch Universal Ads help you drive results for web and app campaigns.
 !!! note "Paid Product"
     Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
+### Ad Partners
+
+Here is a list of integrated [Ad Partners](/pages/ad-networks/ad-networks-list).
+
 ## Setup
 
 ### Prerequisites
@@ -56,7 +60,7 @@ Once you've enabled an ad partner, it's time to create a tracking link.
     It's easier to slice your data in our analytics platform if you properly assign analytics parameters to your link. _Channels_ generally correspond to ad networks, and _Campaigns_ correspond to marketing initiatives that you're launching. For example: _Channel_: "YouTube", _Campaign_: "Summer 2017 Shoe Discounts."
 
 
-### View your data with Unified Analytics
+### View your data with People-Based Attribution
 
 The [Ads Analytics Page](https://dashboard.branch.io/ads/analytics) on the Branch dashboard shows the performance of your ad campaigns _across both web and app_. You can view performance over time, including purchase and other custom events.
 
@@ -67,6 +71,8 @@ For example, if a customer clicks a Branch email link, and then clicks an ad, in
 If the customer then goes on to purchase an item on web within the attribution window, Branch will also attribute the web purchase to the same ad link, connecting the web and app actions taken by a single user for a more accurate view of your marketing channels and customer behavior.
 
 ![image](/img/pages/deep-linked-ads/branch-universal-ads/install-by-secondary-pub.png)
+
+You can read more about [People-Based Attribution here](/pages/dashboard/people-based-attribution/).
 
 ## Advanced
 
@@ -103,9 +109,9 @@ For customer experience and data accuracy, please do not set your deep linking w
 
 You can edit your attribution windows under Link Settings > Attribution Windows. View through attribution is not yet available, but will be coming soon.
 
-![image](/img/pages/dashboard/unified-analytics/attribution-windows.png)
+![image](/img/pages/dashboard/people-based-attribution/attribution-windows.png)
 
-Learn more about account level attribution windows in [Unified Analytics](/pages/dashboard/unified-analytics/#attribution-windows).
+Learn more about account level attribution windows in [People-Based Attribution](/pages/dashboard/people-based-attribution/#attribution-windows).
 
 #### Link Level Attribution Windows
 

@@ -183,3 +183,4 @@
     - If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `Registered Domains` tab, and not the `Hosted zones` section
     - You cannot use your main website domain for hosting Branch links
     - Do not include `www` when adding your custom link domain
+    - If you have CAA records set for your domain, add letsencrypt.org to the list
