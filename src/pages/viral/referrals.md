@@ -2,7 +2,6 @@
 
 Branch allows you to reward users with credits, track those credits, and redeem them when appropriate. It is a unit-less currency available to your users without you having to build a system from scratch.
 
-<!-- [![image](/img/pages/viral/referral-programs/referral-video.png)](https://www.youtube.com/watch?v=8WzGpKS_ymA)\ -->
 <p align="center">
   <a href="https://www.youtube.com/watch?v=8WzGpKS_ymA"><img class="branch-image-override" src="/img/pages/viral/referral-programs/referral-video.png"/></a>
 </p>
