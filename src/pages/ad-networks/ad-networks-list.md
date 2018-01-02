@@ -1,4 +1,4 @@
-### Ads Networks List
+### Ad Networks List
 |  | Partner |
 | :---: | :--- | 
 ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/a4g-logo-1493239709871.png) | **A4G**
