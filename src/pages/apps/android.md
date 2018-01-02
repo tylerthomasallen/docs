@@ -234,6 +234,9 @@
         }
         ```
 
+    !!! warning "Only initialize Branch in the Launcher activity"
+        The app will open through the Launcher activity, where Branch will initialize and retrieve the deep link data from the link click.
+
 - ### Load Branch
 
     - Add Branch to your `CustomApplicationClass.java`
@@ -292,6 +295,9 @@
     - Paste deep link in `Google Hangouts`
 
     - Click on the deep link to open your app
+
+    !!! tip "Testing deferred deep linking"
+    	Deferred deep linking is simply deep linking into an app that is not yet installed. Once the app is installed, the context is preserved and the user's first app-open will have the deep link data from the original Branch link. To test this, uninstall the app from your device, click the Branch link, and manually launch the app from Xcode/Android Studio (or download from the App/Play Store if the app is live). You should be routed to the correct content within your app.
 
 ## Implement features
 
