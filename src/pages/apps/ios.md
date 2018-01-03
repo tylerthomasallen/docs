@@ -456,7 +456,7 @@
     - *Swift 3*
 
         ```swift
-        buo.userCompletedAction(BNCRegisterViewEvent)
+        buo.registerView()
         ```
 
     - *Objective-C*
