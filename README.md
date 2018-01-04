@@ -95,9 +95,11 @@
 
 - #### Navigation
     
-    - Different page `click [here](/pages/apps/ios/#configure-bundle-identifier)`
+    - Different page `click [here](/pages/apps/ios/)` (must have trailing slash)
 
-    - Same page `click [here](#configure-bundle-identifier)`
+    - Different page anchor `click [here](/pages/apps/ios/#configure-bundle-identifier)`
+
+    - Same page anchor `click [here](#configure-bundle-identifier)`
 
 - #### Tips, notes, warnings etc.
 
