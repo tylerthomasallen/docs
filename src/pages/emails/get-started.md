@@ -110,22 +110,22 @@ The following are all the possible settings you can configure for deep linking w
 
 Completing your integration requires some setup that is specific to your email service provider. Please follow the documentation for your provider:
 
-- **[Amazon SES](/pages/emails/amazon-ses)**
-- **[Braze (formerly Appboy)](/pages/emails/braze)**
-- **[Blueshift](pages/emails/blueshift)**
-- **[Bronto](/pages/emails/bronto)**
-- **[Campaign Monitor](/pages/emails/campaign-monitor)**
-- **[Epsilon](/pages/emails/epsilon)**
-- **[Kahuna](/pages/emails/kahuna)**
-- **[Leanplum](/pages/emails/leanplum)**
-- **[Mailgun](/pages/emails/mailgun)**
-- **[Mailjet](/pages/emails/mailjet)**
-- **[Mandrill](/pages/emails/mandrill)**
-- **[PostUp](/pages/emails/postup)**
-- **[Responsys](/pages/emails/responsys)**
-- **[Sailthru](/pages/emails/sailthru)**
-- **[Salesforce](/pages/emails/salesforce)**
-- **[SendGrid](/pages/emails/sendgrid)**
-- **[SparkPost](/pages/emails/sparkpost)**
-- **[Vero](/pages/emails/vero)**
-- **[Zeta](/pages/emails/zeta)**
+- **[Amazon SES](/pages/emails/amazon-ses/)**
+- **[Braze (formerly Appboy)](/pages/emails/braze/)**
+- **[Blueshift](pages/emails/blueshift/)**
+- **[Bronto](/pages/emails/bronto/)**
+- **[Campaign Monitor](/pages/emails/campaign-monitor/)**
+- **[Epsilon](/pages/emails/epsilon/)**
+- **[Kahuna](/pages/emails/kahuna/)**
+- **[Leanplum](/pages/emails/leanplum/)**
+- **[Mailgun](/pages/emails/mailgun/)**
+- **[Mailjet](/pages/emails/mailjet/)**
+- **[Mandrill](/pages/emails/mandrill/)**
+- **[PostUp](/pages/emails/postup/)**
+- **[Responsys](/pages/emails/responsys/)**
+- **[Sailthru](/pages/emails/sailthru/)**
+- **[Salesforce](/pages/emails/salesforce/)**
+- **[SendGrid](/pages/emails/sendgrid/)**
+- **[SparkPost](/pages/emails/sparkpost/)**
+- **[Vero](/pages/emails/vero/)**
+- **[Zeta](/pages/emails/zeta/)**

@@ -11,7 +11,7 @@ Branch Universal Ads help you drive results for web and app campaigns.
 
 ### Ad Partners
 
-Here is a list of integrated [Ad Partners](/pages/ad-networks/ad-networks-list).
+Here is a list of integrated [Ad Partners](/pages/ad-networks/ad-networks-list/).
 
 ## Setup
 

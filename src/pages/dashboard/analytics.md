@@ -118,7 +118,7 @@
     - ##### Tracking
         - Use the [Referral analytics](https://dashboard.branch.io/referrals/analytics)
         - Use the [LiveView export](https://dashboard.branch.io/liveview/link_clicks) to get data as a `.csv`
-        - Create a [Webhook](/pages/exports/webhooks) to send data to your server
+        - Create a [Webhook](/pages/exports/webhooks/) to send data to your server
 
     - ##### Querying
         - Query the events export the custom referral event that triggered the referral rule
