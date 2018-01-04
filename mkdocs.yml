@@ -172,8 +172,9 @@ pages:
   - Links in your emails:
     - Get Started: pages/emails/get-started.md
     - Amazon SES: pages/emails/amazon-ses.md
-    - Braze (formerly Appboy): pages/emails/braze.md
+    - Betaout: pages/emails/betaout.md
     - Blueshift: pages/emails/blueshift.md
+    - Braze (formerly Appboy): pages/emails/braze.md
     - Bronto: pages/emails/bronto.md
     - Campaign Monitor: pages/emails/campaign-monitor.md
     - Epsilon: pages/emails/epsilon.md
