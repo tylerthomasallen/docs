@@ -111,7 +111,7 @@ The following are all the possible settings you can configure for deep linking w
 Completing your integration requires some setup that is specific to your email service provider. Please follow the documentation for your provider:
 
 - **[Amazon SES](/pages/emails/amazon-ses)**
-- **[Betaout](pages/emails/betaout)**
+- **[Betaout](/pages/emails/betaout)**
 - **[Blueshift](pages/emails/blueshift)**
 - **[Braze (formerly Appboy)](/pages/emails/braze)**
 - **[Bronto](/pages/emails/bronto)**
