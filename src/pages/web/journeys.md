@@ -415,13 +415,13 @@ You can access this feature from the **Validate & Test** step or directly from t
     Imagine you want to show your users a Journey during the month of November that advertises a 25% sale if they download your app. You can set it to start at 12 AM on November 1st, and end at 12 AM on December 1st:
     
     
-    ![image](/img/pages/journeys/schedule-modal.png)
+    ![image](/img/pages/journeys/schedule-modal-new.png)
 
 !!! example "Example: Recurring Schedules"
     Imagine you have a show that airs from 9-10 PM every Sunday, and you want to encourage users to view the episode in-app during that time. You can set a start time of 9 PM on the upcoming Sunday, set a stop time of 10 PM that same day, and then set it to repeat weekly:
     
     
-    ![image](/img/pages/journeys/schedule-modal-recurring.png)
+    ![image](/img/pages/journeys/schedule-modal-recurring-new.png)
 
 #### Scheduling FAQ
 
