@@ -50,6 +50,8 @@ Finally, paste the Link IDs from earlier.
 
 All that remains is importing Branch events into AdWords. After you have set this up, wait ~ 20 minutes, and go back to the AdWords dashboard. Go to conversions -> Add -> App -> Third Party App Analytics, and import Branch specific events.
 
+Once they are imported, go back to the conversions page, and edit the conversion event. Be sure to mark "Include In Conversions" as a YES. This will let your Branch conversions appear in your tracked campaigns. 
+
 That's it! All of your campaigns with mobile conversions will be tracked in Branch's dashboard.
 
 ### Legacy (no OAuth option)
