@@ -9,44 +9,41 @@
 
 - ### Install Branch
 
-    - Install the module
+    - Option 1: Pure React Native App
 
-        - *Yarn*
-            ```bash
-            yarn add react-native-branch
+        - Install the module
+
+            - *Yarn*
+                ```bash
+                yarn add react-native-branch
+                ```
+
+            - *NPM*
+                ```bash
+                npm install --save react-native-branch
+                ```
+
+        - (Optional) Add a branch.json file to the root of your app (next to package.json).
+            You can configure the contents at any time, but it must be present when you
+            run `react-native link` in order to be automatically included in your native
+            projects. This allows you to configure certain behaviors that otherwise require
+            native code changes. See https://rnbranch.app.link/branch-json for full details
+            on the branch.json file.
+
+        - Run `react-native link react-native-branch`
+
+    - Option 2: Native iOS app with React pod
+
+        - Add these lines to your `Podfile`
+
+            ```ruby
+            pod 'react-native-branch', path: '../node_modules/react-native-branch'
+            pod 'Branch-SDK', path: '../node_modules/react-native-branch/ios'
             ```
 
-        - *NPM*
-            ```bash
-            npm install --save react-native-branch
-            ```
+        - Run `pod install` to regenerate the `Pods` project with the new dependencies. Note that the location of `node_modules` relative to your `Podfile` may vary.
 
-    - (Optional) Add a branch.json file to the root of your app (next to package.json).
-        You can configure the contents at any time, but it must be present when you
-        run `react-native link` in order to be automatically included in your native
-        projects. This allows you to configure certain behaviors that otherwise require
-        native code changes. See https://rnbranch.app.link/branch-json for full details
-        on the branch.json file.
-
-    - In a pure React Native app using `react-native link`
-
-        ```bash
-        react-native link react-native-branch
-        ```
-
-    - In a native iOS app using the `React` pod
-
-        This configuration is for native apps that include a React Native component as
-        described in the [React Native docs](https://facebook.github.io/react-native/docs/integration-with-existing-apps.html#configuring-cocoapods-dependencies).
-
-        Add these lines to your `Podfile`:
-        ```ruby
-        pod 'react-native-branch', path: '../node_modules/react-native-branch'
-        pod 'Branch-SDK', path: '../node_modules/react-native-branch/ios'
-        ```
-
-        Then run `pod install` to regenerate the `Pods` project with the new dependencies.
-        Note that the location of `node_modules` relative to your `Podfile` may vary.
+        - (Optional) Add a branch.json file to the root of your app (next to package.json). See https://rnbranch.app.link/branch-json.
 
 - ### Update from < 2.0.0
 
@@ -817,8 +814,7 @@
         **Android**
 
         Simulated installs may be enabled on Android by adding `<meta-data android:name="io.branch.sdk.TestMode" android:value="true"/>` to the `application` element of your Android manifest. Use this in a build type
-        such as `debug` or a product flavor, or be sure to remove it from your manifest before releasing to prod.
-        See https://docs.branch.io/pages/apps/android/#simulate-an-install for full details.
+        such as `debug` or a product flavor, or be sure to remove it from your manifest before releasing to prod. [Click here](/pages/apps/android/#simulate-an-install) for more details.
 
         Alternately, add `RNBranchModule.setDebug();` in your MainActivity before the call to `initSession`. Be sure to remove it
         before releasing to prod.
@@ -900,8 +896,8 @@
 
     See the troubleshooting guide for each native SDK:
 
-    - [iOS](https://docs.branch.io/pages/apps/ios/#troubleshoot-issues)
-    - [Android](https://docs.branch.io/pages/apps/android/#troubleshoot-issues)
+    - [iOS](/pages/apps/ios/#troubleshoot-issues)
+    - [Android](/pages/apps/android/#troubleshoot-issues)
 
 - ### Sample apps
 

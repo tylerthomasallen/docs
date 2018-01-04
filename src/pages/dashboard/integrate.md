@@ -36,6 +36,8 @@
             - Navigate to your `keystore file` (used to build the debug and production version of your APK file before it gets deployed)
             - Run `keytool -list -v -keystore my-release-key.keystore` to generate a fingerprint
 
+            - Example fingerprint `AA:C9:D9:A5:E9:76:3E:51:1B:FB:35:00:06:9B:56:AC:FB:A6:28:CE:F3:D6:65:38:18:E3:9C:63:94:FB:D2:C1` to add to your [Branch Dashboard](https://dashboard.branch.io/link-settings)
+
     - ##### Desktop
         - Use these settings to control the default behavior of your deep links on Desktop browsers
 
@@ -181,3 +183,4 @@
     - If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `Registered Domains` tab, and not the `Hosted zones` section
     - You cannot use your main website domain for hosting Branch links
     - Do not include `www` when adding your custom link domain
+    - If you have CAA records set for your domain, add letsencrypt.org to the list
