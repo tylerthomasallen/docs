@@ -159,13 +159,11 @@ Now, how does Branch translate this update, within the context of installs, open
 
 If we see the flag “update” sent by the SDK set to “fresh install” (this is set to an enum value of `0` in our SDK logs), then we know that the user was not updating the app. In this case, it’s either an install or a reinstall. Given this information, our backend must decide between install and reinstall. Our backend performs a lookup to our People Based Attribution database and finds whether this device, using the device identifier, ever had the app installed. If so, we count this as a re-install, instead of an install. If the app was never installed on this device, we track an install.
 
-If we see the flag “update” sent by the SDK set to “just updated” (this is an enum value of `2` in our SDK logs), then we know that the user updated the app, as opposed to freshly installing. From the example above, this event is not tracked as an install. This event is tracked as an open.
+If we see the flag “update” sent by the SDK set to “just updated” (this is an enum value of `2` in our SDK logs), then we know that the user updated the app, as opposed to freshly installing. This event is not tracked as an install. This event is tracked as an open.
 
-With the introduction and adoption of iOS 11 we recently uncovered an intermittent issue with iOS 11 install tracking. It appears that on newer versions of iOS, app installs have been inconsistently counted as opens rather than fresh installs. The logic causing this was intended to detect when apps had been installed on a device prior to the Branch SDK being integrated and to register opens instead of installs. This is described above. However, as more devices have updated to newer versions of iOS, install discrepancies have increased and we believe this logic is the cause. In response, we have removed this logic.
+With the introduction and adoption of iOS 11, we uncovered an intermittent issue with install tracking. It appears that on newer versions of the OS, app installs have been inconsistently counted as opens rather than fresh installs. The logic causing this was intended to detect when apps had been installed on a device prior to the Branch SDK being integrated and to register opens instead of installs, as described above. However, as more devices have updated to newer versions of iOS, install discrepancies have increased and we believe this logic is the cause. In response, we have removed this logic.
 
 The resultant impact for apps using Branch for over three months is that installs should increase to reflect correct numbers, starting January 5th. There should be no adverse impact. Partners who have newly integrated the Branch SDK will notice a large spike of installs when first releasing the SDK but no impact beyond that.
-
-
 
 ## FAQ
 
