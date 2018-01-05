@@ -143,6 +143,30 @@ Data Integrations now mirrors the UI of our ads flow. The data we send is also u
 
 Webhooks, like data integratons, is no longer session based. This means we will send more webhooks to you automatically. This update hasn't completed yet.
 
+## Changes to Install, Re-installs, and Opens
+
+Prior to the rollout of People-Based Attribution, Branch classified “re-installs” as opens. With People-Based Attribution, we now split out re-installs from opens. As a result, we can show you installs vs reinstalls vs opens.
+
+Our SDK uses an identifier, which we persist between app opens, to know whether the app was previously installed. This identifier is for internal use only. When an app is first installed, this identifier is not yet stored on the device. Then our SDK makes a request to our install endpoint. On our backend, Branch determines whether this is an install, a reinstall, or in some cases, an open. Then it returns this identifier. The SDK persists this identifier, and all future requests will be made to our servers with it present.
+
+Overall, how does Branch determine whether an app open is an install, reinstall, or open?
+
+When Branch first launched, every partner who integrated the Branch SDK saw Branch measure an artificially high number of installs. As an example, if a user had an app installed on their phone before without the Branch SDK, and then upgraded to a version of the app that had the Branch SDK, Branch would count this upgrade as an install, even though the user had the app previously. Branch attempted to solve for this use case.
+
+Branch introduced a field to the SDK, called “update”, which used complex, OS-specific logic. The SDK indicated, based on either OS-provided methods or traces left by the file system, whether this particular install or open was actually just an update. In other words, the app was already installed, but the user just updated what version of the app they had. If the SDK indicated that for this particular app session, the app was updated, we would not count an install, but rather an open.
+
+Now, how does Branch translate this update, within the context of installs, opens, and reinstalls?
+
+If we see the flag “update” sent by the SDK set to “fresh install” (this is set to an enum value of `0` in our SDK logs), then we know that the user was not updating the app. In this case, it’s either an install or a reinstall. Given this information, our backend must decide between install and reinstall. Our backend performs a lookup to our People Based Attribution database and finds whether this device, using the device identifier, ever had the app installed. If so, we count this as a re-install, instead of an install. If the app was never installed on this device, we track an install.
+
+If we see the flag “update” sent by the SDK set to “just updated” (this is an enum value of `2` in our SDK logs), then we know that the user updated the app, as opposed to freshly installing. From the example above, this event is not tracked as an install. This event is tracked as an open.
+
+With the introduction and adoption of iOS 11 we recently uncovered an intermittent issue with iOS 11 install tracking. It appears that on newer versions of iOS, app installs have been inconsistently counted as opens rather than fresh installs. The logic causing this was intended to detect when apps had been installed on a device prior to the Branch SDK being integrated and to register opens instead of installs. This is described above. However, as more devices have updated to newer versions of iOS, install discrepancies have increased and we believe this logic is the cause. In response, we have removed this logic.
+
+The resultant impact for apps using Branch for over three months is that installs should increase to reflect correct numbers, starting January 5th. There should be no adverse impact. Partners who have newly integrated the Branch SDK will notice a large spike of installs when first releasing the SDK but no impact beyond that.
+
+
+
 ## FAQ
 
 ### Data Speed
@@ -155,7 +179,7 @@ One thing to be aware of is that unique counts may be within a 4% window of erro
 
 ### Differing Installs
 
-As part of People-Based Attribution, your install numbers will likely not line up one to one. What this means is that if you see 200 Branch driven installs on the old Analytics Platform, it's ok to see 190 Branch driven installs (or even 210) on the same day. This is due to the way we have fundamentally changed the way we count attributions. 
+As part of People-Based Attribution, your install numbers will likely not line up one to one. What this means is that if you see 200 Branch driven installs on the old Analytics Platform, it's ok to see 190 Branch driven installs (or even 210) on the same day. This is due to the way we have fundamentally changed the way we count attributions.
 
 Some installs on the old analytics platform were actually "reinstalls", but were not counted as such, which would be one reason why installs are lower. Some campaigns will count higher installs, because they may be clicked on a variety of browsers and platforms, and Branch is able to connect those touch points to accurately count an install.
 
