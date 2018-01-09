@@ -28,7 +28,7 @@ These events will also have analytics, so you can understand their performance, 
 
 ### Limitations
 
-As of now, any calls made through these SDK methods will **not**:
+As of now, any calls made through these SDK methods will **not** yet:
 
 - Appear in Liveview.
 - Be settable events for Data Integrations.
