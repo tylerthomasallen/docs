@@ -51,6 +51,7 @@
             | Slack | App | Must configure Slack to open links with Safari | App |
             | WeChat | Fallback | Customize [WeChat fallback urls](#redirections) | Fallback | Customize [WeChat fallback urls](#redirections)
             | WhatsApp | App | `app.link` require https/http to be clickable | App | `app.link` require https/http to be clickable
+            | LINE | Fallback | *Able to force app open | App |
             | Apple Mail | App |
             | Gmail | App | | App
 
