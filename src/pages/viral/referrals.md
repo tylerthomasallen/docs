@@ -262,5 +262,5 @@ If you want to redeem credits in a custom bucket you've specified, such as `myBu
 		});
 		```
 
-!!! example "iOS Referral TestBed"
-	To get a better understanding of the overall referral flow, please check out our iOS Referral TestBed app [here](https://github.com/BranchMetrics/iOS-Testbed-Referral).
+- ### Sample app - iOS Referral TestBed
+To get a better understanding of the overall referral flow, please check out our iOS Referral TestBed app [Source code](https://github.com/BranchMetrics/iOS-Testbed-Referral).
