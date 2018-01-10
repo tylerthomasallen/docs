@@ -7,6 +7,7 @@
 ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/aai_logo_med_trans_black-1509989746768.png) | **AdAction Interactive**
 ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/origin_08da80a1e1be4275-1508530733424.png) | **Adcash**
 ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/adcolony-1513204502834.png) | **AdColony**
+![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_adikteev-1513039903349.png) | **Adikteev**
 ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-admitad-1493136873359.png) | **Admitad**
 ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Adsterra-1508532651884.png) | **Adsterra Network**
 ![image](https://cdn.branch.io/branch-assets/ad-partner-manager/affisee-1513141472946.png) | **Affise**
