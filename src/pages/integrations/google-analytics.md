@@ -33,7 +33,6 @@ For the basic, codeless integration: find your Google Analytics Tracking ID (tid
 1. Click on **Home** in the navigation bar at the top of the page. You should see your app(s), with accompanying Tracking ID.
 1. Copy the Tracking ID of whichever app you’re going to use with Branch. This is also known as the Property ID, and it is of the form UA-XXXXXX-YY (e.g. UA-000000-01). Here’s an example: ![image](/img/pages/integrations/google-analytics/tid.png)
 
-
 ### Configure the Branch Dashboard
 
 1. On the Branch Dashboard (dashboard.branch.io), navigate to the [Integrations page](https://dashboard.branch.io/integrations).
@@ -41,7 +40,7 @@ For the basic, codeless integration: find your Google Analytics Tracking ID (tid
   * If you have not yet entered billing information, please do so now.
 1. Enter your Google Analytics Tracking ID and hit **Save**
 
-![image](/img/pages/integrations/google-analytics/enable-google-analytics-integration.png)
+![image](/img/pages/integrations/google-analytics/enable-ga.png)
 
 !!! warning "Please test your integration!"
     Branch is not responsible for inaccurate API keys.
