@@ -17,3 +17,5 @@ The time zone can be set in [Account Settings](https://dashboard.branch.io/accou
 ## FAQs
 
 #### How does daylight savings impact my time zone?
+
+Your Branch data won't adjust with daylight savings. Daylight savings is actually independent of time zone. When your city follows a daylight savings change, they also change time zone. You can update your time zone if you'd like, or leave it to be a consistent time zone all year round.
