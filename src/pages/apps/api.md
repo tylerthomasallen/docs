@@ -626,6 +626,9 @@
         | bucket | `string` | The category where the credits are save to | `type` = `credit`
         | filter | `json` | This is the set of keys and values that must be contained in the event metadata for this reward to be issued |
 
+    !!! note "Please take note of the `type` parameter"
+        `type` = `credit` will create a reward rule on your dashboard, but `type` = `web_hook` will create a webhook each time the reward rule is triggered. To see the structure of the webhook callback, please test this with [RequestBin](https://requestb.in/) or a similar service.
+
 - ### Referral troubleshooting
 
     - Referral `credits` cannot go below zero
