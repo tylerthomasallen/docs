@@ -105,7 +105,7 @@ There are three possible identities you can track via this integration. Please v
 
 Here's a sample snippet showing this. **NOTE** you must set the correct key before calling *initSession*. You must also initialize the Adobe SDK before setting the request metadata in the Branch SDK.
 
-**iOS**
+**Objective-C**
 
 Inside *didFinishLaunchingWithOptions*
 
