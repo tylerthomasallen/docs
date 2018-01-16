@@ -43,6 +43,7 @@
             | Naver browser | | | App |
             | Kakao browser | | | App |
             | Opera browser | App | | App |
+            | Ghostery browser | | | Fallback | Query strings must be encoded ($ = %24)
             | Safari address bar | Fallback | [App open blocked by Apple](https://blog.branch.io/the-problem-with-safari-app-redirects/)
             | Chrome address bar | Fallback | | Fallback | Deep link data will not pass into the app
             | Firefox address bar | Fallback | | App
