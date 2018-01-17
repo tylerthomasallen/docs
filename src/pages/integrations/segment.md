@@ -2,50 +2,46 @@
 
 With a push of a button you can send your Branch data to your Segment dashboard, helping you to understand the power of Branch as an acquisition pathway, export your data to your entire suite of analytics tools and build custom audiences upon Branch data.
 
-This documentation explains how to send **Branch install events to Segment**. Segment calls this an Inbound Feed Integration. If you'd like to send Segment events to your Branch dashboard, please review the Branch/Segment SDK Kit integration documentation for [iOS](/pages/apps/Segment-ios/) and [Android](/pages/apps/Segment-android/). 
+This documentation explains how to send **Branch install events to Segment**. If you'd like to send Segment events to your Branch dashboard, please review the Branch/segment SDK Kit integration documentation for [iOS](https://github.com/BranchMetrics/Segment-Branch-iOS) and [Android](https://github.com/BranchMetrics/Segment-Branch-Android). 
 
 ### How does it work?
 
-Once the Branch SDK is integrated into an app, Branch can detect which links are leading to installs, re-opens, and users' actions. Enabling this integration and providing your Segment token will result in Branch automatically forwarding attributed installs to Segment, in the exact format Segment expects.
+Once the Branch SDK is integrated into an app, Branch can detect which links are leading to installs, re-opens, and users' actions. Enabling this integration and providing your Segment credentials will result in Branch automatically forwarding attributed events to Segment, in the exact format Segment expects.
 
 ### What events does Branch send?
 
-Branch will send **attributed installs**. Branch also sends all the data that is attached to the link that drove the attributed installs. This will allow you to analyze which campaigns, channels, etc. are helping you acquire and engage users. You can see the list of fields that we send to Segment [here](#what-branch-sends-to-Segment).
+Branch will send *attributed* **installs** and **opens**, as well as any **custom events** and **commerce events** you track with Branch. Non-referred events, clicks, web session starts, and pageviews will be excluded. Branch also sends all the data that is attached to the link that drove the referred event. This will allow you to analyze which campaigns, channels, etc. are helping you acquire and engage users. You can see the list of fields that we send to Segment [here](#what-branch-sends-to-segment).
 
 ### What does it look like?
 
-Branch events will appear as an attribution event in Segment.
+Branch events will appear as an event prepended with **branch_** in your Segment debugger.
 
-Branch attribution events are mapped as follows:
-
-Event Type = Custom Event
-Custom Event Type = attribution
-Event Name = attribution
-
-![image](/img/pages/integrations/Segment/branch-Segment.png)
+![image](/img/pages/integrations/segment/segment-debugger_1.png)
 
 Additionally, individual events, such as those seen in Live View or visible when looking at People, will have Branch link data included. Here's an example:
 
-![image](/img/pages/integrations/Segment/Segment-live-view.png)
+![image](/img/pages/integrations/segment/segment-debugger_2.png)
 
 ## Setup
 
 ### Prerequisites
-- This guide requires you to have already integrated the Branch mobile SDKs. 
+- This guide requires you to have already integrated the Branch and Segment mobile SDK(s).
 
 ### Retrieve Segment Token
 
 Find your Segment Token and enter it into the Branch Dashboard.
 
-1. Navigate to [https://app.Segment.com](https://app.Segment.com) and log into the Dashboard.
-1. In the dashboard, navigate to [Setup > Inputs](https://app.Segment.com/setup/inputs). 
-1. Click on **iOS** or **Android**.
+1. Navigate to [https://app.segment.com](https://app.segment.com/) and log into the Dashboard.
+1. In the dashboard, navigate to your desired Workspace. 
+1. In that Workspace, navigate to **Sources** and select the Source that has your app listed. Branch is not yet an independent Source, so Branch events appear within your app's Source.
 
-![image](/img/pages/integrations/Segment/Segment-settings-inputs.png)
+![image](/img/pages/integrations/segment/segment-sources.png)
+
+1. Click through to _Settings > API Keys_
+
+![image](/img/pages/integrations/segment/segment-keys.png)
 
 1. Copy your key and secret - you'll enter it into the Branch dashboard in a minute.
-
-![image](/img/pages/integrations/Segment/Segment-keys.png)
 
 
 ### Configure Branch Dashboard
@@ -56,7 +52,7 @@ Find your Segment Token and enter it into the Branch Dashboard.
 1. Search for Segment and click on the tile.
 1. Enter your Segment Token and hit **Enable**.
 
-![image](/img/pages/integrations/Segment/Segment-branch-settings.png)
+![image](/img/pages/integrations/segment/segment-branch-settings.png)
 
 !!! warning "Please test integration!"
     Branch is not responsible for inaccurate API keys.
@@ -72,7 +68,7 @@ You can find additional information about the Branch and Segment integration in 
 | Property Name | Value | Sourced from | Example | Req
 | --- | --- | --- | --- | --- | ---
 | event | Branch event | event name | [Branch] install | Y
-| properties.distinct_id | Unique ID for device/user | [see section below](#why-we-recommend-passing-Segment-distinct-id) | AEBE52E7-03EE-455A-B3C4-E57283966239 | N
+| properties.distinct_id | Unique ID for device/user | [see section below](#why-we-recommend-passing-segment-distinct-id) | AEBE52E7-03EE-455A-B3C4-E57283966239 | N
 | properties.token | Segment Token | Branch Dashboard | eed14a8aaa8c8ef777b8e9cb30826399 | Y
 | properties.time | Event creation date | event | 1461878903 | N
 | properties.ANY-KEY (many) | The value associated with the key | event metadata or referring link data | ~channel: facebook | N
@@ -108,10 +104,10 @@ The User then gets placed into a drip email campaign, targeted for re-engagement
 
 The referred event associated with 5678 is not associated with 1234 / "User A".
 
-In order for any additional events on this device to be associated with "User A", the app should invoke the one line of code as recommended in the section [Pass Segment Distinct ID](#why-we-recommend-passing-Segment-distinct-id). Example:
+In order for any additional events on this device to be associated with "User A", the app should invoke the one line of code as recommended in the section [Pass Segment Distinct ID](#why-we-recommend-passing-segment-distinct-id). Example:
 
 ```objc
 [[Branch getInstance] setRequestMetadataKey:@"$Segment_distinct_id" value:@"User A"];
 ```
 
-If there are ever workarounds for this, we will update this guide and notify our partners accordingly. [Here is more information](https://Segment.com/help/questions/articles/how-do-i-use-alias-and-identify) on how Segment manages identities.
+If there are ever workarounds for this, we will update this guide and notify our partners accordingly. [Here is more information](https://segment.com/help/questions/articles/how-do-i-use-alias-and-identify) on how Segment manages identities.
