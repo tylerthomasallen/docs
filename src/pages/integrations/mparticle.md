@@ -29,7 +29,7 @@ For information on how to test your integration and see more detailed data, plea
 ## Setup
 
 ### Prerequisites
-- This guide requires you to have already integrated the Branch mobile SDKs. 
+- This guide requires you to have already integrated the Branch and mParticle mobile SDK(s). 
 
 ### Retrieve mParticle Token
 
@@ -56,8 +56,8 @@ Find your mParticle Token and enter it into the Branch Dashboard.
 
     ![image](/img/pages/integrations/mparticle/mparticle-branch-settings.png)
 
-!!! warning "Please test integration!"
-    Branch is not responsible for inaccurate API keys.
+    !!! warning "Please test integration!"
+        Branch is not responsible for inaccurate API keys.
 
 **Additional mParticle Resources:**
 
@@ -69,12 +69,11 @@ You can find additional information about the Branch and mParticle integration i
 
 | Property Name | Value | Sourced from | Example
 | --- | --- | --- | --- | --- | ---
-| event_name | "attribution" | _harcoded_ | "attribution"
-| custom_event_type | "attribution" | _harcoded_ | "attribution"
+| event_name | "attribution" | _hardcoded_ | "attribution"
+| custom_event_type | "attribution" | _hardcoded_ | "attribution"
 | event_id | Unique ID for the event | Branch install event ID | 469939270182891107
 | custom_attributes | Branch Link Data Dictionary | Last Attributed Touch Data for the link to which the install was attributed | "campaign": "mParticle test", "channel": "Slack"
 | timestamp_unixtime_ms | timestamp of the event in ms | event | 1513280479654
-| device_info | Device Data, like OS Version and country | Branch User Data for the device | "os_version": "10.0","device_country": "US"
 | device_info | Device Data, like OS Version and country | Branch User Data for the device | "os_version": "10.0","device_country": "US"
 | user_identities | mParticle customer ID (mostly empty) | mParticle customer ID for the user | myuser@user.com
 | application_info | App information like package name | Branch SDK/App Details | "application_name": "Branch-3rdParty-SDK-Testbed","application_version": "1.2.0"
