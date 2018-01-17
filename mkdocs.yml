@@ -217,5 +217,6 @@ pages:
     - Legacy Webhooks: pages/exports/webhooks.md
     - Event Ontology: pages/exports/event_ontology_data_schema.md
     - New Data Integrations: pages/integrations/faq.md
-
     - Ad Networks List: pages/ad-networks/ad-networks-list.md
+    - Query API: pages/exports/query-api.md
+    - Query Recipe Book: pages/exports/query-recipe-book.md
