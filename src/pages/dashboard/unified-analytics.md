@@ -175,6 +175,8 @@ This new People-Based Analytics platform introduces a slight delay compared to t
 
 One thing to be aware of is that unique counts may be within a 4% window of error across the dashboard. For example, if you have 100 total clicks, and 90 were truly unique, it's possible that the dashboard could report within 4% of that 90 number. If you want true uniques, you can export raw data and de-dupe across events.
 
+One consequence of this is that if you compare by different dimensions and sum the results, the total may not add up. As an example, if you compare all attributed installs by campaign and by channel (careful: be sure to include where the install is attributed and campaign/channel is null), then the totals may not line up. They should be nearly identical, varying *at most* by 4%. 
+
 ### Differing Installs
 
 As part of People-Based Attribution, your install numbers will likely not line up one to one. What this means is that if you see 200 Branch driven installs on the old Analytics Platform, it's ok to see 190 Branch driven installs (or even 210) on the same day. This is due to the way we have fundamentally changed the way we count attributions.
