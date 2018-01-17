@@ -101,7 +101,6 @@ pages:
   - Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
-    - Adobe AIR: pages/apps/adobe-air.md
     - Cordova PhoneGap Ionic: pages/apps/cordova-phonegap-ionic.md
     - mParticle Android: pages/apps/mparticle-android.md
     - mParticle iOS: pages/apps/mparticle-ios.md

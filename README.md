@@ -111,7 +111,7 @@
 
     - `Complete [Integrate your app](#dialog-code)`
 
-    - `ios`, `android`, `adobe`, `cordova`, `mparticleAndroid`, `mparticleIos`, `titanium`, `reactNative`, `unity`, `xamarin`
+    - `ios`, `android`, `cordova`, `mparticleAndroid`, `mparticleIos`, `titanium`, `reactNative`, `unity`, `xamarin`
 
 - #### Images
 
