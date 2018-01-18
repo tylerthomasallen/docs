@@ -174,6 +174,9 @@
     - Long press on the deep link (not 3D Touch)
     - Click `Open in "APP_NAME"` to open your app ([example](/img/pages/apps/ios-notes.png))
 
+    !!! tip "Testing deferred deep linking"
+        Deferred deep linking is simply deep linking into an app that is not yet installed. Once the app is installed, the context is preserved and the user's first app-open will have the deep link data from the original Branch link. To test this, uninstall the app from your device, click the Branch link, and manually launch the app from Xcode. You should be routed to the correct content within your app.
+
 ## Implement features
 
 - ### Create content reference
@@ -453,7 +456,7 @@
     - *Swift 3*
 
         ```swift
-        buo.userCompletedAction(BNCRegisterViewEvent)
+        buo.registerView()
         ```
 
     - *Objective-C*

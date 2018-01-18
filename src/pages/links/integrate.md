@@ -43,6 +43,7 @@
             | Naver browser | | | App |
             | Kakao browser | | | App |
             | Opera browser | App | | App |
+            | Ghostery browser | App | | Fallback | Query strings must be encoded ($ = %24)
             | Safari address bar | Fallback | [App open blocked by Apple](https://blog.branch.io/the-problem-with-safari-app-redirects/)
             | Chrome address bar | Fallback | | Fallback | Deep link data will not pass into the app
             | Firefox address bar | Fallback | | App
@@ -51,6 +52,7 @@
             | Slack | App | Must configure Slack to open links with Safari | App |
             | WeChat | Fallback | Customize [WeChat fallback urls](#redirections) | Fallback | Customize [WeChat fallback urls](#redirections)
             | WhatsApp | App | `app.link` require https/http to be clickable | App | `app.link` require https/http to be clickable
+            | LINE | Fallback | *Able to force app open | App |
             | Apple Mail | App |
             | Gmail | App | | App
 
@@ -221,7 +223,7 @@
         | $publicly_indexable | `1` | Cannot modify here. Needs to be set by the Branch Universal Object
         | $keywords | | Keywords for which this content should be discovered by. Just assign an array of strings with the keywords you'd like to use
         | $canonical_identifier | | This is the unique identifier for content that will help Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities
-        | $exp_date | `0` | The date when the content will not longer be available or valid. The value must be an epoch time stamp in milliseconds (e.g. `1512000420`) within the Branch Universal Object. The click will be attributed, but the install/open will not be
+        | $exp_date | `0` | The date when the content will not longer be available or valid. The value must be an epoch timestamp in milliseconds (e.g. `1512000420`) within the Branch Universal Object. The click will be attributed, but the install/open will not be
         | $content_type | | This is a label for the type of content present. Apple recommends that you use uniform type identifier as described here
 
 - ### Deepview
@@ -306,7 +308,7 @@
         - Do
             - Set the `canonicalIdentifier` to a unique, de-duped value across instances of the app
             - Ensure that the `title`, `contentDescription` and `imageUrl` properly represent the object
-            - Initialize the Branch Universal Object and call userCompletedAction with the `BranchEvent.VIEW` on page load
+            - Initialize the Branch Universal Object and call userCompletedAction with the `BranchEvent.VIEW` (`[buo registerView]` for objective-C and `buo.registerView()` for swift) on page load
             - Call showShareSheet and createShortLink later in the life cycle, when the user takes an action that needs a link
             - Call the additional object events (purchase, share completed, etc) when the corresponding user action is taken
         - Do not

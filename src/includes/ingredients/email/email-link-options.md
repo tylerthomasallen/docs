@@ -4,7 +4,7 @@ Be sure to add `"$3p":"e_xx"` to the deep link data of any links you use in emai
 
 #### Create email links via API without changing your email templates
 
-To create email links via API, please use the instructions on how to [create links via API](/getting-started/creating-links/other-ways/#http-api), but include the following key value pairs in your call:
+To create email links via API, please use the instructions on how to [create links via API](/pages/apps/api/#link-create), but include the following key value pairs in your call:
 
 1. `"$3p":"e_xx"` This is required for Universal Link and click tracking functionality.
 1. `"$original_url":"{{your web url URI encoded}}"` For each piece of content, include a URI encoded version of your content's web URL. You can also add deep link data as query parameters on that web URL. This ensures accurate Content Analytics reporting. 

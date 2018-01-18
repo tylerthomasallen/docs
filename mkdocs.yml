@@ -6,7 +6,7 @@ site_url: 'https://docs.branch.io'
 repo_name: 'Branch documentation'
 repo_url: 'https://github.com/branchmetrics/docs'
 edit_uri: 'edit/master/src/'
-copyright: 'Copyright &copy; 2017 <a href="https://branch.io">Branch</a>'
+copyright: 'Copyright &copy; 2018 <a href="https://branch.io">Branch</a>'
 site_favicon: img/favicon-96x96.png
 
 # Files
@@ -121,6 +121,7 @@ pages:
   - Create deep links: pages/links/integrate.md
   - Track analytics:
     - Dashboard analytics: pages/dashboard/analytics.md
+    - New Dashboard Analytics: pages/dashboard/unified-analytics.md
     - Time zone support: pages/dashboard/timezone.md
   - Links on your website:
     - Deepviews: pages/web/deep-views.md
@@ -139,8 +140,9 @@ pages:
   - Links in your emails:
     - Get Started: pages/emails/get-started.md
     - Amazon SES: pages/emails/amazon-ses.md
-    - Braze (formerly Appboy): pages/emails/braze.md
+    - Betaout: pages/emails/betaout.md
     - Blueshift: pages/emails/blueshift.md
+    - Braze (formerly Appboy): pages/emails/braze.md
     - Bronto: pages/emails/bronto.md
     - Campaign Monitor: pages/emails/campaign-monitor.md
     - Epsilon: pages/emails/epsilon.md
@@ -217,5 +219,6 @@ pages:
     - Legacy Webhooks: pages/exports/webhooks.md
     - Event Ontology: pages/exports/event_ontology_data_schema.md
     - New Data Integrations: pages/integrations/faq.md
-
     - Ad Networks List: pages/ad-networks/ad-networks-list.md
+    - Query API: pages/exports/query-api.md
+    - Query Recipe Book: pages/exports/query-recipe-book.md

@@ -2,7 +2,7 @@
 
 Branch’s new webhook system for People-Based Attribution allows you to export install and down-funnel event data as it occurs. You can import this data into your internal systems for analysis. You simply need to specify a URL for the POST or GET requests.
 
-If you are looking for postback integrations for ad networks, please visit our [Universal Ads documentation](/pages/deep-linked-ads/universal-ads). For pre-configured integrations into popular analytics tools, please visit our [Data Integrations documentation](/pages/integrations/amplitude/).
+If you are looking for postback integrations for ad networks, please visit our [Universal Ads documentation](/pages/deep-linked-ads/universal-ads/). For pre-configured integrations into popular analytics tools, please visit our [Data Integrations documentation](/pages/integrations/amplitude/).
 
 The webhook system is highly customizable. You can register to only receive notifications for specific events, as well as specific subsections of events, filtered by link data, user data or event properties.
 
@@ -11,7 +11,7 @@ Our new webhook infrastructure supports for all Branch events. The data is forma
 !!! note "Data Feeds is a premium solution"
     The Webhooks are included in Branch’s [Data Feeds](/pages/exports/data-feeds/) offering, which can be purchased according to Branch’s [pricing schedule](https://branch.io/pricing/){:target="\_blank"}, and is available at no additional charge to customers who are on MAU plans for [Journeys](https://branch.io/journeys/){:target="\_blank"}, [Deep Linked Email](https://branch.io/email/){:target="\_blank"}, or [Universal Ads](https://branch.io/attribution/){:target="\_blank"}. Without Data Feeds, you can still export Branch data in CSV form directly from the Branch dashboard via [Sources](https://dashboard.branch.io/sources){:target="\_blank"} or [CSV Exports](https://dashboard.branch.io/data-import-export/csv-exports){:target="\_blank"}.
 
-    **If you are looking for legacy webhooks**, please see [these docs](/pages/exports/webhooks).
+    **If you are looking for legacy webhooks**, please see [these docs](/pages/exports/webhooks/).
 
 ## Setup
 

@@ -1,5 +1,8 @@
 ## Integrate Branch
 
+!!! warning "Inconsistent Universal links behavior on iOS 11.2"
+    After updating a device to iOS 11.2, we found that the app's AASA file is no longer downloaded reliably onto your user’s device after an app install. As a result, clicking on Universal links will no longer open the app consistenly. You can set [forced uri redirect mode](/pages/links/integrate/#forced-redirections) on your Branch links to open the app with URI schemes. View details of the issue on the [Apple Bug report](http://www.openradar.me/radar?id=4999496467480576).
+
 - ### Configure Branch
 
     - Complete your [Branch Dashboard](https://dashboard.branch.io/settings/link)
@@ -273,9 +276,7 @@
           $match_duration: 2000,
           custom_string: 'data',
           custom_integer: Date.now(),
-          custom_boolean: true,
-          custom_array: [1, 2, 3, 4, 5],
-          custom_object: { 'random': 'dictionary' }
+          custom_boolean: true
         }
 
         branchUniversalObj.generateShortUrl(analytics, properties).then(function (res) {
@@ -308,9 +309,7 @@
           $desktop_url: 'http://www.example.com/desktop',
           custom_string: 'data',
           custom_integer: Date.now(),
-          custom_boolean: true,
-          custom_array: [1, 2, 3, 4, 5],
-          custom_object: { 'random': 'dictionary' }
+          custom_boolean: true
         }
 
         var message = 'Check out this link'

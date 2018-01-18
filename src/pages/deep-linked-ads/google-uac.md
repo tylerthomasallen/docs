@@ -93,7 +93,7 @@ Set up Google as an Ad Partner and conversion tracking from Adwords on the Branc
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/adwords-analytics-tags.png)
 
 
-#### Configure an Add
+#### Configure an Ad
 
 To setup a Universal App Campaign we will place our unique Branch Ad link into a Adwords Conversion Postback setting. Adwords campaign documentation is available **[here](https://support.google.com/adwords/answer/6247380?hl=en){:target="_blank"}**.
 
