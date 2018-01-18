@@ -29,7 +29,8 @@ For information on how to test your integration and see more detailed data, plea
 ## Setup
 
 ### Prerequisites
-- This guide requires you to have already integrated the Branch and mParticle mobile SDK(s). 
+- This guide requires you to have already integrated the Branch and mParticle mobile SDK(s).
+- This guide requires you to have the [AdSupportFramework](https://docs.branch.io/pages/apps/ios-launch/#submitting-to-the-app-store) on iOS and [Google Play Services library] (https://docs.branch.io/pages/apps/android-launch/#submitting-to-the-play-store) on Android.
 
 ### Retrieve mParticle Token
 
