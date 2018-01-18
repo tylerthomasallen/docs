@@ -181,7 +181,7 @@ pages:
         - Adjust: pages/integrations/adjust.md
         - Amplitude: pages/integrations/amplitude.md
         - AppMetrica: pages/integrations/appmetrica.md
-        - Appboy: pages/integrations/appboy.md
+        - Braze: pages/integrations/appboy.md
         - Appsflyer: pages/integrations/appsflyer.md
         - CleverTap: pages/integrations/clevertap.md
         - Fabric Answers: pages/integrations/fabric-answers.md
@@ -189,6 +189,8 @@ pages:
         - Kochava: pages/integrations/kochava.md
         - Localytics: pages/integrations/localytics.md
         - Mixpanel: pages/integrations/mixpanel.md
+        - mParticle: pages/integrations/mparticle.md
+        - Segment: pages/integrations/segment.md
         - Tune: pages/integrations/tune.md
       - Data Export API: pages/exports/api-v3.md
       - Webhooks: pages/exports/ua-webhooks.md

@@ -8,14 +8,17 @@ We currently integrate with the following partners:
 - [Adjust](/pages/integrations/adjust/)
 - [Amplitude](/pages/integrations/amplitude/)
 - [AppMetrica](/pages/integrations/appmetrica/)
-- [Appboy](/pages/integrations/appboy/)
 - [Appsflyer](/pages/integrations/appsflyer/)
+- [Braze](/pages/integrations/braze/)
 - [CleverTap](/pages/integrations/clevertap/)
+- [Convertro](/pages/integrations/convertro/)
 - [Fabric Answers](/pages/integrations/fabric-answers/)
 - [Google Analytics](/pages/integrations/google-analytics/)
 - [Kochava](/pages/integrations/kochava/)
 - [Localytics](/pages/integrations/localytics/)
 - [Mixpanel](/pages/integrations/mixpanel/)
+- [mParticle](/pages/integrations/mparticle/)
+- [Segment](/pages/integrations/segment/)
 - [Tune](/pages/integrations/tune/)
 
 !!! note "Data Feeds is a premium solution"
