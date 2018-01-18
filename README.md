@@ -27,12 +27,6 @@
 
 ## Environment
 
-- #### Dependencies
-
-    ```bash
-    sudo chmod -R 755 /usr/local/bin
-    ```
-
 - #### Code
 
     ```bash
@@ -40,12 +34,12 @@
     cd docs
     ```
 
-- #### Extensions
+- #### Dependencies
 
     ```bash
-    pip install --upgrade pip
-    pip install --editable lib/mkdocs
-    pip install pygments pymdown-extensions markdown-include mkdocs-material
+    sudo pip install --upgrade pip
+    sudo pip install --editable lib/mkdocs
+    sudo pip install pygments pymdown-extensions markdown-include mkdocs-material
     ```
 
 - #### Develop
