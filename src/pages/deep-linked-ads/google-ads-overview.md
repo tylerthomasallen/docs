@@ -50,7 +50,7 @@ Finally, paste the Link IDs from earlier.
 
 All that remains is importing Branch events into AdWords. After you have set this up, wait ~ 20 minutes, and go back to the AdWords dashboard. Go to conversions -> Add -> App -> Third Party App Analytics, and import Branch specific events.
 
-Once they are imported, go back to the conversions page, and edit the conversion event. Be sure to mark "Include In Conversions" as a YES. This will let your Branch conversions appear in your tracked campaigns. 
+Once they are imported, go back to the conversions page, and edit the conversion event. Be sure to mark "Include In Conversions" as a YES. This will let your Branch conversions appear in your tracked campaigns.
 
 That's it! All of your campaigns with mobile conversions will be tracked in Branch's dashboard.
 
@@ -123,6 +123,7 @@ Display Network | Engage with your mobile app | **[link](/pages/deep-linked-ads/
 Display Network | Others (Visit your website, Influence, etc.)  | **[link](/pages/deep-linked-ads/google-xplatform-display-ads/#overview)** | Cross-platform Display
 Video | Mobile App Installs | **[link](/pages/deep-linked-ads/google-video-ads/#video-app-install-ads)** | App Only: Install
 Video | Standard | **[link](/pages/deep-linked-ads/google-video-ads/#video-standard-ads)** | Cross-platform Display
+Shopping | Web and App Purchases | **[link](/pages/deep-linked-ads/google-shopping-ads/#overview)** | Cross-platform Shopping
 Universal App Campaigns | Universal App Campaigns | **[link](/pages/deep-linked-ads/google-uac/#overview)** | App Only: Install
 
 ## Troubleshooting
