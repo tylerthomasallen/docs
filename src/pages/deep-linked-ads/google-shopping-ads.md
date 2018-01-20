@@ -1,14 +1,14 @@
 ---
 title: Google Shopping Ads
 description: A guide to using Branch in Google Shopping Ad Campaigns
-path: tree/merchant-center-feeds/src/pages/deep-linked-ads
+path: tree/master/src/pages/deep-linked-ads
 source: google-shopping-ads.md
 ---
 # Google Shopping Ads
 
 ## Overview
 
-This guide will walk through how to use Branch links in a Google Shopping Ads feed on Merchant Center.
+This guide will walk through how to use Branch links in a Google Shopping Ads feed stored in Merchant Center.
 
 This documentation supports the following Google Campaign types:
 
@@ -19,7 +19,7 @@ Shopping | Web and App Purchases | Cross Platform
 #### OS Support and Major Differences
 
 Operating System | Supported by AdWords Shopping Ads? | Key Differences
---- | --- | --- | ---
+--- | --- | ---
 iOS | Yes | Uses Branch link, must redirect to web
 Android | Yes | Uses Branch link, must redirect to web
 Web | Yes | Uses Branch link, must redirect to web
@@ -37,7 +37,7 @@ Web | Yes | Uses Branch link, must redirect to web
 
 ### Feed Creation
 
-Converting links in a Merchant Center feed can be done in 2 ways.
+Converting links in a Merchant Center feed can be done through 2 different methods.
 
 #### Automatic Method
 
@@ -47,17 +47,19 @@ Follow these steps to create a [Dynamic Product Feed](pages/deep-linked-ads/dyna
 
 If you need more customization for any reason, you can also convert your feed manually.
 
-1. Find your Branch base domain by going to the [Link Settings Page of your Branch Dashboard](https://branch.dashboard.branch.io/link-settings)
+1. Find your Branch base domain by going to the [Link Settings Page](https://branch.dashboard.branch.io/link-settings) of your Branch Dashboard.
 <img src="/img/pages/dashboard/link-domain.png" alt="Link Domain" class="three-quarters center">
 1. Take the link in the `link` column of your existing product feed, and URL encode it.
 1. Prepend the encoded link from the previous step with your Branch base domain and the following parameters:
-```3p?$3p=a_google_adwords&~advertising_partner_name=Google%20AdWords&~campaign=PLA&~campaign_id={campaignid}&~ad_set_id={adgroupid}&~keyword_text={keyword}&~placement={placement}&~channel=Google&~feature=mobile%20advertising&$original_url=```
+```3p?$3p=a_google_adwords&~advertising_partner_name=Google%20AdWords&~campaign_id={campaignid}&~ad_set_id={adgroupid}&~keyword_text={keyword}&~placement={placement}&$original_url=```
 
-For example, if your Branch base domain was `example.app.link`:
+For example, if your Branch base domain was `example.app.link`, your initial link:
+
 ```https://www.example.com/?foo=bar```
 
 Would become:
-```https://example.app.link/3p?3p?$3p=a_google_adwords&~advertising_partner_name=Google%20AdWords&~campaign=PLA&~campaign_id={campaignid}&~ad_set_id={adgroupid}&~keyword_text={keyword}&~placement={placement}&~channel=Google&~feature=mobile%20advertising&$original_url=https%3A%2F%2Fwww.example.com%2F%3Ffoo%3Dbar```
+
+```https://example.app.link/3p?3p?$3p=a_google_adwords&~advertising_partner_name=Google%20AdWords&~campaign_id={campaignid}&~ad_set_id={adgroupid}&~keyword_text={keyword}&~placement={placement}&$original_url=https%3A%2F%2Fwww.example.com%2F%3Ffoo%3Dbar```
 
 Finally, replace the column `adwords_redirect` in your feed with the resulting link (create the column if it is absent). Repeat for each row in your feed.
 
@@ -70,7 +72,7 @@ Now that you have your feed, it's time to upload it to Google Merchant Center an
 
 #### Uploading to Google Merchant Center
 
-1. In Google Merchant Center, navigate to `Products` then `Feeds.
+1. In Google Merchant Center, navigate to `Products` then `Feeds`.
 <img src="/img/pages/deep-linked-ads/google-xplatform-shopping-ads/google-merchant-center-home.png" alt="Merchant Center Home" class="three-quarters center">
 1. Click the large blue plus button to add a new feed.
 1. Follow the prompts to name your feed, select feed language, and upload or connect your feed.
@@ -81,7 +83,7 @@ Now that you have your feed, it's time to upload it to Google Merchant Center an
 1. In your Adwords dashboard, navigate to the All Campaigns page.
 <img src="/img/pages/deep-linked-ads/google-xplatform-shopping-ads/google-adwords-campaign-view.png" alt="AdWords Campaign View" class="three-quarters center">
 1. Click the red campaign button, and create a new Shopping Campaign.
-1. On the Shopping Ads Setup page, make sure the correct Merchant Identifier is selected.
+1. On the Shopping Ads Setup page, make sure the correct Merchant Identifier is selected (this should match the value in your Merchant Center Dashboard).
 <img src="/img/pages/deep-linked-ads/google-xplatform-shopping-ads/google-adwords-merchant-identifier.png" alt="AdWords Merchant Identifier" class="three-quarters center">
 1. Complete the ad configuration and name your ad group.
 1. You should see your new Campaign and Ad Group.
