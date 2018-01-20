@@ -6,9 +6,10 @@
 An HTTP API usable for programmatically querying pre-aggregated analytics. It can be used to fetch any of the same information displayed on nearly any the Branch dashboard, without accessing the Dashboard itself.
 
 An individual query is constructed from three types of parameters:
- - Authentication parameters that control the access to the data
- - Data selection keys which define which events are eligible to be counted in the results (eg, filters)
- - Result format specifiers that define which results are included in the HTTP response, and how the result is returned (eg, sorting)
+
+- Authentication parameters that control the access to the data
+- Data selection keys which define which events are eligible to be counted in the results (eg, filters)
+- Result format specifiers that define which results are included in the HTTP response, and how the result is returned (eg, sorting)
 
 An example query could look like:
 ```js
@@ -543,3 +544,9 @@ Example Results:
   }
 }
 ```
+
+## Rate Limits
+
+- 5 requests per second
+- 20 requests per minute
+- 150 requests per hour
