@@ -55,6 +55,7 @@
             | LINE | Fallback | *Able to force app open | App |
             | Apple Mail | App |
             | Gmail | App | | App
+            | Yahoo Mail | Fallback | *Able to force app open | App
 
 - ### Custom link behavior
 
