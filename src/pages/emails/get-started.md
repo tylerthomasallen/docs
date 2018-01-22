@@ -106,6 +106,17 @@ The following are all the possible settings you can configure for deep linking w
 | Open to specific web content | Route to the original URL specified in the email.
 | Open to default redirects | Route to defaults specified in [Link Settings](https://dashboard.branch.io/link-settings){:target="_blank"}.
 
+### Visualizing Email Performance
+
+In order to view the performance of your Deep Linked Emails, navigate to the Analytics tab of the Email section of the dashboard. 
+
+The Analytics tab provides two charts: a time series and a table. Both charts are populated exclusively with data from your Branch Deep Linked Email campaigns, and you can filter further using the options at the top of each chart. The charts display counts and rates of events attributed to Deep Linked Email link clicks.
+
+Both the time series and the table automatically compare by platform, so you can see the results of your campaigns across all platforms (iOS app & web, Android app & web, desktop web).
+
+!!! protip "Email Analytics filtering"
+    These charts are pre-filtered, so it will not be possible to view data associated with non-email Branch links in the Email Analytics section of the dashboard. This filtering does not make use of standard Branch analytics labels (e.g. channel, campaign, feature), so it may be difficult to recreate these reports on other dashboard analytics pages.
+
 ## Next steps
 
 Completing your integration requires some setup that is specific to your email service provider. Please follow the documentation for your provider:
