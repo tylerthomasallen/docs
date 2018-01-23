@@ -49,9 +49,8 @@ Create a `BranchUniversalObject` containing details about the content that is be
     branchUniversalObject.title = "Meet Mr. Squiggles"
     branchUniversalObject.contentDescription = "Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!"
     branchUniversalObject.imageUrl = "https://example.com/monster-pic-12345.png"
-    branchUniversalObject.addMetadataKey("userId", value: "12345")
-    branchUniversalObject.addMetadataKey("userName", value: "Josh")
-    branchUniversalObject.addMetadataKey("monsterName", value: "Mr. Squiggles")
+    branchUniversalObject.contentMetadata.customMetadata = ["custom":"123"]
+    branchUniversalObject.contentMetadata.customMetadata = ["anything":"everything"]
     ```
 
 - *Android*
