@@ -194,6 +194,8 @@ pages:
         - Tune: pages/integrations/tune.md
       - Data Export API: pages/exports/api-v3.md
       - Webhooks: pages/exports/ua-webhooks.md
+      - Query API: pages/exports/query-api.md
+      - Query Recipe Book: pages/exports/query-recipe-book.md
   - Branch Matching Overview: pages/resources/matching.md
   - Validation Tools: pages/resources/validation-tools.md
   - Case Studies and Infographics: pages/resources/case-studies.md
@@ -219,5 +221,3 @@ pages:
     - Event Ontology: pages/exports/event_ontology_data_schema.md
     - New Data Integrations: pages/integrations/faq.md
     - Ad Networks List: pages/ad-networks/ad-networks-list.md
-    - Query API: pages/exports/query-api.md
-    - Query Recipe Book: pages/exports/query-recipe-book.md
