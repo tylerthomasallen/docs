@@ -655,6 +655,27 @@
         let creditHistory = await branch.getCreditHistory()
         ```
 
+- ### Handle links in your own app
+
+    - Allows you to deep link into your own from your app itself
+
+        ```js
+        branch.openURL("https://example.app.link/u3fzDwyyjF")
+        branch.openURL("https://example.app.link/u3fzDwyyjF", {newActivity: true}) // Finish the Android current activity before opening the link. Results in a new activity window. Ignored on iOS.
+        ```
+
+!!! note
+    If you aren't using the `newActivity` option, it is necessary to move the call to the `RNBranch.initSession method` to the main activity's `onResume` method instead of `onStart`.
+
+!!! warning
+    Handling a new deep link in your app will clear the current session data and a new referred "open" will be attributed.
+
+- ### Handle push notifications
+
+    - Allows you to track Branch deep links in your push notifications
+
+    - Use [openURL](handle-links-in-your-own-app) to handle the deep links
+
 - ### Track Apple Search Ads
 
     - Allows Branch to track Apple Search Ads deep linking analytics
