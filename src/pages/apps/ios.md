@@ -198,8 +198,8 @@
         buo.currency = "USD"
         buo.contentIndexMode = .public
         buo.automaticallyListOnSpotlight = true
-        buo.addMetadataKey("custom", value: "123")
-        buo.addMetadataKey("anything", value: "everything")
+        buo.contentMetadata.customMetadata = ["custom":"123"]
+        buo.contentMetadata.customMetadata = ["anything":"everything"]
         ```
 
     - *Objective-C*
