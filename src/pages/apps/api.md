@@ -397,6 +397,12 @@
 
 ## Referral
 
+- ### Referral link
+
+    - [Create a user](#user-create) with an `$identity_id`
+
+    - [Create a link](#link-create) with the `$identity_id` from step 1 in the link data dictionary
+
 - ### Referral reward
 
     - *Request*
