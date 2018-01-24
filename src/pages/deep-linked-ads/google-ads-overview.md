@@ -24,13 +24,14 @@ If you are on the new AdWords integration through Branch, read these instruction
 
 #### AdWords Setup
 
-Start by logging into your AdWords account that has the highest level of access. You will have the ability to connect all your AdWords accounts with Branch. You will generate a Link ID for your mobile apps.
-
-Start by going to Linked Accounts in AdWords, and select Third Party App Analytics. Once on the Third Party App Analytics page, hit the plus sign.
-
-From here, you will add a new provider. Select "other" in the drop down. Input the following ID: `3404357870`. Select iOS or Android. Create Link IDs for all platforms you run campaigns on.
-
-![Create Link IDs](/img/pages/deep-linked-ads/google/link-id.png)
+1. Log in to your [AdWords dashboard](https://adwords.google.com/aw/overview){:target="\_blank"} account that has the highest level of access. You will have the ability to connect all your AdWords accounts with Branch.
+1. Go to `Settings > Linked Accounts`.
+<img src="/img/pages/deep-linked-ads/google/linked-accounts.png" alt="Linked Accounts" class="three-quarters center">
+1. Create a new link ID: Go to `Third Party App Analytics > +`.
+1. Add a new provider: Select "other" in the drop down. Input the following ID: `3404357870`.
+1. Select iOS or Android.
+1. Create Link IDs for all platforms you run campaigns on.
+<img src="/img/pages/deep-linked-ads/google/link-id.png" alt="Link IDs" class="three-quarters center">
 
 #### Branch Setup
 
@@ -48,9 +49,14 @@ Finally, paste the Link IDs from earlier.
 
 #### Import Events
 
-All that remains is importing Branch events into AdWords. After you have set this up, wait ~ 20 minutes, and go back to the AdWords dashboard. Go to conversions -> Add -> App -> Third Party App Analytics, and import Branch specific events.
+All that remains is importing Branch events into AdWords. After you have set this up, wait ~ 20 minutes, and go back to the AdWords dashboard.
 
-Once they are imported, go back to the conversions page, and edit the conversion event. Be sure to mark "Include In Conversions" as a YES. This will let your Branch conversions appear in your tracked campaigns. 
+1. Go to `Conversions`
+<img src="/img/pages/deep-linked-ads/google/conversions.png" alt="Linked Accounts" class="three-quarters center">
+1. Add a new conversion: `+ > App > Third Party App Analytics`
+<img src="/img/pages/deep-linked-ads/google/create-conversion.png" alt="Linked Accounts" class="three-quarters center">
+1. Import your Branch specific events. Click `Import and Continue`
+1. Mark `Include in Conversions` as `YES`
 
 That's it! All of your campaigns with mobile conversions will be tracked in Branch's dashboard.
 
