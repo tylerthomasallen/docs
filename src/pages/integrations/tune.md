@@ -151,6 +151,8 @@ Please note that to produce installs, you must delete the app and reset your adv
 
 Ensure Branch is an enabled provider under your **Partners** in your TUNE dashboard. This should happen automatically, but to verify, click into the **Integrated Partners** section on your TUNE dashboard. From there, enter in Branch inside the search box, and click enable.
 
+In this section, click on **Attribution Settings**. You'll see a section called **Attribution Windows**. Ensure **Fingerprint Attribution Window** is set to 3 hours or more. If you have this disabled, events will not be attributed to Branch.
+
 ### Install discrepancies
 
 #### Capture the GAID and IDFA device identifiers
