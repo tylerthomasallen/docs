@@ -32,6 +32,8 @@ From here, you will add a new provider. Select "other" in the drop down. Input t
 
 ![Create Link IDs](/img/pages/deep-linked-ads/google/link-id.png)
 
+**Note** you must be an admin in your AdWords account in order to generate Link IDs!
+
 #### Branch Setup
 
 Navigate to the [partner management](https://dashboard.branch.io/ads/partner-management){:target="\_blank"} tab and click `Connect with Google`. Choose the email address that is tied to the AdWords accounts you want to connect.
