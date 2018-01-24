@@ -106,7 +106,7 @@ With link tracking enabled, you can still use Branch links in emails.
 `<@tracked_deeplink "https://branch.io/product/1234" />
 <a href="${clickthrough('TEST_TRACKED_DEEPLINK' , 'deeplink=' + deeplink)}">Example link</a>`
 
-This latter example pulls from a Link Table. In the link table, set the `IOS Link URL` and `Android link URL` to the value `${deeplink}`.
+This latter example pulls from a Link Table.
 
 ![image](/img/pages/email/responsys/deep-linked-email-template.png)
 
