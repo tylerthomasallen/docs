@@ -13,9 +13,3 @@ The time zone can be set in [Account Settings](https://dashboard.branch.io/accou
 
 !!! caution "Changing time zone"
     Branch allows you to change your time zone. Changing your time zone will take effect after a page refresh, and will set your dashboard to use your new time zone. **However** we do not recommend changing time zone unless you have to, as it can cause discrepancies between previously exported data and the data in your dashboard. In the future, changing time zone may not be possible as we may store data in your specified time zone.
-
-## FAQs
-
-#### How does daylight savings impact my time zone?
-
-Your Branch data won't adjust with daylight savings. Daylight savings is actually independent of time zone. When your city follows a daylight savings change, they also change time zone. You can update your time zone if you'd like, or leave it to be a consistent time zone all year round.
