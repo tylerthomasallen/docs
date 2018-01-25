@@ -131,7 +131,7 @@ Display Network | Engage with your mobile app | **[link](/pages/deep-linked-ads/
 Display Network | Others (Visit your website, Influence, etc.)  | **[link](/pages/deep-linked-ads/google-xplatform-display-ads/#overview)** | Cross-platform Display
 Video | Mobile App Installs | **[link](/pages/deep-linked-ads/google-video-ads/#video-app-install-ads)** | App Only: Install
 Video | Standard | **[link](/pages/deep-linked-ads/google-video-ads/#video-standard-ads)** | Cross-platform Display
-Shopping | Web and App Purchases | **[link](/pages/deep-linked-ads/google-shopping-ads/#overview)** | Cross-platform Shopping
+Shopping | Web and App Purchases | **[link](/pages/deep-linked-ads/google-shopping-ads/#overview)** | Cross-platform Display
 Universal App Campaigns | Universal App Campaigns | **[link](/pages/deep-linked-ads/google-uac/#overview)** | App Only: Install
 
 ## Troubleshooting

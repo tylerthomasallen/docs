@@ -37,16 +37,11 @@ Web | Yes | Uses Branch link, must redirect to web
 
 ### Feed Creation
 
-Converting links in a Merchant Center feed can be done through 2 different methods.
-
-#### Automatic Method
-
-Follow these steps to create a [Dynamic Product Feed](pages/deep-linked-ads/dynamic-product-feeds) from your existing, non-Branch feed.
-
 #### Manual Method
 
 If you need more customization for any reason, you can also convert your feed manually.
 
+1. Tell your Branch account manager, or support@branch.io, that you'd like to use Google Shopping Ads so they can enable your account. 
 1. Find your Branch base domain by going to the [Link Settings Page](https://branch.dashboard.branch.io/link-settings) of your Branch Dashboard.
 <img src="/img/pages/dashboard/link-domain.png" alt="Link Domain" class="three-quarters center">
 1. Take the link in the `link` column of your existing product feed, and URL encode it.
@@ -59,9 +54,12 @@ For example, if your Branch base domain was `example.app.link`, your initial lin
 
 Would become:
 
-```https://example.app.link/3p?3p?$3p=a_google_adwords&~advertising_partner_name=Google%20AdWords&~campaign_id={campaignid}&~ad_set_id={adgroupid}&~keyword_text={keyword}&~placement={placement}&$original_url=https%3A%2F%2Fwww.example.com%2F%3Ffoo%3Dbar```
+```https://example.app.link/3p?$3p=a_google_adwords&~advertising_partner_name=Google%20AdWords&~campaign_id={campaignid}&~ad_set_id={adgroupid}&~keyword_text={keyword}&~placement={placement}&$original_url=https%3A%2F%2Fwww.example.com%2F%3Ffoo%3Dbar&~campaign=GoogleShoppingCampaign```
 
 Finally, replace the column `adwords_redirect` in your feed with the resulting link (create the column if it is absent). Repeat for each row in your feed.
+
+!!! note "Include all link data"
+    If you want to track analytics in Branch, and you want to deep link to specific content in the app, be sure to append all necessary parameters, including deep link data and analytics tags, to the end of the link as URI encoded query parameters. In the example above, the customer uses `$original_url` as their deep link key, and `~campaign` to set the campaign name that will appear in analytics.
 
 Now that you have your feed, it's time to upload it to Google Merchant Center and use it in an Adwords Campaign.
 
