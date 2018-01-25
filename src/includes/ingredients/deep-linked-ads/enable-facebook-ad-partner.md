@@ -10,23 +10,51 @@ If you haven't enabled Facebook as an Ad Partner on the Branch dashboard follow 
 
     ![Find Facebook in Partner Manager](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/find-facebook-partner.png)
 
-1. In order for Branch to be able to properly deep link from Facebook ad campaigns, you must allow access to your Facebook app's information through usage of your **App ID** and **App Secret**.
+1. Click `Connect With Facebook`
 
-	- First register your app with Facebook. If you haven't registered an app, see instructions [here](https://developers.facebook.com/docs/apps/register){:target="_blank"}.
+    ![Connect with Facebook](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/1-connect.png)
 
-1. Now log in to Facebook and navigate to [developers.facebook.com/apps](http://developers.facebook.com/apps){:target="_blank"} and select your app. You'll need both the **App ID** and **App Secret** values.
+1. Login to Facebook if you are not logged in
 
-    ![Facebook Auth](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/fb-auth-id-secret.png)
+    ![Login](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/2-login.png)
 
-1. Return to the Branch Ad Partner Management Page and fill out the **OG App ID** and **App Secret** fields which correspond to the Facebook **App ID** and the **App Secret** respectively. We do not store the App Secret, and instead convert it into an App Access Token, so you'll notice the App Access Token field will be empty after you authenticate and reload the page.
+1. Confirm that Branch can receive your public profile
 
-    ![Facebook Auth](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/branch-dash-fb-values.png)
+    ![Public profile](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/3-profile.png)
 
-1. Click the `Save and Enable` or `Save` button in the lower right hand corner.
+1. Confirm that Branch can have permissions `ads_read` and `business_management`
 
-    ![Save and Enable Facebook in Partner Manager](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/save-and-enable-facebook.png)
+    ![OAuth scopes](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/4-scopes.png)
 
-1. Facebook is now enabled as an ad partner.
+ 	`ads_read` is used to surface impressions and clicks on the Branch Dashboard. `business_management` is used to add Branch's system user to your ad account(s) with `REPORTS_ONLY` access. We will not make any other changes to your business.
+
+1. Select the ad accounts for which you want to run app install ads or app engagement ads
+
+    ![Choose ad accounts](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/5-adaccounts.png)
+
+    Note: if you are not an admin of the *business* linked to an ad account, you will not be able to add it. This is because we will not be able to add our System User for attribution and analytics purposes.
+
+    Note: if an ad account is not linked to a business, then we cannot guarantee that this account setup will succeed. Please visit [https://www.facebook.com/ads/manager/account_settings/information/](https://www.facebook.com/ads/manager/account_settings/information/), navigate to the appropriate ad account, and ensure you are an admin. See the image below:
+
+    ![Ensure admin](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/5-adaccount-settings.png)
+
+1. Click to select a Facebook app id for which you want to run Facebook ads
+
+    ![enter app id](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/6-app-1.png)
+
+1. Copy the app id
+
+    ![find app id](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/7-app-2.png)
+
+1. Paste the app id and press `Save`
+
+    ![paste app id](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/8-app-3.png)
+
+1. Facebook is now enabled as an ad partner!
+
+	Note that if you have different attribution windows between Facebook and Branch, those will be highlighted. The warning has a link to the docs on how to align these attribution windows.
+
+    ![complete](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/9-complete.png)
 
 1. Finally, to create a Facebook Ads link click the `Create Facebook Link` button in the top right hand corner.
 
