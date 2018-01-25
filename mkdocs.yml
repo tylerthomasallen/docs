@@ -207,6 +207,7 @@ pages:
     - Google Universal App Campaigns: pages/deep-linked-ads/google-uac.md
     - Google Search Network Ads: pages/deep-linked-ads/google-xplatform-search-ads.md
     - Google Display Network Ads: pages/deep-linked-ads/google-xplatform-display-ads.md
+    - Google Shopping Ads: pages/deep-linked-ads/google-shopping-ads.md
     - Google Adwords Conversion Setup: pages/deep-linked-ads/google-conversions.md
     - Google Video Ads: pages/deep-linked-ads/google-video-ads.md
     - Facebook App Install Ads: pages/deep-linked-ads/facebook-app-install-ads.md
