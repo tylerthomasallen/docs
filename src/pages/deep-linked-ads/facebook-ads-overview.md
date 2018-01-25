@@ -24,3 +24,5 @@ Consideration | Video Views | **[link](/pages/deep-linked-ads/facebook-platform-
 Consideration | Lead Generation | **[link](/pages/deep-linked-ads/facebook-platform-ads/#lead-generation-campaign-setup)** | Cross-platform Display
 Conversion | Conversions | **[link](/pages/deep-linked-ads/facebook-traffic-conversion-ads/#conversions-campaign-setup)** | Cross-platform Display
 Conversion | Product Catalogue Sales | **[link](/pages/deep-linked-ads/facebook-dynamic-ads/)** | Cross-platform Product Links
+
+We also have a document with [FAQs and Advanced Options](/pages/deep-linked-ads/facebook-ads-faq/) for the Facebook MMP integration. We recommend starting with one of the guides above.

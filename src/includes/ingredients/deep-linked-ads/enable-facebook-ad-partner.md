@@ -1,6 +1,6 @@
 #### Enable Facebook as an Ad Partner
 
-If you haven't enabled Facebook as an Ad Partner on the Branch dashboard follow this section to do so.
+If you haven't enabled Facebook as an Ad Partner on the Branch dashboard follow this section to do so. Note that completing this section will result in Branch sending events to Facebook in order to attribute them back to ad campaigns. Advanced options for sending events can be found [here](/pages/deep-linked-ads/facebook-ads-faq/#facebook-mmp-event-options).
 
 1. Navigate to the [Partner Management tab](https://dashboard.branch.io/ads/partner-management){:target="_blank"}.
 

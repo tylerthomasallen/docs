@@ -221,3 +221,4 @@ pages:
     - Ad Networks List: pages/ad-networks/ad-networks-list.md
     - Query API: pages/exports/query-api.md
     - Query Recipe Book: pages/exports/query-recipe-book.md
+    - Facebook FAQ and Advanced Options: pages/deep-linked-ads/facebook-ads-faq.md
