@@ -732,7 +732,7 @@
 
         - Replace `https://example.app.link/u3fzDwyyjF` with your deep link
 
-    - Read deep link data from `initSession` [Initialize Branch](#initialize-branch) ([example](/img/pages/apps/ios-example.png))
+    - Read deep link data from `initSession` [Initialize Branch](#initialize-branch)
 
 - ### Handle links in your own app
 
