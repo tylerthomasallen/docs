@@ -54,14 +54,14 @@ Once you've enabled an ad partner, it's time to create a tracking link.
 
         It's easier to slice your data in our analytics platform if you properly assign analytics parameters to your link. _Channels_ generally correspond to ad networks, and _Campaigns_ correspond to marketing initiatives that you're launching. For example: _Channel_: "YouTube", _Campaign_: "Summer 2017 Shoe Discounts."
 
-1. Click **Create Link Now**, and you have your tracking link! Take this link and give it to your Ad Partner's Account Manager or paste it into the tracking section of your campaign yourself. If you'd like to try our view-through attribution beta, please contact support@branch.io.
+1. Click **Create Link Now**, and you have your tracking link! Take this link and give it to your Ad Partner's Account Manager or paste it into the tracking section of your campaign yourself. If you'd like to try our view-through attribution beta, please contact integrations@branch.io.
 
     ![image](/img/pages/deep-linked-ads/branch-universal-ads/finished-ad-link.png)
 
 
     !!! tip "View through attribution"
 
-        To try our view-through attribution beta, please contact support@branch.io. Once it's been enabled, you'll be able to create impression pixels. Currently, impression pixels are only supported with server to server impression tracking, so be sure that the impression pixel that's returned by the dashboard has `%24s2s=true` and an `%24idfa` or `%24aaid` macro. If you have questions, just contact support and we'll get it sorted out.
+        To try our view-through attribution beta, please contact integrations@branch.io. Once it's been enabled, you'll be able to create impression pixels. Currently, impression pixels are only supported with server to server impression tracking, so be sure that the impression pixel that's returned by the dashboard has `%24s2s=true` and an `%24idfa` or `%24aaid` macro. If you have questions, just contact support and we'll get it sorted out.
 
 ### View your data with People-Based Attribution
 
@@ -79,7 +79,7 @@ You can read more about [People-Based Attribution here](/pages/dashboard/people-
 
 #### View-Through Attribution
 
-_If you'd like to try our view-through attribution beta, please contact support@branch.io._
+_If you'd like to try our view-through attribution beta, please contact integrations@branch.io._
 
 View-through attribution allows you to track installs, session starts and conversion events back to an ad, even if the ad was never clicked on. 
 
