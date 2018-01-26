@@ -122,15 +122,15 @@
 
 - ### Long links
     - Long links can be created without a network call to Branch
-    - Long links need [link data](#configure-deep-links) to be URI encoded as a query string
-        - e.g. existing link `https://example.app.link/fzmLEhobLD?foo=bar&baz=456`
-        - e.g. dynamic link `https://example.app.link/?foo=bar&baz=456`
+    - Long links need [link data](#configure-deep-links) to be added as a query string. Be sure to URI encode any urls in the link.
+        - e.g. existing link `https://example.app.link/fzmLEhobLD?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
+        - e.g. dynamic link `https://example.app.link/?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
     - Long links need a `/a/` and a [Branch Key](/pages/dashboard/integrate/#understand-the-branch-key) if you use a `custom link domain`
-        - e.g. existing link `https://link.example.com/5NPh/p4M09KRLrD?foo=bar&baz=456`
-        - e.g. dynamic link `https://link.example.com/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
+        - e.g. existing link `https://link.example.com/5NPh/p4M09KRLrD?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
+        - e.g. dynamic link `https://link.example.com/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
     - Long links need a `/a/` and a [Branch Key](/pages/dashboard/integrate/#understand-the-branch-key) if you use a `bnc.lt`
-        - e.g. existing link `https://bnc.lt/5NPh/p4M09KRLrD?foo=bar&baz=456`
-        - e.g. dynamic link `https://bnc.lt/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456`
+        - e.g. existing link `https://bnc.lt/5NPh/p4M09KRLrD?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
+        - e.g. dynamic link `https://bnc.lt/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
 
 ## Configure deep links
 
