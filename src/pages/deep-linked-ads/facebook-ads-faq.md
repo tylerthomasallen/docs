@@ -17,7 +17,7 @@ The acronym MMP is used to mean either the broad category of Facebook Mobile Mar
 
 ### How does Branch attribute events to Facebook ads?
 
-Facebook is a self-attributing network. This means that Facebook claims credit for installs and other events. Branch then dedupes these claims against other ad networks, as well as traffic coming from email, your website, and other sources. This differs from some ad networks, which send a stream of impressions and clicks that Branch then matches to events.
+Facebook is a self-attributing network. This means that Facebook claims credit for installs and other events. This differs from some ad networks, which send a stream of impressions and clicks that Branch then matches to events. Branch then compares these claims against other ad networks, as well as traffic coming from email, your website, and other sources, choosing the most recent click to get credit. 
 
 The Branch SDK already helps you track installs and other events. When you enable the Facebook MMP integration, Branch sends events and advertising IDs to Facebook. Facebook then reports whether devices previously viewed or clicked a Facebook ad, including helpful information such as campaign, ad set, and ad. As stated above, Branch then dedupes these claims against other claims for attribution.
 
@@ -113,6 +113,26 @@ When tracking add to cart, purchase, and other Facebook app events, you have 3 o
 | SPEND_CREDITS | fb_mobile_spent_credits
 | UNLOCK_ACHIEVEMENT | fb_mobile_achievement_unlocked
 | VIEW_ITEM | fb_mobile_content_view
+
+#### Mapping of Branch metadata to Facebook metadata
+
+|Branch Key-Value Pair | Facebook MMP Key-Value Pair | Facebook event(s) supported
+| --- | --- | ---
+|commerce_data.revenue | _valueToSum | fb_mobile_add_to_cart, fb_mobile_add_to_wishlist, fb_mobile_initiated_checkout, fb_mobile_purchase, fb_mobile_spent_credits, fb_mobile_content_view
+|commerce_data.currency | fb_currency | fb_mobile_add_to_cart, fb_mobile_add_to_wishlist, fb_mobile_initiated_checkout, fb_mobile_purchase, fb_mobile_content_view
+|content_items[0].$sku | fb_content_id | fb_mobile_add_to_cart, fb_mobile_add_to_wishlist, fb_mobile_tutorial_completion, fb_mobile_initiated_checkout, fb_mobile_purchase, fb_mobile_rate, fb_mobile_spent_credits, fb_mobile_content_view
+|content_items[0].$product_category | fb_content_type | fb_mobile_add_to_cart, fb_mobile_add_to_wishlist, fb_mobile_initiated_checkout, fb_mobile_purchase, fb_mobile_rate, fb_mobile_search, fb_mobile_spent_credits, fb_mobile_content_view
+|content_items[0].$quantity | fb_num_items | fb_mobile_initiated_checkout, fb_mobile_purchase
+|content_items[0].$rating | _valueToSum | fb_mobile_rate
+|content_items[0].$rating_max | fb_max_rating_value | fb_mobile_rate
+|event_data.search_query | fb_search_string | fb_mobile_search
+|content_items[0].$og_description | fb_description | fb_mobile_achievement_unlocked
+|custom_data.fb_payment_info_available | fb_payment_info_available | fb_mobile_initiated_checkout
+|custom_data.level | fb_level | fb_mobile_level_achieved
+|custom_data.fb_success | fb_success | fb_mobile_add_payment_info, fb_mobile_tutorial_completion, fb_mobile_search
+|custom_data.fb_registration_method | fb_registration_method | fb_mobile_complete_registration
+
+Currently Facebook appears to only support sending one fb_content_id (etc) per event, whereas Branch allows you to send many. To provide as much functionality as possible, we choose the first content_item and search it for key-value pairs that can be sent to Facebook.
 
 #### Tracking custom events
 
