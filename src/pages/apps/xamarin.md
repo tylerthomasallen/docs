@@ -1043,8 +1043,8 @@
 
     - **Testbed-Xamarin (Native apps)**
 
-        - [iOS](https://github.com/BranchMetrics/xamarin-branch-deep-linking/tree/master/Examples/droid_example)
-        - [Android](https://github.com/BranchMetrics/xamarin-branch-deep-linking/tree/master/Examples/ios_example)
+        - [iOS](https://github.com/BranchMetrics/xamarin-branch-deep-linking/tree/master/Examples/ios_example)
+        - [Android](https://github.com/BranchMetrics/xamarin-branch-deep-linking/tree/master/Examples/droid_example)
 
     - **Testbed-XamarinForms (Forms apps)**
 
