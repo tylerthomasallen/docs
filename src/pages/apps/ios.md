@@ -188,18 +188,51 @@
     - *Swift 3*
 
         ```swift
-        // only canonicalIdentifier is required
+        // required: canonicalIdentifier or title
+        // recommended: title, contentDescription, imageUrl for social media cards
         let buo = BranchUniversalObject(canonicalIdentifier: "content/123")
         buo.canonicalUrl = "https://example.com/content/123"
         buo.title = "Content 123 Title"
         buo.contentDescription = "Content 123 Description \(Date())"
         buo.imageUrl = "http://lorempixel.com/400/400/"
-        buo.price = 12.12
-        buo.currency = "USD"
-        buo.contentIndexMode = .public
-        buo.automaticallyListOnSpotlight = true
-        buo.addMetadataKey("custom", value: "123")
-        buo.addMetadataKey("anything", value: "everything")
+        buo.keywords = ["awesome", "things"]
+
+        // index on Apple Spotlight
+        buo.locallyIndex = true
+
+        // index on Google, Branch, etc
+        buo.publiclyIndex = true
+
+        // additional object details
+        buo.contentMetadata.contentSchema = .commerceRestaurant
+        buo.contentMetadata.quantity = 12
+        buo.contentMetadata.price = 33.44
+        buo.contentMetadata.currency = .USD
+        buo.contentMetadata.sku = "123"
+        buo.contentMetadata.productName = "grapes"
+        buo.contentMetadata.productBrand = "welch"
+        buo.contentMetadata.productCategory = BNCProductCategory.foodBeverageTobacco
+        buo.contentMetadata.productVariant = "bulk"
+        buo.contentMetadata.condition = .good
+        buo.contentMetadata.ratingAverage = 4.5
+        buo.contentMetadata.ratingCount = 78
+        buo.contentMetadata.ratingMax = 5
+        buo.contentMetadata.addressStreet = "123 Over Here"
+        buo.contentMetadata.addressCity = "Austin"
+        buo.contentMetadata.addressRegion = "Texas"
+        buo.contentMetadata.addressCountry = "USA"
+        buo.contentMetadata.addressPostalCode = "76035"
+        buo.contentMetadata.latitude = 30.267153
+        buo.contentMetadata.longitude = -97.743061
+
+        // custom key-value pairs
+        buo.contentMetadata.imageCaptions = ["awesome", "things"]
+        buo.contentMetadata.customMetadata = ["custom": "123"]
+        buo.contentMetadata.customMetadata = ["anything": "everything"]
+
+        // user actions with the object
+        buo.userCompletedAction(BranchStandardEvent.addToCart.rawValue)
+        buo.userCompletedAction("Viewed")
         ```
 
     - *Objective-C*
