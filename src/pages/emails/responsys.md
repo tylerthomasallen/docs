@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-- You must have an EMD (Email Message Designer) enabled account in order to use the Branch integration. If you do not have one, or if you’re not sure, please talk to your Responsys Account Manager.
+- To use the Branch Link Conversion SDK, you'll need an EMD (Email Message Designer) enabled account. If you're using the Classic dashboard, or if you’re not sure, please talk to your Responsys Account Manager.
 
 {! ingredients/email/email-configure-esp.md !}
 
@@ -33,7 +33,7 @@ There are a few different ways you can create Branch links that are compatible w
 
 #### Use the Branch Responsys SDK
 
-In this step, we'll upload an SDK that makes it very easy to create deep links in your emails.
+In this step, we'll upload an SDK that makes it very easy to create deep links in your emails.  Please remember that this will require an EMD (Email Message Designer) enabled account.
 
 !!! protip "Watch how to do this instead"
     There is also a [tutorial video](https://www.youtube.com/watch?v=u8h8KlqFvo4){:target="\_blank"} that walks through these steps.
@@ -114,7 +114,7 @@ This latter example pulls from a Link Table.
 
 ### Handle links for web-only content
 
-In some cases you may have content on web that isn’t in the app - for example, a temporary Mother’s Day promotion or an unsubscribe button. You can designate links to only open on web if you use the Responsys Link Table feature. There are three URL fields in the link table when creating a new link: `LINK_URL`, `IOS_LINK_URL`, and `ANDROID_LINK_URL`. If you only enter the link in the `LINK_URL` field, the path of the final click-wrapped url will begin with `/pub/cc`, whereas if you input an `IOS_LINK_URL`, then the path of the final click-wrapped url will begin with `pub/acc`. You should set up your AASA file to whitelist only the path `/pub/acc*` in order to not launch the app from web-only links.
+In some cases you may have content on web that isn’t in the app - for example, a temporary Mother’s Day promotion or an unsubscribe button. You can designate links to only open on web if you use the Responsys Link Table feature. There are three URL fields in the link table when creating a new link: `LINK_URL`, `IOS_LINK_URL`, and `ANDROID_LINK_URL`. If you only enter the link in the `LINK_URL` field, the path of the final click-wrapped url will begin with `/pub/cc`.  However, if you also input the same link in `IOS_LINK_URL`, then the path of the final click-wrapped url will begin with `pub/acc`. You should set up your AASA file to whitelist only the path `/pub/acc*` in order to not launch the app from web-only links.
 
 ![image](/img/pages/email/responsys/branch_responsys_webonly.png)
 
