@@ -265,7 +265,15 @@ If you're unable to see installs, reinstalls, or opens on the Branch Dashboard, 
 
 If you turned on the integration within the last hour, then you may need to refresh the Branch Dashboard to see clicks. We automatically start a background job to pull in impressions and clicks from Facebook the first time you visit the [Ads Analytics](https://dashboard.branch.io/ads/analytics){:target="\_blank"} page after enabling Facebook.
 
-If it has been longer than an hour since you (1) enabled the MMP integration then (2) visited the Ads Analytics page then (3) pressed refresh, then please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and put "Facebook MMP + data discrepancy" in the subject.
+If it has been longer than an hour since you (1) enabled the MMP integration then (2) visited the Ads Analytics page then (3) pressed refresh and (4) see installs but still no clicks, then please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and put "Facebook MMP + 0 clicks" in the subject. Please include: 
+
+* Branch app id
+* Facebook ad account id
+* One Facebook campaign name for which you have clicks and installs
+* Date range
+* For every day in date range, the number of clicks Facebook is reporting for this campaign - include both a table and a screenshot
+* For every day in date range, the number of installs Facebook is reporting for this campaign - include both a table and a screenshot
+
 
 ##### 3. I see clicks on the Branch Dashboard, but the numbers look different from what I see on the Facebook Dashboard.
 
@@ -273,11 +281,23 @@ If it has been longer than an hour since you (1) enabled the MMP integration the
 
 If the numbers line up pretty closely between Branch and Facebook, then it's possible the Facebook numbers are slightly more recent. The Facebook Insights API refreshes every 15 minutes. Branch tries to pull updated numbers as often as possible.
 
-If the numbers do not line up closely, but you recently started a new campaign, it may be that Branch has not yet pulled in data for that campaign. The numbers should line up much more closely within an hour.
+If the numbers do not line up closely, but you recently started a new campaign, it may be that Branch has not yet pulled in data for that campaign. The numbers should line up much more closely within an hour. If they do not, then please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and put "Facebook MMP + Click Dicrepancies" in the subject. Please include: 
+
+* Branch app id
+* Facebook ad account id
+* One Facebook campaign name for which you have clicks and installs
+* Date range
+* For every day in date range, the number of clicks Facebook is reporting for this campaign - include both a table and a screenshot
+* For every day in date range, the number of installs Facebook is reporting for this campaign - include both a table and a screenshot 
 
 *If you are looking at impressions/clicks for a past day:*
 
-When you initially enable the Facebook integration, then visit the [Ads Analytics](https://dashboard.branch.io/ads/analytics){:target="\_blank"} page, Branch will start fetching impressions and clicks for the most recent several days. If you go back beyond 7 days, we may not have impressions and click data. If you need this data, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + loading old data" in the subject. 
+When you initially enable the Facebook integration, then visit the [Ads Analytics](https://dashboard.branch.io/ads/analytics){:target="\_blank"} page, Branch will start fetching impressions and clicks for the most recent several days. If you go back beyond 7 days, we may not have impressions and click data. If you need this data, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + Loading Old Clicks" in the subject. Please include:
+
+* Branch app id
+* Facebook ad account id
+* One Facebook campaign name for which you have clicks and installs
+* Date range
 
 #### Discrepancies with Installs, Opens and Conversion Events
 
@@ -293,6 +313,14 @@ Third, on the Facebook Dashboard, locate a campaign with installs, reinstalls, o
 
 Fourth, make sure you have installs, reinstalls, or opens that have occurred after you enabled the Branch + Facebook integration. We cannot pull historical device-level data, as that's not how the Facebook APIs are architected. You should enable Branch + Facebook, wait for new installs to occur, then check the [Ads Analytics](https://dashboard.branch.io/ads/analytics){:target="\_blank"} page.
 
+If after all this you're still not seeing installs, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + 0 installs" in the subject. Please include:
+
+* Branch app id
+* Facebook ad account id
+* One Facebook campaign name for which you have installs
+* Date range
+* For every day in date range, the number of installs Facebook is reporting - include both a table and a screenshot
+
 ##### 2. I see installs, reinstalls or opens on the Branch Dashboard, but the numbers look different from what I see on the Facebook Dashboard
 
 If you've made it this far, the integration between Branch + Facebook is at least somewhat functional! Time to identify why numbers are not lining up.
@@ -305,30 +333,39 @@ Second, make sure the timezones line up between Facebook and Branch. You can rea
 
 Note that attribution windows are not applied to events that occurred in the past. So if you have a 30-day attribution window for click-to-install on Branch, and a 7-day window for clicks on Facebook, once you change the Branch click-to-install attribution window to 7 days, it will not automatically update historical numbers. Instead, you'll need to wait for new installs to occur under the stricter 7-day Branch click-to-install attribution window. The next day you should be able to come back and look at just the current day's install numbers, and they should line up more closely.
 
-If after all this you're still seeing discrepancies, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + Install Discrepancies" in the subject. Please include the following information:
+If after all this you're still seeing discrepancies, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + Install Discrepancies" in the subject. Please include:
 
 * Branch app id
 * Facebook ad account id
-* One Facebook campaign name
+* One Facebook campaign name for which you have clicks and installs
 * Date range
-* For every day in date range, the number of installs Facebook is reporting - include a screenshot
-* Your Facebook attribution window - include a screenshot
-* For every day in date range, the number of installs Branch is reporting - include a screenshot
-
-From here we can start to pull numbers from Facebook (via Insights API) and pull numbers internally, and try to locate possible causes of discrepancies.
+* Your Facebook attribution window - include both a table and a screenshot
+* For every day in date range, the number of installs Facebook is reporting - include both a table and a screenshot
+* For every day in date range, the number of installs Branch is reporting - include both a table and a screenshot
 
 !!! Note
 	In some rare cases, we've seen partners running multiple Facebook campaigns with the same name. In this case, the Branch Dashboard will combine stats for all of these campaigns under the same name. We still retain this data separately on our backend, as there are different Facebook campaign ids. While we do not expose this on the Branch Dashboard, you can pull statistics by campaign id via the [Query API](pages/exports/query-api).
 
 ##### 3. I don't see any conversion events on the Branch Dashboard
 
-* Be sure you are tracking v2/events - [learn more from our v2/event docs](pages/apps/v2event/#v2-event).
-* Be sure you are opting to send conversion events to Facebook - learn more from the section [Facebook MMP event options](pages/deep-linked-ads/facebook-ads-faq/#facebook-mmp-event-options) above.
-* Be reasonably confident that users coming from Facebook ads are completing conversion events. If you have, for example, only a small percentage of users completing purchases, and only a small percentage of users downloading your app from Facebook, it's possible that there is no overlap between users making purchases and users coming from Facebook.
+Be sure you are tracking v2/events - [learn more from our v2/event docs](pages/apps/v2event/#v2-event).
+
+Be sure you are opting to send conversion events to Facebook - learn more from the section [Facebook MMP event options](pages/deep-linked-ads/facebook-ads-faq/#facebook-mmp-event-options) above.
+
+Be reasonably confident that users coming from Facebook ads are completing conversion events. If you have, for example, only a small percentage of users completing purchases, and only a small percentage of users downloading your app from Facebook, it's possible that there is no overlap between users making purchases and users coming from Facebook.
+
+If after all this you're still seeing discrepancies, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + Install Discrepancies" in the subject. Please include:
+
+* Branch app id
+* Facebook ad account id
+* One Facebook campaign name for which you have clicks and installs
+* Date range
+* Your Facebook attribution window - include both a table and a screenshot
+* For every day in date range, the number of installs Facebook is reporting - include both a table and a screenshot
+* For every day in date range, the number of installs Branch is reporting - include both a table and a screenshot
+* For every day in date range, the number of conversion events Facebook is reporting - include both a table and a screenshot
+* For every day in date range, the number of conversion events Branch is reporting - include both a table and a screenshot
 
 ##### 4. I see conversion events on the Branch Dashboard, but the numbers look different from what I see on the Facebook Dashboard
 
 We have not encountered any issues here so far. Please see [I see installs, reinstalls or opens on the Branch Dashboard, but the numbers look different from what I see on the Facebook Dashboard](pages/deep-linked-ads/facebook-ads-faq/#1-i-dont-see-any-installs-reinstalls-or-opens-on-the-branch-dashboard) for steps to follow, and for information to send to us if we need to debug together.
-
-
-
