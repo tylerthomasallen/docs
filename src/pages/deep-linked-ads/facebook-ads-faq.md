@@ -209,8 +209,10 @@ There are four Branch attribution windows, and two Facebook attribution windows.
 |---|---|
 | Click to install | Click Window|
 | Click to session start |  Click Window |
+| Click to conversion event | Click Window |
 | Impression to install | View Window |
 | Impression to session start | View Window |
+| Impression to conversion event | View Window |
 
 *Change your Facebook attribution windows*
 In order to update your Facebook Attribution window for a particular ad account, you can go to https://business.facebook.com/ads/manager/account_settings/information. Choose the account in the dropdown in the upper-left corner. As long as you're an admin on that account, you should see a section 'Attribution' at the top-right, and an ability to edit the Click or View window or both.
