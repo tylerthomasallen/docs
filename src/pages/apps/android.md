@@ -929,18 +929,18 @@
     - *Java*
 
         ```java
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse((String) "https://example.app.link/u3fzDwyyjF"));
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setPackage("com.android.chrome");
+        Intent intent = new Intent(this, ActivityToLaunch.class);
+        intent.putExtra("branch","http://xxxx.app.link/testlink");
+        intent.putExtra("branch_force_new_session",true);
         startActivity(intent);
         ```
 
     - *Kotlin*
 
         ```java
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://9wlb.app.link/hRXAHkUlxH"))
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.`package` = "com.android.chrome"
+        val intent = Intent(this, ActivityToLaunch::class.java)
+        intent.putExtra("branch", "http://xxxx.app.link/testlink")
+        intent.putExtra("branch_force_new_session", true)
         startActivity(intent)
         ```
 
