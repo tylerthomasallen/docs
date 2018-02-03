@@ -3,7 +3,7 @@
 
 {! ingredients/email/email-configure-esp.md !}
 
-Contact your Appboy Account Manager and request the Email Click Tracking Domain and the SendGrid Data domain associated with your SendGrid account.
+Contact your Braze Account Manager and request the Email Click Tracking Domain and the SendGrid Data domain associated with your SendGrid account.
 
 Once you’ve retrieved this information, enter both the click tracking domain and the SendGrid domain in item 1 of this step: 
 
@@ -29,7 +29,7 @@ On **Done** click, an AASA file - required for Universal Links - specific to tha
 
 ### Flag your deep links
 
-To use Branch links within your appboy campaigns, you’ll need to add an HTML tag to the Branch URLs within your appboy email templates.
+To use Branch links within your Braze campaigns, you’ll need to add an HTML tag to the Branch URLs within your Braze email templates.
 
 1. Create your email template same as you normally would.
 1. Add Branch links to your email for all links you would like to deep link users to specific app content (this works for existing app users as well as those without your app). Be sure to add `"$3p":"e_ab"` to the deep link data of any links you use in email to ensure Universal Link and click tracking works as expected.
@@ -45,6 +45,6 @@ To use Branch links within your appboy campaigns, you’ll need to add an HTML t
 
     ![image](/img/pages/email/appboy/appboy-universal.png)
 
-All done! So long as you’ve taken the above steps, the links in your Appboy email campaigns will now dynamically deep link users to app content, even if they have uninstalled your app, giving you the best chance of engaging or re-acquiring them.
+All done! So long as you’ve taken the above steps, the links in your Braze email campaigns will now dynamically deep link users to app content, even if they have uninstalled your app, giving you the best chance of engaging or re-acquiring them.
 
 {! ingredients/email/email-support.md !}
