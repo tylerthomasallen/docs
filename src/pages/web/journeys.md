@@ -345,6 +345,9 @@ As opening the app automatically is the best user experience in most cases, this
 
 !!! caution "Web SDK open app setting"
     If you use the open_app setting within the web SDK, this setting will still work for old Journeys (older than 10/25). For all new Journeys, the template setting will take precedence.
+    
+!!! caution "Open app behavior in in-app webviews"
+    We recommend avoiding initializing the Branch web SDK on webpages that are loaded within webviews in your native application, as attempting to auto-open the app in these cases can lead to unexpected user experiences.
 
 #### Auto-open the app on iOS
 
