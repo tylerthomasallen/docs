@@ -133,6 +133,7 @@ Completing your integration requires some setup that is specific to your email s
 - **[Mailgun](/pages/emails/mailgun/)**
 - **[Mailjet](/pages/emails/mailjet/)**
 - **[Mandrill](/pages/emails/mandrill/)**
+- **[MoEngage](/pages/emails/moengage/)**
 - **[PostUp](/pages/emails/postup/)**
 - **[Responsys](/pages/emails/responsys/)**
 - **[Sailthru](/pages/emails/sailthru/)**
