@@ -154,6 +154,7 @@ pages:
     - Responsys: pages/emails/responsys.md
     - Sailthru: pages/emails/sailthru.md
     - Salesforce: pages/emails/salesforce.md
+    - Sender: pages/emails/sender.md
     - SendGrid: pages/emails/sendgrid.md
     - SparkPost: pages/emails/sparkpost.md
     - Vero: pages/emails/vero.md
