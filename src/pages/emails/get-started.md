@@ -138,6 +138,7 @@ Completing your integration requires some setup that is specific to your email s
 - **[Responsys](/pages/emails/responsys/)**
 - **[Sailthru](/pages/emails/sailthru/)**
 - **[Salesforce](/pages/emails/salesforce/)**
+- **[Sender](/pages/emails/sender/)**
 - **[SendGrid](/pages/emails/sendgrid/)**
 - **[SparkPost](/pages/emails/sparkpost/)**
 - **[Vero](/pages/emails/vero/)**
