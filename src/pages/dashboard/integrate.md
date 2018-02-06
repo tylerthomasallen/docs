@@ -125,12 +125,12 @@
         - Understand [Domain change warning](#domain-change-warning)
         - Make changes to [Link settings](https://dashboard.branch.io/link-settings) or contact support
 
-    - ##### Use custom sub domain
+    - ##### Use custom subdomain
         - Understand [Domain change warning](#domain-change-warning)
         - Understand [Custom domain warning](#custom-domain-warning)
         - Understand [Custom domain debugging](#custom-domain-debugging)
-        - Change your link domain to your custom sub domain on [Link settings](https://dashboard.branch.io/link-settings)
-        - Update your `CNAME` record on your custom sub domain
+        - Change your link domain to your custom subdomain on [Link settings](https://dashboard.branch.io/link-settings)
+        - Update your `CNAME` record on your custom subdomain
             - `CNAME` = `custom.bnc.lt`
         - Click `Confirm` on [Link settings](https://dashboard.branch.io/link-settings)
         - If you are configuring the domain through AWS's Route 53, make sure you are editing the nameservers under the `Registered Domains` tab, and not the `Hosted zones` section
@@ -171,9 +171,9 @@
 - ### Custom domain warning
     - Used for [Change link domain](#change-link-domain)
     - The `NS` or `CNAME` records of your `custom link domain` will need to point to Branch if you want to use your own domain for your deep links
-    - Whenever you change your `NS` or `CNAME` records of a domain, you are making Branch the authoritative registrar for your domain. This will grant Branch control of your domain and you will lose all access to that `custom root domain` or `custom sub domain`. The web page will become blank, and the control of the domain will change to Branch
+    - Whenever you change your `NS` or `CNAME` records of a domain, you are making Branch the authoritative registrar for your domain. This will grant Branch control of your domain and you will lose all access to that `custom root domain` or `custom subdomain`. The web page will become blank, and the control of the domain will change to Branch
     - Branch will use your domain to route all deep linked traffic. Branch will also host your AASA file and SSL certificates
-    - If you have content on your `custom root domain` (e.g. https://example.com/), Branch recommends using an unused `custom sub domain` instead (e.g. https://link.example.com/)
+    - If you have content on your `custom root domain` (e.g. https://example.com/), Branch recommends using an unused `custom subdomain` instead (e.g. https://link.example.com/)
     - Once the domain is setup, newly created links will also have a 4 character prefix, i.e. `/A1DE/`. We use this code to identify the app. 
 
 - ### Custom domain debugging
