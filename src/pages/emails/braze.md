@@ -3,7 +3,7 @@
 
 {! ingredients/email/email-configure-esp.md !}
 
-Contact your Appboy Account Manager and request the Email Click Tracking Domain and the SendGrid Data domain associated with your SendGrid account.
+Contact your Braze Account Manager and request the Email Click Tracking Domain and the SendGrid Data domain associated with your SendGrid account.
 
 Once you’ve retrieved this information, enter both the click tracking domain and the SendGrid domain in item 1 of this step: 
 
