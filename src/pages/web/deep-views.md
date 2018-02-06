@@ -288,9 +288,4 @@ To disable passive deepviews, simply set the value to `false` in the link data.
 | $ios_passive_deepview | The name of the template to use for iOS. | `default_template`
 | $android_passive_deepview | The name of the template to use for Android. | `default_template`
 
-If you're creating a link by appending query parameters, you simply need to append the parameters to the URL. Please make sure to URL encode everything, lest the link will break.
-
-**Note:** If you want to customize the default design of the passive deepview follow these steps:
-- Duplicate and edit the default template with the key `branch_passive_default`
-- If you want to change the template **globally for your app**, copy the new template name (key:xxxx) and your [dashboard App ID](https://dashboard.branch.io/account-settings/app), then reach out to our [support team](https://support.branch.io) with the key and App ID
-- You can also change the template **on a link level** by providing the template name in the [control parameters](/pages/links/integrate/#deepview)
+To enable another template as the default passive deepview, select the 'Set as Passive Default' option. You can also change the template **on a link level** by providing the template name in the [control parameters](/pages/links/integrate/#deepview). If you're creating a link by appending query parameters, you simply need to append the parameters to the URL. Please make sure to URL encode everything, lest the link will break.
