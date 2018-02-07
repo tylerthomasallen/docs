@@ -32,11 +32,8 @@ If you haven't enabled Facebook as an Ad Partner on the Branch dashboard follow 
 
     ![Choose ad accounts](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/5-adaccounts.png)
 
-    Note: if you are not an admin of the *business* linked to an ad account, you will not be able to add it. This is because we will not be able to add our System User for attribution and analytics purposes.
-
-    Note: if an ad account is not linked to a business, then we cannot guarantee that this account setup will succeed. Please visit [https://www.facebook.com/ads/manager/account_settings/information/](https://www.facebook.com/ads/manager/account_settings/information/), navigate to the appropriate ad account, and ensure you are an admin. See the image below:
-
-    ![Ensure admin](/img/ingredients/deep-linked-ads/enable-facebook-ad-partner/5-adaccount-settings.png)
+    !!! Note
+        If you are having trouble finding or selecting the ad account(s) for which you want to run ads, please visit our [FAQ](/pages/deep-linked-ads/facebook-ads-faq/#im-having-problems-finding-or-choosing-the-correct-ad-accounts).
 
 1. Click to select a Facebook app id for which you want to run Facebook ads
 

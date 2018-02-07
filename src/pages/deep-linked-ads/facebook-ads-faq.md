@@ -33,6 +33,13 @@ First, make sure you have [set up the integration with Facebook MMP](/pages/deep
 
 There are advanced options for tracking events, which you can read more about [below](/pages/deep-linked-ads/facebook-ads-faq/#facebook-mmp-event-options).
 
+### What are the permissions you ask for as part of the onboarding process, and why?
+
+| **Permissions (OAuth scopes)** | **Why** |
+| - | - |
+| ads_read | Pulling marketing insights data (e.g. impressions, clicks) to present on the Branch Dashboard. Also used for pulling creative name and id, etc., to provide richer analytics for installs, opens and other events. |
+| business_management | (1) We pull in ad accounts for you to choose from. (2) At the end of the login process, we add our System User to your business and ad account with REPORTS_ONLY permissions. Then we deauthorize the access token that has all 3 of these permissions. In the future, we can easily quarantine/decommission the System User if we detect unusual or unauthorized activity. |
+
 ### What is each piece of information needed during the onboarding process, and why?
 
 | **Identifier** | **Why** |
@@ -40,12 +47,31 @@ There are advanced options for tracking events, which you can read more about [b
 | Ad account | Pulling marketing insights data (e.g. impressions, clicks) to present on the Branch Dashboard. |
 | Facebook App ID | Sending installs, opens and other events to Facebook in order to see whether they were driven by a Facebook ad campaign. |
 
-### What are the permissions you ask for as part of the onboarding process, and why?
+### I'm having problems finding or choosing the correct ad account(s)
 
-| **Permissions (OAuth scopes)** | **Why** |
-| - | - |
-| ads_read | Pulling marketing insights data (e.g. impressions, clicks) to present on the Branch Dashboard. Also used for pulling creative name and id, etc., to provide richer analytics for installs, opens and other events. |
-| business_management | (1) We pull in ad accounts for you to choose from. (2) At the end of the login process, we add our System User to your business and ad account with REPORTS_ONLY permissions. Then we deauthorize the access token that has all 3 of these permissions. In the future, we can easily quarantine/decommission the System User if we detect unusual or unauthorized activity. |
+#### The ad account I want to select is greyed out
+
+![Not admin](/img/pages/deep-linked-ads/facebook-ads-faq/not-business-admin.png)
+
+If you are not an admin of the *business* linked to an ad account, you will not be able to add it. This is because we will not be able to add our System User for attribution and analytics purposes. To check whether you are a business admin, please visit the [business's settings page](https://business.facebook.com/settings/people){:target="_blank"}. If you can see yourself listed, and you can see that your role is shown as admin (see image below), you should be able to complete setup. Otherwise, please request that an admin at your business complete the setup on the Branch Dashboard.
+
+![admin](/img/pages/deep-linked-ads/facebook-ads-faq/business-admin.png)
+
+If you still have questions, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + Business Admin" in the subject.
+
+#### I see a warning underneath my ad account saying that I need to be an admin
+
+![warning about admin](/img/pages/deep-linked-ads/facebook-ads-faq/standalone-ad-account.png)
+
+If an ad account is not linked to a business, then we cannot guarantee that this account setup will succeed. Please visit [the ad account settings page](https://www.facebook.com/ads/manager/account_settings/information/), navigate to the appropriate ad account, and ensure you are an admin (see image below). 
+
+![Ensure admin](/img/pages/deep-linked-ads/facebook-ads-faq/adaccount-settings.png)
+
+If you still have questions, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + Standalone Ad Account(s)" in the subject.
+
+#### I can't see the ad account I want to use at all
+
+Please try logging out and logging back in on Facebook. Note the email address that you use. If you still do not see ad accounts, please visit [business.facebook.com](https://business.facebook.com) and ensure that you use the same email address / Facebook account. If you still cannot figure this out, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + Missing Ad Account(s)" in the subject.
 
 ### What is the difference between your previous Facebook Ads product, and the new Facebook Ads product?
 
