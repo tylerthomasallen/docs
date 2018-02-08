@@ -62,7 +62,7 @@ Logo | Partner
 <a href="http://phgsupport.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/PH_LOGO-1493341199816.png)</a>| **Performance Horizon**
 <a href="http://phunware.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/phunware-1510972218166.png)</a>| **Phunware**
 <a href="http://picnic-media.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Picnic_Media-1513137425026.png)</a>| **Picnic Media**
-<a href="http://pinsightmedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/gold-black_horizontallogo_digital-1513230839937.png)</a>| **Pinisight**
+<a href="http://pinsightmedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/gold-black_horizontallogo_digital-1513230839937.png)</a>| **Pinsight**
 <a href="http://prappers.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/links-logo-1508262751788.png)</a>| **Prappers**
 <a href="http://profiliad.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1494891385579.png)</a>| **ProfiliAd**
 <a href="http://propellerads.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_propellerads32-1508798759717.png)</a>| **Propeller Ads**
