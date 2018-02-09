@@ -206,8 +206,9 @@
         | Key | Default | Usage
         | --- | --- | ---
         | $deeplink_path | `open?link_click_id=1234` | Set the deep link path for all platforms - so you don't have to enable it by platform. When the Branch SDK receives a link with this parameter set, it will automatically load the custom URI path contained within
-        | $android_deeplink_path | | Set the deep link path for Android apps When the Branch SDK receives a link with this parameter set, it will automatically load the custom URI path contained within
-        | $ios_deeplink_path | | Set the deep link path for iOS apps. When the Branch SDK receives a link with this parameter set, it will automatically load the custom URI path contained within
+        | $android_deeplink_path | | Set the deep link path for Android apps When the Branch SDK receives a link with this parameter set, it will automatically load the custom Android URI path contained within
+        | $ios_deeplink_path | | Set the deep link path for iOS apps. When the Branch SDK receives a link with this parameter set, it will automatically load the custom iOS URI path contained within
+        | $desktop_deeplink_path | | Set the deep link path for Desktop apps. When the Branch SDK receives a link with this parameter set, it will automatically load the custom Desktop URI path contained within
         | $match_duration | `7200` | Lets you control the snapshotting match timeout (the time that a click will wait for an app open to match) also known as attribution window. Specified in seconds
         | $always_deeplink | `true` | Set to `false` to make links always fall back to your mobile site. Does not apply to Universal Links or Android App Links.
         | $ios_redirect_timeout | `750` | Control the timeout that the client-side JS waits after trying to open up the app before redirecting to the App Store. Specified in milliseconds
