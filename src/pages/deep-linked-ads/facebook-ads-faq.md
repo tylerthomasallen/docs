@@ -77,9 +77,37 @@ Please try logging out and logging back in on Facebook. Note the email address t
 
 Branch is now a Facebook Mobile Measurement Partner (MMP). This means we are partnering with Facebook to more accurately attribute your installs, opens and custom events back to Facebook ad campaigns! 
 
-The major differences: we can use this product with a Branch deep link. No need to manually create Branch links and add them to Facebook ads! 
+The major differences: we can use this product without a Branch deep link. No need to manually create Branch links and add them to Facebook ads! 
 
 If you use a Branch deep link, we will still return the Branch deep link information in app so that you can deep link your users to content. Attributed events will *not* have the Branch deep link information, but rather the Facebook ad campaign information. This info cannot be passed along to third parties via our Data Integrations.
+
+### How do I upgrade from the old Facebook integration to the new Facebook integration?
+
+Easy. Navigate to [Facebook within the Ads Management portal](https://dashboard.branch.io/ads/partner-management/a_facebook?tab=settings){:target="\_blank"}. Choose "Connect with Facebook" and follow the guide to [set up the integration with Facebook MMP](/pages/deep-linked-ads/facebook-app-install-ads/#enable-facebook-as-an-ad-partner).
+
+The moment you complete this signup flow, we will upgrade you to getting the full MMP functionality! Now installs and other analytics will include info on campaign, ad set, ad, and creative from Facebook.
+
+### I think I previously had Facebook enabled...
+
+_...but now when I navigate to [Facebook within the Ads Management portal](https://dashboard.branch.io/ads/partner-management/a_facebook?tab=settings){:target="\_blank"}, I just see "Connect with Facebook". What gives?_
+
+We've hidden the old Facebook setup flow. Please choose "Connect with Facebook" and follow the guide to [set up the integration with Facebook MMP](/pages/deep-linked-ads/facebook-app-install-ads/#enable-facebook-as-an-ad-partner).
+
+The previous signup flow is no longer supported. If for some reason you need to access the previous signup flow, please [contact us](https://support.branch.io/support/tickets/new){:target="\_blank"} and include "Facebook MMP + legacy signup flow" in the subject.
+
+### What happens to campaigns in which I'm using deep links?
+
+We still highly recommend you use links in ads. [Studies have shown](https://branch.io/resources/#case-studies){:target="\_blank"} that when you deep link your users, they have a better experience and retention is higher!
+
+When you put a Branch link in a Facebook ad, we still return this link to your app, so that users can be deep linked. Deep linking functions exactly as it did before.
+
+### Do I need to remove deep links from my Facebook ads.
+
+No. In fact we recommend you use deep links. See the previous question.
+
+### Does this new Facebook MMP functionality cover web campaigns?
+
+Generally, no. Facebook MMP allows us to measure Facebook app install and app engagement ads. However, in some cases, we are able to attribute web events that occur _after_ an app install/engagement ad _back_ to that ad. This is because we can link together web and app user identifiers as part of our People-Based Attribution product.
 
 ### Can I get the data out?
 
