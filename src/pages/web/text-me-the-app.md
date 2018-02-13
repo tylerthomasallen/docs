@@ -228,7 +228,7 @@ Yes. Branch uses Twilio to send SMS messages, which means SMS will be delivered 
 
 ### I've sent myself multiple texts just now and only received the first few, what's going on?
 
-This occurs when a carrier filters you SMS out due to spam. We try our hardest to rate limit a specific user, however, if bypassed, carriers may block your SMS. The reason is that carriers will agressively block content if it's similar and repeatedly sent to the same number. The solution is to wait 24-48 hours.
+This occurs when a carrier filters you SMS out due to spam. We try our hardest to rate limit a specific user, however, if bypassed, carriers may block your SMS. The reason is that carriers will aggressively block content if it's similar and repeatedly sent to the same number. The solution is to wait 24-48 hours.
 
 ### How come my (non US) phone number isn't working?
 
