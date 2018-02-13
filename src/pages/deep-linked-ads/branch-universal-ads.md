@@ -124,9 +124,9 @@ For customer experience and data accuracy, please do not set your deep linking w
 
 #### Account Level Attribution Windows
 
-You can edit your attribution windows under Link Settings > Attribution Windows. View through attribution is not yet available, but will be coming soon.
+You can edit your attribution windows under Link Settings > Attribution Windows.
 
-    ![image](/img/pages/dashboard/people-based-attribution/attribution-windows.png)
+   ![image](/img/pages/dashboard/people-based-attribution/attribution-windows.png)
 
 Learn more about account level attribution windows in [People-Based Attribution](/pages/dashboard/people-based-attribution/#attribution-windows).
 
