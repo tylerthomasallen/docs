@@ -142,7 +142,7 @@ Please see the section below, [Sources of Discrepancies between Facebook and Bra
 
 ### Facebook MMP event options
 
-!!! Note
+!!! Tip
 	To see the options below on the Branch Dashboard, [click here](https://dashboard.branch.io/ads/partner-management/a_facebook?tab=events){:target="\_blank"}.
 
 Branch + Facebook MMP allows you to attribute events back to your Facebook ad campaigns. Branch sends events to Facebook, along with metadata including advertising ID. Facebook then returns info on the ad that the user last viewed or clicked, if any. Branch then surfaces this on our Dashboard, and conditionally* makes this data available in our [Data Feeds](/pages/exports/data-feeds/) product.
@@ -269,9 +269,11 @@ There are four Branch attribution windows, and two Facebook attribution windows.
 | Impression to conversion event | View Window |
 
 *Change your Facebook attribution windows*
+
 In order to update your Facebook Attribution window for a particular ad account, you can go to https://business.facebook.com/ads/manager/account_settings/information. Choose the account in the dropdown in the upper-left corner. As long as you're an admin on that account, you should see a section 'Attribution' at the top-right, and an ability to edit the Click or View window or both.
 
 *Change your Branch attribution windows*
+
 Alternatively or in addition, you could update any of your four Branch attribution windows. To do so go to the [Link Settings](https://dashboard.branch.io/link-settings) section of the Branch dashboard, and scroll down to the 'Attribution Windows' section and expand it. Alter any of the four windows listed in the chart above to match the corresponding Facebook window, and then save at the bottom of the page.
 
 *Reporting based on time of impression or time of conversion*
@@ -301,6 +303,28 @@ You can see the timezone used by your Branch account [here](https://dashboard.br
 You can see the timezone used by your Facebook ad account [here](https://www.facebook.com/ads/manager/account_settings/information/){:target="\_blank"}. If you are using multiple ad accounts with Branch, be sure to align the timezones of each of them.
 
 If you are unable to align all timezones, you may notice some data on the Branch Dashboard does not line up exactly with data on the Facebook Dashboard. However, data will not be lost, but merely shifted between days. Summing figures over longer periods of time should greatly diminish the effect of having inconsistent time zones.
+
+#### Other common issues
+
+##### Issue with iOS 10 and Limit Ad Tracking
+
+In iOS 10, Apple broke the ability for app developers to collect the `IDFA` if the user had enabled `Limit Ad Tracking`. In this case, Branch and Facebook cannot compare notes to see who drove the install. This will account for about 15% discrepancy in counts across both platforms, where Branch's tracked installs will be lower.
+
+##### Not Collecting Advertising ID
+
+If you see absolutely 0 data coming through from your integration, it's possible that you're not collecting Google Advertising ID (GAID) on Android or IDFA on iOS.
+
+- iOS: Add the AdSupport.framework and read this extra info about [submitting](https://dev.branch.io/getting-started/sdk-integration-guide/guide/ios/#submitting-to-the-app-store TODO) to the store.
+- Android: Add Google Play Services so that we can collect GAID. See [here](https://dev.branch.io/getting-started/sdk-integration-guide/advanced/android/#use-google-advertising-id TODO).
+
+##### Installs Counted as Reinstalls, Opens on Branch
+
+One discrepancy root cause we've seen before is the scenario where Branch will classify an install as a reinstall or open. We remember the history of a particular user via their IDFA or Google Advertising ID (in addition to using a few other methods) and will detect whether the user is actually a new user or a returning user who had previously uninstalled your app. Facebook has a different mechanism that is limited to 180 days. Branch in some cases has detected reinstalls that occurred more than a year later.
+
+##### Don't Use setDebug
+
+Facebook ads are incompatible with [debug mode](/pages/apps/ios/#simulate-an-install), as this prevents us from sending the correct hardware ID to Facebook.
+
 
 #### Discrepancies with Impressions and Clicks
 
@@ -423,3 +447,95 @@ If after all this you're still seeing discrepancies, please [contact us](https:/
 ##### 4. I see conversion events on the Branch Dashboard, but the numbers look different from what I see on the Facebook Dashboard
 
 We have not encountered any issues here so far. Please see [I see installs, reinstalls or opens on the Branch Dashboard, but the numbers look different from what I see on the Facebook Dashboard](pages/deep-linked-ads/facebook-ads-faq/#1-i-dont-see-any-installs-reinstalls-or-opens-on-the-branch-dashboard) for steps to follow, and for information to send to us if we need to debug together.
+
+
+
+### Troubleshooting deep linking
+
+#### Intercepting Deep Links Before Branch
+
+If you use Branch deep links in Facebook app ads, please check the following.
+
+We recently discovered an issue where an app was calling Facebook's SDK to fetch the deferred app link within their iOS and Android app. Branch calls uses this same mechanism via a direct API integration, but if Facebook's SDK retrieves it before we do, Branch will not see any deep link data. Please ensure to comment out any calls to the following API within your app:
+
+- [Android: fetchDeferredAppLink](https://developers.facebook.com/docs/reference/android/current/class/AppLinkData/)
+- [iOS: fetchDeferredAppLink](https://developers.facebook.com/docs/reference/ios/current/class/FBSDKAppLinkUtility/)
+
+#### Testing Deep Linking from Ads
+
+Unfortunately, the demo/preview ads used during the ads creation flow on Facebook use a different mechanism than live Facebook ads. **This prevents you from testing deep linking from your Facebook ads**. Do not waste time trying to get this to work. We've confirmed with Facebook representatives that this is broken.
+
+The only way to test the deep linking functionality is outside of the actual ads system is a helper tool from Facebook. Follow these instructions to test the deep linking functionality:
+
+1. Head to the [Ads tester tool](https://developers.facebook.com/tools/app-ads-helper/){:target="_blank"}
+1. Choose the app that you're advertising with
+1. Scroll down to the button that says 'Test Deep Link'
+1. Paste in the Branch link
+1. Check 'Send Deferred'
+1. Click 'Send to iOS/Android'
+1. Install the app and it should deep link!
+
+!!! note "Note the following common mistakes for testing"
+	1. If you reset the GAID or IDFA on a device, you must uninstall Facebook and re-install prior to testing. Facebook does not update the IDFA/GAID every time it's opened.
+	2. Send deferred does not require a notification to be sent or to be clicked. Checking "Send Deferred" will automatically queue up a match for the test device with the deep link data. The notifiation is completely separate from deferred deep linking.
+	3. The Facebook account on the desktop where you click "Send Deferred" must match the account logged into the test device for deferred deep link data to be queued up. Note that we've observed issues where you log in and out of multiple accounts on test devices that cause Facebook to not correctly queue up a match.
+	4. If you see that someone liked your ad, do not bother trying to click and test it. Clicking your own, live advertisement that shows up in notifications will not deep link.
+
+#### Issues Reading Facebook App Links
+
+If Facebook is having trouble reading the App Links from the Branch link, you might see messages like these while trying to test out the flow. This means that there is something corrupted in the OG tags causing Facebook to not parse your link.
+
+<img src="/img/ingredients/deep-linked-ads/fb-ads-support/invalid-app-links-error.png" alt="Invalid App Links" class="center three-quarters">
+<img src="/img/ingredients/deep-linked-ads/fb-ads-support/missing_applinks.png" alt="Troubleshooting" class="center">
+
+**Rescrape the OG Tags**
+
+You can test the OG tags using the [OG tag tester tool](https://developers.facebook.com/tools/debug/og/object) provided by Facebook:
+
+1. Paste the Branch Link into the Input URL box.
+1. Click on the Show existing scrape information button.
+1. Examine errors regarding App Links from the output window.
+1. Click on the Fetch New Scrape Information button. This last step typically resolves this problem if you are certain that your Branch Link Settings are correct.
+
+!!! tip ""
+	You can further automate the rescraping process by using this command after you create a new link and before you use it for any ads:
+
+	``` sh
+	curl --insecure "https://graph.facebook.com/?id=[YOUR-URL-TO-SCRAPE]&scrape=true"
+	```
+
+**If the OG tag tester continues to report problems**
+
+1. Examine your [Link Settings](https://dashboard.branch.io/#/settings/link){:target="_blank"} and ensure that for all platforms (for which an app is available), that a URI scheme and a link to the app in the Play/App Store is configured. If you are using a Custom URL for your iOS Redirect, then you need to append `?id[10-digit App Store ID]` to the URL. This is necessary in order to fully generate the App Links and OG tags that the Facebook scraper expects to find.
+    - For example, if your App Store URL is `https://itunes.apple.com/us/app/my-app-name/id1234567890`, then your Custom URL value should be `https://example.com?id1234567890`
+1. If errors from the output window pertain to OG tags i.e. missing title, description etc. then examine link OG tags by appending `?debug=true` as described on the [Integration Testing page]({{base.url}}/getting-started/integration-testing/guide/#debugging-an-individual-link).
+1. If you haven't set OG tags on a per link level, then please check your Dashboard's global Social Media Display Customization settings from the [Link Settings](https://dashboard.branch.io/#/settings/link){:target="_blank"} page.
+
+**Use a direct deep link**
+
+As a last resort, you can manually input a direct deep link. To retrieve this:
+
+1. Go to Facebook's [Open Graph Object Debugger](https://developers.facebook.com/tools/debug/og/object/)
+1. Input the Branch link you want to use for your ad
+1. Click **Fetch new scrape information**
+1. Find the `al:ios:url` line (it should look like `<meta property="al:ios:url" content="myapp://open?link_click_id=link-242052337263342024" />`)
+1. Copy the value of this (`myapp://open?link_click_id=link-242052337263342024`) and input it as the Deep Link value of your ad
+
+If none of these approaches work, please reach out to integrations@branch.io immediately.
+
+#### Known Issue with App Restrictions
+
+We recently discovered a bug within the Facebook system that prevents App Links from being read by the robot if you change any of these values from the defaults in your Advanced Facebook App Settings tab. Please make sure
+
+- Contains Alcohol is set to **No**
+- Age Restriction is set to **Anyone (13+)**
+- Social Discovery is set to **Yes**
+- Country Restricted is set to **No**
+
+It has to look like this **exactly**:
+
+![App Restrictions Troubleshooting](/img/ingredients/deep-linked-ads/fb-ads-support/app_restrictions.png)
+
+**No IP Whitelists**
+
+Because Branch has a large distribution of API servers that will be making requests to Facebook on behalf of your app, you cannot have an IP whitelist in your [Facebook advanced settings](https://developers.facebook.com/apps/390736167768543/settings/advanced/) and still have this integration work. Please remove any IPs from this setting if they are present.
