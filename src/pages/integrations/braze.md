@@ -18,6 +18,7 @@ We have built a custom integration to automatically send all Branch install data
 - This guide requires you to have already integrated the Branch mobile SDKs into your app.
 - You also need to [sign up for an Braze account](https://dashboard.braze.com/developers/sign_up) and [install the Braze SDK](https://documentation.braze.com/).
 - Ensure Braze's SDK is [collecting the IDFA](https://documentation.braze.com/iOS/#optional-idfa-collection).
+- Make sure to follow the steps in Braze's [documentation here](https://www.braze.com/documentation/Partner_Integrations/#branch).
 
 ### Get the Braze API key
 
@@ -32,7 +33,7 @@ We have built a custom integration to automatically send all Branch install data
   * If you have not yet entered billing information, please do so now.
 1. Enter your Braze iOS API Key and hit **Save**.
 
-![image](/img/pages/integrations/braze/enable-braze-integration.png)
+![image](/img/pages/integrations/braze/braze.jpg)
 
 ## Advanced
 

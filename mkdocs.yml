@@ -150,10 +150,12 @@ pages:
     - Mailgun: pages/emails/mailgun.md
     - Mailjet: pages/emails/mailjet.md
     - Mandrill: pages/emails/mandrill.md
+    - MoEngage: pages/emails/moengage.md
     - PostUp: pages/emails/postup.md
     - Responsys: pages/emails/responsys.md
     - Sailthru: pages/emails/sailthru.md
     - Salesforce: pages/emails/salesforce.md
+    - Sender: pages/emails/sender.md
     - SendGrid: pages/emails/sendgrid.md
     - SparkPost: pages/emails/sparkpost.md
     - Vero: pages/emails/vero.md
@@ -168,7 +170,6 @@ pages:
   - Links for viral & referral:
     - Content sharing: pages/viral/content-sharing.md
     - Referral programs: pages/viral/referrals.md
-    - Facebook App Invites: pages/viral/facebook-app-invites.md
   - Links in new app platforms:
     - Android Instant Apps: pages/app-to-app/android-instant-apps.md
     - iMessage Apps: pages/app-to-app/imessage-apps.md
@@ -194,6 +195,8 @@ pages:
         - Tune: pages/integrations/tune.md
       - Data Export API: pages/exports/api-v3.md
       - Webhooks: pages/exports/ua-webhooks.md
+      - Query API: pages/exports/query-api.md
+      - Query Recipe Book: pages/exports/query-recipe-book.md
   - Branch Matching Overview: pages/resources/matching.md
   - Validation Tools: pages/resources/validation-tools.md
   - Case Studies and Infographics: pages/resources/case-studies.md
@@ -205,6 +208,7 @@ pages:
     - Google Universal App Campaigns: pages/deep-linked-ads/google-uac.md
     - Google Search Network Ads: pages/deep-linked-ads/google-xplatform-search-ads.md
     - Google Display Network Ads: pages/deep-linked-ads/google-xplatform-display-ads.md
+    - Google Shopping Ads: pages/deep-linked-ads/google-shopping-ads.md
     - Google Adwords Conversion Setup: pages/deep-linked-ads/google-conversions.md
     - Google Video Ads: pages/deep-linked-ads/google-video-ads.md
     - Facebook App Install Ads: pages/deep-linked-ads/facebook-app-install-ads.md
@@ -219,6 +223,4 @@ pages:
     - Event Ontology: pages/exports/event_ontology_data_schema.md
     - New Data Integrations: pages/integrations/faq.md
     - Ad Networks List: pages/ad-networks/ad-networks-list.md
-    - Query API: pages/exports/query-api.md
-    - Query Recipe Book: pages/exports/query-recipe-book.md
     - Facebook FAQ and Advanced Options: pages/deep-linked-ads/facebook-ads-faq.md

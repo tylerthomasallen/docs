@@ -597,8 +597,6 @@
 
     - Need to select `"app uses IDFA or GAID"` when publishing your app
 
-    - Best to enable [Deepviews](https://dashboard.branch.io/settings/deepviews) ([Supported platforms](/pages/links/behavior/#expected-redirect-behavior))
-
 - ### Optional app config
 
     - Additional configuration for custom link domains, simulating installs, unique bundle identifiers, etc

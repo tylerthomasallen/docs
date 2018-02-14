@@ -1,12 +1,12 @@
 ## Overview
 
-The Branch partnership with [Braze](https://www.braze.com) provides a push-button way to deliver Branch installs and attributions to your Braze dashboard. This allows you to analyze your users coming in from Branch deep linked campaigns.
+The Branch partnership with [Braze](https://www.braze.com) provides a push-button way to deliver Branch-referred iOS installs and attributions to your Braze dashboard. This allows you to analyze your users coming in from Branch deep linked campaigns.
 
 **At this time, our integration only applies to the iOS platform.**
 
 ### How it works
 
-We have built a custom integration to automatically send all Branch install data to Braze without any extra work on your side (besides integrating both SDKs). Simply click a button, and you'll be good to go!
+We have built a custom integration to automatically send all Branch-referred iOS install data to Braze without any extra work on your side (besides integrating both the Branch and Braze SDKs). Simply click a button, and you'll be good to go!
 
 !!! protip "How do we differentiate Braze and Branch installs?"
     We rely on a Branch link being clicked, which leads to an install. This sets an internal boolean that an install came from Branch.

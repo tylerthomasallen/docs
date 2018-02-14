@@ -237,6 +237,9 @@
     !!! warning "Only initialize Branch in the Launcher activity"
         The app will open through the Launcher activity, where Branch will initialize and retrieve the deep link data from the link click.
 
+    !!! warning "Always intialize Branch in `onStart()`"
+        Initializing Branch in other Android lifecyle methods, like `onResume()`, will lead to unintended behavior. `onStart()` is what makes the activity visible to the user, as the app prepares for the activity to enter the foreground and become interactive. Learn more [here](https://developer.android.com/guide/components/activities/activity-lifecycle.html).
+
 - ### Load Branch
 
     - Add Branch to your `CustomApplicationClass.java`
@@ -926,18 +929,18 @@
     - *Java*
 
         ```java
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse((String) "https://example.app.link/u3fzDwyyjF"));
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setPackage("com.android.chrome");
+        Intent intent = new Intent(this, ActivityToLaunch.class);
+        intent.putExtra("branch","http://xxxx.app.link/testlink");
+        intent.putExtra("branch_force_new_session",true);
         startActivity(intent);
         ```
 
     - *Kotlin*
 
         ```java
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://9wlb.app.link/hRXAHkUlxH"))
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.`package` = "com.android.chrome"
+        val intent = Intent(this, ActivityToLaunch::class.java)
+        intent.putExtra("branch", "http://xxxx.app.link/testlink")
+        intent.putExtra("branch_force_new_session", true)
         startActivity(intent)
         ```
 

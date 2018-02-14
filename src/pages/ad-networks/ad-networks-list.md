@@ -1,70 +1,86 @@
-### Ad Networks List
-|  | Partner |
-| :---: | :--- | 
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/a4g-logo-1493239709871.png) | **A4G**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unnamed-1502390560857.png) | **Actionpay**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/ad4screen-1504724050417.png) | **Ad4Screen**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/aai_logo_med_trans_black-1509989746768.png) | **AdAction Interactive**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/origin_08da80a1e1be4275-1508530733424.png) | **Adcash**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/adcolony-1513204502834.png) | **AdColony**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_adikteev-1513039903349.png) | **Adikteev**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-admitad-1493136873359.png) | **Admitad**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Adsterra-1508532651884.png) | **Adsterra Network**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/affisee-1513141472946.png) | **Affise**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/29291839342_73029de826_o-1496708152338.png) | **Appier**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_searchAds-1506359721056.png) | **Apple**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/applift_lg-bdbcf02abab90b0343354dc04fb1ff42ac2b6a9e15c34aa7177e49a7ae7864d9-1509989161261.png) | **Applift**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/u3eoOtkBNGx7x4W6nKLQSQ-AppLovin_Logo_Blue_White_Rectangle_WEB-1492637758109.png) | **Applovin**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/mf7zfgvsypjglqnisyth-1492800692344.png) | **Appnext**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_blue-1500940117780.png) | **Billy Mobile**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/cck-1508531144603.png) | **Clickadu**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/LogoClickky-1508351211926.png) | **Clickky**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/top-logo1-1500342833490.png) | **Connected Interactive**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/crobo-1500662980708.png) | **crobo**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/cross_install_logo-1493241188265.png) | **CrossInstall**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/169744LOGO-1493150262933.png) | **Digital Turbine**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/dc_newlogo-1513231189826.png) | **DoubleClick**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Drawbridge_Logo_2015-1493243116881.png) | **Drawbridge**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Espire-1513137347677.png) | **Espire**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/wordmark-1498695380173.png) | **Facebook**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/fyber-logo-1493132211689.png) | **Fyber**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/geistMBlackRedLogo-1498181264812.png) | **GeistM**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-glispa@2x-1493323107286.png) | **Glispa**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unnamed-1497567899553.png) | **GlobalWide Media**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Adwords_logo-1492792697441.png) | **Google AdWords**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/impact-radius-logo-1493166999679.png) | **Impact Radius**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-color-1492715152194.png) | **InMobi**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/101621-d00d811d71b53bd93856f5358489baca-1492635797381.png) | **IronSource**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Jampp-1492638822951.png) | **Jampp**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/liftoff-logo-1492801474909.png) | **Liftoff**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1500342359816.png) | **Magnet**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/manage_logo_trans_300x75-1505160375494.png) | **Manage**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/mobio_logofooter1-1498863703378.png) | **Mobio**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_mobrain_iso-1495753098283.png) | **MoBrain**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/687474703a2f2f6d6f62757369617070732e6769746875622e696f2f4d6f6275736953444b2d694f532f696d616765732f6d6f627573695f6c6f676f5f6e6567726f2e706e67-1493247352015.png) | **Mobusi**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Mozoo-Performance-1492710482008-1498430203032.png) | **Mozoo**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/78e199f17cd2c80f31e430eec689-1493246692632.png) | **Mpire Network**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/0000014b-6f75-2b16-6984-3be17d5c7b30-1500341129317.png) | **MundoMedia**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/nativex-logo2-300x130-1493132886101.png) | **NativeX**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1498155298417.png) | **Oplytic**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Pep_logo_red-1501274975350.png) | **Pepperjam**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/PH_LOGO-1493341199816.png) | **Performance Horizon**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Picnic_Media-1513137425026.png) | **Picnic Media**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/links-logo-1508262751788.png) | **Prappers**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1494891385579.png) | **ProfiliAd**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_propellerads32-1508798759717.png) | **Propeller Ads**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Logo-2-1509402724378.png) | **Raykaad**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/vgfm8axwuhj2lcwybtzf-1492640396474.png) | **Remerge**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1493256528887.png) | **RevX**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/main_logo_compress-1509082296545.png) | **Sabio Mobile**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/8331ef7d-bfc8-4148-a118-50da0fc43f8f-1490739325404-1506381795896.png) | **StackAdapt**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/taboola_logo-new-large-1500341960275.png) | **Taboola**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Tapjoy-acquires-5Rocks-1493129616390.png) | **Tapjoy**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/tapsell2-1503596508675.png) | **Tapsell**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Taptica_Logo-1513204728443.png) | **Taptica**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/thetradedeskdmp-1502822492413.png) | **The Trade Desk**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/2-02-1498862779375.png) | **Unilead Network**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unity-1493071825773.png) | **Unity**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1495753718180.png) | **Ventes Avenues**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Vungle-Logo-Primary-Navy-Transparent-Padded-1493068923084.png) | **Vungle**
-![image](https://cdn.branch.io/branch-assets/ad-partner-manager/youappi-1502235001895.png) | **YouAppi**
+### Ads Networks List
+Logo | Partner 
+--- | --- 
+<a href="http://a4g.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/a4g-logo-1493239709871.png)</a>| **A4G**
+<a href="http://actionpay.net">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unnamed-1502390560857.png)</a>| **Actionpay**
+<a href="http://ad4screen.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/ad4screen-1504724050417.png)</a>| **Ad4Screen**
+<a href="http://adactioninteractive.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/aai_logo_med_trans_black-1509989746768.png)</a>| **AdAction Interactive**
+<a href="http://adacts.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/adactslogohd-1511911181113.png)</a>| **Adacts Digital**
+<a href="http://adbloom.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/AdBloom-Logo-Green-1512675868221.png)</a>| **Adbloom**
+<a href="http://adcash.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/origin_08da80a1e1be4275-1508530733424.png)</a>| **Adcash**
+<a href="http://adcolony.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/adcolony-1513204502834.png)</a>| **AdColony**
+<a href="http://adikteev.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_adikteev-1513039903349.png)</a>| **Adikteev**
+<a href="http://admitad.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-admitad-1493136873359.png)</a>| **Admitad**
+<a href="http://adsterra.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Adsterra-1508532651884.png)</a>| **Adsterra Network**
+<a href="http://affise.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/affisee-1513141472946.png)</a>| **Affise**
+<a href="http://appier.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/29291839342_73029de826_o-1496708152338.png)</a>| **Appier**
+<a href="http://apple.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_searchAds-1506359721056.png)</a>| **Apple**
+<a href="http://applift.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/applift_lg-bdbcf02abab90b0343354dc04fb1ff42ac2b6a9e15c34aa7177e49a7ae7864d9-1509989161261.png)</a>| **Applift**
+<a href="http://applovin.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/u3eoOtkBNGx7x4W6nKLQSQ-AppLovin_Logo_Blue_White_Rectangle_WEB-1492637758109.png)</a>| **Applovin**
+<a href="http://appnext.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/mf7zfgvsypjglqnisyth-1492800692344.png)</a>| **Appnext**
+<a href="http://billymob.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_blue-1500940117780.png)</a>| **Billy Mobile**
+<a href="http://clickadu.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/cck-1508531144603.png)</a>| **Clickadu**
+<a href="http://clickky.me">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/LogoClickky-1508351211926.png)</a>| **Clickky**
+<a href="http://connectedinteractive.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/top-logo1-1500342833490.png)</a>| **Connected Interactive**
+<a href="http://crobo.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/crobo-1500662980708.png)</a>| **crobo**
+<a href="http://crossinstall.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/cross_install_logo-1493241188265.png)</a>| **CrossInstall**
+<a href="http://dataxu.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/dataxu_logo_new-1510621012108.png)</a>| **DataXu**
+<a href="http://digitalturbine.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/169744LOGO-1493150262933.png)</a>| **Digital Turbine**
+<a href="http://display.io">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/display-io-1512502086505.png)</a>| **Display.io**
+<a href="https://www.doubleclickbygoogle.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/dc_newlogo-1513231189826.png)</a>| **DoubleClick**
+<a href="http://drawbridge.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Drawbridge_Logo_2015-1493243116881.png)</a>| **Drawbridge**
+<a href="http://espireads.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Espire-1513137347677.png)</a>| **Espire**
+<a href="http://facebook.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/wordmark-1498695380173.png)</a>| **Facebook**
+<a href="http://feedmob.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/feedmob-logo_highres-teal_2-1510161910168.png)</a>| **FeedMob**
+<a href="https://www.fyber.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/fyber-logo-1493132211689.png)</a>| **Fyber**
+<a href="http://geistm.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/geistMBlackRedLogo-1498181264812.png)</a>| **GeistM**
+<a href="http://glispamedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-glispa@2x-1493323107286.png)</a>| **Glispa**
+<a href="http://globalwidemedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unnamed-1497567899553.png)</a>| **GlobalWide Media**
+<a href="https://adwords.google.com/home/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Adwords_logo-1492792697441.png)</a>| **Google AdWords**
+<a href="http://impactradius.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/impact-radius-logo-1493166999679.png)</a>| **Impact Radius**
+<a href="http://inflectomedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/inflecto_logo_black-1513230631373.png)</a>| **Inflecto Media**
+<a href="http://inmobi.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-color-1492715152194.png)</a>| **InMobi**
+<a href="http://ironsrc.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/101621-d00d811d71b53bd93856f5358489baca-1492635797381.png)</a>| **IronSource**
+<a href="http://jampp.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Jampp-1492638822951.png)</a>| **Jampp**
+<a href="http://liftoff.io">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/liftoff-logo-1492801474909.png)</a>| **Liftoff**
+<a href="http://magnetadservices.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1500342359816.png)</a>| **Magnet**
+<a href="http://manage.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/manage_logo_trans_300x75-1505160375494.png)</a>| **Manage**
+<a href="http://mobioinc.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/mobio_logofooter1-1498863703378.png)</a>| **Mobio**
+<a href="http://headwaydigital.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_mobrain_iso-1495753098283.png)</a>| **MoBrain**
+<a href="https://www.mobusi.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/687474703a2f2f6d6f62757369617070732e6769746875622e696f2f4d6f6275736953444b2d694f532f696d616765732f6d6f627573695f6c6f676f5f6e6567726f2e706e67-1493247352015.png)</a>| **Mobusi**
+<a href="http://mobvista.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Mobvista-logo-color-2015-e1446489504259-1512755416489.png)</a>| **Mobvista**
+<a href="http://mobx.agency">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Logo_Business_transp-1511229700695.png)</a>| **MobX**
+<a href="http://molocoads.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/moloco-1515797858655.png)</a>| **Moloco**
+<a href="http://motiveinteractive.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/motive-logo-300x-1493074626823.png)</a>| **Motive**
+<a href="http://surikate.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Mozoo-Performance-1492710482008-1498430203032.png)</a>| **Mozoo**
+<a href="http://mpirenetwork.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/78e199f17cd2c80f31e430eec689-1493246692632.png)</a>| **Mpire Network**
+<a href="http://mundomedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/0000014b-6f75-2b16-6984-3be17d5c7b30-1500341129317.png)</a>| **MundoMedia**
+<a href="http://corp.mail.ru">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/my_com-1501129417628.png)</a>| **myTarget**
+<a href="http://www.nativex.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/nativex-logo2-300x130-1493132886101.png)</a>| **NativeX**
+<a href="http://oplytic.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1498155298417.png)</a>| **Oplytic**
+<a href="http://pepperjam.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Pep_logo_red-1501274975350.png)</a>| **Pepperjam**
+<a href="http://phgsupport.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/PH_LOGO-1493341199816.png)</a>| **Performance Horizon**
+<a href="http://phunware.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/phunware-1510972218166.png)</a>| **Phunware**
+<a href="http://picnic-media.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Picnic_Media-1513137425026.png)</a>| **Picnic Media**
+<a href="http://pinsightmedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/gold-black_horizontallogo_digital-1513230839937.png)</a>| **Pinsight**
+<a href="http://prappers.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/links-logo-1508262751788.png)</a>| **Prappers**
+<a href="http://profiliad.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1494891385579.png)</a>| **ProfiliAd**
+<a href="http://propellerads.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_propellerads32-1508798759717.png)</a>| **Propeller Ads**
+<a href="http://raykaad.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Logo-2-1509402724378.png)</a>| **Raykaad**
+<a href="http://remerge.io">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/vgfm8axwuhj2lcwybtzf-1492640396474.png)</a>| **Remerge**
+<a href="http://revx.io">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1493256528887.png)</a>| **RevX**
+<a href="http://sabiomobile.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/main_logo_compress-1509082296545.png)</a>| **Sabio Mobile**
+<a href="http://spykemedia.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/1-e1466007909243-1495751845237.png)</a>| **Spyke Media**
+<a href="http://stackadapt.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/8331ef7d-bfc8-4148-a118-50da0fc43f8f-1490739325404-1506381795896.png)</a>| **StackAdapt**
+<a href="http://tab.company">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unnamed-1502234001399.png)</a>| **TAB**
+<a href="http://taboola.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/taboola_logo-new-large-1500341960275.png)</a>| **Taboola**
+<a href="http://tapjoy.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Tapjoy-acquires-5Rocks-1493129616390.png)</a>| **Tapjoy**
+<a href="http://tapsell.ir">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/tapsell2-1503596508675.png)</a>| **Tapsell**
+<a href="http://taptica.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Taptica_Logo-1513204728443.png)</a>| **Taptica**
+<a href="http://thetradedesk.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/thetradedeskdmp-1502822492413.png)</a>| **The Trade Desk**
+<a href="http://unilead.net">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/2-02-1498862779375.png)</a>| **Unilead Network**
+<a href="http://unity3d.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unity-1493071825773.png)</a>| **Unity**
+<a href="http://ventesavenues.in/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1495753718180.png)</a>| **Ventes Avenues**
+<a href="http://vungle.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Vungle-Logo-Primary-Navy-Transparent-Padded-1493068923084.png)</a>| **Vungle**
+<a href="http://wakeapp.ru">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Wake_app-1-1508532067151.png)</a>| **Wakeapp**
+<a href="http://yeahmobi.com">![image](https://s3-us-west-1.amazonaws.com/branch-assets/yeah-test.png)</a>| **YeahMobi**

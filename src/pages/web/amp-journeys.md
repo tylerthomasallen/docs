@@ -131,7 +131,12 @@ Because javascript is limited on AMP and cookies are restricted on both AMP and 
 * [Client-side javascript controls](/pages/web/journeys/#clientside-javascript-journeys-controls) are not supported.
 * Auto-opening the app with open_app: true is not supported.
 * [Deep linking with setBranchViewData](/pages/web/journeys/#deep-linking-from-the-banner-or-interstitial) is not supported. [Learn how](#deep-linking-with-amp) you can deep link to content from AMP pages.
-
+* If your site uses a template engine like Jinja that looks for and replaces liquid tags (ex: {{ yourObject }}), then you should confirm that it does not remove Branch tags on render. For Jinja specifically, you should wrap the Branch code on your AMP page with raw tags:
+```
+{% raw %}
+<amp-list tabindex=0 role="" on="tap:branch-amp-journey.hide" id="branch-amp-journey" src="https://DOMAIN-HERE/branch-amp-journeys-pre?branch_key=BRANCH_KEY_HERE&_aj_cid=CLIENT_ID(_s)&amp_viewer=VIEWER&aj_source_url=SOURCE_URL&aj_canonical_url=CANONICAL_URL&aj_v=1.0.0" layout=fixed-height height="77px"><template type="amp-mustache" id="journey-template"><a class="close" on="tap:branch-amp-journey.hide"></a><div class="hideme" ></div><amp-iframe class="branch-amp-journey-inner do_not_display" layout="fixed-height" height="77px" resizable src="https://DOMAIN-HERE/branch-amp-journeys?branch_key=BRANCH_KEY_HERE&aj_cid=aj_cid&aj_source_url=aj_source_url&aj_canonical_url=aj_canonical_url&_audience_rule_id=_audience_rule_id&_branch_view_id=_branch_view_id&_aj_v=1.0.0" sandbox="allow-scripts allow-top-navigation allow-same-origin" frameborder="0"><div overflow></div></amp-iframe></template></amp-list>
+{% endraw %}
+```
 
 ### Targeting Limitations
 

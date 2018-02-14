@@ -505,8 +505,8 @@ If you want to track an event that isn't a predefined event, simply do the follo
 
 ```Java
 new BranchEvent("Some Custom Event")
-    .addCustomProperty("Custom_Event_Property_Key11", "Custom_Event_Property_val11")
-    .addCustomProperty("Custom_Event_Property_Key22", "Custom_Event_Property_val22")
+    .addCustomDataProperty("Custom_Event_Property_Key11", "Custom_Event_Property_val11")
+    .addCustomDataProperty("Custom_Event_Property_Key22", "Custom_Event_Property_val22")
     .logEvent(MainActivity.this);
 }
 ```
