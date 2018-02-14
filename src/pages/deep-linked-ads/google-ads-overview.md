@@ -18,9 +18,9 @@ Once you have completed set up below, follow each guide to track campaigns.
 
 Setting up Adwords conversion events with Branch allows Branch to get direct confirmation from Google for which conversion events were driven by an Adwords advertisement and allows Adwords to collect accurate conversion data for your app.
 
-### Latest Method (OAuth method)
+### OAuth
 
-If you are on the new AdWords integration through Branch, read these instructions. Do **not** follow the steps of the legacy instructions. If you would like to try the latest method, send an email to sahil@branch.io. Benefits of the new integration include tracking all Universal App Campaigns automatically (no links required), and sending all conversion events back to AdWords for optimized spend.
+Benefits of the new integration include tracking all Universal App Campaigns automatically (no links required), and sending all conversion events back to AdWords for optimized spend.
 
 #### AdWords Setup
 
@@ -62,54 +62,6 @@ All that remains is importing Branch events into AdWords. After you have set thi
 
 That's it! All of your campaigns with mobile conversions will be tracked in Branch's dashboard.
 
-### Legacy (no OAuth option)
-
-If you do not have the option in your Branch dashboard to connect via oauth, you are on the old style of AdWords. If you'd like to use the new option, please see above.
-
-#### Branch Setup
-If you do not have the ability to connect to AdWords through OAuth, please follow the instructions below.
-
-Start by going to the [Partner Management tab](https://dashboard.branch.io/ads/partner-management){:target="\_blank"}, and search for Google AdWords. Hit enable.
-
-#### AdWords Setup
-Start by going to your AdWords dashboard, and clicking `Tools` > `Conversions`, which is usually found in the top right nav of AdWords.
-
-
-<img src="/img/pages/deep-linked-ads/google-conversions/adwords-tools-conversion.png" alt="Conversion Menu" class="center half">
-
-Click `+ Add a Conversion` button, and select `App`. Select `First opens and in-app actions`. Select the appropriate platform (iOS or Android). Select `App installs (first-open)` or `In-app actions`. Please note that iOS actions are only available for ads that show on the Display Network.
-
-<img src="/img/pages/deep-linked-ads/google-conversions/adwords-app-conversion-card.png" alt="Conversion IDs" class="center three-quarters">
-
-You will then fill out information about the conversion.
-
-* Give it a name like `Branch Android/iOS Conversion`
-* Under `Value` assign a value (or select “Don’t assign a value to this install”)
-* Under `Mobile app` input your application details
-* Select `Include in "Conversions"` to have the conversion events appear in your Adwords columns
-
-From here, you will select the option to have a server report conversions: `Set up a server-to-server conversion feed...`.
-
-Make reference of the `Conversion ID` & `Conversion label` as shown in the screenshot below.
-
-![Conversion IDs](/img/pages/deep-linked-ads/google-conversions/adwords-conversions.png)
-
-Now navigate back to the Branch dashboard, specifically the [AdWords Settings](https://dashboard.branch.io/ads/partner-management/a_google_adwords?tab=settings){:target="\_blank"}.
-
-From here, you'll paste in the `Conversion ID` and `Conversion label` from your Adwords dashboard into the appropriate fields for either iOS or Android. If you plan on using custom events, please add the conversion ID for your account into the `Purchase or Custom Event Conversion ID` field. Make sure to hit save.
-
-##### Purchase and custom event
-
-1. To add Purchase and other custom event conversions in Google, first [enable the conversions in AdWords](/pages/deep-linked-ads/google-conversions/).
-
-1. Under the Account Settings tab, ensure you have pasted in the *Conversion ID* you generated earlier for the purchase or other event, into the `Purchase or Custom Event Conversion ID` field.
-
-1. Then, navigate to the Postback Config tab and add your *Conversion Label* into the Goal ID field.
-
-![AdWords Goal IDs](/img/pages/deep-linked-ads/google-conversions/aw-custom-goal-ids.png).
-
-You're all setup to confirm app install conversions between Branch and Adwords!
-
 !!! note "Conversion Windows"
 	Adwords has a default 30 day conversion window for app install actions which can't be changed. To minimize discrepancies between Branch and Adwords conversion values, we recommend setting your Branch attribution window to the same value.
 	Navigate to `Link Settings` > `Attribution Windows` and set the **Click to conversion event** to 30 days.
@@ -117,6 +69,10 @@ You're all setup to confirm app install conversions between Branch and Adwords!
 	**By default, the window is set to 30 days in the Branch dashboard.**
 
 ![Branch Conversion Window](/img/pages/deep-linked-ads/google-conversions/attribution-window.png)
+
+### Migration
+
+If you were using the old style of tracking, simply remove your conversion IDs and conversion labels from the Branch dashboard. Also, delete the old conversions with postbacks in AdWords. These steps are required to minimize discrepancies. 
 
 ## Campaign Type
 
