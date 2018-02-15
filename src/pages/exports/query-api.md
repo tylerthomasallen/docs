@@ -3,6 +3,11 @@
 !!! protip "Getting started"
     For newcomers to this API, we strongly suggest you check out our [Query Recipe Book](/pages/exports/query-recipe-book.md). It has screenshots of Dashboard visualizations, accompanied by what queries you need to make to pull the same data. It's a quick way to get up and running with this API.
 
+!!! Warning "Date format recently changed"
+    The date format recently changed. You are no longer required or allowed to specify a time as part of `start_date` and `end_date`. Instead, we use the timezone associated with your app. Visit the [Account Settings](https://dashboard.branch.io/account-settings/app) to see your timezone.
+
+    Example change: instead of sending `2017-11-29T08:00:00.000Z`, send `2017-11-29`.
+
 An HTTP API usable for programmatically querying pre-aggregated analytics. It can be used to fetch any of the same information displayed on nearly any the Branch dashboard, without accessing the Dashboard itself.
 
 An individual query is constructed from three types of parameters:
@@ -18,8 +23,8 @@ An example query could look like:
   "branch_key":"<YOUR_BRANCH_KEY>",
   "branch_secret":"<YOUR_BRANCH_SECRET>",
   // Data selection
-  "start_date": "2017-12-12T00:00:00",
-  "end_date": "2017-12-18T23:59:59",
+  "start_date": "2017-12-12",
+  "end_date": "2017-12-18",
   "data_source": "eo_click",
   "dimensions": [
     "last_attributed_touch_data_tilde_feature",
@@ -82,7 +87,7 @@ _required_: true
 
 _location_: body
 
-_restrictions_: Cannot be before 2017-10-14T00:00:00.000Z
+_restrictions_: Cannot be before 2017-10-14
 
 _format_: An ISO-8601 compliant date-time string. Eg: "2017-10-24T16:00:00-08:00"
 
@@ -391,8 +396,8 @@ Basic query for pulling installs per day, split by OS of the device the user ins
 curl -X POST -H "Content-Type: application/json" -d '{
   "branch_key":"<YOUR_BRANCH_KEY>",
   "branch_secret":"<YOUR_BRANCH_SECRET>",
-  "start_date": "2017-12-12T00:00:00",
-  "end_date": "2017-12-18T23:59:59",
+  "start_date": "2017-12-12",
+  "end_date": "2017-12-18",
   "data_source": "eo_install",
   "dimensions": [
     "user_data_os"
@@ -460,8 +465,8 @@ A maximum of 5 results should be returned, in descending order of unique_count, 
 curl -X POST -H "Content-Type: application/json" -d '{
   "branch_key":"<YOUR_BRANCH_KEY>",
   "branch_secret":"<YOUR_BRANCH_SECRET>",
-  "start_date": "2017-12-12T00:00:00",
-  "end_date": "2017-12-18T23:59:59",
+  "start_date": "2017-12-12",
+  "end_date": "2017-12-18",
   "data_source": "eo_click",
   "dimensions": [
     "last_attributed_touch_data_tilde_feature",

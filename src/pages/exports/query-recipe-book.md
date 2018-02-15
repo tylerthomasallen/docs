@@ -1,6 +1,11 @@
 !!! protip "Want to see a Query API reference?"
     For an exhaustive list of options for this Query API, flip over to the [Query API](/pages/exports/query-api.md) reference page.
 
+!!! Warning "Date format recently changed"
+    The date format recently changed. You are no longer required or allowed to specify a time as part of `start_date` and `end_date`. Instead, we use the timezone associated with your app. Visit the [Account Settings](https://dashboard.branch.io/account-settings/app) to see your timezone.
+
+    Example change: instead of sending `2017-11-29T00:00:00-08:00`, send `2017-11-29`.
+
 You can find your Branch Key and Branch Secret on the [Account Settings](https://dashboard.branch.io/account-settings/app) page of the Branch Dashboard. Give the curls below a try from any terminal!
 
 ## Summary Page - Installs
@@ -13,10 +18,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-11-29T00:00:00-08:00",
-          "end_date": "2017-12-05T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-11-29",
+          "end_date": "2017-12-05",
           "data_source": "eo_install",
           "granularity": "day",
           "dimensions": [
@@ -85,10 +90,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-11-29T00:00:00-08:00",
-          "end_date": "2017-12-05T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-11-29",
+          "end_date": "2017-12-05",
           "data_source": "eo_install",
           "granularity": "day",
           "dimensions": [
@@ -160,10 +165,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-11-29T00:00:00-08:00",
-          "end_date": "2017-12-05T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-11-29",
+          "end_date": "2017-12-05",
           "data_source": "eo_install",
           "granularity": "day",
           "dimensions": [
@@ -536,10 +541,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-08T00:00:00-08:00",
-          "end_date": "2017-12-14T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-08",
+          "end_date": "2017-12-14",
           "data_source": "eo_install",
           "granularity": "day",
           "dimensions": [
@@ -593,10 +598,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-08T00:00:00-08:00",
-          "end_date": "2017-12-14T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-08",
+          "end_date": "2017-12-14",
           "data_source": "eo_install",
           "granularity": "day",
           "dimensions": [
@@ -660,10 +665,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -737,10 +742,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_web_to_app_auto_redirect",
           "granularity": "all",
           "dimensions": [
@@ -786,10 +791,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_sms_sent",
           "granularity": "all",
           "dimensions": [
@@ -827,10 +832,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_install",
           "granularity": "all",
           "dimensions": [
@@ -895,10 +900,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_open",
           "granularity": "all",
           "dimensions": [
@@ -949,10 +954,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_reinstall",
           "granularity": "all",
           "dimensions": [
@@ -1010,10 +1015,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -1078,10 +1083,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-14T00:00:00-08:00",
-          "end_date": "2017-12-20T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-14",
+          "end_date": "2017-12-20",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -1143,10 +1148,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_branch_cta_view",
           "granularity": "all",
           "dimensions": [
@@ -1194,10 +1199,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -1246,10 +1251,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_web_to_app_auto_redirect",
           "granularity": "all",
           "dimensions": [
@@ -1286,10 +1291,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_install",
           "granularity": "all",
           "dimensions": [
@@ -1341,10 +1346,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_open",
           "granularity": "all",
           "dimensions": [
@@ -1384,10 +1389,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_reinstall",
           "granularity": "all",
           "dimensions": [
@@ -1444,10 +1449,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_branch_cta_view",
           "granularity": "all",
           "dimensions": [
@@ -1512,10 +1517,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_branch_cta_view",
           "granularity": "all",
           "dimensions": [
@@ -1563,10 +1568,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -1614,10 +1619,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_web_to_app_auto_redirect",
           "granularity": "all",
           "dimensions": [
@@ -1653,10 +1658,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_install",
           "granularity": "all",
           "dimensions": [
@@ -1707,10 +1712,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_open",
           "granularity": "all",
           "dimensions": [
@@ -1761,10 +1766,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_reinstall",
           "granularity": "all",
           "dimensions": [
@@ -1821,10 +1826,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_branch_cta_view",
           "granularity": "all",
           "dimensions": [
@@ -1888,10 +1893,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-14T00:00:00-08:00",
-          "end_date": "2017-12-20T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-14",
+          "end_date": "2017-12-20",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -1939,10 +1944,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-14T00:00:00-08:00",
-          "end_date": "2017-12-20T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-14",
+          "end_date": "2017-12-20",
           "data_source": "eo_web_to_app_auto_redirect",
           "granularity": "all",
           "dimensions": [
@@ -1984,10 +1989,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-14T00:00:00-08:00",
-          "end_date": "2017-12-20T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-14",
+          "end_date": "2017-12-20",
           "data_source": "eo_install",
           "granularity": "all",
           "dimensions": [
@@ -2025,10 +2030,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-14T00:00:00-08:00",
-          "end_date": "2017-12-20T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-14",
+          "end_date": "2017-12-20",
           "data_source": "eo_open",
           "granularity": "all",
           "dimensions": [
@@ -2072,10 +2077,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-14T00:00:00-08:00",
-          "end_date": "2017-12-20T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-14",
+          "end_date": "2017-12-20",
           "data_source": "eo_reinstall",
           "granularity": "all",
           "dimensions": [
@@ -2113,10 +2118,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-14T00:00:00-08:00",
-          "end_date": "2017-12-20T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-14",
+          "end_date": "2017-12-20",
           "data_source": "eo_web_session_start",
           "granularity": "all",
           "dimensions": [
@@ -2169,10 +2174,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -2240,10 +2245,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_install",
           "granularity": "all",
           "dimensions": [
@@ -2627,10 +2632,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_open",
           "granularity": "all",
           "dimensions": [
@@ -2816,10 +2821,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_web_session_start",
           "granularity": "all",
           "dimensions": [
@@ -2868,10 +2873,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_commerce_event",
           "granularity": "all",
           "dimensions": [
@@ -3137,10 +3142,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_commerce_event",
           "granularity": "all",
           "dimensions": [
@@ -3410,10 +3415,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -3466,10 +3471,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-11-29T00:00:00-08:00",
-          "end_date": "2017-12-05T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-11-29",
+          "end_date": "2017-12-05",
           "data_source": "eo_install",
           "granularity": "day",
           "dimensions": "last_attributed_touch_data_tilde_advertising_partner_name",
@@ -3629,10 +3634,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-11-29T00:00:00-08:00",
-          "end_date": "2017-12-05T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-11-29",
+          "end_date": "2017-12-05",
           "data_source": "eo_install",
           "granularity": "day",
           "dimensions": "last_attributed_touch_data_tilde_advertising_partner_name",
@@ -3806,10 +3811,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
@@ -3868,10 +3873,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_install",
           "granularity": "all",
           "dimensions": [
@@ -3933,10 +3938,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_open",
           "granularity": "all",
           "dimensions": [
@@ -3998,10 +4003,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_reinstall",
           "granularity": "all",
           "dimensions": [
@@ -4063,10 +4068,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_web_session_start",
           "granularity": "all",
           "dimensions": [
@@ -4122,10 +4127,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_commerce_event",
           "granularity": "all",
           "dimensions": [
@@ -4194,10 +4199,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_commerce_event",
           "granularity": "all",
           "dimensions": [
@@ -4271,10 +4276,10 @@ You can find your Branch Key and Branch Secret on the [Account Settings](https:/
 
         ```bash
         curl -X POST -H "Content-Type: application/json" -d '{
-          "branch_key": "ENTER_YOUR_KEY_HERE",
-          "branch_secret": "ENTER_YOUR_SECRET_HERE",
-          "start_date": "2017-12-07T00:00:00-08:00",
-          "end_date": "2017-12-13T23:59:59-08:00",
+          "branch_key": "<YOUR_BRANCH_KEY>",
+          "branch_secret": "<YOUR_BRANCH_SECRET>",
+          "start_date": "2017-12-07",
+          "end_date": "2017-12-13",
           "data_source": "eo_click",
           "granularity": "all",
           "dimensions": [
