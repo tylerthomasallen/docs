@@ -177,7 +177,7 @@ If your app already supports deep linking using URI paths, you can populate the 
 
 ### How to insert custom deep link routes into a Branch link
 
-All of the examples below create links that will cause Branch to display `myapp://content/1234` after launch. Please don’t include the URI scheme on the `$deeplink_path` parameters, we automatically append the scheme specified in the Link Settings of dashboard.
+All of the examples below create links that will cause Branch to display `myapp://content/1234` after launch. Please do not add the URI scheme on the `$deeplink_path` parameters; we automatically append the scheme specified in the Link Settings of dashboard.
 
 !!! example "When creating links dynamically"
 
