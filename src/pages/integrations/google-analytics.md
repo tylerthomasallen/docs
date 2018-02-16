@@ -56,10 +56,7 @@ Please specify `$google_analytics_client_id`. We will pass that to Google (as *c
 
 Please add the following before initializing the Branch session:
 
-```objc
-[[Branch getInstance] setRequestMetadataKey:@"$google_analytics_client_id" value:@"CLIENT-ID-HERE"];
-```
-
+Swift:
 ```swift
 let branch = Branch.getInstance();
 let val = gai.tracker(withTrackingId: "key")
