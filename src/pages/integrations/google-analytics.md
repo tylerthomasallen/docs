@@ -60,12 +60,21 @@ Please add the following before initializing the Branch session:
 [[Branch getInstance] setRequestMetadataKey:@"$google_analytics_client_id" value:@"CLIENT-ID-HERE"];
 ```
 
+```swift
+let branch = Branch.getInstance();
+let val = gai.tracker(withTrackingId: "key")
+branch.setRequestMetadataKey("$google_analytics_client_id", value:val?.get("&cid"))
+```
+
 **Android:**
 
 Please call the following line right after you initialize Branch in your Application’s #onCreate or Activity’s #onCreate:
 
 ```java
-Branch.getInstance().setRequestMetadata("$google_analytics_client_id", "CLIENT-ID-HERE");
+mTracker = sAnalytics.newTracker("UA-XXXXXXXX-1");
+
+String client_id = mTracker.get("&cid");
+Branch.getInstance().setRequestMetadata("$google_analytics_client_id",client_id);
 ```
 
 ## Advanced
