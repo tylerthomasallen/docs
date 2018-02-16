@@ -674,7 +674,7 @@
 
     - Allows you to track Branch deep links in your push notifications
 
-    - Use [openURL](handle-links-in-your-own-app) to handle the deep links
+    - Use [openURL](#handle-links-in-your-own-app) to handle the deep links
 
 - ### Track Apple Search Ads
 
