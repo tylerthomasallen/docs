@@ -4,7 +4,7 @@ With a push of a button you can send your Branch data to your Adobe Analytics da
 
 ### How does it work?
 
-Once the Branch SDK is integrated into an app, Branch can detect which links are leading to installs, re-opens, and users' actions. Enabling this integration and providing your Adobe Analytics Information will result in Branch automatically forwarding referred events to Adobe Analytics.
+Once the Branch SDK is integrated into an app, Branch can detect which links are leading to installs, re-opens, and users' actions. Enabling this integration and providing your Adobe Analytics Information will result in Branch automatically forwarding referred events to Adobe Analytics through a server to server integration.
 
 ### What events does Branch send?
 
@@ -95,15 +95,15 @@ For `Analytics Server Domain`, please do not include `http` or `https`. If your 
 
 ### Pass Adobe Visitor ID
 
-When you're ready to send data through Branch, you'll need to make sure you pass through the configured Adobe Visitor ID through the Branch SDKs. In order to do so, figure out which ID you use for user tracking in the Adobe SDK, and pass this value through `setRequestMetadataKey` on the Branch SDKs.
+When you're ready to send data through Branch, you'll need to make sure you pass through the configured Adobe Visitor ID through the Branch SDKs. In order to do so, figure out which ID you use for user tracking in the Adobe SDK by asking your Adobe Consultant, and pass this value through `setRequestMetadataKey` on the Branch SDKs.
 
-There are three possible identities you can track via this integration. Please verify which ID you use, and send that. For example, if your Adobe integration uses Marketing Cloud Visitor ID, retrieve it from the Adobe SDK, and pass in a key value pair, with the key being *$marketing_cloud_visitor_id*. The value would be the value retrieved through the Adobe SDK.
+There are three possible identities you can track via this integration. Please verify which ID you use, and send that. For example, if your Adobe integration uses Marketing Cloud Visitor ID, retrieve it from the Adobe SDK, and pass in a key value pair, with the key being *$marketing_cloud_visitor_id*. The value would be the value retrieved through the Adobe SDK. 
 
-1. Marketing Cloud Visitor ID - *$marketing_cloud_visitor_id*
-2. Analytics Visitor ID - *$adobe_visitor_id*
-3. Analytics Custom Visitor ID - *$analytics_visitor_id*
+1. Marketing Cloud Visitor ID - *$marketing_cloud_visitor_id* _sent to Adobe as `mid`_
+2. Analytics Visitor ID - *$adobe_visitor_id* _sent to Adobe as `aid`_
+3. Analytics Custom Visitor ID - *$analytics_visitor_id* _sent to Adobe as `vid`_
 
-Here's a sample snippet showing this. **NOTE** you must set the correct key before calling *initSession*. You must also initialize the Adobe SDK before setting the request metadata in the Branch SDK.
+Here's a sample snippet showing this. **NOTE** you must set the correct key before calling *initSession*. These examples use `$adobe_visitor_id` but you should use the appropriate key per the suggestions above. You must also initialize the Adobe SDK before setting the request metadata in the Branch SDK. 
 
 **Objective-C**
 
@@ -144,7 +144,7 @@ Branch.initSession(...);
 
 #### What Branch Sends to Adobe Analytics
 
-Branch sends the following values from Branch link data:
+Branch sends the following values from Branch link data in the Adobe Context Data:
 
 Adobe Classification | Branch Analytics Tag | Example
 --- | ---
@@ -165,3 +165,7 @@ There are common strategies to take while trouble shooting.
 With Adobe Analytics' dashboard, it may take up to ~2 hours for data to appear. We'd recommend you simulate 10-15 events in one testing session, and validate that they show up two hours later, so that feedback is transparent and obvious.
 
 Another thing to do is make sure a valid adobe_visitor_id is being passed up through the Branch SDK. Call *setDebug* and inspect the requests to `v1/open`. The key you want to find in this request payload is either `$adobe_visitor_id`, `$marketing_cloud_visitor_id`, or `$analytics_visitor_id`.
+
+### What is Context Data and where does Branch provide it to Adobe?
+
+When sending server to server calls to Adobe, Context Data is the part in between `&c.` and `&.c` in the server call. This call cannot be seen via the client (for example, it is not available via Charles Proxy). To see the detailed Branch server calls, please reach out to your Branch Account Manager. In general, values sent in Context Data can be visualized in the Adobe dashboard, and values outside of Context Data cannot. Values like the user identity (e.g.`vid`, `mid` or `aid`) are sent to Adobe, but not in Context Data, so they can’t be visualized in the Adobe Report Suite. However, they are appropriately formatted for Adobe to log events for that user in Adobe.
