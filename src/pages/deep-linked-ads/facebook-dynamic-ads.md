@@ -75,7 +75,7 @@ To set up a Facebook Product Catalogue campaign, you will need to first create y
 
 Facebook requires you to report events about your users interacting with your content, for example: viewing, adding to cart, and purchasing. To add the Facebook Pixel to your website, and event tracking using the Branch SDK (which forwards to Facebook) to your app, follow these instructions:
 
-- [Sending App Events with the Branch SDK](pages/deep-linked-ads/facebook-ads-faq/#tracking-other-conversion-events)
+- [Sending App Events with the Branch SDK](/pages/deep-linked-ads/facebook-ads-faq/#tracking-other-conversion-events)
 - [Sending Web Events with the Facebook Pixel](https://developers.facebook.com/docs/marketing-api/facebook-pixel/v2.8){:target="_blank"}
 
 Use the "Product events" tab in your Product Catalog view to ensure that Facebook is registering the events against your Product Catalog items correctly.
