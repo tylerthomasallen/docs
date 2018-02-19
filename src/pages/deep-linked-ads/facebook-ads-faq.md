@@ -38,7 +38,7 @@ There are advanced options for tracking events, which you can read more about [b
 | **Permissions (OAuth scopes)** | **Why** |
 | - | - |
 | ads_read | Pulling marketing insights data (e.g. impressions, clicks) to present on the Branch Dashboard. Also used for pulling creative name and id, etc., to provide richer analytics for installs, opens and other events. |
-| business_management | (1) We pull in ad accounts for you to choose from. (2) At the end of the login process, we add our System User to your business and ad account with REPORTS_ONLY permissions. Then we deauthorize the access token that has all 3 of these permissions. In the future, we can easily quarantine/decommission the System User if we detect unusual or unauthorized activity. |
+| business_management | (1) We pull in ad accounts for you to choose from. (2) At the end of the login process, we add our System User to your business and ad account with REPORTS_ONLY permissions. Then we will no longer store the access token that has both of these permissions (ads_read and business_management). In the future, we can easily quarantine/decommission the System User if we detect unusual or unauthorized activity. |
 
 ### What is each piece of information needed during the onboarding process, and why?
 
@@ -77,9 +77,13 @@ Please try logging out and logging back in on Facebook. Note the email address t
 
 Branch is now a Facebook Mobile Measurement Partner (MMP). This means we are partnering with Facebook to more accurately attribute your installs, opens and custom events back to Facebook ad campaigns! 
 
-The major differences: we can use this product without a Branch deep link. No need to manually create Branch links and add them to Facebook ads! 
+The major differences: we can use this product *without* a Branch deep link. No need to manually create Branch links and add them to Facebook ads! 
 
 If you use a Branch deep link, we will still return the Branch deep link information in app so that you can deep link your users to content. Attributed events will *not* have the Branch deep link information, but rather the Facebook ad campaign information. This info cannot be passed along to third parties via our Data Integrations.
+
+### Does Branch provide view-through (impression) attribution for Facebook?
+
+Branch is able to provide device-level view-through attribution for installs only, for up to 24 hours from impression to install. This is what is available via the MMP API that Facebook has exposed. It's also possible that if other app events (such as opens) occur shortly after an install, we can attribute those back to the same impression/view.
 
 ### How do I upgrade from the old Facebook integration to the new Facebook integration?
 
@@ -133,6 +137,11 @@ We cannot send device-level Facebook attribution data to third parties. Thus we 
 | [Data Integrations](pages/integrations/data-integrations/) | Not supported |
 
 (*) You must have signed you have signed Facebook's ["Advanced Mobile Measurement" agreement ("Data Use Terms for Advanced Mobile App Measurement")](https://www.facebook.com/ads/manage/advanced_mobile_measurement/tos){:target="\_blank"} to view this data
+
+Here is the page where you can see which ad accounts have signed the AMM agreement:
+
+![AMM](/img/pages/deep-linked-ads/facebook-ads-faq/amm.png)
+
 
 ### The data on Facebook and the data on Branch does not line up!
 

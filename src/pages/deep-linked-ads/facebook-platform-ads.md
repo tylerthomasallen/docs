@@ -51,7 +51,7 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |
 ![Create Ad Link](/img/pages/deep-linked-ads/facebook-platform-ads/link-setup.png)
 1. Under the Configure Options tab, navigate to the Redirects sub section and ensure that the iOS/Android and Desktop redirects are set to the desired destinations being promoted by the ad campaign.
 ![Create Ad Link](/img/pages/deep-linked-ads/reusable-images/example-link-redirect.png)
-1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Adwords Campaign, set the channel field to Facebook Ads and set the campaign field to the same ad campaign name used in Facebook Ads.
+1. Under the Analytics Tags sub section additional tags can be set. It is recommended to fill in these fields as they can be used as filters in Branch's Ads Analytics view. To best connect your ad link with your Facebook Campaign, set the channel field to Facebook Ads and set the campaign field to the same ad campaign name used in Facebook Ads.
 ![Analytics Tags](/img/pages/deep-linked-ads/reusable-images/facebook-analytics-tags.png)
 
 !!! warning ""
@@ -74,7 +74,9 @@ To set up Facebook Brand Awareness Campaigns, you will need to insert your Branc
 1. Now select an advertisement format and customize your ad
 1. Now add your Branch link to your advertisement
     - Select the `Add a Website URL` checkbox and copy your Branch Ad Link into the **Website URL** field.
-		![Deep Link Placement](/img/pages/deep-linked-ads/facebook-platform-ads/brand-awareness/ad-deep-link.png)
+
+	![Deep Link Placement](/img/pages/deep-linked-ads/facebook-platform-ads/brand-awareness/ad-deep-link.png)
+
     - If you selected to add a full screen Canvas advertisement, add your Branch Ad link as the **Destination URL** for your canvas advertisement components
 1. Complete the rest of the ad campaign setup.
 
@@ -95,7 +97,9 @@ To set up Facebook Reach Campaigns, you will need to insert your Branch Ad Link 
 1. Now select an advertisement format and customize your ad
 1. Now add your Branch link to your advertisement
     - Select the `Add a Website URL` checkbox and copy your Branch Ad Link into the **Website URL** field.
-		![Deep Link Placement](/img/pages/deep-linked-ads/facebook-platform-ads/reach/ad-deep-link.png)
+
+	![Deep Link Placement](/img/pages/deep-linked-ads/facebook-platform-ads/reach/ad-deep-link.png)
+
     - If you selected to add a full screen Canvas advertisement, add your Branch Ad link as the **Destination URL** for your canvas advertisement components
 1. Complete the rest of the ad campaign setup.
 
@@ -116,7 +120,9 @@ To set up Facebook Video Views Campaigns, you will need to insert your Branch Ad
 1. Now select an advertisement format and customize your ad
 1. Now add your Branch link to your advertisement
     - Select the `Add a Website URL` checkbox and copy your Branch Ad Link into the **Website URL** field.
-		![Deep Link Placement](/img/pages/deep-linked-ads/facebook-platform-ads/video-views/ad-deep-link.png)
+
+	![Deep Link Placement](/img/pages/deep-linked-ads/facebook-platform-ads/video-views/ad-deep-link.png)
+
     - If you selected to add a full screen Canvas advertisement, add your Branch Ad link as the **Destination URL** for your canvas advertisement components
 1. Complete the rest of the ad campaign setup.
 
