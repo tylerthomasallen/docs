@@ -1,8 +1,5 @@
 ### View Your Data
 
-!!! warning ""
-	Facebook prevents Branch from measuring the number of clicks on their ads for install campaigns, so Branch's **Clicks** numbers for Facebook Ads are inaccurate when users are being directed to the App Store to download your app.
-
 The [Ads Analytics Page](https://dashboard.branch.io/ads/analytics){:target="_blank"} on the Branch dashboard provides an interactive time series graph and table to view the performance of your Ad campaigns.
 
 ![Example Ads Analytics Graph](/img/ingredients/deep-linked-ads/view-ad-link-data/analytics-graph.png)
