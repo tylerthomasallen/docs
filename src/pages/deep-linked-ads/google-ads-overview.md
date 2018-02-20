@@ -88,7 +88,7 @@ That's it! All of your campaigns with mobile conversions will be tracked in Bran
 
 ## Migration
 
-You may have onboarded to Branch using the old style of AdWords. If you have ever used conversion IDs, conversion labels, or postback URLs, then this applies to you. Read this section below to learn what has changed, and what steps you may need to take to remove legacy information. Be sure to complete the above steps before going through the migration guide.
+You may have onboarded to Branch using the old style of AdWords. If you have ever used conversion IDs, conversion labels, or postback URLs, then this applies to you. Read this section below to learn what has changed, and what steps you may need to take to remove legacy information. Be sure to complete the set up listed above before going through this guide.
 
 ### What Changed
 
