@@ -33,8 +33,6 @@ Android | Yes | Uses Final URL with ValueTrack Parameters, no tracking template 
 	* [x] Ensure you have entered your Android application's URI scheme under `Link Settings > Android URI Scheme` in your Branch dashboard.
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
-{! ingredients/deep-linked-ads/enable-google-ad-partner.md !}
-
 ### Android
 
 #### Create an Ad Link

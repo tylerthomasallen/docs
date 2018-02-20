@@ -35,8 +35,6 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](/pages/deep-linking/routing/).
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
-{! ingredients/deep-linked-ads/enable-google-ad-partner.md !}
-
 ### Video App Install Ads
 
 #### Create an Ad Link
