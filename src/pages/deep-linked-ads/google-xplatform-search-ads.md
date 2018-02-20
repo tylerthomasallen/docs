@@ -34,13 +34,11 @@ Android | Yes | Uses tracking template, must redirect to Google Play store | [li
 	* [x] If you want to deep link from your ads directly to content, you should [configure deep link routing](/pages/deep-linking/routing/).
 	* [x] Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.
 
-{! ingredients/deep-linked-ads/enable-google-ad-partner.md !}
-
 ### Standard Search Ads
 
 #### Create an Ad Link
 
-1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `Create Search Link`
+1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="\_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `Create Search Link`
 <img src="/img/pages/deep-linked-ads/reusable-images/create-link-search.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **Search** and the Ad Partner set to **Google Adwords**.
@@ -85,7 +83,7 @@ To set up a Search Network Campaign, you will need to first create your campaign
 
 #### Create an Ad Link
 
-1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `Create Search Link`
+1. Create a Branch Ad link from the [Partner Management page](https://dashboard.branch.io/ads/partner-management){:target="\_blank"}'s `Create Google Adwords Link` button under the Google Adwords Partner and select `Create Search Link`
 <img src="/img/pages/deep-linked-ads/reusable-images/create-link-search.png" alt="Link Creation" class="three-quarters center">
 1. Under the Define Section, pick a Link Name for later reference
 1. Configure the link with the Ad Format set to **Search** and the Ad Partner set to **Google Adwords**.
