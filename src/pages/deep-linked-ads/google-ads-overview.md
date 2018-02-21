@@ -140,6 +140,8 @@ Go to this [section](https://dashboard.branch.io/ads/partner-management/a_google
 
 Next, click *Postback Config*, and uncheck all the checkboxes. Hit save.
 
+The new integration will automatically forward events without you having to configure postbacks for each. Check [the section](#forward-events-to-adwords) to learn how we do this.
+
 You can safely ignore all links created using the old integration. You're done!
 
 ### Benefits
@@ -163,6 +165,24 @@ Campaign Name | ~campaign  |
 ad_type | ~ad_type |
 network_type | ~channel
 network_subtype | ~secondary_publisher
+
+## Forward Events to AdWords
+
+Once you begin tracking events through the Branch SDK, you can select which events to import in AdWords. AdWords has pre-defined events that map to pre-defined Branch events, listed below. Reference this [doc](https://developers.google.com/app-conversion-tracking/api/) for more information.
+
+Google Event | Branch Event
+--- | ---
+first_open | install
+session_start | open 
+in_app_purchase | purchase
+view_item_list | view_items
+view_item | view_item
+view_search_results | search
+add_to_cart | add_to_cart
+ecommerce_purchase | purchase
+custom | any custom event tracked through Branch
+
+Note: As of 02/21/2018, only Install, Open, and Purchase is available to be forwarded. All events listed will be available starting next week. 
 
 ## Other Campaigns
 
