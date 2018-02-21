@@ -943,6 +943,7 @@
         intent.putExtra("branch_force_new_session", true)
         startActivity(intent)
         ```
+    - Replace "http://xxxx.app.link/testlink" with your own link URL
 
 !!! warning
     Handling a new deep link in your app will clear the current session data and a new referred "open" will be attributed.
