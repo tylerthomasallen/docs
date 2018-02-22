@@ -48,8 +48,8 @@
             ![image](/img/pages/dashboard/desktop.png)
 
         - For Desktop apps
-            - Enter your Desktop URI Scheme (e.g. spotify://)
-            - Include $desktop_deeplink_path key-value pair to your link (e.g. "$desktop_deeplink_path": "track/5D8o9tGf3Dfjz7CgMxcoeI")
+            - Enter your Desktop URI Scheme (e.g. `spotify://`)
+            - Include `$desktop_deeplink_path` key-value pair to your link (e.g. `"$desktop_deeplink_path": "track/5D8o9tGf3Dfjz7CgMxcoeI"`)
             - If the app is not installed when the link is clicked, we will fall back to the Desktop or Default URL, in that order
 
     - ##### Fallback
