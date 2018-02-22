@@ -103,3 +103,12 @@ To see the data being passed to mParticle in more detail, you can set up a webho
 
     ![image](/img/pages/integrations/mparticle/mparticle-requestbin.png)
 
+## FAQs
+
+#### Why does Branch only send installs to mParticle?
+
+At this time, the mParticle Inbound Feeds product only supports attributed events via their _attribution_ custom event. This is currently limited to installs. However, please reach out to your Branch or mParticle Account Manager if this limitation prevents you from doing the analysis you need.
+
+#### Why doesn't Branch require the mParticle customer ID?
+
+Branch doesn't require the mParticle customer ID because it has usually not been set upon installing the app. The usual workflow for a user is to install the app, then have a confirmed login about thirty seconds later. The Branch install event fires immediately upon install and therefore occurs before the login event, so it does not have the logged-in customer ID before it is sent to mParticle. However, you can join install events for a customer using the device ID attached to the install and login events.
