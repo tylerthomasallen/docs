@@ -39,9 +39,18 @@
             - Example fingerprint `AA:C9:D9:A5:E9:76:3E:51:1B:FB:35:00:06:9B:56:AC:FB:A6:28:CE:F3:D6:65:38:18:E3:9C:63:94:FB:D2:C1` to add to your [Branch Dashboard](https://dashboard.branch.io/link-settings)
 
     - ##### Desktop
+
+        !!! note "We now support deep linking to Desktop apps such Spotify and Slack using URI schemes"
+            This feature is still in the early stages of development; there is no Desktop SDK yet, so we will not be able to attribute or pass any data through an install.
+
         - Use these settings to control the default behavior of your deep links on Desktop browsers
 
             ![image](/img/pages/dashboard/desktop.png)
+
+        - For Desktop apps
+            - Enter your Desktop URI Scheme (e.g. spotify://)
+            - Include $desktop_deeplink_path key-value pair to your link (e.g. "$desktop_deeplink_path": "track/5D8o9tGf3Dfjz7CgMxcoeI")
+            - If the app is not installed when the link is clicked, we will fall back to the Desktop or Default URL, in that order
 
     - ##### Fallback
         - Use these settings to control the default behavior of your deep links on any other platform
