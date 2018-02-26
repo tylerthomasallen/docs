@@ -450,7 +450,9 @@ Note that not all template support all override keys. For example, the floating 
 
 #### Custom tags for dynamic Journeys layout customization
 
-In addition to using [pre-defined keys](https://docs.branch.io/pages/web/journeys/#dynamic-journeys-layout-customization) (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use setBranchViewData() to dynamically provide values for these tags. Note that if you include custom liquid tags in your templates and also set a value for a pre-defined key (e.g. $journeys_title), the value of the pre-defined key will take precedence.
+In addition to using [pre-defined keys](https://docs.branch.io/pages/web/journeys/#dynamic-journeys-layout-customization) (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use setBranchViewData() to dynamically provide values for these tags. 
+
+**Note that if you include custom liquid tags in your templates and also set a value for a pre-defined key (e.g. $journeys_title), the value of the pre-defined key will take precedence.**
 
 The format for a custom liquid tag is as follows. Note that a default value must be specified for every custom tag you include:
 
