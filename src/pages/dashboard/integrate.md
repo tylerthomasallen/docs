@@ -122,11 +122,6 @@
             | utm_content | Tags
             | utm_term | Keywords (not visible on Dashboard)
 
-- ### Enable Facebook App Invites
-    - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
-    - Add your Facebook credentials to allow us to link your Facebook dashboard to the Branch dashboard
-    - This configuration allows us to send and receive attribution data from Facebook
-
 - ### Change link domain
     - Go to [Link Settings](https://dashboard.branch.io/link-settings) on the Branch Dashboard
 
