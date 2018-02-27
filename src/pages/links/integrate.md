@@ -131,6 +131,8 @@
     - Long links need a `/a/` and a [Branch Key](/pages/dashboard/integrate/#understand-the-branch-key) if you use a `bnc.lt`
         - e.g. existing link `https://bnc.lt/5NPh/p4M09KRLrD?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
         - e.g. dynamic link `https://bnc.lt/a/key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt?foo=bar&baz=456&$fallback_url=https%3A%2F%2Fbranch.io%2F`
+    - When adding `tags` to a dynamic link, enter each tag separately
+        - e.g. https://example.app.link/?foo=bar&tags=tag1&tags=tag2
 
 ## Configure deep links
 
