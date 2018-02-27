@@ -14,7 +14,7 @@ Branch’s new Data Export API for [People-Based Attribution](/pages/dashboard/p
 
 ## Setup
 
-In order to use this API you must have an App ID and a Branch Public Key. You must also be whitelisted to use the API. If you'd like to be whitelisted for the Export API, please contact [integrations@branch.io](mailto:integrations@branch.io).
+In order to use this API you must have an App ID and a Branch Public Key. You must also have a Data Feeds subscription. In order to enable the Data Export API, navigate to Data Import & Export in the Branch dashboard and then toggle on the Data Export API using the slider on the Manager page.
 
 You can find your keys in your [Account Settings](https://dashboard.branch.io/account-settings/app){:target="\_blank"}.
 
