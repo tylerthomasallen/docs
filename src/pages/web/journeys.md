@@ -448,6 +448,42 @@ We now support the use case where you can customize the appearance of a Journey 
 
 Note that not all template support all override keys. For example, the floating button does not support title, description or icon image url. If a template is to be rendered and the key you've specified does not exist, we'll simply ignore it while rendering the template.
 
+#### Custom tags for dynamic Journeys layout customization
+
+In addition to using [pre-defined keys](https://docs.branch.io/pages/web/journeys/#dynamic-journeys-layout-customization) (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use `setBranchViewData()` to dynamically provide values for these tags. 
+
+**Note that if you include custom liquid tags in your templates and also set a value for a pre-defined key (e.g. $journeys_title) in `setBranchViewData()`, the value of the pre-defined key will take precedence.**
+
+The format for a custom liquid tag is as follows. Note that a default value must be specified for every custom tag you include:
+
+```
+{{ key_name | default_value }}
+```
+
+For example, if you were adding a custom liquid tag in CSS to dynamically control the font size of one of your Journeys’ title, you might use a tag like the one below:
+
+```
+{{ fontSize | 12px }}
+```
+![image](/img/pages/journeys/custom-tags-1.png)
+
+And if you were adding a custom liquid tag in your template text, you might use a tag like the one below:
+```
+{{ adjective | best }}
+```
+![image](/img/pages/journeys/custom-tags-2.png)
+
+Then, to dynamically update values for the “fontSize” and “adjective” variables, you would set values for those variables using `setBranchViewData()`:
+
+```
+branch.setBranchViewData({
+    data: {
+        'fontSize': '20px',
+        'adjective': 'most entertaining',
+    }
+});
+```
+
 ### Clientside Javascript Journeys controls
 
 There are a number of clientside APIs to help you build quality user experiences. See below:
