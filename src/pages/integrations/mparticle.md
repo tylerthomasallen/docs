@@ -43,10 +43,6 @@ Find your mParticle key & secret and enter it into the Branch Dashboard.
 
     ![image](/img/pages/integrations/mparticle/mparticle-add-feed-to-setup.png)
 
-1. You should now be looking at a list of Feed Configurations. If you don't see Branch in the list, refresh the page. Hover over Branch and click _Configure_.
-
-    ![image](/img/pages/integrations/mparticle/mparticle-list-of-feeds.png)
-
 1. Specify the following configuration parameters:
     - Configuration Name
     - Act as Application _(select the right platform here)_
@@ -105,14 +101,12 @@ To see the data being passed to mParticle in more detail, you can set up a webho
     ![image](/img/pages/integrations/mparticle/mparticle-add-webhooks.png)
 
 1. To refine the data being sent to the webhook, navigate to **Connections > Connect**. 
-1. Select your OS as the input, and **Webhooks** as the output.
-1. Set a filter to filter on *campaign* and put the campaign name of *branch_test* that you added in your Branch link. 
-
-    ![image](/img/pages/integrations/mparticle/mparticle-webhook-forwarding-rule.png)
-
+1. Select the Branch Feed as the input, and **Webhooks** as the output.
 1. Finally, view the Requestbin. You can do this by appending **?inspect** to your requestbin URL. You should be able to copy paste the POST body from the request bin into a JSON formatter like [https://jsonlint.com/](https://jsonlint.com/) to view the event details. 
 
     ![image](/img/pages/integrations/mparticle/mparticle-requestbin.png)
+
+1. Once you're done testing, delete the webhook.
 
 ## FAQs
 
