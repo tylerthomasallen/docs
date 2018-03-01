@@ -20,7 +20,11 @@ Deepviews are discoverable in all search portals (Google, Apple Spotlight, Bing,
 ![image](/img/pages/deepviews/deepviews_enable.png)
 
 !!! warning
-    If you enable desktop Deepviews, they will override any [Text-Me-The-App](/pages/web/text-me-the-app/) page you have configured.
+    To enable desktop Deepviews, be sure to select "Branch-hosted SMS Landing Page" for Desktop redirects on [Link Settings](https://dashboard.branch.io/link-settings).
+    
+    ![image](/img/pages/deepviews/deepviews_desktop.png)
+    
+    Note that this will override any [Text-Me-The-App](/pages/web/text-me-the-app/) page you have configured.
 
 !!! note "Changing the app icon"
     If we pulled the wrong app icon, you can upload a new one in the _Social Media Display Customization_ section of the [dashboard Settings](https://dashboard.branch.io/link-settings).
