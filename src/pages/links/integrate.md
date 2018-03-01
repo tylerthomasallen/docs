@@ -384,7 +384,7 @@
         | --- | --- | ---
         | ~id | | Automatically generated 18 digit ID number for the link that drove the install/open, if present (0 for dynamic and 3P links)
         | ~referring_link | | The referring link that drove the install/open, if present
-        | ~creation_source | |  Where the link was created (`0` API , `1` Quick Link, `2` SDK, `3` iOS SDK , `4` Android SDK , `5` Web SDK, `6` A links, `7` Dynamic, `8` Third party)
+        | ~creation_source | |  Where the link was created (`0` API , `1` Quick Link, `2` SDK, `3` iOS SDK , `4` Android SDK , `5` Web SDK, `6` Dynamic, `7` Third party)
         | +match_guaranteed | | If the match was made with 100% accuracy
         | +referrer | | The referrer for the link click, if a link was clicked
         | +phone_number | | The phone number of the user, if the user texted himself/herself the app
