@@ -775,6 +775,23 @@
             [[Branch getInstance] disableCookieBasedMatching];
             ```
 
+- ### Append metadata to Branch network call
+
+    - Functions to append additional metadata, for use cases like inserting user ID's to enable third-party [Data Integrations](https://docs.branch.io/pages/integrations/data-integrations/)
+
+        - *Swift 3 & 4*
+
+            ```swift
+            RNBranchModule.setRequestMetadataKey("insert_user_id", "value")
+            ```
+
+        - *Android*
+
+            ```java
+            RNBranch.setRequestMetadata("userID", "value");
+            ```
+
+
 ## Troubleshoot issues
 
 - ### Use test key
