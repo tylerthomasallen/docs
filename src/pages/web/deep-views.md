@@ -21,6 +21,7 @@ Deepviews are discoverable in all search portals (Google, Apple Spotlight, Bing,
 
 !!! warning
     To enable desktop Deepviews, be sure to select "Branch-hosted SMS Landing Page" for Desktop redirects on [Link Settings](https://dashboard.branch.io/link-settings).
+    
     ![image](/img/pages/deepviews/deepviews_desktop.png)
     
     Note that this will override any [Text-Me-The-App](/pages/web/text-me-the-app/) page you have configured.
