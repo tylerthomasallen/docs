@@ -18,7 +18,10 @@ In all cases, Branch will forward in-app events to AdWords for campaign optimiza
 
 ## Setup
 
-Before you begin, be sure the Branch SDK is integrated into your app. You must also collect the IDFA on iOS, or the AAID on Android. For specifics, refer to the set up guide for [iOS](/pages/apps/ios/#install-branch) and [Android](/pages/apps/android/#install-branch) respectively.
+Before you begin, be sure the following is confirmed. 
+1. First, the Branch SDK must be integrated into your app, for both iOS and Android. 
+2. You must also collect the IDFA on iOS, or the AAID on Android. For specifics, refer to the set up guide for [iOS](/pages/apps/ios/#install-branch) and [Android](/pages/apps/android/#install-branch) respectively.
+3. Make sure to track all necessary events through the SDKs, with instructions [here](#forward-events-to-adwords)
 
 You must also have admin access to your AdWords account. You will generate Link IDs in AdWords.
 
@@ -182,7 +185,7 @@ add_to_cart | add_to_cart
 ecommerce_purchase | purchase
 custom | any custom event tracked through Branch
 
-Note: As of 02/21/2018, only Install, Open, and Purchase is available to be forwarded. All events listed will be available starting next week. 
+In order to track these events, please refer to this document for further [information](https://docs.branch.io/pages/apps/v2event/#v2-event). 
 
 ## Other Campaigns
 
