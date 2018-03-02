@@ -782,13 +782,13 @@
         - *Swift 3 & 4*
 
             ```swift
-            RNBranchModule.setRequestMetadataKey("insert_user_id", "value")
+            RNBranch.setRequestMetadataKey("insert_user_id", "value")
             ```
 
         - *Android*
 
             ```java
-            RNBranch.setRequestMetadata("userID", "value");
+            RNBranchModule.setRequestMetadata("userID", "value");
             ```
 
 
