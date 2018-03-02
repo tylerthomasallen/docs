@@ -315,7 +315,7 @@ If you are unable to align all timezones, you may notice some data on the Branch
 
 #### Other common issues
 
-##### Issue with iOS 10 and Limit Ad Tracking
+##### Issue with iOS 10+ and Limit Ad Tracking
 
 In iOS 10, Apple broke the ability for app developers to collect the `IDFA` if the user had enabled `Limit Ad Tracking`. In this case, Branch and Facebook cannot compare notes to see who drove the install. This will account for about 15% discrepancy in counts across both platforms, where Branch's tracked installs will be lower.
 
@@ -333,6 +333,12 @@ One discrepancy root cause we've seen before is the scenario where Branch will c
 ##### Don't Use setDebug
 
 Facebook ads are incompatible with [debug mode](/pages/apps/ios/#simulate-an-install), as this prevents us from sending the correct hardware ID to Facebook.
+
+##### Renaming campaigns, ad sets, and ads
+
+If you rename a campaign, ad set, ad, or creative on the Facebook dashboard, then it can result in weird discrepancies between Branch and Facebook. If you change the campaign name, for example, Branch will nearly immediately start tracking all new installs (and other events) using the new campaign name. However, we will not reclassify existing events as having the new campaign name.
+
+Rest assured, however, that we are treating the data properly. Though we do not expose it on our Dashboard as of early 2018, we also track data by campaign id, ad set id, ad id, and creative id. These do not change with a rename. You can view this data using and of our [Data Feeds](/pages/exports/data-feeds/) products!
 
 
 #### Discrepancies with Impressions and Clicks
