@@ -170,7 +170,7 @@
 
         - `yarn install`
 
-        - `yarn build` (will build `/material` but fail on `/site` -> okay)
+        - `yarn build` (will build `/material`, but fail on `/site` (this is okay))
 
     -  updated files
 
