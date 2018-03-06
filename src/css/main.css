@@ -118,6 +118,7 @@
 }
 .md-typeset li > h3:before, .md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
   content: close-quote !important;
+  display: inline !important;
 }
 .codehilite .nx, .codehilite .n, .codehilite .na, .codehilite .nn {
   color: #24292e;
