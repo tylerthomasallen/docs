@@ -69,8 +69,6 @@ extra:
     munchkin: '315-FTT-121'
     linkedin: '21211'
     bizible: true
-    demandbase: true
-    quora: '247e840cafa44cae9ac4b50a0cc1965a'
     algolia:
       key: '887017d17a2c1e9490ad2c44caa7e817'
       index: 'branchmetrics'
