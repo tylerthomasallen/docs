@@ -185,6 +185,8 @@
         - `lib/mkdocs-material/src/base.html`
 
         - `lib/mkdocs-material/src/assets/javascripts/application.js`
+        - 
+        - `lib/mkdocs-material/src/assets/images/favicon.png`
 
 - #### Slow page render
 
