@@ -58,15 +58,8 @@
     {% if config.extra.sources.bizible %}
       <script src="//cdn.bizible.com/scripts/bizible.js" async></script>
     {% endif %}
-    {% if config.extra.sources.demandbase %}
-      <script>!function(e,n,s,t,a){var c=n.createElement(s),d=n.getElementsByTagName(s)[0];c.async=1,c.id=a,c.src=t,d.parentNode.insertBefore(c,d)}(window,document,"script","https://scripts.demandbase.com/ucA8pUay.min.js","demandbase_js_lib")</script>
-    {% endif %}
     {% if config.extra.sources.munchkin %}
       <script>!function(){function e(){n===!1&&(n=!0,Munchkin.init("{{ config.extra.sources.munchkin }}",{domainLevel:2}))}var n=!1,t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//munchkin.marketo.net/munchkin.js",t.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||e()},t.onload=e,document.getElementsByTagName("head")[0].appendChild(t)}()</script>
-    {% endif %}
-    {% if config.extra.sources.quora %}
-      <script>!function(e,t,n,o,c,p){e.qp||(o=e.qp=function(){o.qp?o.qp.apply(o,arguments):o.queue.push(arguments)},o.queue=[],c=document.createElement(t),c.async=!0,c.src=n,p=document.getElementsByTagName(t)[0],p.parentNode.insertBefore(c,p))}(window,"script","https://a.quora.com/qevents.js"),qp("init","{{ config.extra.sources.quora }}"),qp("track","ViewContent")</script>
-      <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/{{ config.extra.sources.quora }}/pixel?tag=ViewContent&noscript=1"></noscript>
     {% endif %}
     {% if config.extra.sources.algolia %}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
