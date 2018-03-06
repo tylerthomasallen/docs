@@ -38,6 +38,59 @@ markdown_extensions:
   - markdown_include.include:
       base_path: src/includes/
 
+# Options
+extra:
+  logo: 'img/logo.svg'
+  palette:
+    primary: 'light blue'
+    accent: 'light blue'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  social:
+    - type: 'globe'
+      link: 'https://branch.io'
+    - type: 'github'
+      link: 'https://github.com/branchmetrics/docs'
+    - type: 'twitter'
+      link: 'https://twitter.com/branchmetrics'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/branchmetrics'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company-beta/3813083'
+  disqus: 'branch-docs'
+  sources:
+    mixpanel: '47ec8ea9ac102b1370221dcda476091c'
+    google:
+      optimize: 'GTM-PCPBXCN'
+      analytics: 'UA-53307642-1'
+    facebook: '1040694199304729'
+    munchkin: '315-FTT-121'
+    linkedin: '21211'
+    bizible: true
+    algolia:
+      key: '887017d17a2c1e9490ad2c44caa7e817'
+      index: 'branchmetrics'
+      selector: '#algolia-doc-search'
+      debug: true
+      hits: 15
+  nav_header:
+    - index: 2
+      title: Basic integration
+    - index: 7
+      title: Basic usage
+    - index: 9
+      title: Advanced usage
+    - index: 18
+      title: Resources
+  nav_hidden: 'Hidden'
+  is_visible:
+    footer_floater_beta: false
+    footer_floater_old_docs: false
+    footer_nav: false
+    header_git: false
+    header_breadcrumb: true
+
 # Pages
 pages:
   - Getting started: index.md
