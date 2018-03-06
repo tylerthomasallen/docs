@@ -5,7 +5,7 @@ of the standard Markdown library. The extension inserts an anchor at the end of
 each headline, which makes it possible to directly link to a subpart of the
 document.
 
-  [1]: https://pythonhosted.org/Markdown/extensions/toc.html
+  [1]: https://python-markdown.github.io/extensions/toc/
 
 ## Installation
 
@@ -13,7 +13,8 @@ To enable permalinks, add the following to your `mkdocs.yml`:
 
 ``` yaml
 markdown_extensions:
-  - toc(permalink=true)
+  - toc:
+      permalink: true
 ```
 
 This will add a link containing the paragraph symbol `¶` at the end of each
@@ -23,7 +24,8 @@ permalink, a string can be passed, e.g.:
 
 ``` markdown
 markdown_extensions:
-  - toc(permalink=Link)
+  - toc:
+      permalink: Link
 ```
 
 ## Usage

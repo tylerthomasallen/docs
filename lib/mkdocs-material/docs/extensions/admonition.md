@@ -4,7 +4,7 @@
 makes it possible to add block-styled side content to your documentation, for
 example summaries, notes, hints or warnings.
 
-  [1]: https://pythonhosted.org/Markdown/extensions/admonition.html
+  [1]: https://python-markdown.github.io/extensions/admonition/
 
 ## Installation
 
@@ -187,12 +187,12 @@ Qualifiers:
 * `note`
 * `seealso`
 
-### Summary
+### Abstract
 
 Example:
 
 ``` markdown
-!!! summary
+!!! abstract
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
@@ -200,7 +200,7 @@ Example:
 
 Result:
 
-!!! summary
+!!! abstract
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
@@ -208,6 +208,7 @@ Result:
 
 Qualifiers:
 
+* `abstract`
 * `summary`
 * `tldr`
 
@@ -406,6 +407,30 @@ Result:
 Qualifiers:
 
 * `bug`
+
+### Example
+
+Example:
+
+``` markdown
+!!! example
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+```
+
+Result:
+
+!!! example
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+
+Qualifiers:
+
+* `example`
+* `snippet`
 
 ### Quote
 

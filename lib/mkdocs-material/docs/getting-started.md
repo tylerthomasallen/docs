@@ -2,17 +2,9 @@
 
 ## Installation
 
-!!! tip "Set up Material using Docker"
-
-    The official [Docker image][1] for Material comes with all dependencies
-    pre-installed and ready-to-use with the latest version published on PyPI,
-    packaged in a very small image (23MB compressed).
-
-  [1]: https://hub.docker.com/r/squidfunk/mkdocs-material/
-
 ### Installing MkDocs
 
-Before installing [MkDocs][2], you need to make sure you have Python and `pip`
+Before installing [MkDocs][1], you need to make sure you have Python and `pip`
 – the Python package manager – up and running. You can verify if you're already
 good to go with the following commands:
 
@@ -27,14 +19,12 @@ Installing and verifying MkDocs is as simple as:
 
 ``` sh
 pip install mkdocs && mkdocs --version
-# mkdocs, version 0.16.0
+# mkdocs, version 0.17.1
 ```
 
-!!! warning "MkDocs version requirements"
+Material requires MkDocs >= 0.17.1.
 
-    Material requires MkDocs >= 0.16.
-
-  [2]: http://www.mkdocs.org
+  [1]: http://www.mkdocs.org
 
 ### Installing Material
 
@@ -48,18 +38,18 @@ pip install mkdocs-material
 
 #### using choco
 
-If you're on Windows you can use [Chocolatey][3] to install [Material][4]:
+If you're on Windows you can use [Chocolatey][2] to install [Material][3]:
 
 ``` dos
 choco install mkdocs-material
 ```
 
-This will install all required dependencies like [Python][5] and [MkDocs][6].
+This will install all required dependencies like [Python][4] and [MkDocs][5].
 
-  [3]: https://chocolatey.org
-  [4]: https://chocolatey.org/packages/mkdocs-material
-  [5]: https://chocolatey.org/packages/python
-  [6]: https://chocolatey.org/packages/mkdocs
+  [2]: https://chocolatey.org
+  [3]: https://chocolatey.org/packages/mkdocs-material
+  [4]: https://chocolatey.org/packages/python
+  [5]: https://chocolatey.org/packages/mkdocs
 
 #### cloning from GitHub
 
@@ -70,12 +60,12 @@ repository into a subfolder of your project's root directory:
 git clone https://github.com/squidfunk/mkdocs-material.git
 ```
 
-This is especially useful if you want to [extend the theme][7] and
-[override some parts][8] of the theme. The theme will reside in the folder
+This is especially useful if you want to [extend the theme][6] and
+[override some parts][7] of the theme. The theme will reside in the folder
 `mkdocs-material/material`.
 
-  [7]: customization.md#extending-the-theme
-  [8]: customization.md#overriding-partials
+  [6]: customization.md#extending-the-theme
+  [7]: customization.md#overriding-partials
 
 ### Troubleshooting
 
@@ -100,19 +90,44 @@ This is especially useful if you want to [extend the theme][7] and
     Material theme through `pip`, so both packages end up in different
     locations. MkDocs only checks its install location for themes.
 
+### Alternative: Using Docker
+
+If you're familiar with Docker, the official [Docker image][8] for Material
+comes with all dependencies pre-installed and ready-to-use with the latest
+version published on PyPI, packaged in a very small image. Pull it with:
+
+```
+docker pull squidfunk/mkdocs-material
+```
+
+The `mkdocs` executable is provided as an entrypoint, `serve` is the default
+command. Start the development server in your project root with:
+
+```
+docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+```
+
+If you're using Windows command prompt (`cmd.exe`), substitute `${PWD}` with
+`"%cd%"`.
+
+  [8]: https://hub.docker.com/r/squidfunk/mkdocs-material/
+
 ## Usage
 
 In order to enable the theme just add one of the following lines to your
-project's `mkdocs.yml`. If you installed Material using pip:
+project's `mkdocs.yml`. If you installed Material using a package manager:
 
 ``` yaml
-theme: 'material'
+theme:
+  name: 'material'
 ```
 
 If you cloned Material from GitHub:
 
 ``` yaml
-theme_dir: 'mkdocs-material/material'
+theme:
+  name: null
+  custom_dir: 'mkdocs-material/material'
 ```
 
 MkDocs includes a development server, so you can review your changes as you go.
@@ -124,34 +139,31 @@ mkdocs serve
 
 Now you can point your browser to [http://localhost:8000][9] and the Material
 theme should be visible. From here on, you can start writing your documentation,
-or read on and customize the theme through some options.
+or read on and customize the theme.
 
   [9]: http://localhost:8000
 
-## Options
+## Configuration
 
-The Material theme adds some extra variables for configuration via your
-project's `mkdocs.yml`. See the following sections for all available options.
+### Color palette
 
-### Changing the color palette
-
-A default is hue is defined for every primary and accent color on Google's
+A default hue is defined for every primary and accent color on Google's
 Material Design [color palette][10], which makes it very easy to change the
 overall look of the theme. Just set the primary and accent colors using the
 following variables:
 
 ``` yaml
-extra:
+theme:
   palette:
     primary: 'indigo'
-    accent: 'light blue'
+    accent: 'indigo'
 ```
 
 Color names are case-insensitive, but must match the names of the Material
 Design color palette. Valid values are: `red`, `pink`, `purple`, `deep purple`,
 `indigo`, `blue`, `light blue`, `cyan`, `teal`, `green`, `light green`, `lime`,
-`yellow`, `amber`, `orange`, `deep orange`, `brown`, `grey` and `blue grey`.
-The last three colors can only be used as a primary color.
+`yellow`, `amber`, `orange`, `deep orange`, `brown`, `grey`, `blue grey` and
+`white`. The last four colors can only be used as a primary color.
 
 If the color is set via this configuration, an additional CSS file that
 defines the color palette is automatically included. If you want to keep things
@@ -162,6 +174,8 @@ See the guide on [customization][11] for more information.
   [11]: customization.md
 
 #### Primary colors
+
+> Default: `indigo`
 
 Click on a tile to change the primary color of the theme:
 
@@ -184,6 +198,7 @@ Click on a tile to change the primary color of the theme:
 <button data-md-color-primary="brown">Brown</button>
 <button data-md-color-primary="grey">Grey</button>
 <button data-md-color-primary="blue-grey">Blue Grey</button>
+<button data-md-color-primary="white">White</button>
 
 <script>
   var buttons = document.querySelectorAll("button[data-md-color-primary]");
@@ -195,6 +210,8 @@ Click on a tile to change the primary color of the theme:
 </script>
 
 #### Accent colors
+
+> Default: `indigo`
 
 Click on a tile to change the accent color of the theme:
 
@@ -224,7 +241,9 @@ Click on a tile to change the accent color of the theme:
   })
 </script>
 
-### Changing the font family
+### Font family
+
+> Default: `Roboto` and `Roboto Mono`
 
 By default the [Roboto font family][12] is included with the theme, specifically
 the regular sans-serif type for text and the `monospaced` type for code. Both
@@ -232,7 +251,7 @@ fonts are loaded from [Google Fonts][13] and can be changed to other fonts,
 like for example the [Ubuntu font family][14]:
 
 ``` yaml
-extra:
+theme:
   font:
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
@@ -243,7 +262,7 @@ in regular weight. If you want to load fonts from other destinations or don't
 want to use the Google Fonts loading magic, just set `font` to `false`:
 
 ``` yaml
-extra:
+theme:
   font: false
 ```
 
@@ -251,14 +270,246 @@ extra:
   [13]: https://fonts.google.com
   [14]: https://fonts.google.com/specimen/Ubuntu
 
+### Logo
+
+> Default icon: `school`
+
+Your logo should have rectangular shape with a minimum resolution of 128x128,
+leave some room towards the edges and be composed of high contrast areas on a
+transparent ground, as it will be placed on the colored header bar and drawer.
+Simply create the folder `docs/images`, add your logo and embed it with:
+
+``` yaml
+theme:
+  logo: 'images/logo.svg'
+```
+
+Additionally, the default icon can be changed by setting an arbitrary ligature
+(or Unicode code point) from the [Material Design icon font][15], e.g.
+
+``` yaml
+theme:
+  logo:
+    icon: 'cloud'
+```
+
+  [15]: https://material.io/icons/
+
+### Language
+
+#### Localization
+
+> Default: `en`
+
+Material for MkDocs supports internationalization (i18n) and provides
+translations for all template variables and labels in the following languages:
+
+<table style="white-space: nowrap;">
+  <thead>
+    <tr>
+      <th colspan="4">Available languages</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ar</code> / Arabic</td>
+      <td><code>ca</code> / Catalan</td>
+      <td><code>da</code> / Danish</td>
+      <td><code>nl</code> / Dutch</td>
+    </tr>
+    <tr>
+      <td><code>en</code> / English</td>
+      <td><code>fr</code> / French</td>
+      <td><code>de</code> / German</td>
+      <td><code>he</code> / Hebrew</td>
+    </tr>
+    <tr>
+      <td><code>hu</code> / Hungarian</td>
+      <td><code>it</code> / Italian</td>
+      <td><code>ja</code> / Japanese</td>
+      <td><code>kr</code> / Korean</td>
+    </tr>
+    <tr>
+      <td><code>no</code> / Norwegian</td>
+      <td><code>fa</code> / Persian</td>
+      <td><code>pl</code> / Polish</td>
+      <td><code>pt</code> / Portugese</td>
+    </tr>
+    <tr>
+      <td><code>ru</code> / Russian</td>
+      <td><code>es</code> / Spanish</td>
+      <td><code>sv</code> / Swedish</td>
+      <td><code>tr</code> / Turkish</td>
+    </tr>
+    <tr>
+      <td><code>uk</code> / Ukrainian</td>
+      <td><code>vi</code> / Vietnamese</td>
+      <td colspan="2">
+        <code>zh</code> / Chinese (Simplified)
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <code>zh-Hant</code> / Chinese (Traditional)
+      </td>
+      <td colspan="2" align="right">
+        <a href="http://bit.ly/2EbzFc8">Submit a new language</a>
+      </td>
+    </tr>
+    </tr>
+  </tbody>
+</table>
+
+Specify the language with:
+
+``` yaml
+theme:
+  language: 'en'
+```
+
+If the language is not specified, Material falls back to English. To create a
+translation for another language, copy the localization file of an existing
+language, name the new file using the [2-letter language code][16] and adjust
+all translations:
+
+``` sh
+cp partials/language/en.html partials/language/jp.html
+```
+
+Feel free to contribute your localization to Material for MkDocs by opening a
+Pull Request.
+
+  [16]: https://www.w3schools.com/tags/ref_language_codes.asp
+
+#### Text direction
+
+> Default: best match for given theme language, automatically set
+
+Material supports both, left-to-right (`ltr`) and right-to-left (`rtl`) text
+direction. This enables more languages like Arabic, Hebrew, Syriac and others
+to be used with the theme:
+
+``` yaml
+theme:
+  direction: 'rtl'
+```
+
+#### Site search
+
+> Default: best match for given theme language, automatically set
+
+Site search is implemented using [lunr.js][17], which includes stemmers for the
+English language by default, while stemmers for other languages are included
+with [lunr-languages][18], both of which are integrated with this theme.
+Material selects the matching (or best-matching) stemmer for the given theme
+language. Multilingual search can be activated in your project's `mkdocs.yml`
+by explicitly defining the search language(s):
+
+``` yaml
+extra:
+  search:
+    language: 'en, de, ru'
+```
+
+At the time of writing, the following languages are supported:
+
+<table style="white-space: nowrap;">
+  <thead>
+    <tr>
+      <th colspan="4">Available language stemmers</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>da</code> / Danish</td>
+      <td><code>du</code> / Dutch</td>
+      <td><code>en</code> / English</td>
+      <td><code>fi</code> / Finnish</td>
+    </tr>
+    <tr>
+      <td><code>fr</code> / French</td>
+      <td><code>de</code> / German</td>
+      <td><code>hu</code> / Hungarian</td>
+      <td><code>it</code> / Italian</td>
+    </tr>
+    <tr>
+      <td><code>jp</code> / Japanese</td>
+      <td><code>no</code> / Norwegian</td>
+      <td><code>pt</code> / Portugese</td>
+      <td><code>ro</code> / Romanian</td>
+    </tr>
+    <tr>
+      <td><code>ru</code> / Russian</td>
+      <td><code>es</code> / Spanish</td>
+      <td><code>sv</code> / Swedish</td>
+      <td><code>tr</code> / Turkish</td>
+    </tr>
+  </tbody>
+</table>
+
+!!! info "Search language support for Chinese"
+
+    [lunr-languages][18] currently doesn't include a stemmer for Chinese or
+    other Asian languages, but uses the Japanese stemmer, as some users
+    reported pretty decent results.
+
+!!! warning "Only specify the languages you really need"
+
+    Be aware that including support for other languages increases the general
+    JavaScript payload by around 20kb (without gzip) and by another 15-30kb per
+    language.
+
+The separator for tokenization can be customized which makes it possible
+to index parts of words that are separated by `-` or `.`:
+
+``` yaml
+extra:
+  search:
+    tokenizer: '[\s\-\.]+'
+```
+
+  [17]: https://lunrjs.com
+  [18]: https://github.com/MihaiValentin/lunr-languages
+
+### Favicon
+
+> Default: `assets/images/favicon.png`
+
+The default favicon can be changed by setting the `favicon` variable to an
+`.ico` or image file:
+
+``` yaml
+theme:
+  favicon: 'assets/images/favicon.ico'
+```
+
+### Features
+
+#### Tabs
+
+> Default: `false`
+
+Material supports another layer on top of the main navigation for larger
+screens in the form of tabs. This is especially useful for larger documentation
+projects with only few top-level sections. Tabs can be enabled by setting the
+respective feature flag to true:
+
+``` yaml
+theme:
+  feature:
+    tabs: true
+```
+
+## Customization
+
 ### Adding a source repository
 
 To include a link to the repository of your project within your documentation,
 set the following variables via your project's `mkdocs.yml`:
 
 ``` yaml
-repo_name: 'my-github-handle/my-project'
-repo_url: 'https://github.com/my-github-handle/my-project'
+repo_name: 'squidfunk/mkdocs-material'
+repo_url: 'https://github.com/squidfunk/mkdocs-material'
 ```
 
 The name of the repository will be rendered next to the search bar on big
@@ -271,53 +522,21 @@ If the repository is hosted in a private environment, the service logo can be
 set explicitly by setting `extra.repo_icon` to `github`, `gitlab` or
 `bitbucket`.
 
-!!! warning "Why is there an edit button at the top of every article?"
+!!! question "Why is there an edit button at the top of every article?"
 
     If the `repo_url` is set to a GitHub or BitBucket repository, and the
     `repo_name` is set to *GitHub* or *BitBucket* (implied by default), an
     edit button will appear at the top of every article. This is the automatic
-    behavior that MkDocs implements. See the [MkDocs documentation][15] on more
+    behavior that MkDocs implements. See the [MkDocs documentation][19] on more
     guidance regarding the `edit_uri` attribute, which defines whether the edit
     button is shown or not.
 
-  [15]: http://www.mkdocs.org/user-guide/configuration/#edit_uri
-
-### Adding a favicon
-
-A favicon can be added by setting the `site_favicon` variable to an `.ico` or
-image file:
-
-``` yaml
-site_favicon: 'images/favicon.ico'
-```
-
-### Adding a logo
-
-Your logo should have rectangular shape with a minimum resolution of 128x128,
-leave some room towards the edges and be composed of high contrast areas on a
-transparent ground, as it will be placed on the colored header bar and drawer.
-Simply create the folder `docs/images`, add your logo and embed it with:
-
-``` yaml
-extra:
-  logo: 'images/logo.svg'
-```
-
-Additionally, the default icon can be changed by setting an arbitrary ligature
-(or Unicode code point) from the [Material Design icon font][16], e.g.
-
-``` yaml
-extra:
-  logo:
-    icon: 'cloud'
-```
-
-  [16]: https://material.io/icons/
+  [19]: http://www.mkdocs.org/user-guide/configuration/#edit_uri
 
 ### Adding social links
 
 Social accounts can be linked in the footer of the documentation using the
-automatically included [FontAwesome][17] webfont. The `type` must denote the
+automatically included [FontAwesome][20] webfont. The `type` must denote the
 name of the social service, e.g. `github`, `twitter` or `linkedin` and the
 `link` must contain the URL you want to link to:
 
@@ -336,9 +555,18 @@ The links are generated in order and the `type` of the links must match the
 name of the FontAwesome glyph. The `fa` is automatically added, so `github`
 will result in `fa fa-github`.
 
-  [17]: http://fontawesome.io/icons/
+  [20]: http://fontawesome.io/icons/
 
-### Google Analytics integration
+### More advanced customization
+
+  If you want to change the general appearance of the Material theme, see
+  [this article][21] for more information on advanced customization.
+
+  [21]: customization.md
+
+## Integrations
+
+### Google Analytics
 
 MkDocs makes it easy to integrate site tracking with Google Analytics.
 Besides basic tracking, clicks on all outgoing links can be tracked as well as
@@ -351,18 +579,18 @@ google_analytics:
   - 'auto'
 ```
 
-### Disqus integation
+### Disqus
 
-Material for MkDocs is integrated with [Disqus][18], so if you want to add a
+Material for MkDocs is integrated with [Disqus][22], so if you want to add a
 comments section to your documentation set the shortname of your Disqus project
 in your `mkdocs.yml`:
 
 ``` yaml
 extra:
-  disqus: 'your-disqus-shortname'
+  disqus: 'your-shortname'
 ```
 
-The comments section is inserted in *every page, except the index page*.
+The comments section is inserted on *every page, except the index page*.
 Additionally, a new entry at the bottom of the table of contents is generated
 that is linking to the comments section. The necessary JavaScript is
 automatically included.
@@ -372,141 +600,43 @@ automatically included.
     `site_url` value must be set in `mkdocs.yml` for the Disqus integration to
     load properly.
 
-  [18]: https://disqus.com
+Disqus can also be enabled or disabled for specific pages using [Metadata][23].
 
-### Localization
-
-#### Translations
-
-Material for MkDocs supports internationalization (i18n). In order to translate
-the labels (e.g. *Previous* and *Next* in the footer), you can override the
-file `partials/language.html` and provide your own translations inside the
-macro `t`:
-
-``` jinja
-{% macro t(key) %}{{ {
-  "language": "en",
-  "edit.link.title": "Edit this page",
-  "footer.previous": "Previous",
-  "footer.next": "Next",
-  "meta.comments": "Comments",
-  "meta.source": "Source",
-  "search.languages": "",
-  "search.placeholder": "Search",
-  "search.result.placeholder": "Type to start searching",
-  "search.result.none": "No matching documents",
-  "search.result.one": "1 matching document",
-  "search.result.other": "# matching documents",
-  "search.tokenizer": "[\s\-]+",
-  "source.link.title": "Go to repository",
-  "toc.title": "Table of contents"
-}[key] }}{% endmacro %}
-```
-
-Just copy the file from the original theme and make your adjustments. See the
-section on [overriding partials][19] and the general guide on
-[theme extension][20] in the customization guide. Furthermore, see the
-[example configuration][21] for a head start.
-
-  [19]: customization.md#overriding-partials
-  [20]: customization.md#extending-the-theme
-  [21]: https://github.com/squidfunk/mkdocs-material/tree/master/examples/language
-
-#### Site search
-
-Site search is implemented using [lunr.js][22], which includes stemmers for the
-English language by default, while stemmers for other languages are included
-with [lunr-languages][23], both of which are integrated with this theme. Support
-for other languages and even multilingual search can be activated by setting
-the key `search.languages` to a comma-separated list of supported 2-letter
-language codes, e.g.:
-
-``` jinja
-{% macro t(key) %}{{ {
-  ...
-  "search.languages": "en, de, ru",
-  ...
-}[key] }}{% endmacro %}
-```
-
-This will automatically load the stemmers for the specified languages and
-set them up with site search, nothing else to be done.
-
-At the time of writing, the following languages are supported: English `en`,
-French `fr`, Spanish `es`, Italian `it`, Japanese `jp`, Dutch `du`, Danish `da`,
-Portguese `pt`, Finnish `fi`, Romanian `ro`, Hungarian `hu`, Russian `ru`,
-Norwegian `no`, Swedish `sv` and Turkish `tr`.
-
-!!! warning "Only specify the languages you really need"
-
-    Be aware that including suppport for other languages increases the general
-    JavaScript payload by around 20kb (without gzip) and by another 15-30kb per
-    language.
-
-The separator for tokenization can also be customized, which makes it possible
-to index parts of words that are separated by `-` or `.` for example:
-
-``` jinja
-{% macro t(key) %}{{ {
-  ...
-  "search.tokenizer": "[\s\-\.]+",
-  ...
-}[key] }}{% endmacro %}
-```
-
-  [22]: https://lunrjs.com
-  [23]: https://github.com/MihaiValentin/lunr-languages
-
-### Tabs
-
-From version 1.1.0 on, Material supports another layer on top of the main
-navigation for larger screens in the form of tabs. This is especially useful
-for larger documentation projects with only few top-level sections. Tabs can be
-enabled by setting the respective feature flag to true:
-
-``` yaml
-extra:
-  feature:
-    tabs: true
-```
-
-### More advanced customization
-
-If you want to change the general appearance of the Material theme, see
-[this article][24] for more information on advanced customization.
-
-  [24]: customization.md
+  [22]: https://disqus.com
+  [23]: extensions/metadata.md#disqus
 
 ## Extensions
 
-MkDocs supports several [Markdown extensions][25]. The following extensions
+MkDocs supports several [Markdown extensions][24]. The following extensions
 are not enabled by default (see the link for which are enabled by default)
 but highly recommended, so they should be switched on at all times:
 
 ``` yaml
 markdown_extensions:
   - admonition
-  - codehilite(guess_lang=false)
-  - toc(permalink=true)
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
 ```
 
 For more information, see the following list of extensions supported by the
 Material theme including more information regarding installation and usage:
 
-* [Admonition][26]
-* [Codehilite][27]
-* [Footnotes][28]
-* [Metadata][29]
-* [Permalinks][30]
-* [PyMdown Extensions][31]
+* [Admonition][25]
+* [Codehilite][26]
+* [Footnotes][27]
+* [Metadata][28]
+* [Permalinks][29]
+* [PyMdown Extensions][30]
 
-  [25]: http://www.mkdocs.org/user-guide/writing-your-docs/#markdown-extensions
-  [26]: extensions/admonition.md
-  [27]: extensions/codehilite.md
-  [28]: extensions/footnotes.md
-  [29]: extensions/metadata.md
-  [30]: extensions/permalinks.md
-  [31]: extensions/pymdown.md
+  [24]: http://www.mkdocs.org/user-guide/writing-your-docs/#markdown-extensions
+  [25]: extensions/admonition.md
+  [26]: extensions/codehilite.md
+  [27]: extensions/footnotes.md
+  [28]: extensions/metadata.md
+  [29]: extensions/permalinks.md
+  [30]: extensions/pymdown.md
 
 ## Full example
 
@@ -514,37 +644,38 @@ Below is a full example configuration for a `mkdocs.yml`:
 
 ``` yaml
 # Project information
-site_name: 'My Project'
-site_description: 'A short description of my project'
-site_author: 'John Doe'
-site_url: 'https://john-doe.github.io/my-project'
+site_name: 'Material for MkDocs'
+site_description: 'A Material Design theme for MkDocs'
+site_author: 'Martin Donath'
+site_url: 'https://squidfunk.github.io/mkdocs-material/'
 
 # Repository
-repo_name: 'my-github-handle/my-project'
-repo_url: 'https://github.com/john-doe/my-project'
+repo_name: 'squidfunk/mkdocs-material'
+repo_url: 'https://github.com/squidfunk/mkdocs-material'
 
 # Copyright
-copyright: 'Copyright &copy; 2016 - 2017 John Doe'
+copyright: 'Copyright &copy; 2016 - 2017 Martin Donath'
 
-# Documentation and theme
-theme: 'material'
-
-# Options
-extra:
-  logo: 'images/logo.svg'
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
   palette:
     primary: 'indigo'
     accent: 'indigo'
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
+
+# Customization
+extra:
   social:
     - type: 'github'
-      link: 'https://github.com/john-doe'
+      link: 'https://github.com/squidfunk'
     - type: 'twitter'
-      link: 'https://twitter.com/john-doe'
+      link: 'https://twitter.com/squidfunk'
     - type: 'linkedin'
-      link: 'https://linkedin.com/in/john-doe'
+      link: 'https://linkedin.com/in/squidfunk'
 
 # Google Analytics
 google_analytics:
@@ -554,6 +685,8 @@ google_analytics:
 # Extensions
 markdown_extensions:
   - admonition
-  - codehilite(guess_lang=false)
-  - toc(permalink=true)
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
 ```

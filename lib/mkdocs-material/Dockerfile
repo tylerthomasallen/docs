@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2017 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -33,8 +33,12 @@ COPY setup.py setup.py
 
 # Perform build and cleanup artifacts
 RUN \
-  python setup.py install 2>/dev/null && \
-  rm -rf /tmp/*
+  apk add --no-cache \
+    git \
+    git-fast-import \
+    openssh \
+  && python setup.py install 2>/dev/null \
+  && rm -rf /tmp/*
 
 # Set working directory
 WORKDIR /docs

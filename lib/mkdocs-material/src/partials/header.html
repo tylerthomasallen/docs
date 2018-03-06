@@ -1,5 +1,5 @@
 <!--
-  Copyright (c) 2016-2017 Martin Donath <martin.donath@squidfunk.com>
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
@@ -32,14 +32,19 @@
         <a href="{{ config.site_url | default(nav.homepage.url, true) }}"
             title="{{ config.site_name }}"
             class="md-header-nav__button md-logo">
+          <!-- BRANCH -->
           {% if config.extra.logo %}
-            {% if config.extra.logo.icon %}
-              <i class="md-icon">{{ config.extra.logo.icon }}</i>
-            {% else %}
-              <img src="{{ base_url }}/{{ config.extra.logo }}" />
-            {% endif %}
+            <img src="{{ base_url }}/{{ config.extra.logo }}">
           {% else %}
-            <i class="md-icon md-icon--home"></i>
+          <!-- BRANCH -->
+            {% if config.theme.logo.icon %}
+              <i class="md-icon">{{ config.theme.logo.icon }}</i>
+            {% elif config.theme.logo.startswith("http") %}
+              <img src="{{ config.theme.logo }}" width="24" height="24" />
+            {% else %}
+              <img src="{{ base_url }}/{{ config.theme.logo }}"
+                  width="24" height="24" />
+            {% endif %}
           {% endif %}
         </a>
       </div>
@@ -50,7 +55,7 @@
             for="drawer"></label>
       </div>
 
-      <!-- Branch -->
+      <!-- BRANCH -->
       {% if config.extra.logo %}
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="{{ config.site_url | default(nav.homepage.url, true) }}" title="{{ config.site_name }}">
@@ -58,33 +63,31 @@
           </a>
         </div>
       {% endif %}
+      <!-- BRANCH -->
 
-      <!-- Branch -->
+      <!-- BRANCH -->
       {% if config.extra.is_visible.header_breadcrumb == true %}
-
         <!-- Header title -->
         <div class="md-flex__cell md-flex__cell--stretch">
-          <span class="md-flex__ellipsis md-header-nav__title">
+          <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
             {% block site_name %}
-              {% if page %}
-                {% for parent in page.ancestors %}
-                  <span class="md-header-nav__parent">
-                    {{ parent.title }}
-                  </span>
-                {% endfor %}
+              {% if config.site_name == page.title %}
+                {{ config.site_name }}
+              {% else %}
+                <span class="md-header-nav__topic">
+                  {{ config.site_name }}
+                </span>
+                <span class="md-header-nav__topic">
+                  {{ page.title }}
+                </span>
               {% endif %}
-              {{ page.title | default(config.site_name, true) }}
             {% endblock %}
-          </span>
+          </div>
         </div>
-
-      {% else %}
-
-        <div class="md-flex__cell md-flex__cell--stretch"></div>
-
       {% endif %}
+      <!-- BRANCH -->
 
-      <!-- Branch -->
+      <!-- BRANCH  -->
       {% if config.extra.sources.algolia %}
         <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
           <a href="#dialog-helpful" id="header-helpful" title="Helpful">
@@ -111,25 +114,33 @@
           </a>
         </div>
       {% endif %}
+      <!-- BRANCH -->
 
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <!-- Button to open search dialogue -->
-        {% block search_box %}
-          <!-- Branch -->
-          {% if config.extra.sources.algolia %}
-            <a href="#dialog-search" id="header-search" title="Search">
-              <label class="md-icon md-icon--search md-header-nav__button"></label>
-              {% include "partials/search.html" %}
-            </a>
-          {% else %}
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            <!-- Search interface -->
+      <!-- BRANCH -->
+      {% if config.extra.sources.algolia %}
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-search" id="header-search" title="Search">
+            <label class="md-icon md-icon--search md-header-nav__button"></label>
             {% include "partials/search.html" %}
-          {% endif %}
-        {% endblock %}
-      </div>
+          </a>
+        </div>
+      {% else %}
+      <!-- BRANCH -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <!-- Button to open search dialogue -->
+          {% block search_box %}
+            {% if "search" in config["plugins"] %}
+              <label class="md-icon md-icon--search md-header-nav__button"
+                  for="search"></label>
 
-      <!-- Branch -->
+              <!-- Search interface -->
+              {% include "partials/search.html" %}
+            {% endif %}
+          {% endblock %}
+        </div>
+      {% endif %}
+
+      <!-- BRANCH -->
       {% if config.extra.is_visible.header_git == true %}
 
         <!-- Repository containing source -->
@@ -140,8 +151,8 @@
             </div>
           </div>
         {% endif %}
-
       {% endif %}
+      <!-- BRANCH -->
     </div>
   </nav>
 </header>

@@ -1,5 +1,5 @@
 <!--
-  Copyright (c) 2016-2017 Martin Donath <martin.donath@squidfunk.com>
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
@@ -20,7 +20,7 @@
   IN THE SOFTWARE.
 -->
 
-{% import "partials/language.html" as lang %}
+{% import "partials/language.html" as lang with context %}
 
 <!-- Table of contents -->
 <nav class="md-nav md-nav--secondary">
@@ -55,7 +55,11 @@
       {% endif %}
 
       <!-- Disqus integration -->
-      {% if config.extra.disqus and not page.is_homepage %}
+      {% set disqus = config.extra.disqus %}
+      {% if page and page.meta and page.meta.disqus is string %}
+        {% set disqus = page.meta.disqus %}
+      {% endif %}
+      {% if disqus %}
         <li class="md-nav__item">
           <a href="#__comments" title="{{ lang.t('meta.comments') }}"
               class="md-nav__link md-nav__link--active">

@@ -21,7 +21,8 @@ package are recommended to be used together with the Material theme:
 ``` yaml
 markdown_extensions:
   - pymdownx.arithmatex
-  - pymdownx.betterem(smart_enable=all)
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
@@ -32,7 +33,8 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tasklist(custom_checkbox=true)
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tilde
 ```
 
@@ -236,7 +238,7 @@ lists and other block elements, which the [Fenced Code Blocks][23] extension
 from the standard Markdown library doesn't parse correctly.
 
   [22]: https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
-  [23]: https://pythonhosted.org/Markdown/extensions/fenced_code_blocks.html
+  [23]: https://python-markdown.github.io/extensions/fenced_code_blocks/
 
 ### Tasklist
 
