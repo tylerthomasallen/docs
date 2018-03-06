@@ -147,15 +147,6 @@
       <script src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
     {% endif %}
 
-    {% if config.extra.sources.demandbase %}
-      <script>
-        (function(d,b,a,s,e){ var t = b.createElement(a),
-            fs = b.getElementsByTagName(a)[0]; t.async=1; t.id=e; t.src=s;
-            fs.parentNode.insertBefore(t, fs); })
-        (window,document,'script','https://scripts.demandbase.com/ucA8pUay.min.js','demandbase_js_lib');
-      </script>
-    {% endif %}
-
     {% if config.extra.sources.munchkin %}
       <script>
         (function() {
@@ -179,15 +170,6 @@
           document.getElementsByTagName('head')[0].appendChild(s);
         })();
       </script>
-    {% endif %}
-
-    {% if config.extra.sources.quora %}
-      <script>
-      !function(q,e,v,n,t,s){if(q.qp) return; n=q.qp=function(){n.qp?n.qp.apply(n,arguments):n.queue.push(arguments);}; n.queue=[];t=document.createElement(e);t.async=!0;t.src=v; s=document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);}(window, 'script', 'https://a.quora.com/qevents.js');
-      qp('init', '{{ config.extra.sources.quora }}');
-      qp('track', 'ViewContent');
-      </script>
-      <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/{{ config.extra.sources.quora }}/pixel?tag=ViewContent&noscript=1"/></noscript>
     {% endif %}
 
     {% if config.extra.sources.algolia %}
