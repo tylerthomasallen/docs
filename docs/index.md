@@ -1,15 +1,20 @@
 # Material <small>for MkDocs</small>
 
-## Beautiful project documentation
+!!! info "Call for Contributions: Add languages/translations to Material"
+
+    Help translate Material into more languages - it's just **one click** and
+    takes approximately **2 minutes**: [click here](http://bit.ly/2EbzFc8)
+
+## Create beautiful project documentation
 
 Material is a theme for [MkDocs][1], an excellent static site generator geared
 towards project documentation. It is built using Google's [Material Design][2]
 guidelines.
 
-[![Material for MkDocs](images/material.png)](images/material.png)
+[![Material for MkDocs](assets/images/material.png)](assets/images/material.png)
 
   [1]: http://www.mkdocs.org
-  [2]: https://www.google.com/design/spec/material-design
+  [2]: https://material.io/guidelines/material-design/
 
 ## Quick start
 
@@ -22,14 +27,15 @@ pip install mkdocs-material
 Append the following line to your project's `mkdocs.yml`:
 
 ``` yaml
-theme: 'material'
+theme:
+  name: 'material'
 ```
 
 ## What to expect
 
 * Responsive design and fluid layout for all kinds of screens and devices,
-  designed to serve your project documentation in a user-friendly way with
-  optimal readability.
+  designed to serve your project documentation in a user-friendly way in 24
+  languages with optimal readability.
 
 * Easily customizable primary and accent color, fonts, favicon and logo;
   straight forward localization through theme extension; integrated with Google

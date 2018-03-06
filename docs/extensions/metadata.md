@@ -1,3 +1,4 @@
+hero: Metadata enables hero teaser texts
 path: tree/master/docs/extensions
 source: metadata.md
 
@@ -6,7 +7,7 @@ source: metadata.md
 The [Metadata][1] extension makes it possible to add metadata to a document
 which gives more control over the theme in a page-specific context.
 
-  [1]: https://pythonhosted.org/Markdown/extensions/meta_data.html
+  [1]: https://python-markdown.github.io/extensions/meta_data/
 
 ## Installation
 
@@ -39,29 +40,14 @@ source: file.js
 
 See the next section which covers the metadata that is supported by Material.
 
-### Overriding the title
+### Setting a hero text
 
-The page title can be overridden on a per-document level:
+Material exposes a simple text-only page-local hero via Metadata, as you can
+see on the current page when you scroll to the top. It's as simple as:
 
 ``` markdown
-title: Lorem ipsum dolor sit amet
+hero: Metadata enables hero teaser texts
 ```
-
-This will set the `title` tag inside the document `head` for the current page
-to the provided value. It will also override the default behavior of Material
-for MkDocs which appends the site title using a dash as a separator to the page
-title.
-
-### Overriding the description
-
-The page description can also be overridden on a per-document level:
-
-``` yaml
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-```
-
-This will set the `meta` tag containing the site description inside the
-document `head` for the current page to the provided value.
 
 ### Linking sources
 
@@ -73,16 +59,7 @@ is defined inside the project's `mkdocs.yml`, the files can be linked using the
 source: file.js
 ```
 
-A new entry at the bottom of the table of contents is generated that is linking
-to the section listing the linked source files. Multiple files can be linked by
-adding filenames on separate lines:
-
-``` markdown
-source: file.js
-        file.css
-```
-
-The filenames are appended to the `repo_url` set in your `mkdocs.yml`, but can
+The filename is appended to the `repo_url` set in your `mkdocs.yml`, but can
 be prefixed with a `path` to ensure correct path resolving:
 
 Example:
@@ -97,3 +74,46 @@ Result:
 See the [source][2] section for the resulting output.
 
   [2]: #__source
+
+### Overrides
+
+#### Page title
+
+The page title can be overridden on a per-document level:
+
+``` markdown
+title: Lorem ipsum dolor sit amet
+```
+
+This will set the `title` tag inside the document `head` for the current page
+to the provided value. It will also override the default behavior of Material
+for MkDocs which appends the site title using a dash as a separator to the page
+title.
+
+#### Page description
+
+The page description can also be overridden on a per-document level:
+
+``` yaml
+description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
+```
+
+This will set the `meta` tag containing the site description inside the
+document `head` for the current page to the provided value.
+
+#### Disqus
+
+As describe in the [getting started guide][3], the Disqus comments section can
+be enabled on a per-document level:
+
+``` markdown
+disqus: your-shortname
+```
+
+Disqus can be disabled for a specific page by setting it to an empty value:
+
+``` markdown
+disqus:
+```
+
+  [3]: ../getting-started.md#disqus

@@ -19,10 +19,10 @@
 
 A Material Design theme for [MkDocs][1].
 
-[![Material for MkDocs](docs/images/material.png)][2]
+[![Material for MkDocs](docs/assets/images/material.png)][2]
 
   [1]: http://www.mkdocs.org
-  [2]: http://squidfunk.github.io/mkdocs-material/
+  [2]: https://squidfunk.github.io/mkdocs-material/
 
 ## Quick start
 
@@ -35,14 +35,15 @@ pip install mkdocs-material
 Append the following line to your project's `mkdocs.yml`:
 
 ``` yaml
-theme: 'material'
+theme:
+  name: 'material'
 ```
 
 ## What to expect
 
 * Responsive design and fluid layout for all kinds of screens and devices,
-  designed to serve your project documentation in a user-friendly way with
-  optimal readability.
+  designed to serve your project documentation in a user-friendly way in 24
+  languages with optimal readability.
 
 * Easily customizable primary and accent color, fonts, favicon and logo;
   straight forward localization through theme extension; integrated with Google
@@ -53,13 +54,13 @@ theme: 'material'
   highlighting and lazy loading.
 
 For detailed installation instructions and a demo, visit
-http://squidfunk.github.io/mkdocs-material/
+https://squidfunk.github.io/mkdocs-material/
 
 ## License
 
 **MIT License**
 
-Copyright (c) 2016-2017 Martin Donath
+Copyright (c) 2016-2018 Martin Donath
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to

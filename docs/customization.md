@@ -71,18 +71,19 @@ main theme.
 ### Setup and theme structure
 
 Reference the Material theme as usual in your `mkdocs.yml`, and create a
-new folder for overrides, e.g. `theme`, which you reference using `theme_dir`:
+new folder for overrides, e.g. `theme`, which you reference using `custom_dir`:
 
 ``` yaml
-theme: 'material'
-theme_dir: 'theme'
+theme:
+  name: 'material'
+  custom_dir: 'theme'
 ```
 
 !!! warning "Theme extension prerequisites"
 
-    As the `theme_dir` variable is used for the theme extension process, the
+    As the `custom_dir` variable is used for the theme extension process, the
     Material theme needs to be installed via `pip` and referenced with the
-    `theme` parameter in your `mkdocs.yml`.
+    `name` parameter in your `mkdocs.yml`.
 
 The structure in the theme directory must mirror the directory structure of the
 original theme, as any file in the theme directory will replace the file with
@@ -98,9 +99,11 @@ The directory layout of the Material theme is as follows:
 │  ├─ javascripts/                     # JavaScript
 │  └─ stylesheets/                     # Stylesheets
 ├─ partials/
-│  ├─ disqus.html                      # Disqus integration
+│  ├─ integrations/                    # 3rd-party integrations
+│  ├─ language/                        # Localized languages
 │  ├─ footer.html                      # Footer bar
 │  ├─ header.html                      # Header bar
+│  ├─ hero.html                        # Hero teaser
 │  ├─ language.html                    # Localized labels
 │  ├─ nav-item.html                    # Main navigation item
 │  ├─ nav.html                         # Main navigation
@@ -149,6 +152,7 @@ The Material theme provides the following template blocks:
 | `fonts`      | Wraps the webfont definitions                   |
 | `footer`     | Wraps the footer with navigation and copyright  |
 | `header`     | Wraps the fixed header bar                      |
+| `hero`       | Wraps the hero teaser                           |
 | `htmltitle`  | Wraps the `<title>` tag                         |
 | `libs`       | Wraps the JavaScript libraries, e.g. Modernizr  |
 | `repo`       | Wraps the repository link in the header bar     |
@@ -167,20 +171,19 @@ For more on this topic refer to the [MkDocs documentation][4]
 
 ## Theme development
 
-The Material theme is built on modern technologies like ES6, [Webpack][5],
-[Babel][6] and [SASS][7]. If you want to make more fundamental changes, it may
-be necessary to make the adjustments directly in the source of the Material
-theme and recompile it. This is fairly easy.
+The Material theme uses [Webpack][5] as a build tool to leverage modern web
+technologies like [Babel][6] and [SASS][7]. If you want to make more fundamental
+changes, it may be necessary to make the adjustments directly in the source of
+the Material theme and recompile it. This is fairly easy.
 
-  [5]: https://webpack.github.io/
+  [5]: https://webpack.js.org/
   [6]: https://babeljs.io
   [7]: http://sass-lang.com
 
 ### Environment setup
 
 In order to start development on the Material theme, a [Node.js][8] version of
-at least 5 is required, as well as the package manager [yarn][9] which is a
-better version of `npm`. First, clone the repository:
+at least 8 is required. First, clone the repository:
 
 ``` sh
 git clone https://github.com/squidfunk/mkdocs-material
@@ -191,24 +194,22 @@ Next, all dependencies need to be installed, which is done with:
 ``` sh
 cd mkdocs-material
 pip install -r requirements.txt
-yarn install
+npm install
 ```
 
   [8]: https://nodejs.org
-  [9]: https://yarnpkg.com/
 
 ### Development mode
 
-The Material theme uses a sophisticated asset pipeline using [Gulp][10] and
-Webpack which can be started with the following command:
+The development server can be started with:
 
 ``` sh
-yarn start
+npm run watch
 ```
 
 This will also start the MkDocs development server which will monitor changes
 on assets, templates and documentation. Point your browser to
-[localhost:8000][11] and you should see this documentation in front of you.
+[localhost:8000][9] and you should see this documentation in front of you.
 
 For example, changing the color palette is as simple as changing the
 `$md-color-primary` and `$md-color-accent` variables in
@@ -225,15 +226,14 @@ $md-color-accent:  $clr-teal-a700;
     directory are automatically generated from the `src` directory and will be
     overriden when the theme is built.
 
-  [10]: http://gulpjs.com
-  [11]: http://localhost:8000
+  [9]: http://localhost:8000
 
 ### Build process
 
 When you've finished making your changes, you can build the theme by invoking:
 
 ``` sh
-yarn run build
+npm run build
 ```
 
 This triggers the production-level compilation and minification of all
