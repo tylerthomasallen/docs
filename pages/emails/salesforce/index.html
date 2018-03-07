@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2579,7 +2579,9 @@
 <ol>
 <li>
 <p>Work with your Branch account manager to modify the following code snippet, replacing <code>DOMAIN-HERE</code> with your Branch base domain:</p>
-<p><code>%%[ VAR @deeplink, @branch_base_url SET @branch_base_url = "https://DOMAIN-HERE/3p?%243p=e_et" SET @deeplink = CONCAT(@branch_base_url, CONCAT("&amp;%24original_url=", URLEncode(@link_to_be_wrapped, 1, 1))) ]%%</code></p>
+<div class="codehilite"><pre><span></span><span class="c">%%[ VAR @deeplink, @branch_base_url SET @branch_base_url = &quot;https://DOMAIN-HERE/3p?%243p=e_et&quot; SET @deeplink = CONCAT(@branch_base_url, CONCAT(&quot;&amp;%24original_url=&quot;, URLEncode(@link_to_be_wrapped, 1, 1))) ]%%</span>
+</pre></div>
+
 </li>
 <li>
 <p>After logging into Salesforce Marketing Cloud, click on <strong>Email Studio</strong> and then a sub-menu will appear. Click on <strong>Email</strong> in the dropdown menu:</p>
@@ -2622,22 +2624,19 @@
 <div class="admonition example">
 <p class="admonition-title">Code snippet</p>
 <p>The snippet will follow this format:
-<code>%%[ VAR @deeplink, @branch_base_url SET @branch_base_url = "BASE URL FROM BRANCH" SET @deeplink = CONCAT(@branch_base_url, CONCAT("&amp;%24original_url=", URLEncode(@link_to_be_wrapped, 1, 1))) ]%%</code>
+<div class="codehilite"><pre><span></span><span class="c">%%[ VAR @deeplink, @branch_base_url SET @branch_base_url = &quot;BASE URL FROM BRANCH&quot; SET @deeplink = CONCAT(@branch_base_url, CONCAT(&quot;&amp;%24original_url=&quot;, URLEncode(@link_to_be_wrapped, 1, 1))) ]%%</span>
+</pre></div>
 The code above has a placeholder for <code>@branch_base_url</code>. Replace it with yours.</p>
 </div>
 <h5 id="configure-your-salesforce-email-templates">Configure your Salesforce email templates<a class="headerlink" href="#configure-your-salesforce-email-templates" title="Permanent link">&para;</a></h5>
 <p>This section covers how to convert individual links in your existing email templates to use Branch deep links.  You will need to determine which links in your email template that you want to convert to Branch deep links.  </p>
-<p>To convert a link to a Branch deep link, let's use an example:</p>
+<p>To convert a link to a Branch deep link, let's use an example:
 <div class="codehilite"><pre><span></span><span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">&quot;border-radius: 4px;display: inline-block;font-size: 14px;font-weight: bold;line-height: 24px;padding: 12px 24px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #fff;background-color: #00afd1;font-family: sans-serif;&quot;</span> <span class="na">href=</span><span class="s">&quot;https://www.blueapron.com/recipes/five-spice-chicken-vermicelli-with-mushrooms-collard-greens-baby-fennel&quot;</span><span class="nt">&gt;</span>I want it!<span class="nt">&lt;/a&gt;</span>
-</pre></div>
-
-
-<p>This is what the link will look like <strong>after</strong> you have modified it to support Branch deep links:</p>
+</pre></div></p>
+<p>This is what the link will look like <strong>after</strong> you have modified it to support Branch deep links:
 <div class="codehilite"><pre><span></span>%%[ SET @link_to_be_wrapped = &quot;https://www.blueapron.com/recipes/five-spice-chicken-vermicelli-with-mushrooms-collard-greens-baby-fennel&quot; ContentAreaByName(&quot;My Contents\deeplink&quot;) ]%%
 <span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">&quot;border-radius: 4px;display: inline-block;font-size: 14px;font-weight: bold;line-height: 24px;padding: 12px 24px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #fff;background-color: #00afd1;font-family: sans-serif;&quot;</span>  <span class="na">href=</span><span class="s">&quot;%%=RedirectTo(@deeplink)=%%&quot;</span><span class="nt">&gt;</span>I want this!<span class="nt">&lt;/a&gt;</span>
-</pre></div>
-
-
+</pre></div></p>
 <p>We recommend you create the deep link in a separate document and then paste it back into the HTML editor in Salesforce marketing cloud. To begin:</p>
 <ol>
 <li>Log in to Salesforce Marketing Cloud</li>
@@ -2689,8 +2688,9 @@ The code above has a placeholder for <code>@branch_base_url</code>. Replace it w
 <div class="admonition example">
 <p class="admonition-title">Adding the Branch script</p>
 <p>Wherever you are using <code>&lt;a&gt;</code> tags in your email templates, replace those with a short snippet for web URLs that you would like to deep link.
-<code>%%[SET @link_to_be_wrapped = "ADD YOUR LINK HERE" ContentAreaByName("My Contents\deeplink")]%%
-&lt;a href="%%=RedirectTo(@deeplink)=%%"&gt;Click Me&lt;/a&gt;</code>
+<div class="codehilite"><pre><span></span>%%[SET @link_to_be_wrapped = &quot;ADD YOUR LINK HERE&quot; ContentAreaByName(&quot;My Contents\deeplink&quot;)]%%
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;%%=RedirectTo(@deeplink)=%%&quot;</span><span class="nt">&gt;</span>Click Me<span class="nt">&lt;/a&gt;</span>
+</pre></div>
 For example, <strong>before:</strong>
 <code>&lt;a href="https://branch.io/product/1234"&gt;Example link&lt;/a&gt;</code>
 <strong>After:</strong>
@@ -2724,11 +2724,10 @@ For example, <strong>before:</strong>
 <span class="p">};</span>
 </pre></div>
 
-
 <p>Here is how links look before and after (the latter being a Branch deep link).</p>
 <ol>
-<li><em>Before:</em> http://example.com/?foo=bar</li>
-<li><em>After:</em> https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar</li>
+<li><em>Before:</em> <a href="http://example.com/?foo=bar">http://example.com/?foo=bar</a></li>
+<li><em>After:</em> <a href="https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar">https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar</a></li>
 </ol>
 <p><strong>Note</strong> that these are simplified examples, not actual demo links.</p>
 <h3 id="flag-your-web-only-links">Flag your web-only links<a class="headerlink" href="#flag-your-web-only-links" title="Permanent link">&para;</a></h3>
@@ -2737,11 +2736,9 @@ For example, <strong>before:</strong>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">mc-deep-link</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://my.app.link/3p?$3p=e_et&amp;$original_url=...&quot;</span> <span class="p">&gt;</span>This link will not open the app.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 
-
 <p>To ensure that the app does not open on other platforms, add <code>%24web_only%3Dtrue</code> to your links as a query parameter, for example:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar%24web_only%3Dtrue&quot;</span> <span class="p">&gt;</span>Link to your app!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
-
 
 <h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h2>
 <p>Curious about how email works and more FAQ? <strong>Visit our general <a href="../../../pages/emails/support">email support</a> page</strong>.</p>
@@ -2898,7 +2895,7 @@ For example, <strong>before:</strong>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2919,10 +2916,6 @@ For example, <strong>before:</strong>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

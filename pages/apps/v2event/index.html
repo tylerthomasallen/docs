@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2493,63 +2493,71 @@ If you track commerce events without a currency, we assume they are USD. If you 
 <ul>
 <li>
 <p><em>Swift</em></p>
-<p>```swift
-// Create a BranchUniversalObject with your content data:
-let branchUniversalObject = BranchUniversalObject.init()</p>
-<p>// ...add data to the branchUniversalObject as needed...
-branchUniversalObject.canonicalIdentifier = "item/12345"
-branchUniversalObject.canonicalUrl        = "https://branch.io/item/12345"
-branchUniversalObject.title               = "My Item Title"</p>
-<p>// Create a BranchEvent:
-let event = BranchEvent.standardEvent(.purchase)</p>
-<p>// Add the BranchUniversalObjects with the content:
-event.contentItems     = [ branchUniversalObject ]</p>
-<p>// Add relevant event data:
-event.transactionID    = "12344555"
-event.currency         = .USD;
-event.revenue          = 1.5
-event.shipping         = 10.2
-event.tax              = 12.3
-event.coupon           = "test_coupon";
-event.affiliation      = "test_affiliation";
-event.eventDescription = "Event_description";
-event.searchQuery      = "item 123"
-event.customData       = [
-    "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
-    "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
-]
-event.logEvent() // Log the event.
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Create a BranchUniversalObject with your content data:</span>
+<span class="kd">let</span> <span class="nv">branchUniversalObject</span> <span class="p">=</span> <span class="n">BranchUniversalObject</span><span class="p">.</span><span class="kd">init</span><span class="p">()</span>
+
+<span class="c1">// ...add data to the branchUniversalObject as needed...</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">canonicalIdentifier</span> <span class="p">=</span> <span class="s">&quot;item/12345&quot;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">canonicalUrl</span>        <span class="p">=</span> <span class="s">&quot;https://branch.io/item/12345&quot;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">title</span>               <span class="p">=</span> <span class="s">&quot;My Item Title&quot;</span>
+
+<span class="c1">// Create a BranchEvent:</span>
+<span class="kd">let</span> <span class="nv">event</span> <span class="p">=</span> <span class="n">BranchEvent</span><span class="p">.</span><span class="n">standardEvent</span><span class="p">(.</span><span class="n">purchase</span><span class="p">)</span>
+
+<span class="c1">// Add the BranchUniversalObjects with the content:</span>
+<span class="n">event</span><span class="p">.</span><span class="n">contentItems</span>     <span class="p">=</span> <span class="p">[</span> <span class="n">branchUniversalObject</span> <span class="p">]</span>
+
+<span class="c1">// Add relevant event data:</span>
+<span class="n">event</span><span class="p">.</span><span class="n">transactionID</span>    <span class="p">=</span> <span class="s">&quot;12344555&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currency</span>         <span class="p">=</span> <span class="p">.</span><span class="n">USD</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">revenue</span>          <span class="p">=</span> <span class="mf">1.5</span>
+<span class="n">event</span><span class="p">.</span><span class="n">shipping</span>         <span class="p">=</span> <span class="mf">10.2</span>
+<span class="n">event</span><span class="p">.</span><span class="n">tax</span>              <span class="p">=</span> <span class="mf">12.3</span>
+<span class="n">event</span><span class="p">.</span><span class="n">coupon</span>           <span class="p">=</span> <span class="s">&quot;test_coupon&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">affiliation</span>      <span class="p">=</span> <span class="s">&quot;test_affiliation&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventDescription</span> <span class="p">=</span> <span class="s">&quot;Event_description&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">searchQuery</span>      <span class="p">=</span> <span class="s">&quot;item 123&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">customData</span>       <span class="p">=</span> <span class="p">[</span>
+    <span class="s">&quot;Custom_Event_Property_Key1&quot;</span><span class="p">:</span> <span class="s">&quot;Custom_Event_Property_val1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;Custom_Event_Property_Key2&quot;</span><span class="p">:</span> <span class="s">&quot;Custom_Event_Property_val2&quot;</span>
+<span class="p">]</span>
+<span class="n">event</span><span class="p">.</span><span class="n">logEvent</span><span class="p">()</span> <span class="c1">// Log the event.</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p>```objc
-// Create a BranchUniversalObject with your content data:
-BranchUniversalObject *branchUniversalObject = [BranchUniversalObject new];</p>
-<p>// ...add data to the branchUniversalObject as needed...
-branchUniversalObject.canonicalIdentifier = @"item/12345";
-branchUniversalObject.canonicalUrl        = @"https://branch.io/item/12345";
-branchUniversalObject.title               = @"My Item Title";</p>
-<p>// Create an event and add the BranchUniversalObject to it.
-BranchEvent *event     = [BranchEvent standardEvent:BranchStandardEventAddToCart];</p>
-<p>// Add the BranchUniversalObjects with the content:
-event.contentItems     = (id) @[ branchUniversalObject ];</p>
-<p>// Add relevant event data:
-event.transactionID    = @"12344555";
-event.currency         = BNCCurrencyUSD;
-event.revenue          = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-event.shipping         = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-event.tax              = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-event.coupon           = @"test_coupon";
-event.affiliation      = @"test_affiliation";
-event.eventDescription = @"Event_description";
-event.searchQuery      = @"item 123";
-event.customData       = (NSMutableDictionary*) @{
-    @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-    @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-};
-[event logEvent];
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Create a BranchUniversalObject with your content data:</span>
+<span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">branchUniversalObject</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchUniversalObject</span> <span class="n">new</span><span class="p">];</span>
+
+<span class="c1">// ...add data to the branchUniversalObject as needed...</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">canonicalIdentifier</span> <span class="o">=</span> <span class="s">@&quot;item/12345&quot;</span><span class="p">;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">canonicalUrl</span>        <span class="o">=</span> <span class="s">@&quot;https://branch.io/item/12345&quot;</span><span class="p">;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">title</span>               <span class="o">=</span> <span class="s">@&quot;My Item Title&quot;</span><span class="p">;</span>
+
+<span class="c1">// Create an event and add the BranchUniversalObject to it.</span>
+<span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span>     <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventAddToCart</span><span class="p">];</span>
+
+<span class="c1">// Add the BranchUniversalObjects with the content:</span>
+<span class="n">event</span><span class="p">.</span><span class="n">contentItems</span>     <span class="o">=</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="l">@[</span> <span class="n">branchUniversalObject</span> <span class="l">]</span><span class="p">;</span>
+
+<span class="c1">// Add relevant event data:</span>
+<span class="n">event</span><span class="p">.</span><span class="n">transactionID</span>    <span class="o">=</span> <span class="s">@&quot;12344555&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currency</span>         <span class="o">=</span> <span class="n">BNCCurrencyUSD</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">revenue</span>          <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;1.5&quot;</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">shipping</span>         <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;10.2&quot;</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">tax</span>              <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;12.3&quot;</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">coupon</span>           <span class="o">=</span> <span class="s">@&quot;test_coupon&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">affiliation</span>      <span class="o">=</span> <span class="s">@&quot;test_affiliation&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventDescription</span> <span class="o">=</span> <span class="s">@&quot;Event_description&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">searchQuery</span>      <span class="o">=</span> <span class="s">@&quot;item 123&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">customData</span>       <span class="o">=</span> <span class="p">(</span><span class="bp">NSMutableDictionary</span><span class="o">*</span><span class="p">)</span> <span class="l">@{</span>
+    <span class="s">@&quot;Custom_Event_Property_Key1&quot;</span><span class="o">:</span> <span class="s">@&quot;Custom_Event_Property_val1&quot;</span><span class="p">,</span>
+    <span class="s">@&quot;Custom_Event_Property_Key2&quot;</span><span class="o">:</span> <span class="s">@&quot;Custom_Event_Property_val2&quot;</span>
+<span class="l">}</span><span class="p">;</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 <h3 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
@@ -2591,7 +2599,6 @@ event.customData       = (NSMutableDictionary*) @{
         <span class="o">.</span><span class="na">addContentItems</span><span class="o">(</span><span class="n">buo</span><span class="o">)</span>
         <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
 </pre></div>
-
 
 <h3 id="http-api">HTTP API<a class="headerlink" href="#http-api" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>curl -vvv -d <span class="s1">&#39;{</span>
@@ -2691,7 +2698,6 @@ event.customData       = (NSMutableDictionary*) @{
 <span class="s1"> }&#39;</span> https://api.branch.io/v2/event/standard
 </pre></div>
 
-
 <p>See <a href="https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-commerce-events">full API docs here</a>.</p>
 <h2 id="track-content-events">Track Content Events<a class="headerlink" href="#track-content-events" title="Permanent link">&para;</a></h2>
 <p>Content events are events that occur when a user engages with your in-app content. For example, if you have in-app articles, you would want to track events related to when users search, view content, rate the content, and share. This can apply to a wide variety of in-app content, such as blog posts, music, video, pictures, and e-commerce catalogue items.</p>
@@ -2699,21 +2705,23 @@ event.customData       = (NSMutableDictionary*) @{
 <ul>
 <li>
 <p><em>Swift</em></p>
-<p><code>swift
-let event = BranchEvent.standardEvent(.search)
-event.eventDescription = "Product Search"
-event.searchQuery = "user search query terms for product xyz"
-event.customData["Custom_Event_Property_Key1"] = "Custom_Event_Property_val1"
-event.logEvent()</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">event</span> <span class="p">=</span> <span class="n">BranchEvent</span><span class="p">.</span><span class="n">standardEvent</span><span class="p">(.</span><span class="n">search</span><span class="p">)</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventDescription</span> <span class="p">=</span> <span class="s">&quot;Product Search&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">searchQuery</span> <span class="p">=</span> <span class="s">&quot;user search query terms for product xyz&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">customData</span><span class="p">[</span><span class="s">&quot;Custom_Event_Property_Key1&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;Custom_Event_Property_val1&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">logEvent</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>obj-c
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventSearch];
-event.eventDescription = @"Product Search";
-event.searchQuery = @"user search query terms for product xyz";
-event.customData[@"Custom_Event_Property_Key1"] = @"Custom_Event_Property_val1";
-[event logEvent];</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventSearch</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventDescription</span> <span class="o">=</span> <span class="s">@&quot;Product Search&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">searchQuery</span> <span class="o">=</span> <span class="s">@&quot;user search query terms for product xyz&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">customData</span><span class="p">[</span><span class="s">@&quot;Custom_Event_Property_Key1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">@&quot;Custom_Event_Property_val1&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 <h3 id="android_1">Android<a class="headerlink" href="#android_1" title="Permanent link">&para;</a></h3>
@@ -2723,7 +2731,6 @@ event.customData[@"Custom_Event_Property_Key1"] = @"Custom_Event_Property_val1";
     <span class="o">.</span><span class="na">addCustomDataProperty</span><span class="o">(</span><span class="s">&quot;Custom_Event_Property_Key1&quot;</span><span class="o">,</span> <span class="s">&quot;Custom_Event_Property_val1&quot;</span><span class="o">)</span>
     <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
 </pre></div>
-
 
 <h3 id="http-api_1">HTTP API<a class="headerlink" href="#http-api_1" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>curl -vvv -d &#39;{
@@ -2815,7 +2822,6 @@ event.customData[@"Custom_Event_Property_Key1"] = @"Custom_Event_Property_val1";
 }&#39; https://api.branch.io/v2/event/standard
 </pre></div>
 
-
 <p>See <a href="https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-content-events">full API docs here</a>.</p>
 <h2 id="track-lifecycle-events">Track Lifecycle Events<a class="headerlink" href="#track-lifecycle-events" title="Permanent link">&para;</a></h2>
 <p>Lifecycle events can be described as events a user takes in your app to continue progressing. These events can apply to game apps, as well as non game apps, for when a user completes a user profile, registration or tutorial.</p>
@@ -2823,21 +2829,23 @@ event.customData[@"Custom_Event_Property_Key1"] = @"Custom_Event_Property_val1";
 <ul>
 <li>
 <p><em>Swift</em></p>
-<p><code>swift
-let event = BranchEvent.standardEvent(.completeRegistration)
-event.transactionID = "tx1234"
-event.eventDescription = "User completed registration."
-event.customData["registrationID"] = "12345"
-event.logEvent()</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">event</span> <span class="p">=</span> <span class="n">BranchEvent</span><span class="p">.</span><span class="n">standardEvent</span><span class="p">(.</span><span class="n">completeRegistration</span><span class="p">)</span>
+<span class="n">event</span><span class="p">.</span><span class="n">transactionID</span> <span class="p">=</span> <span class="s">&quot;tx1234&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventDescription</span> <span class="p">=</span> <span class="s">&quot;User completed registration.&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">customData</span><span class="p">[</span><span class="s">&quot;registrationID&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;12345&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">logEvent</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>obj-c
-BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventCompleteRegistration];
-event.transactionID = @"tx1234"
-event.eventDescription = @"User completed registration.";
-event.customData[@"registrationID"] = @"12345";
-[event logEvent];</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventCompleteRegistration</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">transactionID</span> <span class="o">=</span> <span class="s">@&quot;tx1234&quot;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventDescription</span> <span class="o">=</span> <span class="s">@&quot;User completed registration.&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">customData</span><span class="p">[</span><span class="s">@&quot;registrationID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">@&quot;12345&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 <h3 id="android_2">Android<a class="headerlink" href="#android_2" title="Permanent link">&para;</a></h3>
@@ -2847,7 +2855,6 @@ event.customData[@"registrationID"] = @"12345";
     <span class="o">.</span><span class="na">addCustomDataProperty</span><span class="o">(</span><span class="s">&quot;registrationID&quot;</span><span class="o">,</span> <span class="s">&quot;12345&quot;</span><span class="o">)</span>
     <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
 </pre></div>
-
 
 <h3 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>curl -vvv -d &#39;{
@@ -2881,7 +2888,6 @@ event.customData[@"registrationID"] = @"12345";
 }&#39; https://api.branch.io/v2/event/standard
 </pre></div>
 
-
 <p>See <a href="https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-user-lifecycle-events">full API docs here</a>.</p>
 <h2 id="track-custom-events">Track Custom Events<a class="headerlink" href="#track-custom-events" title="Permanent link">&para;</a></h2>
 <p>If you want to track an event that isn't a predefined event, simply do the following:</p>
@@ -2889,13 +2895,15 @@ event.customData[@"registrationID"] = @"12345";
 <ul>
 <li>
 <p><em>Swift</em></p>
-<p><code>swift
-BranchEvent.customEventWithName("User_Scanned_Item").logEvent()</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchEvent</span><span class="p">.</span><span class="n">customEventWithName</span><span class="p">(</span><span class="s">&quot;User_Scanned_Item&quot;</span><span class="p">).</span><span class="n">logEvent</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>obj-c
-[BranchEvent.customEventWithName(@"User_Scanned_Item") logEvent];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">BranchEvent</span><span class="p">.</span><span class="n">customEventWithName</span><span class="p">(</span><span class="s">@&quot;User_Scanned_Item&quot;</span><span class="p">)</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 <h3 id="android_3">Android<a class="headerlink" href="#android_3" title="Permanent link">&para;</a></h3>
@@ -2905,7 +2913,6 @@ BranchEvent.customEventWithName("User_Scanned_Item").logEvent()</code></p>
     <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
 <span class="o">}</span>
 </pre></div>
-
 
 <h3 id="http-api_2">HTTP API<a class="headerlink" href="#http-api_2" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>curl -vvv -d &#39;{
@@ -2935,7 +2942,6 @@ BranchEvent.customEventWithName("User_Scanned_Item").logEvent()</code></p>
   &quot;branch_key&quot;: &quot;key_test_hdcBLUy1xZ1JD0tKg7qrLcgirFmPPVJc&quot;
 }&#39; https://api.branch.io/v2/event/custom
 </pre></div>
-
 
 <p>See <a href="https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-custom-events">full API docs here</a>.</p>
                 
@@ -3091,7 +3097,7 @@ BranchEvent.customEventWithName("User_Scanned_Item").logEvent()</code></p>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3112,10 +3118,6 @@ BranchEvent.customEventWithName("User_Scanned_Item").logEvent()</code></p>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

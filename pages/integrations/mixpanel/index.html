@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2521,80 +2521,32 @@
 <div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">setRequestMetadataKey</span><span class="p">:</span><span class="s">@&quot;$mixpanel_distinct_id&quot;</span> <span class="nl">value</span><span class="p">:[</span><span class="n">Mixpanel</span> <span class="n">sharedInstance</span><span class="p">].</span><span class="n">distinctId</span><span class="p">];</span>
 </pre></div>
 
-
 <p><strong>Android:</strong></p>
 <p>Please call the following line right after you initialize Branch in your Application’s #onCreate or Activity’s #onCreate:</p>
 <div class="codehilite"><pre><span></span><span class="n">MixpanelAPI</span> <span class="n">mp</span> <span class="o">=</span> <span class="n">MixpanelAPI</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;&lt;your project token&gt;&quot;</span><span class="o">);</span>
 <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setRequestMetadata</span><span class="o">(</span><span class="s">&quot;$mixpanel_distinct_id&quot;</span><span class="o">,</span> <span class="n">mp</span><span class="o">.</span><span class="na">getDistinctId</span><span class="o">());</span>
 </pre></div>
 
-
 <p>For more information, see <a href="#what-branch-sends-to-mixpanel">Why We Recommend Passing Mixpanel Distinct ID</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Changes in Mixpanel Distinct ID</p>
 <p>If you at any point change the Mixpanel Distinct ID for a user as she’s using your app, you should invoke the same one line of code as above. This way, future calls from Branch to Mixpanel use the updated distinct id.</p>
 <p>Example for iOS:</p>
-<p><code>obj-c
-[[Branch getInstance] setRequestMetadataKey:@"$mixpanel_distinct_id" value:@"User A"];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">setRequestMetadataKey</span><span class="p">:</span><span class="s">@&quot;$mixpanel_distinct_id&quot;</span> <span class="nl">value</span><span class="p">:</span><span class="s">@&quot;User A&quot;</span><span class="p">];</span>
+</pre></div>
+
 </div>
 <p><strong>Additional Mixpanel Resources:</strong></p>
 <p>For a high level overview of identities in Mixpanel, see <a href="https://mixpanel.com/help/questions/articles/how-do-i-use-alias-and-identify">Identity Management in Mixpanel</a>. If you experience any issues regarding tracking identities or have general questions about the <code>.alias()</code> and <code>.identify()</code> methods, please take a look at <a href="https://mixpanel.com/help/questions/articles/how-should-i-handle-my-user-identity-with-the-mixpanel-javascript-library">Mixpanel's documentation</a> first. Additionally, reach out to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#109;&#105;&#120;&#112;&#97;&#110;&#101;&#108;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#109;&#105;&#120;&#112;&#97;&#110;&#101;&#108;&#46;&#99;&#111;&#109;</a> if the problem persists.</p>
 <h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
 <h3 id="what-branch-sends-to-mixpanel">What Branch Sends to Mixpanel<a class="headerlink" href="#what-branch-sends-to-mixpanel" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Value</th>
-<th>Sourced from</th>
-<th>Example</th>
-<th>Req</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>event</td>
-<td>Branch event</td>
-<td>event name</td>
-<td>[Branch] install</td>
-<td>Y</td>
-<td></td>
-</tr>
-<tr>
-<td>properties.distinct_id</td>
-<td>Unique ID for device/user</td>
-<td><a href="#why-we-recommend-passing-mixpanel-distinct-id">see section below</a></td>
-<td>AEBE52E7-03EE-455A-B3C4-E57283966239</td>
-<td>N</td>
-<td></td>
-</tr>
-<tr>
-<td>properties.token</td>
-<td>Mixpanel Token</td>
-<td>Branch Dashboard</td>
-<td>eed14a8aaa8c8ef777b8e9cb30826399</td>
-<td>Y</td>
-<td></td>
-</tr>
-<tr>
-<td>properties.time</td>
-<td>Event creation date</td>
-<td>event</td>
-<td>1461878903</td>
-<td>N</td>
-<td></td>
-</tr>
-<tr>
-<td>properties.ANY-KEY (many)</td>
-<td>The value associated with the key</td>
-<td>event metadata or referring link data</td>
-<td>~channel: facebook</td>
-<td>N</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>| Property Name | Value | Sourced from | Example | Req
+| --- | --- | --- | --- | --- | ---
+| event | Branch event | event name | [Branch] install | Y
+| properties.distinct_id | Unique ID for device/user | <a href="#why-we-recommend-passing-mixpanel-distinct-id">see section below</a> | AEBE52E7-03EE-455A-B3C4-E57283966239 | N
+| properties.token | Mixpanel Token | Branch Dashboard | eed14a8aaa8c8ef777b8e9cb30826399 | Y
+| properties.time | Event creation date | event | 1461878903 | N
+| properties.ANY-KEY (many) | The value associated with the key | event metadata or referring link data | ~channel: facebook | N</p>
 <h3 id="why-we-recommend-passing-mixpanel-distinct-id">Why We Recommend Passing Mixpanel Distinct ID<a class="headerlink" href="#why-we-recommend-passing-mixpanel-distinct-id" title="Permanent link">&para;</a></h3>
 <p>Branch will automatically specify the Distinct ID requested by Mixpanel, if any of the IDentifiers that Mixpanel uses are available. On iOS, Branch will send the IDFA if present, or the identifierForVendor (IDFV) if present, otherwise it will omit Distinct ID. On Android Branch will send the Google Advertising ID if present, or the Android ID (hardware ID) if present, otherwise it will omit Distinct ID.</p>
 <p>On iOS, the Mixpanel SDK by default will use the IDFA if present, otherwise it will use the identifierForVendor (IDFV) (also known as the vendor ID or identifierForVendor). In rare cases where the identifierForVendor (IDFV) is not available, it will generate a random UUID. In order for IDFA to be available, please be sure you have included AdSupport.framework.</p>
@@ -2613,7 +2565,6 @@
 <p>In order for any additional events on this device to be associated with "User A", the app should invoke the one line of code as recommended in the section <a href="#why-we-recommend-passing-mixpanel-distinct-id">Pass Mixpanel Distinct ID</a>. Example:</p>
 <div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">setRequestMetadataKey</span><span class="p">:</span><span class="s">@&quot;$mixpanel_distinct_id&quot;</span> <span class="nl">value</span><span class="p">:</span><span class="s">@&quot;User A&quot;</span><span class="p">];</span>
 </pre></div>
-
 
 <p>If there are ever workarounds for this, we will update this guide and notify our partners accordingly. <a href="https://mixpanel.com/help/questions/articles/how-do-i-use-alias-and-identify">Here is more information</a> on how Mixpanel manages identities.</p>
                 
@@ -2769,7 +2720,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2790,10 +2741,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

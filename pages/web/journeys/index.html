@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -3648,7 +3648,6 @@
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Be sure to replace <code>YOUR-BRANCH-KEY</code> with your Branch Key inside the <code>init()</code> call. You can find your Branch Key on the Dashboard’s <a href="https://dashboard.branch.io/#/settings">Settings</a> page.</p>
@@ -3665,7 +3664,6 @@
 <span class="p">});</span>
 </pre></div>
 
-
 <p>Alternatively, you can dynamically specify the deep link path depending on which website page is loaded.</p>
 <div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">setBranchViewData</span><span class="p">({</span>
     <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
@@ -3674,7 +3672,6 @@
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
-
 
 <p>If a user is referred to a page running Journeys via a Branch link, then referring link data will be passed into the Journeys call-to-action by default. If you’re using setBranchViewData() to specify link data for Journeys on that page, the only data from setBranchViewData() that will be used are <a href="../../../pages/web/journeys/#dynamic-journeys-layout-customization">dynamic Journeys layout parameters</a>; all other data in that call will be ignored, unless <code>make_new_link</code> is set to <code>true</code> in <code>branch.init()</code>. You can find more information <a href="../../../pages/web/journeys/#preserve-or-discard-referring-link-data">here</a>.</p>
 <h3 id="create-journey-banner-or-interstitial">Create Journey banner or interstitial<a class="headerlink" href="#create-journey-banner-or-interstitial" title="Permanent link">&para;</a></h3>
@@ -3890,7 +3887,6 @@ You can target a user based on the last touch point before they entered your web
 <span class="p">);</span>
 </pre></div>
 
-
 <p>Or, finally, by using the track() call to <a href="https://branchmetrics.github.io/docs/pages/web/journeys/#trigger-a-journey-to-show-by-firing-an-event">programmatically trigger a Journey to show</a>:</p>
 <div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="err">‘</span><span class="nx">pageview</span><span class="err">’</span><span class="p">,</span>
     <span class="p">{</span>
@@ -3898,7 +3894,6 @@ You can target a user based on the last touch point before they entered your web
     <span class="p">}</span>
 <span class="p">);</span>
 </pre></div>
-
 
 <p>Once metadata has been specified on a page in any or all of the three locations specified above, you can target users on that page using the “Is viewing a page with metadata key” audience filter. If metadata with the same key has been specified in either <code>init()</code> or <code>track()</code> <em>and</em> in an HTML <code>meta</code> tag, the metadata passed into either <code>init()</code> or <code>track()</code> will take precedence.</p>
 <h3 id="set-up-split-testing">Set up split testing<a class="headerlink" href="#set-up-split-testing" title="Permanent link">&para;</a></h3>
@@ -3942,7 +3937,6 @@ You can target a user based on the last touch point before they entered your web
 <span class="err">&lt;/script</span><span class="nt">&gt;</span>
 </pre></div>
 
-
 <p>Or, set it for individual templates by adding deep link data <code>$uri_redirect_mode:1</code>:</p>
 <p><img alt="image" src="../../../img/pages/journeys/uri-redirect-mode.png" /></p>
 <p><a href="https://blog.branch.io/making-uri-schemes-great-again-uri_redirect_mode/" target="_blank">Read our blog</a> to learn more about the challenges of URI schemes on iOS and the URI redirect mode feature.</p>
@@ -3956,7 +3950,6 @@ You can target a user based on the last touch point before they entered your web
     <span class="p">}</span>
 <span class="p">);</span>
 </pre></div>
-
 
 <h3 id="prioritization">Prioritization<a class="headerlink" href="#prioritization" title="Permanent link">&para;</a></h3>
 <h4 id="when-do-my-journeys-prioritization-rules-apply">When do my Journeys prioritization rules apply?<a class="headerlink" href="#when-do-my-journeys-prioritization-rules-apply" title="Permanent link">&para;</a></h4>
@@ -4022,7 +4015,7 @@ You can target a user based on the last touch point before they entered your web
 <tr>
 <td align="right"><code>$journeys_icon_image_url</code></td>
 <td>The app icon displayed in the layout</td>
-<td>"https://mysite.com/image.png)"</td>
+<td>"<a href="https://mysite.com/image.png">https://mysite.com/image.png</a>)"</td>
 </tr>
 </tbody>
 </table>
@@ -4034,19 +4027,14 @@ You can target a user based on the last touch point before they entered your web
 <div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">key_name</span> <span class="o">|</span> <span class="nf">default_value</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
 
-
 <p>For example, if you were adding a custom liquid tag in CSS to dynamically control the font size of one of your Journeys’ title, you might use a tag like the one below:</p>
-<div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">fontSize</span> <span class="err">|</span> <span class="m">12</span><span class="nv">px</span> <span class="cp">}}</span><span class="x"></span>
+<p><div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">fontSize</span> <span class="err">|</span> <span class="m">12</span><span class="nv">px</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
-
-
-<p><img alt="image" src="../../../img/pages/journeys/custom-tags-1.png" /></p>
-<p>And if you were adding a custom liquid tag in your template text, you might use a tag like the one below:</p>
+<img alt="image" src="../../../img/pages/journeys/custom-tags-1.png" /></p>
+<p>And if you were adding a custom liquid tag in your template text, you might use a tag like the one below:
 <div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">adjective</span> <span class="o">|</span> <span class="nf">best</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
-
-
-<p><img alt="image" src="../../../img/pages/journeys/custom-tags-2.png" /></p>
+<img alt="image" src="../../../img/pages/journeys/custom-tags-2.png" /></p>
 <p>Then, to dynamically update values for the “fontSize” and “adjective” variables, you would set values for those variables using <code>setBranchViewData()</code>:</p>
 <div class="codehilite"><pre><span></span>branch.setBranchViewData({
     data: {
@@ -4055,7 +4043,6 @@ You can target a user based on the last touch point before they entered your web
     }
 });
 </pre></div>
-
 
 <h3 id="clientside-javascript-journeys-controls">Clientside Javascript Journeys controls<a class="headerlink" href="#clientside-javascript-journeys-controls" title="Permanent link">&para;</a></h3>
 <p>There are a number of clientside APIs to help you build quality user experiences. See below:</p>
@@ -4071,19 +4058,16 @@ branch.init(&#39;BRANCH_KEY&#39;,
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
-
 <h3 id="closing-a-journey-programmatically">Closing a Journey Programmatically<a class="headerlink" href="#closing-a-journey-programmatically" title="Permanent link">&para;</a></h3>
 <p>Journeys include a close button the user can click, but you may want to close the Journey with a timeout, or via some other user interaction with your web app.
 In this case, closing the Journey is very simple by calling:</p>
 <div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">closeJourney</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
 </pre></div>
 
-
 <h3 id="trigger-a-journey-to-show-by-firing-an-event">Trigger a Journey to Show by Firing an Event<a class="headerlink" href="#trigger-a-journey-to-show-by-firing-an-event" title="Permanent link">&para;</a></h3>
 <p>If you block or programatically close a Journey via one the calls above, then you can trigger a Journey to show by firing the following event:</p>
 <div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s1">&#39;pageview&#39;</span><span class="p">);</span>
 </pre></div>
-
 
 <p><strong>Note:</strong> If a user has closed a Journey in the past, then firing the aforementioned event will not override a user's preference.</p>
 <h3 id="disable-journeys-animations">Disable Journeys Animations<a class="headerlink" href="#disable-journeys-animations" title="Permanent link">&para;</a></h3>
@@ -4098,7 +4082,6 @@ In this case, closing the Journey is very simple by calling:</p>
 <span class="p">);</span>
 </pre></div>
 
-
 <p>To disable animations using track(), insert <code>disable_entry_animation</code> and/or <code>disable_exit_animation</code>, with values of <code>true</code>, into the event metadata:</p>
 <div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span>
     <span class="err">‘</span><span class="nx">pageview</span><span class="err">’</span><span class="p">,</span>
@@ -4110,7 +4093,6 @@ In this case, closing the Journey is very simple by calling:</p>
 <span class="p">);</span>
 </pre></div>
 
-
 <h3 id="listen-to-journeys-lifecycle-events">Listen to Journeys lifecycle events<a class="headerlink" href="#listen-to-journeys-lifecycle-events" title="Permanent link">&para;</a></h3>
 <p>You can easily listen to Journeys lifecycle events by registering listener functions like so:</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">listener</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span> <span class="p">}</span>
@@ -4121,7 +4103,6 @@ In this case, closing the Journey is very simple by calling:</p>
 <span class="c1">// Listen for all events</span>
 <span class="nx">branch</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
 </pre></div>
-
 
 <table>
 <thead>
@@ -4162,7 +4143,7 @@ In this case, closing the Journey is very simple by calling:</p>
 </tbody>
 </table>
 <h3 id="journeys-text-localization">Journeys text localization<a class="headerlink" href="#journeys-text-localization" title="Permanent link">&para;</a></h3>
-<p>Journeys now has an entire localization framework. Due to the complexity of this offering, we're not exposing it directly to partners. Please reach out to your account manager or integrations@branch.io to receive access to this functionality.</p>
+<p>Journeys now has an entire localization framework. Due to the complexity of this offering, we're not exposing it directly to partners. Please reach out to your account manager or <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#116;&#101;&#103;&#114;&#97;&#116;&#105;&#111;&#110;&#115;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#105;&#110;&#116;&#101;&#103;&#114;&#97;&#116;&#105;&#111;&#110;&#115;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a> to receive access to this functionality.</p>
 <h3 id="css-editor">CSS Editor<a class="headerlink" href="#css-editor" title="Permanent link">&para;</a></h3>
 <p>If you have an upgraded premium account, you may also modify your CSS code directly in addition to using the WYSIWYG View Editor. To do so, go to the <strong>Configure Views</strong> step, click to edit a template, and then select the <strong>CSS Editor</strong> tab on the <strong>Customize Template</strong> screen.</p>
 <p><img alt="image" src="../../../img/pages/journeys/view-css-editor.png" /></p>
@@ -4572,7 +4553,6 @@ In this case, closing the Journey is very simple by calling:</p>
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
 </pre></div>
 
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Be sure to replace <code>YOUR-BRANCH-KEY</code> with your Branch Key inside the <code>init()</code> call. You can find your Branch Key on the Dashboard’s <a href="https://dashboard.branch.io/#/settings">Settings</a> page.</p>
@@ -4605,7 +4585,6 @@ In this case, closing the Journey is very simple by calling:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;downloadapp&#39;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&#39;branch.deepviewCta()&#39;</span><span class="p">&gt;</span>View this in app<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 
-
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="calls-to-branchsubdomain-blocked">Calls to [branchsubdomain] blocked<a class="headerlink" href="#calls-to-branchsubdomain-blocked" title="Permanent link">&para;</a></h3>
 <div class="admonition protip">
@@ -4615,7 +4594,6 @@ In this case, closing the Journey is very simple by calling:</p>
 <p>Please make sure to add <code>[branchsubdomain]</code> to the CSP header for your pages. We've seen some browsers that attempt to block it outright. You can deliver this in an HTTP header from your web server or you can add a simple metatag to your site like so:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;Content-Security-Policy&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;default-src https://[branchsubdomain]; child-src &#39;none&#39;; object-src &#39;none&#39;&quot;</span><span class="p">&gt;</span>
 </pre></div>
-
 
 <h3 id="non-mobile-optimized-sites">Non-mobile optimized sites<a class="headerlink" href="#non-mobile-optimized-sites" title="Permanent link">&para;</a></h3>
 <p>If you're not using a mobile viewport tag (<code>&lt;meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</code>) because your site isn't mobile optimized, Journeys will look shrunken and weird. Don't worry, we have you covered:</p>
@@ -4637,8 +4615,9 @@ In this case, closing the Journey is very simple by calling:</p>
 <li>Press <code>Save &amp; Close</code></li>
 <li>
 <p>Add the following div to your nav</p>
-<p><code>html
-&lt;div class="branch-journeys-top"&gt;&lt;/div&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;branch-journeys-top&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
 <p><img alt="image" src="../../../img/pages/journeys/sticky.png" /></p>
 </li>
 </ul>
@@ -4848,7 +4827,7 @@ In this case, closing the Journey is very simple by calling:</p>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -4869,10 +4848,6 @@ In this case, closing the Journey is very simple by calling:</p>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

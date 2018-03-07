@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2250,9 +2250,9 @@
 </ul>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>In order to use this API you must have an App ID and a Branch Public Key. You must also be whitelisted to use the API.</p>
-<p>You can find your keys at: https://dashboard.branch.io/link-settings</p>
+<p>You can find your keys at: <a href="https://dashboard.branch.io/link-settings">https://dashboard.branch.io/link-settings</a></p>
 <h3 id="base-url">Base URL:<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h3>
-<p>https://api.branch.io/v2/export/</p>
+<p><a href="https://api.branch.io/v2/export/">https://api.branch.io/v2/export/</a></p>
 <h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>GET https://api.branch.io/v2/export
 Content-Type: application/json
@@ -2267,7 +2267,7 @@ Content-Type: application/json
 <p><strong>export_date</strong> <em>required</em>
 : The UTC date of the requested data export</p>
 <p>Format the URL as follows:
-https://api.branch.io/v2/export/XXXXX?branch_secret=XXXXX&amp;export_date=2015-11-15</p>
+<a href="https://api.branch.io/v2/export/XXXXX?branch_secret=XXXXX&amp;export_date=2015-11-15">https://api.branch.io/v2/export/XXXXX?branch_secret=XXXXX&amp;export_date=2015-11-15</a></p>
 <p><strong>Example:</strong></p>
 <p><code>https://api.branch.io/v2/export/key_live_gcASshuadd7l39m36NhdsDPWRjmkdcgh12jsg1?branch_secret=secret_live_ztPsdKIjUtcjkUYF732nsl81HJ75BJqiv24J86&amp;export_date=2015-11-15</code></p>
 <h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
@@ -2278,7 +2278,6 @@ https://api.branch.io/v2/export/XXXXX?branch_secret=XXXXX&amp;export_date=2015-1
      &quot;clicks_export_url&quot;: [&quot;https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-click[-OPTIONAL_FILE_NUMBER]-v2-HASH.csv.gz&quot;]
     }
 </pre></div>
-
 
 <div class="admonition protip">
 <p class="admonition-title">Protip</p>
@@ -2848,7 +2847,7 @@ https://api.branch.io/v2/export/XXXXX?branch_secret=XXXXX&amp;export_date=2015-1
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2869,10 +2868,6 @@ https://api.branch.io/v2/export/XXXXX?branch_secret=XXXXX&amp;export_date=2015-1
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

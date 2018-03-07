@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2649,22 +2649,23 @@
 </li>
 <li>
 <h3 id="initialize-branch">Initialize Branch<a class="headerlink" href="#initialize-branch" title="Permanent link">&para;</a></h3>
-<p><code>html hl_lines="4 8 9 10 11 12 13"
-&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;&lt;/title&gt;
-  &lt;script&gt;
-    // load Branch
-    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s&lt;_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent".split(" "), 0);
-    // init Branch
-    branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt');
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="hll">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+</span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="c1">// load Branch</span>
+<span class="hll">    <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="nx">a</span><span class="p">,</span><span class="nx">n</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">h</span><span class="p">,</span><span class="nx">_</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">k</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">b</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span><span class="o">||!</span><span class="nx">b</span><span class="p">[</span><span class="nx">n</span><span class="p">].</span><span class="nx">_q</span><span class="p">){</span><span class="k">for</span><span class="p">(;</span><span class="nx">s</span><span class="o">&lt;</span><span class="nx">_</span><span class="p">.</span><span class="nx">length</span><span class="p">;)</span><span class="nx">c</span><span class="p">(</span><span class="nx">h</span><span class="p">,</span><span class="nx">_</span><span class="p">[</span><span class="nx">s</span><span class="o">++</span><span class="p">]);</span><span class="nx">d</span><span class="o">=</span><span class="nx">r</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="nx">d</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">d</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.branch.io/branch-latest.min.js&quot;</span><span class="p">;</span><span class="nx">k</span><span class="o">=</span><span class="nx">r</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span><span class="nx">k</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">k</span><span class="p">);</span><span class="nx">b</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span><span class="o">=</span><span class="nx">h</span><span class="p">}})(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;branch&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span><span class="nx">r</span><span class="p">){</span><span class="nx">b</span><span class="p">[</span><span class="nx">r</span><span class="p">]</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="nx">b</span><span class="p">.</span><span class="nx">_q</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">r</span><span class="p">,</span><span class="nx">arguments</span><span class="p">])}},{</span><span class="nx">_q</span><span class="o">:</span><span class="p">[],</span><span class="nx">_v</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span><span class="s2">&quot;addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class="hll">    <span class="c1">// init Branch</span>
+</span><span class="hll">    <span class="nx">branch</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">&#39;key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&#39;</span><span class="p">);</span>
+</span><span class="hll">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span class="hll"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span class="hll"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 <ul>
 <li>Change <code>key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt</code> to match your <a href="https://dashboard.branch.io/account-settings/app">Branch Dashboard</a></li>
 </ul>
@@ -2680,15 +2681,17 @@
 </li>
 <li>
 <p>Uses <a href="#branch-init-options">Branch init options</a></p>
-<p><code>js
-branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
-  console.log(err, data); 
-});</code></p>
-<p><code>js
-var options = { no_journeys: true };
-branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', options, function(err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">&#39;key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">no_journeys</span><span class="o">:</span> <span class="kc">true</span> <span class="p">};</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">&#39;key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 <li>
 <p>Returns the following inside the <code>data</code> object</p>
@@ -2736,27 +2739,28 @@ branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', options, function(err, 
 </li>
 <li>
 <p>Validate with the <a href="https://dashboard.branch.io/liveview/links">Branch Dashboard</a></p>
-<p>```js
-var linkData = {
-  campaign: 'content 123',
-  channel: 'facebook',
-  feature: 'dashboard',
-  stage: 'new user',
-  tags: [ 'tag1', 'tag2', 'tag3' ],
-  alias: '',
-  data: {
-    'custom_bool': true,
-    'custom_int': Date.now(),
-    'custom_string': 'hello',
-    '$og_title': 'Title',
-    '$og_description': 'Description',
-    '$og_image_url':'http://lorempixel.com/400/400'
-  }
-};</p>
-<p>branch.link(linkData, function(err, link) {
-  console.log(link);
-});
-```</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">linkData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">campaign</span><span class="o">:</span> <span class="s1">&#39;content 123&#39;</span><span class="p">,</span>
+  <span class="nx">channel</span><span class="o">:</span> <span class="s1">&#39;facebook&#39;</span><span class="p">,</span>
+  <span class="nx">feature</span><span class="o">:</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">,</span>
+  <span class="nx">stage</span><span class="o">:</span> <span class="s1">&#39;new user&#39;</span><span class="p">,</span>
+  <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;tag1&#39;</span><span class="p">,</span> <span class="s1">&#39;tag2&#39;</span><span class="p">,</span> <span class="s1">&#39;tag3&#39;</span> <span class="p">],</span>
+  <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;custom_bool&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">&#39;custom_int&#39;</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+    <span class="s1">&#39;custom_string&#39;</span><span class="o">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_title&#39;</span><span class="o">:</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_description&#39;</span><span class="o">:</span> <span class="s1">&#39;Description&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_image_url&#39;</span><span class="o">:</span><span class="s1">&#39;http://lorempixel.com/400/400&#39;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">branch</span><span class="p">.</span><span class="nx">link</span><span class="p">(</span><span class="nx">linkData</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2768,35 +2772,37 @@ var linkData = {
 </li>
 <li>
 <p>Uses <a href="../../../pages/links/integrate/">Deep Link Properties</a></p>
-<p><code>html
-&lt;!-- shareable elements --&gt;
-&lt;button id="button"&gt;deep link&lt;/button&gt;
-&lt;a id="anchor" href="#"&gt;deep link&lt;/a&gt;</code></p>
-<p>```js
-var linkData = {
-  campaign: 'content 123',
-  channel: 'facebook',
-  feature: 'dashboard',
-  stage: 'new user',
-  tags: [ 'tag1', 'tag2', 'tag3' ],
-  alias: '',
-  data: {
-    'custom_bool': true,
-    'custom_int': Date.now(),
-    'custom_string': 'hello',
-    '$og_title': 'Title',
-    '$og_description': 'Description',
-    '$og_image_url':'http://lorempixel.com/400/400'
-  }
-};</p>
-<p>branch.link(linkData, function(err, link) {
-  // bind elements
-  document.getElementById('button').onclick = function() {
-    window.open(link || err);
-  };
-  document.getElementById('anchor').href = link || err;
-});
-```</p>
+<div class="codehilite"><pre><span></span><span class="c">&lt;!-- shareable elements --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>deep link<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;anchor&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>deep link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">linkData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">campaign</span><span class="o">:</span> <span class="s1">&#39;content 123&#39;</span><span class="p">,</span>
+  <span class="nx">channel</span><span class="o">:</span> <span class="s1">&#39;facebook&#39;</span><span class="p">,</span>
+  <span class="nx">feature</span><span class="o">:</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">,</span>
+  <span class="nx">stage</span><span class="o">:</span> <span class="s1">&#39;new user&#39;</span><span class="p">,</span>
+  <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;tag1&#39;</span><span class="p">,</span> <span class="s1">&#39;tag2&#39;</span><span class="p">,</span> <span class="s1">&#39;tag3&#39;</span> <span class="p">],</span>
+  <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;custom_bool&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">&#39;custom_int&#39;</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+    <span class="s1">&#39;custom_string&#39;</span><span class="o">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_title&#39;</span><span class="o">:</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_description&#39;</span><span class="o">:</span> <span class="s1">&#39;Description&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_image_url&#39;</span><span class="o">:</span><span class="s1">&#39;http://lorempixel.com/400/400&#39;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">branch</span><span class="p">.</span><span class="nx">link</span><span class="p">(</span><span class="nx">linkData</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">link</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// bind elements</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">link</span> <span class="o">||</span> <span class="nx">err</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;anchor&#39;</span><span class="p">).</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">link</span> <span class="o">||</span> <span class="nx">err</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2814,24 +2820,27 @@ var linkData = {
 </li>
 <li>
 <p>Listener</p>
-<p><code>js
-branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">&#39;key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 <li>
 <p>Latest data</p>
-<p><code>js
-branch.data(function(err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 <li>
 <p>First data</p>
-<p><code>js
-branch.first(function(err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">first</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2849,34 +2858,36 @@ branch.first(function(err, data) {
 </li>
 <li>
 <p>Append additional deep link data to the Journey button</p>
-<p>```js
-// optional additional deep link data
-var linkData = {
-  campaign: 'content 123',
-  channel: 'facebook',
-  feature: 'dashboard',
-  stage: 'new user',
-  tags: [ 'tag1', 'tag2', 'tag3' ],
-  alias: '',
-  data: {
-    'custom_bool': true,
-    'custom_int': Date.now(),
-    'custom_string': 'hello',
-    '$og_title': 'Title',
-    '$og_description': 'Description',
-    '$og_image_url':'http://lorempixel.com/400/400'
-  }
-};</p>
-<p>branch.setBranchViewData(linkData);
-```</p>
-<p>```js
-// close
-branch.closeJourney(function(err, data) { 
-  console.log(err, data); 
-});</p>
-<p>// reopen
-branch.track("pageview");
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// optional additional deep link data</span>
+<span class="kd">var</span> <span class="nx">linkData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">campaign</span><span class="o">:</span> <span class="s1">&#39;content 123&#39;</span><span class="p">,</span>
+  <span class="nx">channel</span><span class="o">:</span> <span class="s1">&#39;facebook&#39;</span><span class="p">,</span>
+  <span class="nx">feature</span><span class="o">:</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">,</span>
+  <span class="nx">stage</span><span class="o">:</span> <span class="s1">&#39;new user&#39;</span><span class="p">,</span>
+  <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;tag1&#39;</span><span class="p">,</span> <span class="s1">&#39;tag2&#39;</span><span class="p">,</span> <span class="s1">&#39;tag3&#39;</span> <span class="p">],</span>
+  <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;custom_bool&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">&#39;custom_int&#39;</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+    <span class="s1">&#39;custom_string&#39;</span><span class="o">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_title&#39;</span><span class="o">:</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_description&#39;</span><span class="o">:</span> <span class="s1">&#39;Description&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_image_url&#39;</span><span class="o">:</span><span class="s1">&#39;http://lorempixel.com/400/400&#39;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">branch</span><span class="p">.</span><span class="nx">setBranchViewData</span><span class="p">(</span><span class="nx">linkData</span><span class="p">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1">// close</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">closeJourney</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+
+<span class="c1">// reopen</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s2">&quot;pageview&quot;</span><span class="p">);</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2894,31 +2905,34 @@ branch.track("pageview");
 </li>
 <li>
 <p>Validate with <a href="https://dashboard.branch.io/liveview/clicks">Branch Dashboard</a> for <code>+phone_number</code></p>
-<p>```js
-var phoneNumber = '9999999999' // +919812345678, +442071234567</p>
-<p>var linkData = {
-  campaign: 'content 123',
-  channel: 'facebook',
-  feature: 'dashboard',
-  stage: 'new user',
-  tags: [ 'tag1', 'tag2', 'tag3' ],
-  alias: '',
-  data: {
-    'custom_bool': true,
-    'custom_int': Date.now(),
-    'custom_string': 'hello',
-    '$og_title': 'Title',
-    '$og_description': 'Description',
-    '$og_image_url':'http://lorempixel.com/400/400'
-  }
-};</p>
-<p>var linkOptions = {
-  make_new_link: false // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
-};</p>
-<p>branch.sendSMS(phoneNumber, linkData, linkOptions, function(err, data) {
-  console.log(err);
-});
-```</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">phoneNumber</span> <span class="o">=</span> <span class="s1">&#39;9999999999&#39;</span> <span class="c1">// +919812345678, +442071234567</span>
+
+<span class="kd">var</span> <span class="nx">linkData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">campaign</span><span class="o">:</span> <span class="s1">&#39;content 123&#39;</span><span class="p">,</span>
+  <span class="nx">channel</span><span class="o">:</span> <span class="s1">&#39;facebook&#39;</span><span class="p">,</span>
+  <span class="nx">feature</span><span class="o">:</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">,</span>
+  <span class="nx">stage</span><span class="o">:</span> <span class="s1">&#39;new user&#39;</span><span class="p">,</span>
+  <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;tag1&#39;</span><span class="p">,</span> <span class="s1">&#39;tag2&#39;</span><span class="p">,</span> <span class="s1">&#39;tag3&#39;</span> <span class="p">],</span>
+  <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;custom_bool&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">&#39;custom_int&#39;</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+    <span class="s1">&#39;custom_string&#39;</span><span class="o">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_title&#39;</span><span class="o">:</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_description&#39;</span><span class="o">:</span> <span class="s1">&#39;Description&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;$og_image_url&#39;</span><span class="o">:</span><span class="s1">&#39;http://lorempixel.com/400/400&#39;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">linkOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">make_new_link</span><span class="o">:</span> <span class="kc">false</span> <span class="c1">// don&#39;t create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)</span>
+<span class="p">};</span>
+
+<span class="nx">branch</span><span class="p">.</span><span class="nx">sendSMS</span><span class="p">(</span><span class="nx">phoneNumber</span><span class="p">,</span> <span class="nx">linkData</span><span class="p">,</span> <span class="nx">linkOptions</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2940,17 +2954,17 @@ var phoneNumber = '9999999999' // +919812345678, +442071234567</p>
 </thead>
 <tbody>
 <tr>
-<td>https://shop.com/shoes/brown-loafers</td>
+<td><a href="https://shop.com/shoes/brown-loafers">https://shop.com/shoes/brown-loafers</a></td>
 <td>productId=1234, productView=true</td>
 <td><code>&lt;meta name="branch:deeplink:productId" content="1234" /&gt;</code>, <code>&lt;meta name="branch:deeplink:productView" content="true" /&gt;</code></td>
 </tr>
 <tr>
-<td>https://shop.com/shoes</td>
+<td><a href="https://shop.com/shoes">https://shop.com/shoes</a></td>
 <td>categoryId=5678</td>
 <td><code>&lt;meta name="branch:deeplink:categoryId" content="5678" /&gt;</code></td>
 </tr>
 <tr>
-<td>https://shop.com/your-mother-is-great</td>
+<td><a href="https://shop.com/your-mother-is-great">https://shop.com/your-mother-is-great</a></td>
 <td>No corresponding app content (<a href="../../../pages/links/integrate/#open-web-instead-of-app">open web</a>)</td>
 <td><code>&lt;meta name="branch:deeplink:$web_only" content="true" /&gt;</code></td>
 </tr>
@@ -2967,21 +2981,25 @@ var phoneNumber = '9999999999' // +919812345678, +442071234567</p>
 </li>
 <li>
 <p>Validate with the <a href="https://dashboard.branch.io/liveview/identities">Branch Dashboard</a>  </p>
-<p><code>js
-branch.setIdentity('123456');</code></p>
-<p><code>js
-branch.setIdentity('123456', function (err, data) {
-  console.log(err, data);
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">setIdentity</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">setIdentity</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 <li>
 <p>Removes the identity of a user</p>
-<p><code>js
-branch.logout();</code></p>
-<p><code>js
-branch.logout(function(err, data) {
-  console.log(err, data);
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">logout</span><span class="p">();</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">logout</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2999,14 +3017,17 @@ branch.logout(function(err, data) {
 </li>
 <li>
 <p>Validate with the <a href="https://dashboard.branch.io/liveview/events">Branch Dashboard</a></p>
-<p><code>js        
-branch.track('signup');</code></p>
-<p><code>js
-branch.track('signup', { metadata: '123' });</code></p>
-<p><code>js
-branch.track('signup', { custom: '123' }, function (err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">metadata</span><span class="o">:</span> <span class="s1">&#39;123&#39;</span> <span class="p">});</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">track</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">custom</span><span class="o">:</span> <span class="s1">&#39;123&#39;</span> <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3018,40 +3039,42 @@ branch.track('signup', { custom: '123' }, function (err, data) {
 </li>
 <li>
 <p>Validate with the <a href="https://dashboard.branch.io/liveview/commerce">Branch Dashboard</a></p>
-<p>```js
-// only revenue is required
-var commerceData = {
-  "revenue": 50.0,
-  "currency": "USD",
-  "transaction_id": "foo-transaction-id",
-  "shipping": 0.0,
-  "tax": 5.0,
-  "affiliation": "foo-affiliation",
-  "products": [
-    {
-      "sku": "foo-sku-1",
-      "name": "foo-item-1",
-      "price": 45.00,
-      "quantity": 1,
-      "brand": "foo-brand",
-      "category": "Electronics",
-      "variant": "foo-variant-1"
-    },
-    {
-      "sku": "foo-sku-2",
-      "price": 2.50,
-      "quantity": 2
-    }
-  ]
-};</p>
-<p>// optional
-var metadata =  { 
-  "foo": "bar" 
-};</p>
-<p>branch.trackCommerceEvent('purchase', commerceData, metadata, function(err, data) {
-  console.log(err, data); 
-});
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// only revenue is required</span>
+<span class="kd">var</span> <span class="nx">commerceData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;revenue&quot;</span><span class="o">:</span> <span class="mf">50.0</span><span class="p">,</span>
+  <span class="s2">&quot;currency&quot;</span><span class="o">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;transaction_id&quot;</span><span class="o">:</span> <span class="s2">&quot;foo-transaction-id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;shipping&quot;</span><span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span>
+  <span class="s2">&quot;tax&quot;</span><span class="o">:</span> <span class="mf">5.0</span><span class="p">,</span>
+  <span class="s2">&quot;affiliation&quot;</span><span class="o">:</span> <span class="s2">&quot;foo-affiliation&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;products&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;sku&quot;</span><span class="o">:</span> <span class="s2">&quot;foo-sku-1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;foo-item-1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;price&quot;</span><span class="o">:</span> <span class="mf">45.00</span><span class="p">,</span>
+      <span class="s2">&quot;quantity&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;brand&quot;</span><span class="o">:</span> <span class="s2">&quot;foo-brand&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;category&quot;</span><span class="o">:</span> <span class="s2">&quot;Electronics&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;variant&quot;</span><span class="o">:</span> <span class="s2">&quot;foo-variant-1&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;sku&quot;</span><span class="o">:</span> <span class="s2">&quot;foo-sku-2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;price&quot;</span><span class="o">:</span> <span class="mf">2.50</span><span class="p">,</span>
+      <span class="s2">&quot;quantity&quot;</span><span class="o">:</span> <span class="mi">2</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">};</span>
+
+<span class="c1">// optional</span>
+<span class="kd">var</span> <span class="nx">metadata</span> <span class="o">=</span>  <span class="p">{</span> 
+  <span class="s2">&quot;foo&quot;</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> 
+<span class="p">};</span>
+
+<span class="nx">branch</span><span class="p">.</span><span class="nx">trackCommerceEvent</span><span class="p">(</span><span class="s1">&#39;purchase&#39;</span><span class="p">,</span> <span class="nx">commerceData</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3072,40 +3095,45 @@ var metadata =  {
 </li>
 <li>
 <p>Redeem credits</p>
-<p><code>js
-var amount = 10;
-var bucket = 'this_bucket';
-branch.redeem(amount, bucket, function (err, data) {
-  console.log(err, data); 
-});</code></p>
-<p><code>js
-var amount = 10;
-branch.redeem(amount, function (err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">amount</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">bucket</span> <span class="o">=</span> <span class="s1">&#39;this_bucket&#39;</span><span class="p">;</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">redeem</span><span class="p">(</span><span class="nx">amount</span><span class="p">,</span> <span class="nx">bucket</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">amount</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">redeem</span><span class="p">(</span><span class="nx">amount</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 <li>
 <p>Load credits</p>
-<p><code>js
-branch.credits(amount, function (err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">credits</span><span class="p">(</span><span class="nx">amount</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 <li>
 <p>Load history</p>
-<p><code>js
-branch.creditHistory(function (err, data) {
-  console.log(err, data); 
-});</code></p>
-<p><code>js
-var options = {
-  "length":50,
-  "begin_after_id":"123456789012345",
-  "bucket":"default"
-};
-branch.creditHistory(options, function (err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">creditHistory</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;length&quot;</span><span class="o">:</span><span class="mi">50</span><span class="p">,</span>
+  <span class="s2">&quot;begin_after_id&quot;</span><span class="o">:</span><span class="s2">&quot;123456789012345&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;bucket&quot;</span><span class="o">:</span><span class="s2">&quot;default&quot;</span>
+<span class="p">};</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">creditHistory</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3145,13 +3173,16 @@ branch.creditHistory(options, function (err, data) {
 <ul>
 <li>
 <p>Subscribe and unsubscribe to Branch events</p>
-<p><code>js
-// all Branch events
-branch.addListener(listener);</code></p>
-<p><code>js
-branch.addListener('willShowJourney', listener);</code></p>
-<p><code>js
-branch.removeListener(listener);</code></p>
+<div class="codehilite"><pre><span></span><span class="c1">// all Branch events</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="s1">&#39;willShowJourney&#39;</span><span class="p">,</span> <span class="nx">listener</span><span class="p">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">removeListener</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
+</pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3205,9 +3236,10 @@ branch.removeListener(listener);</code></p>
 <ul>
 <li>
 <p>For example:</p>
-<p><code>html
-&lt;link rel="alternate" href="android-app://{androidPackageName}/{androidURL}?{branch_tracking_params_and_additional_deep_link_data}"/&gt;
-&lt;link rel="alternate" href="ios-app://{iosAppId}/{iosURL}?{branch_tracking_params_and_additional_deep_link_data}"/&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;android-app://{androidPackageName}/{androidURL}?{branch_tracking_params_and_additional_deep_link_data}&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;ios-app://{iosAppId}/{iosURL}?{branch_tracking_params_and_additional_deep_link_data}&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3216,19 +3248,20 @@ branch.removeListener(listener);</code></p>
 </li>
 <li>
 <p>Analytics related to Google's attempts to index your App's content via this method can be found on your <a href="https://dashboard.branch.io/sources">Branch Dashboard</a> where channel is <code>Firebase App Indexing</code> and feature is <code>Auto App Indexing</code></p>
-<p><code>js
-branch.autoAppIndex({
-    iosAppId:'123456789',
-    iosURL:'example/home/cupertino/12345',
-    androidPackageName:'com.somecompany.app',
-    androidURL:'example/home/cupertino/12345',
-    data: {
-      "walkScore": 65, 
-      "transitScore": 50
-    }
-}, function(err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">autoAppIndex</span><span class="p">({</span>
+    <span class="nx">iosAppId</span><span class="o">:</span><span class="s1">&#39;123456789&#39;</span><span class="p">,</span>
+    <span class="nx">iosURL</span><span class="o">:</span><span class="s1">&#39;example/home/cupertino/12345&#39;</span><span class="p">,</span>
+    <span class="nx">androidPackageName</span><span class="o">:</span><span class="s1">&#39;com.somecompany.app&#39;</span><span class="p">,</span>
+    <span class="nx">androidURL</span><span class="o">:</span><span class="s1">&#39;example/home/cupertino/12345&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;walkScore&quot;</span><span class="o">:</span> <span class="mi">65</span><span class="p">,</span> 
+      <span class="s2">&quot;transitScore&quot;</span><span class="o">:</span> <span class="mi">50</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3268,8 +3301,8 @@ branch.autoAppIndex({
 <li>
 <h3 id="sample-testing-apps">Sample testing apps<a class="headerlink" href="#sample-testing-apps" title="Permanent link">&para;</a></h3>
 <ul>
-<li>https://cdn.branch.io/example.html</li>
-<li>http://cdn.branch.io/branchster-angular</li>
+<li><a href="https://cdn.branch.io/example.html">https://cdn.branch.io/example.html</a></li>
+<li><a href="http://cdn.branch.io/branchster-angular">http://cdn.branch.io/branchster-angular</a></li>
 </ul>
 </li>
 <li>
@@ -3363,19 +3396,23 @@ branch.autoAppIndex({
 </li>
 <li>
 <p>Make a deep link redirect to your website </p>
-<p><code>json
-https://example.app.link/kJNbhZ1PrF?$fallback_url=https://example.com</code></p>
+<div class="codehilite"><pre><span></span><span class="err">https://example.app.link/kJNbhZ</span><span class="mi">1</span><span class="err">PrF?$fallback_url=https://example.com</span>
+</pre></div>
+
 </li>
 <li>
 <p>Website will open to <a href="../../../pages/links/integrate/#redirections">$fallback_url</a> with <code>_branch_match_id</code></p>
-<p><code>https://example.app.link/kJNbhZ1PrF?$fallback_url=https://www.website.com/&amp;_branch_match_id=418480444086051524</code></p>
+<div class="codehilite"><pre><span></span>https://example.app.link/kJNbhZ1PrF?$fallback_url=https://www.website.com/&amp;_branch_match_id=418480444086051524
+</pre></div>
+
 </li>
 <li>
 <p>Read <code>_branch_match_id</code> from that <code>$fallback_url</code> website</p>
-<p><code>js
-branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
-  console.log(err, data); 
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s1">&#39;key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3388,8 +3425,9 @@ branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
 <li>Press <code>Save &amp; Close</code></li>
 <li>
 <p>Add the following div to your nav</p>
-<p><code>html
-&lt;div class="branch-journeys-top"&gt;&lt;/div&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;branch-journeys-top&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3398,20 +3436,22 @@ branch.init('key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Swt', function(err, data) {
 <ul>
 <li>
 <p>(<strong>Deprecated</strong>) Recommend to use <a href="#share-deep-link">Share deep link</a> instead</p>
-<p><code>html
-&lt;a href="#" onclick="branch.deepviewCta()"&gt;deep link&lt;/a&gt;
-&lt;button onclick="branch.deepviewCta()"&gt;deep link&lt;/button&gt;</code></p>
-<p><code>js
-var linkData = {
-  campaign: String(Date.now())
-};
-var linkOptions = {
-  make_new_link: false, // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
-  open_app: true  // will attempt to open the app if install (URI Scheme deep linking only - will not work with Safari)
-};
-branch.deepview(linkData, linkOptions, function(err, data) {
-  console.log(err, data);
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;branch.deepviewCta()&quot;</span><span class="p">&gt;</span>deep link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;branch.deepviewCta()&quot;</span><span class="p">&gt;</span>deep link<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">linkData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">campaign</span><span class="o">:</span> <span class="nb">String</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">())</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">linkOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">make_new_link</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// don&#39;t create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)</span>
+  <span class="nx">open_app</span><span class="o">:</span> <span class="kc">true</span>  <span class="c1">// will attempt to open the app if install (URI Scheme deep linking only - will not work with Safari)</span>
+<span class="p">};</span>
+<span class="nx">branch</span><span class="p">.</span><span class="nx">deepview</span><span class="p">(</span><span class="nx">linkData</span><span class="p">,</span> <span class="nx">linkOptions</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3420,7 +3460,9 @@ branch.deepview(linkData, linkOptions, function(err, data) {
 <ul>
 <li>
 <p>Make sure the Branch key is the same within the deep link and website</p>
-<p><code>XMLHttpRequest cannot load https://api.branch.io/v1/open. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access. The response had HTTP status code 400.</code></p>
+<div class="codehilite"><pre><span></span>XMLHttpRequest cannot load https://api.branch.io/v1/open. No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;null&#39; is therefore not allowed access. The response had HTTP status code 400.
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3578,7 +3620,7 @@ branch.deepview(linkData, linkOptions, function(err, data) {
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3599,10 +3641,6 @@ branch.deepview(linkData, linkOptions, function(err, data) {
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

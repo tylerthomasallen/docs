@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2660,41 +2660,41 @@
 <ul>
 <li>
 <p>Import the Branch SDK to your <code>build.gradle</code></p>
-<p>```java hl_lines="32"
-apply plugin: 'com.android.application'</p>
-<p>android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-    defaultConfig {
-        applicationId "com.eneff.branchandroid"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}</p>
-<p>dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support:design:25.2.0'</p>
-<div class="codehilite"><pre><span></span>compile &#39;com.mparticle:android-core:4.+&#39;
+<div class="codehilite"><pre><span></span><span class="n">apply</span> <span class="n">plugin</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">application</span><span class="err">&#39;</span>
 
-compile &#39;com.mparticle:android-branch-kit:4+&#39;
+<span class="n">android</span> <span class="o">{</span>
+    <span class="n">compileSdkVersion</span> <span class="mi">25</span>
+    <span class="n">buildToolsVersion</span> <span class="s">&quot;25.0.2&quot;</span>
+    <span class="n">defaultConfig</span> <span class="o">{</span>
+        <span class="n">applicationId</span> <span class="s">&quot;com.eneff.branchandroid&quot;</span>
+        <span class="n">minSdkVersion</span> <span class="mi">15</span>
+        <span class="n">targetSdkVersion</span> <span class="mi">25</span>
+        <span class="n">versionCode</span> <span class="mi">1</span>
+        <span class="n">versionName</span> <span class="s">&quot;1.0&quot;</span>
+        <span class="n">testInstrumentationRunner</span> <span class="s">&quot;android.support.test.runner.AndroidJUnitRunner&quot;</span>
+    <span class="o">}</span>
+    <span class="n">buildTypes</span> <span class="o">{</span>
+        <span class="n">release</span> <span class="o">{</span>
+            <span class="n">minifyEnabled</span> <span class="kc">false</span>
+            <span class="n">proguardFiles</span> <span class="nf">getDefaultProguardFile</span><span class="o">(</span><span class="err">&#39;</span><span class="n">proguard</span><span class="o">-</span><span class="n">android</span><span class="o">.</span><span class="na">txt</span><span class="err">&#39;</span><span class="o">),</span> <span class="err">&#39;</span><span class="n">proguard</span><span class="o">-</span><span class="n">rules</span><span class="o">.</span><span class="na">pro</span><span class="err">&#39;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="nf">fileTree</span><span class="o">(</span><span class="n">dir</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">libs</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">include</span><span class="o">:</span> <span class="o">[</span><span class="err">&#39;</span><span class="o">*.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">])</span>
+    <span class="n">androidTestCompile</span><span class="o">(</span><span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">support</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">espresso</span><span class="o">:</span><span class="n">espresso</span><span class="o">-</span><span class="n">core</span><span class="o">:</span><span class="mf">2.2.2</span><span class="err">&#39;</span><span class="o">,</span> <span class="o">{</span>
+        <span class="n">exclude</span> <span class="n">group</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">support</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">module</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">support</span><span class="o">-</span><span class="n">annotations</span><span class="err">&#39;</span>
+    <span class="o">})</span>
+    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">support</span><span class="o">:</span><span class="n">appcompat</span><span class="o">-</span><span class="n">v7</span><span class="o">:</span><span class="mf">25.2.0</span><span class="err">&#39;</span>
+    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">support</span><span class="o">:</span><span class="n">design</span><span class="o">:</span><span class="mf">25.2.0</span><span class="err">&#39;</span>
+
+    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">mparticle</span><span class="o">:</span><span class="n">android</span><span class="o">-</span><span class="n">core</span><span class="o">:</span><span class="mf">4.</span><span class="o">+</span><span class="err">&#39;</span>
+
+<span class="hll">    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">mparticle</span><span class="o">:</span><span class="n">android</span><span class="o">-</span><span class="n">branch</span><span class="o">-</span><span class="n">kit</span><span class="o">:</span><span class="mi">4</span><span class="o">+</span><span class="err">&#39;</span>
+</span><span class="o">}</span>
 </pre></div>
 
-
-<p>}
-```</p>
 </li>
 </ul>
 </li>
@@ -2714,54 +2714,53 @@ compile &#39;com.mparticle:android-branch-kit:4+&#39;
 <ul>
 <li>
 <p>Add Branch to your <code>AndroidManifest.xml</code></p>
-<p>```xml hl_lines="9 17 26 27 28 29 30 31 32 34 35 36 37 38 39 40"
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.eneff.branchandroid"></p>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span> <span class="nt">/&gt;</span>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="na">package=</span><span class="s">&quot;com.eneff.branchandroid&quot;</span><span class="nt">&gt;</span>
 
-<span class="nt">&lt;application</span>
-    <span class="na">android:allowBackup=</span><span class="s">&quot;true&quot;</span>
-    <span class="na">android:name=</span><span class="s">&quot;com.eneff.branchandroid.CustomApplicationClass&quot;</span>
-    <span class="na">android:icon=</span><span class="s">&quot;@mipmap/ic_launcher&quot;</span>
-    <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
-    <span class="na">android:supportsRtl=</span><span class="s">&quot;true&quot;</span>
-    <span class="na">android:theme=</span><span class="s">&quot;@style/AppTheme&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span> <span class="nt">/&gt;</span>
 
-    <span class="nt">&lt;activity</span>
-        <span class="na">android:name=</span><span class="s">&quot;.MainActivity&quot;</span>
-        <span class="na">android:launchMode=</span><span class="s">&quot;singleTask&quot;</span>
+    <span class="nt">&lt;application</span>
+        <span class="na">android:allowBackup=</span><span class="s">&quot;true&quot;</span>
+<span class="hll">        <span class="na">android:name=</span><span class="s">&quot;com.eneff.branchandroid.CustomApplicationClass&quot;</span>
+</span>        <span class="na">android:icon=</span><span class="s">&quot;@mipmap/ic_launcher&quot;</span>
         <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
-        <span class="na">android:theme=</span><span class="s">&quot;@style/AppTheme.NoActionBar&quot;</span><span class="nt">&gt;</span>
+        <span class="na">android:supportsRtl=</span><span class="s">&quot;true&quot;</span>
+        <span class="na">android:theme=</span><span class="s">&quot;@style/AppTheme&quot;</span><span class="nt">&gt;</span>
 
-        <span class="nt">&lt;intent-filter&gt;</span>
-            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.LAUNCHER&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/intent-filter&gt;</span>
+        <span class="nt">&lt;activity</span>
+            <span class="na">android:name=</span><span class="s">&quot;.MainActivity&quot;</span>
+<span class="hll">            <span class="na">android:launchMode=</span><span class="s">&quot;singleTask&quot;</span>
+</span>            <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
+            <span class="na">android:theme=</span><span class="s">&quot;@style/AppTheme.NoActionBar&quot;</span><span class="nt">&gt;</span>
 
-        <span class="c">&lt;!-- Branch URI Scheme --&gt;</span>
-        <span class="nt">&lt;intent-filter&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;branchandroid&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/intent-filter&gt;</span>
+            <span class="nt">&lt;intent-filter&gt;</span>
+                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.LAUNCHER&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/intent-filter&gt;</span>
 
-        <span class="c">&lt;!-- Branch App Links (optional) --&gt;</span>
-        <span class="nt">&lt;intent-filter</span> <span class="na">android:autoVerify=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;uobg.app.link&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/activity&gt;</span>
+<span class="hll">            <span class="c">&lt;!-- Branch URI Scheme --&gt;</span>
+</span><span class="hll">            <span class="nt">&lt;intent-filter&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;branchandroid&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">            <span class="nt">&lt;/intent-filter&gt;</span>
+</span>
+<span class="hll">            <span class="c">&lt;!-- Branch App Links (optional) --&gt;</span>
+</span><span class="hll">            <span class="nt">&lt;intent-filter</span> <span class="na">android:autoVerify=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;uobg.app.link&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="hll">            <span class="nt">&lt;/intent-filter&gt;</span>
+</span>        <span class="nt">&lt;/activity&gt;</span>
 
-<span class="nt">&lt;/application&gt;</span>
+    <span class="nt">&lt;/application&gt;</span>
+
+<span class="nt">&lt;/manifest&gt;</span>
 </pre></div>
 
-
-<p></manifest>
-```</p>
 </li>
 <li>
 <p>Replace the following with values from your <a href="https://dashboard.branch.io/settings/link">Branch Dashboard</a></p>
@@ -2775,31 +2774,29 @@ compile &#39;com.mparticle:android-branch-kit:4+&#39;
 <li>
 <h3 id="handle-incoming-links">Handle Incoming Links<a class="headerlink" href="#handle-incoming-links" title="Permanent link">&para;</a></h3>
 <p>Open the <code>Activity</code> for which you registered the <code>Intent Filter</code> in the previous section, and hook into the <code>onStart</code> lifecycle method by adding this override:</p>
-<p>```java hl_lines="3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
-@Override
-public void onStart() {
-  MParticle.getInstance().checkForDeepLink(new DeepLinkListener() {
-    @Override
-    public void onResult(DeepLinkResult result) {
-      // Check for the existence of a given key in the link data and route accordingly.
-      try {
-        if ((result.getParameters().has("my_custom_key")) &amp;&amp; (result.getParameters().get("my_custom_key").equals("custom value"))) {
-          // Send user to intended path
-        }
-      } catch (JSONException e) {
-      }
-    }</p>
-<div class="codehilite"><pre><span></span>@Override
-public void onError(DeepLinkError error) {
-  // If an error occurred, it will be surfaced via a DeepLinkError.
-  Log.d(&quot;my log tag&quot;, error.toString());
-}
+<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
+<span class="hll">  <span class="n">MParticle</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">checkForDeepLink</span><span class="o">(</span><span class="k">new</span> <span class="n">DeepLinkListener</span><span class="o">()</span> <span class="o">{</span>
+</span><span class="hll">    <span class="nd">@Override</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResult</span><span class="o">(</span><span class="n">DeepLinkResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="hll">      <span class="c1">// Check for the existence of a given key in the link data and route accordingly.</span>
+</span><span class="hll">      <span class="k">try</span> <span class="o">{</span>
+</span><span class="hll">        <span class="k">if</span> <span class="o">((</span><span class="n">result</span><span class="o">.</span><span class="na">getParameters</span><span class="o">().</span><span class="na">has</span><span class="o">(</span><span class="s">&quot;my_custom_key&quot;</span><span class="o">))</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getParameters</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;my_custom_key&quot;</span><span class="o">).</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;custom value&quot;</span><span class="o">)))</span> <span class="o">{</span>
+</span><span class="hll">          <span class="c1">// Send user to intended path</span>
+</span><span class="hll">        <span class="o">}</span>
+</span><span class="hll">      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JSONException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="hll">      <span class="o">}</span>
+</span><span class="hll">    <span class="o">}</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="nd">@Override</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="n">DeepLinkError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="hll">      <span class="c1">// If an error occurred, it will be surfaced via a DeepLinkError.</span>
+</span><span class="hll">      <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;my log tag&quot;</span><span class="o">,</span> <span class="n">error</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span><span class="hll">    <span class="o">}</span>
+</span><span class="hll">  <span class="o">});</span>
+</span><span class="o">}</span>
 </pre></div>
 
-
-<p>});
-}
-```</p>
 </li>
 <li>
 <h3 id="initialize-branch">Initialize Branch<a class="headerlink" href="#initialize-branch" title="Permanent link">&para;</a></h3>
@@ -2830,72 +2827,75 @@ public void onError(DeepLinkError error) {
 <ul>
 <li>
 <h3 id="create-content-reference">Create content reference<a class="headerlink" href="#create-content-reference" title="Permanent link">&para;</a></h3>
-<p>```java
-BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
-    // The identifier is what Branch will use to de-dupe the content across many different Universal Objects
-   .setCanonicalIdentifier("item/12345")</p>
-<p>// The canonical URL for SEO purposes (optional)
-   .setCanonicalUrl("https://branch.io/deepviews")</p>
-<p>// This is where you define the open graph structure and how the object will appear on Facebook or in a deepview
-   .setTitle("My Content Title")
-   .setContentDescription("My Content Description")
-   .setContentImageUrl("https://example.com/mycontent-12345.png")</p>
-<p>// You use this to specify whether this content can be discovered publicly - default is public
-   .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)</p>
-<div class="codehilite"><pre><span></span>// Here is where you can add custom keys/values to the deep link data
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="n">branchUniversalObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+    <span class="c1">// The identifier is what Branch will use to de-dupe the content across many different Universal Objects</span>
+   <span class="o">.</span><span class="na">setCanonicalIdentifier</span><span class="o">(</span><span class="s">&quot;item/12345&quot;</span><span class="o">)</span>
+
+   <span class="c1">// The canonical URL for SEO purposes (optional)</span>
+   <span class="o">.</span><span class="na">setCanonicalUrl</span><span class="o">(</span><span class="s">&quot;https://branch.io/deepviews&quot;</span><span class="o">)</span>
+
+   <span class="c1">// This is where you define the open graph structure and how the object will appear on Facebook or in a deepview</span>
+   <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&quot;My Content Title&quot;</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">setContentDescription</span><span class="o">(</span><span class="s">&quot;My Content Description&quot;</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">setContentImageUrl</span><span class="o">(</span><span class="s">&quot;https://example.com/mycontent-12345.png&quot;</span><span class="o">)</span>
+
+   <span class="c1">// You use this to specify whether this content can be discovered publicly - default is public</span>
+   <span class="o">.</span><span class="na">setContentIndexingMode</span><span class="o">(</span><span class="n">BranchUniversalObject</span><span class="o">.</span><span class="na">CONTENT_INDEX_MODE</span><span class="o">.</span><span class="na">PUBLIC</span><span class="o">)</span>
+
+    <span class="c1">// Here is where you can add custom keys/values to the deep link data</span>
+   <span class="o">.</span><span class="na">setContentMetadata</span><span class="o">(</span><span class="k">new</span> <span class="n">ContentMetadata</span><span class="o">().</span><span class="na">addCustomMetadata</span><span class="o">(</span><span class="s">&quot;property1&quot;</span><span class="o">,</span> <span class="s">&quot;blue&quot;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">addCustomMetadata</span><span class="o">(</span><span class="s">&quot;property2&quot;</span><span class="o">,</span> <span class="s">&quot;red&quot;</span><span class="o">));</span>
 </pre></div>
 
-
-<p>.setContentMetadata(new ContentMetadata().addCustomMetadata("property1", "blue")
-        .addCustomMetadata("property2", "red"));
-```</p>
 </li>
 <li>
 <h3 id="create-deep-link">Create deep link<a class="headerlink" href="#create-deep-link" title="Permanent link">&para;</a></h3>
-<p>```java
-LinkProperties linkProperties = new LinkProperties()
-   .setChannel("facebook")
-   .setFeature("sharing")
-   .addControlParameter("$desktop_url", "http://example.com/home")
-   .addControlParameter("$ios_url", "http://example.com/ios");</p>
-<p>branchUniversalObject.generateShortUrl(this, linkProperties, new     BranchLinkCreateListener() {
-    @Override
-    public void onLinkCreate(String url, BranchError error) {
-       if (error == null) {
-           Log.i("MyApp", "got my Branch link to share: " + url);
-       }
-    }
-});
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">LinkProperties</span> <span class="n">linkProperties</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkProperties</span><span class="o">()</span>
+   <span class="o">.</span><span class="na">setChannel</span><span class="o">(</span><span class="s">&quot;facebook&quot;</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">setFeature</span><span class="o">(</span><span class="s">&quot;sharing&quot;</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">addControlParameter</span><span class="o">(</span><span class="s">&quot;$desktop_url&quot;</span><span class="o">,</span> <span class="s">&quot;http://example.com/home&quot;</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">addControlParameter</span><span class="o">(</span><span class="s">&quot;$ios_url&quot;</span><span class="o">,</span> <span class="s">&quot;http://example.com/ios&quot;</span><span class="o">);</span>
+
+<span class="n">branchUniversalObject</span><span class="o">.</span><span class="na">generateShortUrl</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">linkProperties</span><span class="o">,</span> <span class="k">new</span>     <span class="n">BranchLinkCreateListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLinkCreate</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">if</span> <span class="o">(</span><span class="n">error</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+           <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;MyApp&quot;</span><span class="o">,</span> <span class="s">&quot;got my Branch link to share: &quot;</span> <span class="o">+</span> <span class="n">url</span><span class="o">);</span>
+       <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
 </li>
 <li>
 <h3 id="share-deep-link">Share deep link<a class="headerlink" href="#share-deep-link" title="Permanent link">&para;</a></h3>
-<p>```java
-ShareSheetStyle shareSheetStyle = new ShareSheetStyle(MainActivity.this, "Check this out!", "This stuff is awesome: ")
-    .setCopyUrlStyle(getResources().getDrawable(android.R.drawable.ic_menu_send), "Copy", "Added to clipboard")
-    .setMoreOptionStyle(getResources().getDrawable(android.R.drawable.ic_menu_search), "Show more")
-    .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
-    .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
-    .setAsFullWidthStyle(true)
-    .setSharingTitle("Share With");</p>
-<p>branchUniversalObject.showShareSheet(this,
-                                      linkProperties,
-                                      shareSheetStyle,
-                                       new Branch.BranchLinkShareListener() {
-    @Override
-    public void onShareLinkDialogLaunched() {
-    }
-    @Override
-    public void onShareLinkDialogDismissed() {
-    }
-    @Override
-    public void onLinkShareResponse(String sharedLink, String sharedChannel, BranchError error) {
-    }
-    @Override
-    public void onChannelSelected(String channelName) {
-    }
-});
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">ShareSheetStyle</span> <span class="n">shareSheetStyle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ShareSheetStyle</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="s">&quot;Check this out!&quot;</span><span class="o">,</span> <span class="s">&quot;This stuff is awesome: &quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setCopyUrlStyle</span><span class="o">(</span><span class="n">getResources</span><span class="o">().</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_menu_send</span><span class="o">),</span> <span class="s">&quot;Copy&quot;</span><span class="o">,</span> <span class="s">&quot;Added to clipboard&quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setMoreOptionStyle</span><span class="o">(</span><span class="n">getResources</span><span class="o">().</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_menu_search</span><span class="o">),</span> <span class="s">&quot;Show more&quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">addPreferredSharingOption</span><span class="o">(</span><span class="n">SharingHelper</span><span class="o">.</span><span class="na">SHARE_WITH</span><span class="o">.</span><span class="na">FACEBOOK</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">addPreferredSharingOption</span><span class="o">(</span><span class="n">SharingHelper</span><span class="o">.</span><span class="na">SHARE_WITH</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setAsFullWidthStyle</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setSharingTitle</span><span class="o">(</span><span class="s">&quot;Share With&quot;</span><span class="o">);</span>
+
+<span class="n">branchUniversalObject</span><span class="o">.</span><span class="na">showShareSheet</span><span class="o">(</span><span class="k">this</span><span class="o">,</span>
+                                      <span class="n">linkProperties</span><span class="o">,</span>
+                                      <span class="n">shareSheetStyle</span><span class="o">,</span>
+                                       <span class="k">new</span> <span class="n">Branch</span><span class="o">.</span><span class="na">BranchLinkShareListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShareLinkDialogLaunched</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShareLinkDialogDismissed</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLinkShareResponse</span><span class="o">(</span><span class="n">String</span> <span class="n">sharedLink</span><span class="o">,</span> <span class="n">String</span> <span class="n">sharedChannel</span><span class="o">,</span> <span class="n">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onChannelSelected</span><span class="o">(</span><span class="n">String</span> <span class="n">channelName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
 </li>
 <li>
 <h3 id="read-deep-link">Read deep link<a class="headerlink" href="#read-deep-link" title="Permanent link">&para;</a></h3>
@@ -2908,28 +2908,26 @@ ShareSheetStyle shareSheetStyle = new ShareSheetStyle(MainActivity.this, "Check 
 </li>
 <li>
 <p>Returns <a href="../../../pages/links/integrate/#read-deep-links">deep link properties</a></p>
-<p>```java
-@Override
-public void onStart() {
-  MParticle.getInstance().checkForDeepLink(new DeepLinkListener() {
-    @Override
-    public void onResult(DeepLinkResult result) {
-      try {
-        Log.d("BRANCH SDK", result.getParameters.toString());
-      } catch (JSONException e) {
-      }
-    }</p>
-<div class="codehilite"><pre><span></span>@Override
-public void onError(DeepLinkError error) {
-  // If an error occurred, it will be surfaced via a DeepLinkError.
-  Log.d(&quot;BRANCH SDK&quot;, error.toString());
-}
+<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">MParticle</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">checkForDeepLink</span><span class="o">(</span><span class="k">new</span> <span class="n">DeepLinkListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResult</span><span class="o">(</span><span class="n">DeepLinkResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">try</span> <span class="o">{</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;BRANCH SDK&quot;</span><span class="o">,</span> <span class="n">result</span><span class="o">.</span><span class="na">getParameters</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JSONException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="n">DeepLinkError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// If an error occurred, it will be surfaced via a DeepLinkError.</span>
+      <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;BRANCH SDK&quot;</span><span class="o">,</span> <span class="n">error</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+    <span class="o">}</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </pre></div>
 
-
-<p>});
-}
-```</p>
 </li>
 </ul>
 </li>
@@ -2938,45 +2936,43 @@ public void onError(DeepLinkError error) {
 <ul>
 <li>
 <p>Do stuff with the Branch deep link data.</p>
-<p>```java
-@Override
-public void onStart() {
-  MParticle.getInstance().checkForDeepLink(new DeepLinkListener() {
-    @Override
-    public void onResult(DeepLinkResult result) {
-      try {
-        JSONObject referringParams = result.getParameters();</p>
-<div class="codehilite"><pre><span></span>    // Option 1: Log data
-    Log.i(&quot;BRANCH SDK&quot;, referringParams.toString());
+<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">MParticle</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">checkForDeepLink</span><span class="o">(</span><span class="k">new</span> <span class="n">DeepLinkListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResult</span><span class="o">(</span><span class="n">DeepLinkResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">try</span> <span class="o">{</span>
+        <span class="n">JSONObject</span> <span class="n">referringParams</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">getParameters</span><span class="o">();</span>
 
-    // Option 2: Save data to be used later
-    SharedPreferences preferences = .getSharedPreferences(&quot;MyPreferences&quot;, Context.MODE_PRIVATE);
-    SharedPreferences.Editor editor = preferences.edit();
-    editor.putString(&quot;branchData&quot;, referringParams.toString(2));
-    editor.commit();
+        <span class="c1">// Option 1: Log data</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;BRANCH SDK&quot;</span><span class="o">,</span> <span class="n">referringParams</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
-    // Option 3: Navigate to page
-    Intent intent = new Intent(MainActivity.this, OtherActivity.class);
-    intent.putExtra(&quot;branchData&quot;, referringParams.toString(2));
-    startActivity(intent);
+        <span class="c1">// Option 2: Save data to be used later</span>
+        <span class="n">SharedPreferences</span> <span class="n">preferences</span> <span class="o">=</span> <span class="o">.</span><span class="na">getSharedPreferences</span><span class="o">(</span><span class="s">&quot;MyPreferences&quot;</span><span class="o">,</span> <span class="n">Context</span><span class="o">.</span><span class="na">MODE_PRIVATE</span><span class="o">);</span>
+        <span class="n">SharedPreferences</span><span class="o">.</span><span class="na">Editor</span> <span class="n">editor</span> <span class="o">=</span> <span class="n">preferences</span><span class="o">.</span><span class="na">edit</span><span class="o">();</span>
+        <span class="n">editor</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&quot;branchData&quot;</span><span class="o">,</span> <span class="n">referringParams</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+        <span class="n">editor</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
 
-    // Option 4: Display data
-    Toast.makeText(this, referringParams.toString(2), Toast.LENGTH_LONG).show();
-  } catch (JSONException e) {
-  }
-}
+        <span class="c1">// Option 3: Navigate to page</span>
+        <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">OtherActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&quot;branchData&quot;</span><span class="o">,</span> <span class="n">referringParams</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+        <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
 
-@Override
-public void onError(DeepLinkError error) {
-  // If an error occurred, it will be surfaced via a DeepLinkError.
-  Log.d(&quot;BRANCH SDK&quot;, error.toString());
-}
+        <span class="c1">// Option 4: Display data</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">referringParams</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JSONException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="n">DeepLinkError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// If an error occurred, it will be surfaced via a DeepLinkError.</span>
+      <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;BRANCH SDK&quot;</span><span class="o">,</span> <span class="n">error</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+    <span class="o">}</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </pre></div>
 
-
-<p>});
-}
-```</p>
 </li>
 </ul>
 </li>
@@ -2997,13 +2993,15 @@ public void onError(DeepLinkError error) {
 </li>
 <li>
 <p>Needs <code>build.gradle</code> library</p>
-<p><code>java
-compile 'com.google.android.gms:play-services-appindexing:9.+'</code></p>
+<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">google</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">gms</span><span class="o">:</span><span class="n">play</span><span class="o">-</span><span class="n">services</span><span class="o">-</span><span class="n">appindexing</span><span class="o">:</span><span class="mf">9.</span><span class="o">+</span><span class="err">&#39;</span>
+</pre></div>
+
 </li>
 <li>
 <p>Call method on Branch Universal Object</p>
-<p><code>java
-buo.listOnGoogleSearch(this);</code></p>
+<div class="codehilite"><pre><span></span><span class="n">buo</span><span class="o">.</span><span class="na">listOnGoogleSearch</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3021,19 +3019,22 @@ buo.listOnGoogleSearch(this);</code></p>
 </li>
 <li>
 <p>Validate with the <a href="https://dashboard.branch.io/liveview/content">Branch Dashboard</a></p>
-<p><code>java
-buo.userCompletedAction(BranchEvent.VIEW);</code></p>
+<div class="codehilite"><pre><span></span><span class="n">buo</span><span class="o">.</span><span class="na">userCompletedAction</span><span class="o">(</span><span class="n">BranchEvent</span><span class="o">.</span><span class="na">VIEW</span><span class="o">);</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
 <li>
 <h3 id="track-users">Track users<a class="headerlink" href="#track-users" title="Permanent link">&para;</a></h3>
-<p><code>java
-// Your user ID should not exceed 127 characters.
-// The IdentityType CustomerId will automatically propagate to Branch.
-MParticle.getInstance().setUserIdentity(MParticle.IdentityType.CustomerId, "your_user_id");</code></p>
-<p><code>java
-MParticle.getInstance().logout();</code></p>
+<div class="codehilite"><pre><span></span><span class="c1">// Your user ID should not exceed 127 characters.</span>
+<span class="c1">// The IdentityType CustomerId will automatically propagate to Branch.</span>
+<span class="n">MParticle</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setUserIdentity</span><span class="o">(</span><span class="n">MParticle</span><span class="o">.</span><span class="na">IdentityType</span><span class="o">.</span><span class="na">CustomerId</span><span class="o">,</span> <span class="s">&quot;your_user_id&quot;</span><span class="o">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="n">MParticle</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">logout</span><span class="o">();</span>
+</pre></div>
+
 </li>
 <li>
 <h3 id="track-events">Track events<a class="headerlink" href="#track-events" title="Permanent link">&para;</a></h3>
@@ -3054,14 +3055,15 @@ MParticle.getInstance().logout();</code></p>
 <p>Validate with the <a href="https://dashboard.branch.io/liveview/events">Branch Dashboard</a></p>
 </li>
 </ul>
-<p>```java
-// Option 1:
-MParticle.logEvent("your_custom_event", MParticle.EventType.YourEventType);</p>
-<p>// Option 2: with metadata
-Map<String, String> metaData = new HashMap&lt;&gt;();
-metaData.put("key", "value");
-MParticle.logEvent("your_custom_event", MParticle.EventType.YourEventType, metaData);
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Option 1:</span>
+<span class="n">MParticle</span><span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="s">&quot;your_custom_event&quot;</span><span class="o">,</span> <span class="n">MParticle</span><span class="o">.</span><span class="na">EventType</span><span class="o">.</span><span class="na">YourEventType</span><span class="o">);</span>
+
+<span class="c1">// Option 2: with metadata</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">metaData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+<span class="n">metaData</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;key&quot;</span><span class="o">,</span> <span class="s">&quot;value&quot;</span><span class="o">);</span>
+<span class="n">MParticle</span><span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="s">&quot;your_custom_event&quot;</span><span class="o">,</span> <span class="n">MParticle</span><span class="o">.</span><span class="na">EventType</span><span class="o">.</span><span class="na">YourEventType</span><span class="o">,</span> <span class="n">metaData</span><span class="o">);</span>
+</pre></div>
+
 </li>
 <li>
 <h3 id="track-commerce">Track commerce<a class="headerlink" href="#track-commerce" title="Permanent link">&para;</a></h3>
@@ -3080,48 +3082,57 @@ MParticle.logEvent("your_custom_event", MParticle.EventType.YourEventType, metaD
 </li>
 <li>
 <p>Ensure to add <code>revenue</code> field to track purchase. All other fields are optional</p>
-<p>```java
-// Add details about each product associated with the purchase (optional)
-Product product1 = new Product();
-product1.setSku("u123");
-product1.setName("cactus");
-product1.setPrice(45.00);
-product1.setQuantity(2);
-product1.setBrand("brand1");
-product1.setCategory(ProductCategory.ELECTRONICS);
-product1.setVariant("variant1");</p>
-<p>Product product2 = new Product();
-product2.setSku("u456");
-product2.setName("grass");
-product2.setPrice(9.00);
-product2.setQuantity(1);
-product2.setBrand("brand2");
-product2.setCategory(ProductCategory.CAMERA_AND_OPTICS);
-product2.setVariant("variant2");</p>
-<p>// Create a list of products associated with the particular purchase (optional)
-List<Product> productList = new ArrayList<Product>();
-productList.add(product1);
-productList.add(product2);</p>
-<p>// Create the commerce event (only revenue is required)
-CommerceEvent commerceEvent = new CommerceEvent();
-commerceEvent.setRevenue(50.29);
-commerceEvent.setCurrencyType(CurrencyType.USD);
-commerceEvent.setTransactionID("TRANS-1111");
-commerceEvent.setShipping(4.50);
-commerceEvent.setTax(110.90);
-commerceEvent.setAffiliation("AFF-ID-101");
-commerceEvent.setProducts(productList);</p>
-<p>// Add metadata (optional)
-JSONObject metadata = new JSONObject();</p>
-<p>try {
-    metadata.put("custom_dictionary", 123);
-    metadata.put("testVar", "abc");
-} catch (Exception e) {
-    e.printStackTrace();
-}</p>
-<p>// Fire the commerce event by calling Branch directly.
-Branch.getInstance().sendCommerceEvent(commerceEvent, metadata, null);
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Add details about each product associated with the purchase (optional)</span>
+<span class="n">Product</span> <span class="n">product1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Product</span><span class="o">();</span>
+<span class="n">product1</span><span class="o">.</span><span class="na">setSku</span><span class="o">(</span><span class="s">&quot;u123&quot;</span><span class="o">);</span>
+<span class="n">product1</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&quot;cactus&quot;</span><span class="o">);</span>
+<span class="n">product1</span><span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="mf">45.00</span><span class="o">);</span>
+<span class="n">product1</span><span class="o">.</span><span class="na">setQuantity</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">product1</span><span class="o">.</span><span class="na">setBrand</span><span class="o">(</span><span class="s">&quot;brand1&quot;</span><span class="o">);</span>
+<span class="n">product1</span><span class="o">.</span><span class="na">setCategory</span><span class="o">(</span><span class="n">ProductCategory</span><span class="o">.</span><span class="na">ELECTRONICS</span><span class="o">);</span>
+<span class="n">product1</span><span class="o">.</span><span class="na">setVariant</span><span class="o">(</span><span class="s">&quot;variant1&quot;</span><span class="o">);</span>
+
+<span class="n">Product</span> <span class="n">product2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Product</span><span class="o">();</span>
+<span class="n">product2</span><span class="o">.</span><span class="na">setSku</span><span class="o">(</span><span class="s">&quot;u456&quot;</span><span class="o">);</span>
+<span class="n">product2</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&quot;grass&quot;</span><span class="o">);</span>
+<span class="n">product2</span><span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="mf">9.00</span><span class="o">);</span>
+<span class="n">product2</span><span class="o">.</span><span class="na">setQuantity</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">product2</span><span class="o">.</span><span class="na">setBrand</span><span class="o">(</span><span class="s">&quot;brand2&quot;</span><span class="o">);</span>
+<span class="n">product2</span><span class="o">.</span><span class="na">setCategory</span><span class="o">(</span><span class="n">ProductCategory</span><span class="o">.</span><span class="na">CAMERA_AND_OPTICS</span><span class="o">);</span>
+<span class="n">product2</span><span class="o">.</span><span class="na">setVariant</span><span class="o">(</span><span class="s">&quot;variant2&quot;</span><span class="o">);</span>
+
+
+<span class="c1">// Create a list of products associated with the particular purchase (optional)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span> <span class="n">productList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;();</span>
+<span class="n">productList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">product1</span><span class="o">);</span>
+<span class="n">productList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">product2</span><span class="o">);</span>
+
+<span class="c1">// Create the commerce event (only revenue is required)</span>
+<span class="n">CommerceEvent</span> <span class="n">commerceEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CommerceEvent</span><span class="o">();</span>
+<span class="n">commerceEvent</span><span class="o">.</span><span class="na">setRevenue</span><span class="o">(</span><span class="mf">50.29</span><span class="o">);</span>
+<span class="n">commerceEvent</span><span class="o">.</span><span class="na">setCurrencyType</span><span class="o">(</span><span class="n">CurrencyType</span><span class="o">.</span><span class="na">USD</span><span class="o">);</span>
+<span class="n">commerceEvent</span><span class="o">.</span><span class="na">setTransactionID</span><span class="o">(</span><span class="s">&quot;TRANS-1111&quot;</span><span class="o">);</span>
+<span class="n">commerceEvent</span><span class="o">.</span><span class="na">setShipping</span><span class="o">(</span><span class="mf">4.50</span><span class="o">);</span>
+<span class="n">commerceEvent</span><span class="o">.</span><span class="na">setTax</span><span class="o">(</span><span class="mf">110.90</span><span class="o">);</span>
+<span class="n">commerceEvent</span><span class="o">.</span><span class="na">setAffiliation</span><span class="o">(</span><span class="s">&quot;AFF-ID-101&quot;</span><span class="o">);</span>
+<span class="n">commerceEvent</span><span class="o">.</span><span class="na">setProducts</span><span class="o">(</span><span class="n">productList</span><span class="o">);</span>
+
+
+<span class="c1">// Add metadata (optional)</span>
+<span class="n">JSONObject</span> <span class="n">metadata</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">metadata</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;custom_dictionary&quot;</span><span class="o">,</span> <span class="mi">123</span><span class="o">);</span>
+    <span class="n">metadata</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;testVar&quot;</span><span class="o">,</span> <span class="s">&quot;abc&quot;</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+<span class="o">}</span>
+
+
+<span class="c1">// Fire the commerce event by calling Branch directly.</span>
+<span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">sendCommerceEvent</span><span class="o">(</span><span class="n">commerceEvent</span><span class="o">,</span> <span class="n">metadata</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3142,31 +3153,34 @@ Branch.getInstance().sendCommerceEvent(commerceEvent, metadata, null);
 </li>
 <li>
 <p>Redeem credits</p>
-<p><code>java
-Branch.getInstance().redeemRewards(5);</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">redeemRewards</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</pre></div>
+
 </li>
 <li>
 <p>Load credits</p>
-<p><code>java
-Branch.getInstance().loadRewards(new BranchReferralStateChangedListener() {
-    @Override
-    public void onStateChanged(boolean changed, Branch.BranchError error) {
-        int credits = branch.getCredits();
-    }
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">loadRewards</span><span class="o">(</span><span class="k">new</span> <span class="n">BranchReferralStateChangedListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStateChanged</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">changed</span><span class="o">,</span> <span class="n">Branch</span><span class="o">.</span><span class="na">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">credits</span> <span class="o">=</span> <span class="n">branch</span><span class="o">.</span><span class="na">getCredits</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
 </li>
 <li>
 <p>Load history</p>
-<p><code>java
-Branch.getInstance().getCreditHistory(new BranchListResponseListener() {
-    public void onReceivingResponse(JSONArray list, Branch.BranchError error) {
-        if (error != null) {
-            Log.i("BRANCH SDK", "Branch load rewards failed. Caused by -" + error.message)
-        } else {
-            Log.i("BRANCH SDK", list);
-        }
-    }
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getCreditHistory</span><span class="o">(</span><span class="k">new</span> <span class="n">BranchListResponseListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceivingResponse</span><span class="o">(</span><span class="n">JSONArray</span> <span class="n">list</span><span class="o">,</span> <span class="n">Branch</span><span class="o">.</span><span class="na">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">error</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;BRANCH SDK&quot;</span><span class="o">,</span> <span class="s">&quot;Branch load rewards failed. Caused by -&quot;</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="na">message</span><span class="o">)</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;BRANCH SDK&quot;</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3192,8 +3206,9 @@ Branch.getInstance().getCreditHistory(new BranchListResponseListener() {
 <ul>
 <li>
 <p>Set <code>true</code> in your <code>AndroidManifest.xml</code></p>
-<p><code>xml
-&lt;meta-data android:name="io.branch.sdk.TestMode" android:value="true" /&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;io.branch.sdk.TestMode&quot;</span> <span class="na">android:value=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+
 </li>
 <li>
 <p>Do not use <code>TestMode</code> in production or in the Google Play Store</p>
@@ -3265,31 +3280,33 @@ Branch.getInstance().getCreditHistory(new BranchListResponseListener() {
 <ul>
 <li>
 <p><em>bnc.lt link domain</em></p>
-<p><code>xml
-&lt;activity android:name="com.yourapp.your_activity"&gt;
-    &lt;!-- App Link your activity to Branch links--&gt;
-    &lt;intent-filter android:autoVerify="true"&gt;
-        &lt;action android:name="android.intent.action.VIEW" /&gt;
-        &lt;category android:name="android.intent.category.DEFAULT" /&gt;
-        &lt;category android:name="android.intent.category.BROWSABLE" /&gt;
-         &lt;data android:scheme="https" android:host="bnc.lt" android:pathPrefix="/LVeu" /&gt;
-         &lt;data android:scheme="https" android:host="bnc.lt" android:pathPrefix="/eVeu" /&gt;
-    &lt;/intent-filter&gt;
-&lt;/activity&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&quot;com.yourapp.your_activity&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- App Link your activity to Branch links--&gt;</span>
+    <span class="nt">&lt;intent-filter</span> <span class="na">android:autoVerify=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;bnc.lt&quot;</span> <span class="na">android:pathPrefix=</span><span class="s">&quot;/LVeu&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;bnc.lt&quot;</span> <span class="na">android:pathPrefix=</span><span class="s">&quot;/eVeu&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>custom link domain</em></p>
-<p><code>xml
-&lt;activity android:name="com.yourapp.your_activity"&gt;
-    &lt;!-- App Link your activity to Branch links--&gt;
-    &lt;intent-filter android:autoVerify="true"&gt;
-        &lt;action android:name="android.intent.action.VIEW" /&gt;
-        &lt;category android:name="android.intent.category.DEFAULT" /&gt;
-        &lt;category android:name="android.intent.category.BROWSABLE" /&gt;
-         &lt;data android:scheme="https" android:host="your.app.com" android:pathPrefix="/LVeu" /&gt;
-         &lt;data android:scheme="https" android:host="your.app.com" android:pathPrefix="/eVeu" /&gt;
-    &lt;/intent-filter&gt;
-&lt;/activity&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&quot;com.yourapp.your_activity&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- App Link your activity to Branch links--&gt;</span>
+    <span class="nt">&lt;intent-filter</span> <span class="na">android:autoVerify=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;your.app.com&quot;</span> <span class="na">android:pathPrefix=</span><span class="s">&quot;/LVeu&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;your.app.com&quot;</span> <span class="na">android:pathPrefix=</span><span class="s">&quot;/eVeu&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</pre></div>
+
 </li>
 <li>
 <p>Change the following values to match your <a href="https://dashboard.branch.io/settings/link">Branch Dashboard</a></p>
@@ -3329,30 +3346,33 @@ Branch.getInstance().getCreditHistory(new BranchListResponseListener() {
 </li>
 <li>
 <p>Add to your <code>build.gradle</code></p>
-<p><code>java
-defaultConfig {
-    multiDexEnabled true
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">defaultConfig</span> <span class="o">{</span>
+    <span class="n">multiDexEnabled</span> <span class="kc">true</span>
+<span class="o">}</span>
+</pre></div>
+
 </li>
 <li>
 <p>Add to your <code>Application class</code> and make sure it extends <code>MultiDexApplication</code></p>
 </li>
 <li>
 <p><em>Java</em></p>
-<p><code>java
-@Override
-protected void attachBaseContext(Context base) {
-    super.attachBaseContext(base);
-    MultiDex.install(this);
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">attachBaseContext</span><span class="o">(</span><span class="n">Context</span> <span class="n">base</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">attachBaseContext</span><span class="o">(</span><span class="n">base</span><span class="o">);</span>
+    <span class="n">MultiDex</span><span class="o">.</span><span class="na">install</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Kotlin</em></p>
-<p><code>java
-override fun attachBaseContext(base: Context?) {
-    super.attachBaseContext(base)
-    MultiDex.install(this)
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">override</span> <span class="n">fun</span> <span class="nf">attachBaseContext</span><span class="o">(</span><span class="n">base</span><span class="o">:</span> <span class="n">Context</span><span class="o">?)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">attachBaseContext</span><span class="o">(</span><span class="n">base</span><span class="o">)</span>
+    <span class="n">MultiDex</span><span class="o">.</span><span class="na">install</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3531,7 +3551,7 @@ override fun attachBaseContext(base: Context?) {
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3552,10 +3572,6 @@ override fun attachBaseContext(base: Context?) {
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

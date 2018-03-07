@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2253,23 +2253,25 @@
 <ul>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p>```obj-c</p>
-<p>BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-branchUniversalObject.canonicalUrl = @"https://example.com/item/12345";
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">branchUniversalObject</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchUniversalObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCanonicalIdentifier</span><span class="p">:</span><span class="s">@&quot;item/12345&quot;</span><span class="p">];</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">canonicalUrl</span> <span class="o">=</span> <span class="s">@&quot;https://example.com/item/12345&quot;</span><span class="p">;</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-branchUniversalObject.canonicalUrl = "https://example.com/item/12345"</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">branchUniversalObject</span><span class="p">:</span> <span class="n">BranchUniversalObject</span> <span class="p">=</span> <span class="n">BranchUniversalObject</span><span class="p">(</span><span class="n">canonicalIdentifier</span><span class="p">:</span> <span class="s">&quot;item/12345&quot;</span><span class="p">)</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">canonicalUrl</span> <span class="p">=</span> <span class="s">&quot;https://example.com/item/12345&quot;</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>java
- BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
-                .setCanonicalIdentifier("item/12345")
-                .setCanonicalUrl("https://example.com/item/12345")</code></p>
+<div class="codehilite"><pre><span></span> <span class="n">BranchUniversalObject</span> <span class="n">branchUniversalObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setCanonicalIdentifier</span><span class="o">(</span><span class="s">&quot;item/12345&quot;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setCanonicalUrl</span><span class="o">(</span><span class="s">&quot;https://example.com/item/12345&quot;</span><span class="o">)</span>
+</pre></div>
+
 </li>
 </ul>
 <h2 id="journeys-banners-and-other-web-integrations">Journeys banners and other web integrations<a class="headerlink" href="#journeys-banners-and-other-web-integrations" title="Permanent link">&para;</a></h2>
@@ -2428,7 +2430,7 @@ branchUniversalObject.canonicalUrl = "https://example.com/item/12345"</code></p>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2449,10 +2451,6 @@ branchUniversalObject.canonicalUrl = "https://example.com/item/12345"</code></p>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

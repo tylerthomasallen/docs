@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2399,79 +2399,79 @@
 <ul>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-Branch.getInstance().loadRewards { (changed, error) in
-    if (error == nil) {
-        let credits = Branch.getInstance().getCredits()
-        print("credit: \(credits)")
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">loadRewards</span> <span class="p">{</span> <span class="p">(</span><span class="n">changed</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">credits</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getCredits</span><span class="p">()</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;credit: </span><span class="si">\(</span><span class="n">credits</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *error) {
-    if (!error) {
-        NSLog(@"credit: %lu", [[Branch getInstance] getCredits]);
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">loadRewardsWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">changed</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;credit: %lu&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getCredits</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p>```java
-Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateChangedListener() {
-    @Override
-    public void onStateChanged(boolean changed, Branch.BranchError error) {
-        // changed boolean will indicate if the balance changed from what is currently in memory</p>
-<div class="codehilite"><pre><span></span>    // will return the balance of the current user&#39;s credits
-    int credits = branch.getCredits();
-}
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">()).</span><span class="na">loadRewards</span><span class="o">(</span><span class="k">new</span> <span class="n">BranchReferralStateChangedListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStateChanged</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">changed</span><span class="o">,</span> <span class="n">Branch</span><span class="o">.</span><span class="na">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// changed boolean will indicate if the balance changed from what is currently in memory</span>
+
+        <span class="c1">// will return the balance of the current user&#39;s credits</span>
+        <span class="kt">int</span> <span class="n">credits</span> <span class="o">=</span> <span class="n">branch</span><span class="o">.</span><span class="na">getCredits</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">});</span>
 </pre></div>
 
-
-<p>});
-```</p>
 </li>
 </ul>
 <p>If you want to see the number of credits in a custom bucket you've specified, such as <code>myBucket</code>, then you can do the following:</p>
 <ul>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-Branch.getInstance().loadRewards { (changed, error) in
-    if (error == nil) {
-        let creditsForBucket = Branch.getInstance().getCreditsForBucket()
-        print("credit for bucket: \(creditsForBucket)")
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">loadRewards</span> <span class="p">{</span> <span class="p">(</span><span class="n">changed</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">creditsForBucket</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getCreditsForBucket</span><span class="p">()</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;credit for bucket: </span><span class="si">\(</span><span class="n">creditsForBucket</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *error) {
-    if (!error) {
-        NSString *bucket = @"myBucket";
-        NSLog(@"credit for %@ bucket: %lu", bucket, [[Branch getInstance] getCreditsForBucket:bucket]);
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">loadRewardsWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">changed</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">NSString</span> <span class="o">*</span><span class="n">bucket</span> <span class="o">=</span> <span class="s">@&quot;myBucket&quot;</span><span class="p">;</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;credit for %@ bucket: %lu&quot;</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">getCreditsForBucket</span><span class="p">:</span><span class="n">bucket</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p>```java
-Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateChangedListener() {
-    @Override
-    public void onStateChanged(boolean changed, Branch.BranchError error) {
-        // changed boolean will indicate if the balance changed from what is currently in memory</p>
-<div class="codehilite"><pre><span></span>    if (error == null) {
-        String bucket = &quot;myBucket&quot;;
-        Branch.getInstance(getApplicationContext()).getCreditsForBucket(bucket);
-    }
-}
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">()).</span><span class="na">loadRewards</span><span class="o">(</span><span class="k">new</span> <span class="n">BranchReferralStateChangedListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStateChanged</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">changed</span><span class="o">,</span> <span class="n">Branch</span><span class="o">.</span><span class="na">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// changed boolean will indicate if the balance changed from what is currently in memory</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">error</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">bucket</span> <span class="o">=</span> <span class="s">&quot;myBucket&quot;</span><span class="o">;</span>
+            <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">()).</span><span class="na">getCreditsForBucket</span><span class="o">(</span><span class="n">bucket</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
 </pre></div>
 
-
-<p>});
-```</p>
 </li>
 </ul>
 <h2 id="redeeming-credits">Redeeming Credits<a class="headerlink" href="#redeeming-credits" title="Permanent link">&para;</a></h2>
@@ -2479,64 +2479,70 @@ Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateC
 <ul>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-Branch.getInstance().redeemRewards(5, callback: {(success, error) in
-    if success {
-        print("Redeemed 5 credits!")
-    }
-    else {
-        print("Failed to redeem credits: \(error)")
-    }
-})</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">redeemRewards</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="p">{(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Redeemed 5 credits!&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Failed to redeem credits: </span><span class="si">\(</span><span class="n">error</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-[[Branch getInstance] redeemRewards:5 callback:^(BOOL success, NSError *error) {
-    if (success) {
-        NSLog(@"Redeemed 5 credits!");
-    }
-    else {
-        NSLog(@"Failed to redeem credits: %@", error);
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">redeemRewards</span><span class="p">:</span><span class="mi">5</span> <span class="nl">callback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Redeemed 5 credits!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Failed to redeem credits: %@&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>java
-Branch.getInstance(getApplicationContext()).redeemRewards(5);</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">()).</span><span class="na">redeemRewards</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</pre></div>
+
 </li>
 </ul>
 <p>If you want to redeem credits in a custom bucket you've specified, such as <code>myBucket</code>, then you can do the following:</p>
 <ul>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-Branch.getInstance().redeemRewards(5, forBucket: "myBucket", callback: {(success, error) in
-    if success {
-        print("Redeemed 5 credits for myBucket!")
-    }
-    else {
-        print("Failed to redeem credits: \(error)")
-    }
-})</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">redeemRewards</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">forBucket</span><span class="p">:</span> <span class="s">&quot;myBucket&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="p">{(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Redeemed 5 credits for myBucket!&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Failed to redeem credits: </span><span class="si">\(</span><span class="n">error</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-[[Branch getInstance] redeemRewards:5 forBucket:@"myBucket" callback:^(BOOL success, NSError *error) {
-    if (success) {
-        NSLog(@"Redeemed 5 credits for myBucket!");
-    }
-    else {
-        NSLog(@"Failed to redeem credits: %@", error);
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">redeemRewards</span><span class="p">:</span><span class="mi">5</span> <span class="nl">forBucket</span><span class="p">:</span><span class="s">@&quot;myBucket&quot;</span> <span class="nl">callback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Redeemed 5 credits for myBucket!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Failed to redeem credits: %@&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>java
-Branch.getInstance(getApplicationContext()).redeemRewards("myBucket", 5)</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">()).</span><span class="na">redeemRewards</span><span class="o">(</span><span class="s">&quot;myBucket&quot;</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
+</pre></div>
+
 </li>
 </ul>
 <div class="admonition example">
@@ -2550,45 +2556,48 @@ Branch.getInstance(getApplicationContext()).redeemRewards("myBucket", 5)</code><
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-    Branch.getInstance().loadRewards(withCallback: {(_ changed: Bool, _ error: Error?) -&gt; Void in
-        if !(error &amp;&amp; Branch.getInstance().getCredits() &gt; 5) {
-            Branch.getInstance().redeemRewards(5, callback: {(_ success: Bool, _ err: Error?) -&gt; Void in
-                if err == nil {
-                    var newBalance: Int = Branch.getInstance().getCredits()
-                    var successMsg = "You redeemed 5 credits! You have \(Int(newBalance)) remaining."
-                    UIAlertView(title: "Success", message: successMsg, delegate: nil, cancelButtonTitle: "OK", otherButtonTitles: "").show()
-                }
-            })
-        }
-    })</code></p>
+<div class="codehilite"><pre><span></span>    <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">loadRewards</span><span class="p">(</span><span class="n">withCallback</span><span class="p">:</span> <span class="p">{(</span><span class="kc">_</span> <span class="n">changed</span><span class="p">:</span> <span class="nb">Bool</span><span class="p">,</span> <span class="kc">_</span> <span class="n">error</span><span class="p">:</span> <span class="n">Error</span><span class="p">?)</span> <span class="p">-&gt;</span> <span class="nb">Void</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="n">error</span> <span class="o">&amp;&amp;</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getCredits</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">redeemRewards</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="p">{(</span><span class="kc">_</span> <span class="n">success</span><span class="p">:</span> <span class="nb">Bool</span><span class="p">,</span> <span class="kc">_</span> <span class="n">err</span><span class="p">:</span> <span class="n">Error</span><span class="p">?)</span> <span class="p">-&gt;</span> <span class="nb">Void</span> <span class="k">in</span>
+                <span class="k">if</span> <span class="n">err</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nv">newBalance</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getCredits</span><span class="p">()</span>
+                    <span class="kd">var</span> <span class="nv">successMsg</span> <span class="p">=</span> <span class="s">&quot;You redeemed 5 credits! You have </span><span class="si">\(</span><span class="nb">Int</span><span class="si">(</span><span class="n">newBalance</span><span class="si">))</span><span class="s"> remaining.&quot;</span>
+                    <span class="bp">UIAlertView</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">&quot;Success&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">successMsg</span><span class="p">,</span> <span class="n">delegate</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">cancelButtonTitle</span><span class="p">:</span> <span class="s">&quot;OK&quot;</span><span class="p">,</span> <span class="n">otherButtonTitles</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *error) {
-    if (!error &amp;&amp; [[Branch getInstance] getCredits] &gt; 5) {
-        [[Branch getInstance] redeemRewards:5 callback:^(BOOL success, NSError *err) {
-            if (!err) {
-                NSInteger newBalance = [[Branch getInstance] getCredits];
-                NSString *successMsg = [NSString stringWithFormat:@"You redeemed 5 credits! You have %ld remaining.", (long)newBalance];
-                [[[UIAlertView alloc] initWithTitle:@"Success" message:successMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            }
-        }];
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">loadRewardsWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">changed</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span> <span class="o">&amp;&amp;</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getCredits</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">redeemRewards</span><span class="p">:</span><span class="mi">5</span> <span class="nl">callback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">NSInteger</span> <span class="n">newBalance</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getCredits</span><span class="p">];</span>
+                <span class="bp">NSString</span> <span class="o">*</span><span class="n">successMsg</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;You redeemed 5 credits! You have %ld remaining.&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">newBalance</span><span class="p">];</span>
+                <span class="p">[[[</span><span class="bp">UIAlertView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithTitle</span><span class="p">:</span><span class="s">@&quot;Success&quot;</span> <span class="nl">message</span><span class="p">:</span><span class="n">successMsg</span> <span class="nl">delegate</span><span class="p">:</span><span class="nb">nil</span> <span class="nl">cancelButtonTitle</span><span class="p">:</span><span class="s">@&quot;OK&quot;</span> <span class="nl">otherButtonTitles</span><span class="p">:</span><span class="nb">nil</span><span class="p">]</span> <span class="n">show</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}];</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>java
-Branch.getInstance().loadRewards(new BranchReferralStateChangedListener() {
-    @Override
-    public void onStateChanged(boolean changed, BranchError error) {
-        if (error == null &amp;&amp; Branch.getInstance().getCredits() &gt; 5) {
-            Branch.getInstance().redeemRewards(5);
-        }
-    }
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">loadRewards</span><span class="o">(</span><span class="k">new</span> <span class="n">BranchReferralStateChangedListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStateChanged</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">changed</span><span class="o">,</span> <span class="n">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">error</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getCredits</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">redeemRewards</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
 </li>
 </ol>
 </div>
@@ -2750,7 +2759,7 @@ To get a better understanding of the overall referral flow, please check out our
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2771,10 +2780,6 @@ To get a better understanding of the overall referral flow, please check out our
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

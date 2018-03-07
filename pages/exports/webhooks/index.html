@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2435,7 +2435,6 @@
 <span class="p">}</span>
 </pre></div>
 
-
 <h3 id="sample-post-body-for-event-webhooks">Sample POST body for <strong>Event</strong> webhooks<a class="headerlink" href="#sample-post-body-for-event-webhooks" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="nx">POST</span>
 <span class="nx">User</span><span class="o">-</span><span class="nx">agent</span><span class="o">:</span> <span class="nx">Branch</span> <span class="nx">Metrics</span> <span class="nx">API</span>
@@ -2492,7 +2491,6 @@
 <span class="p">}</span>
 </pre></div>
 
-
 <h3 id="filter-webhooks">Filter Webhooks<a class="headerlink" href="#filter-webhooks" title="Permanent link">&para;</a></h3>
 <p>Filters allow you to specify when a webhook gets sent to your URL based off criteria matches. You can configure your filters to use any webhook keyword value by using liquid tags following this convention: <code>{{ param.name }}</code>.</p>
 <div class="admonition tip">
@@ -2512,14 +2510,15 @@
 <div class="admonition note">
 <p class="admonition-title">Example: Filtering custom signup event by location</p>
 <p>Let’s say you’re interested in receiving a webhook for every <strong>sign_up</strong> event that is triggered via the <strong>userCompletedAction</strong> method in the SDKs, but only in a specific market, like Chicago. Your event metadata will look something like the following:</p>
-<p><code>javascript
-event: {
-    name: "sign_up",
-    metadata: {
-        "city" : "Chicago",
-        "username" : "john_smith_1",
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">event</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;sign_up&quot;</span><span class="p">,</span>
+    <span class="nx">metadata</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;Chicago&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;username&quot;</span> <span class="o">:</span> <span class="s2">&quot;john_smith_1&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <p>You would configure a filter to fire a webhook only when <strong>city</strong> is equal to <strong>Chicago</strong>. The key would equal <strong>event.metadata.city</strong> and the value would equal <strong>Chicago</strong>.</p>
 <p><img alt="image" src="../../../img/pages/exports/filters.png" /></p>
 </div>
@@ -3061,7 +3060,7 @@ event: {
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3082,10 +3081,6 @@ event: {
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -574,12 +574,191 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        In-app deep link routing
+      </label>
     
     <a href="./" title="In-app deep link routing" class="md-nav__link md-nav__link--active">
       In-app deep link routing
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-build-custom-routing-inside-the-routing-callback" title="Option 1: Build custom routing inside the routing callback" class="md-nav__link">
+    Option 1: Build custom routing inside the routing callback
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#route-immediately-on-app-open" title="Route immediately on app open" class="md-nav__link">
+    Route immediately on app open
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-added-parameters" title="Branch-added parameters" class="md-nav__link">
+    Branch-added parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-deep-link-parameters-later-on" title="Access deep link parameters later on" class="md-nav__link">
+    Access deep link parameters later on
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-latest-session-referring-params" title="Get latest session referring params" class="md-nav__link">
+    Get latest session referring params
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-first-session-referring-params" title="Get first session referring params" class="md-nav__link">
+    Get first session referring params
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-let-branch-use-your-existing-deep-link-routing" title="Option 2: Let Branch use your existing deep link routing" class="md-nav__link">
+    Option 2: Let Branch use your existing deep link routing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-insert-custom-deep-link-routes-into-a-branch-link" title="How to insert custom deep link routes into a Branch link" class="md-nav__link">
+    How to insert custom deep link routes into a Branch link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-handle-uri-paths-with-universal-links-or-app-links" title="How to handle URI paths with Universal Links or App Links" class="md-nav__link">
+    How to handle URI paths with Universal Links or App Links
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-use-branchs-easy-config-deep-link-routing" title="Option 3: Use Branch's easy config deep link routing" class="md-nav__link">
+    Option 3: Use Branch's easy config deep link routing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-routing-in-ios" title="Auto-routing in iOS" class="md-nav__link">
+    Auto-routing in iOS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-view-controller-to-accept-deep-links" title="Configure View Controller to accept deep links" class="md-nav__link">
+    Configure View Controller to accept deep links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-view-controller-for-deep-link-routing" title="Register View Controller for deep link routing" class="md-nav__link">
+    Register View Controller for deep link routing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-routing-in-android" title="Auto-routing in Android" class="md-nav__link">
+    Auto-routing in Android
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-activity-to-accept-deep-links" title="Configure Activity to accept deep links" class="md-nav__link">
+    Configure Activity to accept deep links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-activity-for-deep-link-routing" title="Register Activity for deep link routing" class="md-nav__link">
+    Register Activity for deep link routing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2131,8 +2310,176 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-build-custom-routing-inside-the-routing-callback" title="Option 1: Build custom routing inside the routing callback" class="md-nav__link">
+    Option 1: Build custom routing inside the routing callback
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#route-immediately-on-app-open" title="Route immediately on app open" class="md-nav__link">
+    Route immediately on app open
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-added-parameters" title="Branch-added parameters" class="md-nav__link">
+    Branch-added parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-deep-link-parameters-later-on" title="Access deep link parameters later on" class="md-nav__link">
+    Access deep link parameters later on
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-latest-session-referring-params" title="Get latest session referring params" class="md-nav__link">
+    Get latest session referring params
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-first-session-referring-params" title="Get first session referring params" class="md-nav__link">
+    Get first session referring params
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-let-branch-use-your-existing-deep-link-routing" title="Option 2: Let Branch use your existing deep link routing" class="md-nav__link">
+    Option 2: Let Branch use your existing deep link routing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-insert-custom-deep-link-routes-into-a-branch-link" title="How to insert custom deep link routes into a Branch link" class="md-nav__link">
+    How to insert custom deep link routes into a Branch link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-handle-uri-paths-with-universal-links-or-app-links" title="How to handle URI paths with Universal Links or App Links" class="md-nav__link">
+    How to handle URI paths with Universal Links or App Links
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-use-branchs-easy-config-deep-link-routing" title="Option 3: Use Branch's easy config deep link routing" class="md-nav__link">
+    Option 3: Use Branch's easy config deep link routing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-routing-in-ios" title="Auto-routing in iOS" class="md-nav__link">
+    Auto-routing in iOS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-view-controller-to-accept-deep-links" title="Configure View Controller to accept deep links" class="md-nav__link">
+    Configure View Controller to accept deep links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-view-controller-for-deep-link-routing" title="Register View Controller for deep link routing" class="md-nav__link">
+    Register View Controller for deep link routing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-routing-in-android" title="Auto-routing in Android" class="md-nav__link">
+    Auto-routing in Android
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-activity-to-accept-deep-links" title="Configure Activity to accept deep links" class="md-nav__link">
+    Configure Activity to accept deep links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-activity-for-deep-link-routing" title="Register Activity for deep link routing" class="md-nav__link">
+    Register Activity for deep link routing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2147,6 +2494,8 @@
                   <a href="https://github.com/branchmetrics/docs/edit/master/src/pages/deep-linking/routing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
+                  <h1>In-app deep link routing</h1>
+                
                 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>When a Branch link is opened, either your app launches or users are taken to the App/Play store to download it. Deep links improve this process by routing users directly to specific content after your app launches. With Branch, this still works even if users have to stop and download the app first (a.k.a., "deferred deep links").</p>
 <p>Deep links are an incredibly important part of delivering a high quality user experience. With deep links, you can take users to the exact thing they clicked on or even offer a customized onboarding experience.</p>
@@ -2156,86 +2505,85 @@
 <ul>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p>```obj-c
-- (BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions {</p>
-<p>// initialize the session, setup a deep link handler
-  [[Branch getInstance] initSessionWithLaunchOptions:launchOptions
-                          andRegisterDeepLinkHandler:^(NSDictionary <em>params, NSError </em>error) {</p>
-<div class="codehilite"><pre><span></span><span class="c1">// start setting up the view controller hierarchy</span>
-<span class="bp">UINavigationController</span> <span class="o">*</span><span class="n">navC</span> <span class="o">=</span> <span class="p">(</span><span class="bp">UINavigationController</span> <span class="o">*</span><span class="p">)</span><span class="nb">self</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">rootViewController</span><span class="p">;</span>
-<span class="bp">UIStoryboard</span> <span class="o">*</span><span class="n">storyboard</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIStoryboard</span> <span class="nl">storyboardWithName</span><span class="p">:</span><span class="s">@&quot;Main&quot;</span> <span class="nl">bundle</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
-<span class="bp">UIViewController</span> <span class="o">*</span><span class="n">nextVC</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
 
-<span class="c1">// If the key &#39;pictureId&#39; is present in the deep link dictionary</span>
-<span class="c1">// then load the picture screen with the appropriate picture</span>
-<span class="bp">NSString</span> <span class="o">*</span><span class="n">pictureId</span> <span class="o">=</span> <span class="p">[</span><span class="n">params</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;pictureId&quot;</span><span class="p">];</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">pictureId</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">nextVC</span> <span class="o">=</span> <span class="p">[</span><span class="n">storyboard</span> <span class="nl">instantiateViewControllerWithIdentifier</span><span class="p">:</span><span class="s">@&quot;PicVC&quot;</span><span class="p">];</span>
-  <span class="p">[</span><span class="n">nextVC</span> <span class="nl">setNextPictureId</span><span class="p">:</span><span class="n">pictureId</span><span class="p">];</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="n">nextVC</span> <span class="o">=</span> <span class="p">[</span><span class="n">storyboard</span> <span class="nl">instantiateViewControllerWithIdentifier</span><span class="p">:</span><span class="s">@&quot;MainVC&quot;</span><span class="p">];</span>
+  <span class="c1">// initialize the session, setup a deep link handler</span>
+  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">initSessionWithLaunchOptions</span><span class="p">:</span><span class="n">launchOptions</span>
+                          <span class="nl">andRegisterDeepLinkHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">params</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// start setting up the view controller hierarchy</span>
+    <span class="bp">UINavigationController</span> <span class="o">*</span><span class="n">navC</span> <span class="o">=</span> <span class="p">(</span><span class="bp">UINavigationController</span> <span class="o">*</span><span class="p">)</span><span class="nb">self</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">rootViewController</span><span class="p">;</span>
+    <span class="bp">UIStoryboard</span> <span class="o">*</span><span class="n">storyboard</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIStoryboard</span> <span class="nl">storyboardWithName</span><span class="p">:</span><span class="s">@&quot;Main&quot;</span> <span class="nl">bundle</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+    <span class="bp">UIViewController</span> <span class="o">*</span><span class="n">nextVC</span><span class="p">;</span>
+
+    <span class="c1">// If the key &#39;pictureId&#39; is present in the deep link dictionary</span>
+    <span class="c1">// then load the picture screen with the appropriate picture</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">pictureId</span> <span class="o">=</span> <span class="p">[</span><span class="n">params</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;pictureId&quot;</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pictureId</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">nextVC</span> <span class="o">=</span> <span class="p">[</span><span class="n">storyboard</span> <span class="nl">instantiateViewControllerWithIdentifier</span><span class="p">:</span><span class="s">@&quot;PicVC&quot;</span><span class="p">];</span>
+      <span class="p">[</span><span class="n">nextVC</span> <span class="nl">setNextPictureId</span><span class="p">:</span><span class="n">pictureId</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">nextVC</span> <span class="o">=</span> <span class="p">[</span><span class="n">storyboard</span> <span class="nl">instantiateViewControllerWithIdentifier</span><span class="p">:</span><span class="s">@&quot;MainVC&quot;</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// navigate!</span>
+    <span class="p">[</span><span class="n">navC</span> <span class="nl">setViewControllers</span><span class="p">:</span><span class="l">@[</span><span class="n">nextVC</span><span class="l">]</span> <span class="nl">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+  <span class="p">}];</span>
+
+  <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
-
-<span class="c1">// navigate!</span>
-<span class="p">[</span><span class="n">navC</span> <span class="nl">setViewControllers</span><span class="p">:</span><span class="l">@[</span><span class="n">nextVC</span><span class="l">]</span> <span class="nl">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 </pre></div>
 
-
-<p>}];</p>
-<p>return YES;
-}
-```</p>
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
-    let branch: Branch = Branch.getInstance()
-        branch.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: {params, error in
-        // If the key 'pictureId' is present in the deep link dictionary
-        if error == nil &amp;&amp; params["+clicked_branch_link"] != nil &amp;&amp; params["pictureId"] != nil {
-            print("clicked picture link!")
-            // load the view to show the picture
-        } else {
-            // load your normal view
-        }
-    })
-    return true
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="n">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">branch</span><span class="p">:</span> <span class="n">Branch</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">()</span>
+        <span class="n">branch</span><span class="p">.</span><span class="n">initSession</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">,</span> <span class="n">andRegisterDeepLinkHandler</span><span class="p">:</span> <span class="p">{</span><span class="n">params</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="c1">// If the key &#39;pictureId&#39; is present in the deep link dictionary</span>
+        <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="n">params</span><span class="p">[</span><span class="s">&quot;+clicked_branch_link&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="n">params</span><span class="p">[</span><span class="s">&quot;pictureId&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;clicked picture link!&quot;</span><span class="p">)</span>
+            <span class="c1">// load the view to show the picture</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// load your normal view</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p>```java
-@Override
-public void onStart() {
-    super.onStart();</p>
-<div class="codehilite"><pre><span></span>Branch branch = Branch.getInstance();
+<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onStart</span><span class="o">();</span>
 
-branch.initSession(new BranchReferralInitListener(){
-    @Override
-    public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
-        if (error == null) {
-            // params are the deep linked params associated with the link that the user clicked before showing up
-            // params will be empty if no data found
-            String pictureID = referringParams.optString(&quot;picture_id&quot;, &quot;&quot;);
-            if (pictureID.equals(&quot;&quot;)) {
-                startActivity(new Intent(this, HomeActivity.class));
-            }
-            else {
-                Intent i = new Intent(this, ViewerActivity.class);
-                i.putExtra(&quot;picture_id&quot;, pictureID);
-                startActivity(i);
-            }
-        } else {
-            Log.e(&quot;MyApp&quot;, error.getMessage());
-        }
-    }
-}, this.getIntent().getData(), this);
+    <span class="n">Branch</span> <span class="n">branch</span> <span class="o">=</span> <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+
+    <span class="n">branch</span><span class="o">.</span><span class="na">initSession</span><span class="o">(</span><span class="k">new</span> <span class="n">BranchReferralInitListener</span><span class="o">(){</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onInitFinished</span><span class="o">(</span><span class="n">JSONObject</span> <span class="n">referringParams</span><span class="o">,</span> <span class="n">Branch</span><span class="o">.</span><span class="na">BranchError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">error</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// params are the deep linked params associated with the link that the user clicked before showing up</span>
+                <span class="c1">// params will be empty if no data found</span>
+                <span class="n">String</span> <span class="n">pictureID</span> <span class="o">=</span> <span class="n">referringParams</span><span class="o">.</span><span class="na">optString</span><span class="o">(</span><span class="s">&quot;picture_id&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">pictureID</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">HomeActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">Intent</span> <span class="n">i</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">ViewerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                    <span class="n">i</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&quot;picture_id&quot;</span><span class="o">,</span> <span class="n">pictureID</span><span class="o">);</span>
+                    <span class="n">startActivity</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;MyApp&quot;</span><span class="o">,</span> <span class="n">error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">},</span> <span class="k">this</span><span class="o">.</span><span class="na">getIntent</span><span class="o">().</span><span class="na">getData</span><span class="o">(),</span> <span class="k">this</span><span class="o">);</span>
+<span class="o">}</span>
 </pre></div>
 
-
-<p>}
-```</p>
 </li>
 </ul>
 <h3 id="branch-added-parameters">Branch-added parameters<a class="headerlink" href="#branch-added-parameters" title="Permanent link">&para;</a></h3>
@@ -2318,18 +2666,21 @@ branch.initSession(new BranchReferralInitListener(){
 <ul>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-NSDictionary *params = [[Branch getInstance] getLatestReferringParams];</code></p>
+<div class="codehilite"><pre><span></span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getLatestReferringParams</span><span class="p">];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-let sessionParams = Branch.getInstance().getLatestReferringParams()</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">sessionParams</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getLatestReferringParams</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>java
-JSONObject sessionParams = Branch.getInstance().getLatestReferringParams();</code></p>
+<div class="codehilite"><pre><span></span><span class="n">JSONObject</span> <span class="n">sessionParams</span> <span class="o">=</span> <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getLatestReferringParams</span><span class="o">();</span>
+</pre></div>
+
 </li>
 </ul>
 <h4 id="get-first-session-referring-params">Get first session referring params<a class="headerlink" href="#get-first-session-referring-params" title="Permanent link">&para;</a></h4>
@@ -2337,18 +2688,21 @@ JSONObject sessionParams = Branch.getInstance().getLatestReferringParams();</cod
 <ul>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-NSDictionary *params = [[Branch getInstance] getFirstReferringParams];</code></p>
+<div class="codehilite"><pre><span></span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getFirstReferringParams</span><span class="p">];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-let firstParams = Branch.getInstance().getFirstReferringParams()</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">firstParams</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getFirstReferringParams</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>java
-JSONObject installParams = Branch.getInstance().getFirstReferringParams();</code></p>
+<div class="codehilite"><pre><span></span><span class="n">JSONObject</span> <span class="n">installParams</span> <span class="o">=</span> <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getFirstReferringParams</span><span class="o">();</span>
+</pre></div>
+
 </li>
 </ul>
 <h2 id="option-2-let-branch-use-your-existing-deep-link-routing">Option 2: Let Branch use your existing deep link routing<a class="headerlink" href="#option-2-let-branch-use-your-existing-deep-link-routing" title="Permanent link">&para;</a></h2>
@@ -2362,35 +2716,39 @@ JSONObject installParams = Branch.getInstance().getFirstReferringParams();</code
 <div class="admonition example">
 <p class="admonition-title">When creating links dynamically</p>
 <p>If you're creating a link by appending query parameters, just append the control parameters to the URL. Please make sure to URL encode everything, lest the link will break.</p>
-<p><code>js
-"https://[branchsubdomain]?%24deeplink_path=content%2F1234"</code></p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;https://[branchsubdomain]?%24deeplink_path=content%2F1234&quot;</span>
+</pre></div>
+
 </div>
 <div class="admonition example">
 <p class="admonition-title">When using a mobile SDK</p>
 <ul>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-linkProperties.feature = @"sharing";
-linkProperties.channel = @"facebook";
-[linkProperties addControlParam:@"$deeplink_path" withValue:@"content/1234"];</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchLinkProperties</span> <span class="o">*</span><span class="n">linkProperties</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchLinkProperties</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">feature</span> <span class="o">=</span> <span class="s">@&quot;sharing&quot;</span><span class="p">;</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">channel</span> <span class="o">=</span> <span class="s">@&quot;facebook&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">linkProperties</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$deeplink_path&quot;</span> <span class="nl">withValue</span><span class="p">:</span><span class="s">@&quot;content/1234&quot;</span><span class="p">];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-let linkProperties: BranchLinkProperties = BranchLinkProperties()
-linkProperties.feature = "sharing"
-linkProperties.channel = "facebook"
-linkProperties.addControlParam("$deeplink_path", withValue: "content/1234")</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">linkProperties</span><span class="p">:</span> <span class="n">BranchLinkProperties</span> <span class="p">=</span> <span class="n">BranchLinkProperties</span><span class="p">()</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">feature</span> <span class="p">=</span> <span class="s">&quot;sharing&quot;</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">channel</span> <span class="p">=</span> <span class="s">&quot;facebook&quot;</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$deeplink_path&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;content/1234&quot;</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>java
-LinkProperties linkProperties = new LinkProperties()
-               .setChannel("facebook")
-               .setFeature("sharing")
-               .addControlParameter("$deeplink_path", "content/1234");</code></p>
+<div class="codehilite"><pre><span></span><span class="n">LinkProperties</span> <span class="n">linkProperties</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkProperties</span><span class="o">()</span>
+               <span class="o">.</span><span class="na">setChannel</span><span class="o">(</span><span class="s">&quot;facebook&quot;</span><span class="o">)</span>
+               <span class="o">.</span><span class="na">setFeature</span><span class="o">(</span><span class="s">&quot;sharing&quot;</span><span class="o">)</span>
+               <span class="o">.</span><span class="na">addControlParameter</span><span class="o">(</span><span class="s">&quot;$deeplink_path&quot;</span><span class="o">,</span> <span class="s">&quot;content/1234&quot;</span><span class="o">);</span>
+</pre></div>
+
 </li>
 </ul>
 </div>
@@ -2413,60 +2771,62 @@ LinkProperties linkProperties = new LinkProperties()
 <ul>
 <li>
 <p><em>Objective C</em></p>
-<p>```obj-c</p>
-<h1 id="import-branchh">import "Branch.h"<a class="headerlink" href="#import-branchh" title="Permanent link">&para;</a></h1>
-<p>```</p>
+<div class="codehilite"><pre><span></span><span class="cp">#import &quot;Branch.h&quot;</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Swift</em></p>
-<p><code>swift
-import Branch</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">Branch</span>
+</pre></div>
+
 </li>
 </ul>
 <p>Register your view controller for the delegate <code>BranchDeepLinkingController</code>:</p>
 <ul>
 <li>
 <p><em>Objective C</em></p>
-<p><code>obj-c
-@interface ExampleDeepLinkingController : UIViewController &lt;BranchDeepLinkingController&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="k">@interface</span> <span class="nc">ExampleDeepLinkingController</span> : <span class="bp">UIViewController</span> <span class="o">&lt;</span><span class="n">BranchDeepLinkingController</span><span class="o">&gt;</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Swift</em></p>
-<p><code>swift
-class ExampleDeepLinkingController: UIViewController, BranchDeepLinkingController {</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">ExampleDeepLinkingController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">BranchDeepLinkingController</span> <span class="p">{</span>
+</pre></div>
+
 </li>
 </ul>
 <p>Receive the delegate method that will be called when the view controller is loaded from a link click:</p>
 <ul>
 <li>
 <p><em>Objective C</em></p>
-<p>```obj-c
-@synthesize deepLinkingCompletionDelegate;
-- (void)configureControlWithData:(NSDictionary <em>)data {
-    NSString </em>pictureUrl = data[@"product_picture"];</p>
-<div class="codehilite"><pre><span></span><span class="c1">// show the picture</span>
-<span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_global_queue</span><span class="p">(</span><span class="n">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">^</span><span class="p">{</span>
-    <span class="bp">NSData</span> <span class="o">*</span><span class="n">imageData</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSData</span> <span class="nl">dataWithContentsOfURL</span><span class="p">:[</span><span class="bp">NSURL</span> <span class="nl">URLWithString</span><span class="p">:</span><span class="n">pictureUrl</span><span class="p">]];</span>
-    <span class="bp">UIImage</span> <span class="o">*</span><span class="n">image</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIImage</span> <span class="nl">imageWithData</span><span class="p">:</span><span class="n">imageData</span><span class="p">];</span>
-    <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
-        <span class="nb">self</span><span class="p">.</span><span class="n">productImageView</span><span class="p">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="k">@synthesize</span> <span class="n">deepLinkingCompletionDelegate</span><span class="p">;</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">configureControlWithData:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span> <span class="p">{</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">pictureUrl</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">@&quot;product_picture&quot;</span><span class="p">];</span>
+
+    <span class="c1">// show the picture</span>
+    <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_global_queue</span><span class="p">(</span><span class="n">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">^</span><span class="p">{</span>
+        <span class="bp">NSData</span> <span class="o">*</span><span class="n">imageData</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSData</span> <span class="nl">dataWithContentsOfURL</span><span class="p">:[</span><span class="bp">NSURL</span> <span class="nl">URLWithString</span><span class="p">:</span><span class="n">pictureUrl</span><span class="p">]];</span>
+        <span class="bp">UIImage</span> <span class="o">*</span><span class="n">image</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIImage</span> <span class="nl">imageWithData</span><span class="p">:</span><span class="n">imageData</span><span class="p">];</span>
+        <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
+            <span class="nb">self</span><span class="p">.</span><span class="n">productImageView</span><span class="p">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">;</span>
+        <span class="p">});</span>
     <span class="p">});</span>
-<span class="p">});</span>
+<span class="p">}</span>
 </pre></div>
 
-
-<p>}
-```</p>
 </li>
 <li>
 <p><em>Swift</em></p>
-<p><code>swift
-func configureControl(withData params: [AnyHashable: Any]!) {
-    let dict = params as Dictionary
-    if dict["product_picture"] != nil {
-       // show the picture
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nf">configureControl</span><span class="p">(</span><span class="n">withData</span> <span class="n">params</span><span class="p">:</span> <span class="p">[</span><span class="n">AnyHashable</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">dict</span> <span class="p">=</span> <span class="n">params</span> <span class="k">as</span> <span class="nb">Dictionary</span>
+    <span class="k">if</span> <span class="n">dict</span><span class="p">[</span><span class="s">&quot;product_picture&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+       <span class="c1">// show the picture</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 </ul>
 <div class="admonition tip">
@@ -2481,7 +2841,6 @@ func configureControl(withData params: [AnyHashable: Any]!) {
 <span class="p">}</span>
 </pre></div>
 
-
 <ul>
 <li><em>Swift</em></li>
 </ul>
@@ -2491,52 +2850,55 @@ func configureControl(withData params: [AnyHashable: Any]!) {
 <span class="p">}</span>
 </pre></div>
 
-
 <h4 id="register-view-controller-for-deep-link-routing">Register View Controller for deep link routing<a class="headerlink" href="#register-view-controller-for-deep-link-routing" title="Permanent link">&para;</a></h4>
 <p>Lastly, you need to tell Branch about the view controller you just configured, and which key it is using from the link's data dictionary.</p>
 <ul>
 <li>
 <p><em>Objective C</em></p>
-<p><code>obj-c
-[branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
-    if (!error &amp;&amp; params) {
-        // params are the deep linked params associated with the link that the user clicked -&gt; was re-directed to this app
-        // params will be empty if no data found
-        // ... insert custom logic here ...
-        print(@"params: %@", params.description);
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">branch</span> <span class="nl">initSessionWithLaunchOptions</span><span class="p">:</span><span class="n">launchOptions</span> <span class="nl">andRegisterDeepLinkHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">params</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span> <span class="o">&amp;&amp;</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// params are the deep linked params associated with the link that the user clicked -&gt; was re-directed to this app</span>
+        <span class="c1">// params will be empty if no data found</span>
+        <span class="c1">// ... insert custom logic here ...</span>
+        <span class="n">print</span><span class="p">(</span><span class="s">@&quot;params: %@&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">.</span><span class="n">description</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Swift</em></p>
-<p><code>swift
-branch.initSession(launchOptions: launchOptions, deepLinkHandler: { params, error in
-    if error == nil {
-        // params are the deep linked params associated with the link that the user clicked -&gt; was re-directed to this app
-        // params will be empty if no data found
-        // ... insert custom logic here ...
-        print("params: %@", params.description)
-    }
-})</code></p>
+<div class="codehilite"><pre><span></span><span class="n">branch</span><span class="p">.</span><span class="n">initSession</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">,</span> <span class="n">deepLinkHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">params</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="c1">// params are the deep linked params associated with the link that the user clicked -&gt; was re-directed to this app</span>
+        <span class="c1">// params will be empty if no data found</span>
+        <span class="c1">// ... insert custom logic here ...</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;params: %@&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
 </li>
 </ul>
 <p>Remove it, and insert this snippet in the same place:</p>
 <ul>
 <li>
 <p><em>Objective C</em></p>
-<p>```obj-c
-ExampleDeepLinkingController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"DeepLinkingController"];</p>
-<p>[branch registerDeepLinkController:controller forKey:@"product_picture" withPresentation:BNCViewControllerOptionShow];
-[branch initSessionWithLaunchOptions:launchOptions automaticallyDisplayDeepLinkController:YES];
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">ExampleDeepLinkingController</span> <span class="o">*</span><span class="n">controller</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">UIStoryboard</span> <span class="nl">storyboardWithName</span><span class="p">:</span><span class="s">@&quot;Main&quot;</span> <span class="nl">bundle</span><span class="p">:[</span><span class="bp">NSBundle</span> <span class="n">mainBundle</span><span class="p">]]</span> <span class="nl">instantiateViewControllerWithIdentifier</span><span class="p">:</span><span class="s">@&quot;DeepLinkingController&quot;</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">branch</span> <span class="nl">registerDeepLinkController</span><span class="p">:</span><span class="n">controller</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;product_picture&quot;</span> <span class="nl">withPresentation</span><span class="p">:</span><span class="n">BNCViewControllerOptionShow</span><span class="p">];</span>
+<span class="p">[</span><span class="n">branch</span> <span class="nl">initSessionWithLaunchOptions</span><span class="p">:</span><span class="n">launchOptions</span> <span class="nl">automaticallyDisplayDeepLinkController</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Swift</em></p>
-<p>```swift
-var controller = UIStoryboard.init("Main", NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("DeepLinkingController")</p>
-<p>branch.registerDeepLinkController(controller, forKey: "product_picture", withPresentation: .optionShow)
-branch.initSession(launchOptions: launchOptions, automaticallyDisplayDeepLinkController: true)
-```</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">controller</span> <span class="p">=</span> <span class="bp">UIStoryboard</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="s">&quot;Main&quot;</span><span class="p">,</span> <span class="bp">NSBundle</span><span class="p">.</span><span class="n">mainBundle</span><span class="p">()).</span><span class="n">instantiateViewControllerWithIdentifier</span><span class="p">(</span><span class="s">&quot;DeepLinkingController&quot;</span><span class="p">)</span>
+
+<span class="n">branch</span><span class="p">.</span><span class="n">registerDeepLinkController</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="s">&quot;product_picture&quot;</span><span class="p">,</span> <span class="n">withPresentation</span><span class="p">:</span> <span class="p">.</span><span class="n">optionShow</span><span class="p">)</span>
+<span class="n">branch</span><span class="p">.</span><span class="n">initSession</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">,</span> <span class="n">automaticallyDisplayDeepLinkController</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+</pre></div>
+
 </li>
 </ul>
 <p>Now whenever your app launches from a Branch link that has the <code>product_picture</code> key set in its data dictionary, the <code>ExampleDeepLinkingController</code> view controller will be displayed!</p>
@@ -2586,7 +2948,6 @@ branch.initSession(launchOptions: launchOptions, automaticallyDisplayDeepLinkCon
 <span class="o">}</span>
 </pre></div>
 
-
 <div class="admonition tip">
 <p class="admonition-title">What is a link data key?</p>
 <p>The example key <code>product_picture</code> is a parameter from the <a href="../../../pages/links/integrate/#custom-data">data dictionary</a> of the link that was clicked, and would have been defined when the link <a href="#dialog-code?ios=create-deep-link&amp;android=create-deep-link&amp;adobe=create-deep-link&amp;cordova=create-deep-link&amp;mparticleAndroid=create-deep-link&amp;mparticleIos=create-deep-link&amp;titanium=create-deep-link&amp;reactNative=create-deep-link&amp;unity=create-deep-link&amp;xamarin=create-deep-link">was created</a>.</p>
@@ -2595,7 +2956,6 @@ branch.initSession(launchOptions: launchOptions, automaticallyDisplayDeepLinkCon
 <p>Lastly, you need to tell Branch about the Activity you just configured, and which key it is using from the link's data dictionary. In your Manifest file, locate the definition for the Activity above and add this meta-data tag:</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;io.branch.sdk.auto_link_keys&quot;</span> <span class="na">android:value=</span><span class="s">&quot;product_picture&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
-
 
 <p>Now whenever your app launches from a Branch link that has the <code>product_picture</code> key set in its data dictionary, this Activity will be displayed!</p>
                 
@@ -2751,7 +3111,7 @@ branch.initSession(launchOptions: launchOptions, automaticallyDisplayDeepLinkCon
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2772,10 +3132,6 @@ branch.initSession(launchOptions: launchOptions, automaticallyDisplayDeepLinkCon
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

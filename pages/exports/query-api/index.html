@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2319,7 +2319,7 @@
 <li>Data selection keys which define which events are eligible to be counted in the results (eg, filters)</li>
 <li>Result format specifiers that define which results are included in the HTTP response, and how the result is returned (eg, sorting)</li>
 </ul>
-<p>An example query could look like:</p>
+<p>An example query could look like:
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="c1">// Authentication</span>
   <span class="s2">&quot;branch_key&quot;</span><span class="o">:</span><span class="s2">&quot;&lt;YOUR_BRANCH_KEY&gt;&quot;</span><span class="p">,</span>
@@ -2346,15 +2346,12 @@
   <span class="s2">&quot;aggregation&quot;</span><span class="o">:</span> <span class="s2">&quot;unique_count&quot;</span><span class="p">,</span>
   <span class="s2">&quot;zero_fill&quot;</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">}</span>
-</pre></div>
-
-
+</pre></div></p>
 <h2 id="endpoint-definition">Endpoint Definition<a class="headerlink" href="#endpoint-definition" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="err">POST /v1/query/analytics</span>
 <span class="err">Content-Type: application/json</span>
 <span class="err">Host: api.branch.io</span>
 </pre></div>
-
 
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
@@ -2386,7 +2383,7 @@
 <p><em>required</em>: true</p>
 <p><em>location</em>: body</p>
 <p><em>valid values</em>:
-Branch data sources</p>
+Branch data sources
 <div class="codehilite"><pre><span></span>[
   &quot;eo_impression&quot;,
   &quot;eo_click&quot;,
@@ -2403,36 +2400,30 @@ Branch data sources</p>
   &quot;eo_content_event&quot;,
   &quot;eo_user_lifecycle_event&quot;
 ]
-</pre></div>
-
-
+</pre></div></p>
 <p><strong>aggregation</strong></p>
-<p><em>description</em>: How to count events towards the final result count. When using unique_count, each event is only counted if an event by that user has not already been seen. Eg, if 10 users each trigger 3 opens:</p>
+<p><em>description</em>: How to count events towards the final result count. When using unique_count, each event is only counted if an event by that user has not already been seen. Eg, if 10 users each trigger 3 opens:
 <div class="codehilite"><pre><span></span>total_count = 30
 unique_count = 10
 </pre></div>
-
-
-<p>When querying with a datasource of "eo_commerce_event", the aggregation may also be specified as "revenue", in which case the counts returned are the sum of revenue from matching events, and not the number of events themselves.</p>
+When querying with a datasource of "eo_commerce_event", the aggregation may also be specified as "revenue", in which case the counts returned are the sum of revenue from matching events, and not the number of events themselves.</p>
 <p><em>required</em>: true</p>
 <p><em>location</em>: body</p>
 <p><em>format</em>: string</p>
-<p><em>possible values</em>:</p>
+<p><em>possible values</em>:
 <div class="codehilite"><pre><span></span>[
   &quot;unique_count&quot;,
   &quot;total_count&quot;,
   &quot;revenue&quot;
 ]
-</pre></div>
-
-
+</pre></div></p>
 <p><strong>dimensions</strong></p>
 <p><em>description</em>: List of event fields to use as splits for the query. Results counts are returned grouped with other events that have matchings values for each key provided in "dimensions".</p>
 <p><em>required</em>: true</p>
 <p><em>location</em>: body</p>
 <p><em>format</em>: array<string></p>
 <p><em>possible element values</em>:
-General info:</p>
+General info:
 <div class="codehilite"><pre><span></span>[
   &quot;name&quot;,
   &quot;origin&quot;,
@@ -2441,9 +2432,7 @@ General info:</p>
   &quot;from_desktop&quot;,
 ]
 </pre></div>
-
-
-<p>User information:</p>
+User information:
 <div class="codehilite"><pre><span></span>[
   &quot;user_data_os&quot;,
   &quot;user_data_country&quot;,
@@ -2454,9 +2443,7 @@ General info:</p>
   &quot;user_data_geo_country_code&quot;,
 ]
 </pre></div>
-
-
-<p>Last attributed touch:</p>
+Last attributed touch:
 <div class="codehilite"><pre><span></span>[
   &quot;last_attributed_touch_type&quot;,
   &quot;last_attributed_touch_data_tilde_tags&quot;,
@@ -2478,9 +2465,7 @@ General info:</p>
   &quot;last_attributed_touch_data_tilde_ad_set_id&quot;,
 ]
 </pre></div>
-
-
-<p>Last CTA view information:</p>
+Last CTA view information:
 <div class="codehilite"><pre><span></span>[
   &quot;last_cta_view_data_tilde_ad_name&quot;,
   &quot;last_cta_view_data_tilde_secondary_publisher&quot;,
@@ -2501,23 +2486,19 @@ General info:</p>
   &quot;last_cta_view_data_tilde_stage&quot;
 ]
 </pre></div>
-
-
-<p>Other:</p>
+Other:
 <div class="codehilite"><pre><span></span>[
   &quot;days_from_last_attributed_touch_to_event&quot;,
   &quot;days_from_last_cta_view_to_event&quot;,
   &quot;event_data_product_categories&quot;,
   &quot;first_event_for_user&quot;,
 ]
-</pre></div>
-
-
+</pre></div></p>
 <p><strong>filters</strong></p>
 <p><em>description</em>: An object where each key is a valid "dimension", and each value is an array of string values. If a key is prefixed with a '!', then any event with a dimension value contained in the value of that key is excluded. Otherwise, only events with dimension values matching the filter will be counted.</p>
 <p><em>required</em>: false</p>
 <p><em>location</em>: body</p>
-<p><em>format</em>: Object<String, Array<String>&gt;, For example, a query with filters specified as:</p>
+<p><em>format</em>: Object<String, Array<String>&gt;, For example, a query with filters specified as:
 <div class="codehilite"><pre><span></span>{
   &quot;filters&quot;: {
     &quot;last_attributed_touch_data_plus_current_feature&quot;: [
@@ -2528,9 +2509,7 @@ General info:</p>
   }
 }
 </pre></div>
-
-
-<p>would count only events where
+would count only events where
   - last_attributed_touch_data_plus_current_feature was equal to "MOBILE_DEEPVIEWS" or "DESKTOP_DEEPVIEWS"</p>
 <p><em>and</em></p>
 <ul>
@@ -2544,14 +2523,12 @@ General info:</p>
 <p><em>location</em>: body</p>
 <p><em>default value</em>: "all"</p>
 <p><em>format</em>: string</p>
-<p><em>possible values</em>:</p>
+<p><em>possible values</em>:
 <div class="codehilite"><pre><span></span>[
   &quot;all&quot;,
   &quot;day&quot;
 ]
-</pre></div>
-
-
+</pre></div></p>
 <p><strong>ordered_by</strong></p>
 <p><em>description</em>: Which key of result to sort results on. Only supports 1 sort key</p>
 <p><em>required</em>: false</p>
@@ -2565,14 +2542,12 @@ General info:</p>
 <p><em>location</em>: body</p>
 <p><em>default value</em>: "descending""</p>
 <p><em>format</em>: string</p>
-<p><em>possible values</em>:</p>
+<p><em>possible values</em>:
 <div class="codehilite"><pre><span></span>[
   &quot;ascending&quot;,
   &quot;descending&quot;
 ]
-</pre></div>
-
-
+</pre></div></p>
 <p><strong>A note on sorts and the ordered_by parameter:</strong></p>
 <p>It is not possible to provide an explicit sort method to the query, so the sort type is chosen automatically based on the value of "ordered_by". Behavior for comparison of equal values is left undefined, and as such the sort is not considered order stable for identical values.
 ordered_by value sort choices:
@@ -2620,7 +2595,6 @@ ordered_by value sort choices:
 }&#39; &quot;http://api.branch.io/v1/query/analytics?limit=5&quot;
 </pre></div>
 
-
 <p>Example results:</p>
 <div class="codehilite"><pre><span></span>{
   &quot;results&quot;: [
@@ -2667,7 +2641,6 @@ ordered_by value sort choices:
 }
 </pre></div>
 
-
 <p>More complex query for pulling unique click counts, split by the last touch channel, campaign, feature and the +via_current_features values.</p>
 <p>Has a filter specified to filter out any clicks where last_attributed_touch_data_plus_current_feature was MOBILE_DEEPVIEWS or DESKTOP_DEEPVIEWS.</p>
 <p>A maximum of 5 results should be returned, in descending order of unique_count, with days that had 0 clicks returned (not filtered out):</p>
@@ -2695,7 +2668,6 @@ ordered_by value sort choices:
   &quot;zero_fill&quot;: true
 }&#39; &quot;http://api.branch.io/v1/query/analytics?limit=5&quot;
 </pre></div>
-
 
 <p>Example Results:</p>
 <div class="codehilite"><pre><span></span>{
@@ -2757,7 +2729,6 @@ ordered_by value sort choices:
   }
 }
 </pre></div>
-
 
 <h2 id="rate-limits">Rate Limits<a class="headerlink" href="#rate-limits" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2918,7 +2889,7 @@ ordered_by value sort choices:
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2939,10 +2910,6 @@ ordered_by value sort choices:
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

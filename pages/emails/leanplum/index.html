@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2437,16 +2437,17 @@
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://example.com&quot;</span> <span class="na">universal</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>Link to your app!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 
-
 <p>This will also ensure that your links are converted to Branch links that will open the app on Android as well, with full tracking and attribution.</p>
 <div class="admonition protip">
 <p class="admonition-title">What happens to your links behind the scenes?</p>
 <p>This is what a link looks like within your email template:</p>
-<p><code>html
-http://example.com/?foo=bar</code></p>
+<div class="codehilite"><pre><span></span>http://example.com/?foo=bar
+</pre></div>
+
 <p>When a user clicks your link, Branch processes the link and converts it to something like this:</p>
-<p><code>html
-https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar</code></p>
+<div class="codehilite"><pre><span></span>https://vza3.app.link/3p?%243p=e_xx<span class="err">&amp;</span>%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar
+</pre></div>
+
 <p>Where <code>vza3.app.link</code> is your Branch domain.</p>
 </div>
 <p>The conversion to Branch links will only work when your links are wrapped in your click tracking domain. To test links without wrapping, please generate a test link on step 3 of email onboarding, also accessible by clicking the gear icon for your ESP on the <a href="https://dashboard.branch.io/email" target="_blank">email page</a>.</p>
@@ -2606,7 +2607,7 @@ https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2627,10 +2628,6 @@ https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2341,10 +2341,10 @@
 <p>In order to use this API you must have an App ID and a Branch Public Key. You must also have a Data Feeds subscription. In order to enable the Data Export API, navigate to Data Import &amp; Export in the Branch dashboard and then toggle on the Data Export API using the slider on the Manager page.</p>
 <p>You can find your keys in your <a href="https://dashboard.branch.io/account-settings/app" target="_blank">Account Settings</a>.</p>
 <h3 id="base-url">Base URL:<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h3>
-<p>https://api.branch.io/v3/export/</p>
+<p><a href="https://api.branch.io/v3/export/">https://api.branch.io/v3/export/</a></p>
 <h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>POST https://api.branch.io/v3/export</li>
+<li>POST <a href="https://api.branch.io/v3/export">https://api.branch.io/v3/export</a></li>
 <li>Content-Type: application/json</li>
 </ul>
 <h3 id="query-parameters">Query Parameters<a class="headerlink" href="#query-parameters" title="Permanent link">&para;</a></h3>
@@ -2357,7 +2357,6 @@
 <p><strong>Example request:</strong></p>
 <div class="codehilite"><pre><span></span>curl -X POST api.branch.io/v3/export -H &#39;content-type:application/json&#39; -d &#39;{&quot;branch_key&quot;:&quot;key_live_gcASshuadd7l39m36NhdsDPWRjmkdcgh12jsg1&quot;, &quot;branch_secret&quot;: &quot;secret_live_ztPsdKIjUtcjkUYF732nsl81HJ75BJqiv24J86&quot;, &quot;export_date&quot;: &quot;2017-10-01&quot;}&#39;
 </pre></div>
-
 
 <h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
 <p>The response payload will be in JSON format and for each export it will have an array of paths to files on s3 to download. Note that there may be multiple files (depending on the size of the day's export) and that each csv file will be gzipped.</p>
@@ -2374,7 +2373,6 @@
   &quot;eo_web_session_start&quot;: [&quot;https://branch-exports.s3.amazonaws.com/271025641725777235-2017-10-01-eo_web_session_start-v2-056d25078e665dab3d78d1eb00336ad27087da5593ba1003f8ad8923dfce31a0-06wAW2.csv.gz&quot;
 }
 </pre></div>
-
 
 <p>All exports via Data Feeds are powered by Branch's <a href="../../../pages/dashboard/people-based-attribution/">People-Based Attribution</a>. For an exhaustive list of events included in these exports and more detailed definitions of each event, please see the <a href="../../../pages/exports/event_ontology_data_schema/">Event Ontology Data Schema</a>.</p>
 <div class="admonition tip">
@@ -2537,7 +2535,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2558,10 +2556,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

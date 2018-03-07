@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2487,45 +2487,47 @@
 <div class="codehilite"><pre><span></span><span class="s2">&quot;https://[branchsubdomain]?%24og_title=MyApp%20is%20disrupting%20apps&amp;$og_image_url=http%3A%2F%2Fmyapp.com%2Fimage.png&quot;</span>
 </pre></div>
 
-
 <p>When you create links via a mobile SDK, you simply need to set the OG tag parameters. Below are few examples, but you can <a href="#dialog-code?ios=create-content-reference&amp;android=create-content-reference&amp;adobe=create-deep-link&amp;cordova=create-content-reference&amp;mparticleAndroid=create-content-reference&amp;mparticleIos=create-content-reference&amp;titanium=create-content-reference&amp;reactNative=create-content-reference&amp;unity=create-content-reference&amp;xamarin=create-content-reference">see every platform here</a>.</p>
 <ul>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p>```obj-c</p>
-<p>BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-// Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
-branchUniversalObject.title = @"My Content Title";
-branchUniversalObject.contentDescription = @"My Content Description";
-branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";</p>
-<p>// Add any additional custom OG tags here
-[branchUniversalObject addMetadataKey:@"$og_video" value:@"http://mysite/video.mpg"];
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">branchUniversalObject</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchUniversalObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCanonicalIdentifier</span><span class="p">:</span><span class="s">@&quot;item/12345&quot;</span><span class="p">];</span>
+<span class="c1">// Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">@&quot;My Content Title&quot;</span><span class="p">;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">contentDescription</span> <span class="o">=</span> <span class="s">@&quot;My Content Description&quot;</span><span class="p">;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">imageUrl</span> <span class="o">=</span> <span class="s">@&quot;https://example.com/mycontent-12345.png&quot;</span><span class="p">;</span>
+
+<span class="c1">// Add any additional custom OG tags here</span>
+<span class="p">[</span><span class="n">branchUniversalObject</span> <span class="nl">addMetadataKey</span><span class="p">:</span><span class="s">@&quot;$og_video&quot;</span> <span class="nl">value</span><span class="p">:</span><span class="s">@&quot;http://mysite/video.mpg&quot;</span><span class="p">];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p>```swift
-let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-// Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
-branchUniversalObject.title = "My Content Title"
-branchUniversalObject.contentDescription = "My Content Description"
-branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"</p>
-<p>// Add any additional custom OG tags here
-branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mpg")
-```</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">branchUniversalObject</span><span class="p">:</span> <span class="n">BranchUniversalObject</span> <span class="p">=</span> <span class="n">BranchUniversalObject</span><span class="p">(</span><span class="n">canonicalIdentifier</span><span class="p">:</span> <span class="s">&quot;item/12345&quot;</span><span class="p">)</span>
+<span class="c1">// Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;My Content Title&quot;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">contentDescription</span> <span class="p">=</span> <span class="s">&quot;My Content Description&quot;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">imageUrl</span> <span class="p">=</span> <span class="s">&quot;https://example.com/mycontent-12345.png&quot;</span>
+
+<span class="c1">// Add any additional custom OG tags here</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">addMetadataKey</span><span class="p">(</span><span class="s">&quot;$og_video&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="s">&quot;http://mysite/video.mpg&quot;</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p>```java
- BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
-                .setCanonicalIdentifier("item/12345")
-// Facebook OG tags -- This will overwrite any defaults you have set on the Branch Dashboard
-                .setTitle("My Content Title")
-                .setContentDescription("My Content Description")
-                .setContentImageUrl("https://example.com/mycontent-12345.png")</p>
-<p>// Add any additional custom OG tags here
-                .setContentMetadata(new ContentMetadata().addCustomMetadata("$og_video", "http://mysite/video.mpg"));
-```</p>
+<div class="codehilite"><pre><span></span> <span class="n">BranchUniversalObject</span> <span class="n">branchUniversalObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setCanonicalIdentifier</span><span class="o">(</span><span class="s">&quot;item/12345&quot;</span><span class="o">)</span>
+<span class="c1">// Facebook OG tags -- This will overwrite any defaults you have set on the Branch Dashboard</span>
+                <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&quot;My Content Title&quot;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setContentDescription</span><span class="o">(</span><span class="s">&quot;My Content Description&quot;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setContentImageUrl</span><span class="o">(</span><span class="s">&quot;https://example.com/mycontent-12345.png&quot;</span><span class="o">)</span>
+
+<span class="c1">// Add any additional custom OG tags here</span>
+                <span class="o">.</span><span class="na">setContentMetadata</span><span class="o">(</span><span class="k">new</span> <span class="n">ContentMetadata</span><span class="o">().</span><span class="na">addCustomMetadata</span><span class="o">(</span><span class="s">&quot;$og_video&quot;</span><span class="o">,</span> <span class="s">&quot;http://mysite/video.mpg&quot;</span><span class="o">));</span>
+</pre></div>
+
 </li>
 </ul>
 <p>Edit the Title, Description and Image URL in the <em>Social Media</em> section.</p>
@@ -2537,35 +2539,37 @@ branchUniversalObject.addMetadataKey("$og_video", value: "http://mysite/video.mp
 <div class="codehilite"><pre><span></span><span class="s2">&quot;https://[branchsubdomain]?%24desktop_deepview=default_template&amp;%24ios_deepview=default_template&quot;</span>
 </pre></div>
 
-
 <p>Enable iOS and Android Deepviews through the SDK. Below are few examples, but you can <a href="#dialog-code?ios=create-link-reference&amp;android=create-link-reference&amp;adobe=create-deep-link&amp;cordova=create-link-reference&amp;mparticleAndroid=create-link-reference&amp;mparticleIos=create-link-reference&amp;titanium=create-link-reference&amp;reactNative=create-link-reference&amp;unity=create-link-reference&amp;xamarin=create-link-reference">see every platform here</a></p>
 <ul>
 <li>
 <p><em>iOS - Objective C</em></p>
-<p><code>obj-c
-BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
-linkProperties.feature = @"sharing";
-linkProperties.channel = @"facebook";
-[linkProperties addControlParam:@"$ios_deepview" withValue:@"default_template"];
-[linkProperties addControlParam:@"$android_deepview" withValue:@"default_template"];</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchLinkProperties</span> <span class="o">*</span><span class="n">linkProperties</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchLinkProperties</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">feature</span> <span class="o">=</span> <span class="s">@&quot;sharing&quot;</span><span class="p">;</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">channel</span> <span class="o">=</span> <span class="s">@&quot;facebook&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">linkProperties</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$ios_deepview&quot;</span> <span class="nl">withValue</span><span class="p">:</span><span class="s">@&quot;default_template&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">linkProperties</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$android_deepview&quot;</span> <span class="nl">withValue</span><span class="p">:</span><span class="s">@&quot;default_template&quot;</span><span class="p">];</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>iOS - Swift</em></p>
-<p><code>swift
-let linkProperties: BranchLinkProperties = BranchLinkProperties()
-linkProperties.feature = "sharing"
-linkProperties.channel = "facebook"
-linkProperties.addControlParam("$ios_deepview", withValue: "default_template")
-linkProperties.addControlParam("$android_deepview", withValue: "default_template")</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">linkProperties</span><span class="p">:</span> <span class="n">BranchLinkProperties</span> <span class="p">=</span> <span class="n">BranchLinkProperties</span><span class="p">()</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">feature</span> <span class="p">=</span> <span class="s">&quot;sharing&quot;</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">channel</span> <span class="p">=</span> <span class="s">&quot;facebook&quot;</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$ios_deepview&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;default_template&quot;</span><span class="p">)</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$android_deepview&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;default_template&quot;</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Android</em></p>
-<p><code>android
-LinkProperties linkProperties = new LinkProperties()
-               .setChannel("facebook")
-               .setFeature("sharing")
-               .addControlParameter("$ios_deepview", "default_template")
-               .addControlParameter("$android_deepview", "default_template");</code></p>
+<div class="codehilite"><pre><span></span>LinkProperties linkProperties = new LinkProperties()
+               .setChannel(&quot;facebook&quot;)
+               .setFeature(&quot;sharing&quot;)
+               .addControlParameter(&quot;$ios_deepview&quot;, &quot;default_template&quot;)
+               .addControlParameter(&quot;$android_deepview&quot;, &quot;default_template&quot;);
+</pre></div>
+
 </li>
 </ul>
 <p>Finally, enable Deepviews for an individual link on the <a href="https://dashboard.branch.io/quick-links/mlc/define">Marketing dashboard</a> by selecting Deepviews as a redirect option under the second page.</p>
@@ -2664,7 +2668,6 @@ LinkProperties linkProperties = new LinkProperties()
 <div class="codehilite"><pre><span></span><span class="cp">{{</span><span class="nv">app</span><span class="cp">}}</span><span class="x"></span>
 </pre></div>
 
-
 <table>
 <thead>
 <tr>
@@ -2703,7 +2706,6 @@ LinkProperties linkProperties = new LinkProperties()
 <div class="codehilite"><pre><span></span><span class="cp">{{</span><span class="nv">link_data</span><span class="cp">}}</span><span class="x"></span>
 </pre></div>
 
-
 <div class="admonition success">
 <p>If you want to expose a key value pair of <code>'welcome_message' : 'Welcome to my App'</code>, you would do the following: <code>&lt;h1&gt;{% raw %}{{link_data.welcome_message}}{% endraw %}&lt;/h1&gt;</code>, and this would render <code>Welcome to my App</code>.</p>
 </div>
@@ -2711,7 +2713,6 @@ LinkProperties linkProperties = new LinkProperties()
 <p>The URL of the Branch link itself. If you create a new call to action in your Deepview, use this. You can surface this object in your Deepview like so:</p>
 <div class="codehilite"><pre><span></span><span class="cp">{{</span><span class="nv">action</span><span class="cp">}}</span><span class="x"></span>
 </pre></div>
-
 
 <div class="admonition success">
 <p>Create a new call to action link: <code>&lt;a href="{% raw %}{{action}}{% endraw %}"&gt;Click&lt;/a&gt;</code>.</p>
@@ -2923,7 +2924,7 @@ LinkProperties linkProperties = new LinkProperties()
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2944,10 +2945,6 @@ LinkProperties linkProperties = new LinkProperties()
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

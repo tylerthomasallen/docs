@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2853,38 +2853,37 @@
 <ul>
 <li>
 <p>Add Branch to your <code>Monobehavior</code> script of your <strong>first Scene</strong></p>
-<p>```csharp hl_lines="8 11 12 13 14 15 16 17 18 19 20 21 22 23"
-using UnityEngine;
-using System.Collections;</p>
-<p>public class Spin : MonoBehaviour {</p>
-<div class="codehilite"><pre><span></span>// Use this for initialization
-void Start () {
-    Branch.initSession(CallbackWithBranchUniversalObject);
-}
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
 
-void CallbackWithBranchUniversalObject(BranchUniversalObject buo,
-                                        BranchLinkProperties linkProps,
-                                        string error) {
-    if (error != null) {
-        System.Console.WriteLine(&quot;Error : &quot;
-                                + error);
-    } else if (linkProperties.controlParams.Count &gt; 0) {
-        System.Console.WriteLine(&quot;Deeplink params : &quot;
-                                + buo.ToJsonString()
-                                + linkProps.ToJsonString());
-    }
-}
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Spin</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> <span class="p">{</span>
 
-// Update is called once per frame
-void Update () {
-    //rotate 90 degress per second
-    transform.Rotate(Vector3.up * Time.deltaTime*90);
-}
+    <span class="c1">// Use this for initialization</span>
+    <span class="k">void</span> <span class="nf">Start</span> <span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="n">Branch</span><span class="p">.</span><span class="n">initSession</span><span class="p">(</span><span class="n">CallbackWithBranchUniversalObject</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+
+<span class="hll">    <span class="k">void</span> <span class="nf">CallbackWithBranchUniversalObject</span><span class="p">(</span><span class="n">BranchUniversalObject</span> <span class="n">buo</span><span class="p">,</span>
+</span><span class="hll">                                            <span class="n">BranchLinkProperties</span> <span class="n">linkProps</span><span class="p">,</span>
+</span><span class="hll">                                            <span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">            <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Error : &quot;</span>
+</span><span class="hll">                                    <span class="p">+</span> <span class="n">error</span><span class="p">);</span>
+</span><span class="hll">        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">linkProperties</span><span class="p">.</span><span class="n">controlParams</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">            <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Deeplink params : &quot;</span>
+</span><span class="hll">                                    <span class="p">+</span> <span class="n">buo</span><span class="p">.</span><span class="n">ToJsonString</span><span class="p">()</span>
+</span><span class="hll">                                    <span class="p">+</span> <span class="n">linkProps</span><span class="p">.</span><span class="n">ToJsonString</span><span class="p">());</span>
+</span><span class="hll">        <span class="p">}</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="hll">
+</span>    <span class="c1">// Update is called once per frame</span>
+    <span class="k">void</span> <span class="nf">Update</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//rotate 90 degress per second</span>
+        <span class="n">transform</span><span class="p">.</span><span class="n">Rotate</span><span class="p">(</span><span class="n">Vector3</span><span class="p">.</span><span class="n">up</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">*</span><span class="m">90</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-
-<p>}
-```</p>
 </li>
 </ul>
 </li>
@@ -2919,20 +2918,21 @@ void Update () {
 <ul>
 <li>
 <p>The <code>Branch Universal Object</code> encapsulates the thing you want to share with your link</p>
-<p><code>csharp
-BranchUniversalObject universalObject = new BranchUniversalObject();
-// Content index mode: 0 - private mode, 1 - public mode
-universalObject.contentIndexMode = 1;
-//Identifier that helps Branch dedupe across many instances of the same content.
-universalObject.canonicalIdentifier = "id12345";
-// OG title
-universalObject.title = "id12345 title";
-// OG Description
-universalObject.contentDescription = "My awesome piece of content!";
-// OG Image
-universalObject.imageUrl = "https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png";
-// User defined key value pair
-universalObject.metadata.Add("foo", "bar");</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="n">universalObject</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="p">();</span>
+<span class="c1">// Content index mode: 0 - private mode, 1 - public mode</span>
+<span class="n">universalObject</span><span class="p">.</span><span class="n">contentIndexMode</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+<span class="c1">//Identifier that helps Branch dedupe across many instances of the same content.</span>
+<span class="n">universalObject</span><span class="p">.</span><span class="n">canonicalIdentifier</span> <span class="p">=</span> <span class="s">&quot;id12345&quot;</span><span class="p">;</span>
+<span class="c1">// OG title</span>
+<span class="n">universalObject</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;id12345 title&quot;</span><span class="p">;</span>
+<span class="c1">// OG Description</span>
+<span class="n">universalObject</span><span class="p">.</span><span class="n">contentDescription</span> <span class="p">=</span> <span class="s">&quot;My awesome piece of content!&quot;</span><span class="p">;</span>
+<span class="c1">// OG Image</span>
+<span class="n">universalObject</span><span class="p">.</span><span class="n">imageUrl</span> <span class="p">=</span> <span class="s">&quot;https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png&quot;</span><span class="p">;</span>
+<span class="c1">// User defined key value pair</span>
+<span class="n">universalObject</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">);</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2941,30 +2941,32 @@ universalObject.metadata.Add("foo", "bar");</code></p>
 <ul>
 <li>
 <p>After you have created a <code>Branch Universal Object</code>, Define Link Properties</p>
-<p><code>csharp
-BranchLinkProperties linkProperties = new BranchLinkProperties();
-linkProperties.tags.Add("tag1");
-linkProperties.tags.Add("tag2");
-// Feature link is associated with. Eg. Sharing
-linkProperties.feature = "invite";
-// The channel where you plan on sharing the link Eg.Facebook, Twitter, SMS etc
-linkProperties.channel = "Twitter";
-// The Campaign that drives this link
-linkProperties.campaign = "referral";
-linkProperties.stage = "2";
-// Parameters used to control Link behavior
-linkProperties.controlParams.Add("$desktop_url", "http://example.com");</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchLinkProperties</span> <span class="n">linkProperties</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BranchLinkProperties</span><span class="p">();</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;tag1&quot;</span><span class="p">);</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;tag2&quot;</span><span class="p">);</span>
+<span class="c1">// Feature link is associated with. Eg. Sharing</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">feature</span> <span class="p">=</span> <span class="s">&quot;invite&quot;</span><span class="p">;</span>
+<span class="c1">// The channel where you plan on sharing the link Eg.Facebook, Twitter, SMS etc</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">channel</span> <span class="p">=</span> <span class="s">&quot;Twitter&quot;</span><span class="p">;</span>
+<span class="c1">// The Campaign that drives this link</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">campaign</span> <span class="p">=</span> <span class="s">&quot;referral&quot;</span><span class="p">;</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">stage</span> <span class="p">=</span> <span class="s">&quot;2&quot;</span><span class="p">;</span>
+<span class="c1">// Parameters used to control Link behavior</span>
+<span class="n">linkProperties</span><span class="p">.</span><span class="n">controlParams</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;$desktop_url&quot;</span><span class="p">,</span> <span class="s">&quot;http://example.com&quot;</span><span class="p">);</span>
+</pre></div>
+
 </li>
 <li>
 <p>Generate a Branch link</p>
-<p><code>csharp
-Branch.getShortURL(universalObject, linkProperties, (params, error) =&gt; {
-    if (error != null) {
-        Debug.LogError("Branch.getShortURL failed: " + error);
-    } else if (params != null) {
-        Debug.Log("Branch.getShortURL shared params: " + url);
-    }
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getShortURL</span><span class="p">(</span><span class="n">universalObject</span><span class="p">,</span> <span class="n">linkProperties</span><span class="p">,</span> <span class="p">(</span><span class="k">params</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Branch.getShortURL failed: &quot;</span> <span class="p">+</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">params</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Branch.getShortURL shared params: &quot;</span> <span class="p">+</span> <span class="n">url</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2973,14 +2975,15 @@ Branch.getShortURL(universalObject, linkProperties, (params, error) =&gt; {
 <ul>
 <li>
 <p>Share deep links between users and apps</p>
-<p><code>csharp
-Branch.shareLink(universalObject, linkProperties, "Sharing link: ", (parameters, error) =&gt; {
-    if (error != null) {
-        Debug.LogError("Branch.shareLink failed: " + error);
-    } else if (parameters != null) {
-            Debug.Log("Branch.shareLink: " + parameters["sharedLink"].ToString() + " " + parameters["sharedChannel"].ToString());
-}
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">shareLink</span><span class="p">(</span><span class="n">universalObject</span><span class="p">,</span> <span class="n">linkProperties</span><span class="p">,</span> <span class="s">&quot;Sharing link: &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Branch.shareLink failed: &quot;</span> <span class="p">+</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">parameters</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Branch.shareLink: &quot;</span> <span class="p">+</span> <span class="n">parameters</span><span class="p">[</span><span class="s">&quot;sharedLink&quot;</span><span class="p">].</span><span class="n">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">&quot; &quot;</span> <span class="p">+</span> <span class="n">parameters</span><span class="p">[</span><span class="s">&quot;sharedChannel&quot;</span><span class="p">].</span><span class="n">ToString</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2992,23 +2995,25 @@ Branch.shareLink(universalObject, linkProperties, "Sharing link: ", (parameters,
 </li>
 <li>
 <p>Returns <a href="../../../pages/links/integrate/#read-deep-links">deep link properties</a></p>
-<p><code>csharp
-public void CallbackWithBranchUniversalObject(BranchUniversalObject universalObject, BranchLinkProperties linkProperties, string error) {
-    if (error != null) {
-        Debug.LogError("Branch Error: " + error);
-    } else {
-        Debug.Log("Branch initialization completed: ");
-        Debug.Log("Universal Object: " + universalObject.ToJsonString());
-        Debug.Log("Link Properties: " + linkProperties.ToJsonString());
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="k">void</span> <span class="nf">CallbackWithBranchUniversalObject</span><span class="p">(</span><span class="n">BranchUniversalObject</span> <span class="n">universalObject</span><span class="p">,</span> <span class="n">BranchLinkProperties</span> <span class="n">linkProperties</span><span class="p">,</span> <span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Branch Error: &quot;</span> <span class="p">+</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Branch initialization completed: &quot;</span><span class="p">);</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Universal Object: &quot;</span> <span class="p">+</span> <span class="n">universalObject</span><span class="p">.</span><span class="n">ToJsonString</span><span class="p">());</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Link Properties: &quot;</span> <span class="p">+</span> <span class="n">linkProperties</span><span class="p">.</span><span class="n">ToJsonString</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <blockquote>
 <p>This refereshes with every session (App Installs and App Opens)</p>
 </blockquote>
 <h5 id="read-install-install-or-open-parameters-from-anywhere-after-branch-initsession">Read install (install or open) parameters from anywhere after Branch initsession<a class="headerlink" href="#read-install-install-or-open-parameters-from-anywhere-after-branch-initsession" title="Permanent link">&para;</a></h5>
-<p><code>csharp
-BranchUniversalObject obj = Branch.getFirstReferringBranchUniversalObject();
-BranchLinkProperties link = Branch.getFirstReferringBranchLinkProperties();</code></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getFirstReferringBranchUniversalObject</span><span class="p">();</span>
+<span class="n">BranchLinkProperties</span> <span class="n">link</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getFirstReferringBranchLinkProperties</span><span class="p">();</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3017,20 +3022,21 @@ BranchLinkProperties link = Branch.getFirstReferringBranchLinkProperties();</cod
 <ul>
 <li>
 <p>Use the link parameters to decide which view you wish to load</p>
-<p><code>csharp
-public class MyCoolBehaviorScript : MonoBehaviour {
-    void Start () {
-        Branch.initSession(delegate(Dictionary&lt;string, object&gt; parameters, string error) {
-            if (parameters.ContainsKey("picture_id") {
-                // load the Scene to show the picture
-                SceneManager.LoadSceneAsync("ImageScene", LoadSceneMode.Additive);
-            } else {
-                // load your normal Scene
-                SceneManager.LoadSceneAsync("NormalScene", LoadSceneMode.Single);
-            }
-        });
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">MyCoolBehaviorScript</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> <span class="p">{</span>
+    <span class="k">void</span> <span class="nf">Start</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">Branch</span><span class="p">.</span><span class="n">initSession</span><span class="p">(</span><span class="k">delegate</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">parameters</span><span class="p">,</span> <span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="s">&quot;picture_id&quot;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// load the Scene to show the picture</span>
+                <span class="n">SceneManager</span><span class="p">.</span><span class="n">LoadSceneAsync</span><span class="p">(</span><span class="s">&quot;ImageScene&quot;</span><span class="p">,</span> <span class="n">LoadSceneMode</span><span class="p">.</span><span class="n">Additive</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// load your normal Scene</span>
+                <span class="n">SceneManager</span><span class="p">.</span><span class="n">LoadSceneAsync</span><span class="p">(</span><span class="s">&quot;NormalScene&quot;</span><span class="p">,</span> <span class="n">LoadSceneMode</span><span class="p">.</span><span class="n">Single</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3039,8 +3045,9 @@ public class MyCoolBehaviorScript : MonoBehaviour {
 <ul>
 <li>
 <p>If you want to track the number of times a user views a BUO content</p>
-<p><code>csharp
-Branch.registerView(universalObject);</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">registerView</span><span class="p">(</span><span class="n">universalObject</span><span class="p">);</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3049,13 +3056,15 @@ Branch.registerView(universalObject);</code></p>
 <ul>
 <li>
 <h5 id="set-user-ids-on-loginregister">Set User-Ids on Login/Register<a class="headerlink" href="#set-user-ids-on-loginregister" title="Permanent link">&para;</a></h5>
-<p><code>csharp
-Branch.setIdentity("your user id");</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">setIdentity</span><span class="p">(</span><span class="s">&quot;your user id&quot;</span><span class="p">);</span>
+</pre></div>
+
 </li>
 <li>
 <h5 id="unset-user-ids-on-logout">UnSet User-Ids on logout<a class="headerlink" href="#unset-user-ids-on-logout" title="Permanent link">&para;</a></h5>
-<p><code>csharp
-Branch.logout();</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">logout</span><span class="p">();</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3064,18 +3073,20 @@ Branch.logout();</code></p>
 <ul>
 <li>
 <h5 id="track-custom-events">Track custom events<a class="headerlink" href="#track-custom-events" title="Permanent link">&para;</a></h5>
-<p><code>csharp
-Branch.userCompletedAction("your_custom_event");</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">userCompletedAction</span><span class="p">(</span><span class="s">&quot;your_custom_event&quot;</span><span class="p">);</span>
+</pre></div>
+
 </li>
 <li>
 <h5 id="store-meta-data-with-these-custom-events">Store meta data with these custom events<a class="headerlink" href="#store-meta-data-with-these-custom-events" title="Permanent link">&para;</a></h5>
-<p><code>csharp
-Dictionary&lt;string, object&gt; stateItems = new Dictionary&lt;string, object&gt;
-{
-    { "username", "Joe" },
-    { "description", "Joe likes long walks on the beach..." }
-};
-Branch.userCompletedAction("your_custom_event", stateItems); // same 63 characters max limit</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">stateItems</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="p">{</span> <span class="s">&quot;username&quot;</span><span class="p">,</span> <span class="s">&quot;Joe&quot;</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;description&quot;</span><span class="p">,</span> <span class="s">&quot;Joe likes long walks on the beach...&quot;</span> <span class="p">}</span>
+<span class="p">};</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">userCompletedAction</span><span class="p">(</span><span class="s">&quot;your_custom_event&quot;</span><span class="p">,</span> <span class="n">stateItems</span><span class="p">);</span> <span class="c1">// same 63 characters max limit</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3097,30 +3108,30 @@ Branch.userCompletedAction("your_custom_event", stateItems); // same 63 characte
 </li>
 <li>
 <h5 id="get-reward-balance">Get Reward balance<a class="headerlink" href="#get-reward-balance" title="Permanent link">&para;</a></h5>
-<p>```csharp
-Branch.loadRewards(delegate(bool changed, string error) {
-    // changed boolean will indicate if the balance changed from what is currently in memory</p>
-<div class="codehilite"><pre><span></span>// will return the balance of the current user&#39;s credits
-int credits = Branch.getCredits();
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">loadRewards</span><span class="p">(</span><span class="k">delegate</span><span class="p">(</span><span class="kt">bool</span> <span class="n">changed</span><span class="p">,</span> <span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// changed boolean will indicate if the balance changed from what is currently in memory</span>
+
+    <span class="c1">// will return the balance of the current user&#39;s credits</span>
+    <span class="kt">int</span> <span class="n">credits</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getCredits</span><span class="p">();</span>
+<span class="p">});</span>
 </pre></div>
 
-
-<p>});
-```</p>
 </li>
 <li>
 <h5 id="redeem-rewards">Redeem Rewards<a class="headerlink" href="#redeem-rewards" title="Permanent link">&para;</a></h5>
-<p><code>csharp
-Branch.redeemRewards(5);</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">redeemRewards</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</pre></div>
+
 </li>
 <li>
 <h5 id="get-credit-history">Get Credit History<a class="headerlink" href="#get-credit-history" title="Permanent link">&para;</a></h5>
-<p><code>csharp
-Branch.getCreditHistory(delegate(List&lt;string&gt; historyItems, string error) {
-    if (error == null) {
-    // process history
-    }
-});</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getCreditHistory</span><span class="p">(</span><span class="k">delegate</span><span class="p">(</span><span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">historyItems</span><span class="p">,</span> <span class="kt">string</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// process history</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3139,19 +3150,21 @@ add <code>-fobjc-arc</code> to all Branch files.</p>
 <li>
 <h3 id="android-using-your-own-custom-application-class">Android - Using your own Custom Application Class<a class="headerlink" href="#android-using-your-own-custom-application-class" title="Permanent link">&para;</a></h3>
 <p>If you are using your own Custom Application class, you will need to add Branch android library into your project and call the following in method OnCreate():</p>
-<p><code>Java
-Branch.getAutoInstance(this.getApplicationContext());</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getAutoInstance</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getApplicationContext</span><span class="o">());</span>
+</pre></div>
+
 <p>If you are using your own custom Activity class, please make sure that you are overridding the following Activities:</p>
-<p>```Java
-@Override
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-}</p>
-<p>@Override
-public void onNewIntent(Intent intent) {
-    this.setIntent(intent);
-}
-```</p>
+<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
 </li>
 <li>
 <h3 id="support-branch-with-different-plugins">Support Branch with different Plugins<a class="headerlink" href="#support-branch-with-different-plugins" title="Permanent link">&para;</a></h3>
@@ -3170,21 +3183,23 @@ custom activity and application classes can cause "conflicts" between these clas
 <li>
 <h3 id="support-several-impl_app_controller_subclass">Support several IMPL_APP_CONTROLLER_SUBCLASS<a class="headerlink" href="#support-several-impl_app_controller_subclass" title="Permanent link">&para;</a></h3>
 <p>The Branch Unity SDK plugin uses its own UnityAppController that expands default AppController. This is used to catch Universal Links.</p>
-<p>```csharp
-@interface BranchAppController : UnityAppController
-{
-}
-@end</p>
-<p>@implementation BranchAppController</p>
-<ul>
-<li>(BOOL)application:(UIApplication <em>)application continueUserActivity:(NSUserActivity </em>)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler {
-    BOOL handledByBranch = [[BranchUnityWrapper sharedInstance] continueUserActivity:userActivity];
-    return handledByBranch;
-}</li>
-</ul>
-<p>@end</p>
-<p>IMPL_APP_CONTROLLER_SUBCLASS(BranchAppController)
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">@interface</span> <span class="n">BranchAppController</span> <span class="p">:</span> <span class="n">UnityAppController</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="n">@end</span>
+
+<span class="n">@implementation</span> <span class="n">BranchAppController</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="p">*)</span><span class="n">application</span> <span class="n">continueUserActivity</span><span class="p">:(</span><span class="n">NSUserActivity</span> <span class="p">*)</span><span class="n">userActivity</span> <span class="n">restorationHandler</span><span class="p">:(</span><span class="k">void</span> <span class="p">(^)(</span><span class="n">NSArray</span> <span class="p">*))</span><span class="n">restorationHandler</span> <span class="p">{</span>
+    <span class="n">BOOL</span> <span class="n">handledByBranch</span> <span class="p">=</span> <span class="p">[[</span><span class="n">BranchUnityWrapper</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">continueUserActivity</span><span class="p">:</span><span class="n">userActivity</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">handledByBranch</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">@end</span>
+
+<span class="nf">IMPL_APP_CONTROLLER_SUBCLASS</span><span class="p">(</span><span class="n">BranchAppController</span><span class="p">)</span>
+</pre></div>
+
 <p>Some Plugins expand the default AppController the same was as Branch does like Cardboard SDK plugin. To resolve conflicts:</p>
 <ol>
 <li>Merge all custom AppControllers in one.</li>
@@ -3352,7 +3367,7 @@ custom activity and application classes can cause "conflicts" between these clas
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3373,10 +3388,6 @@ custom activity and application classes can cause "conflicts" between these clas
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -3121,7 +3121,7 @@
 </ul>
 </li>
 <li>When adding <code>tags</code> to a dynamic link, enter each tag separately<ul>
-<li>e.g. https://example.app.link/?foo=bar&amp;tags=tag1&amp;tags=tag2</li>
+<li>e.g. <a href="https://example.app.link/?foo=bar&amp;tags=tag1&amp;tags=tag2">https://example.app.link/?foo=bar&amp;tags=tag1&amp;tags=tag2</a></li>
 </ul>
 </li>
 </ul>
@@ -3681,7 +3681,7 @@
 </table>
 </li>
 <li>
-<p>Valid dictionary example: "{\"twitter:player:stream\": \"https://branch.io\"}". This will result in the following meta tag: <code>&lt;meta property="twitter:player:stream" content="https://branch.io" /&gt;</code></p>
+<p>Valid dictionary example: "{\"twitter:player:stream\": \"<a href="https://branch.io">https://branch.io</a>\"}". This will result in the following meta tag: <code>&lt;meta property="twitter:player:stream" content="https://branch.io" /&gt;</code></p>
 </li>
 <li>If you create the link via the Dashboard, don’t worry about stringifying the dictionary. It will be done automatically.</li>
 <li>apple_touch_icon is a special key in the dictionary. If you set it, we will add a <code>&lt;link rel="apple-touch-icon" href="&lt;url&gt;" /&gt;</code> tag to the scraped HTML page. This will allow you to show a custom icon for previews in iMessage, Safari Bookmarks, Slack, etc.</li>
@@ -3792,40 +3792,41 @@
 <ul>
 <li>
 <p>Example deep link data structure</p>
-<p><code>json
-{
-  "identity_id": "427469360685348303",
-  "link": "https://example.app.link?%24identity_id=427469360685348303",
-  "session_id": "429691081177874743",
-  "data": {
-    "$canonical_identifier": "item/1503684554354.28",
-    "$desktop_url": "http://example.com/home",
-    "$exp_date": 0,
-    "$identity_id": "427469360685348303",
-    "$og_description": "My Content Description",
-    "$og_image_url": "http://lorempixel.com/200/200/",
-    "$og_title": "46D6D28E-0390-40E4-A856-BD74F34D24C8",
-    "$publicly_indexable": 1,
-    "+click_timestamp": 1503684563,
-    "+clicked_branch_link": true,
-    "+is_first_session": false,
-    "+match_guaranteed": true,
-    "custom": "blue",
-    "random": "FE848A5B-78F7-42EC-A253-9F795FE91692",
-    "added": "1503684554354.33",
-    "~campaign": "new launch",
-    "~channel": "facebook",
-    "~creation_source": 3,
-    "~feature": "sharing",
-    "~id": 429691043152332059,
-    "~referring_link": "https://example.app.link/X7OsnWv9TF",
-    "~stage": "new person",
-    "~tags": [
-      "one",
-      "two"
-    ]
-  }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;identity_id&quot;</span><span class="p">:</span> <span class="s2">&quot;427469360685348303&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;https://example.app.link?%24identity_id=427469360685348303&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;429691081177874743&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;$canonical_identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;item/1503684554354.28&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;$desktop_url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.com/home&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;$exp_date&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;$identity_id&quot;</span><span class="p">:</span> <span class="s2">&quot;427469360685348303&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;$og_description&quot;</span><span class="p">:</span> <span class="s2">&quot;My Content Description&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;$og_image_url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://lorempixel.com/200/200/&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;$og_title&quot;</span><span class="p">:</span> <span class="s2">&quot;46D6D28E-0390-40E4-A856-BD74F34D24C8&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;$publicly_indexable&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;+click_timestamp&quot;</span><span class="p">:</span> <span class="mi">1503684563</span><span class="p">,</span>
+    <span class="nt">&quot;+clicked_branch_link&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;+is_first_session&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;+match_guaranteed&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;custom&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;random&quot;</span><span class="p">:</span> <span class="s2">&quot;FE848A5B-78F7-42EC-A253-9F795FE91692&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;added&quot;</span><span class="p">:</span> <span class="s2">&quot;1503684554354.33&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;~campaign&quot;</span><span class="p">:</span> <span class="s2">&quot;new launch&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;~channel&quot;</span><span class="p">:</span> <span class="s2">&quot;facebook&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;~creation_source&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;~feature&quot;</span><span class="p">:</span> <span class="s2">&quot;sharing&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;~id&quot;</span><span class="p">:</span> <span class="mi">429691043152332059</span><span class="p">,</span>
+    <span class="nt">&quot;~referring_link&quot;</span><span class="p">:</span> <span class="s2">&quot;https://example.app.link/X7OsnWv9TF&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;~stage&quot;</span><span class="p">:</span> <span class="s2">&quot;new person&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;~tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;one&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;two&quot;</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3943,14 +3944,14 @@
 <h3 id="view-deep-link-data">View deep link data<a class="headerlink" href="#view-deep-link-data" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Add <code>?debug=1</code> to the end of your deep link</li>
-<li>For example: https://example.app.link/aQXXDHaxKF?debug=1</li>
+<li>For example: <a href="https://example.app.link/aQXXDHaxKF?debug=1">https://example.app.link/aQXXDHaxKF?debug=1</a></li>
 </ul>
 </li>
 <li>
 <h3 id="view-deep-link-stats">View deep link stats<a class="headerlink" href="#view-deep-link-stats" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Add <code>?stats=1</code> to the end of your deep link</li>
-<li>For example: https://example.app.link/aQXXDHaxKF?stats=1</li>
+<li>For example: <a href="https://example.app.link/aQXXDHaxKF?stats=1">https://example.app.link/aQXXDHaxKF?stats=1</a></li>
 </ul>
 </li>
 </ul>
@@ -4107,7 +4108,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -4128,10 +4129,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

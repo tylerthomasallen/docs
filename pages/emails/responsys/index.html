@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2659,7 +2659,9 @@
 <ol>
 <li>
 <p>Work with your Branch account manager to modify the following code snippet, replacing <code>DOMAIN-HERE</code> with your Branch base domain:</p>
-<p><code>&lt;#macro deeplink link_to_be_wrapped&gt;&lt;#assign branch_base_url="https://DOMAIN-HERE/3p?%243p=e_rs"&gt;&lt;#assign final_link=branch_base_url + "&amp;%24original_url=" + link_to_be_wrapped?url("ISO-8859-1")&gt;&lt;a href="${final_link}"&gt;&lt;#nested&gt;&lt;/a&gt;&lt;/#macro&gt; &lt;#macro tracked_deeplink link_to_be_wrapped&gt;&lt;#assign branch_base_url="https://DOMAIN-HERE/3p?%243p=e_rs"&gt;&lt;#assign deeplink=branch_base_url + "&amp;%24original_url=" + link_to_be_wrapped?url("ISO-8859-1")&gt;&lt;/#macro&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="err">&lt;</span>#macro deeplink link_to_be_wrapped&gt;<span class="err">&lt;</span>#assign branch_base_url=&quot;https://DOMAIN-HERE/3p?%243p=e_rs&quot;&gt;<span class="err">&lt;</span>#assign final_link=branch_base_url + &quot;<span class="err">&amp;</span>%24original_url=&quot; + link_to_be_wrapped?url(&quot;ISO-8859-1&quot;)&gt;<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">${</span><span class="n">final_link</span><span class="cp">}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="err">&lt;</span>#nested&gt;<span class="nt">&lt;/a&gt;</span><span class="err">&lt;</span>/#macro&gt; <span class="err">&lt;</span>#macro tracked_deeplink link_to_be_wrapped&gt;<span class="err">&lt;</span>#assign branch_base_url=&quot;https://DOMAIN-HERE/3p?%243p=e_rs&quot;&gt;<span class="err">&lt;</span>#assign deeplink=branch_base_url + &quot;<span class="err">&amp;</span>%24original_url=&quot; + link_to_be_wrapped?url(&quot;ISO-8859-1&quot;)&gt;<span class="err">&lt;</span>/#macro&gt;
+</pre></div>
+
 </li>
 <li>
 <p>Log in to your Responsys account.</p>
@@ -2700,7 +2702,6 @@
 <div class="codehilite"><pre><span></span>&lt;#include &quot;cms://contentlibrary/Branch_SDK/branch-sdk.htm&quot;&gt;
 </pre></div>
 
-
 <h5 id="create-deep-links">Create deep links<a class="headerlink" href="#create-deep-links" title="Permanent link">&para;</a></h5>
 <p>Wherever you are using <code>&lt;a&gt;</code> tags in your email templates, replace those with <code>&lt;@deeplink&gt;</code> tags, or add <code>&lt;@tracked_deeplink /&gt;</code> for web URLs that you would like to deep link.</p>
 <p>Here's how it looks with Link Tracking disabled.</p>
@@ -2739,11 +2740,10 @@
 <span class="p">};</span>
 </pre></div>
 
-
 <p>Here is how links look before and after (the latter being a Branch deep link).</p>
 <ol>
-<li><em>Before:</em> http://example.com/?foo=bar</li>
-<li><em>After:</em> https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar</li>
+<li><em>Before:</em> <a href="http://example.com/?foo=bar">http://example.com/?foo=bar</a></li>
+<li><em>After:</em> <a href="https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar">https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar</a></li>
 </ol>
 <p><strong>Note</strong> that these are simplified examples, not actual demo links.</p>
 <h3 id="handle-links-for-web-only-content">Handle links for web-only content<a class="headerlink" href="#handle-links-for-web-only-content" title="Permanent link">&para;</a></h3>
@@ -2758,24 +2758,19 @@
 <div class="codehilite"><pre><span></span><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://branch.io/&quot;</span> <span class="na">style=</span><span class="s">&quot;color:#000001; text-decoration:none;&quot;</span><span class="nt">&gt;</span>Branch Website<span class="nt">&lt;/a&gt;</span>
 </pre></div>
 
-
 <p><strong>After:</strong></p>
 <div class="codehilite"><pre><span></span><span class="err">&lt;</span>@deeplink &quot;https://branch.io/&quot;&gt;<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;color:#000001; text-decoration:none;&quot;</span><span class="nt">&gt;</span>Branch Website<span class="nt">&lt;/div&gt;</span><span class="err">&lt;</span>/@deeplink&gt;
 </pre></div>
-
 
 <h3 id="launch-failed-error">Launch failed error<a class="headerlink" href="#launch-failed-error" title="Permanent link">&para;</a></h3>
 <p>You’ll see this error if you haven’t included the <code>&lt;#import &gt;</code> snippet in your template.</p>
 <div class="codehilite"><pre><span></span><span class="n">Launch</span> <span class="nl">Failed</span><span class="p">:</span> <span class="n">Launch</span> <span class="nl">failed</span><span class="p">:</span> <span class="n">Template</span> <span class="o">/</span><span class="n">contentlibrary</span><span class="o">/</span><span class="n">branch</span> <span class="n">test</span> <span class="n">campaign</span><span class="o">/</span><span class="n">My</span> <span class="n">Default</span> <span class="n">Template</span><span class="p">.</span><span class="n">htm</span> <span class="n">caused</span> <span class="n">an</span> <span class="n">execution</span> <span class="nl">error</span><span class="p">:</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">183</span><span class="p">,</span> <span class="n">column</span> <span class="mi">92</span> <span class="k">in</span> <span class="nl">cms</span><span class="p">:</span><span class="c1">//contentlibrary/branch test campaign/Content.htm: deeplink is not a user-defined directive. It is a freemarker.template.SimpleScalar</span>
 </pre></div>
 
-
 <h3 id="using-dynamic-data-from-profile-extension-tables">Using dynamic data from profile extension tables<a class="headerlink" href="#using-dynamic-data-from-profile-extension-tables" title="Permanent link">&para;</a></h3>
-<p>The <code>&lt;@deeplink &gt;</code> and <code>&lt;@tracked_deeplink /&gt;</code> tags even work with dynamic links injected via RPL.</p>
+<p>The <code>&lt;@deeplink &gt;</code> and <code>&lt;@tracked_deeplink /&gt;</code> tags even work with dynamic links injected via RPL.
 <div class="codehilite"><pre><span></span><span class="err">&lt;</span>@deeplink &quot;<span class="cp">${</span><span class="n">latestProduct</span><span class="o">.</span><span class="n">url</span><span class="cp">}</span>&quot;&gt;<span class="cp">${</span><span class="n">latestProduct</span><span class="o">.</span><span class="n">name</span><span class="cp">}</span><span class="err">&lt;</span>/@deeplink&gt;
-</pre></div>
-
-
+</pre></div></p>
 <h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h2>
 <p>Curious about how email works and more FAQ? <strong>Visit our general <a href="../../../pages/emails/support">email support</a> page</strong>.</p>
                 
@@ -2931,7 +2926,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2952,10 +2947,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

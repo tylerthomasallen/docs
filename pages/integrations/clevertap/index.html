@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2494,7 +2494,6 @@ Inside <code>didFinishLaunchingWithOptions</code></p>
 <span class="nl">value</span><span class="p">:[[</span><span class="n">CleverTap</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">profileGetCleverTapAttributionIdentifier</span><span class="p">]];</span>
 </pre></div>
 
-
 <p><strong>Swift</strong>
 Inside <code>didFinishLaunchingWithOptions</code>:</p>
 <div class="codehilite"><pre><span></span><span class="n">CleverTap</span><span class="p">.</span><span class="n">autoIntegrate</span><span class="p">()</span>
@@ -2503,14 +2502,12 @@ Inside <code>didFinishLaunchingWithOptions</code>:</p>
 <span class="p">}</span>
 </pre></div>
 
-
 <h4 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h4>
 <p>Before you initialize in your Application <code>#onCreate</code> or Deep Link Activity’s <code>#onCreate</code>.</p>
 <div class="codehilite"><pre><span></span><span class="n">Branch</span> <span class="n">branch</span> <span class="o">=</span> <span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
 <span class="n">branch</span><span class="o">.</span><span class="na">setRequestMetadata</span><span class="o">(</span><span class="s">&quot;$clevertap_attribution_id&quot;</span><span class="o">,</span>
 <span class="n">cleverTapInstance</span><span class="o">.</span><span class="na">getCleverTapAttributionIdentifier</span><span class="o">());</span>
 </pre></div>
-
 
 <h3 id="upgrade-to-the-latest-sdks-if-necessary">Upgrade to the latest SDKs [if necessary]<a class="headerlink" href="#upgrade-to-the-latest-sdks-if-necessary" title="Permanent link">&para;</a></h3>
 <p>Please ensure you're using the Branch iOS SDK 0.19.5 or greater, and Android SDK v2.12.1 or greater. If you implemented Branch after October 11th 2017, you are likely already on this version or later.</p>
@@ -2675,7 +2672,7 @@ Inside <code>didFinishLaunchingWithOptions</code>:</p>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2696,10 +2693,6 @@ Inside <code>didFinishLaunchingWithOptions</code>:</p>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

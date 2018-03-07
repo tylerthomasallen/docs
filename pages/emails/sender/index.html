@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2448,7 +2448,7 @@
 <h4 id="create-a-custom-click-tracking-domain">Create a custom click tracking domain<a class="headerlink" href="#create-a-custom-click-tracking-domain" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p>Reach support support@sender.net and ask them to add a custom click tracking domain for your Sender account.</p>
+<p>Reach support <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#101;&#110;&#100;&#101;&#114;&#46;&#110;&#101;&#116;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#101;&#110;&#100;&#101;&#114;&#46;&#110;&#101;&#116;</a> and ask them to add a custom click tracking domain for your Sender account.</p>
 </li>
 <li>
 <p>To enable tracking on a subdomain, you must set up a CNAME record in DNS pointing your subdomain to <code>app.sender.net</code>. </p>
@@ -2494,7 +2494,6 @@
 <span class="p">}];</span>
 </pre></div>
 
-
 <h3 id="validate-and-test">Validate and test<a class="headerlink" href="#validate-and-test" title="Permanent link">&para;</a></h3>
 <p><img alt="image" src="../../../img/pages/email/validate-test.png" /></p>
 <p>The last step of the <a href="https://dashboard.branch.io/email" target="_blank">Deep Linked Email setup flow</a> validates whether you have completed all necessary steps and whether an engineer on your team has completed the <a href="#technical-setup">technical setup</a> steps. You will also see recommendations for how to improve your email integration.</p>
@@ -2506,13 +2505,11 @@
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;links.example.com?$deep_link=true&quot;</span> <span class="p">&gt;</span>Link to your app!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 
-
 <p>This will ensure that your links are converted to Branch links that will open the app on iOS and Android, with full tracking and attribution.</p>
 <h3 id="flag-your-web-only-links">Flag your web-only links<a class="headerlink" href="#flag-your-web-only-links" title="Permanent link">&para;</a></h3>
 <p>With your email service provider, all email links will open the app by default. In order for your app to know that the email link should bounce to web after opening the app, add <code>$web_only=true</code> to your links as a query parameter, for example:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;links.example.com?$web_only=true&quot;</span> <span class="p">&gt;</span>Link to your app!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
-
 
 <div class="admonition caution">
 <p class="admonition-title">Handle links for web-only content</p>
@@ -2522,11 +2519,13 @@
 <div class="admonition protip">
 <p class="admonition-title">What happens to your links behind the scenes?</p>
 <p>This is what a link looks like within your email template:</p>
-<p><code>html
-http://example.com/?foo=bar</code></p>
+<div class="codehilite"><pre><span></span>http://example.com/?foo=bar
+</pre></div>
+
 <p>When a user clicks your link, Branch processes the link and converts it to something like this:</p>
-<p><code>html
-https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar</code></p>
+<div class="codehilite"><pre><span></span>https://vza3.app.link/3p?%243p=e_xx<span class="err">&amp;</span>%24original_url=http%3A%2F%2Fexample.com%2F%3Ffoo%3Dbar
+</pre></div>
+
 <p>Where <code>vza3.app.link</code> is your Branch domain.</p>
 </div>
 <p>The conversion to Branch links will only work when your links are wrapped in your click tracking domain. To test links without wrapping, please generate a test link on step 3 of email onboarding, also accessible by clicking the gear icon for your ESP on the <a href="https://dashboard.branch.io/email" target="_blank">email page</a>.</p>
@@ -2686,7 +2685,7 @@ https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2707,10 +2706,6 @@ https://vza3.app.link/3p?%243p=e_xx&amp;%24original_url=http%3A%2F%2Fexample.com
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

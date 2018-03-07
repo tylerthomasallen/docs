@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -370,8 +370,6 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         iOS
@@ -385,65 +383,319 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#integrate-branch" title="Integrate Branch" class="md-nav__link">
+    Integrate Branch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configure-branch" title="Configure Branch" class="md-nav__link">
     Configure Branch
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-bundle-identifier" title="Configure bundle identifier" class="md-nav__link">
     Configure bundle identifier
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-associated-domains" title="Configure associated domains" class="md-nav__link">
     Configure associated domains
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-entitlements" title="Configure entitlements" class="md-nav__link">
     Configure entitlements
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-infoplist" title="Configure info.pList" class="md-nav__link">
     Configure info.pList
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#confirm-app-prefix" title="Confirm app prefix" class="md-nav__link">
     Confirm app prefix
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#install-branch" title="Install Branch" class="md-nav__link">
     Install Branch
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#initialize-branch" title="Initialize Branch" class="md-nav__link">
     Initialize Branch
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-deep-link" title="Test deep link" class="md-nav__link">
+    Test deep link
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-features" title="Implement features" class="md-nav__link">
+    Implement features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-content-reference" title="Create content reference" class="md-nav__link">
+    Create content reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-link-reference" title="Create link reference" class="md-nav__link">
+    Create link reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-deep-link" title="Create deep link" class="md-nav__link">
+    Create deep link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-deep-link" title="Share deep link" class="md-nav__link">
+    Share deep link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-deep-link" title="Read deep link" class="md-nav__link">
+    Read deep link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigate-to-content" title="Navigate to content" class="md-nav__link">
+    Navigate to content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" title="Display" class="md-nav__link">
+    Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-content" title="Track content" class="md-nav__link">
+    Track content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-users" title="Track users" class="md-nav__link">
+    Track users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-events" title="Track events" class="md-nav__link">
+    Track events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-commerce" title="Track commerce" class="md-nav__link">
+    Track commerce
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-referrals" title="Handle referrals" class="md-nav__link">
+    Handle referrals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-push-notifications" title="Handle push notifications" class="md-nav__link">
+    Handle push notifications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-links-in-your-own-app" title="Handle links in your own app" class="md-nav__link">
+    Handle links in your own app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-apple-search-ads" title="Track Apple Search Ads" class="md-nav__link">
+    Track Apple Search Ads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-100-matching" title="Enable 100% matching" class="md-nav__link">
+    Enable 100% matching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot-issues" title="Troubleshoot issues" class="md-nav__link">
+    Troubleshoot issues
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-to-the-app-store" title="Submitting to the App Store" class="md-nav__link">
+    Submitting to the App Store
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-not-opening" title="App not opening" class="md-nav__link">
+    App not opening
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-not-passing-data" title="App not passing data" class="md-nav__link">
+    App not passing data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulate-an-install" title="Simulate an install" class="md-nav__link">
+    Simulate an install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-links-are-long" title="Deep links are long" class="md-nav__link">
+    Deep links are long
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-apps" title="Sample apps" class="md-nav__link">
+    Sample apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-content-properties" title="Track content properties" class="md-nav__link">
+    Track content properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-logging" title="Enable logging" class="md-nav__link">
+    Enable logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-test-key" title="Use test key" class="md-nav__link">
+    Use test key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-enable-universal-linking" title="Re-enable universal linking" class="md-nav__link">
+    Re-enable universal linking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-link-routing-with-a-branch-viewcontroller" title="Deep link routing with a Branch ViewController" class="md-nav__link">
+    Deep link routing with a Branch ViewController
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determine-if-deep-link-is-from-branch-without-network" title="Determine if deep link is from Branch without network" class="md-nav__link">
+    Determine if deep link is from Branch without network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-to-email-options" title="Share to email options" class="md-nav__link">
+    Share to email options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-message-dynamically" title="Share message dynamically" class="md-nav__link">
+    Share message dynamically
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2215,65 +2467,319 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#integrate-branch" title="Integrate Branch" class="md-nav__link">
+    Integrate Branch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configure-branch" title="Configure Branch" class="md-nav__link">
     Configure Branch
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-bundle-identifier" title="Configure bundle identifier" class="md-nav__link">
     Configure bundle identifier
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-associated-domains" title="Configure associated domains" class="md-nav__link">
     Configure associated domains
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-entitlements" title="Configure entitlements" class="md-nav__link">
     Configure entitlements
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-infoplist" title="Configure info.pList" class="md-nav__link">
     Configure info.pList
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#confirm-app-prefix" title="Confirm app prefix" class="md-nav__link">
     Confirm app prefix
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#install-branch" title="Install Branch" class="md-nav__link">
     Install Branch
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#initialize-branch" title="Initialize Branch" class="md-nav__link">
     Initialize Branch
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-deep-link" title="Test deep link" class="md-nav__link">
+    Test deep link
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-features" title="Implement features" class="md-nav__link">
+    Implement features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-content-reference" title="Create content reference" class="md-nav__link">
+    Create content reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-link-reference" title="Create link reference" class="md-nav__link">
+    Create link reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-deep-link" title="Create deep link" class="md-nav__link">
+    Create deep link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-deep-link" title="Share deep link" class="md-nav__link">
+    Share deep link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-deep-link" title="Read deep link" class="md-nav__link">
+    Read deep link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigate-to-content" title="Navigate to content" class="md-nav__link">
+    Navigate to content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" title="Display" class="md-nav__link">
+    Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-content" title="Track content" class="md-nav__link">
+    Track content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-users" title="Track users" class="md-nav__link">
+    Track users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-events" title="Track events" class="md-nav__link">
+    Track events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-commerce" title="Track commerce" class="md-nav__link">
+    Track commerce
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-referrals" title="Handle referrals" class="md-nav__link">
+    Handle referrals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-push-notifications" title="Handle push notifications" class="md-nav__link">
+    Handle push notifications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-links-in-your-own-app" title="Handle links in your own app" class="md-nav__link">
+    Handle links in your own app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-apple-search-ads" title="Track Apple Search Ads" class="md-nav__link">
+    Track Apple Search Ads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-100-matching" title="Enable 100% matching" class="md-nav__link">
+    Enable 100% matching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot-issues" title="Troubleshoot issues" class="md-nav__link">
+    Troubleshoot issues
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-to-the-app-store" title="Submitting to the App Store" class="md-nav__link">
+    Submitting to the App Store
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-not-opening" title="App not opening" class="md-nav__link">
+    App not opening
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-not-passing-data" title="App not passing data" class="md-nav__link">
+    App not passing data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulate-an-install" title="Simulate an install" class="md-nav__link">
+    Simulate an install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-links-are-long" title="Deep links are long" class="md-nav__link">
+    Deep links are long
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-apps" title="Sample apps" class="md-nav__link">
+    Sample apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-content-properties" title="Track content properties" class="md-nav__link">
+    Track content properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-logging" title="Enable logging" class="md-nav__link">
+    Enable logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-test-key" title="Use test key" class="md-nav__link">
+    Use test key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-enable-universal-linking" title="Re-enable universal linking" class="md-nav__link">
+    Re-enable universal linking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-link-routing-with-a-branch-viewcontroller" title="Deep link routing with a Branch ViewController" class="md-nav__link">
+    Deep link routing with a Branch ViewController
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determine-if-deep-link-is-from-branch-without-network" title="Determine if deep link is from Branch without network" class="md-nav__link">
+    Determine if deep link is from Branch without network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-to-email-options" title="Share to email options" class="md-nav__link">
+    Share to email options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-message-dynamically" title="Share message dynamically" class="md-nav__link">
+    Share message dynamically
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2301,6 +2807,8 @@
                 
                   <a href="https://github.com/branchmetrics/docs/edit/master/src/pages/apps/ios.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
+                
+                  <h1>iOS</h1>
                 
                 <h2 id="integrate-branch">Integrate Branch<a class="headerlink" href="#integrate-branch" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
@@ -2378,21 +2886,25 @@
 <ul>
 <li>
 <p>Option 1: <a href="https://cocoapods.org/">CocoaPods</a></p>
-<p>```sh hl_lines="7"
-platform :ios, '8.0'</p>
-<p>target 'APP_NAME' do
-  # if swift
-  use_frameworks!</p>
-<p>pod 'Branch'
-end
-```</p>
-<p><code>sh
-pod install &amp;&amp; pod update</code></p>
+<div class="codehilite"><pre><span></span>platform :ios, <span class="s1">&#39;8.0&#39;</span>
+
+target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
+  <span class="c1"># if swift</span>
+  use_frameworks!
+
+<span class="hll">  pod <span class="s1">&#39;Branch&#39;</span>
+</span>end
+</pre></div>
+
+<div class="codehilite"><pre><span></span>pod install <span class="o">&amp;&amp;</span> pod update
+</pre></div>
+
 </li>
 <li>
 <p>Option 2: <a href="https://github.com/Carthage/Carthage">Carthage</a></p>
-<p><code>sh
-github "BranchMetrics/ios-branch-deep-linking"</code></p>
+<div class="codehilite"><pre><span></span>github <span class="s2">&quot;BranchMetrics/ios-branch-deep-linking&quot;</span>
+</pre></div>
+
 </li>
 <li>
 <p>Option 3: Manually install the <a href="https://github.com/BranchMetrics/ios-branch-deep-linking/releases">source code</a> with dependencies</p>
@@ -2409,82 +2921,86 @@ github "BranchMetrics/ios-branch-deep-linking"</code></p>
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift hl_lines="2 10 11 12 13 14 15 16 21 22 27 28 33 34"
-import UIKit
-import Branch</p>
-<p>@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {</p>
-<p>var window: UIWindow?</p>
-<p>func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
-  // for debug and development only
-  Branch.getInstance().setDebug()
-  // listener for Branch Deep Link data
-  Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
-    // do stuff with deep link data (nav to page, display content, etc)
-    print(params as? [String: AnyObject] ?? {})
-  }
-  return true
-}</p>
-<p>func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -&gt; Bool {
-  // handler for URI Schemes (depreciated in iOS 9.2+, but still used by some apps)
-  Branch.getInstance().application(app, open: url, options: options)
-  return true
-}</p>
-<p>func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -&gt; Void) -&gt; Bool {
-  // handler for Universal Links
-  Branch.getInstance().continue(userActivity)
-  return true
-}</p>
-<p>func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) {
-  // handler for Push Notifications
-  Branch.getInstance().handlePushNotification(userInfo)
-}
-```</p>
+<div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
+<span class="hll"><span class="kd">import</span> <span class="nc">Branch</span>
+</span>
+<span class="kr">@UIApplicationMain</span>
+<span class="kd">class</span> <span class="nc">AppDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIApplicationDelegate</span> <span class="p">{</span>
+
+<span class="kd">var</span> <span class="nv">window</span><span class="p">:</span> <span class="bp">UIWindow</span><span class="p">?</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="n">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// for debug and development only</span>
+</span><span class="hll">  <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">setDebug</span><span class="p">()</span>
+</span><span class="hll">  <span class="c1">// listener for Branch Deep Link data</span>
+</span><span class="hll">  <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">initSession</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+</span><span class="hll">    <span class="c1">// do stuff with deep link data (nav to page, display content, etc)</span>
+</span><span class="hll">    <span class="bp">print</span><span class="p">(</span><span class="n">params</span> <span class="k">as</span><span class="p">?</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">AnyObject</span><span class="p">]</span> <span class="p">??</span> <span class="p">{})</span>
+</span><span class="hll">  <span class="p">}</span>
+</span>  <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">app</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">open</span> <span class="n">url</span><span class="p">:</span> <span class="n">URL</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="p">[</span><span class="n">UIApplicationOpenURLOptionsKey</span> <span class="p">:</span> <span class="nb">Any</span><span class="p">]</span> <span class="p">=</span> <span class="p">[:])</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// handler for URI Schemes (depreciated in iOS 9.2+, but still used by some apps)</span>
+</span><span class="hll">  <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">application</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">open</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="n">options</span><span class="p">)</span>
+</span>  <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="k">continue</span> <span class="n">userActivity</span><span class="p">:</span> <span class="bp">NSUserActivity</span><span class="p">,</span> <span class="n">restorationHandler</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="p">([</span><span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Void</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// handler for Universal Links</span>
+</span><span class="hll">  <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="k">continue</span><span class="p">(</span><span class="n">userActivity</span><span class="p">)</span>
+</span>  <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didReceiveRemoteNotification</span> <span class="n">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="n">AnyHashable</span> <span class="p">:</span> <span class="nb">Any</span><span class="p">],</span> <span class="n">fetchCompletionHandler</span> <span class="n">completionHandler</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="p">(</span><span class="n">UIBackgroundFetchResult</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Void</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// handler for Push Notifications</span>
+</span><span class="hll">  <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">handlePushNotification</span><span class="p">(</span><span class="n">userInfo</span><span class="p">)</span>
+</span><span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p>```objc hl_lines="2 11 12 13 14 15 16 17 22 23 28 29 34 35"</p>
-<h1 id="import-appdelegateh">import "AppDelegate.h"<a class="headerlink" href="#import-appdelegateh" title="Permanent link">&para;</a></h1>
-<h1 id="import-branchbranchh">import "Branch/Branch.h"<a class="headerlink" href="#import-branchbranchh" title="Permanent link">&para;</a></h1>
-<p>@interface AppDelegate ()</p>
-<p>@end</p>
-<p>@implementation AppDelegate</p>
-<ul>
-<li>
-<p>(BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions {
-  // for debug and development only
-  [[Branch getInstance] setDebug];
-  // listener for Branch Deep Link data
-  [[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
-    // do stuff with deep link data (nav to page, display content, etc)
-    NSLog(@"%@", params);
-  }];
-  return YES;
-}</p>
-</li>
-<li>
-<p>(BOOL)application:(UIApplication <em>)app openURL:(NSURL </em>)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-  // handler for URI Schemes (depreciated in iOS 9.2+, but still used by some apps)
-  [[Branch getInstance] application:app openURL:url options:options];
-  return YES;
-}</p>
-</li>
-<li>
-<p>(BOOL)application:(UIApplication <em>)application continueUserActivity:(NSUserActivity </em>)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
-  // handler for Universal Links
-  [[Branch getInstance] continueUserActivity:userActivity];
-  return YES;
-}</p>
-</li>
-<li>
-<p>(void)application:(UIApplication <em>)application didReceiveRemoteNotification:(NSDictionary </em>)userInfo {
-  // handler for Push Notifications
-  [[Branch getInstance] handlePushNotification:userInfo];
-}</p>
-</li>
-</ul>
-<p>@end
-```</p>
+<div class="codehilite"><pre><span></span><span class="cp">#import &quot;AppDelegate.h&quot;</span>
+<span class="hll"><span class="cp">#import &quot;Branch/Branch.h&quot;</span>
+</span>
+<span class="k">@interface</span> <span class="nc">AppDelegate</span> <span class="p">()</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">AppDelegate</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// for debug and development only</span>
+</span><span class="hll">  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">setDebug</span><span class="p">];</span>
+</span><span class="hll">  <span class="c1">// listener for Branch Deep Link data</span>
+</span><span class="hll">  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">initSessionWithLaunchOptions</span><span class="p">:</span><span class="n">launchOptions</span> <span class="nl">andRegisterDeepLinkHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">params</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">    <span class="c1">// do stuff with deep link data (nav to page, display content, etc)</span>
+</span><span class="hll">    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
+</span><span class="hll">  <span class="p">}];</span>
+</span>  <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">app</span> <span class="nf">openURL:</span><span class="p">(</span><span class="bp">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">url</span> <span class="nf">options:</span><span class="p">(</span><span class="bp">NSDictionary</span><span class="o">&lt;</span><span class="n">UIApplicationOpenURLOptionsKey</span><span class="p">,</span><span class="kt">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">options</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// handler for URI Schemes (depreciated in iOS 9.2+, but still used by some apps)</span>
+</span><span class="hll">  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">application</span><span class="p">:</span><span class="n">app</span> <span class="nl">openURL</span><span class="p">:</span><span class="n">url</span> <span class="nl">options</span><span class="p">:</span><span class="n">options</span><span class="p">];</span>
+</span>  <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">continueUserActivity:</span><span class="p">(</span><span class="bp">NSUserActivity</span> <span class="o">*</span><span class="p">)</span><span class="nv">userActivity</span> <span class="nf">restorationHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="bp">NSArray</span> <span class="o">*</span> <span class="n">_Nullable</span><span class="p">))</span><span class="nv">restorationHandler</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// handler for Universal Links</span>
+</span><span class="hll">  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">continueUserActivity</span><span class="p">:</span><span class="n">userActivity</span><span class="p">];</span>
+</span>  <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didReceiveRemoteNotification:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">userInfo</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// handler for Push Notifications</span>
+</span><span class="hll">  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">handlePushNotification</span><span class="p">:</span><span class="n">userInfo</span><span class="p">];</span>
+</span><span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2517,63 +3033,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {</p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// required: canonicalIdentifier or title
-// recommended: title, contentDescription, imageUrl for social media cards
-let buo = BranchUniversalObject(canonicalIdentifier: "content/123")
-buo.canonicalUrl = "https://example.com/content/123"
-buo.title = "Content 123 Title"
-buo.contentDescription = "Content 123 Description (Date())"
-buo.imageUrl = "http://lorempixel.com/400/400/"
-buo.keywords = ["awesome", "things"]</p>
-<p>// index on Apple Spotlight
-buo.locallyIndex = true</p>
-<p>// index on Google, Branch, etc
-buo.publiclyIndex = true</p>
-<p>// additional object details
-buo.contentMetadata.contentSchema = .commerceRestaurant
-buo.contentMetadata.quantity = 12
-buo.contentMetadata.price = 33.44
-buo.contentMetadata.currency = .USD
-buo.contentMetadata.sku = "123"
-buo.contentMetadata.productName = "grapes"
-buo.contentMetadata.productBrand = "welch"
-buo.contentMetadata.productCategory = BNCProductCategory.foodBeverageTobacco
-buo.contentMetadata.productVariant = "bulk"
-buo.contentMetadata.condition = .good
-buo.contentMetadata.ratingAverage = 4.5
-buo.contentMetadata.ratingCount = 78
-buo.contentMetadata.ratingMax = 5
-buo.contentMetadata.addressStreet = "123 Over Here"
-buo.contentMetadata.addressCity = "Austin"
-buo.contentMetadata.addressRegion = "Texas"
-buo.contentMetadata.addressCountry = "USA"
-buo.contentMetadata.addressPostalCode = "76035"
-buo.contentMetadata.latitude = 30.267153
-buo.contentMetadata.longitude = -97.743061</p>
-<p>// custom key-value pairs
-buo.contentMetadata.imageCaptions = ["awesome", "things"]
-buo.contentMetadata.customMetadata = ["custom": "123"]
-buo.contentMetadata.customMetadata = ["anything": "everything"]</p>
-<p>// user actions with the object
-buo.userCompletedAction(BranchStandardEvent.addToCart.rawValue)
-buo.userCompletedAction("Viewed")
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// required: canonicalIdentifier or title</span>
+<span class="c1">// recommended: title, contentDescription, imageUrl for social media cards</span>
+<span class="kd">let</span> <span class="nv">buo</span> <span class="p">=</span> <span class="n">BranchUniversalObject</span><span class="p">(</span><span class="n">canonicalIdentifier</span><span class="p">:</span> <span class="s">&quot;content/123&quot;</span><span class="p">)</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">canonicalUrl</span> <span class="p">=</span> <span class="s">&quot;https://example.com/content/123&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;Content 123 Title&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentDescription</span> <span class="p">=</span> <span class="s">&quot;Content 123 Description </span><span class="si">\(</span><span class="n">Date</span><span class="si">())</span><span class="s">&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">imageUrl</span> <span class="p">=</span> <span class="s">&quot;http://lorempixel.com/400/400/&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">keywords</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;awesome&quot;</span><span class="p">,</span> <span class="s">&quot;things&quot;</span><span class="p">]</span>
+
+<span class="c1">// index on Apple Spotlight</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">locallyIndex</span> <span class="p">=</span> <span class="kc">true</span>
+
+<span class="c1">// index on Google, Branch, etc</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">publiclyIndex</span> <span class="p">=</span> <span class="kc">true</span>
+
+<span class="c1">// additional object details</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">contentSchema</span> <span class="p">=</span> <span class="p">.</span><span class="n">commerceRestaurant</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">quantity</span> <span class="p">=</span> <span class="mi">12</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">price</span> <span class="p">=</span> <span class="mf">33.44</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">currency</span> <span class="p">=</span> <span class="p">.</span><span class="n">USD</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">sku</span> <span class="p">=</span> <span class="s">&quot;123&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productName</span> <span class="p">=</span> <span class="s">&quot;grapes&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productBrand</span> <span class="p">=</span> <span class="s">&quot;welch&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productCategory</span> <span class="p">=</span> <span class="n">BNCProductCategory</span><span class="p">.</span><span class="n">foodBeverageTobacco</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productVariant</span> <span class="p">=</span> <span class="s">&quot;bulk&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">condition</span> <span class="p">=</span> <span class="p">.</span><span class="n">good</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">ratingAverage</span> <span class="p">=</span> <span class="mf">4.5</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">ratingCount</span> <span class="p">=</span> <span class="mi">78</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">ratingMax</span> <span class="p">=</span> <span class="mi">5</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">addressStreet</span> <span class="p">=</span> <span class="s">&quot;123 Over Here&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">addressCity</span> <span class="p">=</span> <span class="s">&quot;Austin&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">addressRegion</span> <span class="p">=</span> <span class="s">&quot;Texas&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">addressCountry</span> <span class="p">=</span> <span class="s">&quot;USA&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">addressPostalCode</span> <span class="p">=</span> <span class="s">&quot;76035&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">latitude</span> <span class="p">=</span> <span class="mf">30.267153</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">longitude</span> <span class="p">=</span> <span class="o">-</span><span class="mf">97.743061</span>
+
+<span class="c1">// custom key-value pairs</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">imageCaptions</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;awesome&quot;</span><span class="p">,</span> <span class="s">&quot;things&quot;</span><span class="p">]</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">customMetadata</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;custom&quot;</span><span class="p">:</span> <span class="s">&quot;123&quot;</span><span class="p">]</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">customMetadata</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;anything&quot;</span><span class="p">:</span> <span class="s">&quot;everything&quot;</span><span class="p">]</span>
+
+<span class="c1">// user actions with the object</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">userCompletedAction</span><span class="p">(</span><span class="n">BranchStandardEvent</span><span class="p">.</span><span class="n">addToCart</span><span class="p">.</span><span class="n">rawValue</span><span class="p">)</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">userCompletedAction</span><span class="p">(</span><span class="s">&quot;Viewed&quot;</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>objc
-// only canonical identifier is required
-BranchUniversalObject *buo = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"content/123"];
-buo.title = @"Content 123 Title";
-buo.contentDescription = @"Content 123 Description";
-buo.imageUrl = @"https://lorempixel.com/400/400";
-buo.price = 12.12;
-buo.currency = @"USD";
-buo.contentIndexMode = ContentIndexModePublic;
-buo.automaticallyListOnSpotlight = YES;
-[buo addMetadataKey:@"custom" value:[[NSUUID UUID] UUIDString]];
-[buo addMetadataKey:@"anything" value:@"everything"];</code></p>
+<div class="codehilite"><pre><span></span><span class="c1">// only canonical identifier is required</span>
+<span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">buo</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchUniversalObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCanonicalIdentifier</span><span class="p">:</span><span class="s">@&quot;content/123&quot;</span><span class="p">];</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">@&quot;Content 123 Title&quot;</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentDescription</span> <span class="o">=</span> <span class="s">@&quot;Content 123 Description&quot;</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">imageUrl</span> <span class="o">=</span> <span class="s">@&quot;https://lorempixel.com/400/400&quot;</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">price</span> <span class="o">=</span> <span class="mf">12.12</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">currency</span> <span class="o">=</span> <span class="s">@&quot;USD&quot;</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentIndexMode</span> <span class="o">=</span> <span class="n">ContentIndexModePublic</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">automaticallyListOnSpotlight</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">[</span><span class="n">buo</span> <span class="nl">addMetadataKey</span><span class="p">:</span><span class="s">@&quot;custom&quot;</span> <span class="nl">value</span><span class="p">:[[</span><span class="bp">NSUUID</span> <span class="n">UUID</span><span class="p">]</span> <span class="n">UUIDString</span><span class="p">]];</span>
+<span class="p">[</span><span class="n">buo</span> <span class="nl">addMetadataKey</span><span class="p">:</span><span class="s">@&quot;anything&quot;</span> <span class="nl">value</span><span class="p">:</span><span class="s">@&quot;everything&quot;</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2591,43 +3113,47 @@ buo.automaticallyListOnSpotlight = YES;
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-let lp: BranchLinkProperties = BranchLinkProperties()
-lp.channel = "facebook"
-lp.feature = "sharing"
-lp.campaign = "content 123 launch"
-lp.stage = "new user"
-lp.tags = ["one", "two", "three"]</p>
-<p>lp.addControlParam("$desktop_url", withValue: "http://example.com/desktop")
-lp.addControlParam("$ios_url", withValue: "http://example.com/ios")
-lp.addControlParam("$ipad_url", withValue: "http://example.com/ios")
-lp.addControlParam("$android_url", withValue: "http://example.com/android")
-lp.addControlParam("$match_duration", withValue: "2000")</p>
-<p>lp.addControlParam("custom_data", withValue: "yes")
-lp.addControlParam("look_at", withValue: "this")
-lp.addControlParam("nav_to", withValue: "over here")
-lp.addControlParam("random", withValue: UUID.init().uuidString)
-```</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">lp</span><span class="p">:</span> <span class="n">BranchLinkProperties</span> <span class="p">=</span> <span class="n">BranchLinkProperties</span><span class="p">()</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">channel</span> <span class="p">=</span> <span class="s">&quot;facebook&quot;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">feature</span> <span class="p">=</span> <span class="s">&quot;sharing&quot;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">campaign</span> <span class="p">=</span> <span class="s">&quot;content 123 launch&quot;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">stage</span> <span class="p">=</span> <span class="s">&quot;new user&quot;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">tags</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;one&quot;</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">,</span> <span class="s">&quot;three&quot;</span><span class="p">]</span>
+
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$desktop_url&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;http://example.com/desktop&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$ios_url&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;http://example.com/ios&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$ipad_url&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;http://example.com/ios&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$android_url&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;http://example.com/android&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$match_duration&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;2000&quot;</span><span class="p">)</span>
+
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;custom_data&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;yes&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;look_at&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;this&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;nav_to&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;over here&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;random&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="n">UUID</span><span class="p">.</span><span class="kd">init</span><span class="p">().</span><span class="n">uuidString</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p>```objc
-BranchLinkProperties *lp = [[BranchLinkProperties alloc] init];
-lp.feature = @"facebook";
-lp.channel = @"sharing";
-lp.campaign = @"content 123 launch";
-lp.stage = @"new user";
-lp.tags = @[@"one", @"two", @"three"];</p>
-<p>[lp addControlParam:@"$desktop_url" withValue: @"http://example.com/desktop"];
-[lp addControlParam:@"$ios_url" withValue: @"http://example.com/ios"];
-[lp addControlParam:@"$ipad_url" withValue: @"http://example.com/ios"];
-[lp addControlParam:@"$android_url" withValue: @"http://example.com/android"];
-[lp addControlParam:@"$match_duration" withValue: @"2000"];</p>
-<p>[lp addControlParam:@"custom_data" withValue: @"yes"];
-[lp addControlParam:@"look_at" withValue: @"this"];
-[lp addControlParam:@"nav_to" withValue: @"over here"];
-[lp addControlParam:@"random" withValue: [[NSUUID UUID] UUIDString]];
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">BranchLinkProperties</span> <span class="o">*</span><span class="n">lp</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchLinkProperties</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">feature</span> <span class="o">=</span> <span class="s">@&quot;facebook&quot;</span><span class="p">;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">channel</span> <span class="o">=</span> <span class="s">@&quot;sharing&quot;</span><span class="p">;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">campaign</span> <span class="o">=</span> <span class="s">@&quot;content 123 launch&quot;</span><span class="p">;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">stage</span> <span class="o">=</span> <span class="s">@&quot;new user&quot;</span><span class="p">;</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">tags</span> <span class="o">=</span> <span class="l">@[</span><span class="s">@&quot;one&quot;</span><span class="p">,</span> <span class="s">@&quot;two&quot;</span><span class="p">,</span> <span class="s">@&quot;three&quot;</span><span class="l">]</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$desktop_url&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;http://example.com/desktop&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$ios_url&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;http://example.com/ios&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$ipad_url&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;http://example.com/ios&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$android_url&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;http://example.com/android&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$match_duration&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;2000&quot;</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;custom_data&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;yes&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;look_at&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;this&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;nav_to&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;over here&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;random&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="p">[[</span><span class="bp">NSUUID</span> <span class="n">UUID</span><span class="p">]</span> <span class="n">UUIDString</span><span class="p">]];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2648,19 +3174,21 @@ lp.tags = @[@"one", @"two", @"three"];</p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-buo.getShortUrl(with: lp) { (url, error) in
-  print(url ?? "")
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">buo</span><span class="p">.</span><span class="n">getShortUrl</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="n">lp</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+  <span class="bp">print</span><span class="p">(</span><span class="n">url</span> <span class="p">??</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>objc
-[buo getShortUrlWithLinkProperties:lp andCallback:^(NSString* url, NSError* error) {
-    if (!error) {
-        NSLog(@"@", url);
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">buo</span> <span class="nl">getShortUrlWithLinkProperties</span><span class="p">:</span><span class="n">lp</span> <span class="nl">andCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSString</span><span class="o">*</span> <span class="n">url</span><span class="p">,</span> <span class="bp">NSError</span><span class="o">*</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;@&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2681,18 +3209,20 @@ buo.getShortUrl(with: lp) { (url, error) in
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-let message = "Check out this link"
-buo.showShareSheet(with: lp, andShareText: message, from: self) { (activityType, completed) in
-  print(activityType ?? "")
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">message</span> <span class="p">=</span> <span class="s">&quot;Check out this link&quot;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">showShareSheet</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="n">lp</span><span class="p">,</span> <span class="n">andShareText</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">activityType</span><span class="p">,</span> <span class="n">completed</span><span class="p">)</span> <span class="k">in</span>
+  <span class="bp">print</span><span class="p">(</span><span class="n">activityType</span> <span class="p">??</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[buo showShareSheetWithLinkProperties:lp andShareText:@"Super amazing thing I want to share!" fromViewController:self completion:^(NSString* activityType, BOOL completed) {
-    NSLog(@"finished presenting");
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">buo</span> <span class="nl">showShareSheetWithLinkProperties</span><span class="p">:</span><span class="n">lp</span> <span class="nl">andShareText</span><span class="p">:</span><span class="s">@&quot;Super amazing thing I want to share!&quot;</span> <span class="nl">fromViewController</span><span class="p">:</span><span class="nb">self</span> <span class="nl">completion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSString</span><span class="o">*</span> <span class="n">activityType</span><span class="p">,</span> <span class="kt">BOOL</span> <span class="n">completed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;finished presenting&quot;</span><span class="p">);</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2710,33 +3240,37 @@ buo.showShareSheet(with: lp, andShareText: message, from: self) { (activityType,
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// listener (within AppDelegate didFinishLaunchingWithOptions)
-Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
-  print(params as? [String: AnyObject] ?? {})
-}</p>
-<p>// latest
-let sessionParams = Branch.getInstance().getLatestReferringParams()</p>
-<p>// first
-let installParams = Branch.getInstance().getFirstReferringParams()
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// listener (within AppDelegate didFinishLaunchingWithOptions)</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">initSession</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">)</span> <span class="p">{</span> <span class="n">params</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+  <span class="bp">print</span><span class="p">(</span><span class="n">params</span> <span class="k">as</span><span class="p">?</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">AnyObject</span><span class="p">]</span> <span class="p">??</span> <span class="p">{})</span>
+<span class="p">}</span>
+
+<span class="c1">// latest</span>
+<span class="kd">let</span> <span class="nv">sessionParams</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getLatestReferringParams</span><span class="p">()</span>
+
+<span class="c1">// first</span>
+<span class="kd">let</span> <span class="nv">installParams</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getFirstReferringParams</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p>```objc
-[[Branch getInstance] initSessionWithLaunchOptions:launchOptions
-                        andRegisterDeepLinkHandler:^(NSDictionary * _Nullable params,
-                                                     NSError * _Nullable error) {
-    if (!error) {
-        //Referring params
-        NSLog(@"Referring link params %@",params);
-    }
-}];</p>
-<p>// latest
-NSDictionary *sessionParams = [[Branch getInstance] getLatestReferringParams];</p>
-<p>// first
-NSDictionary *installParams =  [[Branch getInstance] getFirstReferringParams];</p>
-<p>```</p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">initSessionWithLaunchOptions</span><span class="p">:</span><span class="n">launchOptions</span>
+                        <span class="nl">andRegisterDeepLinkHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">params</span><span class="p">,</span>
+                                                     <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//Referring params</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Referring link params %@&quot;</span><span class="p">,</span><span class="n">params</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="c1">// latest</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">sessionParams</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getLatestReferringParams</span><span class="p">];</span>
+
+<span class="c1">// first</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">installParams</span> <span class="o">=</span>  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getFirstReferringParams</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2748,51 +3282,57 @@ NSDictionary *installParams =  [[Branch getInstance] getFirstReferringParams];</
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// within AppDelegate application.didFinishLaunchingWithOptions
-Branch.getInstance().initSession(launchOptions: launchOptions) { params , error in
-  // Option 1: read deep link data
-  guard let data = params as? [String: AnyObject] else { return }</p>
-<p>// Option 2: save deep link data to global model
-  SomeCustomClass.sharedInstance.branchData = data</p>
-<p>// Option 3: display data
-  let alert = UIAlertController(title: "Deep link data", message: "(data)", preferredStyle: .alert)
-  alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-  self.window?.rootViewController?.present(alert, animated: true, completion: nil)</p>
-<p>// Option 4: navigate to view controller
-  guard let options = data["nav_to"] as? String else { return }
-  switch options {
-      case "landing_page": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
-      case "tutorial": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
-      case "content": self.window?.rootViewController?.present( SecondViewController(), animated: true, completion: nil)
-      default: break
-  }
-}
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// within AppDelegate application.didFinishLaunchingWithOptions</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">initSession</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">)</span> <span class="p">{</span> <span class="n">params</span> <span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+  <span class="c1">// Option 1: read deep link data</span>
+  <span class="k">guard</span> <span class="kd">let</span> <span class="nv">data</span> <span class="p">=</span> <span class="n">params</span> <span class="k">as</span><span class="p">?</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">AnyObject</span><span class="p">]</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+
+  <span class="c1">// Option 2: save deep link data to global model</span>
+  <span class="n">SomeCustomClass</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">.</span><span class="n">branchData</span> <span class="p">=</span> <span class="n">data</span>
+
+  <span class="c1">// Option 3: display data</span>
+  <span class="kd">let</span> <span class="nv">alert</span> <span class="p">=</span> <span class="bp">UIAlertController</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">&quot;Deep link data&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">data</span><span class="si">)</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">preferredStyle</span><span class="p">:</span> <span class="p">.</span><span class="n">alert</span><span class="p">)</span>
+  <span class="n">alert</span><span class="p">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">UIAlertAction</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">&quot;Okay&quot;</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="p">.</span><span class="k">default</span><span class="p">,</span> <span class="n">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+  <span class="kc">self</span><span class="p">.</span><span class="n">window</span><span class="p">?.</span><span class="n">rootViewController</span><span class="p">?.</span><span class="n">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+
+  <span class="c1">// Option 4: navigate to view controller</span>
+  <span class="k">guard</span> <span class="kd">let</span> <span class="nv">options</span> <span class="p">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;nav_to&quot;</span><span class="p">]</span> <span class="k">as</span><span class="p">?</span> <span class="nb">String</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+  <span class="k">switch</span> <span class="n">options</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="s">&quot;landing_page&quot;</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">window</span><span class="p">?.</span><span class="n">rootViewController</span><span class="p">?.</span><span class="n">present</span><span class="p">(</span> <span class="n">SecondViewController</span><span class="p">(),</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+      <span class="k">case</span> <span class="s">&quot;tutorial&quot;</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">window</span><span class="p">?.</span><span class="n">rootViewController</span><span class="p">?.</span><span class="n">present</span><span class="p">(</span> <span class="n">SecondViewController</span><span class="p">(),</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+      <span class="k">case</span> <span class="s">&quot;content&quot;</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">window</span><span class="p">?.</span><span class="n">rootViewController</span><span class="p">?.</span><span class="n">present</span><span class="p">(</span> <span class="n">SecondViewController</span><span class="p">(),</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+      <span class="k">default</span><span class="p">:</span> <span class="k">break</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p>```objc
-// within AppDelegate application.didFinishLaunchingWithOptions
-[[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
-  // Option 1: read deep link data
-  NSLog(@"%@", params);</p>
-<p>// Option 2: save deep link data to global model
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setObject:params.description forKey:@"BranchData"];
-  [defaults synchronize];</p>
-<p>// Option 3: display data
-  UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Title" message:params.description preferredStyle:UIAlertControllerStyleAlert];
-  UIAlertAction *button = [UIAlertAction actionWithTitle:@"Deep Link Data" style:UIAlertActionStyleDefault handler:nil];
-  [alert addAction:button];
-  [self.window.rootViewController presentViewController:alert animated:YES completion:nil];</p>
-<p>// Option 4: navigate to view controller
-  if ([params objectForKey:@"navHere"]) {
-    ViewController *anotherViewController = [[ViewController alloc] initWithNibName:@"anotherViewController" bundle:nil];
-    [self.window.rootViewController presentViewController:anotherViewController animated:YES completion:nil];
-  }
-}];
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// within AppDelegate application.didFinishLaunchingWithOptions</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">initSessionWithLaunchOptions</span><span class="p">:</span><span class="n">launchOptions</span> <span class="nl">andRegisterDeepLinkHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">params</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Option 1: read deep link data</span>
+  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
+
+  <span class="c1">// Option 2: save deep link data to global model</span>
+  <span class="bp">NSUserDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSUserDefaults</span> <span class="n">standardUserDefaults</span><span class="p">];</span>
+  <span class="p">[</span><span class="n">defaults</span> <span class="nl">setObject</span><span class="p">:</span><span class="n">params</span><span class="p">.</span><span class="n">description</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;BranchData&quot;</span><span class="p">];</span>
+  <span class="p">[</span><span class="n">defaults</span> <span class="n">synchronize</span><span class="p">];</span>
+
+  <span class="c1">// Option 3: display data</span>
+  <span class="bp">UIAlertController</span> <span class="o">*</span> <span class="n">alert</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIAlertController</span> <span class="nl">alertControllerWithTitle</span><span class="p">:</span><span class="s">@&quot;Title&quot;</span> <span class="nl">message</span><span class="p">:</span><span class="n">params</span><span class="p">.</span><span class="n">description</span> <span class="nl">preferredStyle</span><span class="p">:</span><span class="n">UIAlertControllerStyleAlert</span><span class="p">];</span>
+  <span class="bp">UIAlertAction</span> <span class="o">*</span><span class="n">button</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIAlertAction</span> <span class="nl">actionWithTitle</span><span class="p">:</span><span class="s">@&quot;Deep Link Data&quot;</span> <span class="nl">style</span><span class="p">:</span><span class="n">UIAlertActionStyleDefault</span> <span class="nl">handler</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+  <span class="p">[</span><span class="n">alert</span> <span class="nl">addAction</span><span class="p">:</span><span class="n">button</span><span class="p">];</span>
+  <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">rootViewController</span> <span class="nl">presentViewController</span><span class="p">:</span><span class="n">alert</span> <span class="nl">animated</span><span class="p">:</span><span class="nb">YES</span> <span class="nl">completion</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+
+  <span class="c1">// Option 4: navigate to view controller</span>
+  <span class="k">if</span> <span class="p">([</span><span class="n">params</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;navHere&quot;</span><span class="p">])</span> <span class="p">{</span>
+    <span class="n">ViewController</span> <span class="o">*</span><span class="n">anotherViewController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">ViewController</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithNibName</span><span class="p">:</span><span class="s">@&quot;anotherViewController&quot;</span> <span class="nl">bundle</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+    <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">rootViewController</span> <span class="nl">presentViewController</span><span class="p">:</span><span class="n">anotherViewController</span> <span class="nl">animated</span><span class="p">:</span><span class="nb">YES</span> <span class="nl">completion</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2807,13 +3347,15 @@ Branch.getInstance().initSession(launchOptions: launchOptions) { params , error 
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-buo.automaticallyListOnSpotlight = true</code></p>
+<div class="codehilite"><pre><span></span><span class="n">buo</span><span class="p">.</span><span class="n">automaticallyListOnSpotlight</span> <span class="p">=</span> <span class="kc">true</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>objc
-buo.automaticallyListOnSpotlight = YES;</code></p>
+<div class="codehilite"><pre><span></span><span class="n">buo</span><span class="p">.</span><span class="n">automaticallyListOnSpotlight</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2831,13 +3373,15 @@ buo.automaticallyListOnSpotlight = YES;</code></p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-buo.registerView()</code></p>
+<div class="codehilite"><pre><span></span><span class="n">buo</span><span class="p">.</span><span class="n">registerView</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>objc
-[buo userCompletedAction:BNCRegisterViewEvent];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">buo</span> <span class="nl">userCompletedAction</span><span class="p">:</span><span class="n">BNCRegisterViewEvent</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2852,21 +3396,23 @@ buo.registerView()</code></p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// login
-Branch.getInstance().setIdentity("your_user_id")</p>
-<p>// logout
-Branch.getInstance().logout()
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// login</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">setIdentity</span><span class="p">(</span><span class="s">&quot;your_user_id&quot;</span><span class="p">)</span>
+
+<span class="c1">// logout</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">logout</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p>```objc
-// login
-[[Branch getInstance] setIdentity:@"your_user_id"];</p>
-<p>// logout
-[[Branch getInstance] logout];
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// login</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">setIdentity</span><span class="p">:</span><span class="s">@&quot;your_user_id&quot;</span><span class="p">];</span>
+
+<span class="c1">// logout</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">logout</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2887,28 +3433,30 @@ Branch.getInstance().logout()
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// option 1
-let action = "signup"
-Branch.getInstance().userCompletedAction(action)</p>
-<p>// option 2
-let metadata: [String: Any] = [
-  "custom_dictionary": 123,
-  "anything": "everything"
-]
-Branch.getInstance().userCompletedAction(action, withState: metadata)
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// option 1</span>
+<span class="kd">let</span> <span class="nv">action</span> <span class="p">=</span> <span class="s">&quot;signup&quot;</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">userCompletedAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+<span class="c1">// option 2</span>
+<span class="kd">let</span> <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span>
+  <span class="s">&quot;custom_dictionary&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s">&quot;anything&quot;</span><span class="p">:</span> <span class="s">&quot;everything&quot;</span>
+<span class="p">]</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">userCompletedAction</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">withState</span><span class="p">:</span> <span class="n">metadata</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p>```objc
-// option 1
-NSString *action = @"signup";
-[[Branch getInstance] userCompletedAction:action];</p>
-<p>// option 2
-NSDictionary *metadata = @{@"custom_dictionary":@123, @"anything": @"everything"};
-[[Branch getInstance] userCompletedAction:action withState:metadata];
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// option 1</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">action</span> <span class="o">=</span> <span class="s">@&quot;signup&quot;</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">userCompletedAction</span><span class="p">:</span><span class="n">action</span><span class="p">];</span>
+
+<span class="c1">// option 2</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">metadata</span> <span class="o">=</span> <span class="l">@{</span><span class="s">@&quot;custom_dictionary&quot;</span><span class="o">:</span><span class="mi">@123</span><span class="p">,</span> <span class="s">@&quot;anything&quot;</span><span class="o">:</span> <span class="s">@&quot;everything&quot;</span><span class="l">}</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">userCompletedAction</span><span class="p">:</span><span class="n">action</span> <span class="nl">withState</span><span class="p">:</span><span class="n">metadata</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2926,84 +3474,94 @@ NSDictionary *metadata = @{@"custom_dictionary":@123, @"anything": @"everything"
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// only revenue is required
-let commerceEvent = BNCCommerceEvent.init()
-commerceEvent.affiliation = "affiliation"
-commerceEvent.coupon = "coupon"
-commerceEvent.currency = "USD"
-commerceEvent.transactionID = "transactionID"
-commerceEvent.shipping = 11.22
-commerceEvent.revenue = 99.99
-commerceEvent.tax = 4.42</p>
-<p>// optional
-let product1 = BNCProduct.init()
-product1.sku = "sku1"
-product1.name = "name1"
-product1.price = 11.11
-product1.quantity = 1
-product1.brand = "brand1"
-product1.category = "category1"
-product1.variant = "variant1"</p>
-<p>// optional
-let product2 = BNCProduct.init()
-product2.sku = "sku2"
-product2.name = "name2"
-product2.price = 22.22
-product2.quantity = 2
-product2.brand = "brand2"
-product2.category = "category2"
-product2.variant = "variant2"</p>
-<p>commerceEvent.products = [product1, product2]</p>
-<p>// optional
-let metadata: [String: Any] = [
-  "custom_dictionary": 123,
-  "anything": "everything"
-]</p>
-<p>Branch.getInstance().send(commerceEvent, metadata: metadata, withCompletion: { (response, error) in
-  print(response ?? {})
-})
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// only revenue is required</span>
+<span class="kd">let</span> <span class="nv">commerceEvent</span> <span class="p">=</span> <span class="n">BNCCommerceEvent</span><span class="p">.</span><span class="kd">init</span><span class="p">()</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">affiliation</span> <span class="p">=</span> <span class="s">&quot;affiliation&quot;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">coupon</span> <span class="p">=</span> <span class="s">&quot;coupon&quot;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">currency</span> <span class="p">=</span> <span class="s">&quot;USD&quot;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">transactionID</span> <span class="p">=</span> <span class="s">&quot;transactionID&quot;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">shipping</span> <span class="p">=</span> <span class="mf">11.22</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">revenue</span> <span class="p">=</span> <span class="mf">99.99</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">tax</span> <span class="p">=</span> <span class="mf">4.42</span>
+
+<span class="c1">// optional</span>
+<span class="kd">let</span> <span class="nv">product1</span> <span class="p">=</span> <span class="n">BNCProduct</span><span class="p">.</span><span class="kd">init</span><span class="p">()</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">sku</span> <span class="p">=</span> <span class="s">&quot;sku1&quot;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;name1&quot;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">price</span> <span class="p">=</span> <span class="mf">11.11</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">quantity</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">brand</span> <span class="p">=</span> <span class="s">&quot;brand1&quot;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">category</span> <span class="p">=</span> <span class="s">&quot;category1&quot;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">variant</span> <span class="p">=</span> <span class="s">&quot;variant1&quot;</span>
+
+<span class="c1">// optional</span>
+<span class="kd">let</span> <span class="nv">product2</span> <span class="p">=</span> <span class="n">BNCProduct</span><span class="p">.</span><span class="kd">init</span><span class="p">()</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">sku</span> <span class="p">=</span> <span class="s">&quot;sku2&quot;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;name2&quot;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">price</span> <span class="p">=</span> <span class="mf">22.22</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">quantity</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">brand</span> <span class="p">=</span> <span class="s">&quot;brand2&quot;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">category</span> <span class="p">=</span> <span class="s">&quot;category2&quot;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">variant</span> <span class="p">=</span> <span class="s">&quot;variant2&quot;</span>
+
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">products</span> <span class="p">=</span> <span class="p">[</span><span class="n">product1</span><span class="p">,</span> <span class="n">product2</span><span class="p">]</span>
+
+<span class="c1">// optional</span>
+<span class="kd">let</span> <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span>
+  <span class="s">&quot;custom_dictionary&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s">&quot;anything&quot;</span><span class="p">:</span> <span class="s">&quot;everything&quot;</span>
+<span class="p">]</span>
+
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">send</span><span class="p">(</span><span class="n">commerceEvent</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">withCompletion</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+  <span class="bp">print</span><span class="p">(</span><span class="n">response</span> <span class="p">??</span> <span class="p">{})</span>
+<span class="p">})</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p>```objc
- // only revenue is required
-BNCCommerceEvent *commerceEvent = [BNCCommerceEvent new];
-commerceEvent.affiliation = @"affiliation";
-commerceEvent.coupon = @"coupon";
-commerceEvent.currency = @"USD";
-commerceEvent.transactionID = @"transactionID";
-commerceEvent.shipping = [[NSDecimalNumber alloc] initWithFloat:11.22];
-commerceEvent.revenue = [[NSDecimalNumber alloc] initWithFloat:99.99];
-commerceEvent.tax = [[NSDecimalNumber alloc] initWithFloat:4.2];;</p>
-<p>// optional
-BNCProduct *product1 = [BNCProduct new];
-product1.sku = @"sku1";
-product1.name = @"name1";
-product1.price = [[NSDecimalNumber alloc] initWithFloat:11.11];
-product1.quantity = [[NSDecimalNumber alloc] initWithFloat:1.0];
-product1.brand = @"brand1";
-product1.category = @"category1";
-product1.variant = @"variant1";</p>
-<p>// optional
-BNCProduct *product2 = [BNCProduct new];
-product2.sku = @"sku2";
-product2.name = @"name2";
-product2.price = [[NSDecimalNumber alloc] initWithFloat:22.22];
-product2.quantity = [[NSDecimalNumber alloc] initWithFloat:2.0];
-product2.brand = @"brand2";
-product2.category = @"category2";
-product2.variant = @"variant2";</p>
-<p>commerceEvent.products = @[product1, product2];</p>
-<p>// optional
-NSDictionary *metadata = @{@"custom_dictionary":@123,
-                       @"anything": @"everything"};</p>
-<p>[[Branch getInstance] sendCommerceEvent:commerceEvent metadata:metadata
-                     withCompletion:^(NSDictionary <em>response, NSError </em>error) {
-    NSLog(@"%@",response);
-}];
-```</p>
+<div class="codehilite"><pre><span></span> <span class="c1">// only revenue is required</span>
+<span class="n">BNCCommerceEvent</span> <span class="o">*</span><span class="n">commerceEvent</span> <span class="o">=</span> <span class="p">[</span><span class="n">BNCCommerceEvent</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">affiliation</span> <span class="o">=</span> <span class="s">@&quot;affiliation&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">coupon</span> <span class="o">=</span> <span class="s">@&quot;coupon&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">currency</span> <span class="o">=</span> <span class="s">@&quot;USD&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">transactionID</span> <span class="o">=</span> <span class="s">@&quot;transactionID&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">shipping</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">11.22</span><span class="p">];</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">99.99</span><span class="p">];</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">tax</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">4.2</span><span class="p">];;</span>
+
+<span class="c1">// optional</span>
+<span class="n">BNCProduct</span> <span class="o">*</span><span class="n">product1</span> <span class="o">=</span> <span class="p">[</span><span class="n">BNCProduct</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">sku</span> <span class="o">=</span> <span class="s">@&quot;sku1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">@&quot;name1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">price</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">11.11</span><span class="p">];</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">1.0</span><span class="p">];</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">brand</span> <span class="o">=</span> <span class="s">@&quot;brand1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">category</span> <span class="o">=</span> <span class="s">@&quot;category1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">variant</span> <span class="o">=</span> <span class="s">@&quot;variant1&quot;</span><span class="p">;</span>
+
+<span class="c1">// optional</span>
+<span class="n">BNCProduct</span> <span class="o">*</span><span class="n">product2</span> <span class="o">=</span> <span class="p">[</span><span class="n">BNCProduct</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">sku</span> <span class="o">=</span> <span class="s">@&quot;sku2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">@&quot;name2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">price</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">22.22</span><span class="p">];</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">2.0</span><span class="p">];</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">brand</span> <span class="o">=</span> <span class="s">@&quot;brand2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">category</span> <span class="o">=</span> <span class="s">@&quot;category2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">variant</span> <span class="o">=</span> <span class="s">@&quot;variant2&quot;</span><span class="p">;</span>
+
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">products</span> <span class="o">=</span> <span class="l">@[</span><span class="n">product1</span><span class="p">,</span> <span class="n">product2</span><span class="l">]</span><span class="p">;</span>
+
+<span class="c1">// optional</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">metadata</span> <span class="o">=</span> <span class="l">@{</span><span class="s">@&quot;custom_dictionary&quot;</span><span class="o">:</span><span class="mi">@123</span><span class="p">,</span>
+                       <span class="s">@&quot;anything&quot;</span><span class="o">:</span> <span class="s">@&quot;everything&quot;</span><span class="l">}</span><span class="p">;</span>
+
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">sendCommerceEvent</span><span class="p">:</span><span class="n">commerceEvent</span> <span class="nl">metadata</span><span class="p">:</span><span class="n">metadata</span>
+                     <span class="nl">withCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3027,25 +3585,27 @@ NSDictionary *metadata = @{@"custom_dictionary":@123,
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// option 1 (default bucket)
-let amount = 5
-Branch.getInstance().redeemRewards(amount)</p>
-<p>// option 2
-let bucket = "signup"
-Branch.getInstance().redeemRewards(amount, forBucket: bucket)
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// option 1 (default bucket)</span>
+<span class="kd">let</span> <span class="nv">amount</span> <span class="p">=</span> <span class="mi">5</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">redeemRewards</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+
+<span class="c1">// option 2</span>
+<span class="kd">let</span> <span class="nv">bucket</span> <span class="p">=</span> <span class="s">&quot;signup&quot;</span>
+<span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">redeemRewards</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span> <span class="n">forBucket</span><span class="p">:</span> <span class="n">bucket</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p>```objc
-// option 1 (default bucket)
-NSInteger amount = 5;
-[[Branch getInstance] redeemRewards:amount];</p>
-<p>// option 2
-NSString *bucket = @"signup";
-[[Branch getInstance] redeemRewards:amount forBucket:bucket];
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// option 1 (default bucket)</span>
+<span class="n">NSInteger</span> <span class="n">amount</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">redeemRewards</span><span class="p">:</span><span class="n">amount</span><span class="p">];</span>
+
+<span class="c1">// option 2</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">bucket</span> <span class="o">=</span> <span class="s">@&quot;signup&quot;</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">redeemRewards</span><span class="p">:</span><span class="n">amount</span> <span class="nl">forBucket</span><span class="p">:</span><span class="n">bucket</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3054,32 +3614,31 @@ NSString *bucket = @"signup";
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-Branch.getInstance().loadRewards { (changed, error) in
-  // option 1 (defualt bucket)
-  let credits = Branch.getInstance().getCredits()</p>
-<p>// option 2
-  let bucket = "signup"
-  let credits = Branch.getInstance().getCreditsForBucket(bucket)
-}
-```</p>
-</li>
-<li>
-<p><em>Objective C</em></p>
-<p>```objc
-[[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError * _Nullable error) {
-    if (changed) {
-    // option 1 (defualt bucket)
-    NSInteger credits = [[Branch getInstance] getCredits];</p>
-<div class="codehilite"><pre><span></span><span class="c1">// option 2</span>
-<span class="bp">NSString</span> <span class="o">*</span><span class="n">bucket</span> <span class="o">=</span> <span class="s">@&quot;signup&quot;</span><span class="p">;</span>
-<span class="n">NSInteger</span> <span class="n">credit</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">getCreditsForBucket</span><span class="p">:</span><span class="n">bucket</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">loadRewards</span> <span class="p">{</span> <span class="p">(</span><span class="n">changed</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+  <span class="c1">// option 1 (defualt bucket)</span>
+  <span class="kd">let</span> <span class="nv">credits</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getCredits</span><span class="p">()</span>
+
+  <span class="c1">// option 2</span>
+  <span class="kd">let</span> <span class="nv">bucket</span> <span class="p">=</span> <span class="s">&quot;signup&quot;</span>
+  <span class="kd">let</span> <span class="nv">credits</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getCreditsForBucket</span><span class="p">(</span><span class="n">bucket</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
+</li>
+<li>
+<p><em>Objective C</em></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">loadRewardsWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">changed</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">changed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// option 1 (defualt bucket)</span>
+    <span class="n">NSInteger</span> <span class="n">credits</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getCredits</span><span class="p">];</span>
 
-<p>}];</p>
-<p>```</p>
+    <span class="c1">// option 2</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">bucket</span> <span class="o">=</span> <span class="s">@&quot;signup&quot;</span><span class="p">;</span>
+    <span class="n">NSInteger</span> <span class="n">credit</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">getCreditsForBucket</span><span class="p">:</span><span class="n">bucket</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3088,17 +3647,19 @@ Branch.getInstance().loadRewards { (changed, error) in
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().getCreditHistory { (creditHistory, error) in
-   print(creditHistory ?? {})
- }</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">getCreditHistory</span> <span class="p">{</span> <span class="p">(</span><span class="n">creditHistory</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+   <span class="bp">print</span><span class="p">(</span><span class="n">creditHistory</span> <span class="p">??</span> <span class="p">{})</span>
+ <span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[[Branch getInstance] getCreditHistoryWithCallback:^(NSArray * _Nullable creditHistory, NSError * _Nullable error) {
-    NSLog(@"%@",creditHistory);
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">getCreditHistoryWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSArray</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">creditHistory</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span><span class="n">creditHistory</span><span class="p">);</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3115,14 +3676,15 @@ Branch.getInstance().getCreditHistory { (creditHistory, error) in
 </li>
 <li>
 <p>Add a Branch deep link in your push notification  <code>payload</code></p>
-<p><code>json hl_lines="6"
-{
-  "aps": {
-    "alert": "Push notification with a Branch deep link",
-    "badge": "1"
-  },
-  "branch": "https://example.app.link/u3fzDwyyjF"
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;aps&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;alert&quot;</span><span class="p">:</span> <span class="s2">&quot;Push notification with a Branch deep link&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;badge&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+  <span class="p">},</span>
+<span class="hll">  <span class="nt">&quot;branch&quot;</span><span class="p">:</span> <span class="s2">&quot;https://example.app.link/u3fzDwyyjF&quot;</span>
+</span><span class="p">}</span>
+</pre></div>
+
 <ul>
 <li>Replace <code>https://example.app.link/u3fzDwyyjF</code> with your deep link</li>
 </ul>
@@ -3140,13 +3702,15 @@ Branch.getInstance().getCreditHistory { (creditHistory, error) in
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().handleDeepLink(withNewSession: URL(string: "https://example.app.link/u3fzDwyyjF"))</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">handleDeepLink</span><span class="p">(</span><span class="n">withNewSession</span><span class="p">:</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://example.app.link/u3fzDwyyjF&quot;</span><span class="p">))</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[[Branch getInstance] handleDeepLinkWithNewSession:[NSURL URLWithString:@"https://example.app.link/u3fzDwyyjF"]];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">handleDeepLinkWithNewSession</span><span class="p">:[</span><span class="bp">NSURL</span> <span class="nl">URLWithString</span><span class="p">:</span><span class="s">@&quot;https://example.app.link/u3fzDwyyjF&quot;</span><span class="p">]];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3170,13 +3734,15 @@ Branch.getInstance().handleDeepLink(withNewSession: URL(string: "https://example
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().delayInitToCheckForSearchAds()</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">delayInitToCheckForSearchAds</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[[Branch getInstance] delayInitToCheckForSearchAds];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">delayInitToCheckForSearchAds</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3185,13 +3751,15 @@ Branch.getInstance().delayInitToCheckForSearchAds()</code></p>
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().setAppleSearchAdsDebugMode()</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">setAppleSearchAdsDebugMode</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[[Branch getInstance] setAppleSearchAdsDebugMode];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">setAppleSearchAdsDebugMode</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3220,13 +3788,15 @@ in the Info.plist. It can be disabled with a call to the SDK.</p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().disableCookieBasedMatching()</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">disableCookieBasedMatching</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[[Branch getInstance] disableCookieBasedMatching];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">disableCookieBasedMatching</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3381,13 +3951,15 @@ Branch.getInstance().disableCookieBasedMatching()</code></p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().setDebug()</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">setDebug</span><span class="p">()</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[[Branch getInstance] setDebug];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">setDebug</span><span class="p">];</span>
+</pre></div>
+
 </li>
 <li>
 <p>Make sure <code>OS_ACTIVITY_MODE</code> is not disabled (<a href="https://stackoverflow.com/a/39503602/2690774">link</a>)</p>
@@ -3414,13 +3986,15 @@ Branch.getInstance().setDebug()</code></p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.setUseTestBranchKey(true)</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">setUseTestBranchKey</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[Branch setUseTestBranchKey:YES];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">Branch</span> <span class="nl">setUseTestBranchKey</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3446,13 +4020,15 @@ Branch.setUseTestBranchKey(true)</code></p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().registerDeepLinkController(ViewController(), forKey: "my-key", withPresentation: .optionShow)</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">registerDeepLinkController</span><span class="p">(</span><span class="n">ViewController</span><span class="p">(),</span> <span class="n">forKey</span><span class="p">:</span> <span class="s">&quot;my-key&quot;</span><span class="p">,</span> <span class="n">withPresentation</span><span class="p">:</span> <span class="p">.</span><span class="n">optionShow</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[[Branch getInstance] registerDeepLinkController:customViewController forKey:@"my-key"withPresentation:BNCViewControllerOptionShow];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">registerDeepLinkController</span><span class="p">:</span><span class="n">customViewController</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;my-key&quot;</span><span class="nl">withPresentation</span><span class="p">:</span><span class="n">BNCViewControllerOptionShow</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3478,19 +4054,21 @@ Branch.getInstance().registerDeepLinkController(ViewController(), forKey: "my-ke
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-lp.addControlParam("$email_subject", withValue: "Therapists hate him.")
-lp.addControlParam("$email_html_header", withValue: "&lt;style&gt;your awesome CSS&lt;/style&gt;\nOr Dear Friend,")
-lp.addControlParam("$email_html_footer", withValue: "Thanks!")
-lp.addControlParam("$email_html_link_text", withValue: "Tap here")</code></p>
+<div class="codehilite"><pre><span></span><span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$email_subject&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;Therapists hate him.&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$email_html_header&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;&lt;style&gt;your awesome CSS&lt;/style&gt;</span><span class="se">\n</span><span class="s">Or Dear Friend,&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$email_html_footer&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;Thanks!&quot;</span><span class="p">)</span>
+<span class="n">lp</span><span class="p">.</span><span class="n">addControlParam</span><span class="p">(</span><span class="s">&quot;$email_html_link_text&quot;</span><span class="p">,</span> <span class="n">withValue</span><span class="p">:</span> <span class="s">&quot;Tap here&quot;</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>objc
-[lp addControlParam:@"$email_subject" withValue:@"This one weird trick."];
-[lp addControlParam:@"$email_html_header" withValue:@"&lt;style&gt;your awesome CSS&lt;/style&gt;\nOr Dear Friend,"];
-[lp addControlParam:@"$email_html_footer" withValue:@"Thanks!"];
-[lp addControlParam:@"$email_html_link_text" withValue:@"Tap here"];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$email_subject&quot;</span> <span class="nl">withValue</span><span class="p">:</span><span class="s">@&quot;This one weird trick.&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$email_html_header&quot;</span> <span class="nl">withValue</span><span class="p">:</span><span class="s">@&quot;&lt;style&gt;your awesome CSS&lt;/style&gt;</span><span class="se">\n</span><span class="s">Or Dear Friend,&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$email_html_footer&quot;</span> <span class="nl">withValue</span><span class="p">:</span><span class="s">@&quot;Thanks!&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">lp</span> <span class="nl">addControlParam</span><span class="p">:</span><span class="s">@&quot;$email_html_link_text&quot;</span> <span class="nl">withValue</span><span class="p">:</span><span class="s">@&quot;Tap here&quot;</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3505,27 +4083,27 @@ lp.addControlParam("$email_html_link_text", withValue: "Tap here")</code></p>
 </li>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-// import delegate
-class ViewController: UITableViewController, BranchShareLinkDelegate</p>
-<p>func branchShareLinkWillShare(_ shareLink: BranchShareLink) {
-  // choose shareSheet.activityType
-  shareLink.shareText = "(shareLink.linkProperties.channel)"
-}
-```</p>
+<div class="codehilite"><pre><span></span><span class="c1">// import delegate</span>
+<span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UITableViewController</span><span class="p">,</span> <span class="n">BranchShareLinkDelegate</span>
+
+<span class="kd">func</span> <span class="nf">branchShareLinkWillShare</span><span class="p">(</span><span class="kc">_</span> <span class="n">shareLink</span><span class="p">:</span> <span class="n">BranchShareLink</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// choose shareSheet.activityType</span>
+  <span class="n">shareLink</span><span class="p">.</span><span class="n">shareText</span> <span class="p">=</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">shareLink</span><span class="p">.</span><span class="n">linkProperties</span><span class="p">.</span><span class="n">channel</span><span class="si">)</span><span class="s">&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p>```objc
-// import delegate
-@interface ViewController () <BranchShareLinkDelegate></p>
-<ul>
-<li>(void) branchShareLinkWillShare:(BranchShareLink*)shareLink {
-  // choose shareSheet.activityType
-  shareLink.shareText = [NSString stringWithFormat:@"@%", shareLink.linkProperties.channel];
-}
-```</li>
-</ul>
+<div class="codehilite"><pre><span></span><span class="c1">// import delegate</span>
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">BranchShareLinkDelegate</span><span class="o">&gt;</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nl">branchShareLinkWillShare</span><span class="p">:(</span><span class="n">BranchShareLink</span><span class="o">*</span><span class="p">)</span><span class="n">shareLink</span> <span class="p">{</span>
+  <span class="c1">// choose shareSheet.activityType</span>
+  <span class="n">shareLink</span><span class="p">.</span><span class="n">shareText</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;@%&quot;</span><span class="p">,</span> <span class="n">shareLink</span><span class="p">.</span><span class="n">linkProperties</span><span class="p">.</span><span class="n">channel</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -3683,7 +4261,7 @@ class ViewController: UITableViewController, BranchShareLinkDelegate</p>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3704,10 +4282,6 @@ class ViewController: UITableViewController, BranchShareLinkDelegate</p>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

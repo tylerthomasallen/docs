@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2341,12 +2341,10 @@
 <span class="p">[</span><span class="n">branch</span> <span class="n">initSession</span><span class="p">.....</span>
 </pre></div>
 
-
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">branch</span><span class="p">:</span> <span class="n">Branch</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">()</span>
 <span class="n">branch</span><span class="p">.</span><span class="n">delayInitToCheckForSearchAds</span><span class="p">()</span>
 <span class="n">branch</span><span class="p">.</span><span class="n">initSession</span><span class="p">.....</span>
 </pre></div>
-
 
 <p>If you're concerned about the additional 1 second latency, the call to <code>delayInitToCheckForSearchAds</code> can be called conditionally at run time. So, if you want to only check on first install, or the like, then just don't call this method.</p>
 <h3 id="apple-search-ads-debug">Apple Search Ads Debug<a class="headerlink" href="#apple-search-ads-debug" title="Permanent link">&para;</a></h3>
@@ -2357,13 +2355,11 @@
 <span class="p">[</span><span class="n">branch</span> <span class="n">initSession</span><span class="p">.....</span>
 </pre></div>
 
-
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">branch</span><span class="p">:</span> <span class="n">Branch</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">()</span>
 <span class="n">branch</span><span class="p">.</span><span class="n">setAppleSearchAdsDebugMode</span><span class="p">()</span>
 <span class="n">branch</span><span class="p">.</span><span class="n">delayInitToCheckForSearchAds</span><span class="p">()</span>
 <span class="n">branch</span><span class="p">.</span><span class="n">initSession</span><span class="p">.....</span>
 </pre></div>
-
 
 <h3 id="view-attribution-on-dashboard">View Attribution on Dashboard<a class="headerlink" href="#view-attribution-on-dashboard" title="Permanent link">&para;</a></h3>
 <p>All the attribution can be visible on the <a href="https://dashboard.branch.io/">Branch dashboard summary page</a>. All installs and opens registered from this channel will automatically be tagged with the <code>channel</code>: <code>Apple App Store</code> and the <code>feature</code>: <code>Search Ads</code>. The <code>campaign</code> will be set to the Campaign Name you've configured in the Apple Search Ads dashboard.</p>
@@ -2528,7 +2524,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2549,10 +2545,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

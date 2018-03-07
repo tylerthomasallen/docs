@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2365,42 +2365,46 @@
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
-branchUniversalObject.title = "My Content Title"
-branchUniversalObject.contentDescription = "My Content Description"
-branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
-branchUniversalObject.addMetadataKey("property1", value: "blue")
-branchUniversalObject.addMetadataKey("property2", value: "red")</p>
-<p>// important to set this flag to true
-branchUniversalObject.automaticallyListOnSpotlight = true
-```</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">branchUniversalObject</span><span class="p">:</span> <span class="n">BranchUniversalObject</span> <span class="p">=</span> <span class="n">BranchUniversalObject</span><span class="p">(</span><span class="n">canonicalIdentifier</span><span class="p">:</span> <span class="s">&quot;item/12345&quot;</span><span class="p">)</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;My Content Title&quot;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">contentDescription</span> <span class="p">=</span> <span class="s">&quot;My Content Description&quot;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">imageUrl</span> <span class="p">=</span> <span class="s">&quot;https://example.com/mycontent-12345.png&quot;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">addMetadataKey</span><span class="p">(</span><span class="s">&quot;property1&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">addMetadataKey</span><span class="p">(</span><span class="s">&quot;property2&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="c1">// important to set this flag to true</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">automaticallyListOnSpotlight</span> <span class="p">=</span> <span class="kc">true</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p>```obj-c
-BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
-branchUniversalObject.title = @"My Content Title";
-branchUniversalObject.contentDescription = @"My Content Description";
-branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
-[branchUniversalObject addMetadataKey:@"property1" value:@"blue"];
-[branchUniversalObject addMetadataKey:@"property2" value:@"red"];</p>
-<p>// important to set this flag to true
-branchUniversalObject.automaticallyListOnSpotlight = YES;
-```</p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">branchUniversalObject</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchUniversalObject</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCanonicalIdentifier</span><span class="p">:</span><span class="s">@&quot;item/12345&quot;</span><span class="p">];</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">@&quot;My Content Title&quot;</span><span class="p">;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">contentDescription</span> <span class="o">=</span> <span class="s">@&quot;My Content Description&quot;</span><span class="p">;</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">imageUrl</span> <span class="o">=</span> <span class="s">@&quot;https://example.com/mycontent-12345.png&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">branchUniversalObject</span> <span class="nl">addMetadataKey</span><span class="p">:</span><span class="s">@&quot;property1&quot;</span> <span class="nl">value</span><span class="p">:</span><span class="s">@&quot;blue&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">branchUniversalObject</span> <span class="nl">addMetadataKey</span><span class="p">:</span><span class="s">@&quot;property2&quot;</span> <span class="nl">value</span><span class="p">:</span><span class="s">@&quot;red&quot;</span><span class="p">];</span>
+
+<span class="c1">// important to set this flag to true</span>
+<span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">automaticallyListOnSpotlight</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+</pre></div>
+
 </li>
 </ul>
 <p>Then call the <code>userCompletedAction</code> method with the <code>View</code> event on your <code>BranchUniversalObject</code>. You will want to do this every single time a user goes to view a page in your app, so we recommend putting this in <code>viewDidAppear</code>, which means you must initialize the Branch Universal Object with all appropriate metadata before <code>viewDidAppear</code>.</p>
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-branchUniversalObject.userCompletedAction(BNCRegisterViewEvent)</code></p>
+<div class="codehilite"><pre><span></span><span class="n">branchUniversalObject</span><span class="p">.</span><span class="n">userCompletedAction</span><span class="p">(</span><span class="n">BNCRegisterViewEvent</span><span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p><code>obj-c
-[branchUniversalObject userCompletedAction:BNCRegisterViewEvent];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">branchUniversalObject</span> <span class="nl">userCompletedAction</span><span class="p">:</span><span class="n">BNCRegisterViewEvent</span><span class="p">];</span>
+</pre></div>
+
 </li>
 </ul>
 <p>This will create the appropriate NSUserActivity and tell Apple that a view occurred, adding it to the local Spotlight index if not already present in addition to increasing it's ranking in the global index. To read more about this, check out <a href="https://blog.branch.io/ios-10-spotlight-app-discovery-nsuseractivity-and-search-relevancy">this blog post</a>.</p>
@@ -2409,28 +2413,24 @@ branchUniversalObject.userCompletedAction(BNCRegisterViewEvent)</code></p>
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p>```swift
-func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -&gt; Void) -&gt; Bool {
-    // pass the url to the handle deep link call
-    return Branch.getInstance().continueUserActivity(userActivity)</p>
-<div class="codehilite"><pre><span></span>return true
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="k">continue</span> <span class="n">userActivity</span><span class="p">:</span> <span class="bp">NSUserActivity</span><span class="p">,</span> <span class="n">restorationHandler</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="p">([</span><span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Void</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+    <span class="c1">// pass the url to the handle deep link call</span>
+    <span class="k">return</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">continueUserActivity</span><span class="p">(</span><span class="n">userActivity</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
 </pre></div>
 
-
-<p>}
-```</p>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<p>```obj-c  <br />
-- (BOOL)application:(UIApplication <em>)application continueUserActivity:(NSUserActivity </em>)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
-    [[Branch getInstance] continueUserActivity:userActivity];</p>
-<div class="codehilite"><pre><span></span>return YES;
+<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">continueUserActivity:</span><span class="p">(</span><span class="bp">NSUserActivity</span> <span class="o">*</span><span class="p">)</span><span class="nv">userActivity</span> <span class="nf">restorationHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="bp">NSArray</span> <span class="o">*</span><span class="n">restorableObjects</span><span class="p">))</span><span class="nv">restorationHandler</span> <span class="p">{</span>
+    <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">continueUserActivity</span><span class="p">:</span><span class="n">userActivity</span><span class="p">];</span>
+
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
-
-<p>}
-```</p>
 </li>
 </ul>
 <h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
@@ -2443,50 +2443,44 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 <ul>
 <li>
 <p><em>Swift 3</em>
-    ```swift
-     branch.getSpotlightUrl(withParams: ["$og_title": "My App",
-                                        "$og_description": "My app is disrupting apps",
-                                        "$og_thumb": "https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png",
-                                        "object_id": "1234"], 
-                             callback: { (params, error) in</p>
-<div class="codehilite"><pre><span></span>    <span class="k">if</span> <span class="n">let</span> <span class="n">params</span> <span class="o">=</span> <span class="n">params</span> <span class="p">{</span>
+    <div class="codehilite"><pre><span></span> <span class="n">branch</span><span class="p">.</span><span class="n">getSpotlightUrl</span><span class="p">(</span><span class="n">withParams</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;$og_title&quot;</span><span class="p">:</span> <span class="s">&quot;My App&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;$og_description&quot;</span><span class="p">:</span> <span class="s">&quot;My app is disrupting apps&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;$og_thumb&quot;</span><span class="p">:</span> <span class="s">&quot;https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png&quot;</span><span class="p">,</span>
+                                    <span class="s">&quot;object_id&quot;</span><span class="p">:</span> <span class="s">&quot;1234&quot;</span><span class="p">],</span> 
+                         <span class="n">callback</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+
+        <span class="k">if</span> <span class="kd">let</span> <span class="nv">params</span> <span class="p">=</span> <span class="n">params</span> <span class="p">{</span>
+                <span class="c1">// params will contain @&quot;url&quot; and @&quot;spotlight_identifier&quot;</span>
+                <span class="c1">// the example below shows where to use them</span>
+
+                <span class="c1">// Index via the NSUserActivity strategy</span>
+                <span class="c1">// you must set the new NSUserActivity to the property of a UIViewController</span>
+                <span class="kc">self</span><span class="p">.</span><span class="n">userActivity</span> <span class="p">=</span> <span class="bp">NSUserActivity</span><span class="p">(</span><span class="n">activityType</span><span class="p">:</span> <span class="n">params</span><span class="p">[</span><span class="s">&quot;spotlight_identifer&quot;</span><span class="p">]</span> <span class="k">as</span><span class="p">!</span> <span class="nb">String</span><span class="p">)</span>
+                <span class="kc">self</span><span class="p">.</span><span class="n">userActivity</span><span class="p">.</span><span class="n">webpageURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n">params</span><span class="p">[</span><span class="s">&quot;url&quot;</span><span class="p">]</span> <span class="k">as</span><span class="p">!</span> <span class="nb">String</span><span class="p">)</span>
+                <span class="kc">self</span><span class="p">.</span><span class="n">userActivity</span><span class="p">.</span><span class="n">becomeCurrent</span><span class="p">()</span>
+        <span class="p">}</span>    
+<span class="p">})</span>
+</pre></div></p>
+</li>
+<li>
+<p><em>Objective-C</em>
+    <div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">branch</span> <span class="nl">getSpotlightUrlWithParams</span><span class="p">:</span><span class="l">@{</span><span class="s">@&quot;$og_title&quot;</span><span class="o">:</span> <span class="s">@&quot;My App&quot;</span><span class="p">,</span>
+                                        <span class="s">@&quot;$og_description&quot;</span><span class="o">:</span> <span class="s">@&quot;My app is disrupting apps&quot;</span><span class="p">,</span>
+                                        <span class="s">@&quot;$og_thumb&quot;</span><span class="o">:</span> <span class="s">@&quot;https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png&quot;</span><span class="p">,</span>
+                                        <span class="s">@&quot;object_id&quot;</span><span class="o">:</span> <span class="s">@&quot;1234&quot;</span><span class="l">}</span>
+                             <span class="nl">callback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">params</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span> <span class="o">&amp;&amp;</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// params will contain @&quot;url&quot; and @&quot;spotlight_identifier&quot;</span>
             <span class="c1">// the example below shows where to use them</span>
 
             <span class="c1">// Index via the NSUserActivity strategy</span>
             <span class="c1">// you must set the new NSUserActivity to the property of a UIViewController</span>
-            <span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span> <span class="o">=</span> <span class="bp">NSUserActivity</span><span class="p">(</span><span class="nl">activityType</span><span class="p">:</span> <span class="n">params</span><span class="p">[</span><span class="s">&quot;spotlight_identifer&quot;</span><span class="p">]</span> <span class="n">as</span><span class="o">!</span> <span class="n">String</span><span class="p">)</span>
-            <span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span><span class="p">.</span><span class="n">webpageURL</span> <span class="o">=</span> <span class="n">URL</span><span class="p">(</span><span class="nl">string</span><span class="p">:</span> <span class="n">params</span><span class="p">[</span><span class="s">&quot;url&quot;</span><span class="p">]</span> <span class="n">as</span><span class="o">!</span> <span class="n">String</span><span class="p">)</span>
-            <span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span><span class="p">.</span><span class="n">becomeCurrent</span><span class="p">()</span>
-    <span class="p">}</span>
-</pre></div>
-
-
-<p>})
-```</p>
-</li>
-<li>
-<p><em>Objective-C</em>
-    ```objc
-    [branch getSpotlightUrlWithParams:@{@"$og_title": @"My App",
-                                            @"$og_description": @"My app is disrupting apps",
-                                            @"$og_thumb": @"https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png",
-                                            @"object_id": @"1234"}
-                                 callback:^(NSDictionary <em>params, NSError </em>error) {
-            if (!error &amp;&amp; params) {
-                // params will contain @"url" and @"spotlight_identifier"
-                // the example below shows where to use them</p>
-<div class="codehilite"><pre><span></span>        <span class="c1">// Index via the NSUserActivity strategy</span>
-        <span class="c1">// you must set the new NSUserActivity to the property of a UIViewController</span>
-        <span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSUserActivity</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithActivityType</span><span class="p">:</span><span class="n">params</span><span class="p">[</span><span class="s">@&quot;spotlight_identifer&quot;</span><span class="p">]];</span>
-        <span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span><span class="p">.</span><span class="n">webpageURL</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSURL</span> <span class="nl">URLWithString</span><span class="p">:</span><span class="n">params</span><span class="p">[</span><span class="s">@&quot;url&quot;</span><span class="p">]];</span>
-        <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span> <span class="n">becomeCurrent</span><span class="p">];</span>
-    <span class="p">}</span>
-</pre></div>
-
-
-<p>}];
-```</p>
+            <span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSUserActivity</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithActivityType</span><span class="p">:</span><span class="n">params</span><span class="p">[</span><span class="s">@&quot;spotlight_identifer&quot;</span><span class="p">]];</span>
+            <span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span><span class="p">.</span><span class="n">webpageURL</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSURL</span> <span class="nl">URLWithString</span><span class="p">:</span><span class="n">params</span><span class="p">[</span><span class="s">@&quot;url&quot;</span><span class="p">]];</span>
+            <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">userActivity</span> <span class="n">becomeCurrent</span><span class="p">];</span>
+        <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div></p>
 </li>
 </ul>
 </li>
@@ -2496,29 +2490,30 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-let set:BranchCSSearchableItemAttributeSet = BranchCSSearchableItemAttributeSet()
-set.title = "My Content Title"
-set.contentDescription = "My Content Description"
-set.params = ["property1" : "blue", "property2" : "red"]
-set.keywords = ["array", "of", "keywords"]
-set.thumbnailURL = URL(string: "https://example.com/mycontent-12345.png")
-set.index { (url, spotlightIdentifier, error) in
-    print("url \(String(describing: url)), spotlightIdentifier \(String(describing: spotlightIdentifier)), error \(error.debugDescription)")
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">set</span><span class="p">:</span><span class="n">BranchCSSearchableItemAttributeSet</span> <span class="p">=</span> <span class="n">BranchCSSearchableItemAttributeSet</span><span class="p">()</span>
+<span class="kr">set</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;My Content Title&quot;</span>
+<span class="kr">set</span><span class="p">.</span><span class="n">contentDescription</span> <span class="p">=</span> <span class="s">&quot;My Content Description&quot;</span>
+<span class="kr">set</span><span class="p">.</span><span class="n">params</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;property1&quot;</span> <span class="p">:</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;property2&quot;</span> <span class="p">:</span> <span class="s">&quot;red&quot;</span><span class="p">]</span>
+<span class="kr">set</span><span class="p">.</span><span class="n">keywords</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;array&quot;</span><span class="p">,</span> <span class="s">&quot;of&quot;</span><span class="p">,</span> <span class="s">&quot;keywords&quot;</span><span class="p">]</span>
+<span class="kr">set</span><span class="p">.</span><span class="n">thumbnailURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://example.com/mycontent-12345.png&quot;</span><span class="p">)</span>
+<span class="kr">set</span><span class="p">.</span><span class="n">index</span> <span class="p">{</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">spotlightIdentifier</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;url </span><span class="si">\(</span><span class="nb">String</span><span class="si">(</span><span class="n">describing</span><span class="p">:</span> <span class="n">url</span><span class="si">))</span><span class="s">, spotlightIdentifier </span><span class="si">\(</span><span class="nb">String</span><span class="si">(</span><span class="n">describing</span><span class="p">:</span> <span class="n">spotlightIdentifier</span><span class="si">))</span><span class="s">, error </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">debugDescription</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em>
-    <code>objc
-    BranchCSSearchableItemAttributeSet *set = [[BranchCSSearchableItemAttributeSet alloc] init];
-    set.title = @"My Content Title";
-    set.contentDescription = @"My Content Description";
-    set.params = @{@"property1" : @"blue", @"property2" : @"red"};
-    set.keywords = [NSSet setWithArray:@["array", "of", "keywords"]];
-    set.thumbnailURL = @"https://example.com/mycontent-12345.png";
-    [set indexWithCallback:^(NSString * _Nullable url, NSString * _Nullable spotlightIdentifier, NSError * _Nullable error) {
-        NSLog(@"url %@, spotlightIdentifier %@, error %@ ", url, spotlightIdentifier, error);
-    }];</code></p>
+    <div class="codehilite"><pre><span></span><span class="n">BranchCSSearchableItemAttributeSet</span> <span class="o">*</span><span class="n">set</span> <span class="o">=</span> <span class="p">[[</span><span class="n">BranchCSSearchableItemAttributeSet</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">set</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">@&quot;My Content Title&quot;</span><span class="p">;</span>
+<span class="n">set</span><span class="p">.</span><span class="n">contentDescription</span> <span class="o">=</span> <span class="s">@&quot;My Content Description&quot;</span><span class="p">;</span>
+<span class="n">set</span><span class="p">.</span><span class="n">params</span> <span class="o">=</span> <span class="l">@{</span><span class="s">@&quot;property1&quot;</span> <span class="o">:</span> <span class="s">@&quot;blue&quot;</span><span class="p">,</span> <span class="s">@&quot;property2&quot;</span> <span class="o">:</span> <span class="s">@&quot;red&quot;</span><span class="l">}</span><span class="p">;</span>
+<span class="n">set</span><span class="p">.</span><span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSSet</span> <span class="nl">setWithArray</span><span class="p">:</span><span class="l">@[</span><span class="s">&quot;array&quot;</span><span class="p">,</span> <span class="s">&quot;of&quot;</span><span class="p">,</span> <span class="s">&quot;keywords&quot;</span><span class="l">]</span><span class="p">];</span>
+<span class="n">set</span><span class="p">.</span><span class="n">thumbnailURL</span> <span class="o">=</span> <span class="s">@&quot;https://example.com/mycontent-12345.png&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">set</span> <span class="nl">indexWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">url</span><span class="p">,</span> <span class="bp">NSString</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">spotlightIdentifier</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;url %@, spotlightIdentifier %@, error %@ &quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">spotlightIdentifier</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+<span class="p">}];</span>
+</pre></div></p>
 </li>
 </ul>
 <h3 id="index-content-using-branch-universal-object-on-spotlight">Index content using Branch Universal Object on Spotlight<a class="headerlink" href="#index-content-using-branch-universal-object-on-spotlight" title="Permanent link">&para;</a></h3>
@@ -2526,44 +2521,50 @@ set.index { (url, spotlightIdentifier, error) in
 <li>
 <p>Index single Branch Universal Object</p>
 <ul>
-<li><em>Swift 3</em>
-    <code>swift
-    universalObject.listOnSpotlight(with: linkProperty) { (url, error) in
-        if (!error) {
-            print("Successfully indexed on spotlight")     
-         }
-    }</code></li>
-</ul>
+<li>
+<p><em>Swift 3</em>
+    <div class="codehilite"><pre><span></span><span class="n">universalObject</span><span class="p">.</span><span class="n">listOnSpotlight</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="n">linkProperty</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Successfully indexed on spotlight&quot;</span><span class="p">)</span>     
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+</li>
+<li>
+<p><em>Objective-C</em>
+    <div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">universalObject</span> <span class="nl">listOnSpotlightWithLinkProperties</span><span class="p">:</span><span class="n">linkProperties</span> <span class="nl">callback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">url</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Successfully indexed on spotlight&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+!!! note: "Content would be index using NSUserActivity if contentIndexMode of BranchUniversalObject is Public, else would be index using CSSearchableIndex"</p>
 </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-</div>
-<p>"Content would be index using NSUserActivity if contentIndexMode of BranchUniversalObject is Public, else would be index using CSSearchableIndex"</p>
-<ul>
+</li>
 <li>
 <p>Index batch of Branch Universal Objects on Spotlight using CSSearchableIndex</p>
 <ul>
 <li>
 <p><em>Swift 3</em>
-    <code>swift
-    Branch.getInstance().indexOnSpotlight(usingSearchableItems: universalObjects, 
-                                            completion: { (universalObjects, error) in
-         if (!error) {
-            // Successfully able to index all the BUO on spotloght
-        }
-    })</code></p>
+    <div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">indexOnSpotlight</span><span class="p">(</span><span class="n">usingSearchableItems</span><span class="p">:</span> <span class="n">universalObjects</span><span class="p">,</span> 
+                                        <span class="n">completion</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">universalObjects</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Successfully able to index all the BUO on spotloght</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div></p>
 </li>
 <li>
 <p><em>Objective-C</em>
-    <code>objc
-    [[Branch getInstance] indexOnSpotlightUsingSearchableItems:universalObjects
-                                                completion:^(NSArray&lt;BranchUniversalObject *&gt; *universalObjects,
-                                                             NSError *error) {
-            if (!error) {
-               // Successfully able to index all the BUO on spotloght
-            }
-    }];</code></p>
+    <div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">indexOnSpotlightUsingSearchableItems</span><span class="p">:</span><span class="n">universalObjects</span>
+                                            <span class="nl">completion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSArray</span><span class="o">&lt;</span><span class="n">BranchUniversalObject</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">universalObjects</span><span class="p">,</span>
+                                                         <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+           <span class="c1">// Successfully able to index all the BUO on spotloght</span>
+        <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div></p>
 </li>
 </ul>
 </li>
@@ -2578,21 +2579,23 @@ set.index { (url, spotlightIdentifier, error) in
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-universalObject.removeFromSpotlight { (error) in
-    if(!error) {
-        print("BUO successfully removed")
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">universalObject</span><span class="p">.</span><span class="n">removeFromSpotlight</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;BUO successfully removed&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>objc
-[universalObject removeFromSpotlightWithCallback:^(NSError * _Nullable error) {
-    if (!error) {
-        NSLog(@"universal Object removed from spotlight");
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">universalObject</span> <span class="nl">removeFromSpotlightWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;universal Object removed from spotlight&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2601,21 +2604,23 @@ universalObject.removeFromSpotlight { (error) in
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().removeSearchableItems(with: [BUO1,BUO2]) { (error) in
-    if (!error) {
-        print("An array of BUOs removed from spotlight")
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">removeSearchableItems</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="p">[</span><span class="n">BUO1</span><span class="p">,</span><span class="n">BUO2</span><span class="p">])</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;An array of BUOs removed from spotlight&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>objc
-[[Branch getInstance] removeSearchableItemsWithBranchUniversalObjects:@[BUO1,BUO2] callback:^(NSError *error) {
-    if (!error) {
-        NSLog(@"An array of BUOs removed from spotlight");
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">removeSearchableItemsWithBranchUniversalObjects</span><span class="p">:</span><span class="l">@[</span><span class="n">BUO1</span><span class="p">,</span><span class="n">BUO2</span><span class="l">]</span> <span class="nl">callback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;An array of BUOs removed from spotlight&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2630,21 +2635,23 @@ Branch.getInstance().removeSearchableItems(with: [BUO1,BUO2]) { (error) in
 <ul>
 <li>
 <p><em>Swift 3</em></p>
-<p><code>swift
-Branch.getInstance().removeAllPrivateContentFromSpotLight { (error) in
-    if (!error) {
-        print("All branch privately indexed content removed from spotlight")
-    }
-}</code></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">removeAllPrivateContentFromSpotLight</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;All branch privately indexed content removed from spotlight&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p><em>Objective-C</em></p>
-<p><code>objc
-[[Branch getInstance] removeAllPrivateContentFromSpotLightWithCallback:^(NSError *error) {
-    if (!error) {
-        NSLog(@"All branch privately indexed content removed from spotlight");
-    }
-}];</code></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">removeAllPrivateContentFromSpotLightWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;All branch privately indexed content removed from spotlight&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+</pre></div>
+
 </li>
 </ul>
 </li>
@@ -2802,7 +2809,7 @@ Branch.getInstance().removeAllPrivateContentFromSpotLight { (error) in
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2823,10 +2830,6 @@ Branch.getInstance().removeAllPrivateContentFromSpotLight { (error) in
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

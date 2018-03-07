@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2546,7 +2546,7 @@
 <p>Left: Branch default. Right: a customized version.</p>
 <p>This document will cover how to create a custom Text Me The App page, as well as a general FAQ for this product.</p>
 <h2 id="usage-policies">Usage Policies<a class="headerlink" href="#usage-policies" title="Permanent link">&para;</a></h2>
-<p>Branch reserves the right to limit your use of the Text Me The App service and charge for SMS costs at its own discretion. To understand Branch's policies in this regard, please contact your Branch Account Manager or accounts@branch.io at any time for assistance.</p>
+<p>Branch reserves the right to limit your use of the Text Me The App service and charge for SMS costs at its own discretion. To understand Branch's policies in this regard, please contact your Branch Account Manager or <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#99;&#99;&#111;&#117;&#110;&#116;&#115;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#97;&#99;&#99;&#111;&#117;&#110;&#116;&#115;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a> at any time for assistance.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>If you don't want to use Branch's default Text Me The App Page or show a desktop deepview, follow these instructions. This will let you customize a Text Me The App page using Branch.</p>
 <h3 id="set-destination-url">Set Destination URL<a class="headerlink" href="#set-destination-url" title="Permanent link">&para;</a></h3>
@@ -2605,7 +2605,6 @@
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 
-
 <p>And that's it. From here, you can customize the HTML and CSS, and Branch will take care of the rest. If you want to further customize the page or SMS message itself, read further.</p>
 <h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
 <h3 id="use-your-own-sms-service">Use your own SMS service<a class="headerlink" href="#use-your-own-sms-service" title="Permanent link">&para;</a></h3>
@@ -2621,7 +2620,6 @@
     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
-
 
 <h3 id="use-a-custom-form-with-sendsms">Use a custom form with SendSMS()<a class="headerlink" href="#use-a-custom-form-with-sendsms" title="Permanent link">&para;</a></h3>
 <p>If you have an existing form for users to input their phone number, you can put our Text Me The App behind it. Add the following code somewhere inside the <code>&lt;head&gt;&lt;/head&gt;</code> tags on your website.</p>
@@ -2642,7 +2640,6 @@
 <span class="p">}</span>
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
 </pre></div>
-
 
 <p>Call sendSMS when someone enters something into your form.</p>
 <h3 id="customize-sms-message-content">Customize SMS message content<a class="headerlink" href="#customize-sms-message-content" title="Permanent link">&para;</a></h3>
@@ -2685,7 +2682,6 @@
 <span class="p">);</span>
 </pre></div>
 
-
 <p>Your call to this method, once filled in with the user's phone number, could look like the following:</p>
 <div class="codehilite"><pre><span></span><span class="nx">branch</span><span class="p">.</span><span class="nx">sendSMS</span><span class="p">(</span>
     <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;9999999999&#39;</span><span class="p">,</span>
@@ -2702,7 +2698,6 @@
     <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
-
 
 <h3 id="setting-default-replacement-values-for-liquid-tags">Setting default replacement values for liquid tags<a class="headerlink" href="#setting-default-replacement-values-for-liquid-tags" title="Permanent link">&para;</a></h3>
 <p>If a specific tag isn't always going to be filled, you can use a <code>|</code> character to specify a default to fallback on if the tag is missing from your link dictionary.</p>
@@ -2723,7 +2718,6 @@
 <p>With full numbers, you are required to use "+" and the country code. If you know your users are only in a certain country, you can automatically prepend "+" and the country code so that they only need to enter their regular number. To do this, you must create a custom text-me-the-app page. Then, you can alter the code snippet in <a href="#insert-sendsms-snippet-into-your-page">step 2</a> with the following:</p>
 <div class="codehilite"><pre><span></span>    <span class="kd">var</span> <span class="nx">phone</span> <span class="o">=</span> <span class="s2">&quot;+91&quot;</span> <span class="o">+</span> <span class="nx">form</span><span class="p">.</span><span class="nx">phone</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
 </pre></div>
-
 
 <p>In the example above, "+91" is the code for the country your users are based in.</p>
 <h3 id="why-have-the-sms-links-sent-from-text-me-the-app-expired">Why have the SMS links sent from Text Me The App expired?<a class="headerlink" href="#why-have-the-sms-links-sent-from-text-me-the-app-expired" title="Permanent link">&para;</a></h3>
@@ -2881,7 +2875,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2902,10 +2896,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     
