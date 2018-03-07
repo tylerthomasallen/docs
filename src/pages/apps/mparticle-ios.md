@@ -114,6 +114,7 @@ This documentation explains how to send **mParticle events to your Branch dashbo
         }
 
         func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+            MParticle.sharedInstance().continue(userActivity, restorationHandler: restorationHandler)
             checkForDeeplink()
             return true
         }
@@ -183,8 +184,9 @@ This documentation explains how to send **mParticle events to your Branch dashbo
         }
 
         - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
-          [self checkForDeeplink];
-          return YES;
+                [self checkForDeeplink];
+                }];
+            return YES;
         }
 
         - (void)checkForDeeplink {
