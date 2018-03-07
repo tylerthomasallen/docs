@@ -7,12 +7,12 @@ general:
       - gh-pages
 dependencies:
   post:
-    - pip install --upgrade pip
-    - pip install mkdocs
-    - pip install pygments
-    - pip install pymdown-extensions
-    - pip install markdown-include
-    - pip install mkdocs-material
+    - sudo pip install --upgrade pip
+    - sudo pip install mkdocs
+    - sudo pip install pygments
+    - sudo pip install pymdown-extensions
+    - sudo pip install markdown-include
+    - sudo pip install mkdocs-material
 test:
   override:
     - mkdocs build --clean --verbose
