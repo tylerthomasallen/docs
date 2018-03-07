@@ -2851,11 +2851,12 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </span><span class="hll"><span class="p">}</span>
 </span>
 <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="k">continue</span> <span class="n">userActivity</span><span class="p">:</span> <span class="bp">NSUserActivity</span><span class="p">,</span> <span class="n">restorationHandler</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="p">([</span><span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Void</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
-<span class="hll">    <span class="n">checkForDeeplink</span><span class="p">()</span>
-</span>    <span class="k">return</span> <span class="kc">true</span>
+<span class="hll">    <span class="n">MParticle</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="k">continue</span><span class="p">(</span><span class="n">userActivity</span><span class="p">,</span> <span class="n">restorationHandler</span><span class="p">:</span> <span class="n">restorationHandler</span><span class="p">)</span>
+</span>    <span class="n">checkForDeeplink</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">true</span>
 <span class="p">}</span>
-
-<span class="hll"><span class="kd">func</span> <span class="nf">checkForDeeplink</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">
+</span><span class="hll"><span class="kd">func</span> <span class="nf">checkForDeeplink</span><span class="p">()</span> <span class="p">{</span>
 </span><span class="hll">    <span class="n">MParticle</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">checkForDeferredDeepLink</span> <span class="p">{</span> <span class="n">linkInfo</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
 </span><span class="hll">        <span class="c1">// A few typical scenarios where this block would be invoked:</span>
 </span><span class="hll">        <span class="c1">//</span>
@@ -2881,8 +2882,8 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </span><span class="hll">
 </span><span class="hll">        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;params:&quot;</span> <span class="o">+</span> <span class="n">linkInfo</span><span class="p">)</span>
 </span><span class="hll">    <span class="p">}</span>
-</span><span class="hll"><span class="p">}</span>
-</span></pre></div>
+</span><span class="p">}</span>
+</pre></div>
 
 </li>
 <li>
@@ -2920,11 +2921,12 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </span><span class="hll"><span class="p">}</span>
 </span>
 <span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">continueUserActivity:</span><span class="p">(</span><span class="bp">NSUserActivity</span> <span class="o">*</span><span class="p">)</span><span class="nv">userActivity</span> <span class="nf">restorationHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="bp">NSArray</span> <span class="o">*</span> <span class="n">_Nullable</span><span class="p">))</span><span class="nv">restorationHandler</span> <span class="p">{</span>
-<span class="hll">  <span class="p">[</span><span class="nb">self</span> <span class="n">checkForDeeplink</span><span class="p">];</span>
-</span>  <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="hll">        <span class="p">[</span><span class="nb">self</span> <span class="n">checkForDeeplink</span><span class="p">];</span>
+</span>        <span class="p">}];</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
-
-<span class="hll"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">checkForDeeplink</span> <span class="p">{</span>
+<span class="hll">
+</span><span class="hll"><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">checkForDeeplink</span> <span class="p">{</span>
 </span><span class="hll">  <span class="n">MParticle</span> <span class="o">*</span> <span class="n">mParticle</span> <span class="o">=</span> <span class="p">[</span><span class="n">MParticle</span> <span class="n">sharedInstance</span><span class="p">];</span>
 </span><span class="hll">
 </span><span class="hll">  <span class="p">[</span><span class="n">mParticle</span> <span class="nl">checkForDeferredDeepLinkWithCompletionHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span><span class="o">&lt;</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">,</span><span class="bp">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">params</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
@@ -2954,8 +2956,8 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </span><span class="hll">      <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;params: %@&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">.</span><span class="n">description</span><span class="p">);</span>
 </span><span class="hll">    <span class="p">}</span>
 </span><span class="hll">  <span class="p">}];</span>
-</span><span class="hll"><span class="p">}</span>
-</span>
+</span><span class="p">}</span>
+
 <span class="k">@end</span>
 </pre></div>
 
