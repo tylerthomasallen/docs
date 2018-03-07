@@ -13,6 +13,12 @@ theme:
   name: 'material'
   custom_dir: 'lib/mkdocs-material/material'
   language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
 docs_dir: 'src'
 extra_css:
   - 'css/main.css'
@@ -42,12 +48,6 @@ markdown_extensions:
 # Options
 extra:
   logo: 'img/logo.svg'
-  palette:
-    primary: 'light blue'
-    accent: 'light blue'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
   social:
     - type: 'globe'
       link: 'https://branch.io'
