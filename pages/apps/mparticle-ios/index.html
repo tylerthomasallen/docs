@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2921,12 +2921,13 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </span><span class="hll"><span class="p">}</span>
 </span>
 <span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">continueUserActivity:</span><span class="p">(</span><span class="bp">NSUserActivity</span> <span class="o">*</span><span class="p">)</span><span class="nv">userActivity</span> <span class="nf">restorationHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="bp">NSArray</span> <span class="o">*</span> <span class="n">_Nullable</span><span class="p">))</span><span class="nv">restorationHandler</span> <span class="p">{</span>
-<span class="hll">        <span class="p">[</span><span class="nb">self</span> <span class="n">checkForDeeplink</span><span class="p">];</span>
-</span>        <span class="p">}];</span>
+<span class="hll">    <span class="p">[[</span><span class="n">MParticle</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">continueUserActivity</span><span class="p">:</span><span class="n">userActivity</span> <span class="nl">restorationHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSArray</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">restorableObjects</span><span class="p">)</span> <span class="p">{</span>
+</span>        <span class="p">[</span><span class="nb">self</span> <span class="n">checkForDeeplink</span><span class="p">];</span>
+        <span class="p">}];</span>
     <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="hll">
-</span><span class="hll"><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">checkForDeeplink</span> <span class="p">{</span>
+<span class="hll"><span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">checkForDeeplink</span> <span class="p">{</span>
 </span><span class="hll">  <span class="n">MParticle</span> <span class="o">*</span> <span class="n">mParticle</span> <span class="o">=</span> <span class="p">[</span><span class="n">MParticle</span> <span class="n">sharedInstance</span><span class="p">];</span>
 </span><span class="hll">
 </span><span class="hll">  <span class="p">[</span><span class="n">mParticle</span> <span class="nl">checkForDeferredDeepLinkWithCompletionHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span><span class="o">&lt;</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">,</span><span class="bp">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">params</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
@@ -2955,8 +2956,8 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </span><span class="hll">      <span class="c1">//Insert custom logic to inspect the params and route the user/customize the experience.</span>
 </span><span class="hll">      <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;params: %@&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">.</span><span class="n">description</span><span class="p">);</span>
 </span><span class="hll">    <span class="p">}</span>
-</span><span class="hll">  <span class="p">}];</span>
-</span><span class="p">}</span>
+</span>  <span class="p">}];</span>
+<span class="p">}</span>
 
 <span class="k">@end</span>
 </pre></div>
@@ -3938,7 +3939,7 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3959,10 +3960,6 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     
