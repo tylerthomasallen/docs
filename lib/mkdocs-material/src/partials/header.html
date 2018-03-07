@@ -32,19 +32,14 @@
         <a href="{{ config.site_url | default(nav.homepage.url, true) }}"
             title="{{ config.site_name }}"
             class="md-header-nav__button md-logo">
-          <!-- BRANCH -->
-          {% if config.extra.logo %}
-            <img src="{{ base_url }}/{{ config.extra.logo }}">
+          {% if config.theme.logo.icon %}
+            <i class="md-icon">{{ config.theme.logo.icon }}</i>
+          {% elif config.theme.logo.startswith("http") %}
+            <img src="{{ config.theme.logo }}" width="24" height="24" />
           {% else %}
-          <!-- BRANCH -->
-            {% if config.theme.logo.icon %}
-              <i class="md-icon">{{ config.theme.logo.icon }}</i>
-            {% elif config.theme.logo.startswith("http") %}
-              <img src="{{ config.theme.logo }}" width="24" height="24" />
-            {% else %}
-              <img src="{{ base_url }}/{{ config.theme.logo }}"
-                  width="24" height="24" />
-            {% endif %}
+            <!-- BRANCH -->
+            <img src="{{ base_url }}/{{ config.theme.logo }}" />
+            <!-- BRANCH -->
           {% endif %}
         </a>
       </div>
@@ -56,7 +51,7 @@
       </div>
 
       <!-- BRANCH -->
-      {% if config.extra.logo %}
+      {% if config.theme.logo %}
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="{{ config.site_url | default(nav.homepage.url, true) }}" title="{{ config.site_name }}">
             <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>

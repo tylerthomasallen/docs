@@ -3,23 +3,19 @@
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="{{ config.site_url | default(nav.homepage.url, true) }}" title="{{ config.site_name }}" class="md-header-nav__button md-logo">
-          {% if config.extra.logo %}
-            <img src="{{ base_url }}/{{ config.extra.logo }}">
+          {% if config.theme.logo.icon %}
+            <i class="md-icon">{{ config.theme.logo.icon }}</i>
+          {% elif config.theme.logo.startswith("http") %}
+            <img src="{{ config.theme.logo }}" width="24" height="24">
           {% else %}
-            {% if config.theme.logo.icon %}
-              <i class="md-icon">{{ config.theme.logo.icon }}</i>
-            {% elif config.theme.logo.startswith("http") %}
-              <img src="{{ config.theme.logo }}" width="24" height="24">
-            {% else %}
-              <img src="{{ base_url }}/{{ config.theme.logo }}" width="24" height="24">
-            {% endif %}
+            <img src="{{ base_url }}/{{ config.theme.logo }}">
           {% endif %}
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
       </div>
-      {% if config.extra.logo %}
+      {% if config.theme.logo %}
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="{{ config.site_url | default(nav.homepage.url, true) }}" title="{{ config.site_name }}">
             <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>

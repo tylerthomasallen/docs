@@ -154,6 +154,8 @@
 
     - remove locally `sudo rm /usr/local/bin/mkdocs && rm /Library/Python/2.7/site-packages/mkdocs.egg-link`
 
+    - remove mkdocs `rm -rf /Library/Python/2.7/site-packages`
+
 - #### Mkdocs-Material Locally
 
     - readme http://squidfunk.github.io/mkdocs-material/customization/#theme-development
