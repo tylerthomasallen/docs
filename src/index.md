@@ -6,7 +6,7 @@ Branch offers hosted, branded short links packed with 3 key value props:
 
 - Best in class deep linking that supports all major standards (Universal Links, Android App Links, URI schemes and more) that are fully customizable with every configuration you might want.
 - Cross platform attribution (desktop web, mobile web & app) of custom events back to the original source for complete insight into the performance of your campaigns.
-- Seamless integrations into your existing workflow, from integrations into email providers, ad networks or data analytics solutions..
+- Seamless integrations into your existing workflow, from integrations into email providers, ad networks or data analytics solutions.
 
 <p align="center">
   <a href="https://youtu.be/MXgLQ8QDXk8"><img class="branch-image-override" src="https://i.imgur.com/NF2NEDn.gif"/></a>

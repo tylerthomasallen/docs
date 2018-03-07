@@ -786,7 +786,7 @@ This documentation explains how to send **mParticle events to your Branch dashbo
 
     - Investigate if the device disabled universal links ([Re-enable universal linking](##re-enable-universal-linking))
 
-    - Investigate if it is a link related issue ([Deep links do not open app](pages/links/integrate/#deep-links-do-not-open-app))
+    - Investigate if it is a link related issue ([Deep links do not open app](/pages/links/integrate/#deep-links-do-not-open-app))
 
     - Use [Universal links validator](https://branch.io/resources/universal-links/)
 
