@@ -292,7 +292,7 @@ The technical definition is that they've clicked on a link with an Email Service
 
 #### Is viewing a page with metadata key
 
-Use this filter to target users viewing web pages with certain metadata specified. This data can be specified in HTML `<meta>` tags on a webpage, passed in as options in the `init()` call that you use to initialize the Branch web SDK, or passed in using the `track()` call in Branch’s web SDK. Note that if you opt to use HTML `<meta>` tags, your tags should be formatted as [Branch hosted deep link data](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site).
+Use this filter to target users viewing web pages with certain metadata specified. This data can be specified in HTML `<meta>` tags on a webpage, passed in as options in the `init()` call that you use to initialize the Branch web SDK, or passed in using the `track()` call in Branch’s web SDK. Note that if you opt to use HTML `<meta>` tags, your tags should be formatted as [Branch hosted deep link data](/pages/web/hosted-data/#add-metatags-to-your-site).
 
 For example, you could target users on pages containing the metadata key “foo” and value “bar” by adding this tag to the page’s HTML: `<meta name="branch:deeplink:foo" content="bar" />`
 
@@ -450,7 +450,7 @@ Note that not all template support all override keys. For example, the floating 
 
 #### Custom tags for dynamic Journeys layout customization
 
-In addition to using [pre-defined keys](https://docs.branch.io/pages/web/journeys/#dynamic-journeys-layout-customization) (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use `setBranchViewData()` to dynamically provide values for these tags. 
+In addition to using [pre-defined keys](/pages/web/journeys/#dynamic-journeys-layout-customization) (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use `setBranchViewData()` to dynamically provide values for these tags. 
 
 **Note that if you include custom liquid tags in your templates and also set a value for a pre-defined key (e.g. $journeys_title) in `setBranchViewData()`, the value of the pre-defined key will take precedence.**
 

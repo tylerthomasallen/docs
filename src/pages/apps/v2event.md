@@ -71,71 +71,71 @@ If you track commerce events without a currency, we assume they are USD. If you 
 
 - *Swift*
 
-	```swift
-	// Create a BranchUniversalObject with your content data:
-	let branchUniversalObject = BranchUniversalObject.init()
+    ```swift
+    // Create a BranchUniversalObject with your content data:
+    let branchUniversalObject = BranchUniversalObject.init()
 
-	// ...add data to the branchUniversalObject as needed...
-	branchUniversalObject.canonicalIdentifier = "item/12345"
-	branchUniversalObject.canonicalUrl        = "https://branch.io/item/12345"
-	branchUniversalObject.title               = "My Item Title"
+    // ...add data to the branchUniversalObject as needed...
+    branchUniversalObject.canonicalIdentifier = "item/12345"
+    branchUniversalObject.canonicalUrl        = "https://branch.io/item/12345"
+    branchUniversalObject.title               = "My Item Title"
 
-	// Create a BranchEvent:
-	let event = BranchEvent.standardEvent(.purchase)
+    // Create a BranchEvent:
+    let event = BranchEvent.standardEvent(.purchase)
 
-	// Add the BranchUniversalObjects with the content:
-	event.contentItems     = [ branchUniversalObject ]
+    // Add the BranchUniversalObjects with the content:
+    event.contentItems     = [ branchUniversalObject ]
 
-	// Add relevant event data:
-	event.transactionID    = "12344555"
-	event.currency         = .USD;
-	event.revenue          = 1.5
-	event.shipping         = 10.2
-	event.tax              = 12.3
-	event.coupon           = "test_coupon";
-	event.affiliation      = "test_affiliation";
-	event.eventDescription = "Event_description";
-	event.searchQuery      = "item 123"
-	event.customData       = [
-	    "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
-	    "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
-	]
-	event.logEvent() // Log the event.
-	```
-	
+    // Add relevant event data:
+    event.transactionID    = "12344555"
+    event.currency         = .USD;
+    event.revenue          = 1.5
+    event.shipping         = 10.2
+    event.tax              = 12.3
+    event.coupon           = "test_coupon";
+    event.affiliation      = "test_affiliation";
+    event.eventDescription = "Event_description";
+    event.searchQuery      = "item 123"
+    event.customData       = [
+        "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
+        "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
+    ]
+    event.logEvent() // Log the event.
+    ```
+    
 - *Objective-C*
 
-	```objc
-	// Create a BranchUniversalObject with your content data:
-	BranchUniversalObject *branchUniversalObject = [BranchUniversalObject new];
+    ```objc
+    // Create a BranchUniversalObject with your content data:
+    BranchUniversalObject *branchUniversalObject = [BranchUniversalObject new];
 
-	// ...add data to the branchUniversalObject as needed...
-	branchUniversalObject.canonicalIdentifier = @"item/12345";
-	branchUniversalObject.canonicalUrl        = @"https://branch.io/item/12345";
-	branchUniversalObject.title               = @"My Item Title";
+    // ...add data to the branchUniversalObject as needed...
+    branchUniversalObject.canonicalIdentifier = @"item/12345";
+    branchUniversalObject.canonicalUrl        = @"https://branch.io/item/12345";
+    branchUniversalObject.title               = @"My Item Title";
 
-	// Create an event and add the BranchUniversalObject to it.
-	BranchEvent *event     = [BranchEvent standardEvent:BranchStandardEventAddToCart];
+    // Create an event and add the BranchUniversalObject to it.
+    BranchEvent *event     = [BranchEvent standardEvent:BranchStandardEventAddToCart];
 
-	// Add the BranchUniversalObjects with the content:
-	event.contentItems     = (id) @[ branchUniversalObject ];
+    // Add the BranchUniversalObjects with the content:
+    event.contentItems     = (id) @[ branchUniversalObject ];
 
-	// Add relevant event data:
-	event.transactionID    = @"12344555";
-	event.currency         = BNCCurrencyUSD;
-	event.revenue          = [NSDecimalNumber decimalNumberWithString:@"1.5"];
-	event.shipping         = [NSDecimalNumber decimalNumberWithString:@"10.2"];
-	event.tax              = [NSDecimalNumber decimalNumberWithString:@"12.3"];
-	event.coupon           = @"test_coupon";
-	event.affiliation      = @"test_affiliation";
-	event.eventDescription = @"Event_description";
-	event.searchQuery      = @"item 123";
-	event.customData       = (NSMutableDictionary*) @{
-	    @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
-	    @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
-	};
-	[event logEvent];
-	```
+    // Add relevant event data:
+    event.transactionID    = @"12344555";
+    event.currency         = BNCCurrencyUSD;
+    event.revenue          = [NSDecimalNumber decimalNumberWithString:@"1.5"];
+    event.shipping         = [NSDecimalNumber decimalNumberWithString:@"10.2"];
+    event.tax              = [NSDecimalNumber decimalNumberWithString:@"12.3"];
+    event.coupon           = @"test_coupon";
+    event.affiliation      = @"test_affiliation";
+    event.eventDescription = @"Event_description";
+    event.searchQuery      = @"item 123";
+    event.customData       = (NSMutableDictionary*) @{
+        @"Custom_Event_Property_Key1": @"Custom_Event_Property_val1",
+        @"Custom_Event_Property_Key2": @"Custom_Event_Property_val2"
+    };
+    [event logEvent];
+    ```
 
 ### Android
 
@@ -289,23 +289,23 @@ Content events are events that occur when a user engages with your in-app conten
 
 - *Swift*
 
-	```swift
-	let event = BranchEvent.standardEvent(.search)
-	event.eventDescription = "Product Search"
-	event.searchQuery = "user search query terms for product xyz"
-	event.customData["Custom_Event_Property_Key1"] = "Custom_Event_Property_val1"
-	event.logEvent()
-	```
+    ```swift
+    let event = BranchEvent.standardEvent(.search)
+    event.eventDescription = "Product Search"
+    event.searchQuery = "user search query terms for product xyz"
+    event.customData["Custom_Event_Property_Key1"] = "Custom_Event_Property_val1"
+    event.logEvent()
+    ```
 
 - *Objective-C*
 
-	```obj-c
-	BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventSearch];
-	event.eventDescription = @"Product Search";
-	event.searchQuery = @"user search query terms for product xyz";
-	event.customData[@"Custom_Event_Property_Key1"] = @"Custom_Event_Property_val1";
-	[event logEvent];
-	```
+    ```obj-c
+    BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventSearch];
+    event.eventDescription = @"Product Search";
+    event.searchQuery = @"user search query terms for product xyz";
+    event.customData[@"Custom_Event_Property_Key1"] = @"Custom_Event_Property_val1";
+    [event logEvent];
+    ```
 
 ### Android
 
@@ -419,23 +419,23 @@ Lifecycle events can be described as events a user takes in your app to continue
 
 - *Swift*
 
-	```swift
-	let event = BranchEvent.standardEvent(.completeRegistration)
-	event.transactionID = "tx1234"
-	event.eventDescription = "User completed registration."
-	event.customData["registrationID"] = "12345"
-	event.logEvent()
-	```
+    ```swift
+    let event = BranchEvent.standardEvent(.completeRegistration)
+    event.transactionID = "tx1234"
+    event.eventDescription = "User completed registration."
+    event.customData["registrationID"] = "12345"
+    event.logEvent()
+    ```
 
 - *Objective-C*
 
-	```obj-c
-	BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventCompleteRegistration];
-	event.transactionID = @"tx1234"
-	event.eventDescription = @"User completed registration.";
-	event.customData[@"registrationID"] = @"12345";
-	[event logEvent];
-	```
+    ```obj-c
+    BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventCompleteRegistration];
+    event.transactionID = @"tx1234"
+    event.eventDescription = @"User completed registration.";
+    event.customData[@"registrationID"] = @"12345";
+    [event logEvent];
+    ```
 
 ### Android
 
@@ -491,15 +491,15 @@ If you want to track an event that isn't a predefined event, simply do the follo
 
 - *Swift*
 
-	```swift
-	BranchEvent.customEventWithName("User_Scanned_Item").logEvent()
-	```
-    
+    ```swift
+    BranchEvent.customEventWithName("User_Scanned_Item").logEvent()
+    ```
+      
 - *Objective-C*
 
-	```obj-c
-	[BranchEvent.customEventWithName(@"User_Scanned_Item") logEvent];
-	```
+    ```obj-c
+    [BranchEvent.customEventWithName(@"User_Scanned_Item") logEvent];
+    ```
 
 ### Android
 

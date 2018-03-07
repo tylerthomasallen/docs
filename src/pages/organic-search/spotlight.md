@@ -92,7 +92,7 @@ Open your **AppDelegate.m** file and add the following method. If you completed 
 
 ### Use deepviews for user acquisition
 
-If the user doesn't have the app installed and finds your content through search, Spotlight will open up the browser. In this situation, you can [show a Deepview](pages/web/deep-views/), which is an automatically-generated, mobile web render of the app content.
+If the user doesn't have the app installed and finds your content through search, Spotlight will open up the browser. In this situation, you can [show a Deepview](/pages/web/deep-views/), which is an automatically-generated, mobile web render of the app content.
 
 ### Customize content
 

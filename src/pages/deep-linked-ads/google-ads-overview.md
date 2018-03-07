@@ -185,7 +185,7 @@ add_to_cart | add_to_cart
 ecommerce_purchase | purchase
 custom | any custom event tracked through Branch
 
-In order to track these events, please refer to this document for further [information](https://docs.branch.io/pages/apps/v2event/#v2-event). 
+In order to track these events, please refer to this document for further [information](/pages/apps/v2event/#v2-event). 
 
 ## Other Campaigns
 

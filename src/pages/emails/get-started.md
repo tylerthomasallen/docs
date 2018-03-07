@@ -123,7 +123,7 @@ Completing your integration requires some setup that is specific to your email s
 
 - **[Amazon SES](/pages/emails/amazon-ses/)**
 - **[Betaout](/pages/emails/betaout/)**
-- **[Blueshift](pages/emails/blueshift/)**
+- **[Blueshift](/pages/emails/blueshift/)**
 - **[Braze (formerly Appboy)](/pages/emails/braze/)**
 - **[Bronto](/pages/emails/bronto/)**
 - **[Campaign Monitor](/pages/emails/campaign-monitor/)**

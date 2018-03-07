@@ -777,7 +777,7 @@
 
 - ### Append metadata to Branch network call
 
-    - Functions to append additional metadata, for use cases like inserting user ID's to enable third-party [Data Integrations](https://docs.branch.io/pages/integrations/data-integrations/)
+    - Functions to append additional metadata, for use cases like inserting user ID's to enable third-party [Data Integrations](/pages/integrations/data-integrations/)
 
         - *Swift 3 & 4*
 
