@@ -1,0 +1,7091 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Branch documentation for mobile deep linking">
+      
+      
+        <link rel="canonical" href="https://docs.branch.io/pages/exports/query-recipe-book/">
+      
+      
+        <meta name="author" content="Branch">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>Query Recipe Book - Branch documentation</title>
+      
+    
+    
+      <style>.async-hide{opacity:0!important}</style>
+      <script>!function(e,n,t,a,o,c,i,s,m){n.className+=" "+t,c.start=1*new Date,c.end=i=function(){n.className=n.className.replace(RegExp(" ?"+t),"")},(e[a]=e[a]||[]).hide=c,setTimeout(function(){i(),c.end=null},1e3),c.timeout=1e3}(window,document.documentElement,"async-hide","dataLayer",0,{"GTM-PCPBXCN":!0})</script>
+    
+    
+      <script>!function(e,p){if(!p.__SV){var o,r,t=window;try{var n,i,a,l=t.location,s=l.hash;n=function(e,t){return(i=e.match(RegExp(t+"=([^&]*)")))?i[1]:null},s&&n(s,"state")&&("mpeditor"===(a=JSON.parse(decodeURIComponent(n(s,"state")))).action&&(t.sessionStorage.setItem("_mpcehash",s),history.replaceState(a.desiredHash||"",e.title,l.pathname+l.search)))}catch(e){}(window.mixpanel=p)._i=[],p.init=function(e,t,n){function i(e,t){var n=t.split(".");2==n.length&&(e=e[n[0]],t=n[1]),e[t]=function(){e.push([t].concat(Array.prototype.slice.call(arguments,0)))}}var a=p;for(void 0!==n?a=p[n]=[]:n="mixpanel",a.people=a.people||[],a.toString=function(e){var t="mixpanel";return"mixpanel"!==n&&(t+="."+n),e||(t+=" (stub)"),t},a.people.toString=function(){return a.toString(1)+".people (stub)"},o="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" "),r=0;r<o.length;r++)i(a,o[r]);p._i.push([e,t,n])},p.__SV=1.2,(t=e.createElement("script")).type="text/javascript",t.async=!0,t.src="undefined"!=typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js",(n=e.getElementsByTagName("script")[0]).parentNode.insertBefore(t,n)}}(document,window.mixpanel||[]),mixpanel.init("47ec8ea9ac102b1370221dcda476091c")</script>
+    
+    
+      <script>function getCookie(e){var i=("; "+document.cookie).split("; "+e+"=");if(2<=i.length)return i.pop().split(";").shift()}function setCookie(e,i,t){var o=new Date;o=new Date(o.getTime()+864e5*t),document.cookie=e+"="+i+"; expires="+o.toGMTString()+"; path=/; domain=.branch.io"}var returning_visitor=getCookie("bnc_returning_visitor"),page_url=window.location.host+window.location.pathname;setCookie("bnc_returning_visitor","1",30),function(e,i,t,o,n,a,r){e.GoogleAnalyticsObject=n,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,a=i.createElement(t),r=i.getElementsByTagName(t)[0],a.async=1,a.src="https://www.google-analytics.com/analytics.js",r.parentNode.insertBefore(a,r)}(window,document,"script",0,"ga"),ga("create","UA-53307642-1","auto"),ga("require","GTM-PCPBXCN"),ga("send","pageview"),ga("require","linkid","linkid.js"),returning_visitor||ga("set","dimension1",page_url)</script>
+    
+    
+      <script>!function(e,t,n,o,c,a,f){e.fbq||(c=e.fbq=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},e._fbq||(e._fbq=c),(c.push=c).loaded=!0,c.version="2.0",c.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,"script"),fbq("init","1040694199304729"),fbq("track","PageView")</script>
+      <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1040694199304729&ev=PageView&noscript=1"></noscript>
+    
+    
+      <script>_linkedin_data_partner_id="21211",function(){var e=document.getElementsByTagName("script")[0],t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://snap.licdn.com/li.lms-analytics/insight.min.js",e.parentNode.insertBefore(t,e)}()</script>
+    
+    
+      <script src="//cdn.bizible.com/scripts/bizible.js" async></script>
+    
+    
+      <script>!function(){var e=!1;function n(){!1===e&&(e=!0,Munchkin.init("315-FTT-121",{domainLevel:2}))}var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//munchkin.marketo.net/munchkin.js",t.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||n()},t.onload=n,document.getElementsByTagName("head")[0].appendChild(t)}()</script>
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.78aab2dc.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#summary-page-installs" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.branch.io" title="Branch documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../../img/logo.svg">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href="https://docs.branch.io" title="Branch documentation">
+            <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
+          </a>
+        </div>
+      
+      
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+            
+              
+                <span class="md-header-nav__topic">
+                  Branch documentation
+                </span>
+                <span class="md-header-nav__topic">
+                  Query Recipe Book
+                </span>
+              
+            
+          </div>
+        </div>
+      
+      
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-helpful" id="header-helpful" title="Helpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_up</i>
+            <p class="branch-header-label">Helpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-unhelpful" id="header-unhelpful" title="Unhelpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_down</i>
+            <p class="branch-header-label">Unhelpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#" class="improve-doc" title="Improve This Doc">
+            <i class="branch-header-icon md-icon material-icons">mode_edit</i>
+            <p class="branch-header-label">Improve</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#" class="contact-support" title="Contact support">
+            <i class="branch-header-icon md-icon material-icons">help_outline</i>
+            <p class="branch-header-label">Support</p>
+          </a>
+        </div>
+      
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-search" id="header-search" title="Search">
+            <label class="md-icon md-icon--search md-header-nav__button"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      
+        <i class="branch-header-search md-icon material-icons">search</i>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          </a>
+        </div>
+      
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../../../img/logo.svg" width="48" height="48">
+      
+    </span>
+    Branch documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/branchmetrics/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Branch documentation
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Basic integration
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../dashboard/integrate/" title="Configure your dashboard" class="md-nav__link">
+      Configure your dashboard
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Configure your app
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Configure your app
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/ios/" title="iOS" class="md-nav__link">
+      iOS
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/android/" title="Android" class="md-nav__link">
+      Android
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/cordova-phonegap-ionic/" title="Cordova PhoneGap Ionic" class="md-nav__link">
+      Cordova PhoneGap Ionic
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/mparticle-android/" title="mParticle Android" class="md-nav__link">
+      mParticle Android
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/mparticle-ios/" title="mParticle iOS" class="md-nav__link">
+      mParticle iOS
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/titanium/" title="Titanium" class="md-nav__link">
+      Titanium
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/react-native/" title="React Native" class="md-nav__link">
+      React Native
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/unity/" title="Unity" class="md-nav__link">
+      Unity
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/xamarin/" title="Xamarin" class="md-nav__link">
+      Xamarin
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Configure your deep linking
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Configure your deep linking
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linking/universal-links/" title="iOS Universal Links" class="md-nav__link">
+      iOS Universal Links
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linking/android-app-links/" title="Android App Links" class="md-nav__link">
+      Android App Links
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linking/routing/" title="In-app deep link routing" class="md-nav__link">
+      In-app deep link routing
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Launch your app
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Launch your app
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/ios-launch/" title="Apple App Store" class="md-nav__link">
+      Apple App Store
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/android-launch/" title="Google Play" class="md-nav__link">
+      Google Play
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../web/integrate/" title="Configure your website" class="md-nav__link">
+      Configure your website
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Basic usage
+          </li>
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../links/integrate/" title="Create deep links" class="md-nav__link">
+      Create deep links
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Track analytics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Track analytics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../dashboard/analytics/" title="Dashboard analytics" class="md-nav__link">
+      Dashboard analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../dashboard/unified-analytics/" title="New Dashboard Analytics" class="md-nav__link">
+      New Dashboard Analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../dashboard/timezone/" title="Time zone support" class="md-nav__link">
+      Time zone support
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Advanced usage
+          </li>
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Links on your website
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Links on your website
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/deep-views/" title="Deepviews" class="md-nav__link">
+      Deepviews
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/journeys/" title="Journeys App Banners" class="md-nav__link">
+      Journeys App Banners
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/amp-journeys/" title="AMP Journeys" class="md-nav__link">
+      AMP Journeys
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/text-me-the-app/" title="Text Me The App" class="md-nav__link">
+      Text Me The App
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/hosted-data/" title="Hosted Deep Link Data" class="md-nav__link">
+      Hosted Deep Link Data
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Links in your paid ads
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Links in your paid ads
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/dynamic-product-feeds/" title="Dynamic Product Feeds" class="md-nav__link">
+      Dynamic Product Feeds
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/branch-universal-ads/" title="Branch Universal Ads" class="md-nav__link">
+      Branch Universal Ads
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/apple/" title="Apple Search" class="md-nav__link">
+      Apple Search
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/doubleclick/" title="Doubleclick" class="md-nav__link">
+      Doubleclick
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/google-ads-overview/" title="Google" class="md-nav__link">
+      Google
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/facebook-ads-overview/" title="Facebook" class="md-nav__link">
+      Facebook
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Links in your emails
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Links in your emails
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/get-started/" title="Get Started" class="md-nav__link">
+      Get Started
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/amazon-ses/" title="Amazon SES" class="md-nav__link">
+      Amazon SES
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/betaout/" title="Betaout" class="md-nav__link">
+      Betaout
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/blueshift/" title="Blueshift" class="md-nav__link">
+      Blueshift
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/braze/" title="Braze (formerly Appboy)" class="md-nav__link">
+      Braze (formerly Appboy)
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/bronto/" title="Bronto" class="md-nav__link">
+      Bronto
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/campaign-monitor/" title="Campaign Monitor" class="md-nav__link">
+      Campaign Monitor
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/epsilon/" title="Epsilon" class="md-nav__link">
+      Epsilon
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/kahuna/" title="Kahuna" class="md-nav__link">
+      Kahuna
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/leanplum/" title="Leanplum" class="md-nav__link">
+      Leanplum
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/mailgun/" title="Mailgun" class="md-nav__link">
+      Mailgun
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/mailjet/" title="Mailjet" class="md-nav__link">
+      Mailjet
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/mandrill/" title="Mandrill" class="md-nav__link">
+      Mandrill
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/moengage/" title="MoEngage" class="md-nav__link">
+      MoEngage
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/postup/" title="PostUp" class="md-nav__link">
+      PostUp
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/responsys/" title="Responsys" class="md-nav__link">
+      Responsys
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sailthru/" title="Sailthru" class="md-nav__link">
+      Sailthru
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/salesforce/" title="Salesforce" class="md-nav__link">
+      Salesforce
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sender/" title="Sender" class="md-nav__link">
+      Sender
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sendgrid/" title="SendGrid" class="md-nav__link">
+      SendGrid
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sparkpost/" title="SparkPost" class="md-nav__link">
+      SparkPost
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/vero/" title="Vero" class="md-nav__link">
+      Vero
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/zeta/" title="Zeta" class="md-nav__link">
+      Zeta
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/support/" title="Support" class="md-nav__link">
+      Support
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/self-serve/" title="Self Serve" class="md-nav__link">
+      Self Serve
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../advance/push-notifications/" title="Links in push notifications" class="md-nav__link">
+      Links in push notifications
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Links in organic search
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Links in organic search
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../organic-search/firebase/" title="Firebase App Indexing" class="md-nav__link">
+      Firebase App Indexing
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../organic-search/spotlight/" title="Spotlight Search" class="md-nav__link">
+      Spotlight Search
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../organic-search/branch-seo/" title="General SEO Compatibility" class="md-nav__link">
+      General SEO Compatibility
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Links for viral & referral
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Links for viral & referral
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../viral/content-sharing/" title="Content sharing" class="md-nav__link">
+      Content sharing
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../viral/referrals/" title="Referral programs" class="md-nav__link">
+      Referral programs
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Links in new app platforms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        Links in new app platforms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../app-to-app/android-instant-apps/" title="Android Instant Apps" class="md-nav__link">
+      Android Instant Apps
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../app-to-app/imessage-apps/" title="iMessage Apps" class="md-nav__link">
+      iMessage Apps
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16" checked>
+    
+    <label class="md-nav__link" for="nav-16">
+      Export Branch data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        Export Branch data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16-1" type="checkbox" id="nav-16-1" checked>
+    
+    <label class="md-nav__link" for="nav-16-1">
+      Data Feeds
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-1">
+        Data Feeds
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../data-feeds/" title="Get Started" class="md-nav__link">
+      Get Started
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16-1-2" type="checkbox" id="nav-16-1-2">
+    
+    <label class="md-nav__link" for="nav-16-1-2">
+      Data Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-16-1-2">
+        Data Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/data-integrations/" title="Get Started" class="md-nav__link">
+      Get Started
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/adobe-analytics/" title="Adobe Analytics" class="md-nav__link">
+      Adobe Analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/adjust/" title="Adjust" class="md-nav__link">
+      Adjust
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/amplitude/" title="Amplitude" class="md-nav__link">
+      Amplitude
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/appmetrica/" title="AppMetrica" class="md-nav__link">
+      AppMetrica
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/appboy/" title="Braze" class="md-nav__link">
+      Braze
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/appsflyer/" title="Appsflyer" class="md-nav__link">
+      Appsflyer
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/clevertap/" title="CleverTap" class="md-nav__link">
+      CleverTap
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/fabric-answers/" title="Fabric Answers" class="md-nav__link">
+      Fabric Answers
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/google-analytics/" title="Google Analytics" class="md-nav__link">
+      Google Analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/kochava/" title="Kochava" class="md-nav__link">
+      Kochava
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/localytics/" title="Localytics" class="md-nav__link">
+      Localytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/mixpanel/" title="Mixpanel" class="md-nav__link">
+      Mixpanel
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/mparticle/" title="mParticle" class="md-nav__link">
+      mParticle
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/segment/" title="Segment" class="md-nav__link">
+      Segment
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/tune/" title="Tune" class="md-nav__link">
+      Tune
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../api-v3/" title="Data Export API" class="md-nav__link">
+      Data Export API
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../ua-webhooks/" title="Webhooks" class="md-nav__link">
+      Webhooks
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../query-api/" title="Query API" class="md-nav__link">
+      Query API
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Query Recipe Book
+      </label>
+    
+    <a href="./" title="Query Recipe Book" class="md-nav__link md-nav__link--active">
+      Query Recipe Book
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-installs" title="Summary Page - Installs" class="md-nav__link">
+    Summary Page - Installs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-installs" title="All Installs" class="md-nav__link">
+    All Installs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs" title="Attributed Installs" class="md-nav__link">
+    Attributed Installs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs-split-by-campaign" title="Attributed Installs, Split by Campaign" class="md-nav__link">
+    Attributed Installs, Split by Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs-with-filter-on-campaign" title="Attributed Installs, With Filter on Campaign" class="md-nav__link">
+    Attributed Installs, With Filter on Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs-split-by-campaign-with-filter-on-campaign" title="Attributed Installs, Split by Campaign, With Filter on Campaign" class="md-nav__link">
+    Attributed Installs, Split by Campaign, With Filter on Campaign
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-click-flow" title="Summary Page - Click Flow" class="md-nav__link">
+    Summary Page - Click Flow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-campaign" title="Filter on Campaign" class="md-nav__link">
+    Filter on Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-for-an-individual-quick-link" title="Filter for an individual Quick Link" class="md-nav__link">
+    Filter for an individual Quick Link
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-journeys" title="Summary Page - Journeys" class="md-nav__link">
+    Summary Page - Journeys
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_1" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-tags" title="Filter on Tags" class="md-nav__link">
+    Filter on Tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-deepviews" title="Summary Page - Deepviews" class="md-nav__link">
+    Summary Page - Deepviews
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_2" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-stage" title="Filter on Stage" class="md-nav__link">
+    Filter on Stage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-links" title="Quick Links" class="md-nav__link">
+    Quick Links
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_3" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-analytics" title="Source Analytics" class="md-nav__link">
+    Source Analytics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_4" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-ad-partner" title="Filter on Ad Partner" class="md-nav__link">
+    Filter on Ad Partner
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ads-analytics-trends" title="Ads Analytics - Trends" class="md-nav__link">
+    Ads Analytics - Trends
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installs-split-by-campaign" title="Installs, Split by Campaign" class="md-nav__link">
+    Installs, Split by Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installs-split-by-campaign-with-filter-on-platform" title="Installs, Split by Campaign, With Filter on Platform" class="md-nav__link">
+    Installs, Split by Campaign, With Filter on Platform
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ads-analytics-events" title="Ads Analytics - Events" class="md-nav__link">
+    Ads Analytics - Events
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-by-ad-partner" title="Split by Ad Partner" class="md-nav__link">
+    Split by Ad Partner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-by-ad-partner-with-filter-on-ad-partner" title="Split by Ad Partner, With Filter on Ad Partner" class="md-nav__link">
+    Split by Ad Partner, With Filter on Ad Partner
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/matching/" title="Branch Matching Overview" class="md-nav__link">
+      Branch Matching Overview
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Resources
+          </li>
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/validation-tools/" title="Validation Tools" class="md-nav__link">
+      Validation Tools
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/case-studies/" title="Case Studies and Infographics" class="md-nav__link">
+      Case Studies and Infographics
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-installs" title="Summary Page - Installs" class="md-nav__link">
+    Summary Page - Installs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-installs" title="All Installs" class="md-nav__link">
+    All Installs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs" title="Attributed Installs" class="md-nav__link">
+    Attributed Installs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs-split-by-campaign" title="Attributed Installs, Split by Campaign" class="md-nav__link">
+    Attributed Installs, Split by Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs-with-filter-on-campaign" title="Attributed Installs, With Filter on Campaign" class="md-nav__link">
+    Attributed Installs, With Filter on Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributed-installs-split-by-campaign-with-filter-on-campaign" title="Attributed Installs, Split by Campaign, With Filter on Campaign" class="md-nav__link">
+    Attributed Installs, Split by Campaign, With Filter on Campaign
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-click-flow" title="Summary Page - Click Flow" class="md-nav__link">
+    Summary Page - Click Flow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-campaign" title="Filter on Campaign" class="md-nav__link">
+    Filter on Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-for-an-individual-quick-link" title="Filter for an individual Quick Link" class="md-nav__link">
+    Filter for an individual Quick Link
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-journeys" title="Summary Page - Journeys" class="md-nav__link">
+    Summary Page - Journeys
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_1" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-tags" title="Filter on Tags" class="md-nav__link">
+    Filter on Tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-page-deepviews" title="Summary Page - Deepviews" class="md-nav__link">
+    Summary Page - Deepviews
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_2" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-stage" title="Filter on Stage" class="md-nav__link">
+    Filter on Stage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-links" title="Quick Links" class="md-nav__link">
+    Quick Links
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_3" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-analytics" title="Source Analytics" class="md-nav__link">
+    Source Analytics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-filters_4" title="No filters" class="md-nav__link">
+    No filters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-on-ad-partner" title="Filter on Ad Partner" class="md-nav__link">
+    Filter on Ad Partner
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ads-analytics-trends" title="Ads Analytics - Trends" class="md-nav__link">
+    Ads Analytics - Trends
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installs-split-by-campaign" title="Installs, Split by Campaign" class="md-nav__link">
+    Installs, Split by Campaign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installs-split-by-campaign-with-filter-on-platform" title="Installs, Split by Campaign, With Filter on Platform" class="md-nav__link">
+    Installs, Split by Campaign, With Filter on Platform
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ads-analytics-events" title="Ads Analytics - Events" class="md-nav__link">
+    Ads Analytics - Events
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-by-ad-partner" title="Split by Ad Partner" class="md-nav__link">
+    Split by Ad Partner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-by-ad-partner-with-filter-on-ad-partner" title="Split by Ad Partner, With Filter on Ad Partner" class="md-nav__link">
+    Split by Ad Partner, With Filter on Ad Partner
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/branchmetrics/docs/edit/master/src/pages/exports/query-recipe-book.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Query Recipe Book</h1>
+                
+                <div class="admonition protip">
+<p class="admonition-title">Want to see a Query API reference?</p>
+<p>For an exhaustive list of options for this Query API, flip over to the <a href="../query-api/">Query API</a> reference page.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Date format recently changed</p>
+<p>The date format recently changed. You are no longer required or allowed to specify a time as part of <code>start_date</code> and <code>end_date</code>. Instead, we use the timezone associated with your app. Visit the <a href="https://dashboard.branch.io/account-settings/app">Account Settings</a> to see your timezone.</p>
+<p>Example change: instead of sending <code>2017-11-29T00:00:00-08:00</code>, send <code>2017-11-29</code>.</p>
+</div>
+<p>You can find your Branch Key and Branch Secret on the <a href="https://dashboard.branch.io/account-settings/app">Account Settings</a> page of the Branch Dashboard. Give the curls below a try from any terminal!</p>
+<h2 id="summary-page-installs">Summary Page - Installs<a class="headerlink" href="#summary-page-installs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="all-installs">All Installs<a class="headerlink" href="#all-installs" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-installs-all.png" /></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-11-29",
+  "end_date": "2017-12-05",
+  "data_source": "eo_install",
+  "granularity": "day",
+  "dimensions": [
+    "timestamp"
+  ],
+  "filters": {
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-05T08:00:00.000Z",
+    "result" : {
+      "unique_count" : 246
+    }
+  }, {
+    "timestamp" : "2017-12-04T08:00:00.000Z",
+    "result" : {
+      "unique_count" : 302
+    }
+  }, {
+    "timestamp" : "2017-12-03T08:00:00.000Z",
+    "result" : {
+      "unique_count" : 277
+    }
+  }, {
+    "timestamp" : "2017-12-02T08:00:00.000Z",
+    "result" : {
+      "unique_count" : 300
+    }
+  }, {
+    "timestamp" : "2017-12-01T08:00:00.000Z",
+    "result" : {
+      "unique_count" : 264
+    }
+  }, {
+    "timestamp" : "2017-11-30T08:00:00.000Z",
+    "result" : {
+      "unique_count" : 208
+    }
+  }, {
+    "timestamp" : "2017-11-29T08:00:00.000Z",
+    "result" : {
+      "unique_count" : 225
+    }
+  } ],
+  "paging" : {
+    "total_count" : 7
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="attributed-installs">Attributed Installs<a class="headerlink" href="#attributed-installs" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-installs-attributed.png" /></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-11-29",
+  "end_date": "2017-12-05",
+  "data_source": "eo_install",
+  "granularity": "day",
+  "dimensions": [
+    "timestamp"
+  ],
+  "filters": {
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      "null"
+    ]
+  },
+  "aggregation": "total_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-05T08:00:00.000Z",
+    "result" : {
+      "total_count" : 248.0
+    }
+  }, {
+    "timestamp" : "2017-12-04T08:00:00.000Z",
+    "result" : {
+      "total_count" : 296.0
+    }
+  }, {
+    "timestamp" : "2017-12-03T08:00:00.000Z",
+    "result" : {
+      "total_count" : 284.0
+    }
+  }, {
+    "timestamp" : "2017-12-02T08:00:00.000Z",
+    "result" : {
+      "total_count" : 291.0
+    }
+  }, {
+    "timestamp" : "2017-12-01T08:00:00.000Z",
+    "result" : {
+      "total_count" : 263.0
+    }
+  }, {
+    "timestamp" : "2017-11-30T08:00:00.000Z",
+    "result" : {
+      "total_count" : 214.0
+    }
+  }, {
+    "timestamp" : "2017-11-29T08:00:00.000Z",
+    "result" : {
+      "total_count" : 227.0
+    }
+  } ],
+  "paging" : {
+    "total_count" : 7
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="attributed-installs-split-by-campaign">Attributed Installs, Split by Campaign<a class="headerlink" href="#attributed-installs-split-by-campaign" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-installs-by-campaign.png" /></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-11-29",
+  "end_date": "2017-12-05",
+  "data_source": "eo_install",
+  "granularity": "day",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      "null"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 171
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 158
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 157
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 148
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 144
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 124
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 120
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 77
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 76
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 68
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 43
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 40
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 39
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 37
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 35
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 35
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 34
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 33
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 32
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 32
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 26
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 25
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Testing Campaign #1",
+      "unique_count" : 25
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Testing Campaign #1",
+      "unique_count" : 23
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 23
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 22
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 12
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 8
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Testing Campaign #1",
+      "unique_count" : 5
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 5
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 3
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 3
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "v4o4endh3v1m583m",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "k7eemxrdnk12a1p9",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "vyzsy23zcctimd0c",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "2zx7s0ubz3kt9cu8",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "s9q1mtr614p09yxk",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "y6gadrelf15prahr",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ngp33osyfxclcfz2",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "f5tfpbaipwbaukk3",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "hzzlo3l0mqk1fj2g",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "07xe6qth3vckasq8",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "6zcs44qwj4m0ei5v",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "eu6q00cdnsa81mib",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ud3ux85ax566k8gr",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "tsgh43d5m52uphci",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "3mmub272xazx8gag",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "bifwkqw9y6cnlg5m",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "obpfj155rlog98v0",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a853s9xge85rpv8b",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "dvev0bpog6lwyd4k",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a4g#1",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 56
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="attributed-installs-with-filter-on-campaign">Attributed Installs, With Filter on Campaign<a class="headerlink" href="#attributed-installs-with-filter-on-campaign" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-installs-with-filter.png" /></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-08",
+  "end_date": "2017-12-14",
+  "data_source": "eo_install",
+  "granularity": "day",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      "null"
+    ],
+    "last_attributed_touch_data_tilde_campaign": [
+      "09slukxuhqn8f821",
+      "0x230602kyi18keo"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "09slukxuhqn8f821",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-11T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "0x230602kyi18keo",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-13T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="attributed-installs-split-by-campaign-with-filter-on-campaign">Attributed Installs, Split by Campaign, With Filter on Campaign<a class="headerlink" href="#attributed-installs-split-by-campaign-with-filter-on-campaign" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-installs-by-campaign-with-filter.png" /></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-08",
+  "end_date": "2017-12-14",
+  "data_source": "eo_install",
+  "granularity": "day",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      "null"
+    ],
+    "last_attributed_touch_data_tilde_campaign": [
+      "09slukxuhqn8f821",
+      "0x230602kyi18keo"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "09slukxuhqn8f821",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-11T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "0x230602kyi18keo",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-13T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="summary-page-click-flow">Summary Page - Click Flow<a class="headerlink" href="#summary-page-click-flow" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="no-filters">No filters<a class="headerlink" href="#no-filters" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-click-flow.png" /></p>
+<p>Pulling this data requires 6 requests. For ease of understanding, we show the requests and responses below that correspond exactly to the data above. </p>
+<p>"Click" includes both eo_click and eo_web_to_app_auto_redirect.</p>
+<p>"Re-open" includes both eo_open and eo_reinstall.</p>
+<p><em>Click</em></p>
+<ul>
+<li>
+<p><em>Request 1</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform",
+    "from_desktop"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB"
+    ],
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 1</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "from_desktop" : "false",
+      "unique_count" : 683
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "from_desktop" : "false",
+      "unique_count" : 675
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "from_desktop" : "true",
+      "unique_count" : 49
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "from_desktop" : "true",
+      "unique_count" : 44
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "DESKTOP_WEB",
+      "from_desktop" : "false",
+      "unique_count" : 17
+    }
+  } ],
+  "paging" : {
+    "total_count" : 5
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Web-to-App Auto-Redirect</em></p>
+<ul>
+<li>
+<p><em>Request 2</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_web_to_app_auto_redirect",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform",
+    "from_desktop"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB"
+    ],
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 2</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "from_desktop" : "false",
+      "unique_count" : 6
+    }
+  } ],
+  "paging" : {
+    "total_count" : 1
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>SMS Sent</em></p>
+<ul>
+<li>
+<p><em>Request 3</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_sms_sent",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "DESKTOP_WEB"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 3</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "DESKTOP_WEB",
+      "unique_count" : 17
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 1
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request 4</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_install",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform",
+    "from_desktop"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 4</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "from_desktop" : "false",
+      "unique_count" : 657
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "from_desktop" : "false",
+      "unique_count" : 473
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "from_desktop" : "true",
+      "unique_count" : 49
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "from_desktop" : "true",
+      "unique_count" : 46
+    }
+  } ],
+  "paging" : {
+    "total_count" : 4
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Open</em></p>
+<ul>
+<li>
+<p><em>Request 5</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_open",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform",
+    "from_desktop"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 5</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "from_desktop" : "false",
+      "unique_count" : 436
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "from_desktop" : "false",
+      "unique_count" : 395
+    }
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Reinstall</em></p>
+<ul>
+<li>
+<p><em>Request 6</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_reinstall",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform",
+    "from_desktop"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 6</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "from_desktop" : "false",
+      "unique_count" : 361
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "from_desktop" : "false",
+      "unique_count" : 283
+    }
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="filter-on-campaign">Filter on Campaign<a class="headerlink" href="#filter-on-campaign" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-click-flow-with-filter.png" /></p>
+<p>This example looks at feature: journeys. For a full list of dimensions that can be queried against, see our <a href="../query-api/">Query API</a> reference docs.</p>
+<p><em>Click, with a filter for feature: journeys</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform",
+    "from_desktop"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB"
+    ],
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ],
+    "last_attributed_touch_data_tilde_feature": [
+      "journeys"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "from_desktop" : "false",
+      "unique_count" : 167
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "from_desktop" : "false",
+      "unique_count" : 166
+    }
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="filter-for-an-individual-quick-link">Filter for an individual Quick Link<a class="headerlink" href="#filter-for-an-individual-quick-link" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/quick-link-click-flow.png" /></p>
+<p>It’s also possible to pull Click Flow statistics for individual Quick Links. You simply need the id of the Quick Link, which can be found in the URL when viewing the individual link stats page. In the screenshot above, the Quick Link’s ID is 271026075193177506.</p>
+<p>Simply plug in the link id into the request below.</p>
+<p><em>Click, with a filter for id: 271026075193177506</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-14",
+  "end_date": "2017-12-20",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform",
+    "from_desktop"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB"
+    ],
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ],
+    "last_attributed_touch_data_tilde_id": [
+      "271026075193177506"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-14T08:00:00.000Z",
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "from_desktop" : "false",
+      "unique_count" : 1
+    }
+  } ],
+  "paging" : {
+    "total_count" : 1
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="summary-page-journeys">Summary Page - Journeys<a class="headerlink" href="#summary-page-journeys" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="no-filters_1">No filters<a class="headerlink" href="#no-filters_1" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-journeys.png" /></p>
+<p>Pulling this data requires 6 requests. For ease of understanding, we show the requests and responses below that correspond exactly to the data above. </p>
+<p>"Clicks" includes both eo_click and eo_web_to_app_auto_redirect.</p>
+<p>"Opens" includes both eo_open and eo_reinstall.</p>
+<p><em>Branch CTA View</em></p>
+<ul>
+<li>
+<p><em>Request 1</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_branch_cta_view",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_JOURNEYS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 1</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "unique_count" : 406
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "unique_count" : 390
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Click</em></p>
+<ul>
+<li>
+<p><em>Request 2</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_JOURNEYS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 2</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "unique_count" : 167
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "unique_count" : 166
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Web-to-App Auto-Redirect</em></p>
+<ul>
+<li>
+<p><em>Request 3</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_web_to_app_auto_redirect",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_JOURNEYS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 3</em></p>
+<p><code>js
+{
+  "results" : [ ],
+  "paging" : {
+    "total_count" : 0
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request 4</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_install",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "last_attributed_touch_data_plus_via_features": [
+      "MOBILE_JOURNEYS"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 4</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "unique_count" : 167
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "unique_count" : 10
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Open</em></p>
+<ul>
+<li>
+<p><em>Request 5</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_open",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "last_attributed_touch_data_plus_via_features": [
+      "MOBILE_JOURNEYS"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 5</em></p>
+<p><code>js
+{
+  "results" : [ ],
+  "paging" : {
+    "total_count" : 0
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Reinstall</em></p>
+<ul>
+<li>
+<p><em>Request 6</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_reinstall",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "last_attributed_touch_data_plus_via_features": [
+      "MOBILE_JOURNEYS"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 6</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "unique_count" : 156
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "unique_count" : 75
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="filter-on-tags">Filter on Tags<a class="headerlink" href="#filter-on-tags" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-journeys-with-filter.png" /></p>
+<p>This example looks at tags: tag1. For a full list of dimensions that can be queried against, see our <a href="../query-api/">Query API</a> reference docs.</p>
+<p><em>Branch CTA View, with a filter for tags: tag1</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_branch_cta_view",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_JOURNEYS"
+    ],
+    "last_attributed_touch_data_tilde_tags": [
+      "tag1"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "unique_count" : 373
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "unique_count" : 6
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="summary-page-deepviews">Summary Page - Deepviews<a class="headerlink" href="#summary-page-deepviews" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="no-filters_2">No filters<a class="headerlink" href="#no-filters_2" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-deepviews.png" /></p>
+<p>Pulling this data requires 6 requests. For ease of understanding, we show the requests and responses below that correspond exactly to the data above. </p>
+<p>"Clicks" includes both eo_click and eo_web_to_app_auto_redirect.</p>
+<p>"Upgrades" includes both eo_open and eo_reinstall.</p>
+<p><em>Branch CTA View</em></p>
+<ul>
+<li>
+<p><em>Request 1</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_branch_cta_view",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 1</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "unique_count" : 529
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "unique_count" : 361
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Click</em></p>
+<ul>
+<li>
+<p><em>Request 2</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 2</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "unique_count" : 529
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "unique_count" : 440
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Web-to-App Auto-Redirect</em></p>
+<ul>
+<li>
+<p><em>Request 3</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_web_to_app_auto_redirect",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 3</em></p>
+<p><code>js
+{
+  "results" : [ ],
+  "paging" : {
+    "total_count" : 0
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request 4</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_install",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "last_attributed_touch_data_plus_via_features": [
+      "MOBILE_DEEPVIEWS"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 4</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "unique_count" : 435
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "unique_count" : 393
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Open</em></p>
+<ul>
+<li>
+<p><em>Request 5</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_open",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "last_attributed_touch_data_plus_via_features": [
+      "MOBILE_DEEPVIEWS"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 5</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "unique_count" : 167
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "unique_count" : 151
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Reinstall</em></p>
+<ul>
+<li>
+<p><em>Request 6</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_reinstall",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "last_attributed_touch_data_plus_via_features": [
+      "MOBILE_DEEPVIEWS"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 6</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_APP",
+      "unique_count" : 8
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_APP",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="filter-on-stage">Filter on Stage<a class="headerlink" href="#filter-on-stage" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/summary-deepviews-with-filter.png" /></p>
+<p>This example looks at stage: stage88. For a full list of dimensions that can be queried against, see our <a href="../query-api/">Query API</a> reference docs.</p>
+<p><em>Branch CTA View, with a filter for stage: stage88</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_branch_cta_view",
+  "granularity": "all",
+  "dimensions": [
+    "user_data_platform"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB"
+    ],
+    "last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS"
+    ],
+    "last_attributed_touch_data_tilde_stage": [
+      "stage88"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "user_data_platform" : "ANDROID_WEB",
+      "unique_count" : 90
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "user_data_platform" : "IOS_WEB",
+      "unique_count" : 86
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="no-filters_3">No filters<a class="headerlink" href="#no-filters_3" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/quick-links.png" /></p>
+<p>Pulling this data requires 6 requests. For ease of understanding, we show the requests and responses below that correspond exactly to the data above. </p>
+<p>"Clicks" includes both eo_click and eo_web_to_app_auto_redirect.</p>
+<p>"Opens" includes both eo_open and eo_reinstall.</p>
+<p><em>Click</em></p>
+<ul>
+<li>
+<p><em>Request 1</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-14",
+  "end_date": "2017-12-20",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_id"
+  ],
+  "filters": {
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ],
+    "last_attributed_touch_data_tilde_id": [
+      "458794678159033945",
+      "456130187302684655",
+      "400390887617834597",
+      "271026075193177506"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 1</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_id" : "271026075193177506",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-14T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 1
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Web-to-App Auto-Redirect</em></p>
+<ul>
+<li>
+<p><em>Request 2</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-14",
+  "end_date": "2017-12-20",
+  "data_source": "eo_web_to_app_auto_redirect",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_id"
+  ],
+  "filters": {
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ],
+    "last_attributed_touch_data_tilde_id": [
+      "458794678159033945",
+      "456130187302684655",
+      "400390887617834597",
+      "271026075193177506"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 2</em></p>
+<p><code>js
+{
+  "results" : [ ],
+  "paging" : {
+    "total_count" : 0
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request 3</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-14",
+  "end_date": "2017-12-20",
+  "data_source": "eo_install",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_id"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_id": [
+      "458794678159033945",
+      "456130187302684655",
+      "400390887617834597",
+      "271026075193177506"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 3</em></p>
+<p><code>js
+{
+  "results" : [ ],
+  "paging" : {
+    "total_count" : 0
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Open</em></p>
+<ul>
+<li>
+<p><em>Request 4</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-14",
+  "end_date": "2017-12-20",
+  "data_source": "eo_open",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_id"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_id": [
+      "458794678159033945",
+      "456130187302684655",
+      "400390887617834597",
+      "271026075193177506"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 4</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_id" : "271026075193177506",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-14T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 1
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Reinstall</em></p>
+<ul>
+<li>
+<p><em>Request 5</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-14",
+  "end_date": "2017-12-20",
+  "data_source": "eo_reinstall",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_id"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_id": [
+      "458794678159033945",
+      "456130187302684655",
+      "400390887617834597",
+      "271026075193177506"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 5</em></p>
+<p><code>js
+{
+  "results" : [ ],
+  "paging" : {
+    "total_count" : 0
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Web Session Start</em></p>
+<ul>
+<li>
+<p><em>Request 6</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-14",
+  "end_date": "2017-12-20",
+  "data_source": "eo_web_session_start",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_id"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_id": [
+      "458794678159033945",
+      "456130187302684655",
+      "400390887617834597",
+      "271026075193177506"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 6</em></p>
+<p><code>js
+{
+  "results" : [ ],
+  "paging" : {
+    "total_count" : 0
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="source-analytics">Source Analytics<a class="headerlink" href="#source-analytics" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="no-filters_4">No filters<a class="headerlink" href="#no-filters_4" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/source-analytics.png" /></p>
+<p>Pulling this data requires 6 requests. For ease of understanding, we show the requests and responses below that correspond exactly to the data above. </p>
+<p>If you add additional columns, then you will need to adjust the requests accordingly. For a full list of events and dimensions that can be queried against, see our <a href="../query-api/">Query API</a> reference docs. If you are still not sure how to query for data, write in to integrations@branch.io and we’ll (1) get you a response, and (2) add to this documentation.</p>
+<p>"Clicks" does <em>not</em> include eo_web_to_app_auto_redirect on this visualization. This is different from the Summary page charts and Quick Links. Those visualizations have historically included Web-to-App Auto-Redirects, folded into the Clicks number. This visualization breaks them out separately.</p>
+<p>"Opens" does <em>not</em> include eo_reinstall on this visualization. This is different from the Summary page charts and Quick Links. Those visualizations have historically included Reinstalls, folded into the Opens number. This visualization breaks them out separately.</p>
+<p><em>Click</em></p>
+<ul>
+<li>
+<p><em>Request 1</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB"
+    ],
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 1</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 495
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a4g#1",
+      "unique_count" : 490
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 330
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 193
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 30
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 5
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request 2</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_install",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 2</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 425
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a4g#1",
+      "unique_count" : 328
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "unique_count" : 201
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 82
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 66
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 54
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "v2x6mfmep5t3429d",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "uws6ibt9bdmjs93h",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ukmfqoai5jt05h90",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ugpaf50d40w3h7nv",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "tj88zdgl87btlsew",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "swmbrfb8uetcceca",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qf01mu2skor5276c",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "pevfjx3yhmkl6q20",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "nkq4sewytblugtyx",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ndef09e4tqogta3e",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "moueuf2f2gng0xtt",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "lof2d8phlxib2jsu",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "l0tj5y7vywpbnqrt",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ktjp5fkmqlaynmhu",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "kbsi96yyu2luxro0",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "k0ri60p6h1wfdlsg",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "jiqqk1szmwu3389k",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ink7z7o2niwpt1l3",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ifutq3dwfb9e9s4p",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "iezqkvwev3iwvofe",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "htlpek2btalb9b6h",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "hiefuih5ijsczi2n",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "gdo2nsb41isjwecn",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "gcfsu5d45fespfrg",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "fq78bun0gild6e3s",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "fokhum3bshzewf70",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "f6lf2d6sb1gfwq0b",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "dj07vvjvhz0zz72b",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "d2770bus2fspnep2",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "chyq5jrmxl7x3f4r",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "bmvlp0xk09rycm2v",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "airra0l6vv815g3j",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ai0xr4ywznoqxch5",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "9jc8zostyp21ywnz",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "91n80s0wkot3swh7",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "8ph9zt5rsoigi3gu",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "7pflpco7e54h4mmf",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "4tmmfp6pcu6znx9t",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "4b211n6wyjgefsrs",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "3ti2mxbgr6jb2p7s",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "3ieqalbk7u6amb09",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "2qplxc9p8cz5q49i",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1o1n3gznt58aggbh",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1l65lo2mc5arkz2v",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "0yqw86ud220cg88d",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "0x230602kyi18keo",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "09slukxuhqn8f821",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "xkeeamlknxevem2q",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "xc4ssq0dooex0yj0",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "y2tn5sg4dlnxeven",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "w2fgkfquzdk805mq",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "x9fvq4hg87169r8f",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 58
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Open</em></p>
+<ul>
+<li>
+<p><em>Request 3</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_open",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 3</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a4g#1",
+      "unique_count" : 312
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 284
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "unique_count" : 194
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "unique_count" : 17
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 16
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "moueuf2f2gng0xtt",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ink7z7o2niwpt1l3",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "iezqkvwev3iwvofe",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "htlpek2btalb9b6h",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "hiefuih5ijsczi2n",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "gcfsu5d45fespfrg",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "f6lf2d6sb1gfwq0b",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "dj07vvjvhz0zz72b",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "bmvlp0xk09rycm2v",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "airra0l6vv815g3j",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "4b9ra2zzxxq4lzj6",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "3ti2mxbgr6jb2p7s",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "2qplxc9p8cz5q49i",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1o1n3gznt58aggbh",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1l65lo2mc5arkz2v",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "09slukxuhqn8f821",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ugpaf50d40w3h7nv",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "xc4ssq0dooex0yj0",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "x9fvq4hg87169r8f",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "pevfjx3yhmkl6q20",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 25
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Web Session Start</em></p>
+<ul>
+<li>
+<p><em>Request 4</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_web_session_start",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_APP",
+      "ANDROID_APP",
+      "DESKTOP_WEB"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 4</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "unique_count" : 15
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a4g#1",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 2
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Purchase</em></p>
+<ul>
+<li>
+<p><em>Request 5</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_commerce_event",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign",
+    "name"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB",
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 5</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "name" : "ADD_TO_CART",
+      "unique_count" : 268
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a4g#1",
+      "name" : "PURCHASE",
+      "unique_count" : 169
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "name" : "PURCHASE",
+      "unique_count" : 154
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "name" : "PURCHASE",
+      "unique_count" : 131
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "name" : "PURCHASE",
+      "unique_count" : 68
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "name" : "PURCHASE",
+      "unique_count" : 25
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "gcfsu5d45fespfrg",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "x9fvq4hg87169r8f",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ugpaf50d40w3h7nv",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "tj88zdgl87btlsew",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "3ti2mxbgr6jb2p7s",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "xc4ssq0dooex0yj0",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "xkeeamlknxevem2q",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "pevfjx3yhmkl6q20",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "moueuf2f2gng0xtt",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ukmfqoai5jt05h90",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "jiqqk1szmwu3389k",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "iezqkvwev3iwvofe",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "hiefuih5ijsczi2n",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "fq78bun0gild6e3s",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "fokhum3bshzewf70",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "f6lf2d6sb1gfwq0b",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "bmvlp0xk09rycm2v",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "airra0l6vv815g3j",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "l0tj5y7vywpbnqrt",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "2qplxc9p8cz5q49i",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1xosk74azwbxtdyn",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "4b9ra2zzxxq4lzj6",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "swmbrfb8uetcceca",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "y2tn5sg4dlnxeven",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1o1n3gznt58aggbh",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "0x230602kyi18keo",
+      "name" : "PURCHASE",
+      "unique_count" : 1
+    }
+  } ],
+  "paging" : {
+    "total_count" : 32
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Revenue</em></p>
+<p>Note that revenue also has data_source <code>eo_purchase</code>, but with a different <code>aggregation</code>.</p>
+<ul>
+<li>
+<p><em>Request 6</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_commerce_event",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign",
+    "name"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB",
+      "IOS_APP",
+      "ANDROID_APP"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "revenue"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 6</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "a4g#1",
+      "revenue" : 220439.2490234375,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "CampaignName",
+      "revenue" : 182050.3577928543,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "revenue" : 170676.8486328125,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : null,
+      "revenue" : 43980.580078125,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "qa0",
+      "revenue" : 32342.879272460938,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "tj88zdgl87btlsew",
+      "revenue" : 4041.510009765625,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ugpaf50d40w3h7nv",
+      "revenue" : 2680.56005859375,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "l0tj5y7vywpbnqrt",
+      "revenue" : 2350.080078125,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "hiefuih5ijsczi2n",
+      "revenue" : 1853.0899658203125,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "xkeeamlknxevem2q",
+      "revenue" : 1679.3199462890625,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "fokhum3bshzewf70",
+      "revenue" : 1504.2099609375,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "3ti2mxbgr6jb2p7s",
+      "revenue" : 1455.699951171875,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "gcfsu5d45fespfrg",
+      "revenue" : 1434.8599853515625,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "x9fvq4hg87169r8f",
+      "revenue" : 1346.8199462890625,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "fq78bun0gild6e3s",
+      "revenue" : 981.6799926757812,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "swmbrfb8uetcceca",
+      "revenue" : 914.9199829101562,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "jiqqk1szmwu3389k",
+      "revenue" : 874.25,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "0x230602kyi18keo",
+      "revenue" : 533.5800170898438,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "iezqkvwev3iwvofe",
+      "revenue" : 499.9200134277344,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1xosk74azwbxtdyn",
+      "revenue" : 469.5299987792969,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "y2tn5sg4dlnxeven",
+      "revenue" : 463.69000244140625,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "airra0l6vv815g3j",
+      "revenue" : 449.54998779296875,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "pevfjx3yhmkl6q20",
+      "revenue" : 321.9800109863281,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "1o1n3gznt58aggbh",
+      "revenue" : 231.3300018310547,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "2qplxc9p8cz5q49i",
+      "revenue" : 202.74000549316406,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "moueuf2f2gng0xtt",
+      "revenue" : 30.950000762939453,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "bmvlp0xk09rycm2v",
+      "revenue" : 20.050000190734863,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "xc4ssq0dooex0yj0",
+      "revenue" : 16.290000915527344,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "ukmfqoai5jt05h90",
+      "revenue" : 13.979999542236328,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "4b9ra2zzxxq4lzj6",
+      "revenue" : 13.9399995803833,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "f6lf2d6sb1gfwq0b",
+      "revenue" : 11.399999618530273,
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "Default Ads Journeys",
+      "revenue" : 0.0,
+      "name" : "ADD_TO_CART"
+    }
+  } ],
+  "paging" : {
+    "total_count" : 32
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="filter-on-ad-partner">Filter on Ad Partner<a class="headerlink" href="#filter-on-ad-partner" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/source-analytics-with-filter.png" /></p>
+<p>This example looks at ad partner name: Taptica. For a full list of dimensions that can be queried against, see our <a href="../query-api/">Query API</a> reference docs.</p>
+<p><em>Click, with a filter for ad partner name: Taptica</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_campaign"
+  ],
+  "filters": {
+    "user_data_platform": [
+      "IOS_WEB",
+      "ANDROID_WEB",
+      "DESKTOP_WEB"
+    ],
+    "!last_attributed_touch_data_plus_current_feature": [
+      "MOBILE_DEEPVIEWS",
+      "DESKTOP_DEEPVIEWS"
+    ],
+    "last_attributed_touch_data_tilde_advertising_partner_name": [
+      "Taptica"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_campaign" : "taptica#1",
+      "unique_count" : 495
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 1
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ads-analytics-trends">Ads Analytics - Trends<a class="headerlink" href="#ads-analytics-trends" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="installs-split-by-campaign">Installs, Split by Campaign<a class="headerlink" href="#installs-split-by-campaign" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/ads-analytics-trends.png" /></p>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-11-29",
+  "end_date": "2017-12-05",
+  "data_source": "eo_install",
+  "granularity": "day",
+  "dimensions": "last_attributed_touch_data_tilde_advertising_partner_name",
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 40
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 37
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 35
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 35
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 34
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 33
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 32
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 26
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 23
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 22
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 20
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 15
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 12
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 12
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 11
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 10
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 9
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 8
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 7
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 20
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="installs-split-by-campaign-with-filter-on-platform">Installs, Split by Campaign, With Filter on Platform<a class="headerlink" href="#installs-split-by-campaign-with-filter-on-platform" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/ads-analytics-trends-with-filter.png" /></p>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-11-29",
+  "end_date": "2017-12-05",
+  "data_source": "eo_install",
+  "granularity": "day",
+  "dimensions": "last_attributed_touch_data_tilde_advertising_partner_name",
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ],
+    "user_data_platform": [
+      "IOS_APP"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 26
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 23
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 22
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 20
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 15
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 12
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 12
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 11
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 10
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 9
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 8
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 7
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 5
+    },
+    "timestamp" : "2017-12-01T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 5
+    },
+    "timestamp" : "2017-12-05T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-11-30T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-12-04T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 2
+    },
+    "timestamp" : "2017-12-02T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-11-29T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 1
+    },
+    "timestamp" : "2017-12-03T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 20
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ads-analytics-events">Ads Analytics - Events<a class="headerlink" href="#ads-analytics-events" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<h3 id="split-by-ad-partner">Split by Ad Partner<a class="headerlink" href="#split-by-ad-partner" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/ads-analytics-events.png" /></p>
+<p>Pulling this data requires 7 requests. For ease of understanding, we show the requests and responses below that correspond exactly to the data above.</p>
+<p>If you add additional columns, then you will need to adjust the requests accordingly. For a full list of events and dimensions that can be queried against, see our <a href="../query-api/">Query API</a> reference docs. If you are still not sure how to query for data, write in to integrations@branch.io and we’ll (1) get you a response, and (2) add to this documentation.</p>
+<p>"Clicks" does <em>not</em> include eo_web_to_app_auto_redirect on this visualization. This is different from the Summary page charts and Quick Links. Those visualizations have historically included Web-to-App Auto-Redirects, folded into the Clicks number. This visualization breaks them out separately.</p>
+<p>"Opens" does <em>not</em> include eo_reinstall on this visualization. This is different from the Summary page charts and Quick Links. Those visualizations have historically included Reinstalls, folded into the Opens number. This visualization breaks them out separately.</p>
+<p><em>Click</em></p>
+<ul>
+<li>
+<p><em>Request 1</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 1</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "unique_count" : 579
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 507
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 193
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 30
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 4
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Install</em></p>
+<ul>
+<li>
+<p><em>Request 2</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_install",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 2</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 425
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "unique_count" : 328
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 188
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 66
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 4
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Open</em></p>
+<ul>
+<li>
+<p><em>Request 3</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_open",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 3</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "unique_count" : 312
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 284
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 194
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 54
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 4
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Reinstall</em></p>
+<ul>
+<li>
+<p><em>Request 4</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_reinstall",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 4</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "unique_count" : 123
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 119
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "unique_count" : 108
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 57
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 4
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Web Session Start</em></p>
+<ul>
+<li>
+<p><em>Request 5</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_web_session_start",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 5</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 190
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "unique_count" : 179
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  }, {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "unique_count" : 60
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 3
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Purchase</em></p>
+<ul>
+<li>
+<p><em>Request 6</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_commerce_event",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name",
+    "name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 6</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "name" : "PURCHASE",
+      "unique_count" : 169
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "name" : "PURCHASE",
+      "unique_count" : 154
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "name" : "PURCHASE",
+      "unique_count" : 131
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "name" : "PURCHASE",
+      "unique_count" : 122
+    }
+  } ],
+  "paging" : {
+    "total_count" : 4
+  }
+}</code></p>
+</li>
+</ul>
+<p><em>Revenue</em></p>
+<p>Note that revenue also has data_source <code>eo_purchase</code>, but with a different <code>aggregation</code>.</p>
+<ul>
+<li>
+<p><em>Request 7</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_commerce_event",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name",
+    "name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "!days_from_last_attributed_touch_to_event": [
+      null
+    ]
+  },
+  "aggregation": "revenue"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response 7</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "revenue" : 220439.2490234375,
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "A4G",
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "revenue" : 182050.3577928543,
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Apple Search Ads",
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "revenue" : 170676.8486328125,
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "name" : "PURCHASE"
+    }
+  }, {
+    "timestamp" : "2017-12-07T08:00:00.000Z",
+    "result" : {
+      "revenue" : 100719.38818359375,
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Applovin",
+      "name" : "PURCHASE"
+    }
+  } ],
+  "paging" : {
+    "total_count" : 4
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="split-by-ad-partner-with-filter-on-ad-partner">Split by Ad Partner, With Filter on Ad Partner<a class="headerlink" href="#split-by-ad-partner-with-filter-on-ad-partner" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="../../../img/pages/exports/query-api/ads-analytics-events-with-filter.png" /></p>
+<p>This example looks at ad partner name: Taptica. For a full list of dimensions that can be queried against, see our <a href="../query-api/">Query API</a> reference docs.</p>
+<p><em>Click, with a filter for ad partner name: Taptica</em></p>
+<ul>
+<li>
+<p><em>Request</em></p>
+<p><code>bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "branch_key": "&lt;YOUR_BRANCH_KEY&gt;",
+  "branch_secret": "&lt;YOUR_BRANCH_SECRET&gt;",
+  "start_date": "2017-12-07",
+  "end_date": "2017-12-13",
+  "data_source": "eo_click",
+  "granularity": "all",
+  "dimensions": [
+    "last_attributed_touch_data_tilde_advertising_partner_name"
+  ],
+  "filters": {
+    "last_attributed_touch_data_tilde_feature": [
+      "paid advertising"
+    ],
+    "!user_data_platform": [
+      "ROBOT"
+    ],
+    "last_attributed_touch_data_tilde_advertising_partner_name": [
+      "Taptica"
+    ]
+  },
+  "aggregation": "unique_count"
+}' "http://api.branch.io/v1/query/analytics?limit=100"</code></p>
+</li>
+<li>
+<p><em>Response</em></p>
+<p><code>js
+{
+  "results" : [ {
+    "result" : {
+      "last_attributed_touch_data_tilde_advertising_partner_name" : "Taptica",
+      "unique_count" : 507
+    },
+    "timestamp" : "2017-12-07T08:00:00.000Z"
+  } ],
+  "paging" : {
+    "total_count" : 1
+  }
+}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+                  
+
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://docs.branch.io/pages/exports/query-recipe-book/";
+      this.page.identifier =
+        "/pages/exports/query-recipe-book/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//branch-docs.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+        
+      
+      
+        <div class="modals">
+          <div id="modal-search" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content" id="algolia-search-container">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Search</h2>
+              <input type="text" placeholder="search docs..." id="algolia-doc-search" autofocus>
+            </div>
+          </div>
+          <div id="modal-unhelpful" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Unhelpful?</h2>
+              <p>How can we improve or assist you?</p>
+              <a href="#" class="improve-doc" title="Improve This Doc">Improve this doc</a>
+              <a href="#" class="contact-support" title="Contact support">Contact support</a>
+            </div>
+          </div>
+          <div id="modal-choose-app" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Choose your app</h2>
+              <button type="button">iOS</button>
+              <button type="button">Android</button>
+              <button type="button">Cordova Ionic PhoneGap</button>
+              <button type="button">React Native</button>
+            </div>
+          </div>
+          <div id="modal-helpful" class="modal notification">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Thank you</h2>
+            </div>
+          </div>
+          <div id="modal-image" class="modal dialog image">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Image</h2>
+              <a id="modal-image-link" href="#">
+                <img id="modal-image-img">
+              </a>
+            </div>
+          </div>
+          <div id="modal-code" class="modal dialog code">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Select your platform</h2>
+              <div class="flex">
+                <button id="modal-code-ios">iOS</button>
+                <button id="modal-code-android">Android</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-cordova">Cordova PhoneGap Ionic</button>
+                <button id="modal-code-react">React Native</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-mparticle-android">mParticle Android</button>
+                <button id="modal-code-mparticle-ios">mParticle iOS</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-titanium">Titanium</button>
+                <button id="modal-code-unity">Unity</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-xamarin">Xamarin</button>
+                <button id="modal-code-adobe" class="vanish">Adobe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 <a href="https://branch.io">Branch</a>
+          </div>
+        
+        All rights reserved
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://branch.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/branchmetrics/docs" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/branchmetrics" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/branchmetrics" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.linkedin.com/company-beta/3813083" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/router.js"></script>
+      
+        <script src="../../../js/events.js"></script>
+      
+        <script src="../../../js/modals.js"></script>
+      
+        <script src="../../../js/images.js"></script>
+      
+        <script src="../../../js/buttons.js"></script>
+      
+        <script src="../../../js/progress.js"></script>
+      
+        <script src="../../../js/tabs.js"></script>
+      
+        <script src="../../../js/languages.js"></script>
+      
+        <script src="../../../js/utils.js"></script>
+      
+        <script src="../../../js/main.js"></script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
+      
+    
+    
+      
+    
+    
+      <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+      <script>docsearch({apiKey:"887017d17a2c1e9490ad2c44caa7e817",indexName:"branchmetrics",inputSelector:"#algolia-doc-search",debug:"True",algoliaOptions:{hitsPerPage:"15"}})</script>
+    
+  </body>
+</html>
