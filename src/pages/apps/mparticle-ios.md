@@ -184,6 +184,7 @@ This documentation explains how to send **mParticle events to your Branch dashbo
         }
 
         - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+            [[MParticle sharedInstance] continueUserActivity:userActivity restorationHandler:^(NSArray * _Nullable restorableObjects) {
                 [self checkForDeeplink];
                 }];
             return YES;
