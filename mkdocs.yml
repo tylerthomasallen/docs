@@ -12,6 +12,7 @@ copyright: 'Copyright &copy; 2018 <a href="https://branch.io">Branch</a>'
 theme:
   name: 'material'
   custom_dir: 'lib/mkdocs-material/material'
+  language: 'en'
 docs_dir: 'src'
 extra_css:
   - 'css/main.css'
