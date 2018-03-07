@@ -20,6 +20,7 @@ theme:
     text: 'Roboto'
     code: 'Roboto Mono'
   feature: false
+  logo: 'img/logo.svg'
 docs_dir: 'src'
 extra_css:
   - 'css/main.css'
@@ -48,7 +49,6 @@ markdown_extensions:
 
 # Options
 extra:
-  logo: 'img/logo.svg'
   social:
     - type: 'globe'
       link: 'https://branch.io'
