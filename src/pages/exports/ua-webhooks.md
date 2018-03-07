@@ -289,3 +289,7 @@ To request authentication headers for your webhooks, please contact `integration
 ##### Why is my webhook not firing?
 
 Check to see if you are in [Test Mode](https://dev.branch.io/getting-started/integration-testing/) with your SDK. If you are in test mode, we will not send a webhook.
+
+##### How can I add an authentication header to my webhooks?
+
+First, create the webhooks you want [here](https://dashboard.branch.io/data-import-export/data-feeds/webhooks). Once they are created and properly firing (with 200 Response Codes), reach out to integrations@branch.io with your **app ID**, **webhook event name**, **URL**, and the **key/value pair** of auth headers you want. We recommend the auth headers be something like `"X-Branch-Auth": "MY_SECRET_KEY"`.
