@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -2363,12 +2363,57 @@
 </tbody>
 </table>
 <h4 id="facebook-campaign-advert-format-support-table">Facebook Campaign Advert Format Support Table<a class="headerlink" href="#facebook-campaign-advert-format-support-table" title="Permanent link">&para;</a></h4>
-<p>Facebook Campaign Type | Photo | Video | Carousel | Slideshow | Collection | Dynamic | Canvas
---- | --- | --- | --- | --- | --- | ---
-Brand Awareness | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
-Reach | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
-Video Views |  | ✔︎ | ✔︎ | ✔︎ |  |  | ✔︎
-Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
+<table>
+<thead>
+<tr>
+<th>Facebook Campaign Type</th>
+<th>Photo</th>
+<th>Video</th>
+<th>Carousel</th>
+<th>Slideshow</th>
+<th>Collection</th>
+<th>Dynamic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brand Awareness</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Reach</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Video Views</td>
+<td></td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Lead Generation</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td>✔︎</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p>Looking for other Facebook Ad campaign types? Please check out our <a href="../../../pages/deep-linked-ads/facebook-ads-overview">Facebook Ads Overview guide</a>.</p>
 </div>
@@ -2376,10 +2421,10 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
 <div class="admonition warning">
 <p class="admonition-title">Prerequisites</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled checked/> To track installs from Facebook Ads you should <a href="../../../pages/apps/ios/#integrate-branch">integrate the Branch SDK</a> into your app.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> To use Branch links in Facebook App Install Ads ensure you have Universal Links set up on iOS or App Links enabled on Android to ensure correct routing behavior. For setup, checkout <a href="../../../pages/deep-linking/universal-links/">Universal</a> and <a href="../../../pages/deep-linking/android-app-links/">App Links</a>.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> If you want to deep link from your ads directly to content, you should <a href="../../../pages/deep-linking/routing/">configure deep link routing</a>.</li>
-<li class="task-list-item"><input type="checkbox" disabled checked/> Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> To track installs from Facebook Ads you should <a href="../../../pages/apps/ios/#integrate-branch">integrate the Branch SDK</a> into your app.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> To use Branch links in Facebook App Install Ads ensure you have Universal Links set up on iOS or App Links enabled on Android to ensure correct routing behavior. For setup, checkout <a href="../../../pages/deep-linking/universal-links/">Universal</a> and <a href="../../../pages/deep-linking/android-app-links/">App Links</a>.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> If you want to deep link from your ads directly to content, you should <a href="../../../pages/deep-linking/routing/">configure deep link routing</a>.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> Ads is a premium product priced on Monthly Active Users. Sign up for the Ads product to enable this functionality.</li>
 </ul>
 </div>
 <h4 id="enable-facebook-as-an-ad-partner">Enable Facebook as an Ad Partner<a class="headerlink" href="#enable-facebook-as-an-ad-partner" title="Permanent link">&para;</a></h4>
@@ -2468,7 +2513,7 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
 <p>To set up Facebook Brand Awareness Campaigns, you will need to insert your Branch Ad Link as the Website destination for the created ad. Facebook's Ad guide for Brand Awareness Campaigns is available <strong><a href="https://www.facebook.com/business/ads-guide/brand-awareness" target="_blank">here</a></strong>.</p>
 <h4 id="create-your-campaign">Create Your Campaign<a class="headerlink" href="#create-your-campaign" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank">https://www.facebook.com/ads/create</a> while logged in to the account that owns your Facebook app.</li>
+<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank"><a href="https://www.facebook.com/ads/create">https://www.facebook.com/ads/create</a></a> while logged in to the account that owns your Facebook app.</li>
 <li>Select <strong>Brand Awareness</strong> as the campaign marketing objective.
 <img alt="Campaign Selection" src="../../../img/pages/deep-linked-ads/facebook-platform-ads/brand-awareness/campaign-selection.png" /></li>
 <li>Continue with campaign creation selecting the app to advertise, audience, placement, and budget. Then press continue to enter the Advert creation step.</li>
@@ -2494,7 +2539,7 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
 <p>To set up Facebook Reach Campaigns, you will need to insert your Branch Ad Link as the Website destination for the created ad. Facebook's Ad guide for Reach Campaigns is available <strong><a href="https://www.facebook.com/business/ads-guide/reach" target="_blank">here</a></strong>.</p>
 <h4 id="create-your-campaign_1">Create Your Campaign<a class="headerlink" href="#create-your-campaign_1" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank">https://www.facebook.com/ads/create</a> while logged in to the account that owns your Facebook app.</li>
+<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank"><a href="https://www.facebook.com/ads/create">https://www.facebook.com/ads/create</a></a> while logged in to the account that owns your Facebook app.</li>
 <li>Select <strong>Reach</strong> as the campaign marketing objective.
 <img alt="Campaign Selection" src="../../../img/pages/deep-linked-ads/facebook-platform-ads/reach/campaign-selection.png" /></li>
 <li>Continue with campaign creation selecting the app to advertise, audience, placement, and budget. Then press continue to enter the Advert creation step.</li>
@@ -2520,7 +2565,7 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
 <p>To set up Facebook Video Views Campaigns, you will need to insert your Branch Ad Link as the Website destination for the created ad. Facebook's Ad guide for Video Views Campaigns is available <strong><a href="https://www.facebook.com/business/ads-guide/video-views/" target="_blank">here</a></strong>.</p>
 <h4 id="create-your-campaign_2">Create Your Campaign<a class="headerlink" href="#create-your-campaign_2" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank">https://www.facebook.com/ads/create</a> while logged in to the account that owns your Facebook app.</li>
+<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank"><a href="https://www.facebook.com/ads/create">https://www.facebook.com/ads/create</a></a> while logged in to the account that owns your Facebook app.</li>
 <li>Select <strong>Video Views</strong> as the campaign marketing objective.
 <img alt="Campaign Selection" src="../../../img/pages/deep-linked-ads/facebook-platform-ads/video-views/campaign-selection.png" /></li>
 <li>Continue with campaign creation selecting the app to advertise, audience, placement, and budget. Then press continue to enter the Advert creation step.</li>
@@ -2546,7 +2591,7 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
 <p>To set up Facebook Lead Generation Campaigns, you will need to insert your Branch Ad Link as the Website destination for the created ad. After users fill out the lead form, they'll be directed to your website or app after through the Branch Ad link. Facebook's Ad guide for Lead Generation Campaigns is available <strong><a href="https://www.facebook.com/business/ads-guide/lead-generation" target="_blank">here</a></strong>.</p>
 <h4 id="create-your-campaign_3">Create Your Campaign<a class="headerlink" href="#create-your-campaign_3" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank">https://www.facebook.com/ads/create</a> while logged in to the account that owns your Facebook app.</li>
+<li>Navigate to <a href="https://www.facebook.com/ads/create" target="_blank"><a href="https://www.facebook.com/ads/create">https://www.facebook.com/ads/create</a></a> while logged in to the account that owns your Facebook app.</li>
 <li>Select <strong>Lead Generation</strong> as the campaign marketing objective.
 <img alt="Campaign Selection" src="../../../img/pages/deep-linked-ads/facebook-platform-ads/lead-generation/campaign-selection.png" /></li>
 <li>Continue with campaign creation selecting the app to advertise, audience, placement, and budget. Then press continue to enter the Advert creation step.</li>
@@ -2733,7 +2778,7 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2754,6 +2799,10 @@ Lead Generation | ✔︎ | ✔︎ | ✔︎ | ✔︎ |  |  |</p>
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
       
     
     
