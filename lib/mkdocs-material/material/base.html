@@ -283,6 +283,10 @@
         {% include "partials/footer.html" %}
       {% endblock %}
     </div>
+    {% if config.extra.sources.algolia %}
+      <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+      <script>docsearch({apiKey:"{{ config.extra.sources.algolia.key }}",indexName:"{{ config.extra.sources.algolia.index }}",inputSelector:"{{ config.extra.sources.algolia.selector }}",debug:"{{ config.extra.sources.algolia.debug }}",algoliaOptions:{hitsPerPage:"{{ config.extra.sources.algolia.hits }}"}})</script>
+    {% endif %}
     {% block scripts %}
       <script src="{{ base_url }}/assets/javascripts/application.2ea4dc16.js"></script>
       {% if lang.t("search.language") != "en" %}
@@ -315,9 +319,5 @@
         {% include "partials/integrations/analytics.html" %}
       {% endif %}
     {% endblock %}
-    {% if config.extra.sources.algolia %}
-      <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-      <script>docsearch({apiKey:"{{ config.extra.sources.algolia.key }}",indexName:"{{ config.extra.sources.algolia.index }}",inputSelector:"{{ config.extra.sources.algolia.selector }}",debug:"{{ config.extra.sources.algolia.debug }}",algoliaOptions:{hitsPerPage:"{{ config.extra.sources.algolia.hits }}"}})</script>
-    {% endif %}
   </body>
 </html>
