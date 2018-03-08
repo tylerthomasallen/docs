@@ -117,11 +117,14 @@
   font-size: 1.6rem;
 }
 .md-typeset li > h3:before, .md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
+  /* corrects headers on the same line as bullet points */
   content: close-quote !important;
   display: inline !important;
 }
-.codehilite .nx, .codehilite .n, .codehilite .na, .codehilite .nn {
-  color: #24292e;
+.md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  /* correct anchor header from being below nav bar */
+  padding-top: 3.5em !important;
+  margin-top: -3.5em !important;
 }
 .codehilite .hll {
   background-color: rgba(231,255,238,1);

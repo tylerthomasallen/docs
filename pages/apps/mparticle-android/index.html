@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2643,7 +2643,11 @@
                   <h1>mParticle Android</h1>
                 
                 <h2 id="integrate-branch">Integrate Branch<a class="headerlink" href="#integrate-branch" title="Permanent link">&para;</a></h2>
-<p>This documentation explains how to send <strong>mParticle events to your Branch dashboard</strong>. If you'd like to send Branch installs to your mParticle dashboard, please review the <a href="../../../pages/integrations/mparticle">Branch/mParticle Data Integration</a>. </p>
+<p>This documentation explains how to send <strong>mParticle events to your Branch dashboard</strong>. If you'd like to send Branch installs to your mParticle dashboard, please review the <a href="../../../pages/integrations/mparticle">Branch/mParticle Data Integration</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">These instructions apply to any integration below mParticle SDK version 5</p>
+<p>mParticle introduced a new attribution &amp; deep linking API in v5 of their SDK (<a href="http://docs.mparticle.com/developers/sdk/android/getting-started/#upgrade-to-version-5-of-the-sdk">http://docs.mparticle.com/developers/sdk/android/getting-started/#upgrade-to-version-5-of-the-sdk</a>), so please contact your Branch or mParticle Account Managers for more details, if you have mParticle SDK v5+ installed in your app.</p>
+</div>
 <ul>
 <li>
 <h3 id="configure-branch">Configure Branch<a class="headerlink" href="#configure-branch" title="Permanent link">&para;</a></h3>
@@ -2800,7 +2804,7 @@
 </li>
 <li>
 <h3 id="initialize-branch">Initialize Branch<a class="headerlink" href="#initialize-branch" title="Permanent link">&para;</a></h3>
-<p>As with any kit, mParticle will automatically handle initializing Branch sessions. At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.</p>
+<p>As with any kit, mParticle will automatically handle initializing Branch sessions. However, to ensure all possible use cases are accounted for, ensure MParticle.start() is called in your Application class (this should already be accounted for in your base mParticle integration). At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.</p>
 </li>
 <li>
 <h3 id="test-deep-link">Test deep link<a class="headerlink" href="#test-deep-link" title="Permanent link">&para;</a></h3>
@@ -3551,7 +3555,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3572,10 +3576,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     

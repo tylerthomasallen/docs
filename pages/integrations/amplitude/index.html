@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -2494,108 +2494,19 @@
 <p>Please ensure you're using the Branch iOS SDK 0.12.2 or greater, and Android SDK v1.12.1 or greater. If you implemented Branch after May 28th 2016, you are likely already on this version or later.</p>
 <h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
 <h3 id="what-branch-sends-to-amplitude">What Branch Sends to Amplitude<a class="headerlink" href="#what-branch-sends-to-amplitude" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Value</th>
-<th>Sourced from</th>
-<th>Example</th>
-<th>Req</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>api_key</td>
-<td>API Key</td>
-<td>Branch Dashboard</td>
-<td>70d1db75922b0b4be56b819c42bxxxxx</td>
-<td>Y</td>
-<td></td>
-</tr>
-<tr>
-<td>event_type</td>
-<td>Branch event</td>
-<td>event name</td>
-<td>[Branch] install</td>
-<td>Y</td>
-<td></td>
-</tr>
-<tr>
-<td>platform</td>
-<td><code>ios</code> or <code>android</code></td>
-<td>collected by Branch SDK</td>
-<td>ios</td>
-<td>Y</td>
-<td></td>
-</tr>
-<tr>
-<td>idfa</td>
-<td>IDFA</td>
-<td>collected by Branch SDK</td>
-<td>AEBE52E7-03EE-455A-B3C4-E57283966239</td>
-<td>*</td>
-<td></td>
-</tr>
-<tr>
-<td>idfv</td>
-<td>IDFV</td>
-<td>collected by Branch SDK</td>
-<td>AEBE52E7-03EE-455A-B3C4-E57283966239</td>
-<td>*</td>
-<td></td>
-</tr>
-<tr>
-<td>android_id</td>
-<td>Android ID</td>
-<td>collected by Branch SDK</td>
-<td>f07a13984f6d116a</td>
-<td>N</td>
-<td></td>
-</tr>
-<tr>
-<td>adid</td>
-<td>GAID</td>
-<td>collected by Branch SDK</td>
-<td>AEBE52E7-03EE-455A-B3C4-E57283966239</td>
-<td>*</td>
-<td></td>
-</tr>
-<tr>
-<td>device_id</td>
-<td>Unique ID for device</td>
-<td>$amplitude_device_id</td>
-<td>AEBE52E7-03EE-455A-B3C4-E57283966239</td>
-<td>N</td>
-<td></td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>Unique ID for user</td>
-<td>$amplitude_user_id</td>
-<td>User A</td>
-<td>N</td>
-<td></td>
-</tr>
-<tr>
-<td>ip</td>
-<td>User’s IP Address</td>
-<td>collected by Branch SDK</td>
-<td>111.111.111.111</td>
-<td>N</td>
-<td></td>
-</tr>
-<tr>
-<td>event_properties.ANY-KEY (many)</td>
-<td>The value associated with the key</td>
-<td>event metadata or referring link data</td>
-<td>~channel: facebook</td>
-<td>N</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>| Property Name | Value | Sourced from | Example | Req
+| --- | --- | --- | --- | --- | ---
+| api_key | API Key | Branch Dashboard | 70d1db75922b0b4be56b819c42bxxxxx | Y
+| event_type | Branch event | event name | [Branch] install | Y
+| platform | <code>ios</code> or <code>android</code> | collected by Branch SDK | ios | Y
+| idfa | IDFA | collected by Branch SDK | AEBE52E7-03EE-455A-B3C4-E57283966239 | *
+| idfv | IDFV | collected by Branch SDK | AEBE52E7-03EE-455A-B3C4-E57283966239 | *
+| android_id | Android ID | collected by Branch SDK | f07a13984f6d116a | N
+| adid | GAID | collected by Branch SDK | AEBE52E7-03EE-455A-B3C4-E57283966239 | *
+| device_id | Unique ID for device | $amplitude_device_id | AEBE52E7-03EE-455A-B3C4-E57283966239 | N
+| user_id | Unique ID for user | $amplitude_user_id | User A | N
+| ip | User’s IP Address | collected by Branch SDK | 111.111.111.111 | N
+| event_properties.ANY-KEY (many) | The value associated with the key | event metadata or referring link data | ~channel: facebook | N</p>
 <ul>
 <li>On iOS, <code>idfa</code> or <code>idfv</code> is required. On Android, <code>adid</code> is required.</li>
 </ul>
@@ -2615,7 +2526,7 @@
 <h3 id="testing-your-amplitude-integration">Testing your Amplitude integration<a class="headerlink" href="#testing-your-amplitude-integration" title="Permanent link">&para;</a></h3>
 <p>The simplest way to test your integration is working end to end is to open your app <strong>from a Branch link</strong> then verify the data appears in Amplitude. After doing this, you will know how you to test more advanced scenarios.</p>
 <ol>
-<li>Create a Branch Quick Link at <a href="https://dashboard.branch.io/quick-links" target="_blank"><a href="https://dashboard.branch.io/quick-links">https://dashboard.branch.io/quick-links</a></a>.</li>
+<li>Create a Branch Quick Link at <a href="https://dashboard.branch.io/quick-links" target="_blank">https://dashboard.branch.io/quick-links</a>.</li>
 <li>Click that Branch link to open your app.</li>
 <li>In your Branch dashboard, verify you see the open event show as a "referred session" with a "session referring link URL" in your Branch dashboard under "Liveview &gt; Events"</li>
 </ol>
@@ -2777,7 +2688,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2798,10 +2709,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
       
     
     
