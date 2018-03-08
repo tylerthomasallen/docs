@@ -3,7 +3,7 @@
 
 {! ingredients/email/email-configure-esp.md !}
 
-You can retrieve your click tracking domain from your Bronto account. If you have not added a private domain yet, follow the instructions [here](#set-up-a-private-domain). 
+You can retrieve your click tracking domain from your Bronto account. If you have not added a private domain yet, follow the instructions [here](#set-up-a-private-domain).
 
 On **Done** click, an AASA file - required for Universal Links - specific to that domain will be generated.
 
@@ -27,7 +27,7 @@ Enabling Click Through Link Tracking allows you to see which links your users ar
 
 {! ingredients/email/email-usage.md !}
 
-{! ingredients/email/email-usage-auto-bounce.md !}
+{! ingredients/email/email-usage-auto-deeplink.md !}
 
 {! ingredients/email/email-usage-auto.md !}
 
