@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -658,6 +658,13 @@
         <li class="md-nav__item">
   <a href="#submitting-to-the-play-store" title="Submitting to the Play Store" class="md-nav__link">
     Submitting to the Play Store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-play-analytics" title="Google Play Analytics" class="md-nav__link">
+    Google Play Analytics
   </a>
   
 </li>
@@ -2173,6 +2180,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#google-play-analytics" title="Google Play Analytics" class="md-nav__link">
+    Google Play Analytics
+  </a>
+  
+</li>
+      
       
       
       
@@ -2213,6 +2227,10 @@
 <p class="admonition-title">Why does Branch use the GAID?</p>
 <p>Branch uses the GAID to identify users across our entire partner network, greatly increasing match accuracy rate. You can read more about this on the <a href="../../../pages/resources/matching/">matching accuracy page</a>. You do not need to perform these steps if you elect <strong>not</strong> to import Play Services or the Ads framework.</p>
 </div>
+<h2 id="google-play-analytics">Google Play Analytics<a class="headerlink" href="#google-play-analytics" title="Permanent link">&para;</a></h2>
+<p>Branch has the ability to send UTM data to Google Play. When you specify the following keys on your Branch links, we will pass them to Google Play.</p>
+<p>If you specify <code>utm_source</code> as a query parameter or key value pair on any Branch link, we will pass this to Google Play. If you don't specify a <code>utm_source</code>, we will use the <code>~channel</code> specified on the Branch link. If there is no channel, the default will be <code>Branch</code>.</p>
+<p>The same applies for <code>utm_campaign</code>, except, we will fall back to <code>~campaign</code>, and then not pass anything if <code>~campaign</code> is not specified.</p>
                 
                   
                 
@@ -2366,7 +2384,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2387,6 +2405,10 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
       
     
     
