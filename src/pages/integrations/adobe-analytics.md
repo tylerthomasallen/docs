@@ -93,17 +93,15 @@ For `Analytics Server Domain`, please do not include `http` or `https`. If your 
   * If you have not yet entered billing information, please do so now.
 1. Enter your Adobe Analytics information and hit **Save**.
 
-### Pass Adobe Visitor ID
+### Pass Adobe IDs
 
-When you're ready to send data through Branch, you'll need to make sure you pass through the configured Adobe Visitor ID through the Branch SDKs. In order to do so, figure out which ID you use for user tracking in the Adobe SDK by asking your Adobe Consultant, and pass this value through `setRequestMetadataKey` on the Branch SDKs.
+When you're ready to send data through Branch, you'll need to make sure you pass through all the IDs that you have configured on Adobe through the Branch SDKs. In order to do so, figure out which ID you use for user tracking in the Adobe SDK by asking your Adobe Consultant, and pass this value through `setRequestMetadataKey` on the Branch SDKs.
 
-There are three possible identities you can track via this integration. Please verify which ID you use, and send that. For example, if your Adobe integration uses Marketing Cloud Visitor ID, retrieve it from the Adobe SDK, and pass in a key value pair, with the key being *$marketing_cloud_visitor_id*. The value would be the value retrieved through the Adobe SDK. 
+There are three possible identities you can track via this integration. Please verify which IDs you use, and send that. For example, if your Adobe integration uses Marketing Cloud Visitor ID, retrieve it from the Adobe SDK, and pass in a key value pair, with the key being *$marketing_cloud_visitor_id*. The value would be the value retrieved through the Adobe SDK. 
+
+Here are some sample snippet showing this. **NOTE** you must set the correct key before calling *initSession*.
 
 1. Marketing Cloud Visitor ID - *$marketing_cloud_visitor_id* _sent to Adobe as `mid`_
-2. Analytics Visitor ID - *$adobe_visitor_id* _sent to Adobe as `aid`_
-3. Analytics Custom Visitor ID - *$analytics_visitor_id* _sent to Adobe as `vid`_
-
-Here's a sample snippet showing this. **NOTE** you must set the correct key before calling *initSession*. These examples use `$adobe_visitor_id` but you should use the appropriate key per the suggestions above. You must also initialize the Adobe SDK before setting the request metadata in the Branch SDK. 
 
 **Objective-C**
 
@@ -112,7 +110,95 @@ Inside *didFinishLaunchingWithOptions*
 ```objc
 
 Branch *branch = [Branch getInstance];
-[[Branch getInstance] setRequestMetadataKey:@"$adobe_visitor_id" value:[ADBMobile trackingIdentifier]];
+[branch setRequestMetadataKey:@"$marketing_cloud_visitor_id" value:[ADBMobile visitorMarketingCloudID]];
+```
+
+**Swift**
+
+Inside *didFinishLaunchingWithOptions*
+
+```swift
+
+if let branch = Branch.getInstance() {
+    branch.setRequestMetadataKey("$marketing_cloud_visitor_id", value:ADBMobile.visitorMarketingCloudID());
+}
+```
+
+**Android**
+
+Before you initialize in your Application#onCreate or Deep Link Activity's #onCreate.
+
+```java
+
+Branch branch = Branch.getInstance();
+branch.setRequestMetadata("$marketing_cloud_visitor_id", Visitor.getMarketingCloudId());
+
+...
+
+Branch.initSession(...);
+```
+
+2. Analytics Custom Visitor ID - *$analytics_visitor_id* _sent to Adobe as `vid`_
+
+This is a custom user ID that can be set using the Adobe SDk and then passed to Branch.
+
+**Objective-C**
+
+Inside *didFinishLaunchingWithOptions*
+
+```objc
+
+//Setting the Identifier with Adobe
+[ADBMobile setUserIdentifier:@"Whipple"];
+
+//Passing the Identifier to Branch
+Branch *branch = [Branch getInstance];
+[branch setRequestMetadataKey:@"$analytics_visitor_id" value:[ADBMobile userIdentifier]]
+```
+
+**Swift**
+
+Inside *didFinishLaunchingWithOptions*
+
+```swift
+
+//Setting the Identifier with Adobe
+ADBMobile.setUserIdentifier("Whipple")
+
+//Passing the Identifier to Branch
+if let branch = Branch.getInstance() {
+    branch.setRequestMetadataKey("$analytics_visitor_id", value:ADBMobile.userIdentifier())
+}
+```
+
+**Android**
+
+Before you initialize in your Application#onCreate or Deep Link Activity's #onCreate.
+
+```java
+
+//Setting the Identifier with Adobe
+Config.setUserIdentifier("Whipple");
+
+//Passing the Identifier to Branch
+Branch branch = Branch.getInstance();
+Branch.getInstance().setRequestMetadata("$analytics_visitor_id", Config.getUserIdentifier());
+
+...
+
+Branch.initSession(...);
+```
+
+3. Analytics Visitor ID - *$adobe_visitor_id* _sent to Adobe as `aid`_
+
+**Objective-C**
+
+Inside *didFinishLaunchingWithOptions*
+
+```objc
+
+Branch *branch = [Branch getInstance];
+[branch setRequestMetadataKey:@"$adobe_visitor_id" value:[ADBMobile trackingIdentifier]];
 ```
 
 **Swift**
