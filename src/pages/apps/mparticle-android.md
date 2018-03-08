@@ -1,6 +1,9 @@
 ## Integrate Branch
 
-This documentation explains how to send **mParticle events to your Branch dashboard**. If you'd like to send Branch installs to your mParticle dashboard, please review the [Branch/mParticle Data Integration](/pages/integrations/mparticle). 
+This documentation explains how to send **mParticle events to your Branch dashboard**. If you'd like to send Branch installs to your mParticle dashboard, please review the [Branch/mParticle Data Integration](/pages/integrations/mparticle).
+
+!!! warning "These instructions apply to any integration below mParticle SDK version 5"
+    mParticle introduced a new attribution & deep linking API in v5 of their SDK (http://docs.mparticle.com/developers/sdk/android/getting-started/#upgrade-to-version-5-of-the-sdk), so please contact your Branch or mParticle Account Managers for more details, if you have mParticle SDK v5+ installed in your app.
 
 - ### Configure Branch
 
@@ -144,7 +147,7 @@ This documentation explains how to send **mParticle events to your Branch dashbo
 
 - ### Initialize Branch
 
-    As with any kit, mParticle will automatically handle initializing Branch sessions. At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.
+    As with any kit, mParticle will automatically handle initializing Branch sessions. However, to ensure all possible use cases are accounted for, ensure MParticle.start() is called in your Application class (this should already be accounted for in your base mParticle integration). At this point you should start seeing your Branch session data - including installs, re-opens, and any custom events - in your Branch dashboard.
 
 - ### Test deep link
 
