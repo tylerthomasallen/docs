@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
     
     
       
@@ -1259,13 +1259,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#flag-your-web-only-links" title="Flag your web-only links" class="md-nav__link">
-    Flag your web-only links
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2398,13 +2391,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#flag-your-web-only-links" title="Flag your web-only links" class="md-nav__link">
-    Flag your web-only links
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2449,7 +2435,7 @@
 <h3 id="configure-your-esp">Configure your ESP<a class="headerlink" href="#configure-your-esp" title="Permanent link">&para;</a></h3>
 <p>To open the app directly on iOS 9.2+, you must configure your email integration and your app to support <a href="../../../pages/deep-linking/universal-links/">Universal Links</a> in emails.</p>
 <h4 id="tell-us-your-click-tracking-domain">Tell us your click tracking domain<a class="headerlink" href="#tell-us-your-click-tracking-domain" title="Permanent link">&para;</a></h4>
-<p>You can retrieve your click tracking domain from your Bronto account. If you have not added a private domain yet, follow the instructions <a href="#set-up-a-private-domain">here</a>. </p>
+<p>You can retrieve your click tracking domain from your Bronto account. If you have not added a private domain yet, follow the instructions <a href="#set-up-a-private-domain">here</a>.</p>
 <p>On <strong>Done</strong> click, an AASA file - required for Universal Links - specific to that domain will be generated.</p>
 <h4 id="configure-your-app-for-your-click-tracking-domain">Configure your app for your click tracking domain<a class="headerlink" href="#configure-your-app-for-your-click-tracking-domain" title="Permanent link">&para;</a></h4>
 <p><img alt="image" src="../../../img/pages/email/responsys/configure-responsys-3.png" /></p>
@@ -2512,20 +2498,10 @@
 <p>Once you’ve completed the <a href="#setup">one time setup steps</a>, it’s time to send your first email.</p>
 <p>This guide will identify which web links you'd like to open the app and deep link, as well as convert them to Branch links.</p>
 <h3 id="flag-your-deep-links">Flag your deep links<a class="headerlink" href="#flag-your-deep-links" title="Permanent link">&para;</a></h3>
-<p>For the email links that you would like to deep link to content, add <code>$deep_link=true</code> to the URL as a query parameter, for example:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;links.example.com?$deep_link=true&quot;</span> <span class="p">&gt;</span>Link to your app!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<p>In order for your email service provider to know that the email link should open the app, add <code>deeplink="true"</code> to the HTML, for example:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://example.com&quot;</span> <span class="na">deeplink</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>Link to your app!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 
-<p>This will ensure that your links are converted to Branch links that will open the app on iOS and Android, with full tracking and attribution.</p>
-<h3 id="flag-your-web-only-links">Flag your web-only links<a class="headerlink" href="#flag-your-web-only-links" title="Permanent link">&para;</a></h3>
-<p>With your email service provider, all email links will open the app by default. In order for your app to know that the email link should bounce to web after opening the app, add <code>$web_only=true</code> to your links as a query parameter, for example:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;links.example.com?$web_only=true&quot;</span> <span class="p">&gt;</span>Link to your app!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</pre></div>
-
-<div class="admonition caution">
-<p class="admonition-title">Handle links for web-only content</p>
-<p>Make sure you have completed the <a href="#handle-links-for-web-only-content">technical setup steps</a> to handle web-only links within your app.</p>
-</div>
 <p>This will also ensure that your links are converted to Branch links that will open the app on Android as well, with full tracking and attribution.</p>
 <div class="admonition protip">
 <p class="admonition-title">What happens to your links behind the scenes?</p>
@@ -2694,9 +2670,13 @@
       
     </div>
     
+      <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+      <script>docsearch({apiKey:"887017d17a2c1e9490ad2c44caa7e817",indexName:"branchmetrics",inputSelector:"#algolia-doc-search",debug:"True",algoliaOptions:{hitsPerPage:"15"}})</script>
+    
+    
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2718,17 +2698,9 @@
       
         <script src="../../../js/main.js"></script>
       
-        <script src="../../../search/require.js"></script>
-      
-        <script src="../../../search/search.js"></script>
-      
     
     
       
-    
-    
-      <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-      <script>docsearch({apiKey:"887017d17a2c1e9490ad2c44caa7e817",indexName:"branchmetrics",inputSelector:"#algolia-doc-search",debug:"True",algoliaOptions:{hitsPerPage:"15"}})</script>
     
   </body>
 </html>
