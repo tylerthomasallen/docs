@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -2713,7 +2713,7 @@
 <h5 id="are-you-wrapping-branch-links-with-another-link-and-redirecting">Are you wrapping Branch links with another link and redirecting?<a class="headerlink" href="#are-you-wrapping-branch-links-with-another-link-and-redirecting" title="Permanent link">&para;</a></h5>
 <p>In most cases, Universal Links won't open the app when they are "wrapped" by click tracking links. Universal links, including Branch links, must be freestanding. If you want Universal Links to work in all situations, do not use other links that redirect to your Branch links.</p>
 <h5 id="do-your-team-id-bundle-id-match-those-on-your-dashboard">Do your Team ID &amp; Bundle ID match those on your dashboard?<a class="headerlink" href="#do-your-team-id-bundle-id-match-those-on-your-dashboard" title="Permanent link">&para;</a></h5>
-<p>You can find them in the Dashboard under Settings &gt; Link Settings, in the iOS section next to "Enable Universal Links." They should match your Team ID and Bundle ID. Team ID can be found here <a href="https://developer.apple.com/membercenter/index.action#accountSummary">https://developer.apple.com/membercenter/index.action#accountSummary</a>. Your Bundle ID is found in Xcode, in the <code>General</code> tab for the correct build target. If your Apple App Prefix is different from your Team ID, you should use your App Prefix. Your app prefix can be found from App IDs on Apple's Developer Portal.</p>
+<p>You can find them in the Dashboard under Settings &gt; Link Settings, in the iOS section next to "Enable Universal Links." They should match your Team ID and Bundle ID. Team ID can be found here <a href="https://developer.apple.com/membercenter/index.action#accountSummary"><a href="https://developer.apple.com/membercenter/index.action#accountSummary">https://developer.apple.com/membercenter/index.action#accountSummary</a></a>. Your Bundle ID is found in Xcode, in the <code>General</code> tab for the correct build target. If your Apple App Prefix is different from your Team ID, you should use your App Prefix. Your app prefix can be found from App IDs on Apple's Developer Portal.</p>
 <h5 id="have-you-deleted-the-app-and-reinstalled-it">Have you deleted the app and reinstalled it?<a class="headerlink" href="#have-you-deleted-the-app-and-reinstalled-it" title="Permanent link">&para;</a></h5>
 <p>iOS does not re-scrape the apple-app-site-association file unless you delete and reinstall the app. (The only exception to this is App Store updates. iOS does rescrape on every update. This means that when users update to a version of your app with the applinks entitlement, Universal Links will start working for them.)</p>
 <h5 id="universal-links-can-be-disabled-unfortunately">Universal Links can be disabled, unfortunately.<a class="headerlink" href="#universal-links-can-be-disabled-unfortunately" title="Permanent link">&para;</a></h5>
@@ -2895,7 +2895,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2916,6 +2916,10 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
       
     
     
