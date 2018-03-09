@@ -188,6 +188,11 @@ custom | any custom event tracked through Branch
 
 In order to track these events, please refer to this document for further [information](/pages/apps/v2event/#v2-event). 
 
+## Universal App Campaigns Limitations
+
+- Product Listing Ads (PLA) : Sending data back to AdWords from a PLA ad type, is currently unsupported by Google
+- Deep Linking through Install : Deferred deep linking is currently not possible through Universal App Campaigns
+
 ## Other Campaigns
 
 The above guide covered what was necessary to track Universal App Campaigns. If you are looking to track non app-install campaigns, click through below.
