@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -2488,7 +2488,7 @@
 <h3 id="retrieve-mparticle-key-secret">Retrieve mParticle Key &amp; Secret<a class="headerlink" href="#retrieve-mparticle-key-secret" title="Permanent link">&para;</a></h3>
 <p>Find your mParticle key &amp; secret and enter it into the Branch Dashboard.</p>
 <ol>
-<li>Navigate to <a href="https://app.mparticle.com">https://app.mparticle.com</a> and log into the Dashboard.</li>
+<li>Navigate to <a href="https://app.mparticle.com"><a href="https://app.mparticle.com">https://app.mparticle.com</a></a> and log into the Dashboard.</li>
 <li>In the dashboard, navigate to the <strong><a href="https://app.mparticle.com/directory">Directory</a></strong> and search for Branch .</li>
 <li>Click the Branch tile, and click <strong>Add Branch Metrics to Setup</strong></li>
 <li>
@@ -2540,17 +2540,92 @@
 <p>You can find additional information about the Branch and mParticle integration in the mParticle documentation.</p>
 <h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
 <h3 id="what-branch-sends-to-mparticle">What Branch Sends to mParticle<a class="headerlink" href="#what-branch-sends-to-mparticle" title="Permanent link">&para;</a></h3>
-<p>| Property Name | Value | Sourced from | Example
-| --- | --- | --- | --- | --- | ---
-| event_name | "attribution" | <em>hardcoded</em> | "attribution"
-| custom_event_type | "attribution" | <em>hardcoded</em> | "attribution"
-| event_id | Unique ID for the event | Branch install event ID | 469939270182891107
-| custom_attributes | Branch Link Data Dictionary | Last Attributed Touch Data for the link to which the install was attributed | "campaign": "mParticle test", "channel": "Slack"
-| timestamp_unixtime_ms | timestamp of the event in ms | event | 1513280479654
-| device_info | Device Data, like OS Version and country | Branch User Data for the device | "os_version": "10.0","device_country": "US"
-| user_identities | mParticle customer ID (mostly empty) | mParticle customer ID for the user | <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#121;&#117;&#115;&#101;&#114;&#64;&#117;&#115;&#101;&#114;&#46;&#99;&#111;&#109;">&#109;&#121;&#117;&#115;&#101;&#114;&#64;&#117;&#115;&#101;&#114;&#46;&#99;&#111;&#109;</a>
-| application_info | App information like package name | Branch SDK/App Details | "application_name": "Branch-3rdParty-SDK-Testbed","application_version": "1.2.0"
-| IP | IP of the event | Device | 192.82.115.928</p>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Value</th>
+<th>Sourced from</th>
+<th>Example</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event_name</td>
+<td>"attribution"</td>
+<td><em>hardcoded</em></td>
+<td>"attribution"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>custom_event_type</td>
+<td>"attribution"</td>
+<td><em>hardcoded</em></td>
+<td>"attribution"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>event_id</td>
+<td>Unique ID for the event</td>
+<td>Branch install event ID</td>
+<td>469939270182891107</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>Branch Link Data Dictionary</td>
+<td>Last Attributed Touch Data for the link to which the install was attributed</td>
+<td>"campaign": "mParticle test", "channel": "Slack"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp_unixtime_ms</td>
+<td>timestamp of the event in ms</td>
+<td>event</td>
+<td>1513280479654</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>device_info</td>
+<td>Device Data, like OS Version and country</td>
+<td>Branch User Data for the device</td>
+<td>"os_version": "10.0","device_country": "US"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>user_identities</td>
+<td>mParticle customer ID (mostly empty)</td>
+<td>mParticle customer ID for the user</td>
+<td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#121;&#117;&#115;&#101;&#114;&#64;&#117;&#115;&#101;&#114;&#46;&#99;&#111;&#109;">&#109;&#121;&#117;&#115;&#101;&#114;&#64;&#117;&#115;&#101;&#114;&#46;&#99;&#111;&#109;</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>application_info</td>
+<td>App information like package name</td>
+<td>Branch SDK/App Details</td>
+<td>"application_name": "Branch-3rdParty-SDK-Testbed","application_version": "1.2.0"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IP</td>
+<td>IP of the event</td>
+<td>Device</td>
+<td>192.82.115.928</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="testing-your-integration">Testing your integration<a class="headerlink" href="#testing-your-integration" title="Permanent link">&para;</a></h2>
 <p>To see the data being passed to mParticle in more detail, you can set up a webhook to Requestbin. This will allow you to send only a subset of your Branch events to Requestbin and verify the data is coming through as expected. </p>
 <ol>
@@ -2560,7 +2635,7 @@
 <p><img alt="image" src="../../../img/pages/integrations/mparticle/mparticle-test-link.png" /></p>
 </li>
 <li>
-<p>In mParticle, navigate to the Directory in mParticle and add <strong>Webhooks</strong> as an option. Add a Requestbin URL generated from <a href="https://requestb.in">https://requestb.in</a>.</p>
+<p>In mParticle, navigate to the Directory in mParticle and add <strong>Webhooks</strong> as an option. Add a Requestbin URL generated from <a href="https://requestb.in"><a href="https://requestb.in">https://requestb.in</a></a>.</p>
 <p><img alt="image" src="../../../img/pages/integrations/mparticle/mparticle-add-webhooks.png" /></p>
 </li>
 <li>
@@ -2568,7 +2643,7 @@
 </li>
 <li>Select the Branch Feed as the input, and <strong>Webhooks</strong> as the output.</li>
 <li>
-<p>Finally, view the Requestbin. You can do this by appending <strong>?inspect</strong> to your requestbin URL. You should be able to copy paste the POST body from the request bin into a JSON formatter like <a href="https://jsonlint.com/">https://jsonlint.com/</a> to view the event details. </p>
+<p>Finally, view the Requestbin. You can do this by appending <strong>?inspect</strong> to your requestbin URL. You should be able to copy paste the POST body from the request bin into a JSON formatter like <a href="https://jsonlint.com/"><a href="https://jsonlint.com/">https://jsonlint.com/</a></a> to view the event details. </p>
 <p><img alt="image" src="../../../img/pages/integrations/mparticle/mparticle-requestbin.png" /></p>
 </li>
 <li>
@@ -2737,7 +2812,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -2758,6 +2833,10 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
       
     
     

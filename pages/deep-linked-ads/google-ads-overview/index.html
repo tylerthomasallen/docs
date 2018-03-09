@@ -37,8 +37,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.7.0">
+      <link rel="shortcut icon" href="../../../">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -1137,6 +1137,13 @@
         <li class="md-nav__item">
   <a href="#forward-events-to-adwords" title="Forward Events to AdWords" class="md-nav__link">
     Forward Events to AdWords
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-app-campaigns-limitations" title="Universal App Campaigns Limitations" class="md-nav__link">
+    Universal App Campaigns Limitations
   </a>
   
 </li>
@@ -2471,6 +2478,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#universal-app-campaigns-limitations" title="Universal App Campaigns Limitations" class="md-nav__link">
+    Universal App Campaigns Limitations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-campaigns" title="Other Campaigns" class="md-nav__link">
     Other Campaigns
   </a>
@@ -2677,28 +2691,34 @@
 <tr>
 <th>Google Data</th>
 <th>Branch Data</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Campaign ID</td>
 <td>~campaign_id</td>
+<td></td>
 </tr>
 <tr>
 <td>Campaign Name</td>
 <td>~campaign</td>
+<td></td>
 </tr>
 <tr>
 <td>ad_type</td>
 <td>~ad_type</td>
+<td></td>
 </tr>
 <tr>
 <td>network_type</td>
 <td>~channel</td>
+<td></td>
 </tr>
 <tr>
 <td>network_subtype</td>
 <td>~secondary_publisher</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2751,6 +2771,11 @@
 </tbody>
 </table>
 <p>In order to track these events, please refer to this document for further <a href="../../../pages/apps/v2event/#v2-event">information</a>. </p>
+<h2 id="universal-app-campaigns-limitations">Universal App Campaigns Limitations<a class="headerlink" href="#universal-app-campaigns-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Product Listing Ads (PLA) : Sending data back to AdWords from a PLA ad type, is currently unsupported by Google</li>
+<li>Deep Linking through Install : Deferred deep linking is currently not possible through Universal App Campaigns</li>
+</ul>
 <h2 id="other-campaigns">Other Campaigns<a class="headerlink" href="#other-campaigns" title="Permanent link">&para;</a></h2>
 <p>The above guide covered what was necessary to track Universal App Campaigns. If you are looking to track non app-install campaigns, click through below.</p>
 <table>
@@ -2985,7 +3010,7 @@
     
       <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
       
         <script src="../../../js/router.js"></script>
       
@@ -3006,6 +3031,10 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
       
     
     
