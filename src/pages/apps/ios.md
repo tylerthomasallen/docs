@@ -850,6 +850,22 @@
 
 ## Troubleshoot issues
 
+- ### To validate if the AASA file successfully downloads to device 
+
+    - Connect a test device to your MAC
+    
+    - Delete the app from device
+    
+    - View the device's console output in the MAC console
+    
+    - Install your app and let it launch
+    
+    - Filter the console output by "swcd"
+    
+    - If AASA file downloaded sucessfully, you will see something like the following screenshot
+    
+    ![image](https://cdn.branch.io/branch-assets/1520880422940-og_image.png)
+
 - ### Submitting to the App Store
 
     - Need to select `app uses IDFA or GAID` when publishing your app (for better deep link matching)
