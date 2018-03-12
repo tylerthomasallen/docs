@@ -850,11 +850,11 @@
 
 ## Troubleshoot issues
 
-- ### To validate if the AASA file successfully downloads to device 
+- ### To validate if AASA file successfully downloaded 
 
     - Connect a test device to your MAC
     
-    - Delete the app from device
+    - Uninstall the app
     
     - View the device's console output in the MAC console
     
@@ -862,7 +862,7 @@
     
     - Filter the console output by "swcd"
     
-    - If AASA file downloaded sucessfully, you will see something like the following screenshot
+    - If the AASA downloaded sucessfully, you'll see something like the screenshot below (If the AASA did not download, you must uninstall the app, restart the device, and then reinstall the app)
     
     ![image](https://cdn.branch.io/branch-assets/1520880422940-og_image.png)
 
