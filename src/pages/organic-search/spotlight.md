@@ -191,7 +191,8 @@ If the goal is to simply index the content of the app without creating a `Branch
             }
         }];
         ```
-!!! note: "Content would be index using NSUserActivity if contentIndexMode of BranchUniversalObject is Public, else would be index using CSSearchableIndex"
+!!! note
+    Content would be indexed using NSUserActivity if contentIndexMode of BranchUniversalObject is Public, otherwise it would be indexed using CSSearchableIndex
 
 - Index batch of Branch Universal Objects on Spotlight using CSSearchableIndex
 
