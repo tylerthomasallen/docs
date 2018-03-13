@@ -88,7 +88,7 @@
 
         ![image](/img/pages/dashboard/deepview.png)
 
-## Advance integration
+## Advanced integration
 
 - ### Configure user
     - Go to [Account settings](https://dashboard.branch.io/account-settings/user) on the Branch Dashboard
