@@ -58,7 +58,7 @@ The response payload will be in JSON format and for each export it will have an 
 
 ### Time Limits
 
-Data will be available through the API for 7 days after the date it's posted. It will be also available for 90 days after that upon request. After 90 days, we may delete the data to reduce unnecessary storage. If you need a record of your data for longer than 90 days, please set up a recurring export and store data in your systems.
+Data will be available through the API only for 7 days after the date it's posted. If you need a record of your data for longer than 7 days, please set up a recurring export and store data in your systems.
 
 ### Link Export
 
