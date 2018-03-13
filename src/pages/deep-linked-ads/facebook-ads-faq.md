@@ -492,7 +492,7 @@ The only way to test the deep linking functionality is outside of the actual ads
 
 !!! note "Note the following common mistakes for testing"
 	1. If you reset the GAID or IDFA on a device, you must uninstall Facebook and re-install prior to testing. Facebook does not update the IDFA/GAID every time it's opened.
-	2. Send deferred does not require a notification to be sent or to be clicked. Checking "Send Deferred" will automatically queue up a match for the test device with the deep link data. The notifiation is completely separate from deferred deep linking.
+	2. Send deferred does not require a notification to be sent or to be clicked. Checking "Send Deferred" will automatically queue up a match for the test device with the deep link data. The notification is completely separate from deferred deep linking.
 	3. The Facebook account on the desktop where you click "Send Deferred" must match the account logged into the test device for deferred deep link data to be queued up. Note that we've observed issues where you log in and out of multiple accounts on test devices that cause Facebook to not correctly queue up a match.
 	4. If you see that someone liked your ad, do not bother trying to click and test it. Clicking your own, live advertisement that shows up in notifications will not deep link.
 
