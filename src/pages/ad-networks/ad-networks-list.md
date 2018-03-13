@@ -45,6 +45,7 @@ Logo | Partner
 <a href="http://liftoff.io">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/liftoff-logo-1492801474909.png)</a>| **Liftoff**
 <a href="http://magnetadservices.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1500342359816.png)</a>| **Magnet**
 <a href="http://manage.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/manage_logo_trans_300x75-1505160375494.png)</a>| **Manage**
+<a href="https://mobair.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/mobair_logo_new_GDMgroup_544x144px-1518662472731.png)</a>| **MobAir**
 <a href="http://mobioinc.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/mobio_logofooter1-1498863703378.png)</a>| **Mobio**
 <a href="http://headwaydigital.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo_mobrain_iso-1495753098283.png)</a>| **MoBrain**
 <a href="https://www.mobusi.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/687474703a2f2f6d6f62757369617070732e6769746875622e696f2f4d6f6275736953444b2d694f532f696d616765732f6d6f627573695f6c6f676f5f6e6567726f2e706e67-1493247352015.png)</a>| **Mobusi**
