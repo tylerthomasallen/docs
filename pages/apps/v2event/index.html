@@ -2891,6 +2891,10 @@ If you track commerce events without a currency, we assume they are USD. If you 
 <p>See <a href="https://github.com/BranchMetrics/branch-deep-linking-public-api#logging-user-lifecycle-events">full API docs here</a>.</p>
 <h2 id="track-custom-events">Track Custom Events<a class="headerlink" href="#track-custom-events" title="Permanent link">&para;</a></h2>
 <p>If you want to track an event that isn't a predefined event, simply do the following:</p>
+<div class="admonition warning">
+<p class="admonition-title">Custom Event Names</p>
+<p>We strongly recommend using custom event names that contain no more than 40 characters, contain only letters, numbers, hyphens, spaces and underscores, and do not start with a hyphen. Facebook will not accept events that violate these rules, and if you enable the Facebook integration, Branch may sanitize your event names to pass validation.</p>
+</div>
 <h3 id="ios_3">iOS<a class="headerlink" href="#ios_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
