@@ -86,13 +86,13 @@ Logo | Partner
 <a href="http://tapsell.ir">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/tapsell2-1503596508675.png)</a>| **Tapsell**
 <a href="http://taptica.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Taptica_Logo-1513204728443.png)</a>| **Taptica**
 <a href="http://thetradedesk.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/thetradedeskdmp-1502822492413.png)</a>| **The Trade Desk**
-<a href="http://ads.colombiaonline.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1516922139308.png)</a>| **Times Internet Limited **
+<a href="http://ads.colombiaonline.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1516922139308.png)</a>| **Times Internet Limited**
 <a href="http://unilead.net">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/2-02-1498862779375.png)</a>| **Unilead Network**
 <a href="http://unity3d.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/unity-1493071825773.png)</a>| **Unity**
 <a href="http://ventesavenues.in/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logo-1495753718180.png)</a>| **Ventes Avenues**
 <a href="http://vungle.com">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Vungle-Logo-Primary-Navy-Transparent-Padded-1493068923084.png)</a>| **Vungle**
 <a href="http://wakeapp.ru">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/Wake_app-1-1508532067151.png)</a>| **Wakeapp**
-<a href="https://direct.yandex.ru/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logotype-yandex-direct-1-380x233-1507587040365.png)</a>| **Yandex Direct **
+<a href="https://direct.yandex.ru/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/logotype-yandex-direct-1-380x233-1507587040365.png)</a>| **Yandex Direct**
 <a href="http://yeahmobi.com">![image](https://s3-us-west-1.amazonaws.com/branch-assets/yeah-test.png)</a>| **YeahMobi**
 <a href="http://www.youappi.com/">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/youappi-1502235001895.png)</a>| **Youappi**
 <a href="https://zorka.mobi/en">![image](https://cdn.branch.io/branch-assets/ad-partner-manager/zorka-mobi-1513204805138.png)</a>| **Zorka.Mobi** 
