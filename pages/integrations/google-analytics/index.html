@@ -2497,7 +2497,7 @@
 <span class="n">branch</span><span class="p">.</span><span class="n">setRequestMetadataKey</span><span class="p">(</span><span class="s">&quot;$google_analytics_client_id&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="n">val</span><span class="p">?.</span><span class="kr">get</span><span class="p">(</span><span class="s">&quot;&amp;cid&quot;</span><span class="p">))</span>
 </pre></div></p>
 <p><strong>Android:</strong></p>
-<p>Please call the following line right after you initialize Branch in your Application’s #onCreate or Activity’s #onCreate:</p>
+<p>Please call the following line right after you instantiate Branch in your Application’s #onCreate or Activity’s #onCreate (and before you call initSession):</p>
 <div class="codehilite"><pre><span></span><span class="n">mTracker</span> <span class="o">=</span> <span class="n">sAnalytics</span><span class="o">.</span><span class="na">newTracker</span><span class="o">(</span><span class="s">&quot;UA-XXXXXXXX-1&quot;</span><span class="o">);</span>
 
 <span class="n">String</span> <span class="n">client_id</span> <span class="o">=</span> <span class="n">mTracker</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;&amp;cid&quot;</span><span class="o">);</span>
