@@ -31,9 +31,7 @@ Longer instructions can be found in the guides linked to from the [Facebook over
 
 First, make sure you have [set up the integration with Facebook MMP](/pages/deep-linked-ads/facebook-app-install-ads/#enable-facebook-as-an-ad-partner) on the Branch Dashboard. Second, [set up tracking for Standard Events](/pages/apps/v2event/#v2-event). It's that simple! We will automatically attribute events to Facebook ads.
 
-Please ensure your event names follow these rules so Facebook accepts them:
-- Under 40 characters
-- Contain only letters, numbers, dashes and underscores
+*Please ensure your custom event names contain no more than 40 characters, contain only letters, numbers, hyphens and underscores, and do not start with a hyphen*. Facebook will not accept events that violate these rules.
 
 There are advanced options for tracking events, which you can read more about [below](/pages/deep-linked-ads/facebook-ads-faq/#facebook-mmp-event-options).
 
