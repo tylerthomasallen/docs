@@ -65,7 +65,7 @@ branch.setRequestMetadataKey("$google_analytics_client_id", value:val?.get("&cid
 
 **Android:**
 
-Please call the following line right after you initialize Branch in your Application’s #onCreate or Activity’s #onCreate:
+Please call the following line right after you instantiate Branch in your Application’s #onCreate or Activity’s #onCreate (and before you call initSession):
 
 ```java
 mTracker = sAnalytics.newTracker("UA-XXXXXXXX-1");
