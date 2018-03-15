@@ -105,7 +105,7 @@
                 <!-- Branch init -->
                 <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw" />
                 <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr" />
-                <meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
+                <meta-data android:name="io.branch.sdk.TestMode" android:value="false" /> <!-- Set to true to use Branch_Test_Key -->
 
                 <!-- Branch install referrer tracking (optional) -->
                 <receiver android:name="io.branch.referral.InstallListener" android:exported="true">
