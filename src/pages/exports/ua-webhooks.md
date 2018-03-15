@@ -2,7 +2,7 @@
 
 Branch’s new webhook system for People-Based Attribution allows you to export install and down-funnel event data as it occurs. You can import this data into your internal systems for analysis. You simply need to specify a URL for the POST or GET requests.
 
-If you are looking for postback integrations for ad networks, please visit our [Universal Ads documentation](/pages/deep-linked-ads/universal-ads/). For pre-configured integrations into popular analytics tools, please visit our [Data Integrations documentation](/pages/integrations/amplitude/).
+If you are looking for postback integrations for ad networks, please visit our [Universal Ads documentation](/pages/deep-linked-ads/branch-universal-ads/). For pre-configured integrations into popular analytics tools, please visit our [Data Integrations documentation](/pages/integrations/amplitude/).
 
 The webhook system is highly customizable. You can register to only receive notifications for specific events, as well as specific subsections of events, filtered by link data, user data or event properties.
 
