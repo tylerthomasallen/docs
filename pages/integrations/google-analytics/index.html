@@ -2513,7 +2513,7 @@
 </pre></div>
 
 <p><strong>Android:</strong></p>
-<p>You can call the following line right after you initialize Branch in your Application’s #onCreate or Activity’s #onCreate:</p>
+<p>You can call the following line right after you instantiate Branch in your Application’s #onCreate or Activity’s #onCreate (and before you call initSession):</p>
 <div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setRequestMetadata</span><span class="o">(</span><span class="s">&quot;$google_analytics_user_id&quot;</span><span class="o">,</span> <span class="s">&quot;USER-ID-HERE&quot;</span><span class="o">);</span>
 </pre></div>
 
