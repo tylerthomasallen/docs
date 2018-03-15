@@ -2661,10 +2661,9 @@
 </tbody>
 </table>
 <div class="admonition protip">
-<p class="admonition-title">anonymous</p>
+<p class="admonition-title">Anonymous Client ID</p>
+<p>If for some reason Branch does not receive an advertising identifier or hardware identifier, and you do not explicitly specify a <code>$google_analytics_client_id</code>, then Branch will send <code>anonymous</code> as the Client ID (<code>cid</code>). This is a required field by Google Analytics.</p>
 </div>
-<p>Client ID"
-    If for some reason Branch does not receive an advertising identifier or hardware identifier, and you do not explicitly specify a <code>$google_analytics_client_id</code>, then Branch will send <code>anonymous</code> as the Client ID (<code>cid</code>). This is a required field by Google Analytics.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="very-short-or-nonexistent-session-lengths">Very short or nonexistent session lengths<a class="headerlink" href="#very-short-or-nonexistent-session-lengths" title="Permanent link">&para;</a></h3>
 <p>Google Analytics will automatically start a session when Branch sends over installs and opens. Because of this, you should remove any code that creates a new session when your application starts up. For example, on iOS, you may be firing an event with the following:</p>
