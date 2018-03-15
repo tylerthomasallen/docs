@@ -488,7 +488,7 @@ See [full API docs here](https://github.com/BranchMetrics/branch-deep-linking-pu
 If you want to track an event that isn't a predefined event, simply do the following:
 
 !!! warning "Custom Event Names"
-    We strongly recommend using custom event names that contain no more than 40 characters, contain only letters, numbers, hyphens, spaces and underscores, and do not start with a hyphen. Facebook will not accept event names that violate these rules, so while Branch doesn't limit event names in the same way, we recommend following Facebook's rules to future-proof your event tracking.
+    We strongly recommend using custom event names that contain no more than 40 characters, contain only letters, numbers, hyphens, spaces and underscores, and do not start with a hyphen. Facebook will not accept events that violate these rules, and if you enable the Facebook integration, Branch may sanitize your event names to pass validation.
 
 ### iOS
 
