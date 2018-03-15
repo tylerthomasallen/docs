@@ -129,6 +129,23 @@ Journeys data has also changed substantially. Previously, Journeys only included
 
 Universal Ads were introduced using the new People-Based Analytics platform, so there is no expected change. The data is unique as well, and can be exported.
 
+### Sharing reports
+
+On Summary, Sources, Journeys Analytics, Ads Analytics, and Email Analytics, when you navigate away and come back later, the dashboard will retain the date ranges and filters you last used. You can reset these filters to dashboard defaults by either clearing them one by one, or by pressing the reset button at the top of the page:
+
+![image](/img/pages/dashboard/people-based-attribution/share-reset.png)
+
+You can also share your analytics view with a teammate. Simply click the share button at the top of the page, copy the Branch link, and send it to your team:
+
+![image](/img/pages/dashboard/people-based-attribution/share-link.png)
+
+!!! tip "Sharing reports FAQ"
+    **Will my last used analytics filters persist across apps?**
+    No. If you belong to multiple apps, your filters for a certain page will only be retained for you on that app.
+    
+    **Do shared analytics links work across apps?**
+    Yes they do! A shared analytics link will apply filters to whichever app you are currently viewing in the dashboard.
+
 ## Changes to exported data
 
 ### Liveview
