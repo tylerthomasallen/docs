@@ -288,4 +288,4 @@ To request authentication headers for your webhooks, please contact `integration
 
 ##### Why is my webhook not firing?
 
-Check to see if you are in [Test Mode](https://dev.branch.io/getting-started/integration-testing/) with your SDK. If you are in test mode, we will not send a webhook.
+Check to see if you are in [Test Mode](/pages/apps/ios/#simulate-an-install) with your SDK. If you are in test mode, we will not send a webhook.

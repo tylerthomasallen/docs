@@ -323,8 +323,8 @@ In iOS 10, Apple broke the ability for app developers to collect the `IDFA` if t
 
 If you see absolutely 0 data coming through from your integration, it's possible that you're not collecting Google Advertising ID (GAID) on Android or IDFA on iOS.
 
-- iOS: Add the AdSupport.framework and read this extra info about [submitting](https://dev.branch.io/getting-started/sdk-integration-guide/guide/ios/#submitting-to-the-app-store TODO) to the store.
-- Android: Add Google Play Services so that we can collect GAID. See [here](https://dev.branch.io/getting-started/sdk-integration-guide/advanced/android/#use-google-advertising-id TODO).
+- iOS: Add the AdSupport.framework and read this extra info about [submitting](/pages/apps/ios-launch/) to the store.
+- Android: Add Google Play Services so that we can collect GAID. See [here](/pages/apps/android-launch/).
 
 ##### Installs Counted as Reinstalls, Opens on Branch
 

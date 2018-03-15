@@ -282,7 +282,7 @@ When a Branch link is opened, triggering a **click** event, you may access:
 
 ### Keys available for templating/filtering **Event** webhooks
 
-When a user triggers an event inside your app, either one [created by you](https://dev.branch.io/cross-channel-analytics/user-value-attribution/) or one tracked by Branch automatically (**install**, **open**, **referred session**, and **web session start**), you may access:
+When a user triggers an event inside your app, either one [created by you](/pages/apps/ios/#track-events) or one tracked by Branch automatically (**install**, **open**, **referred session**, and **web session start**), you may access:
 
 - Properties of the event.
 - Identity properties of the user who triggered the event.
@@ -381,7 +381,7 @@ You can also create events through the Branch SDK, and specify a secret key insi
 
 ##### Why is my app not sending a device ID?
 
-Check to see if you are in [Test Mode](https://dev.branch.io/getting-started/integration-testing/) with your SDK. If we are sending a fake ID to simulate installs, we will not send it inside a webhook.
+Check to see if you are in [Test Mode](/pages/apps/ios/#simulate-an-install) with your SDK. If we are sending a fake ID to simulate installs, we will not send it inside a webhook.
 
 ##### What is the difference between first referring data and session referring data?
 
