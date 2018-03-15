@@ -909,8 +909,8 @@
         ```java
         Intent resultIntent = new Intent(this, TargetClass.class);
         intent.putExtra("branch","http://xxxx.app.link/testlink");
-        PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         intent.putExtra("branch_force_new_session",true);
+        PendingIntent resultPendingIntent =  PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         ```
 
     - *Kotlin*
