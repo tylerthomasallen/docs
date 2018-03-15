@@ -3821,8 +3821,8 @@
 <p><em>Java</em></p>
 <div class="codehilite"><pre><span></span><span class="n">Intent</span> <span class="n">resultIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">TargetClass</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&quot;branch&quot;</span><span class="o">,</span><span class="s">&quot;http://xxxx.app.link/testlink&quot;</span><span class="o">);</span>
-<span class="n">PendingIntent</span> <span class="n">resultPendingIntent</span> <span class="o">=</span>  <span class="n">PendingIntent</span><span class="o">.</span><span class="na">getActivity</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">,</span> <span class="n">PendingIntent</span><span class="o">.</span><span class="na">FLAG_UPDATE_CURRENT</span><span class="o">);</span>
 <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&quot;branch_force_new_session&quot;</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
+<span class="n">PendingIntent</span> <span class="n">resultPendingIntent</span> <span class="o">=</span>  <span class="n">PendingIntent</span><span class="o">.</span><span class="na">getActivity</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">,</span> <span class="n">PendingIntent</span><span class="o">.</span><span class="na">FLAG_UPDATE_CURRENT</span><span class="o">);</span>
 </pre></div>
 
 </li>

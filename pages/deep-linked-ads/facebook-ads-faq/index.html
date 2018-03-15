@@ -2972,8 +2972,8 @@
 <h5 id="not-collecting-advertising-id">Not Collecting Advertising ID<a class="headerlink" href="#not-collecting-advertising-id" title="Permanent link">&para;</a></h5>
 <p>If you see absolutely 0 data coming through from your integration, it's possible that you're not collecting Google Advertising ID (GAID) on Android or IDFA on iOS.</p>
 <ul>
-<li>iOS: Add the AdSupport.framework and read this extra info about <a href="https://dev.branch.io/getting-started/sdk-integration-guide/guide/ios/#submitting-to-the-app-store TODO">submitting</a> to the store.</li>
-<li>Android: Add Google Play Services so that we can collect GAID. See <a href="https://dev.branch.io/getting-started/sdk-integration-guide/advanced/android/#use-google-advertising-id TODO">here</a>.</li>
+<li>iOS: Add the AdSupport.framework and read this extra info about <a href="../../../pages/apps/ios-launch/">submitting</a> to the store.</li>
+<li>Android: Add Google Play Services so that we can collect GAID. See <a href="../../../pages/apps/android-launch/">here</a>.</li>
 </ul>
 <h5 id="installs-counted-as-reinstalls-opens-on-branch">Installs Counted as Reinstalls, Opens on Branch<a class="headerlink" href="#installs-counted-as-reinstalls-opens-on-branch" title="Permanent link">&para;</a></h5>
 <p>One discrepancy root cause we've seen before is the scenario where Branch will classify an install as a reinstall or open. We remember the history of a particular user via their IDFA or Google Advertising ID (in addition to using a few other methods) and will detect whether the user is actually a new user or a returning user who had previously uninstalled your app. Facebook has a different mechanism that is limited to 180 days. Branch in some cases has detected reinstalls that occurred more than a year later.</p>

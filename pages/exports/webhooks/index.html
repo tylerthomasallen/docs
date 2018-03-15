@@ -2668,7 +2668,7 @@
 </tbody>
 </table>
 <h3 id="keys-available-for-templatingfiltering-event-webhooks">Keys available for templating/filtering <strong>Event</strong> webhooks<a class="headerlink" href="#keys-available-for-templatingfiltering-event-webhooks" title="Permanent link">&para;</a></h3>
-<p>When a user triggers an event inside your app, either one <a href="https://dev.branch.io/cross-channel-analytics/user-value-attribution/">created by you</a> or one tracked by Branch automatically (<strong>install</strong>, <strong>open</strong>, <strong>referred session</strong>, and <strong>web session start</strong>), you may access:</p>
+<p>When a user triggers an event inside your app, either one <a href="../../../pages/apps/ios/#track-events">created by you</a> or one tracked by Branch automatically (<strong>install</strong>, <strong>open</strong>, <strong>referred session</strong>, and <strong>web session start</strong>), you may access:</p>
 <ul>
 <li>Properties of the event.</li>
 <li>Identity properties of the user who triggered the event.</li>
@@ -2904,7 +2904,7 @@
 <h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
 <h3 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h3>
 <h5 id="why-is-my-app-not-sending-a-device-id">Why is my app not sending a device ID?<a class="headerlink" href="#why-is-my-app-not-sending-a-device-id" title="Permanent link">&para;</a></h5>
-<p>Check to see if you are in <a href="https://dev.branch.io/getting-started/integration-testing/">Test Mode</a> with your SDK. If we are sending a fake ID to simulate installs, we will not send it inside a webhook.</p>
+<p>Check to see if you are in <a href="../../../pages/apps/ios/#simulate-an-install">Test Mode</a> with your SDK. If we are sending a fake ID to simulate installs, we will not send it inside a webhook.</p>
 <h5 id="what-is-the-difference-between-first-referring-data-and-session-referring-data">What is the difference between first referring data and session referring data?<a class="headerlink" href="#what-is-the-difference-between-first-referring-data-and-session-referring-data" title="Permanent link">&para;</a></h5>
 <p>Because webhooks are event based, and tie back to a unique user, we send you data from the link that first drove this unique user into your app. Then, if they click another Branch link later, we also send you session referring data from this second link. For an initial install event, these should be the same. For any subsequent events, session referring data may be different.</p>
                 
