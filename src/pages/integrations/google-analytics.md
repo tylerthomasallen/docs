@@ -90,7 +90,7 @@ You can add the following before initializing the Branch session:
 
 **Android:**
 
-You can call the following line right after you initialize Branch in your Application’s #onCreate or Activity’s #onCreate:
+You can call the following line right after you instantiate Branch in your Application’s #onCreate or Activity’s #onCreate (and before you call initSession):
 
 ```java
 Branch.getInstance().setRequestMetadata("$google_analytics_user_id", "USER-ID-HERE");
