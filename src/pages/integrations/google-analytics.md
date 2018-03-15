@@ -117,7 +117,7 @@ Branch.getInstance().setRequestMetadata("$google_analytics_user_id", "USER-ID-HE
 | uip | User’s IP Address | collected by Branch SDK | 111.111.111.111 | N
 | z | Cache buster | [unix time + random number] | 1461878903666 | N
 
-!!! protip "anonymous" Client ID"
+!!! protip "Anonymous Client ID"
     If for some reason Branch does not receive an advertising identifier or hardware identifier, and you do not explicitly specify a `$google_analytics_client_id`, then Branch will send `anonymous` as the Client ID (`cid`). This is a required field by Google Analytics.
 
 ## Troubleshooting
