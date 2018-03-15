@@ -38,8 +38,7 @@
 
     ```bash
     sudo pip install --upgrade pip
-    sudo pip install --editable lib/mkdocs
-    sudo pip install pygments pymdown-extensions markdown-include mkdocs-material
+    sudo pip install mkdocs pygments pymdown-extensions markdown-include mkdocs-material
     ```
 
 - #### Develop
