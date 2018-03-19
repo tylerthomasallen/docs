@@ -24,7 +24,6 @@ We have built a custom integration to automatically send all Branch-referred iOS
 1. On the Braze dashboard, navigate to the **App Settings** section, and click **3rd Party Integrations**.
 1. From there, grab your API key (this will be the same for all attribution partners listed on the page).
 
-
 ### Configure the Branch Dashboard
 
 1. On the Branch Dashboard (dashboard.branch.io), navigate to the [Integrations page](https://dashboard.branch.io/integrations).
@@ -42,3 +41,7 @@ Branch Analytics Tag | Braze Data Placeholder Tag
 --- | ---
 Campaign | campaign
 Channel | adgroup
+
+### Braze Endpoints.
+
+By default, Branch uses the new Braze endpoint https://rest.iad-01.braze.com. If your app is using a different Braze endpoint please contact your account manager or reach out to us at [integrations@branch.io](mailto:integrations@branch.io). If you are not sure what endpoint your app uses please open a support ticket with Braze or use the [Braze Endpoint table](https://www.braze.com/documentation/REST_API/#endpoints) to find your correct REST endpoint. 
