@@ -444,13 +444,13 @@ We now support the use case where you can customize the appearance of a Journey 
 | `$journeys_button_get_no_app` | The call to action button when the app is **not** currently installed | "Install App" |
 | `$journeys_title` | The title or main text of your Journey | "Download Appsolutely today" |
 | `$journeys_description` | This is the description or subtitle in the frame | "This app is disrupting apps" |
-| `$journeys_icon_image_url` | The app icon displayed in the layout | "https://mysite.com/image.png)" |
+| `$journeys_icon_image_url` | The app icon displayed in the layout | "https://mysite.com/image.png" |
 
 Note that not all template support all override keys. For example, the floating button does not support title, description or icon image url. If a template is to be rendered and the key you've specified does not exist, we'll simply ignore it while rendering the template.
 
 #### Custom tags for dynamic Journeys layout customization
 
-In addition to using [pre-defined keys](/pages/web/journeys/#dynamic-journeys-layout-customization) (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use `setBranchViewData()` to dynamically provide values for these tags. 
+In addition to using [pre-defined keys](/pages/web/journeys/#dynamic-journeys-layout-customization) (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use `setBranchViewData()` to dynamically provide values for these tags.  You can also embed those values statically on a page with [Branch Meta Tags](https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site).
 
 **Note that if you include custom liquid tags in your templates and also set a value for a pre-defined key (e.g. $journeys_title) in `setBranchViewData()`, the value of the pre-defined key will take precedence.**
 
@@ -482,6 +482,13 @@ branch.setBranchViewData({
         'adjective': 'most entertaining',
     }
 });
+```
+
+Or, you can set the values by embedding Branch Meta Tags on the page:
+
+```
+<meta name="branch:deeplink:fontSize" content="20px" />
+<meta name="branch:deeplink:adjective" content="most entertaining" />
 ```
 
 ### Clientside Javascript Journeys controls
