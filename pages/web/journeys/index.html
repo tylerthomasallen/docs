@@ -4015,13 +4015,13 @@ You can target a user based on the last touch point before they entered your web
 <tr>
 <td align="right"><code>$journeys_icon_image_url</code></td>
 <td>The app icon displayed in the layout</td>
-<td>"<a href="https://mysite.com/image.png">https://mysite.com/image.png</a>)"</td>
+<td>"<a href="https://mysite.com/image.png">https://mysite.com/image.png</a>"</td>
 </tr>
 </tbody>
 </table>
 <p>Note that not all template support all override keys. For example, the floating button does not support title, description or icon image url. If a template is to be rendered and the key you've specified does not exist, we'll simply ignore it while rendering the template.</p>
 <h4 id="custom-tags-for-dynamic-journeys-layout-customization">Custom tags for dynamic Journeys layout customization<a class="headerlink" href="#custom-tags-for-dynamic-journeys-layout-customization" title="Permanent link">&para;</a></h4>
-<p>In addition to using <a href="../../../pages/web/journeys/#dynamic-journeys-layout-customization">pre-defined keys</a> (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use <code>setBranchViewData()</code> to dynamically provide values for these tags. </p>
+<p>In addition to using <a href="../../../pages/web/journeys/#dynamic-journeys-layout-customization">pre-defined keys</a> (e.g. $journeys_title) to dynamically customize the appearance/content of a Journey, you can use custom liquid tags. Custom tags can be inserted in both the View Editor and the CSS Editor when you’re setting up a Journeys template. Then, you can use <code>setBranchViewData()</code> to dynamically provide values for these tags.  You can also embed those values statically on a page with <a href="https://docs.branch.io/pages/web/hosted-data/#add-metatags-to-your-site">Branch Meta Tags</a>.</p>
 <p><strong>Note that if you include custom liquid tags in your templates and also set a value for a pre-defined key (e.g. $journeys_title) in <code>setBranchViewData()</code>, the value of the pre-defined key will take precedence.</strong></p>
 <p>The format for a custom liquid tag is as follows. Note that a default value must be specified for every custom tag you include:</p>
 <div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">key_name</span> <span class="o">|</span> <span class="nf">default_value</span> <span class="cp">}}</span><span class="x"></span>
@@ -4042,6 +4042,11 @@ You can target a user based on the last touch point before they entered your web
         &#39;adjective&#39;: &#39;most entertaining&#39;,
     }
 });
+</pre></div>
+
+<p>Or, you can set the values by embedding Branch Meta Tags on the page:</p>
+<div class="codehilite"><pre><span></span>&lt;meta name=&quot;branch:deeplink:fontSize&quot; content=&quot;20px&quot; /&gt;
+&lt;meta name=&quot;branch:deeplink:adjective&quot; content=&quot;most entertaining&quot; /&gt;
 </pre></div>
 
 <h3 id="clientside-javascript-journeys-controls">Clientside Javascript Journeys controls<a class="headerlink" href="#clientside-javascript-journeys-controls" title="Permanent link">&para;</a></h3>
