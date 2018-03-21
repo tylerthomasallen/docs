@@ -70,7 +70,7 @@ Inside *didFinishLaunchingWithOptions*
 ```objc
 
 Branch *branch = [Branch getInstance];
-[[Branch getInstance] setRequestMetadataKey:@"$adobe_visitor_id" value:[ADBMobile trackingIdentifier]];
+[[Branch getInstance] setRequestMetadataKey:@"$segment_anonymous_id" value:[[SEGAnalytics sharedAnalytics] getAnonymousId]];
 ```
 
 **Swift**
@@ -80,7 +80,7 @@ Inside *didFinishLaunchingWithOptions*
 ```swift
 
 if let branch = Branch.getInstance() {
-    branch.setRequestMetadataKey("$adobe_visitor_id", value:ADBMobile.trackingIdentifier() as NSObject!);
+    branch.setRequestMetadataKey("$segment_anonymous_id", value:"1234" as NSObject!);
 }
 ```
 
