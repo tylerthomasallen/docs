@@ -2490,13 +2490,13 @@
 <p><strong>iOS</strong></p>
 <p>Inside <em>didFinishLaunchingWithOptions</em></p>
 <div class="codehilite"><pre><span></span><span class="n">Branch</span> <span class="o">*</span><span class="n">branch</span> <span class="o">=</span> <span class="p">[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">];</span>
-<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">setRequestMetadataKey</span><span class="p">:</span><span class="s">@&quot;$adobe_visitor_id&quot;</span> <span class="nl">value</span><span class="p">:[</span><span class="n">ADBMobile</span> <span class="n">trackingIdentifier</span><span class="p">]];</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">setRequestMetadataKey</span><span class="p">:</span><span class="s">@&quot;$segment_anonymous_id&quot;</span> <span class="nl">value</span><span class="p">:[[</span><span class="n">SEGAnalytics</span> <span class="n">sharedAnalytics</span><span class="p">]</span> <span class="n">getAnonymousId</span><span class="p">]];</span>
 </pre></div>
 
 <p><strong>Swift</strong></p>
 <p>Inside <em>didFinishLaunchingWithOptions</em></p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="kd">let</span> <span class="nv">branch</span> <span class="p">=</span> <span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">branch</span><span class="p">.</span><span class="n">setRequestMetadataKey</span><span class="p">(</span><span class="s">&quot;$adobe_visitor_id&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="n">ADBMobile</span><span class="p">.</span><span class="n">trackingIdentifier</span><span class="p">()</span> <span class="k">as</span> <span class="bp">NSObject</span><span class="p">!);</span>
+    <span class="n">branch</span><span class="p">.</span><span class="n">setRequestMetadataKey</span><span class="p">(</span><span class="s">&quot;$segment_anonymous_id&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="s">&quot;1234&quot;</span> <span class="k">as</span> <span class="bp">NSObject</span><span class="p">!);</span>
 <span class="p">}</span>
 </pre></div>
 
