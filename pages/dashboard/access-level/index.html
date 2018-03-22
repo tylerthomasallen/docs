@@ -2230,13 +2230,15 @@
                 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>In order to ensure that teams have granular control over which parts of the Branch dashboard their team members can and cannot access, Branch provides a robust dashboard access control system. This system allows account administrators to set and modify access levels for other members, and thus to control what those users can view, edit, and export when using the dashboard.</p>
 <h3 id="permissions-definitions">Permissions Definitions<a class="headerlink" href="#permissions-definitions" title="Permanent link">&para;</a></h3>
-<p>Access to pages and actions in the dashboard is controlled using a number of different permissions. Those permissions, along with their definitions, are below:
-- <strong>App-level Settings:</strong> Settings or features that can impact functionality app-wide.
-- <strong>Channel-level Settings:</strong> Settings or features that can impact functionality across a marketing channel (e.g. Journeys configuration).
-- <strong>Link-level Settings:</strong> Settings or features that can impact functionality for single links (e.g. configuration of individual Quick Links).
-- <strong>Aggregate Data:</strong> Summary data that contains no granular information (e.g. data on Sources page).
-- <strong>Sensitive Data:</strong> Data that can contain user-identifying, payment-related, or secret information (e.g. Branch Key and Secret).
-- <strong>Export:</strong> Allows a user to export Sensitive Data from pages they can view.</p>
+<p>Access to pages and actions in the dashboard is controlled using a number of different permissions. Those permissions, along with their definitions, are below:</p>
+<ul>
+<li><strong>App-level Settings:</strong> Settings or features that can impact functionality app-wide.</li>
+<li><strong>Channel-level Settings:</strong> Settings or features that can impact functionality across a marketing channel (e.g. Journeys configuration).</li>
+<li><strong>Link-level Settings:</strong> Settings or features that can impact functionality for single links (e.g. configuration of individual Quick Links).</li>
+<li><strong>Aggregate Data:</strong> Summary data that contains no granular information (e.g. data on Sources page).</li>
+<li><strong>Sensitive Data:</strong> Data that can contain user-identifying, payment-related, or secret information (e.g. Branch Key and Secret).</li>
+<li><strong>Export:</strong> Allows a user to export Sensitive Data from pages they can view.</li>
+</ul>
 <p>Each page on the dashboard has its own access requirements. For example, in order to view the Summary page of the dashboard, a user must have view access to Aggregate Data. In order to view the Data Feeds Manager page, on the other hand, a user must have view access to both Channel-level Settings and Sensitive Data. </p>
 <h3 id="access-roles">Access Roles<a class="headerlink" href="#access-roles" title="Permanent link">&para;</a></h3>
 <p>Each dashboard user will have an access role that determines what they will and will not be able to access in the dashboard. We provide several default profiles with predefined access levels, and we also offer the option of creating custom roles to give you as much flexibility as possible when assigning access. The default profiles, along with their permissions, are below:</p>
@@ -2293,16 +2295,22 @@
 </table>
 <h3 id="access-level-definitions">Access Level Definitions<a class="headerlink" href="#access-level-definitions" title="Permanent link">&para;</a></h3>
 <p>For each type of permission (e.g. App-level Settings), there are a number of levels of access. Those levels are described below:</p>
-<p><strong>App-level Settings, Channel-level Settings, Link-level Settings</strong>
-- Edit: user can see the information and edit it
-- View: user can see the information but not edit it
-- No Access: user cannot see or edit the information</p>
-<p><strong>Aggregate Data, Sensitive Data</strong>
-- View: user can see the data
-- No Access: user cannot see the data</p>
-<p><strong>Export</strong>
-- Access: user can export sensitive data from pages they can view
-- No Access: user cannot export sensitive data, even from pages they can view</p>
+<p><strong>App-level Settings, Channel-level Settings, Link-level Settings</strong></p>
+<ul>
+<li>Edit: user can see the information and edit it</li>
+<li>View: user can see the information but not edit it</li>
+<li>No Access: user cannot see or edit the information</li>
+</ul>
+<p><strong>Aggregate Data, Sensitive Data</strong></p>
+<ul>
+<li>View: user can see the data</li>
+<li>No Access: user cannot see the data</li>
+</ul>
+<p><strong>Export</strong></p>
+<ul>
+<li>Access: user can export sensitive data from pages they can view</li>
+<li>No Access: user cannot export sensitive data, even from pages they can view</li>
+</ul>
 <h3 id="required-permissions-by-dashboard-page">Required Permissions by Dashboard Page<a class="headerlink" href="#required-permissions-by-dashboard-page" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
