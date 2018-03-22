@@ -103,9 +103,7 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard:
-    - Configure your dashboard: pages/dashboard/integrate.md
-    - Access level: pages/dashboard/access-level.md
+  - Configure your dashboard: pages/dashboard/integrate.md
   - Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
@@ -233,3 +231,4 @@ pages:
     - New Data Integrations: pages/integrations/faq.md
     - Ad Networks List: pages/ad-networks/ad-networks-list.md
     - Facebook FAQ and Advanced Options: pages/deep-linked-ads/facebook-ads-faq.md
+    - Access level: pages/dashboard/access-level.md
