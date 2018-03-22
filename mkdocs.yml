@@ -103,7 +103,9 @@ extra:
 # Pages
 pages:
   - Getting started: index.md
-  - Configure your dashboard: pages/dashboard/integrate.md
+  - Configure your dashboard:
+    - Configure your dashboard: pages/dashboard/integrate.md
+    - Access level: pages/dashboard/access-level.md
   - Configure your app:
     - iOS: pages/apps/ios.md
     - Android: pages/apps/android.md
