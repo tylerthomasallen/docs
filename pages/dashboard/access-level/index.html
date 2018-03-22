@@ -1,0 +1,2657 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Branch documentation for mobile deep linking">
+      
+      
+        <link rel="canonical" href="https://docs.branch.io/pages/dashboard/access-level/">
+      
+      
+        <meta name="author" content="Branch">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>Access level - Branch documentation</title>
+      
+    
+    
+      <style>.async-hide{opacity:0!important}</style>
+      <script>!function(e,n,t,a,o,c,i,s,m){n.className+=" "+t,c.start=1*new Date,c.end=i=function(){n.className=n.className.replace(RegExp(" ?"+t),"")},(e[a]=e[a]||[]).hide=c,setTimeout(function(){i(),c.end=null},1e3),c.timeout=1e3}(window,document.documentElement,"async-hide","dataLayer",0,{"GTM-PCPBXCN":!0})</script>
+    
+    
+      <script>!function(e,p){if(!p.__SV){var o,r,t=window;try{var n,i,a,l=t.location,s=l.hash;n=function(e,t){return(i=e.match(RegExp(t+"=([^&]*)")))?i[1]:null},s&&n(s,"state")&&("mpeditor"===(a=JSON.parse(decodeURIComponent(n(s,"state")))).action&&(t.sessionStorage.setItem("_mpcehash",s),history.replaceState(a.desiredHash||"",e.title,l.pathname+l.search)))}catch(e){}(window.mixpanel=p)._i=[],p.init=function(e,t,n){function i(e,t){var n=t.split(".");2==n.length&&(e=e[n[0]],t=n[1]),e[t]=function(){e.push([t].concat(Array.prototype.slice.call(arguments,0)))}}var a=p;for(void 0!==n?a=p[n]=[]:n="mixpanel",a.people=a.people||[],a.toString=function(e){var t="mixpanel";return"mixpanel"!==n&&(t+="."+n),e||(t+=" (stub)"),t},a.people.toString=function(){return a.toString(1)+".people (stub)"},o="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" "),r=0;r<o.length;r++)i(a,o[r]);p._i.push([e,t,n])},p.__SV=1.2,(t=e.createElement("script")).type="text/javascript",t.async=!0,t.src="undefined"!=typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js",(n=e.getElementsByTagName("script")[0]).parentNode.insertBefore(t,n)}}(document,window.mixpanel||[]),mixpanel.init("47ec8ea9ac102b1370221dcda476091c")</script>
+    
+    
+      <script>function getCookie(e){var i=("; "+document.cookie).split("; "+e+"=");if(2<=i.length)return i.pop().split(";").shift()}function setCookie(e,i,t){var o=new Date;o=new Date(o.getTime()+864e5*t),document.cookie=e+"="+i+"; expires="+o.toGMTString()+"; path=/; domain=.branch.io"}var returning_visitor=getCookie("bnc_returning_visitor"),page_url=window.location.host+window.location.pathname;setCookie("bnc_returning_visitor","1",30),function(e,i,t,o,n,a,r){e.GoogleAnalyticsObject=n,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,a=i.createElement(t),r=i.getElementsByTagName(t)[0],a.async=1,a.src="https://www.google-analytics.com/analytics.js",r.parentNode.insertBefore(a,r)}(window,document,"script",0,"ga"),ga("create","UA-53307642-1","auto"),ga("require","GTM-PCPBXCN"),ga("send","pageview"),ga("require","linkid","linkid.js"),returning_visitor||ga("set","dimension1",page_url)</script>
+    
+    
+      <script>!function(e,t,n,o,c,a,f){e.fbq||(c=e.fbq=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},e._fbq||(e._fbq=c),(c.push=c).loaded=!0,c.version="2.0",c.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,"script"),fbq("init","1040694199304729"),fbq("track","PageView")</script>
+      <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1040694199304729&ev=PageView&noscript=1"></noscript>
+    
+    
+      <script>_linkedin_data_partner_id="21211",function(){var e=document.getElementsByTagName("script")[0],t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://snap.licdn.com/li.lms-analytics/insight.min.js",e.parentNode.insertBefore(t,e)}()</script>
+    
+    
+      <script src="//cdn.bizible.com/scripts/bizible.js" async></script>
+    
+    
+      <script>!function(){var e=!1;function n(){!1===e&&(e=!0,Munchkin.init("315-FTT-121",{domainLevel:2}))}var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//munchkin.marketo.net/munchkin.js",t.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||n()},t.onload=n,document.getElementsByTagName("head")[0].appendChild(t)}()</script>
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.78aab2dc.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#overview" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.branch.io" title="Branch documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../../img/logo.svg">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href="https://docs.branch.io" title="Branch documentation">
+            <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
+          </a>
+        </div>
+      
+      
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+            
+              
+                <span class="md-header-nav__topic">
+                  Branch documentation
+                </span>
+                <span class="md-header-nav__topic">
+                  Access level
+                </span>
+              
+            
+          </div>
+        </div>
+      
+      
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-helpful" id="header-helpful" title="Helpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_up</i>
+            <p class="branch-header-label">Helpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-unhelpful" id="header-unhelpful" title="Unhelpful">
+            <i class="branch-header-icon md-icon material-icons">thumb_down</i>
+            <p class="branch-header-label">Unhelpful</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#" class="improve-doc" title="Improve This Doc">
+            <i class="branch-header-icon md-icon material-icons">mode_edit</i>
+            <p class="branch-header-label">Improve</p>
+          </a>
+        </div>
+        <div class="branch-header-button md-flex__cell md-flex__cell--shrink">
+          <a href="#" class="contact-support" title="Contact support">
+            <i class="branch-header-icon md-icon material-icons">help_outline</i>
+            <p class="branch-header-label">Support</p>
+          </a>
+        </div>
+      
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href="#dialog-search" id="header-search" title="Search">
+            <label class="md-icon md-icon--search md-header-nav__button"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      
+        <i class="branch-header-search md-icon material-icons">search</i>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          </a>
+        </div>
+      
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../../../img/logo.svg" width="48" height="48">
+      
+    </span>
+    Branch documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/branchmetrics/docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Branch documentation
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Basic integration
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../integrate/" title="Configure your dashboard" class="md-nav__link">
+      Configure your dashboard
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Configure your app
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Configure your app
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/ios/" title="iOS" class="md-nav__link">
+      iOS
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/android/" title="Android" class="md-nav__link">
+      Android
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/cordova-phonegap-ionic/" title="Cordova PhoneGap Ionic" class="md-nav__link">
+      Cordova PhoneGap Ionic
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/mparticle-android/" title="mParticle Android" class="md-nav__link">
+      mParticle Android
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/mparticle-ios/" title="mParticle iOS" class="md-nav__link">
+      mParticle iOS
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/titanium/" title="Titanium" class="md-nav__link">
+      Titanium
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/react-native/" title="React Native" class="md-nav__link">
+      React Native
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/unity/" title="Unity" class="md-nav__link">
+      Unity
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/xamarin/" title="Xamarin" class="md-nav__link">
+      Xamarin
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Configure your deep linking
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Configure your deep linking
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linking/universal-links/" title="iOS Universal Links" class="md-nav__link">
+      iOS Universal Links
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linking/android-app-links/" title="Android App Links" class="md-nav__link">
+      Android App Links
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linking/routing/" title="In-app deep link routing" class="md-nav__link">
+      In-app deep link routing
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Launch your app
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Launch your app
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/ios-launch/" title="Apple App Store" class="md-nav__link">
+      Apple App Store
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../apps/android-launch/" title="Google Play" class="md-nav__link">
+      Google Play
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../web/integrate/" title="Configure your website" class="md-nav__link">
+      Configure your website
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Basic usage
+          </li>
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../links/integrate/" title="Create deep links" class="md-nav__link">
+      Create deep links
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Track analytics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Track analytics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../analytics/" title="Dashboard analytics" class="md-nav__link">
+      Dashboard analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../unified-analytics/" title="New Dashboard Analytics" class="md-nav__link">
+      New Dashboard Analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../timezone/" title="Time zone support" class="md-nav__link">
+      Time zone support
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Advanced usage
+          </li>
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Links on your website
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Links on your website
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/deep-views/" title="Deepviews" class="md-nav__link">
+      Deepviews
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/journeys/" title="Journeys App Banners" class="md-nav__link">
+      Journeys App Banners
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/amp-journeys/" title="AMP Journeys" class="md-nav__link">
+      AMP Journeys
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/text-me-the-app/" title="Text Me The App" class="md-nav__link">
+      Text Me The App
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../web/hosted-data/" title="Hosted Deep Link Data" class="md-nav__link">
+      Hosted Deep Link Data
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Links in your paid ads
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Links in your paid ads
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/dynamic-product-feeds/" title="Dynamic Product Feeds" class="md-nav__link">
+      Dynamic Product Feeds
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/branch-universal-ads/" title="Branch Universal Ads" class="md-nav__link">
+      Branch Universal Ads
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/apple/" title="Apple Search" class="md-nav__link">
+      Apple Search
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/doubleclick/" title="Doubleclick" class="md-nav__link">
+      Doubleclick
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/google-ads-overview/" title="Google" class="md-nav__link">
+      Google
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/facebook-ads-overview/" title="Facebook" class="md-nav__link">
+      Facebook
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../deep-linked-ads/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Links in your emails
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Links in your emails
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/get-started/" title="Get Started" class="md-nav__link">
+      Get Started
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/adobe-campaign/" title="Adobe Campaign" class="md-nav__link">
+      Adobe Campaign
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/amazon-ses/" title="Amazon SES" class="md-nav__link">
+      Amazon SES
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/betaout/" title="Betaout" class="md-nav__link">
+      Betaout
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/blueshift/" title="Blueshift" class="md-nav__link">
+      Blueshift
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/braze/" title="Braze (formerly Appboy)" class="md-nav__link">
+      Braze (formerly Appboy)
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/bronto/" title="Bronto" class="md-nav__link">
+      Bronto
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/campaign-monitor/" title="Campaign Monitor" class="md-nav__link">
+      Campaign Monitor
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/epsilon/" title="Epsilon" class="md-nav__link">
+      Epsilon
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/kahuna/" title="Kahuna" class="md-nav__link">
+      Kahuna
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/leanplum/" title="Leanplum" class="md-nav__link">
+      Leanplum
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/mailgun/" title="Mailgun" class="md-nav__link">
+      Mailgun
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/mailjet/" title="Mailjet" class="md-nav__link">
+      Mailjet
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/mandrill/" title="Mandrill" class="md-nav__link">
+      Mandrill
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/moengage/" title="MoEngage" class="md-nav__link">
+      MoEngage
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/postup/" title="PostUp" class="md-nav__link">
+      PostUp
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/responsys/" title="Responsys" class="md-nav__link">
+      Responsys
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sailthru/" title="Sailthru" class="md-nav__link">
+      Sailthru
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/salesforce/" title="Salesforce" class="md-nav__link">
+      Salesforce
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sender/" title="Sender" class="md-nav__link">
+      Sender
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sendgrid/" title="SendGrid" class="md-nav__link">
+      SendGrid
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/sparkpost/" title="SparkPost" class="md-nav__link">
+      SparkPost
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/vero/" title="Vero" class="md-nav__link">
+      Vero
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/zeta/" title="Zeta" class="md-nav__link">
+      Zeta
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/support/" title="Support" class="md-nav__link">
+      Support
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../emails/self-serve/" title="Self Serve" class="md-nav__link">
+      Self Serve
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../advance/push-notifications/" title="Links in push notifications" class="md-nav__link">
+      Links in push notifications
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Links in organic search
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Links in organic search
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../organic-search/firebase/" title="Firebase App Indexing" class="md-nav__link">
+      Firebase App Indexing
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../organic-search/spotlight/" title="Spotlight Search" class="md-nav__link">
+      Spotlight Search
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../organic-search/branch-seo/" title="General SEO Compatibility" class="md-nav__link">
+      General SEO Compatibility
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Links for viral & referral
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Links for viral & referral
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../viral/content-sharing/" title="Content sharing" class="md-nav__link">
+      Content sharing
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../viral/referrals/" title="Referral programs" class="md-nav__link">
+      Referral programs
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Links in new app platforms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        Links in new app platforms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../app-to-app/android-instant-apps/" title="Android Instant Apps" class="md-nav__link">
+      Android Instant Apps
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../app-to-app/imessage-apps/" title="iMessage Apps" class="md-nav__link">
+      iMessage Apps
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Export Branch data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        Export Branch data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16-1" type="checkbox" id="nav-16-1">
+    
+    <label class="md-nav__link" for="nav-16-1">
+      Data Feeds
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-1">
+        Data Feeds
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../exports/data-feeds/" title="Get Started" class="md-nav__link">
+      Get Started
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16-1-2" type="checkbox" id="nav-16-1-2">
+    
+    <label class="md-nav__link" for="nav-16-1-2">
+      Data Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-16-1-2">
+        Data Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/data-integrations/" title="Get Started" class="md-nav__link">
+      Get Started
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/adobe-analytics/" title="Adobe Analytics" class="md-nav__link">
+      Adobe Analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/adjust/" title="Adjust" class="md-nav__link">
+      Adjust
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/amplitude/" title="Amplitude" class="md-nav__link">
+      Amplitude
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/appmetrica/" title="AppMetrica" class="md-nav__link">
+      AppMetrica
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/appboy/" title="Braze" class="md-nav__link">
+      Braze
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/appsflyer/" title="Appsflyer" class="md-nav__link">
+      Appsflyer
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/clevertap/" title="CleverTap" class="md-nav__link">
+      CleverTap
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/fabric-answers/" title="Fabric Answers" class="md-nav__link">
+      Fabric Answers
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/google-analytics/" title="Google Analytics" class="md-nav__link">
+      Google Analytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/kochava/" title="Kochava" class="md-nav__link">
+      Kochava
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/localytics/" title="Localytics" class="md-nav__link">
+      Localytics
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/mixpanel/" title="Mixpanel" class="md-nav__link">
+      Mixpanel
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/mparticle/" title="mParticle" class="md-nav__link">
+      mParticle
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/segment/" title="Segment" class="md-nav__link">
+      Segment
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/tune/" title="Tune" class="md-nav__link">
+      Tune
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../exports/api-v3/" title="Data Export API" class="md-nav__link">
+      Data Export API
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../exports/ua-webhooks/" title="Webhooks" class="md-nav__link">
+      Webhooks
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../exports/query-api/" title="Query API" class="md-nav__link">
+      Query API
+    </a>
+  </li>
+
+          
+        
+          
+            
+            
+            
+
+
+  <li class="md-nav__item">
+    <a href="../../exports/query-recipe-book/" title="Query Recipe Book" class="md-nav__link">
+      Query Recipe Book
+    </a>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/matching/" title="Branch Matching Overview" class="md-nav__link">
+      Branch Matching Overview
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="md-nav__item md-nav__link branch-nav-header">
+            Resources
+          </li>
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/validation-tools/" title="Validation Tools" class="md-nav__link">
+      Validation Tools
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/case-studies/" title="Case Studies and Infographics" class="md-nav__link">
+      Case Studies and Infographics
+    </a>
+  </li>
+
+      
+    
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permissions-definitions" title="Permissions Definitions" class="md-nav__link">
+    Permissions Definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-roles" title="Access Roles" class="md-nav__link">
+    Access Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-level-definitions" title="Access Level Definitions" class="md-nav__link">
+    Access Level Definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-permissions-by-dashboard-page" title="Required Permissions by Dashboard Page" class="md-nav__link">
+    Required Permissions by Dashboard Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settingmodifying-access-roles" title="Setting/Modifying Access Roles" class="md-nav__link">
+    Setting/Modifying Access Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-old-access-roles" title="Changes to Old Access Roles" class="md-nav__link">
+    Changes to Old Access Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-more-permissions" title="Getting More Permissions" class="md-nav__link">
+    Getting More Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/branchmetrics/docs/edit/master/src/pages/dashboard/access-level.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Access level</h1>
+                
+                <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>In order to ensure that teams have granular control over which parts of the Branch dashboard their team members can and cannot access, Branch provides a robust dashboard access control system. This system allows account administrators to set and modify access levels for other members, and thus to control what those users can view, edit, and export when using the dashboard.</p>
+<h3 id="permissions-definitions">Permissions Definitions<a class="headerlink" href="#permissions-definitions" title="Permanent link">&para;</a></h3>
+<p>Access to pages and actions in the dashboard is controlled using a number of different permissions. Those permissions, along with their definitions, are below:
+- <strong>App-level Settings:</strong> Settings or features that can impact functionality app-wide.
+- <strong>Channel-level Settings:</strong> Settings or features that can impact functionality across a marketing channel (e.g. Journeys configuration).
+- <strong>Link-level Settings:</strong> Settings or features that can impact functionality for single links (e.g. configuration of individual Quick Links).
+- <strong>Aggregate Data:</strong> Summary data that contains no granular information (e.g. data on Sources page).
+- <strong>Sensitive Data:</strong> Data that can contain user-identifying, payment-related, or secret information (e.g. Branch Key and Secret).
+- <strong>Export:</strong> Allows a user to export Sensitive Data from pages they can view.</p>
+<p>Each page on the dashboard has its own access requirements. For example, in order to view the Summary page of the dashboard, a user must have view access to Aggregate Data. In order to view the Data Feeds Manager page, on the other hand, a user must have view access to both Channel-level Settings and Sensitive Data. </p>
+<h3 id="access-roles">Access Roles<a class="headerlink" href="#access-roles" title="Permanent link">&para;</a></h3>
+<p>Each dashboard user will have an access role that determines what they will and will not be able to access in the dashboard. We provide several default profiles with predefined access levels, and we also offer the option of creating custom roles to give you as much flexibility as possible when assigning access. The default profiles, along with their permissions, are below:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th align="center">App-level Settings</th>
+<th align="center">Channel-level settings</th>
+<th align="center">Link-level Settings</th>
+<th align="center">Aggregate Data</th>
+<th align="center">Sensitive Data</th>
+<th align="center">Export</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td align="center">Edit</td>
+<td align="center">Edit</td>
+<td align="center">Edit</td>
+<td align="center">View</td>
+<td align="center">View</td>
+<td align="center">Access</td>
+</tr>
+<tr>
+<td>Team Member</td>
+<td align="center">View</td>
+<td align="center">Edit</td>
+<td align="center">Edit</td>
+<td align="center">View</td>
+<td align="center">No Access</td>
+<td align="center">No Access</td>
+</tr>
+<tr>
+<td>Full Read</td>
+<td align="center">View</td>
+<td align="center">View</td>
+<td align="center">View</td>
+<td align="center">View</td>
+<td align="center">No Access</td>
+<td align="center">No Access</td>
+</tr>
+<tr>
+<td>Limited Read</td>
+<td align="center">No Access</td>
+<td align="center">No Access</td>
+<td align="center">No Access</td>
+<td align="center">View</td>
+<td align="center">No Access</td>
+<td align="center">No Access</td>
+</tr>
+</tbody>
+</table>
+<h3 id="access-level-definitions">Access Level Definitions<a class="headerlink" href="#access-level-definitions" title="Permanent link">&para;</a></h3>
+<p>For each type of permission (e.g. App-level Settings), there are a number of levels of access. Those levels are described below:</p>
+<p><strong>App-level Settings, Channel-level Settings, Link-level Settings</strong>
+- Edit: user can see the information and edit it
+- View: user can see the information but not edit it
+- No Access: user cannot see or edit the information</p>
+<p><strong>Aggregate Data, Sensitive Data</strong>
+- View: user can see the data
+- No Access: user cannot see the data</p>
+<p><strong>Export</strong>
+- Access: user can export sensitive data from pages they can view
+- No Access: user cannot export sensitive data, even from pages they can view</p>
+<h3 id="required-permissions-by-dashboard-page">Required Permissions by Dashboard Page<a class="headerlink" href="#required-permissions-by-dashboard-page" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th align="center">Required Permissions (to view)</th>
+<th align="center">Default Profiles (to view)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Summary</td>
+<td align="center">Aggregate Data</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Web to App/Journeys Banners/Analytics</td>
+<td align="center">Aggregate Data</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Web to App/Journeys Banners/Manager</td>
+<td align="center">Channel-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Web to App/Deepviews Previews</td>
+<td align="center">Channel-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Web to App/Desktop SMS</td>
+<td align="center">Channel-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Ads/Analytics</td>
+<td align="center">Aggregate Data</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Ads/Partner Management</td>
+<td align="center">Channel-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Ads/Links</td>
+<td align="center">Link-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Email/Analytics</td>
+<td align="center">Aggregate Data</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Email/Manager</td>
+<td align="center">Channel-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Organic Search</td>
+<td align="center">Channel-level Settings, Aggregate Data</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Referrals/Analytics</td>
+<td align="center">Aggregate Data</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Referrals/Reward Rules</td>
+<td align="center">Channel-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Quick Links</td>
+<td align="center">Link-level Settings, Aggregate Data</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Link Settings</td>
+<td align="center">App-level Settings</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td>Sources</td>
+<td align="center">Aggregate Data</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Content</td>
+<td align="center">Aggregate Data</td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Data Import &amp; Export/Data Feeds/Manager</td>
+<td align="center">Channel-level Settings, Sensitive Data</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td>Data Import &amp; Export/Data Feeds/Data Integrations</td>
+<td align="center">Channel-level Settings, Sensitive Data</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td>Data Import &amp; Export/Data Feeds/Webhooks</td>
+<td align="center">Channel-level Settings, Sensitive Data</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td>Data Import &amp; Export/CSV Exports</td>
+<td align="center">Sensitive Data, Export</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td>Liveview</td>
+<td align="center">Sensitive Data</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td>Account Settings/App</td>
+<td align="center">App-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Account Settings/User</td>
+<td align="center"></td>
+<td align="center">All</td>
+</tr>
+<tr>
+<td>Account Settings/Billing</td>
+<td align="center">App-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Account Settings/Team</td>
+<td align="center">App-level Settings, Sensitive Data</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td>Account Settings/SSO</td>
+<td align="center">App-level Settings</td>
+<td align="center">Admin, Team Member, Full Read</td>
+</tr>
+<tr>
+<td>Set up SDK</td>
+<td align="center">App-level Settings, Sensitive Data</td>
+<td align="center">Admin</td>
+</tr>
+</tbody>
+</table>
+<h3 id="settingmodifying-access-roles">Setting/Modifying Access Roles<a class="headerlink" href="#settingmodifying-access-roles" title="Permanent link">&para;</a></h3>
+<p>You can set a user’s access levels when adding that user to your team in the dashboard, and you can edit existing users’ access levels anytime thereafter (if you have the permissions required to do so).</p>
+<p>When adding a new team member, you will be presented with a modal that allows you to select a default profile from a dropdown; if you select the Custom profile from the dropdown, you will have full control over which permissions a user has.</p>
+<p><img alt="image" src="../../../img/pages/dashboard/access-control-invitation.png" /></p>
+<p>If you’d like to change the access levels of an existing user, navigate to the Team tab of the Account Settings section of the dashboard and click the “Edit” button next to the user whose access levels you’d like to modify. You will be presented with the same modal.</p>
+<h3 id="changes-to-old-access-roles">Changes to Old Access Roles<a class="headerlink" href="#changes-to-old-access-roles" title="Permanent link">&para;</a></h3>
+<p>Branch previously had only two different access roles for users: Admin and Reports. With the introduction of new access roles, dashboard users with the Admin role were migrated to the new Admin role, and should not experience any change in dashboard access. Meanwhile, users with the old Reports role were migrated to the new Full Read role. </p>
+<p>While the Reports and Full Read roles have similar permission levels, Full Read users do not have access to several sections/actions on the Branch dashboard which were available to Reports users. Full Read users are not able to create, duplicate, or edit links, and they are not able to view or export Sensitive Data in the dashboard, like that in the Account Settings, Liveview, CSV Exports, and Data Integrations sections of the dashboard.</p>
+<h3 id="getting-more-permissions">Getting More Permissions<a class="headerlink" href="#getting-more-permissions" title="Permanent link">&para;</a></h3>
+<p>As a non-Admin user, you may not be able to access/use certain sections of the Branch dashboard. If you’d like more access, please contact an Admin user on your account to ask for more permissions.</p>
+<p>If you need further assistance, feel free to reach out to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#116;&#101;&#103;&#114;&#97;&#116;&#105;&#111;&#110;&#115;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#105;&#110;&#116;&#101;&#103;&#114;&#97;&#116;&#105;&#111;&#110;&#115;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>.</p>
+                
+                  
+                
+              
+              
+                
+                  
+
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://docs.branch.io/pages/dashboard/access-level/";
+      this.page.identifier =
+        "/pages/dashboard/access-level/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//branch-docs.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+        
+      
+      
+        <div class="modals">
+          <div id="modal-search" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content" id="algolia-search-container">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Search</h2>
+              <input type="text" placeholder="search docs..." id="algolia-doc-search" autofocus>
+            </div>
+          </div>
+          <div id="modal-unhelpful" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Unhelpful?</h2>
+              <p>How can we improve or assist you?</p>
+              <a href="#" class="improve-doc" title="Improve This Doc">Improve this doc</a>
+              <a href="#" class="contact-support" title="Contact support">Contact support</a>
+            </div>
+          </div>
+          <div id="modal-choose-app" class="modal dialog">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Choose your app</h2>
+              <button type="button">iOS</button>
+              <button type="button">Android</button>
+              <button type="button">Cordova Ionic PhoneGap</button>
+              <button type="button">React Native</button>
+            </div>
+          </div>
+          <div id="modal-helpful" class="modal notification">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Thank you</h2>
+            </div>
+          </div>
+          <div id="modal-image" class="modal dialog image">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Image</h2>
+              <a id="modal-image-link" href="#">
+                <img id="modal-image-img">
+              </a>
+            </div>
+          </div>
+          <div id="modal-code" class="modal dialog code">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <i class="material-icons modal-close right">close</i>
+              <h2>Select your platform</h2>
+              <div class="flex">
+                <button id="modal-code-ios">iOS</button>
+                <button id="modal-code-android">Android</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-cordova">Cordova PhoneGap Ionic</button>
+                <button id="modal-code-react">React Native</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-mparticle-android">mParticle Android</button>
+                <button id="modal-code-mparticle-ios">mParticle iOS</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-titanium">Titanium</button>
+                <button id="modal-code-unity">Unity</button>
+              </div>
+              <div class="flex">
+                <button id="modal-code-xamarin">Xamarin</button>
+                <button id="modal-code-adobe" class="vanish">Adobe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 <a href="https://branch.io">Branch</a>
+          </div>
+        
+        All rights reserved
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://branch.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/branchmetrics/docs" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/branchmetrics" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/branchmetrics" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.linkedin.com/company-beta/3813083" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+      <script>docsearch({apiKey:"887017d17a2c1e9490ad2c44caa7e817",indexName:"branchmetrics",inputSelector:"#algolia-doc-search",debug:"True",algoliaOptions:{hitsPerPage:"15"}})</script>
+    
+    
+      <script src="../../../assets/javascripts/application.2ea4dc16.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/router.js"></script>
+      
+        <script src="../../../js/events.js"></script>
+      
+        <script src="../../../js/modals.js"></script>
+      
+        <script src="../../../js/images.js"></script>
+      
+        <script src="../../../js/buttons.js"></script>
+      
+        <script src="../../../js/progress.js"></script>
+      
+        <script src="../../../js/tabs.js"></script>
+      
+        <script src="../../../js/languages.js"></script>
+      
+        <script src="../../../js/utils.js"></script>
+      
+        <script src="../../../js/main.js"></script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

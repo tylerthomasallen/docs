@@ -633,6 +633,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>https://docs.branch.io/pages/dashboard/access-level/</loc>
+     <lastmod>2018-03-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
