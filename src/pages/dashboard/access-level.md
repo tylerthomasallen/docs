@@ -5,6 +5,7 @@ In order to ensure that teams have granular control over which parts of the Bran
 ### Permissions Definitions
 
 Access to pages and actions in the dashboard is controlled using a number of different permissions. Those permissions, along with their definitions, are below:
+
 - **App-level Settings:** Settings or features that can impact functionality app-wide.
 - **Channel-level Settings:** Settings or features that can impact functionality across a marketing channel (e.g. Journeys configuration).
 - **Link-level Settings:** Settings or features that can impact functionality for single links (e.g. configuration of individual Quick Links).
@@ -30,15 +31,18 @@ Each dashboard user will have an access role that determines what they will and 
 For each type of permission (e.g. App-level Settings), there are a number of levels of access. Those levels are described below:
 
 **App-level Settings, Channel-level Settings, Link-level Settings**
+
 - Edit: user can see the information and edit it
 - View: user can see the information but not edit it
 - No Access: user cannot see or edit the information
 
 **Aggregate Data, Sensitive Data**
+
 - View: user can see the data
 - No Access: user cannot see the data
 
 **Export**
+
 - Access: user can export sensitive data from pages they can view
 - No Access: user cannot export sensitive data, even from pages they can view
 
